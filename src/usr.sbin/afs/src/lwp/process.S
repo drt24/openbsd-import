@@ -917,7 +917,11 @@ returnto:
 /* Code for MIPS R2000/R3000 architecture
  * Written by Zalman Stern April 30th, 1989.
  */
+#ifndef __OpenBSD__
 #include <regdef.h> /* Allow use of symbolic names for registers. */
+#else
+#include <machine/regdef.h>
+#endif
 #define regspace 9 * 4 + 4 + 6 * 8
 #define floats 0
 #define registers floats + 6 * 8
