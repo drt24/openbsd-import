@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic7xxx.c,v 1.60 2004/10/24 04:28:33 krw Exp $	*/
+/*	$OpenBSD: aic7xxx.c,v 1.61 2004/12/30 17:20:09 krw Exp $	*/
 /*	$NetBSD: aic7xxx.c,v 1.108 2003/11/02 11:07:44 wiz Exp $	*/
 
 /*
@@ -1498,8 +1498,6 @@ ahc_clear_critical_section(struct ahc_softc *ahc)
 		 * so we are really executing the instruction just
 		 * before it.
 		 */
-		if (seqaddr != 0)
-			seqaddr -= 1;
 		cs = ahc->critical_sections;
 		for (i = 0; i < ahc->num_critical_sections; i++, cs++) {
 			
