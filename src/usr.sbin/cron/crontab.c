@@ -316,7 +316,7 @@ edit_cmd() {
 		}
 	}
 
-	um = umask(0600);
+	um = umask(077);
 	(void) sprintf(Filename, "/tmp/crontab.XXXXXXXX");
 	if ((t = mkstemp(Filename)) == -1) {
 		perror(Filename);
