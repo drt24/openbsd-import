@@ -180,7 +180,7 @@ kcore_open (filename, from_tty)
 
 	old_chain = make_cleanup (free, filename);
 
-	core_kd = kvm_open (NULL, filename, NULL,
+	core_kd = kvm_open (bfd_get_filename(exec_bfd), filename, NULL,
 			    write_files? O_RDWR: O_RDONLY, 0);
 	if (core_kd == NULL)
 		perror_with_name (filename);
