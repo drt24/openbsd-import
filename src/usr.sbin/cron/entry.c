@@ -287,7 +287,7 @@ load_entry(file, error_func, pw, envp)
 		}
 	}
 	if (!env_get("PATH", e->envp)) {
-		sprintf(envstr, "PATH=%s", _PATH_DEFPATH);
+		snprintf(envstr, sizeof envstr, "PATH=%s", _PATH_DEFPATH);
 		if ((tenvp = env_set(e->envp, envstr))) {
 			e->envp = tenvp;
 		} else {
