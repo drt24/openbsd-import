@@ -634,6 +634,8 @@ smtp_open_spoolfile()
   strncat(spoolfile, "/smtpdXXXXXX", 12);
   if ((fd = mkstemp(spoolfile)) < 0) {
     syslog(LOG_CRIT, "Couldn't create spool file %s!", spoolfile);
+    free(spoolfile);
+    spoolfile=NULL;
     smtp_exit(EX_CONFIG);
   }
 #else /* USE_MKSTEMP */
