@@ -553,7 +553,7 @@ ip_FlushPacket(struct link *l, struct bundle *bundle)
 
   for (queue = &ipcp->Queue[PRI_FAST]; queue >= ipcp->Queue; queue--)
     if (queue->top) {
-      bp = mbuf_Dequeue(queue);
+      bp = mbuf_Contiguous(mbuf_Dequeue(queue));
       if (bp) {
         struct ip *pip = (struct ip *)MBUF_CTOP(bp);
 

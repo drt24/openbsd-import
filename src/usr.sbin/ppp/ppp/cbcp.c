@@ -608,6 +608,7 @@ cbcp_Input(struct physical *p, struct mbuf *bp)
   struct cbcp *cbcp = &p->dl->cbcp;
   int len;
 
+  bp = mbuf_Contiguous(bp);
   len = mbuf_Length(bp);
   if (len < sizeof(struct cbcp_header)) {
     mbuf_Free(bp);

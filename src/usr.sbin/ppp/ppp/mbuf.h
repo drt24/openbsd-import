@@ -64,3 +64,4 @@ extern void mbuf_Log(void);
 extern int mbuf_Show(struct cmdargs const *);
 extern void mbuf_Enqueue(struct mqueue *, struct mbuf *);
 extern struct mbuf *mbuf_Dequeue(struct mqueue *);
+extern struct mbuf *mbuf_Contiguous(struct mbuf *);

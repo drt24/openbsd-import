@@ -174,7 +174,7 @@ hdlc_Output(struct link *l, int pri, u_short proto, struct mbuf *bp)
     mhp->cnt += 2;
   }
 
-  mhp->next = bp;
+  mhp->next = bp = mbuf_Contiguous(bp);
 
   if (!p) {
     /*
@@ -188,11 +188,7 @@ hdlc_Output(struct link *l, int pri, u_short proto, struct mbuf *bp)
     return;
   }
 
-  /* Tack mfcs onto the end, then set bp back to the start of the data */
-  while (bp->next != NULL)
-    bp = bp->next;
-  bp->next = mfcs;
-  bp = mhp->next;
+  bp->next = mfcs;		/* Tack mfcs onto the end */
 
   p->hdlc.lqm.OutOctets += mbuf_Length(mhp) + 1;
   p->hdlc.lqm.OutPackets++;

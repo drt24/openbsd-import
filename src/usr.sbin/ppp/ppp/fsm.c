@@ -826,6 +826,7 @@ FsmRecvProtoRej(struct fsm *fp, struct fsmheader *lhp, struct mbuf *bp)
   struct physical *p = link2physical(fp->link);
   u_short *sp, proto;
 
+  bp = mbuf_Contiguous(bp);
   sp = (u_short *)MBUF_CTOP(bp);
   proto = ntohs(*sp);
   log_Printf(fp->LogLevel, "%s: -- Protocol 0x%04x (%s) was rejected!\n",
