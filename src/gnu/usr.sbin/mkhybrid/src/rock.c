@@ -338,7 +338,7 @@ int deep_opt;
     int lenpos, lenval, j0, j1;
     int nchar;
     unsigned char * cpnt, *cpnt1;
-    nchar = readlink(whole_name, (char *)symlink_buff, sizeof(symlink_buff));
+    nchar = readlink(whole_name, (char *)symlink_buff, sizeof(symlink_buff)-1);
     symlink_buff[nchar < 0 ? 0 : nchar] = 0;
     nchar = strlen((char *) symlink_buff);
     set_733(s_entry->isorec.size, 0);

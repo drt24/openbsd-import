@@ -1572,7 +1572,7 @@ FDECL3(insert_file_entry,struct directory *, this_dir,
 	case S_IFLNK:
 	  nchar = readlink(whole_path, 
 			   (char *)symlink_buff, 
-			   sizeof(symlink_buff));
+			   sizeof(symlink_buff)-1);
 	  symlink_buff[nchar < 0 ? 0 : nchar] = 0;
 	  sprintf(buffer,"L\t%s\t%s\n",
 		  s_entry->name, symlink_buff);
