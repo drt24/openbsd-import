@@ -12,3 +12,8 @@ DPADD=	${LIBRPCSVC} ${LIBKVM}
 LDADD=	-lrpcsvc -lkvm
 
 .include <bsd.prog.mk>
+
+.if (${UVM} == "yes")
+CFLAGS+=-DUVM
+.endif
+
