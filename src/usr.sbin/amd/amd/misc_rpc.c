@@ -132,7 +132,7 @@ AUTH *auth;
 	/*
 	 * Called procedure number
 	 */
-	if (!xdr_enum(&msg_xdr, (enum_t *) &proc))
+	if (!xdr_u_long(&msg_xdr, (enum_t *) &proc))
 		return -EIO;
 	/*
 	 * Authorization
