@@ -303,7 +303,6 @@ edit_cmd() {
 	time_t		mtime;
 	WAIT_T		waiter;
 	PID_T		pid, xpid;
-	mode_t		um;
 
 	log_it(RealUser, Pid, "BEGIN EDIT", User);
 	(void) sprintf(n, CRON_TAB(User));
@@ -320,14 +319,12 @@ edit_cmd() {
 		}
 	}
 
-	um = umask(077);
 	(void) sprintf(Filename, "/tmp/crontab.XXXXXXXXXX");
 	if ((t = mkstemp(Filename)) == -1) {
 		perror(Filename);
 		(void) umask(um);
 		goto fatal;
 	}
-	(void) umask(um);
 #ifdef HAS_FCHOWN
 	if (fchown(t, getuid(), getgid()) < 0) {
 #else
