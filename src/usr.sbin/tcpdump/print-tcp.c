@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-tcp.c,v 1.21 2004/08/10 19:55:07 markus Exp $	*/
+/*	$OpenBSD: print-tcp.c,v 1.22 2004/09/16 11:29:51 markus Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -253,6 +253,9 @@ tcp_print(register const u_char *bp, register u_int length,
 				tcpport_string(sport), tcpport_string(dport));
 		}
 	}
+
+	if (!qflag && TTEST(tp->th_seq) && !TTEST(tp->th_ack))
+		(void)printf("%u ", ntohl(tp->th_seq));
 
 	TCHECK(*tp);
 	seq = ntohl(tp->th_seq);
