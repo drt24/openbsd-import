@@ -1,4 +1,4 @@
-/*     $OpenBSD$     */
+/*     $OpenBSD: ipresend.c,v 1.3 1998/01/26 04:16:58 dgregor Exp $     */
 /*
  * ipresend.c (C) 1995-1997 Darren Reed
  *
@@ -47,7 +47,7 @@ int	opts = 0;
 # ifdef	linux
 char	default_device[] = "eth0";
 # else
-#  ifdef	sun
+#  if defined(sun) || defined(__OpenBSD__)
 char	default_device[] = "le0";
 #  else
 #   ifdef	ultrix
@@ -146,7 +146,7 @@ char	**argv;
 			usage(name);
 		}
 
-	if (!ipr || !resend)
+	if (!ipr)
 		usage(name);
 
 	gwip.s_addr = 0;
