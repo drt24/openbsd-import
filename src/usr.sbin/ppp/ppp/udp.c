@@ -45,7 +45,6 @@
 #include "defs.h"
 #include "mbuf.h"
 #include "log.h"
-#include "sync.h"
 #include "timer.h"
 #include "lqr.h"
 #include "hdlc.h"
@@ -133,6 +132,7 @@ udp_device2iov(struct device *d, struct iovec *iov, int *niov,
 static const struct device baseudpdevice = {
   UDP_DEVICE,
   "udp",
+  NULL,
   NULL,
   NULL,
   NULL,

@@ -44,7 +44,6 @@
 #include "defs.h"
 #include "mbuf.h"
 #include "log.h"
-#include "sync.h"
 #include "timer.h"
 #include "lqr.h"
 #include "hdlc.h"
@@ -100,6 +99,7 @@ tcp_OpenConnection(const char *name, char *host, char *port)
 static struct device tcpdevice = {
   TCP_DEVICE,
   "tcp",
+  NULL,
   NULL,
   NULL,
   NULL,

@@ -38,7 +38,7 @@
 
 #include <errno.h>
 #include <stdio.h>
-#include <stdlib.h>
+/* #include <stdlib.h> (auto-remove) */
 #include <string.h>
 #include <termios.h>
 #include <unistd.h>
@@ -66,7 +66,7 @@
 #include "radius.h"
 #endif
 #include "bundle.h"
-#include "vjcomp.h"
+/* #include "vjcomp.h" (auto-remove) */
 #include "tun.h"
 #include "ip.h"
 

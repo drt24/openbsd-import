@@ -29,7 +29,7 @@
 #include <sys/un.h>
 
 #include <stdlib.h>
-#include <string.h>
+/* #include <string.h> (auto-remove) */
 #include <termios.h>
 
 #include "layer.h"

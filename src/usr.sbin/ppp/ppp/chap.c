@@ -543,7 +543,7 @@ chap_Input(struct bundle *bundle, struct link *l, struct mbuf *bp)
   struct chap *chap = &p->dl->chap;
   char *name, *key, *ans;
   int len, nlen;
-  u_char alen, end;
+  u_char alen;
 #ifdef HAVE_DES
   int lanman;
 #endif
@@ -694,6 +694,8 @@ chap_Input(struct bundle *bundle, struct link *l, struct mbuf *bp)
         nlen = strlen(name);
 #ifndef NORADIUS
         if (*bundle->radius.cfg.file) {
+          u_char end;
+
           end = chap->challenge.local[*chap->challenge.local+1];
           chap->challenge.local[*chap->challenge.local+1] = '\0';
           radius_Authenticate(&bundle->radius, &chap->auth,
