@@ -202,13 +202,15 @@ main(argc, argv)
 	 * that the file descriptors are already set up for us. 
 	 * J. Gettys - MIT Project Athena.
 	 */
-	if (argc <= 2 || strcmp(argv[2], "-") == 0)
-		strcpy(ttyn, ttyname(0));
+	if (isatty(0) == 0) {
+		fprintf(stderr, "not a tty\n");
+		exit(1);
+	} else if (argc <= 2 || strcmp(argv[2], "-") == 0)
+		strlcpy(ttyn, ttyname(0), sizeof(ttyn));
 	else {
 		int i;
 
-		strcpy(ttyn, dev);
-		strncat(ttyn, argv[2], sizeof(ttyn)-sizeof(dev));
+		snprintf(ttyn, sizeof ttyn, "%s%s", dev, argv[2]);
 		if (strcmp(argv[0], "+") != 0) {
 			chown(ttyn, 0, 0);
 			chmod(ttyn, 0600);
