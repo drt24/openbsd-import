@@ -61,7 +61,7 @@ main(int argc, char *argv[])
 
   if ((fp = fopen(argv[3], "r")) == NULL) {
     perror("open");
-    exit(-1);
+    exit(1);
   }
   setbuffer(fp, fp_buf, 262144);
   setbuffer(stdout, out_buf, 262144);
@@ -81,21 +81,21 @@ int read_rgb(FILE *fp, char *rgb, int width)
 
   if (fseek(fp, cur_pos, SEEK_SET) != 0) {
     perror("fseek red");
-    exit(-1);
+    exit(1);
   }
   if (fread(&rgb[0], 1, 1, fp) != 1)
     return EOF;
 
   if (fseek(fp, cur_pos + width, SEEK_SET) != 0) {
     perror("fseek green");
-    exit(-1);
+    exit(1);
   }
   if (fread(&rgb[1], 1, 1, fp) != 1)
     return EOF;
 
   if (fseek(fp, cur_pos + width * 2, SEEK_SET) != 0) {
     perror("fseek blue");
-    exit(-1);
+    exit(1);
   }
   if (fread(&rgb[2], 1, 1, fp) != 1)
     return EOF;

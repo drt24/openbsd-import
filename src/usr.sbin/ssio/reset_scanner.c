@@ -32,7 +32,7 @@ void
 usage(char *prog_name)
 {
   fprintf(stderr, "usage: %s [-l <logical name>]\n", prog_name);
-  exit(-1);
+  exit(1);
 }
 
 main(int argc, char *argv[])
@@ -69,7 +69,7 @@ main(int argc, char *argv[])
   if ((sfd = openx(device, O_RDONLY, 0, SC_FORCED_OPEN)) < 0) {
     fprintf(stderr, "openx of %s failed: ", device);
     perror("");
-    exit(-1);
+    exit(1);
   }
 
   close(sfd);

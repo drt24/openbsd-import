@@ -51,7 +51,7 @@ void
 usage(char *prog_name)
 {
   fprintf(stderr, "usage: %s [-l <logical name>]\n", prog_name);
-  exit(-1);
+  exit(1);
 }
 
 main(int argc, char *argv[])
