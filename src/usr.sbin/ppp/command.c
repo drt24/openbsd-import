@@ -1360,7 +1360,8 @@ SetVariable(struct cmdargs const *arg)
   case VAR_PHONE:
     strncpy(VarPhoneList, argp, sizeof(VarPhoneList) - 1);
     VarPhoneList[sizeof(VarPhoneList) - 1] = '\0';
-    strcpy(VarPhoneCopy, VarPhoneList);
+    strncpy(VarPhoneCopy, VarPhoneList, sizeof(VarPhoneCopy));
+    VarPhoneCopy[sizeof(VarPhoneCopy) - 1] = '\0';
     VarNextPhone = VarPhoneCopy;
     VarAltPhone = NULL;
     break;
