@@ -28,6 +28,7 @@
 #include <sys/un.h>
 
 #include <stdio.h>
+#include <string.h>
 
 #include "mbuf.h"
 #include "log.h"

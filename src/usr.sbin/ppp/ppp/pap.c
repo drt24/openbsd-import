@@ -29,6 +29,7 @@
 #include <sys/un.h>
 
 #include <stdlib.h>
+#include <string.h>
 #include <termios.h>
 
 #include "mbuf.h"
