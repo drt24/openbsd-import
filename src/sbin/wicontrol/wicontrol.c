@@ -1,4 +1,4 @@
-/*	$OpenBSD: wicontrol.c,v 1.12 2000/10/13 18:58:10 chris Exp $	*/
+/*	$OpenBSD: wicontrol.c,v 1.13 2001/05/15 02:40:36 millert Exp $	*/
 
 /*
  * Copyright (c) 1997, 1998, 1999
@@ -701,5 +701,5 @@ int main(argc, argv)
 	if (dumpinfo && !dumpstats)
 	        wi_dumpinfo(iface);
 
-	exit(0);
+	return (0);
 }
