@@ -1,4 +1,4 @@
-/*	$OpenBSD: conf.c,v 1.4 1997/11/23 05:22:00 mickey Exp $ */
+/*	$OpenBSD: conf.c,v 1.5 1998/07/07 03:02:51 deraadt Exp $ */
 
 /*
  * Copyright (c) 1992, 1993
@@ -223,8 +223,7 @@ iszerodev(dev)
 }
 
 
-#define MAXDEV	57
-static int chrtoblktbl[MAXDEV] =  {
+static int chrtoblktbl[] =  {
       /* VCHR */      /* VBLK */
 	/* 0 */		NODEV,
 	/* 1 */		NODEV,
@@ -261,7 +260,7 @@ chrtoblk(dev)
 {
 	int blkmaj;
 
-	if (major(dev) >= MAXDEV ||
+	if (major(dev) >= nchrdev ||
 	    major(dev) > sizeof(chrtoblktbl)/sizeof(chrtoblktbl[0]))
 		return (NODEV);
 	blkmaj = chrtoblktbl[major(dev)];
