@@ -7,6 +7,8 @@ install:
 	install -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 	    ${.CURDIR}/ypinit.sh ${DESTDIR}/usr/sbin/ypinit
 	install -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-	    ${.CURDIR}/Makefile.yp ${DESTDIR}/var/yp.no/Makefile
+	    ${.CURDIR}/Makefile.yp ${DESTDIR}/var/yp.no/Makefile.yp
+	install -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
+	    ${.CURDIR}/Makefile.main ${DESTDIR}/var/yp.no/Makefile.main
 
 .include <bsd.prog.mk>
