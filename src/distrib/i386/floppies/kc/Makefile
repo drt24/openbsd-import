@@ -23,6 +23,7 @@ bsd:
 	cd ${.CURDIR}/../../../../sys/arch/i386/compile/INST && \
 	    make clean && make depend && make
 	cp ${.CURDIR}/../../../../sys/arch/i386/compile/INST/bsd bsd
+	strip bsd
 
 all: bsd ${CBIN}
 .ifndef FLOPPY3

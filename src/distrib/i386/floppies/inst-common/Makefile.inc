@@ -53,10 +53,14 @@ unconfig:
 	-/bin/rm -f ${IMAGE}
 
 ${CBIN}.mk ${CBIN}.cache ${CBIN}.c: ${CRUNCHCONF}
-	crunchgen -D ${TOP}/../../.. -L ${DESTDIR}/usr/lib ${CRUNCHCONF}
+	crunchgen -D ${TOP}/../../.. -m ${CBIN}.mk -L ${DESTDIR}/usr/lib \
+		  ${CRUNCHCONF}
 
 ${CBIN}: ${CBIN}.mk ${CBIN}.cache ${CBIN}.c
 	make -f ${CBIN}.mk all
+.if defined(KERBEROS)
+	mv ${CBIN}-krb ${CBIN}
+.endif
 
 install:
 	cp ${IMAGE} ${DESTDIR}/snapshot/
