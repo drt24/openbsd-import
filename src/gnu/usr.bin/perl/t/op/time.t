@@ -13,14 +13,14 @@ while (($now = time) == $beg) { sleep 1 }
 
 if ($now > $beg && $now - $beg < 10){print "ok 1\n";} else {print "not ok 1\n";}
 
-for ($i = 0; $i < 100000; $i++) {
+for ($i = 0; $i < 10000000; $i++) {
     ($nowuser, $nowsys) = times;
-    $i = 200000 if $nowuser > $beguser && ( $nowsys > $begsys || 
+    $i = 20000000 if $nowuser > $beguser && ( $nowsys > $begsys || 
                                             (!$nowsys && !$begsys));
     last if time - $beg > 20;
 }
 
-if ($i >= 200000) {print "ok 2\n";} else {print "not ok 2\n";}
+if ($i >= 20000000) {print "ok 2\n";} else {print "not ok 2\n";}
 
 ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime($beg);
 ($xsec,$foo) = localtime($now);
