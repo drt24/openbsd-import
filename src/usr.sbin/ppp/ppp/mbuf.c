@@ -240,7 +240,7 @@ mbuf_Show(struct cmdargs const *arg)
     prompt_Printf(arg->prompt, "%10.10s: %04d (%06d)\n",
                   mbuftype[i], MemMap[i].fragments, MemMap[i].octets);
 
-  prompt_Printf(arg->prompt, "Mallocs: %qu,   Frees: %qu\n",
+  prompt_Printf(arg->prompt, "Mallocs: %llu,   Frees: %llu\n",
                 mbuf_Mallocs, mbuf_Frees);
 
   return 0;
