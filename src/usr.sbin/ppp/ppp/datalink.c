@@ -256,9 +256,9 @@ datalink_UpdateSet(struct descriptor *d, fd_set *r, fd_set *w, fd_set *e,
               log_Printf(LogCHAT, "%s: Dial attempt %u of %d\n",
                         dl->name, dl->cfg.dial.max - dl->dial_tries,
                         dl->cfg.dial.max);
-            return datalink_UpdateSet(d, r, w, e, n);
           } else
             datalink_LoginDone(dl);
+          return datalink_UpdateSet(d, r, w, e, n);
         } else {
           if (!(dl->physical->type & (PHYS_DDIAL|PHYS_DEDICATED)) &&
               dl->cfg.dial.max)
