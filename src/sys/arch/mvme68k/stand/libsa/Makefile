@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 LIB=sa
 

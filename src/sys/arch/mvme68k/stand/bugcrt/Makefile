@@ -1,4 +1,4 @@
-#    $Id$
+#	$OpenBSD$
 
 CFLAGS+=-I${.CURDIR}/../../include -O2
 
