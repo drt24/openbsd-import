@@ -2524,7 +2524,7 @@ $undef|false)	afs=false ;;
 	fi
 	;;
 esac
-if $afs; then
+if test $afs = "true"; then
 	echo "AFS may be running... I'll be extra cautious then..." >&4
 else
 	echo "AFS does not seem to be running..." >&4
