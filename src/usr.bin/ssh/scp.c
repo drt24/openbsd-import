@@ -70,7 +70,7 @@ static struct timeval start;
 volatile unsigned long statbytes;
 
 /* Total size of current file. */
-unsigned long totalbytes = 0;
+off_t totalbytes = 0;
 
 /* Name of current file being transferred. */
 char *curfile;
