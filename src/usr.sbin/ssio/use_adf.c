@@ -35,7 +35,7 @@ static char *rcs_id = "$Id$";
  * use_adf.c: make the scanner use the ADF as the next paper source
  */
 
-#include <sys/types.h>
+#include <sys/param.h>
 #if defined(__NetBSD__) || defined(__OpenBSD__)
 # include <sys/ioctl.h>
 #endif
@@ -58,7 +58,7 @@ main(int argc, char *argv[])
 {
   int sfd;
   char *logical_name = "scan0";
-  char device[255];
+  char device[MAXPATHLEN];
 
   int c;
   extern int optind;
@@ -78,6 +78,12 @@ main(int argc, char *argv[])
     }
   }
 
+  if (snprintf(device, sizeof device, "/dev/%s", logical_name) >=
+    sizeof device) {
+    fprintf(stderr, "%s: name to long", device);
+    exit(1);
+  }
+	
   strcpy(device, "/dev/");
   strcat(device, logical_name);
 
