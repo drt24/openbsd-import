@@ -36,6 +36,7 @@
 static char *rcsid = "$Id$";
 #endif /* LIBC_SCCS and not lint */
 
+#include <sys/types.h>
 #ifndef _KERNEL
 #include <string.h>
 #else
