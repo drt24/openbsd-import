@@ -68,7 +68,7 @@
 %typedef struct ru_utmp rutmp;
 %
 %struct utmparr {
-%	struct utmp **uta_arr;
+%	struct ru_utmp **uta_arr;
 %	int uta_cnt;
 %};
 %typedef struct utmparr utmparr;
@@ -132,7 +132,7 @@
 %bool_t
 %xdr_utmpptr(xdrs, objpp)
 %	XDR *xdrs;
-%	struct utmp **objpp;
+%	struct ru_utmp **objpp;
 %{
 %	if (!xdr_reference(xdrs, (char **) objpp, sizeof (struct ru_utmp), 
 %			   xdr_utmp)) {
@@ -147,7 +147,7 @@
 %	struct utmparr *objp;
 %{
 %	if (!xdr_array(xdrs, (char **)&objp->uta_arr, (u_int *)&objp->uta_cnt,
-%		       MAXUSERS, sizeof(struct utmp *), xdr_utmpptr)) {
+%		       MAXUSERS, sizeof(struct ru_utmp *), xdr_utmpptr)) {
 %		return (FALSE);
 %	}
 %	return (TRUE);
