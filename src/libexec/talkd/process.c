@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: process.c,v 1.4 1996/06/24 13:41:29 mickey Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -230,7 +230,7 @@ find_user(name, tty)
 			}
 		}
 	fclose(fd);
-	if (status == SUCCESS)
+	if (*tty != '\0' && status == SUCCESS)
 		strcpy(tty, ubuf1.ut_line);
 	return (status);
 }
