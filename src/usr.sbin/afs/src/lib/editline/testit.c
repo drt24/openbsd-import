@@ -1,4 +1,4 @@
-/*  $Revision$
+/*  $KTH: 1.2 $
 **
 **  A "micro-shell" to test editline library.
 **  If given any arguments, commands aren't executed.

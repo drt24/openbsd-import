@@ -1,5 +1,5 @@
-/* $Header$ */
-/* $Source$ */
+/* $KTH: /afs/stacken.kth.se/src/SourceRepository/arla/rx/rx_strm.h,v 1.3 1998/02/22 19:54:23 joda Exp $ */
+/* $KTH: /afs/stacken.kth.se/src/SourceRepository/arla/rx/rx_strm.h,v $ */
 
 /*
 ****************************************************************************

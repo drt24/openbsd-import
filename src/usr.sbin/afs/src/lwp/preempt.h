@@ -1,8 +1,8 @@
-/* $Header$ */
-/* $Source$ */
+/* $KTH: /afs/stacken.kth.se/src/SourceRepository/arla/lwp/preempt.h,v 1.2 1999/02/01 04:56:31 assar Exp $ */
+/* $KTH: /afs/stacken.kth.se/src/SourceRepository/arla/lwp/preempt.h,v $ */
 
 #if !defined(lint) && !defined(LOCORE) && defined(RCS_HDRS)
-static char *rcsidpreempt = "$Header$";
+static char *rcsidpreempt = "$KTH: /afs/stacken.kth.se/src/SourceRepository/arla/lwp/preempt.h,v 1.2 1999/02/01 04:56:31 assar Exp $";
 #endif
 
 /*
