@@ -1,4 +1,4 @@
-/*	$OpenBSD: ostern.c,v 1.2 1998/11/05 04:44:08 pjanzen Exp $	*/
+/*	$OpenBSD: ostern.c,v 1.3 1998/12/13 07:31:08 pjanzen Exp $	*/
 
 /*
  * Copyright (c) 1996 Wolfram Schneider <wosch@FreeBSD.org>. Berlin.
@@ -29,7 +29,7 @@
  */
 
 #ifndef lint
-static char rcsid[] = "$OpenBSD: ostern.c,v 1.2 1998/11/05 04:44:08 pjanzen Exp $";
+static char rcsid[] = "$OpenBSD: ostern.c,v 1.3 1998/12/13 07:31:08 pjanzen Exp $";
 #endif /* not lint */
 
 #include <stdio.h>
@@ -37,6 +37,8 @@ static char rcsid[] = "$OpenBSD: ostern.c,v 1.2 1998/11/05 04:44:08 pjanzen Exp 
 #include <string.h>
 #include <time.h>
 #include <tzfile.h>
+
+#include "calendar.h"
 
 /* return year day for Easter */
 
