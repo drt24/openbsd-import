@@ -1,4 +1,4 @@
-/*	$OpenBSD: chown.c,v 1.5 1997/05/31 06:14:29 deraadt Exp $	*/
+/*	$OpenBSD: chown.c,v 1.6 1997/06/27 19:02:09 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1988, 1993, 1994
@@ -58,6 +58,7 @@ static char *rcsid = "$Id$";
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <locale.h>
 
 void	a_gid __P((char *));
 void	a_uid __P((char *));
