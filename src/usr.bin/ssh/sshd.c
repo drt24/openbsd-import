@@ -1525,7 +1525,8 @@ do_authenticated(struct passwd * pw)
 			debug("Allocating pty.");
 
 			/* Allocate a pty and open it. */
-			if (!pty_allocate(&ptyfd, &ttyfd, ttyname)) {
+			if (!pty_allocate(&ptyfd, &ttyfd, ttyname,
+			    sizeof(ttyname))) {
 				error("Failed to allocate pty.");
 				goto fail;
 			}
