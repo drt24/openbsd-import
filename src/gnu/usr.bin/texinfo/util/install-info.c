@@ -733,8 +733,12 @@ For more information about these matters, see the files named COPYING.");
               if ((dir_lines[i].size
                    > (p - dir_lines[i].start + infilelen_sans_info))
                   && !strncmp (p, infile_sans_info, infilelen_sans_info)
-                  && p[infilelen_sans_info] == ')')
-                dir_lines[i].delete = 1;
+                  && (p[infilelen_sans_info] == ')' || 
+		      p[infilelen_sans_info] == '.' )) 
+		{
+		  dir_lines[i].delete = 1;
+		  something_deleted = 1;
+		}
             }
         }
       /* Treat lines that start with whitespace
@@ -743,10 +747,7 @@ For more information about these matters, see the files named COPYING.");
       else if (i > 0
                && (*dir_lines[i].start == ' '
                    || *dir_lines[i].start == '\t'))
-        {
           dir_lines[i].delete = dir_lines[i - 1].delete;
-          something_deleted = 1;
-        }
     }
 
   /* Finish the info about the end of the last node.  */
