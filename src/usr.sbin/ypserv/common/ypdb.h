@@ -74,4 +74,4 @@ DBM     *ypdb_open __P((const char *, int, int));
 int	 ypdb_store __P((DBM *, datum, datum, int));
 __END_DECLS
 
-#endif /* !_YPDB_H_
+#endif /* !_YPDB_H_ */
