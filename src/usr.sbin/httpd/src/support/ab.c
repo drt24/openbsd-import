@@ -1593,7 +1593,12 @@ int main(int argc, char **argv)
 	     */
 	    while (isspace((int)*optarg))
 		optarg++;
-	    l = ap_base64encode(tmp, optarg, strlen(optarg));
+            if (ap_base64encode_len(strlen(optarg)) > sizeof(tmp)) {
+                fprintf(stderr, "%s: Authentication credentials too long\n",
+                        argv[0]);
+                exit(1);
+            }
+            l = ap_base64encode(tmp, optarg, strlen(optarg));
 	    tmp[l] = '\0';
 
 	    strncat(auth, "Authorization: Basic ", sizeof(auth)-strlen(auth)-1);
@@ -1606,6 +1611,10 @@ int main(int argc, char **argv)
 	     */
 	    while (isspace((int)*optarg))
 		optarg++;
+            if (ap_base64encode_len(strlen(optarg)) > sizeof(tmp)) {
+                fprintf(stderr, "%s: Proxy credentials too long\n", argv[0]);
+                exit(1);
+            }
 	    l = ap_base64encode(tmp, optarg, strlen(optarg));
 	    tmp[l] = '\0';
 
