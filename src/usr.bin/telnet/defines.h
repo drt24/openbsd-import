@@ -1,3 +1,6 @@
+/*	$OpenBSD$	*/
+/*	$NetBSD: defines.h,v 1.5 1996/02/28 21:03:55 thorpej Exp $	*/
+
 /*
  * Copyright (c) 1988, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -31,7 +34,6 @@
  * SUCH DAMAGE.
  *
  *	from: @(#)defines.h	8.1 (Berkeley) 6/6/93
- *	$Id$
  */
 
 #define	settimer(x)	clocks.x = clocks.system++

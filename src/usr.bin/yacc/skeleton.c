@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 #include "defs.h"
 
 /*  The definition of yysccsid in the banner should be replaced with	*/
@@ -16,7 +18,7 @@ char *banner[] =
 {
     "#ifndef lint",
     "/*static char yysccsid[] = \"from: @(#)yaccpar	1.9 (Berkeley) 02/21/93\";*/",
-    "static char yyrcsid[] = \"$Id$\";",
+    "static char yyrcsid[] = \"$OpenBSD$\";",
     "#endif",
     "#define YYBYACC 1",
     "#define YYMAJOR 1",

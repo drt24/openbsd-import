@@ -1,4 +1,4 @@
-/*	$Id$ */
+/*	$OpenBSD$	*/
 
 #include <assert.h>
 #include <ctype.h>
