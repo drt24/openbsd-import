@@ -51,6 +51,8 @@
 #define	_BSD_SIZE_T_	unsigned int		/* sizeof() */
 #define	_BSD_SSIZE_T_	int			/* byte count or error */
 #define	_BSD_TIME_T_	long			/* time() */
+#define	_BSD_CLOCKID_T_	int
+#define	_BSD_TIMER_T_	int
 
 #include "va-m88k.h"
 
