@@ -205,7 +205,7 @@ void nextstate()
   switch (state) {
   case 0:
 	if (N_BADMAG(x))
-		panic("Bad exec format\n");
+		panic("Bad exec format");
 	load = addr = (uch *)(x.a_entry & 0x00ffff00);
 	printf("Uncompressing @ 0x%x\n", addr);
 	bsize = x.a_text;
