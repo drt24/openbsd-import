@@ -33,6 +33,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include <unistd.h>
 
 #include "defs.h"
@@ -69,7 +70,7 @@ GetLabel()
 void
 randinit()
 {
-#ifdef __FreeBSD__
+#if __FreeBSD__ >= 3
   static int initdone;
 
   if (!initdone) {
