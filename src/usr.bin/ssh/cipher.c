@@ -35,7 +35,7 @@ void
 SSH_3CBC_ENCRYPT(des_key_schedule ks1,
 		 des_key_schedule ks2, des_cblock * iv2,
 		 des_key_schedule ks3, des_cblock * iv3,
-		 void *dest, void *src,
+		 unsigned char *dest, unsigned char *src,
 		 unsigned int len)
 {
 	des_cblock iv1;
@@ -56,7 +56,7 @@ void
 SSH_3CBC_DECRYPT(des_key_schedule ks1,
 		 des_key_schedule ks2, des_cblock * iv2,
 		 des_key_schedule ks3, des_cblock * iv3,
-		 void *dest, void *src,
+		 unsigned char *dest, unsigned char *src,
 		 unsigned int len)
 {
 	des_cblock iv1;
@@ -267,7 +267,7 @@ cipher_encrypt(CipherContext *context, unsigned char *dest,
 		SSH_3CBC_ENCRYPT(context->u.des3.key1,
 				 context->u.des3.key2, &context->u.des3.iv2,
 				 context->u.des3.key3, &context->u.des3.iv3,
-				 dest, (void *) src, len);
+				 dest, (unsigned char *) src, len);
 		break;
 
 	case SSH_CIPHER_BLOWFISH:
@@ -302,7 +302,7 @@ cipher_decrypt(CipherContext *context, unsigned char *dest,
 		SSH_3CBC_DECRYPT(context->u.des3.key1,
 				 context->u.des3.key2, &context->u.des3.iv2,
 				 context->u.des3.key3, &context->u.des3.iv3,
-				 dest, (void *) src, len);
+				 dest, (unsigned char *) src, len);
 		break;
 
 	case SSH_CIPHER_BLOWFISH:
