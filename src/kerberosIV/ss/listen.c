@@ -205,10 +205,10 @@ ss_abort_subsystem(sci_idx, code)
     
 }
 
-int
+void
 ss_quit(argc, argv, sci_idx, infop)
     int argc;
-    char **argv;
+    const char * const *argv;
     int sci_idx;
     pointer infop;
 {

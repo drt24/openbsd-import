@@ -250,7 +250,7 @@ kadm_cli_send(st_dat, st_siz, ret_dat, ret_siz)
 	(void) strncpy((char *)act_st, KADM_VERSTR, KADM_VERSIZE);
 	act_len = KADM_VERSIZE;
 
-	if ((retdat = kadm_cli_keyd(&sess_key, sess_sched)) != KADM_SUCCESS) {
+	if ((retdat = kadm_cli_keyd((des_cblock *)&sess_key, sess_sched)) != KADM_SUCCESS) {
 		free((char *)act_st);
 		return retdat;	       /* couldnt get key working */
 	}
