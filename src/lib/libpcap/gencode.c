@@ -1,4 +1,4 @@
-/*	$OpenBSD: gencode.c,v 1.12 2000/04/26 21:25:52 jakob Exp $	*/
+/*	$OpenBSD: gencode.c,v 1.13 2001/06/25 23:03:32 provos Exp $	*/
 
 /*
  * Copyright (c) 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998
@@ -360,6 +360,20 @@ pcap_compile_nopcap(int snaplen_arg, int linktype_arg,
 
 	freechunks();
 	return (0);
+}
+
+/*
+ * Clean up a "struct bpf_program" by freeing all the memory allocated
+ * in it.
+ */
+void
+pcap_freecode(struct bpf_program *program)
+{
+	program->bf_len = 0;
+	if (program->bf_insns != NULL) {
+		free((char *)program->bf_insns);
+		program->bf_insns = NULL;
+	}
 }
 
 /*
