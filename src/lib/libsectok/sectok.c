@@ -411,7 +411,7 @@ lookupSym(void *handle, char *name)
 #else
     char undername[32];
 
-    sprintf(undername, "_%s", name);
+    snprintf(undername, sizeof undername, "_%s", name);
     return dlsym(handle, undername);
 #endif
 }

@@ -100,9 +100,9 @@ todos_scopen(int ttyn, int flags, int *ep)
 #endif /* BYTECOUNT */
 
 #ifdef __sun
-    sprintf(ttyname, ttynametmpl, 'a' + ttyn);
+    snprintf(ttyname, sizeof ttyname, ttynametmpl, 'a' + ttyn);
 #else
-    sprintf(ttyname, ttynametmpl, ttyn);
+    snprintf(ttyname, sizeof ttyname, ttynametmpl, ttyn);
 #endif
 
     

@@ -127,7 +127,7 @@ sectok_get_ins(int ins)
 	    break;
 
     if (!p->name) {
-	sprintf(name, "unknown ins %02x", ins);
+	snprintf(name, sizeof name, "unknown ins %02x", ins);
 	return name;
     }
 
