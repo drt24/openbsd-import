@@ -10,7 +10,7 @@ DPADD+=	${LIBUTIL}
 BINOWN=	root
 BINGRP=	daemon
 BINMODE=555
-BINDIR=	/usr/bin
+BINDIR=	/usr/sbin
 CFLAGS+=-I${.CURDIR}/../src
 .PATH:	${.CURDIR}/../src
 
