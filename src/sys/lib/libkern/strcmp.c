@@ -55,5 +55,5 @@ strcmp(s1, s2)
 	while (*s1 == *s2++)
 		if (*s1++ == 0)
 			return (0);
-	return (*(unsigned char *)s1 - *(unsigned char *)--s2);
+	return (*(const u_char *)s1 - *(const u_char *)--s2);
 }
