@@ -311,7 +311,7 @@ void read_server_config(ServerOptions *options, const char *filename)
 	  break;
 
 	case sRandomSeedFile:
-	  fprintf(stderr, "%s line %d: option is obsolete.\n",
+	  fprintf(stderr, "%s line %d: \"randomseed\" option is obsolete.\n",
 		  filename, linenum);
 	  cp = strtok(NULL, WHITESPACE);
 	  break;
