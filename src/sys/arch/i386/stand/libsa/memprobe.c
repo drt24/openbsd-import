@@ -1,4 +1,4 @@
-/*	$OpenBSD: memprobe.c,v 1.32 1999/08/25 00:54:19 mickey Exp $	*/
+/*	$OpenBSD: memprobe.c,v 1.33 1999/09/30 06:29:57 downsj Exp $	*/
 
 /*
  * Copyright (c) 1997-1999 Michael Shalayeff
@@ -40,7 +40,6 @@
 #include "libsa.h"
 
 u_int cnvmem, extmem;		/* XXX - compatibility */
-
 
 /* Check gateA20
  *
