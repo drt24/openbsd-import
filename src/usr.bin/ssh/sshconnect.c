@@ -1116,7 +1116,7 @@ ssh_login(int host_key_valid,
 	u_int32_t rand = 0;
 
 	/*
-	 * Turn of check_host_ip for proxy connects, since
+	 * Turn off check_host_ip for proxy connects, since
 	 * we don't have the remote ip-address
 	 */
 	if (options.proxy_command != NULL && options.check_host_ip)
