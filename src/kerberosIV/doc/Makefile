@@ -1,7 +1,7 @@
 # $Id$
 
 KRBDEPTH=..
-.include <../Makefile.inc>
+.include "../Makefile.inc"
 
 .PATH:	${KRBSRC}/doc
 
