@@ -2,7 +2,7 @@
 
 # $RCSfile$$Revision$$Date$
 
-print "1..10\n";
+print "1..15\n";
 
 open (tmp,'>Cmd_while.tmp') || die "Can't create Cmd_while.tmp.";
 print tmp "tvi925\n";
@@ -108,4 +108,23 @@ $i = 9;
 {
     $i++;
 }
+print "ok $i\n";
+
+# Check curpm is reset when jumping out of a scope
+'abc' =~ /b/;
+WHILE:
+while (1) {
+  $i++;
+  print "#$`,$&,$',\nnot " unless $` . $& . $' eq "abc";
+  print "ok $i\n";
+  {                             # Localize changes to $` and friends
+    'end' =~ /end/;
+    redo WHILE if $i == 11;
+    next WHILE if $i == 12;
+    # 13 do a normal loop
+    last WHILE if $i == 14;
+  }
+}
+$i++;
+print "not " unless $` . $& . $' eq "abc";
 print "ok $i\n";
