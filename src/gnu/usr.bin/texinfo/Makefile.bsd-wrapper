@@ -16,16 +16,16 @@ all:	config.status
 
 .FORCE:	.IGNORE
 
-.ifdef GLOBAL_CACHE
+.ifdef GLOBAL_AUTOCONF_CACHE
 config: .FORCE
 	INSTALL_PROGRAM="${INSTALL} ${INSTALL_COPY} ${INSTALL_STRIP}" \
 		/bin/sh ${.CURDIR}/configure --prefix=/usr \
-		--cache-file=${HOME}/.Makefile.bsd-wrapper.cache
+		--cache-file=${GLOBAL_AUTOCONF_CACHE}
 
 config.status:
 	INSTALL_PROGRAM="${INSTALL} ${INSTALL_COPY} ${INSTALL_STRIP}" \
 		/bin/sh ${.CURDIR}/configure --prefix=/usr \
-		--cache-file=${HOME}/.Makefile.bsd-wrapper.cache
+		--cache-file=${GLOBAL_AUTOCONF_CACHE}
 .else
 config: .FORCE
 	-rm -f config.cache
