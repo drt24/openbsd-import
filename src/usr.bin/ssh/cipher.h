@@ -16,7 +16,7 @@ Created: Wed Apr 19 16:50:42 1995 ylo
 #ifndef CIPHER_H
 #define CIPHER_H
 
-#include "des.h"
+#include <des.h>
 #include "blowfish.h"
 
 /* Cipher types.  New types can be added, but old types should not be removed
