@@ -155,7 +155,7 @@ main(argc, argv)
 			done |= 1 << argnum;
 			if (gflag && hasquota(fs, GRPQUOTA, &qfnp))
 				errs += repquota(fs, GRPQUOTA, qfnp);
-			if (uflag && hasquota(fs, GRPQUOTA, &qfnp))
+			if (uflag && hasquota(fs, USRQUOTA, &qfnp))
 				errs += repquota(fs, USRQUOTA, qfnp);
 		}
 	}
