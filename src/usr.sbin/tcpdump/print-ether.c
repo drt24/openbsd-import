@@ -196,6 +196,13 @@ ether_encap_print(u_short ethertype, const u_char *p,
 		ether_print(p + 4, length - 4);
  		return (1);
 
+#ifdef PPP
+	case ETHERTYPE_PPPOEDISC:
+	case ETHERTYPE_PPPOE:
+		pppoe_if_print(ethertype, p, length, caplen);
+		return (1);
+#endif
+
 	case ETHERTYPE_LAT:
 	case ETHERTYPE_SCA:
 	case ETHERTYPE_MOPRC:
