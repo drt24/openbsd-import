@@ -21,10 +21,6 @@ DPADD+=	${LIBKRB} ${LIBDES}
 LDADD+=	-lkrb -ldes
 .endif
 
-LINKS=	${BINDIR}/passwd ${BINDIR}/yppasswd
-MLINKS=	passwd.1 yppasswd.1
-
-BINOWN=	root
 BINMODE=4555
 
 .include <bsd.prog.mk>

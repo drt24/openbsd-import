@@ -80,21 +80,6 @@ main(argc, argv)
 	basename = strrchr(argv[0], '/');
 	if (basename == NULL)
 		basename = argv[0];
-	if (strcmp(basename, "yppasswd") == 0) {
-#ifdef YP
-		if (!use_yp) {
-			fprintf(stderr, "yppasswd: YP not in use.\n");
-			exit (1);
-		}
-		use_kerberos = 0;
-		use_yp = 1;
-		force_yp = 1;
-#else
-		fprintf(stderr, "yppasswd: YP not compiled in\n");
-		exit(1);
-#endif
-	}
-
 	
 	while ((ch = getopt(argc, argv, "lky")) != EOF)
 		switch (ch) {
