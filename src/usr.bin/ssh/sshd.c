@@ -640,9 +640,11 @@ main(int ac, char **av)
 	if (match_pattern(hostname, options.deny_hosts[i]) ||
 	    match_pattern(ipaddr, options.deny_hosts[i]))
 	  {
-	    log("Connection from %.200s denied.\n", hostname);
-	    hostname = "You are not allowed to connect.  Go away!\r\n";
-	    write(sock_out, hostname, strlen(hostname));
+	    if(!options.silent_deny){
+	      log("Connection from %.200s denied.\n", hostname);
+	      hostname = "You are not allowed to connect.  Go away!\r\n";
+	      write(sock_out, hostname, strlen(hostname));
+	    }
 	    close(sock_in);
 	    close(sock_out);
 	    exit(0);
@@ -723,8 +725,14 @@ main(int ac, char **av)
 	  break;
       if (i >= options.num_allow_hosts)
 	{
-	  log("Connection from %.200s not allowed.\n", hostname);
-	  packet_disconnect("Sorry, you are not allowed to connect.");
+	  if(!options.silent_deny){
+	    log("Connection from %.200s not allowed.\n", hostname);
+	    packet_disconnect("Sorry, you are not allowed to connect.");
+	  }else{
+            close(sock_in);
+            close(sock_out);
+	    exit(0);
+	  }
 	  /*NOTREACHED*/
 	}
     }
