@@ -72,21 +72,11 @@ main(int argc, char **argv)
 	int ch;
 	char *iface;
 
-	opterr = 0;
-	ch = getopt(argc, argv, "i:");
-	if (ch == 'i') {
-		iface = optarg;
-	} else {
-		if (argc > 1 && argv[1][0] != '-') {
-			iface = argv[1];
-			optind = 2;
-		} else {
-			iface = "ipw0";
-			optind = 1;
-		}
-		optreset = 1;
+	if (argc == 1)
+		iface = "ipw0";
+	else if (argc > 1 && argv[1][0] != '-') {
+		iface = argv[1];
 	}
-	opterr = 1;
 
 	while ((ch = getopt(argc, argv, "f:kr")) != -1) {
 		switch (ch) {
@@ -117,10 +107,8 @@ usage(void)
 {
 	extern char *__progname;
 
-	(void)fprintf(stderr, "usage:  %s -i iface\n"
-	    "\t%s -i iface -f firmware\n"
-	    "\t%s -i iface -k\n"
-	    "\t%s -i iface -r\n", __progname, __progname, __progname, 
+	fprintf(stderr,
+	    "usage: %s [interface] [-i interface] [-f firmware] [-kr]\n",
 	    __progname);
 
 	exit(EX_USAGE);

@@ -81,7 +81,9 @@ main(int argc, char **argv)
 	char *iface = NULL, *mode = NULL, *path = NULL;
 	int noflag = 1, kflag = 0, rflag = 0;
 
-	if (argc > 1 && argv[1][0] != '-') {
+	if (argc == 1)
+		iface = "iwi0";
+	else if (argc > 1 && argv[1][0] != '-') {
 		iface = argv[1];
 		optind++;
 	}
@@ -142,10 +144,8 @@ usage(void)
 {
 	extern char *__progname;
 
-	(void)fprintf(stderr, "usage:  %s iface\n"
-	    "\t%s iface -d path [-m bss|ibss]\n"
-	    "\t%s iface -k\n"
-	    "\t%s iface -r\n", __progname, __progname, __progname,
+	fprintf(stderr,
+	    "usage: %s [interface] [-i interface] [-d path] [-kr]\n",
 	    __progname);
 
 	exit(EX_USAGE);
