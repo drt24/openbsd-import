@@ -138,11 +138,14 @@ main(argc, argv)
 	fchown(tmpfd, getuid(), getgid());
 	if (tflag) {
 		protoprivs = getprivs(0, quotatype);
-		if (writetimes(protoprivs, tmpfd, quotatype) == 0)
+		if (writetimes(protoprivs, tmpfd, quotatype) == 0) {
+			unlink(tmpfil);
 			exit(1);
+		}
 		if (editit(tmpfil) && readtimes(protoprivs, tmpfd))
 			putprivs(0, quotatype, protoprivs);
 		freeprivs(protoprivs);
+		unlink(tmpfil);
 		exit(0);
 	}
 	for ( ; argc > 0; argc--, argv++) {
