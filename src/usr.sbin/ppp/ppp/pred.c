@@ -287,7 +287,7 @@ Pred1Input(void *v, struct ccp *ccp, u_short *proto, struct mbuf *bp)
 }
 
 static void
-Pred1DictSetup(void *v, struct ccp *ccp, u_short proto, struct mbuf * bp)
+Pred1DictSetup(void *v, struct ccp *ccp, u_short proto, struct mbuf *bp)
 {
 }
 

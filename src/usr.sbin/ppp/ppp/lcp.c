@@ -874,9 +874,7 @@ LcpDecodeConfig(struct fsm *fp, u_char *cp, int plen, int mode_type,
 	  dec->ackend += 2;
 	} else {
 #ifdef OLDMST
-	  /*
-	   * MorningStar before v1.3 needs NAK
-	   */
+	  /* MorningStar before v1.3 needs NAK */
 	  memcpy(dec->nakend, cp, 2);
 	  dec->nakend += 2;
 #else
@@ -902,9 +900,7 @@ LcpDecodeConfig(struct fsm *fp, u_char *cp, int plen, int mode_type,
 	  dec->ackend += 2;
 	} else {
 #ifdef OLDMST
-	  /*
-	   * MorningStar before v1.3 needs NAK
-	   */
+	  /* MorningStar before v1.3 needs NAK */
 	  memcpy(dec->nakend, cp, 2);
 	  dec->nakend += 2;
 #else

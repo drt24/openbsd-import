@@ -232,7 +232,7 @@ FilterCheck(struct ip *pip, struct filter *filter)
 
 #ifdef notdef
 static void
-IcmpError(struct ip * pip, int code)
+IcmpError(struct ip *pip, int code)
 {
   struct mbuf *bp;
 

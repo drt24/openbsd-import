@@ -99,7 +99,7 @@ vj_LayerPush(struct bundle *bundle, struct link *l, struct mbuf *bp, int pri,
 }
 
 static struct mbuf *
-VjUncompressTcp(struct ipcp *ipcp, struct mbuf * bp, u_char type)
+VjUncompressTcp(struct ipcp *ipcp, struct mbuf *bp, u_char type)
 {
   u_char *bufp;
   int len, olen, rlen;

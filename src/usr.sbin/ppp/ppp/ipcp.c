@@ -795,7 +795,7 @@ AcceptableAddr(const struct in_range *prange, struct in_addr ipaddr)
 }
 
 static void
-IpcpDecodeConfig(struct fsm *fp, u_char * cp, int plen, int mode_type,
+IpcpDecodeConfig(struct fsm *fp, u_char *cp, int plen, int mode_type,
                  struct fsm_decode *dec)
 {
   /* Deal with incoming PROTO_IPCP */

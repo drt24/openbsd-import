@@ -364,7 +364,7 @@ log_DumpBp(int lev, const char *hdr, const struct mbuf *bp)
 }
 
 void
-log_DumpBuff(int lev, const char *hdr, const u_char * ptr, int n)
+log_DumpBuff(int lev, const char *hdr, const u_char *ptr, int n)
 {
   if (log_IsKept(lev)) {
     char buf[50];

@@ -60,7 +60,7 @@
 #include "bundle.h"
 
 void
-sl_compress_init(struct slcompress * comp, int max_state)
+sl_compress_init(struct slcompress *comp, int max_state)
 {
   register u_int i;
   register struct cstate *tstate = comp->tstate;

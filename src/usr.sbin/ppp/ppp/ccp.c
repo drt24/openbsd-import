@@ -363,9 +363,7 @@ CcpLayerFinish(struct fsm *fp)
   log_Printf(LogCCP, "%s: LayerFinish.\n", fp->link->name);
 }
 
-/*
- *  Called when CCP has reached the OPEN state
- */
+/*  Called when CCP has reached the OPEN state */
 static int
 CcpLayerUp(struct fsm *fp)
 {

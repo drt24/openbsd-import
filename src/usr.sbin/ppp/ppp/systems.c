@@ -53,7 +53,7 @@ OpenSecret(const char *file)
 }
 
 void
-CloseSecret(FILE * fp)
+CloseSecret(FILE *fp)
 {
   fclose(fp);
 }

@@ -57,7 +57,7 @@ extern void lqr_Start(struct lcp *);
 extern void lqr_reStart(struct lcp *);
 extern void lqr_Stop(struct physical *, int);
 extern void lqr_StopTimer(struct physical *);
-extern void lqr_RecvEcho(struct fsm *, struct mbuf *);
+extern struct mbuf *lqr_RecvEcho(struct fsm *, struct mbuf *);
 extern struct mbuf *lqr_Input(struct bundle *, struct link *, struct mbuf *);
 
 extern struct layer lqrlayer;
