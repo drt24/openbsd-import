@@ -78,7 +78,7 @@ static struct r1r2s {
     {0x6381, "invalid key"},
     {0x67ff, "invalid length; should be %x"},
     {0x6980, "bad param"},
-    {0x6982, "unreadable"},
+    {0x6982, "permission denied"},
     {0x6983, "auth method blocked"},
     {0x6984, "data invalid"},
     {0x6985, "no file selected"},
