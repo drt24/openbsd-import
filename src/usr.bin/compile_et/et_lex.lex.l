@@ -16,7 +16,7 @@ end		return END;
 \n		++lineno;
 
 \"{PC}*\"	{ register char *p; yylval.dynstr = ds(yytext+1);
-		  if (p=strrchr(yylval.dynstr, '"')) *p='\0';
+		  if ((p = strrchr(yylval.dynstr, '"')) != NULL) *p = '\0';
 		  return QUOTED_STRING;
 		}
 
