@@ -1,4 +1,4 @@
-/*    $OpenBSD: ip_fil.c,v 1.16 1998/01/26 04:10:39 dgregor Exp $    */
+/*    $OpenBSD: ip_fil.c,v 1.17 1998/03/04 23:20:41 dgregor Exp $    */
 /*
  * Copyright (C) 1993-1997 by Darren Reed.
  *
@@ -900,7 +900,7 @@ struct tcpiphdr *ti;
 	/*
 	 * extra 0 in case of multicast
 	 */
-	err = ip_output(m, (struct mbuf *)0, 0, 0, 0);
+	err = ip_output(m, (struct mbuf *)0, 0, 0, 0, NULL);
 # endif
 	return err;
 }

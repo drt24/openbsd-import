@@ -1,4 +1,4 @@
-/*       $OpenBSD$       */
+/*       $OpenBSD: ip_auth.c,v 1.2 1998/02/17 01:39:01 dgregor Exp $       */
 /*
  * Copyright (C) 1997 by Darren Reed & Guido van Rooij.
  *
@@ -361,7 +361,7 @@ fr_authioctlloop:
 #  if SOLARIS
 			error = fr_qout(fr_auth[i].fra_q, m);
 #  else /* SOLARIS */
-			error = ip_output(m, NULL, NULL, IP_FORWARDING, NULL);
+			error = ip_output(m, NULL, NULL, IP_FORWARDING, NULL, NULL);
 #  endif /* SOLARIS */
 			if (error)
 				fr_authstats.fas_sendfail++;
