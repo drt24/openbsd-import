@@ -12,6 +12,7 @@ all:	config.status
 .FORCE:	.IGNORE
 
 config: .FORCE
+	-rm -f config.cache
 	sh ${.CURDIR}/configure --prefix=/usr
 
 config.status:
@@ -19,7 +20,7 @@ config.status:
 
 install: maninstall
 	${MAKE} prefix=${DESTDIR}/usr infodir=${DESTDIR}/usr/share/info \
-		bindir=${DESTDIR}/usr/bin INSTALL_MAN= install-gas install-ld
+		bindir=${DESTDIR}/usr/bin INSTALL_MAN= install-gas
 
 clean cleandir:
 	-@if [ -e Makefile ]; then ${MAKE} realclean; fi
