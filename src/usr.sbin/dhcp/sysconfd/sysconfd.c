@@ -140,7 +140,7 @@ void new_connection (proto)
 	int new_fd;
 
 	tmp = (struct sysconf_client *)malloc (sizeof *tmp);
-	if (tmp < 0)
+	if (tmp == NULL)
 		error ("Can't find memory for new client!");
 	memset (tmp, 0, sizeof *tmp);
 
