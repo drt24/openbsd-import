@@ -230,3 +230,4 @@ struct pcic_regs {
 #endif /* __82365_H__ */
 #ifndef __82365_H__
 #define __82365_H__
+#endif
