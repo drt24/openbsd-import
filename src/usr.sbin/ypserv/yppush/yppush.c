@@ -342,7 +342,7 @@ char **argv;
 		printf("Contacting master for ypservers (%s).\n", master);
 	  }
 
-	  client = yp_bind_host(master, YPPROG, YPVERS, 0);
+	  client = yp_bind_host(master, YPPROG, YPVERS, 0, 1);
 
 	  ypcb.foreach = pushit;
 	  ypcb.data = NULL;

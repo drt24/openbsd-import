@@ -64,10 +64,11 @@ extern void *ypresp_data;
 int _yplib_host_timeout = 10;
 
 CLIENT *
-yp_bind_host(server,program,version,port)
+yp_bind_host(server,program,version,port,usetcp)
 char *server;
 u_long	program,version;
 u_short port;
+int usetcp;
 {
 	struct sockaddr_in rsrv_sin;
 	int rsrv_sock;
@@ -102,12 +103,14 @@ u_short port;
 	tv.tv_sec = 10;
 	tv.tv_usec = 0;
 
-#if 0
-	client = clntudp_create(&rsrv_sin, program, version, tv, &rsrv_sock);
-#else
-	client = clnttcp_create(&rsrv_sin, program, version, &rsrv_sock,
-				0, 0);
-#endif
+	if (usetcp) {
+		client = clnttcp_create(&rsrv_sin, program, version,
+					&rsrv_sock, 0, 0);
+	} else {
+		client = clntudp_create(&rsrv_sin, program, version, tv,
+					&rsrv_sock);
+	}
+
 	if (client == NULL) {
 		fprintf(stderr, "clntudp_create: no contact with host %s.\n",
 			server);

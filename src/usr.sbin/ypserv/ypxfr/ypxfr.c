@@ -545,7 +545,7 @@ char *argv[];
 	  	
 	        yplog("Connect host: %s", host); 
 
-		client = yp_bind_host(host,YPPROG,YPVERS,0);
+		client = yp_bind_host(host,YPPROG,YPVERS,0,1);
 
 		status = get_remote_ordernum(client,domain,map,
 					     ordernum,&new_ordernum);
@@ -619,7 +619,8 @@ char *argv[];
 		client = yp_bind_host(ipadd,
 				      atoi(prog),
 				      1,
-				      atoi(port));
+				      atoi(port),
+				      0);
 		status = send_reply(client,xfr_status,atoi(tid));
 		clnt_destroy(client);
 	}
