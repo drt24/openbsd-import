@@ -41,6 +41,7 @@ static char rcsid[] = "$Id$";
 #include <termios.h>
 #endif
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <curses.h>
 #if	defined(ultrix)
@@ -642,7 +643,6 @@ InitTerminal()
 #if	defined(unix)
 	char KSEbuffer[2050];
 	char *lotsofspace = KSEbuffer;
-	extern void abort();
 	extern char *tgetstr();
 #endif	/* defined(unix) */
 
@@ -655,7 +655,7 @@ InitTerminal()
 	ClearArray(Terminal);
 	terminalCursorAddress = SetBufferAddress(0,0);
 #if defined(unix)
-	signal(SIGHUP, abort);
+	signal(SIGHUP, (void (*))abort);
 #endif
 
 	TryToSend = FastScreen;
