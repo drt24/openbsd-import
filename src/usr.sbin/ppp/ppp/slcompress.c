@@ -558,7 +558,7 @@ sl_uncompress_tcp(u_char ** bufp, int len, u_int type, struct slcompress *comp,
 
     /* Watch out for alighment problems.... */
     sum = ~changes;
-    bp = &((struct ip *)cp)->ip_sum;
+    bp = (u_short *)(cp + (int)&((struct ip *)0)->ip_sum);
     memcpy(bp, &sum, sizeof *bp);
   }
   return (len);
