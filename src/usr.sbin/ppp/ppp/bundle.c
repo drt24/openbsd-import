@@ -30,6 +30,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <net/if.h>
+#include <net/if_tun.h>
 #include <arpa/inet.h>
 #include <net/route.h>
 #include <netinet/in_systm.h>
@@ -739,6 +740,9 @@ bundle_Create(const char *prefix, int type, const char **argv)
   const char *ifname;
   struct ifreq ifrq;
   static struct bundle bundle;		/* there can be only one */
+#ifdef TUNSIFMODE
+  int iff;
+#endif
 
   if (bundle.iface != NULL) {	/* Already allocated ! */
     log_Printf(LogALERT, "bundle_Create:  There's only one BUNDLE !\n");
@@ -793,6 +797,14 @@ bundle_Create(const char *prefix, int type, const char **argv)
     close(bundle.dev.fd);
     return NULL;
   }
+
+#ifdef TUNSIFMODE
+  /* Make sure we're POINTOPOINT */
+  iff = IFF_POINTOPOINT;
+  if (ID0ioctl(bundle.dev.fd, TUNSIFMODE, &iff) < 0)
+    log_Printf(LogERROR, "bundle_Create: ioctl(TUNSIFMODE): %s\n",
+	       strerror(errno));
+#endif
 
   /*
    * Now, bring up the interface.
