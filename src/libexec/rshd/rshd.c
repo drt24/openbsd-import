@@ -446,6 +446,7 @@ doit(fromp)
 #ifdef CRYPT
 		if (doencrypt) {
 			struct sockaddr_in local_addr;
+
 			rc = sizeof(local_addr);
 			if (getsockname(0, (struct sockaddr *)&local_addr,
 			    &rc) < 0) {
@@ -455,17 +456,14 @@ doit(fromp)
 			}
 			authopts = KOPT_DO_MUTUAL;
 			rc = krb_recvauth(authopts, 0, ticket,
-				"rcmd", instance, &fromaddr,
-				&local_addr, kdata, "", schedule,
-				version);
+			    "rcmd", instance, (struct sockaddr_in *)&fromaddr,
+			    &local_addr, kdata, "", schedule, version);
 			desrw_set_key(&kdata->session, &schedule);
 		} else
 #endif
 			rc = krb_recvauth(authopts, 0, ticket, "rcmd",
-				instance, &fromaddr,
-				(struct sockaddr_in *) 0,
-				kdata, "", (struct des_ks_struct *) 0,
-				version);
+			    instance, (struct sockaddr_in *)&fromaddr,
+			    NULL, kdata, "", NULL, version);
 		if (rc != KSUCCESS) {
 			error("Kerberos authentication failure: %s\n",
 				  krb_get_err_text(rc));
