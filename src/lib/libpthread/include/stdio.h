@@ -297,6 +297,8 @@ __BEGIN_DECLS
 int	__srget __P((FILE *));
 int	__svfscanf __P((FILE *, const char *, va_list));
 int	__swbuf __P((int, FILE *));
+void	flockfile __P((FILE *fp));
+void	funlockfile __P((FILE *fp));
 __END_DECLS
 
 /*
