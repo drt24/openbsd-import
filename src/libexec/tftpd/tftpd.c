@@ -66,6 +66,7 @@ static char rcsid[] = "$Id$";
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
+#include <pwd.h>
 
 #define	TIMEOUT		5
 
@@ -94,12 +95,13 @@ usage()
 	exit(1);
 }
 
+int
 main(argc, argv)
 	int    argc;
 	char **argv;
 {
 	register struct tftphdr *tp;
-	struct pwent *pw;
+	struct passwd *pw;
 	register int n = 0;
 	int on = 1;
 	int fd = 0;
