@@ -37,6 +37,8 @@ loginfo		-i /usr/local/bin/mkmodules CVSROOT loginfo
 commitinfo	-i /usr/local/bin/mkmodules CVSROOT commitinfo
 rcsinfo		-i /usr/local/bin/mkmodules CVSROOT rcsinfo
 
+www		-i /usr/local/httpd/conf/cvswww www
+
 # Add more modules here 
 #
 #
