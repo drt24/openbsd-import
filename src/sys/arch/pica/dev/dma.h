@@ -133,6 +133,7 @@ typedef struct dma_softc {
 						/* Start routine pointer */
 	int (*isintr)(struct dma_softc *);	/* Int check routine pointer */
 	int (*intr)(struct dma_softc *);	/* Interrupt routine pointer */
+	int (*end)(struct dma_softc *);	/* Interrupt routine pointer */
 } dma_softc_t;
 
 #define	DMA_TO_DEV	0
@@ -146,4 +147,4 @@ typedef struct dma_softc {
 #define	DMA_MAP(a, b, c, d)	((a->map)(a, b, c, d))
 #define	DMA_INTR(r)		((r->intr)(r))
 #define	DMA_DRAIN(r)
-#define	DMA_END(r)		((r->reset)(r))
+#define	DMA_END(r)		((r->end)(r))
