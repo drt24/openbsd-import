@@ -49,6 +49,7 @@ static char rcsid[] = "$Id$";
 #include "packet.h"
 #include "encrypt.h"
 #include "validity.h"
+#include "attributes.h"
 #include "secrets.h"
 #include "schedule.h"
 #include "scheme.h"

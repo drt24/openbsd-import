@@ -61,25 +61,26 @@ photuris_cookie_request(struct stateob *st, u_char *buffer, int *size)
 	header = (struct cookie_request *) buffer;
 	*size = COOKIE_REQUEST_PACKET_SIZE;	/* fixed size */
 	
-	st->counter = 0;
-	prev_st = state_find(st->address);
-	old_st = NULL;
-	while (prev_st != NULL) {
-	     if (prev_st->lifetime >= timeout) {
-		  timeout = prev_st->lifetime;
-		  old_st = prev_st;
+	if (st->counter == 0) {
+	     prev_st = state_find(st->address);
+	     old_st = NULL;
+	     while (prev_st != NULL) {
+		  if (prev_st->lifetime >= timeout) {
+		       timeout = prev_st->lifetime;
+		       old_st = prev_st;
+		  }
+		  prev_st = prev_st->next;
 	     }
-	     prev_st = prev_st->next;
-	}
-
-	/* Check if we have an exchange going already */
-	if (old_st != NULL && old_st != st && timeout > time(NULL)) {
-	     if (old_st->initiator) {
-		  bcopy(old_st->rcookie, st->rcookie, COOKIE_SIZE);
-		  st->counter = old_st->counter;
-	     } else {
-		  bcopy(old_st->icookie, st->rcookie, COOKIE_SIZE);
-		  st->counter = 0;
+	     
+	     /* Check if we have an exchange going already */
+	     if (old_st != NULL && old_st != st && timeout > time(NULL)) {
+		  if (old_st->initiator) {
+		       bcopy(old_st->rcookie, st->rcookie, COOKIE_SIZE);
+		       st->counter = old_st->counter;
+		  } else {
+		       bcopy(old_st->icookie, st->rcookie, COOKIE_SIZE);
+		       st->counter = 0;
+		  }
 	     }
 	}
 

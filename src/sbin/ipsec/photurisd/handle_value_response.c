@@ -148,6 +148,10 @@ handle_value_response(u_char *packet, int size, char *address,
 	     return -1;
 	}
 	
+	/* Initialize Privacy Keys from Exchange Values */
+	init_privacy_key(st, 0);   /* User -> Owner direction */
+	init_privacy_key(st, 1);   /* Owner -> User direction */
+
 	packet_size = PACKET_BUFFER_SIZE;
 	if (photuris_identity_request(st, packet_buffer, &packet_size) == -1)
 	     return -1;

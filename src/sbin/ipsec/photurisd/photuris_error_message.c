@@ -76,8 +76,10 @@ photuris_error_message(struct stateob *st, u_char *buffer, int *size,
 	     if (i != COOKIE_SIZE || counter != 0)
 		  return 0;
 
-	     if (st != NULL)
+	     if (st != NULL) {
 		  bcopy(st->rcookie, header->rcookie, COOKIE_SIZE);
+		  buffer[ERROR_MESSAGE_PACKET_SIZE] = st->counter;
+	     }
 	}
 
 	return 0;
