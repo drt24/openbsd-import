@@ -89,7 +89,7 @@ char *getwire()
 	struct hostent *hp;
 	struct netent *np;
 	struct ifconf ifc;
-	struct ifreq *ifr;
+	struct ifreq *ifr, ifrpool;
 	caddr_t cp, cplim;
 	u_int32_t address, netmask, subnet;
 	char buf[GFBUFLEN], *s;
@@ -136,7 +136,8 @@ char *getwire()
 	 */
 	for (cp = buf; cp < cplim; cp += size(ifr)) {
 		addrlist *al;
-		memcpy(&ifr, cp, sizeof(ifr));
+		memcpy(&ifrpool, cp, sizeof(ifrpool));
+		ifr = &ifrpool;
 
 		if (ifr->ifr_addr.sa_family != AF_INET)
 			continue;
