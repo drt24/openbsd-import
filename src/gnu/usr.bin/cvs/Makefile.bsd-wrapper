@@ -14,7 +14,8 @@ config.status:
 	sh ${.CURDIR}/configure --prefix=/usr
 
 install: maninstall
-	${MAKE} prefix=${DESTDIR}/usr infodir=${DESTDIR}/usr/share/info install
+	${MAKE} prefix=${DESTDIR}/usr infodir=${DESTDIR}/usr/share/info \
+	    INSTALL_MAN= install
 
 clean cleandir:
 	-@if [ -e Makefile ]; then ${MAKE} realclean; fi
