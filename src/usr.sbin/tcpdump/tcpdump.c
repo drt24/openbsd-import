@@ -98,6 +98,7 @@ static struct printer printers[] = {
 	{ fddi_if_print,	DLT_FDDI },
 	{ null_if_print,	DLT_NULL },
 	{ atm_if_print,		DLT_ATM_RFC1483 },
+	{ null_if_print, 	DLT_LOOP },
 	{ NULL,			0 },
 };
 
