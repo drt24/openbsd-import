@@ -15,7 +15,11 @@ REALIMAGE=	/tmp/image.${PID}
 MDEC=		${DESTDIR}/usr/mdec
 
 LISTS=		${COMMONDIR}/list ${.CURDIR}/list
+.if defined(KERBEROS)
+CRUNCHCONF=	${COMMONDIR}/${CBIN}-krb.conf
+.else
 CRUNCHCONF=	${COMMONDIR}/${CBIN}.conf
+.endif
 MTREE=		${COMMONDIR}/mtree.conf
 
 all: ${CBIN}
