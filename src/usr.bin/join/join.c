@@ -561,6 +561,9 @@ obsolete(argv)
 		/* Return if "--". */
 		if (ap[0] == '-' && ap[1] == '-')
 			return;
+		/* skip if not an option */
+		if (ap[0] != '-')
+			continue;
 		switch (ap[1]) {
 		case 'a':
 			/* 
