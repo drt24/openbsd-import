@@ -184,6 +184,7 @@ int	LogPort;		/* port number for INET connections */
 int	Initialized = 0;	/* set when we have initialized ourselves */
 int	MarkInterval = 20 * 60;	/* interval between marks in seconds */
 int	MarkSeq = 0;		/* mark sequence number */
+int	SecureMode = 0;		/* when true, speak only unix domain socks */
 
 extern	int errno;
 extern	char *ctime(), *index(), *calloc();
@@ -204,7 +205,7 @@ main(argc, argv)
 	extern char *optarg;
 	void die(), domark(), init(), reapchild();
 
-	while ((ch = getopt(argc, argv, "df:m:p:")) != EOF)
+	while ((ch = getopt(argc, argv, "dsf:m:p:")) != EOF)
 		switch((char)ch) {
 		case 'd':		/* debug */
 			Debug++;
@@ -217,6 +218,9 @@ main(argc, argv)
 			break;
 		case 'p':		/* path */
 			LogName = optarg;
+			break;
+		case 's':		/* no network mode */
+			SecureMode++;
 			break;
 		case '?':
 		default:
@@ -260,7 +264,12 @@ main(argc, argv)
 		dprintf("cannot create %s (%d)\n", LogName, errno);
 		die(0);
 	}
-	finet = socket(AF_INET, SOCK_DGRAM, 0);
+	if (!SecureMode)
+		finet = socket(AF_INET, SOCK_DGRAM, 0);
+	else {
+		finet = -1;
+		inetm = 0;
+	}
 	if (finet >= 0) {
 		struct servent *sp;
 
