@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: print-ntp.c,v 1.9 2000/10/03 14:31:58 ho Exp $	*/
 
 /*
  * Copyright (c) 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -161,8 +161,7 @@ ntp_print(register const u_char *cp, u_int length)
 		break;
 
 	case PRIM_REF:
-		strncpy(rclock, (char *)&(bp->refid), 4);
-		rclock[4] = '\0';
+		strlcpy(rclock, (char *)&(bp->refid), sizeof(rclock));
 		fputs(rclock, stdout);
 		break;
 
