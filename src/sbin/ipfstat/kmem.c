@@ -38,7 +38,7 @@ int	openkmem()
 
 int	kmemcpy(buf, pos, n)
 register char	*buf;
-long	pos;
+u_long	pos;
 register int	n;
 {
 	register int	r;
