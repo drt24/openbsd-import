@@ -168,7 +168,7 @@ extern const char *z_errmsg[10]; /* indexed by 2-zlib_error */
 #endif
 
 /* Diagnostic functions */
-#ifdef DEBUG
+#ifdef DEBUG_ZLIB
 #  include <stdio.h>
 #  ifndef verbose
 #    define verbose 0
