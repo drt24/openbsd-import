@@ -93,6 +93,7 @@ main(argc, argv)
 	}
 	if (argc > 1 && strcmp(argv[1], "-d") == 0)
 		debug = 1;
+	init_table();
 	signal(SIGALRM, timeout);
 	alarm(TIMEOUT);
 	for (;;) {
