@@ -144,7 +144,7 @@ OsSetRoute(int cmd,
   wb = ID0write(s, &rtmes, nb);
   if (wb < 0) {
     LogPrintf(LogTCPIP, "OsSetRoute failure:\n");
-    LogPrintf(LogTCPIP, "OsSetRoute:  Cmd = %s\n", cmd);
+    LogPrintf(LogTCPIP, "OsSetRoute:  Cmd = %s\n", cmdstr);
     LogPrintf(LogTCPIP, "OsSetRoute:  Dst = %s\n", inet_ntoa(dst));
     LogPrintf(LogTCPIP, "OsSetRoute:  Gateway = %s\n", inet_ntoa(gateway));
     LogPrintf(LogTCPIP, "OsSetRoute:  Mask = %s\n", inet_ntoa(mask));
