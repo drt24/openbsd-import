@@ -1499,7 +1499,6 @@ pagein_done:
 				sc_print_addr(xs->sc_link);
 				printf("Target Busy\n");
 				break;
-#ifdef __FreeBSD__
 			    case SCSI_QUEUE_FULL:
 				/*
 				 * The upper level SCSI code will someday
@@ -1511,7 +1510,6 @@ pagein_done:
 				STAILQ_INSERT_TAIL(&ahc->assigned_scbs,
 						   scb, links);
 				break;
-#endif
 			    default:
 				sc_print_addr(xs->sc_link);
 				printf("unexpected targ_status: %x\n",
