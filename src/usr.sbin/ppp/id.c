@@ -146,6 +146,18 @@ ID0open(const char *path, int flags)
 }
 
 int
+ID0write(int fd, const void *data, size_t len)
+{
+  int ret;
+
+  ID0set0();
+  ret = write(fd, data, len);
+  LogPrintf(LogID0, "%d = write(%d, data, %d)\n", ret, fd, len);
+  ID0setuser();
+  return ret;
+}
+
+int
 ID0uu_lock(const char *basettyname)
 {
   int ret;

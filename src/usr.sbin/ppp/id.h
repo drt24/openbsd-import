@@ -33,5 +33,6 @@ extern int ID0unlink(const char *);
 extern int ID0socket(int, int, int);
 extern FILE *ID0fopen(const char *, const char *);
 extern int ID0open(const char *, int);
+extern int ID0write(int, const void *, size_t);
 extern int ID0uu_lock(const char *);
 extern int ID0uu_unlock(const char *);
