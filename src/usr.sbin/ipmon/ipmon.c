@@ -1,4 +1,4 @@
-/*	$OpenBSD$
+/*	$OpenBSD: ipmon.c,v 1.13 1998/09/15 10:01:39 pattonme Exp $
  * Copyright (C) 1993-1997 by Darren Reed.
  *
  * Redistribution and use in source and binary forms are permitted
@@ -762,6 +762,7 @@ char *argv[];
 		case 's' :
 			openlog(argv[0], LOG_NDELAY|LOG_PID, LOGFAC);
 			opts |= OPT_SYSLOG;
+			log = NULL;
 			break;
 		case 'S' :
 			opts |= OPT_STATE;
