@@ -1,7 +1,7 @@
 /*
 **	$Id$
 **
-** parse.c                         This file contains the protocol parser
+** parse.c			   This file contains the protocol parser
 **
 ** This program is in the public domain and may be used freely by anyone
 ** who wants to. 

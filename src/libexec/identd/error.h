@@ -1,7 +1,7 @@
 /*
 **	$Id$
 **
-** error.h                                               Error handling macros
+** error.h						 Error handling macros
 **
 ** This program is in the public domain and may be used freely by anyone
 ** who wants to. 

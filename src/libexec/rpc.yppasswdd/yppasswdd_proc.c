@@ -45,7 +45,7 @@ int make_passwd __P((yppasswd *));
 int *
 yppasswdproc_update_1_svc(argp, rqstp, transp)
 	yppasswd *argp;
-        struct svc_req *rqstp;
+	struct svc_req *rqstp;
 	SVCXPRT *transp;
 {
 	static int res;

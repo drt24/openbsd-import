@@ -711,7 +711,7 @@ error(const char *fmt, ...)
 #else
 error(fmt, va_alist)
 	char *fmt;
-        va_dcl
+	va_dcl
 #endif
 {
 	va_list ap;

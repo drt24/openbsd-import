@@ -205,7 +205,7 @@ err(const char *fmt, ...)
 #else
 err(fmt, va_alist)
 	char *fmt;
-        va_dcl
+	va_dcl
 #endif
 {
 	va_list ap;

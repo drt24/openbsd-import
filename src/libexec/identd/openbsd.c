@@ -156,8 +156,8 @@ getlist(tcbtablep, ktcbtablep, faddr, fport, laddr, lport)
 			break;
 		if (pcb.inp_faddr.s_addr == faddr->s_addr &&
 		    pcb.inp_laddr.s_addr == laddr->s_addr &&
-		    pcb.inp_fport        == fport &&
-		    pcb.inp_lport        == lport )
+		    pcb.inp_fport	 == fport &&
+		    pcb.inp_lport	 == lport )
 			return pcb.inp_socket;
 	}
   return NULL;

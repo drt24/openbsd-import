@@ -1,7 +1,7 @@
 /*
 **	$Id$
 **
-** config.c                         This file handles the config file
+** config.c			    This file handles the config file
 **
 ** This program is in the public domain and may be used freely by anyone
 ** who wants to. 

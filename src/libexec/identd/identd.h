@@ -1,7 +1,7 @@
 /*
 **	$Id$
 **
-** identd.h                 Common variables for the Pidentd daemon
+** identd.h		    Common variables for the Pidentd daemon
 **
 ** This program is in the public domain and may be used freely by anyone
 ** who wants to. 
