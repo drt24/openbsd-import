@@ -4,7 +4,7 @@
 CFLAGS+= -DBSDINETD
 PROG=	uucpd
 NOMAN=	noman
-LDADD+= -lcrypt
-DPADD+=	${LIBCRYPT}
+#LDADD+= -lcrypt
+#DPADD+=	${LIBCRYPT}
 
 .include <bsd.prog.mk>
