@@ -39,9 +39,6 @@ LINK	instbin			sbin/umount
 LINK	instbin			usr/bin/awk
 LINK	instbin			usr/bin/chgrp
 LINK	instbin			usr/bin/ftp
-LINK	instbin			usr/bin/gunzip
-LINK	instbin			usr/bin/gzcat
-LINK	instbin			usr/bin/gzip
 LINK	instbin			usr/bin/more
 LINK	instbin			usr/bin/sed
 LINK	instbin			usr/bin/strings
