@@ -1,4 +1,4 @@
-/*	$OpenBSD: fpu_explode.c,v 1.1 2001/09/08 22:33:51 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: fpu_explode.c,v 1.5 2000/08/03 18:32:08 eeh Exp $ */
 
 /*

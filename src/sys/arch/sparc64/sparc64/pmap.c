@@ -1,4 +1,4 @@
-/*	$OpenBSD: pmap.c,v 1.4 2001/09/20 23:23:59 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: pmap.c,v 1.107 2001/08/31 16:47:41 eeh Exp $	*/
 #undef	NO_VCACHE /* Don't forget the locked TLB in dostart */
 #define	HWREF

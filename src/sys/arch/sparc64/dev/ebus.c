@@ -1,4 +1,4 @@
-/*	$OpenBSD: ebus.c,v 1.4 2001/10/01 16:55:57 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: ebus.c,v 1.24 2001/07/25 03:49:54 eeh Exp $	*/
 
 /*

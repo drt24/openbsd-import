@@ -1,4 +1,4 @@
-/*	$OpenBSD: swapgeneric.c,v 1.1 2001/08/18 20:04:47 jason Exp $ */
+/*	$OpenBSD$ */
 /*	$NetBSD: swapgeneric.c,v 1.8 1996/03/14 21:09:32 christos Exp $ */
 
 /*-

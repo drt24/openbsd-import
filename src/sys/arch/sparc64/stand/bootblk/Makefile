@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.5 2001/09/06 19:12:34 jason Exp $
+#	$OpenBSD$
 #	$NetBSD: Makefile,v 1.1 2000/08/20 14:58:45 mrg Exp $
 
 CURDIR=	${.CURDIR}

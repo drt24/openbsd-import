@@ -1,4 +1,4 @@
-/*	$OpenBSD: disklabel.h,v 1.1 2001/08/18 16:19:28 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: disklabel.h,v 1.1.1.1 1998/06/20 04:58:51 eeh Exp $	*/
 
 /*

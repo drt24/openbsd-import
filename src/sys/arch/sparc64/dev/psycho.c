@@ -1,4 +1,4 @@
-/*	$OpenBSD: psycho.c,v 1.7 2001/09/27 20:45:34 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: psycho.c,v 1.39 2001/10/07 20:30:41 eeh Exp $	*/
 
 /*

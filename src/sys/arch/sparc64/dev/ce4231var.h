@@ -1,4 +1,4 @@
-/*	$OpenBSD: ce4231var.h,v 1.1 2001/10/01 18:10:32 jason Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 1999 Jason L. Wright (jason@thought.net)

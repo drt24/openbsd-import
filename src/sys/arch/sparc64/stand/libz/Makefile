@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.2 2001/08/22 10:25:55 art Exp $
+#	$OpenBSD$
 
 LIB=	z
 

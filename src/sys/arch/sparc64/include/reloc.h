@@ -1,4 +1,4 @@
-/*	$OpenBSD: reloc.h,v 1.1 2001/09/24 23:36:47 art Exp $	*/
+/*	$OpenBSD$	*/
 
 #ifndef	_MACH_RELOC_H_
 #define	_MACH_RELOC_H_

@@ -1,4 +1,4 @@
-/*	$OpenBSD: intr.c,v 1.4 2001/09/20 21:29:26 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: intr.c,v 1.39 2001/07/19 23:38:11 eeh Exp $ */
 
 /*

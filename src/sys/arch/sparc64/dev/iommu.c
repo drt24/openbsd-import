@@ -1,4 +1,4 @@
-/*	$OpenBSD: iommu.c,v 1.4 2001/09/26 19:31:57 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: iommu.c,v 1.42 2001/10/07 20:30:40 eeh Exp $	*/
 
 /*

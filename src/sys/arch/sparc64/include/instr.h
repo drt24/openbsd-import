@@ -1,4 +1,4 @@
-/*	$OpenBSD: instr.h,v 1.1 2001/08/18 20:16:10 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: instr.h,v 1.3 2000/01/10 03:53:20 eeh Exp $ */
 
 /*

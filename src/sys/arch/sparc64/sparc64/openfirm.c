@@ -1,4 +1,4 @@
-/*	$OpenBSD: openfirm.c,v 1.3 2001/08/24 00:03:23 art Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: openfirm.c,v 1.13 2001/06/21 00:08:02 eeh Exp $	*/
 
 /*

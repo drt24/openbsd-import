@@ -1,4 +1,4 @@
-# 	$OpenBSD: RAMDISKU5,v 1.2 2001/10/11 01:56:45 deraadt Exp $
+# 	$OpenBSD$
 
 # Machine architecture; required by config(8)
 machine		sparc64

@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.3 2001/08/18 16:31:53 jason Exp $
+#	$OpenBSD$
 
 .if ${MACHINE} == "sparc64"
 SUBDIR= bootblk libsa libkern libz ofwboot ofwboot.net

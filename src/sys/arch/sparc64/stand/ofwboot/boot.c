@@ -1,4 +1,4 @@
-/*	$OpenBSD: boot.c,v 1.3 2001/08/20 19:55:33 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: boot.c,v 1.3 2001/05/31 08:55:19 mrg Exp $	*/
 /*
  * Copyright (c) 1997, 1999 Eduardo E. Horvath.  All rights reserved.
