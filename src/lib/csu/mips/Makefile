@@ -6,13 +6,12 @@ OBJS=		crt0.o gcrt0.o scrt0.o
 CLEANFILES+=	core a.out
 SRCS=		crt0.c
 DEPS=
-CC=		gcc
 
 all: ${OBJS}
 
 crt0.o: ${SRCS} ${DEPS}
 	@echo "${COMPILE.c} -DCRT0 -DDYNAMIC ${.CURDIR}/${SRCS} -o ${.TARGET}"
-	@${COMPILE.c} -G0 -mabicalls -fPIC -DCRT0 -DDYNAMIC ${.CURDIR}/${SRCS} -o ${.TARGET}.o
+	@${COMPILE.c} -DCRT0 -DDYNAMIC ${.CURDIR}/${SRCS} -o ${.TARGET}.o
 	@${LD} -x -r ${.TARGET}.o -o ${.TARGET}
 	@rm -f ${.TARGET}.o
 
