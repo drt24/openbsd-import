@@ -2,8 +2,8 @@
 .\"
 .\" swedish version of mm
 .\" See tmac.m for version-information.
-.mso tmac.m
 .ds @language se
+.mso tmac.m
 .\"
 .ds Lf Figurer
 .ds Lt Tabeller
