@@ -37,6 +37,9 @@ CC = gcc
 CFLAGS = -O -g -DTRUE=1 -DFALSE=0
 
 PROGS = get_scanner set_scanner use_adf reset_scanner fs1toppm
+SCRIPTS = fujitsu_m3096g_grabscan.sh grabscan.sh hp_scanjet_IIc_grabscan.sh \
+	ricoh_fs1_grabscan.sh ricoh_is410_grabscan.sh ricoh_is50_grabscan.sh \
+	sharp_jx600_grabscan.sh umax_uc630_grabscan.sh
 
 BIN_DIR = /usr/local/bin
 MAN_DIR = /usr/local/man/man1
