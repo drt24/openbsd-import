@@ -576,8 +576,8 @@ static char expand_error[] = "No space to expand \"%s\"";
 					/*dlog("Expanding \"%s\" to \"%s\"", nbuf, val);*/
 #endif /* DEBUG */
 						if (BUFSPACE(ep, vlen)) {
-							strcpy(ep, vptr);
-							ep += vlen;
+							strlcpy(ep, vptr, expbuf + sizeof expbuf - ep);
+							ep += strlen(ep);
 						} else {
 							plog(XLOG_ERROR, expand_error, *p->opt);
 							goto out;
@@ -603,8 +603,8 @@ static char expand_error[] = "No space to expand \"%s\"";
 					int vlen = strlen(env);
 
 					if (BUFSPACE(ep, vlen)) {
-						strcpy(ep, env);
-						ep += vlen;
+						strlcpy(ep, env, expbuf + sizeof expbuf - ep);
+						ep += strlen(ep);
 					} else {
 						plog(XLOG_ERROR, expand_error, *p->opt);
 						goto out;
@@ -636,8 +636,7 @@ out:
 		 * Finish off the expansion
 		 */
 		if (BUFSPACE(ep, strlen(cp))) {
-			strcpy(ep, cp);
-			/*ep += strlen(ep);*/
+			strlcpy(ep, cp, envbuf + sizeof expbuf - ep);
 		} else {
 			plog(XLOG_ERROR, expand_error, *p->opt);
 		}

@@ -114,6 +114,7 @@ char *hn;
 	char *p = strdup(hn);
 	char *d;
 	char path[MAXPATHLEN];
+	size_t len = strlen(p) + 1;
 
 	domain_strip(p, hostname);
 	path[0] = '\0';
@@ -131,7 +132,7 @@ char *hn;
 
 	log("hostpath of '%s' is '%s'", hn, path);
 
-	strcpy(p, path);
+	strlcpy(p, path, len);
 	return p;
 }
 
