@@ -195,7 +195,8 @@ main(argc, argv)
 	struct servent *servp;
 	struct hostent *hep;
 	char *stmp;
-	int n, ba_len, ra_len;
+	int n;
+	socklen_t ba_len, ra_len;
 	int nfound, readfds;
 	int standalone;
 
