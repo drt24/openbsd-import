@@ -11,7 +11,7 @@
  */
 
 #include <stdio.h>
-#include <strings.h>
+#include <string.h>
 #include <sys/param.h>
 #include <des.h>
 #include <kerberosIV/krb.h>

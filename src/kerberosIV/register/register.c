@@ -54,7 +54,7 @@ static char sccsid[] = "@(#)register.c	8.1 (Berkeley) 6/1/93";
 #include <arpa/inet.h>
 #include <pwd.h>
 #include <stdio.h>
-#include <strings.h>
+#include <string.h>
 #include <netdb.h>
 #include <unistd.h>
 #include <des.h>

@@ -58,7 +58,7 @@ static char sccsid[] = "@(#)registerd.c	8.1 (Berkeley) 6/1/93";
 #include <kerberosIV/krb.h>
 #include <kerberosIV/krb_db.h>
 #include <stdio.h>
-#include <strings.h>
+#include <string.h>
 #include "register_proto.h"
 #include "pathnames.h"
 

@@ -172,7 +172,7 @@ static char rcsid_read_password_c[] =
 #include "conf.h"
 
 #include <stdio.h>
-#include <strings.h>
+#include <string.h>
 #include <sys/ioctl.h>
 #include <signal.h>
 #include <setjmp.h>

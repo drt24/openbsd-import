@@ -48,7 +48,7 @@ static char sccsid[] = "@(#)make_keypair.c	8.1 (Berkeley) 6/1/93";
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <stdio.h>
-#include <strings.h>
+#include <string.h>
 #include <netdb.h>
 #include <unistd.h>
 #include <des.h>
