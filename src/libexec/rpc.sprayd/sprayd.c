@@ -50,14 +50,14 @@ static int from_inetd = 1;
 void
 cleanup()
 {
-	(void) pmap_unset(SPRAYPROG, SPRAYVERS);
-	exit(0);
+	(void) pmap_unset(SPRAYPROG, SPRAYVERS);	/* XXX signal race */
+	_exit(0);
 }
 
 void
 die()
 {
-	exit(0);
+	_exit(0);
 }
 
 int

@@ -97,7 +97,7 @@ static sigjmp_buf openAbort;
 static void
 abortOpen()
 {
-	siglongjmp(openAbort, 1);
+	siglongjmp(openAbort, 1);	/* XXX signal/longjmp resource leaks */
 }
 
 XqueryIdle(display)

@@ -49,10 +49,10 @@ int from_inetd = 1;
 void
 cleanup()
 {
-	(void) pmap_unset(RUSERSPROG, RUSERSVERS_3);
+	(void) pmap_unset(RUSERSPROG, RUSERSVERS_3);	/* XXX signal races */
 	(void) pmap_unset(RUSERSPROG, RUSERSVERS_IDLE);
 	(void) pmap_unset(RUSERSPROG, RUSERSVERS_ORIG);
-	exit(0);
+	_exit(0);
 }
 
 int

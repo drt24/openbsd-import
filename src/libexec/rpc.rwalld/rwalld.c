@@ -57,8 +57,8 @@ int from_inetd = 1;
 void
 cleanup()
 {
-	(void) pmap_unset(WALLPROG, WALLVERS);
-	exit(0);
+	(void) pmap_unset(WALLPROG, WALLVERS);		/* XXX signal race */
+	_exit(0);
 }
 
 main(argc, argv)

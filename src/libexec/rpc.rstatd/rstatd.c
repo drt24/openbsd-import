@@ -49,10 +49,10 @@ int closedown = 20;	/* how long to wait before going dormant */
 void
 cleanup()
 {
-	(void) pmap_unset(RSTATPROG, RSTATVERS_TIME);
+	(void) pmap_unset(RSTATPROG, RSTATVERS_TIME);	/* XXX signal races */
 	(void) pmap_unset(RSTATPROG, RSTATVERS_SWTCH);
 	(void) pmap_unset(RSTATPROG, RSTATVERS_ORIG);
-	exit(0);
+	_exit(0);
 }
 
 main(argc, argv)
