@@ -1400,10 +1400,13 @@ void ssh_login(int host_key_valid,
   if ((supported_authentications & (1 << SSH_AUTH_PASSWORD)) &&
       options->password_authentication && !options->batch_mode)
     {
+      char prompt[80];
+      snprintf(prompt, sizeof(prompt), "%.30s@%.30s's password: ",
+	server_user, host);
       debug("Doing password authentication.");
       if (options->cipher == SSH_CIPHER_NONE)
 	log("WARNING: Encryption is disabled! Password will be transmitted in clear text.");
-      password = read_passphrase("Password: ", 0);
+      password = read_passphrase(prompt, 0);
       packet_start(SSH_CMSG_AUTH_PASSWORD);
       packet_put_string(password, strlen(password));
       memset(password, 0, strlen(password));
