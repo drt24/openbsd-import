@@ -88,7 +88,7 @@ struct alias_link;
 
 /* Transparent Proxying */
     extern int
-    PacketAliasProxyRule(char *);
+    PacketAliasProxyRule(const char *);
 
 
 /********************** Mode flags ********************/
