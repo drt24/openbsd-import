@@ -10,7 +10,7 @@ CFLAGS+=-Wall -Wmissing-prototypes -DHAVE_DES -DNOALIAS
 LDADD+= -lutil -ldes -lz
 DPADD+= ${LIBUTIL} ${LIBDES} ${LIBZ}
 MAN=	ppp.8
-BINMODE=4550
+BINMODE=4551
 BINOWN=	root
 BINGRP=	network
 
