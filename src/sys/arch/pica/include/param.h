@@ -144,7 +144,7 @@
 #define pica_ptob(x)		((unsigned)(x) << PGSHIFT)
 
 #ifdef _KERNEL
-#ifndef LOCORE
+#ifndef _LOCORE
 extern int (*Mach_splnet)(), (*Mach_splbio)(), (*Mach_splimp)(),
 	   (*Mach_spltty)(), (*Mach_splclock)(), (*Mach_splstatclock)();
 #define	splnet()	((*Mach_splnet)())

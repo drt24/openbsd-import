@@ -127,7 +127,7 @@ typedef struct dma_softc {
 	int		*sc_dmalen;	/* Pointer to len counter in dev */
 	void (*reset)(struct dma_softc *);	/* Reset routine pointer */
 	void (*enintr)(struct dma_softc *);	/* Int enab routine pointer */
-	void (*map)(struct dma_softc *, caddr_t, size_t, int);
+	void (*map)(struct dma_softc *, char *, size_t, int);
 						/* Map a dma viritual area */
 	void (*start)(struct dma_softc *, caddr_t, size_t, int);
 						/* Start routine pointer */

@@ -124,7 +124,7 @@ clockattach(parent, self, aux)
 	/*
 	 * establish the clock interrupt; it's a special case
 	 */
-	BUS_INTR_ESTABLISH((struct confargs *)aux, hardclock, self);
+	BUS_INTR_ESTABLISH((struct confargs *)aux, (intr_handler_t)hardclock, self);
 
 	printf("\n");
 }

@@ -931,7 +931,7 @@ pmap_enter(pmap, va, pa, prot, wired)
 					 * Check cache aliasing incompatibility
 					 */
 					if((npv->pv_va & machCacheAliasMask) != (va & machCacheAliasMask)) {
-						printf("pmap_enter: creating uncached mapping.\n");
+						printf("pmap_enter: creating uncached mapping 0x%x, 0x%x.\n",npv->pv_va, va);
 						pmap_page_cache(pa,PV_UNCACHED);
 						MachFlushDCache(pv->pv_va, PAGE_SIZE);
 						npte = (npte & ~PG_CACHEMODE) | PG_UNCACHED;

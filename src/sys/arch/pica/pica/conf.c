@@ -143,14 +143,6 @@ cdev_decl(cd);
 
 /* open, close, read, ioctl */
 cdev_decl(ipl);
-<<<<<<< 1.2
-#define	cdev_gen_ipf(c,n) { \
-	dev_init(c,n,open), dev_init(c,n,close), dev_init(c,n,read), \
-	(dev_type_write((*))) enodev, dev_init(c,n,ioctl), \
-	(dev_type_stop((*))) nullop, 0, (dev_type_select((*))) enodev, \
-	(dev_type_mmap((*))) enodev, 0 }
-=======
->>>>>>> 1.3
 #ifdef IPFILTER
 #define NIPF 1
 #else

@@ -45,7 +45,7 @@
  * R4000 hardware page table entry
  */
 
-#ifndef LOCORE
+#ifndef _LOCORE
 struct pte {
 #if BYTE_ORDER == BIG_ENDIAN
 unsigned int	pg_prot:2,		/* SW: access control */
@@ -80,7 +80,7 @@ typedef union pt_entry {
 	unsigned int	pt_entry;	/* for copying, etc. */
 	struct pte	pt_pte;		/* for getting to bits by name */
 } pt_entry_t;	/* Mach page table entry */
-#endif /* LOCORE */
+#endif /* _LOCORE */
 
 #define	PT_ENTRY_NULL	((pt_entry_t *) 0)
 
@@ -120,7 +120,7 @@ typedef union pt_entry {
 #define	PG_SIZE_4M	0x007fe000
 #define	PG_SIZE_16M	0x01ffe000
 
-#if defined(_KERNEL) && !defined(LOCORE)
+#if defined(_KERNEL) && !defined(_LOCORE)
 /*
  * Kernel virtual address to page table entry and visa versa.
  */
