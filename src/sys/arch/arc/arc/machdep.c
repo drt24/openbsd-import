@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: machdep.c,v 1.1.1.1 1996/06/24 09:07:21 pefo Exp $	*/
 /*
  * Copyright (c) 1988 University of Utah.
  * Copyright (c) 1992, 1993
@@ -175,7 +175,7 @@ mips_init(argc, argv, code)
 
 vid_print_string("Starting\n");
 	/* clear the BSS segment in NetBSD code */
-	v = (caddr_t)pica_round_page(end);
+	v = (caddr_t)mips_round_page(end);
 	bzero(edata, v - edata);
 
 	/* check what model platform we are running on */

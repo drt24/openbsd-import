@@ -1,14 +1,14 @@
 #	from: @(#)Makefile	8.1 (Berkeley) 6/16/93
 #	$Id$
 
-# Makefile for pica links, tags file
+# Makefile for arc links, tags file
 
 .include "../../kern/Make.tags.inc"
 
 all:
 	@echo "make links or tags only"
 
-DIRS=	conf dev dist include pica
+DIRS=	arc conf dev include isa pica
 
 links::
 	-for i in ${DIRS}; do \
