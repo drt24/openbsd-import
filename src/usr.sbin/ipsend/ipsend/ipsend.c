@@ -1,4 +1,4 @@
-/*     $OpenBSD$     */
+/*     $OpenBSD: ipsend.c,v 1.5 1998/01/26 04:17:04 dgregor Exp $     */
 /*
  * ipsend.c (C) 1995-1997 Darren Reed
  *
@@ -47,13 +47,13 @@ int	opts;
 #ifdef	linux
 char	default_device[] = "eth0";
 #else
-# ifdef	sun
+# if defined(sun) || defined(__OpenBSD__)
 char	default_device[] = "le0";
 # else
 #  ifdef	ultrix
 char	default_device[] = "ln0";
 #  else
-#   ifdef	__bsdi__
+#   ifdef __bsdi__
 char	default_device[] = "ef0";
 #   else
 #    ifdef	__sgi
@@ -358,7 +358,7 @@ char	**argv;
 		tcp = (tcphdr_t *)((char *)(ip + 1) + olen);
 	    }
 
-	if (ip->ip_p == IPPROTO_TCP)
+	if (ip->ip_p == IPPROTO_TCP && optind < argc)
 		for (s = argv[optind]; (c = *s); s++)
 			switch(c)
 			{
