@@ -1,4 +1,4 @@
-/*	$OpenBSD: talkd.c,v 1.12 2002/06/21 02:28:32 millert Exp $	*/
+/*	$OpenBSD: talkd.c,v 1.13 2002/07/03 16:59:05 vincent Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -100,8 +100,9 @@ main(argc, argv)
 
 	for (;;) {
 		CTL_RESPONSE response;
-		int cc, len = sizeof(response.addr);
+		socklen_t len = sizeof(response.addr);
 		CTL_MSG	request;
+		int cc;
 
 		cc = recvfrom(STDIN_FILENO, (char *)&request,
 		    sizeof (request), 0, (struct sockaddr *)&response.addr,
