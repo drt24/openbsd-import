@@ -41,12 +41,14 @@ static char *rcsid = "$Id$";
 
 __warn_references(setruid, "warning: this program uses setruid(), which is deprecated.");
 
+extern int __setreuid __P((uid_t, uid_t));
+
 int
 #ifdef __STDC__
 setruid(uid_t ruid)
 #else
 setruid(ruid)
-	int ruid;
+	uid_t ruid;
 #endif
 {
 	return (__setreuid(ruid, -1));

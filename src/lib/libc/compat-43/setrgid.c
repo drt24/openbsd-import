@@ -41,12 +41,14 @@ static char *rcsid = "$Id$";
 
 __warn_references(setrgid, "warning: this program uses setrgid(), which is deprecated.");
 
+extern int __setregid __P((gid_t, gid_t));
+
 int
 #ifdef __STDC__
 setrgid(gid_t rgid)
 #else
 setrgid(rgid)
-	int rgid;
+	gid_t rgid;
 #endif
 {
 	return (__setregid(rgid, -1));
