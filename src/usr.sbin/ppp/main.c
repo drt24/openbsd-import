@@ -981,10 +981,10 @@ DoLoop(void)
           LogPrintf(LogPHASE, "Connected to local client.\n");
           break;
         case AF_INET:
-          if (sin->sin_port < 1024) {
+          if (ntohs(sin->sin_port) < 1024) {
             LogPrintf(LogALERT, "Rejected client connection from %s:%u"
                       "(invalid port number) !\n",
-                      inet_ntoa(sin->sin_addr), sin->sin_port);
+                      inet_ntoa(sin->sin_addr), ntohs(sin->sin_port));
 	    close(wfd);
 	    continue;
           }
