@@ -28,7 +28,7 @@ scrt0.o: ${SRCS} ${DEPS}
 	@rm -f ${.TARGET}.o
 
 install:
-	install ${COPY} -o ${BINOWN} -g ${BINGRP} -m 444 ${OBJS} \
+	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 444 ${OBJS} \
 	    ${DESTDIR}/usr/lib
 
 depend lint tags:
