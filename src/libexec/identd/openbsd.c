@@ -219,11 +219,13 @@ int k_getuid(faddr, fport, laddr, lport, uid)
   if (!sockp)
     return -1;
 
+#ifdef SS_CONNECTOUT
   if (!getbuf(sockp, &sock, sizeof sock, "socket"))
     return -1;
 
   if ((sock.so_state & SS_CONNECTOUT) == 0)
     return -1;
+#endif
 
   /*
   ** Locate the file descriptor that has the socket in question
