@@ -130,8 +130,6 @@ int check_rhosts_file(const char *filename, const char *hostname,
 	  continue;
 	}
 	  
-#ifdef HAVE_INNETGR
-
       /* Verify that host name matches. */
       if (host[0] == '@')
 	{
@@ -152,16 +150,6 @@ int check_rhosts_file(const char *filename, const char *hostname,
       else
 	if (strcmp(user, client_user) != 0)
 	  continue; /* Different username. */
-
-#else /* HAVE_INNETGR */
-
-      if (!casefold_equal(host, hostname) && strcmp(host, ipaddr) != 0)
-	continue; /* Different hostname. */
-
-      if (strcmp(user, client_user) != 0)
-	continue; /* Different username. */
-
-#endif /* HAVE_INNETGR */
 
       /* Found the user and host. */
       fclose(f);

@@ -188,14 +188,10 @@ main(int ac, char **av)
   /* If we are installed setuid root be careful to not drop core. */
   if (original_real_uid != original_effective_uid)
     {
-#ifdef HAVE_SETRLIMIT
       struct rlimit rlim;
       rlim.rlim_cur = rlim.rlim_max = 0;
       if (setrlimit(RLIMIT_CORE, &rlim) < 0)
 	fatal("setrlimit failed: %.100s", strerror(errno));
-#else
-      fatal("ssh is installed setuid root.\n");
-#endif
     }
 
   /* Use uid-swapping to give up root privileges for the duration of option

@@ -19,12 +19,6 @@ RCSID("$Id$");
 #include "fdlim.h"
 #include "minfd.h"
 
-#ifdef _PATH_BSHELL
-#define DEFAULT_SHELL           _PATH_BSHELL
-#else
-#define DEFAULT_SHELL           "/bin/sh"
-#endif
-
 static int
 _get_permanent_fd(const char *shellpath)
 {
@@ -43,7 +37,7 @@ _get_permanent_fd(const char *shellpath)
 	if ((pwd = getpwuid(getuid())))
 	  shellpath = pwd->pw_shell;
       if (!shellpath)
-	shellpath = DEFAULT_SHELL;
+	shellpath = _PATH_BSHELL;
     }
   if ((shell = strrchr(shellpath, '/')))
     shell++;
