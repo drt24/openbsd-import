@@ -1,4 +1,4 @@
-/*    $OpenBSD: ipnat.c,v 1.27 1999/06/03 17:53:11 deraadt Exp $    */
+/*    $OpenBSD: ipnat.c,v 1.28 1999/06/06 20:34:56 deraadt Exp $    */
 /*
  * Copyright (C) 1993-1998 by Darren Reed.
  *
@@ -76,6 +76,7 @@ static const char rcsid[] = "@(#)$Id$";
 #endif
 
 extern	char	*optarg;
+char	*nlistf = NULL, *memf = NULL;
 
 ipnat_t	*parse __P((char *));
 u_32_t	hostnum __P((char *, int *));
