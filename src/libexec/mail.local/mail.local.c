@@ -166,8 +166,11 @@ dohold()
 	}
 
 	holdfd = getlock(from, pw);
-	if (holdfd == -1)
+	if (holdfd == -1) {
+		write(STDOUT_FILENO, "0\n", 2);
 		return (1);
+	}
+	write(STDOUT_FILENO, "1\n", 2);
 
 	while (read(0, &c, 1) == -1 && errno == EINTR)
 		;
@@ -317,16 +320,20 @@ again:
 		/*
 		 * Only root can write the spool directory.
 		 */
- 		if ((lfd = open(lpath, O_CREAT|O_WRONLY|O_EXCL,
- 		    S_IRUSR|S_IWUSR)) < 0) {
- 			err(NOTFATAL, "%s: %s", lpath, strerror(errno));
- 			return(-1);
+		while (1) {
+			if ((lfd = open(lpath, O_CREAT|O_WRONLY|O_EXCL,
+			    S_IRUSR|S_IWUSR)) != -1)
+				break;
+			if (tries > 9) {
+				err(NOTFATAL, "%s: %s", lpath, strerror(errno));
+				return(-1);
+			}
+			sleep(1 << tries);
+			tries++;
 		}
 	}
 	return (lfd);
 }
-
-
 
 int
 deliver(fd, name, lockfile)
