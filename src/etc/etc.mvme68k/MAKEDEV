@@ -89,6 +89,7 @@ all)
 	sh MAKEDEV tun0 tun1 lkm local
 	sh MAKEDEV sram0 nvram0 flash0 vmel0 vmes0
 	#sh MAKEDEV lp0 lptwo0
+	sh MAKEDEV rnd
 	;;
 
 std)
