@@ -72,8 +72,6 @@ struct xfs {
 
 extern struct xfs xfs[];
 
-extern struct vnodeops xfs_vnodeops;
-
 struct xfs_node *xfs_node_find(struct xfs *, struct xfs_handle *);
 int new_xfs_node(struct xfs *, struct xfs_msg_node *, struct xfs_node **,
 		 struct proc *);
