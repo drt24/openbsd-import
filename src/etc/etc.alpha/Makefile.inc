@@ -4,8 +4,8 @@
 #	$Id$
 
 .ifdef DESTDIR
-# XXX - bsd will come then we have a GENERIC kernel
-snap_md: binutils
+
+snap_md: binutils bsd
 
 binutils:
 	cd ${DESTDIR} && tar cf - usr/*openbsd* \
