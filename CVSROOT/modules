@@ -1,5 +1,5 @@
 #
-# $OpenBSD: modules,v 1.13 1996/05/05 14:54:10 deraadt Exp $
+# $OpenBSD: modules,v 1.14 1996/09/19 19:41:53 niklas Exp $
 # The CVS Modules File
 #
 # $CVSid: @(#)modules 1.5 92/03/31 $
@@ -62,19 +62,19 @@ usrc            -a !src/sys src
 ksrc            -a src/sys
 ksrc-common     -a !src/sys/arch src/sys
 ksrc-alpha      -a src/sys/arch/alpha
-ksrc-amiga      -a src/sys/arch/amiga
+ksrc-amiga      -a src/sys/arch/amiga ksrc-m68k
 ksrc-arc        -a src/sys/arch/arc
-ksrc-atari      -a src/sys/arch/atari
-ksrc-hp300      -a src/sys/arch/hp300
+ksrc-atari      -a src/sys/arch/atari ksrc-m68k
+ksrc-hp300      -a src/sys/arch/hp300 ksrc-m68k
 ksrc-i386       -a src/sys/arch/i386
 ksrc-m68k       -a src/sys/arch/m68k
-ksrc-mac68k     -a src/sys/arch/mac68k
-ksrc-mvme68k    -a src/sys/arch/mvme68k
+ksrc-mac68k     -a src/sys/arch/mac68k ksrc-m68k
+ksrc-mvme68k    -a src/sys/arch/mvme68k ksrc-m68k
 ksrc-mvme88k    -a src/sys/arch/mvme88k
 ksrc-pc532      -a src/sys/arch/pc532
 ksrc-pmax       -a src/sys/arch/pmax
 ksrc-sparc      -a src/sys/arch/sparc
-ksrc-sun3       -a src/sys/arch/sun3
+ksrc-sun3       -a src/sys/arch/sun3 ksrc-m68k
 ksrc-vax        -a src/sys/arch/vax
 
 bin		-a src/bin
