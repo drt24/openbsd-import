@@ -555,14 +555,16 @@ sub sequence {
     # mess up the results of guesswork on substrings.  So we do this
     # somewhat roundabout way of handling it.
     if ($command eq 'C') {
-        my @children = $seq->parse_tree ()->children;
-        for (@children) {
-            unless (ref) {
-                s/-/\\-/g;
-                s/__/_\\|_/g;
+        my @children = map {
+            my $block = $_;
+	    if (ref $block) {
+		$block;
+	    } else {
+		$block =~ s/-/\\-/g;
+		$block =~ s/__/_\\|_/g;
+		bless \ "$block", 'Pod::Man::String';
             }
-        }
-        $seq->parse_tree ()->children (@children);
+        } $seq->parse_tree ()->children;
     }
 
     # C<>, L<>, X<>, and E<> don't apply guesswork to their contents.
