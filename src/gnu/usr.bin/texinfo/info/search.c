@@ -301,7 +301,7 @@ skip_non_whitespace (string)
 {
   register int i;
 
-  for (i = 0; string && !whitespace (string[i]); i++);
+  for (i = 0; string && string[i] && !whitespace (string[i]); i++);
   return (i);
 }
 
