@@ -1,4 +1,4 @@
-/*	$OpenBSD: event.h,v 1.2 2000/11/16 20:31:29 mickey Exp $	*/
+/*	$OpenBSD: event.h,v 1.3 2001/03/01 20:54:35 provos Exp $	*/
 
 /*-
  * Copyright (c) 1999,2000,2001 Jonathan Lemon <jlemon@FreeBSD.org>

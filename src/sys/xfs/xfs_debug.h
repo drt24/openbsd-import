@@ -1,4 +1,3 @@
-/* $OpenBSD$ */
 /*
  * Copyright (c) 1998 Kungliga Tekniska Högskolan
  * (Royal Institute of Technology, Stockholm, Sweden).
@@ -37,6 +36,7 @@
  * SUCH DAMAGE.
  */
 
+/* $Id$ */
 
 #ifndef __XFS_DEBUG_H
 #define __XFS_DEBUG_H
