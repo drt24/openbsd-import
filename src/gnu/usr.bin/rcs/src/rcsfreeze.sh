@@ -56,7 +56,7 @@ rcsfreeze: give log message, summarizing changes (end with EOF or single '.')" \
 
 # Stamp the logfile. Because we order the logfile the most recent
 # first we will have to save everything right now in a temporary file.
-TMPLOG=/tmp/rcsfrz$$
+TMPLOG=`mktemp /tmp/rcsfrz.XXXXXXXXXX` || exit 1
 trap 'rm -f $TMPLOG; exit 1' 1 2 13 15
 # Now ask for a log message, continously add to the log file
 (
