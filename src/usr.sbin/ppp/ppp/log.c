@@ -356,8 +356,8 @@ log_DumpBp(int lev, const char *hdr, const struct mbuf *bp)
         b += 3;
         if (b == buf + 48) {
           memset(b, ' ', 2);
-          strcpy(c, "\n");
-          log_Printf(lev, buf);
+          *c = '\0';
+          log_Printf(lev, "%s\n", buf);
           b = buf;
           c = b + 50;
         }
@@ -366,8 +366,8 @@ log_DumpBp(int lev, const char *hdr, const struct mbuf *bp)
 
     if (b > buf) {
       memset(b, ' ', 50 - (b - buf));
-      strcpy(c, "\n");
-      log_Printf(lev, buf);
+      *c = '\0';
+      log_Printf(lev, "%s\n", buf);
     }
   }
 }
@@ -389,8 +389,8 @@ log_DumpBuff(int lev, const char *hdr, const u_char *ptr, int n)
         *c++ = isprint(*ptr) ? *ptr : '.';
       }
       memset(b, ' ', 50 - (b - buf));
-      strcpy(c, "\n");
-      log_Printf(lev, buf);
+      *c = '\0';
+      log_Printf(lev, "%s\n", buf);
     }
   }
 }
