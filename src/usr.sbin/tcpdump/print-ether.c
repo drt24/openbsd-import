@@ -185,7 +185,7 @@ recurse:
 		aarp_print(p, length);
 		return (1);
 
-	case ETHERTYPE_VLAN:
+	case ETHERTYPE_8021Q:
 		printf("802.1Q vid %d pri %d%s",
 		       ntohs(*(unsigned short*)p)&0xFFF,
 		       ntohs(*(unsigned short*)p)>>13,
