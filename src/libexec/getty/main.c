@@ -416,7 +416,7 @@ getname()
 
 		if (c == EOT)
 			exit(1);
-		if (c == '\r' || c == '\n' || np >= &name[sizeof name]) {
+		if (c == '\r' || c == '\n' || np >= name + sizeof name -1) {
 			putf("\r\n");
 			break;
 		}
