@@ -305,7 +305,7 @@ main(argc, argv) int argc; char **argv;
 	time_t default_time = time((time_t *)0);
 	int default_zone = argv[1] ? atoi(argv[1]) : 0;
 	char buf[1000];
-	while (gets(buf)) {
+	while (fgets(buf, sizeof buf, stdin)) {
 		time_t t = str2time(buf, default_time, default_zone);
 		printf("%s", asctime(gmtime(&t)));
 	}
