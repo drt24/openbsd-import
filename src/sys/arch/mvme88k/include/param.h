@@ -1,4 +1,4 @@
-/*	$OpenBSD: param.h,v 1.9 1999/05/29 04:41:45 smurph Exp $ */
+/*	$OpenBSD$ */
 /*
  * Copyright (c) 1999 Steve Murphree, Jr.
  * Copyright (c) 1988 University of Utah.
@@ -132,6 +132,8 @@
 #ifndef  NKMEMCLUSTERS
 #define  NKMEMCLUSTERS        (4096*1024/CLBYTES)
 #endif
+
+#define MSGBUFSIZE	4096
 
 /* pages ("clicks") to disk blocks */
 #define  ctod(x)              ((x)<<(PGSHIFT-DEV_BSHIFT))

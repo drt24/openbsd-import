@@ -1,4 +1,4 @@
-/*	$OpenBSD: ip_sha1.h,v 1.5 1999/02/17 18:10:24 deraadt Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * SHA-1 in C

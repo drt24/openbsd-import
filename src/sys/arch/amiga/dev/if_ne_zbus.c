@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_ne_zbus.c,v 1.5 2000/01/23 21:06:13 aymeric Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: if_ne_zbus.c,v 1.5 2000/01/23 21:06:13 aymeric Exp $	*/
 
 /*-

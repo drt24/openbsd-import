@@ -1,4 +1,4 @@
-/*      $OpenBSD: ip_castsb.h,v 1.2 1999/02/17 18:09:55 deraadt Exp $       */
+/*      $OpenBSD$       */
 /*
  *	CAST-128 in C
  *	Written by Steve Reid <sreid@sea-to-sky.net>
