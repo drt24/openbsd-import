@@ -210,6 +210,7 @@ child_process(e, u)
 # if defined(BSD)
 		initgroups(env_get("LOGNAME", e->envp), e->gid);
 # endif
+		setlogin(usernm);
 		setuid(e->uid);		/* we aren't root after this... */
 		chdir(env_get("HOME", e->envp));
 
