@@ -887,6 +887,11 @@ amiga
 # ./usr/share/man/cat4/amiga
 ..
 
+# ./usr/share/man/cat4/atari
+atari
+# ./usr/share/man/cat4/atari
+..
+
 # ./usr/share/man/cat4/hp300
 hp300
 # ./usr/share/man/cat4/hp300
@@ -951,6 +956,11 @@ cat8
 # ./usr/share/man/cat8/amiga
 amiga
 # ./usr/share/man/cat8/amiga
+..
+
+# ./usr/share/man/cat8/atari
+atari
+# ./usr/share/man/cat8/atari
 ..
 
 # ./usr/share/man/cat8/hp300
@@ -1024,6 +1034,11 @@ amiga
 # ./usr/share/man/man4/amiga
 ..
 
+# ./usr/share/man/man4/atari
+atari
+# ./usr/share/man/man4/atari
+..
+
 # ./usr/share/man/man4/hp300
 hp300
 # ./usr/share/man/man4/hp300
@@ -1088,6 +1103,11 @@ man8
 # ./usr/share/man/man8/amiga
 amiga
 # ./usr/share/man/man8/amiga
+..
+
+# ./usr/share/man/man8/atari
+atari
+# ./usr/share/man/man8/atari
 ..
 
 # ./usr/share/man/man8/hp300
