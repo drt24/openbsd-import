@@ -106,7 +106,7 @@ Dequeue(struct mqueue * queue)
     if (queue->top == NULL) {
       queue->last = queue->top;
       if (queue->qlen)
-	LogPrintf(LogDEBUG, "Dequeue: Not zero (%d)!!!\n", queue->qlen);
+	LogPrintf(LogERROR, "Dequeue: Not zero (%d)!!!\n", queue->qlen);
     }
   }
   return (bp);

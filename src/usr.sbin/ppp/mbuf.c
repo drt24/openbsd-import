@@ -79,6 +79,7 @@ mballoc(int cnt, int type)
   bp->base = p;
   bp->size = bp->cnt = cnt;
   bp->type = type;
+  bp->pnext = NULL;
   return (bp);
 }
 
