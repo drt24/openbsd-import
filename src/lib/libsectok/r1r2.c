@@ -176,4 +176,20 @@ sectok_dump_reply(unsigned char *p, int n, int sw)
 {
     return sectok_fdump_reply(stdout, p, n, sw);
 }
+#else
+int
+sectok_dump_reply(unsigned char *p, int n, int sw)
+{
+    int i;
+
+    hidefield(printfield->id);
+    for (i = 0; i < n; i++)
+	palmprintf("%d:%x ", i + 1, p[i]);
+    if (n)
+	palmprintf("\n");
+    if (sw)
+	palmprintf("%s\n", sectok_get_sw(sw));
+    showfield(printfield->id);
+    return n;
+}
 #endif

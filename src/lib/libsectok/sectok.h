@@ -87,8 +87,8 @@ int sectok_parse_input(char *ibuf, unsigned char *obuf, int olen);
 #ifndef __palmos__
 int sectok_get_input(FILE *f, unsigned char *obuf, int omin, int olen);
 int sectok_fdump_reply(FILE *f, unsigned char *p, int n, int sw);
-int sectok_dump_reply(unsigned char *p, int n, int sw);
 #endif
+int sectok_dump_reply(unsigned char *p, int n, int sw);
 void sectok_print_sw(int sw);
 char *sectok_get_sw(int sw);
 char *sectok_get_ins(int ins);
