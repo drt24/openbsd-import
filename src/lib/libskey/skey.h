@@ -73,5 +73,5 @@ int getskeyprompt __ARGS ((struct skey *, char *, char *));
 int atob8 __ARGS((char *, char *));
 int btoa8 __ARGS((char *, char *));
 int htoi __ARGS((char));
-int skey_get_MDX __ARGS(());
-int skey_set_MDX __ARGS((int));
+const char * skey_get_algorithm __ARGS((void));
+char * skey_set_algorithm __ARGS((char *));
