@@ -122,7 +122,7 @@ top:
 	case 'L':
 		getstring(count); getstring(pos);
 		DEBUG2("rmtd: L %s %s\n", count, pos);
-		rval = lseek(tape, atoi(count), atoi(pos));
+		rval = lseek(tape, strtoq(count, NULL, 0), atoi(pos));
 		if (rval < 0)
 			goto ioerror;
 		goto respond;
