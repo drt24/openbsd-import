@@ -245,14 +245,14 @@ struct	utmp utmp;
 void
 dologout()
 {
-	union wait status;
+	int status;
 	int save_errno = errno;
 	int pid, wtmp;
 
 #ifdef BSDINETD
-	while ((pid=wait((int *)&status)) > 0) {
+	while ((pid=wait(&status)) > 0) {
 #else  /* !BSDINETD */
-	while ((pid=wait3((int *)&status,WNOHANG,0)) > 0) {
+	while ((pid=wait3(&status, WNOHANG, 0)) > 0) {
 #endif /* !BSDINETD */
 		wtmp = open(_PATH_WTMP, O_WRONLY|O_APPEND);
 		if (wtmp >= 0) {
