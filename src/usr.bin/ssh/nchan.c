@@ -73,19 +73,6 @@ chan_ibuf_empty(Channel *c){
 /* events concerning the OUTPUT from channel for socket (ostate) */
 void
 chan_rcvd_ieof(Channel *c){
-
-	/* X11: if we receive IEOF for X11, then we have to FORCE sending of IEOF,
-	 * this is from ssh-1.2.27 debugging output.
-	 */
-	if(c->x11){
-		debug("channel %d: OUTPUT_OPEN -> OUTPUT_CLOSED/INPUT_WAIT_OCLOSED [X11 FIX]", c->self);
-		chan_send_ieof(c);
-		c->istate=CHAN_INPUT_WAIT_OCLOSE;
-		chan_send_oclose(c);
-		c->ostate=CHAN_OUTPUT_CLOSED;
-		chan_delele_if_full_closed(c);
-		return;
-	}
 	switch(c->ostate){
 	case CHAN_OUTPUT_OPEN:
 		debug("channel %d: OUTPUT_OPEN -> OUTPUT_WAIT_DRAIN [rvcd IEOF]", c->self);
