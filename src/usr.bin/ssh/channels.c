@@ -904,7 +904,7 @@ void channel_request_remote_forwarding(int port, const char *host,
   int payload_len;
   /* Record locally that connection to this host/port is permitted. */
   if (num_permitted_opens >= SSH_MAX_FORWARDS_PER_DIRECTION)
-    fatal("channel_request_remote_forwarding: too many forwards");
+    fatal("channel_request_remote_forwarding: too many forwards");	/* XXX why panic? -markus */
   permitted_opens[num_permitted_opens].host = xstrdup(host);
   permitted_opens[num_permitted_opens].port = remote_port;
   num_permitted_opens++;

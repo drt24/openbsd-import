@@ -41,7 +41,7 @@ void log_init(char *av0, LogLevel level, SyslogFacility facility, int on_stderr)
     case SYSLOG_LEVEL_ERROR:
     case SYSLOG_LEVEL_FATAL:
     case SYSLOG_LEVEL_INFO:
-    case SYSLOG_LEVEL_CHAT:
+    case SYSLOG_LEVEL_VERBOSE:
     case SYSLOG_LEVEL_DEBUG:
       log_level = level;
       break;
@@ -119,9 +119,7 @@ do_log(LogLevel level, const char *fmt, va_list args)
       pri = LOG_ERR;
       break;
     case SYSLOG_LEVEL_INFO:
-      pri = LOG_INFO;
-      break;
-    case SYSLOG_LEVEL_CHAT:
+    case SYSLOG_LEVEL_VERBOSE:
       pri = LOG_INFO;
       break;
     case SYSLOG_LEVEL_DEBUG:

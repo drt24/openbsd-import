@@ -36,7 +36,7 @@ log_init(char *av0, LogLevel level, SyslogFacility ignored1, int ignored2)
     case SYSLOG_LEVEL_ERROR:
     case SYSLOG_LEVEL_FATAL:
     case SYSLOG_LEVEL_INFO:
-    case SYSLOG_LEVEL_CHAT:
+    case SYSLOG_LEVEL_VERBOSE:
     case SYSLOG_LEVEL_DEBUG:
       log_level = level;
       break;

@@ -264,7 +264,7 @@ void cipher_encrypt(CipherContext *context, unsigned char *dest,
       break;
 
     default:
-      fatal("cipher_encrypt: unknown cipher: %d", context->type);
+      fatal("cipher_encrypt: unknown cipher: %s", cipher_name(context->type));
     }
 }
   
@@ -299,6 +299,6 @@ void cipher_decrypt(CipherContext *context, unsigned char *dest,
       break;
 
     default:
-      fatal("cipher_decrypt: unknown cipher: %d", context->type);
+      fatal("cipher_decrypt: unknown cipher: %s", cipher_name(context->type));
     }
 }

@@ -96,7 +96,7 @@ int auth_rhosts_rsa(struct passwd *pw, const char *client_user,
   /* We have authenticated the user using .rhosts or /etc/hosts.equiv, and
      the host using RSA.  We accept the authentication. */
   
-  log("Rhosts with RSA host authentication accepted for %.100s, %.100s on %.700s.",
+  verbose("Rhosts with RSA host authentication accepted for %.100s, %.100s on %.700s.",
       pw->pw_name, client_user, canonical_hostname);
   packet_send_debug("Rhosts with RSA host authentication accepted.");
   return 1;

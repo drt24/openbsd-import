@@ -397,7 +397,7 @@ packet_read(int *payload_len_ptr)
       /* Read data from the socket. */
       len = read(connection_in, buf, sizeof(buf));
       if (len == 0)
-	fatal("Connection closed by remote host.");
+	fatal("Connection closed by %.200s", get_remote_ipaddr());
       if (len < 0)
 	fatal("Read from socket failed: %.100s", strerror(errno));
       /* Append it to the buffer. */
@@ -513,7 +513,7 @@ packet_read_poll(int *payload_len_ptr)
 
   /* Handle disconnect message. */
   if ((unsigned char)buf[0] == SSH_MSG_DISCONNECT)
-    fatal("%.900s", packet_get_string(NULL));
+    fatal("Received disconnect: %.900s", packet_get_string(NULL));
 
   /* Ignore ignore messages. */
   if ((unsigned char)buf[0] == SSH_MSG_IGNORE)
@@ -636,7 +636,7 @@ packet_disconnect(const char *fmt, ...)
   packet_close();
 
   /* Display the error locally and exit. */
-  fatal("Local: %.100s", buf);
+  fatal("Disconnecting: %.100s", buf);
 }
 
 /* Checks if there is any buffered output, and tries to write some of the

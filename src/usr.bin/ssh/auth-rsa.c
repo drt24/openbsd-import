@@ -274,7 +274,7 @@ auth_rsa(struct passwd *pw, BIGNUM *client_n)
       if (!auth_rsa_challenge_dialog(e, n))
 	{
 	  /* Wrong response. */
-	  log("Wrong response to RSA authentication challenge.");
+	  verbose("Wrong response to RSA authentication challenge.");
 	  packet_send_debug("Wrong response to RSA authentication challenge.");
 	  continue;
 	}
