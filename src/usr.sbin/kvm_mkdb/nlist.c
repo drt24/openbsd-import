@@ -229,7 +229,7 @@ badread(nr, p)
 	badfmt(p);
 }
 
-#endif
+#endif /* DO_AOUT */
 
 #ifdef DO_ELF
 int
