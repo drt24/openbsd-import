@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.2 2003/04/15 18:07:32 mickey Exp $
+#	$OpenBSD$
 
 NOMAN=	no man
 S	=${.CURDIR}/../../../..
