@@ -45,6 +45,7 @@ Cleanup()
 	mv $upgrade_dir/etc/rc.bak $upgrade_dir/etc/rc
 	chroot $upgrade_dir /usr/sbin/pwd_mkdb -p /etc/master.passwd
 	chroot $upgrade_dir /bin/rm /etc/sendmail.fc > /dev/null 2>&1
+	mv $upgrade_dir/.profile.bak $upgrade_dir/.profile
 	sync
 	echo	"Done."
 
