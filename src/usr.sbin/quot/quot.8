@@ -69,7 +69,7 @@ in the standard input, for each file print out the owner (plus
 the remainder of the input line).
 This is traditionally used in the pipe:
 .Bd -literal -offset indent
-ncheck filesystem | sort +0n | quot -n filesystem
+# ncheck filesystem | sort +0n | quot -n filesystem
 .Ed
 .Pp
 to get a report of files and their owners.
