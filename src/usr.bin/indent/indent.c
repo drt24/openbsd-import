@@ -55,6 +55,7 @@ static char rcsid[] = "$Id$";
 #include "indent_globs.h"
 #include "indent_codes.h"
 #include <ctype.h>
+#include <errno.h>
 
 char       *in_name = "Standard Input";	/* will always point to name of input
 					 * file */
@@ -1174,9 +1175,6 @@ bakcopy()
 err(msg)
 	char *msg;
 {
-	extern int errno;
-	char *strerror();
-
 	(void)fprintf(stderr, "indent: %s: %s\n", msg, strerror(errno));
 	exit(1);
 }
