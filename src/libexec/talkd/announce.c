@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /*
  * Copyright (c) 1983 Regents of the University of California.
  * All rights reserved.
@@ -51,8 +53,9 @@ static char rcsid[] = "$Id$";
 #include <string.h>
 #include <vis.h>
 #include <paths.h>
+#include "talkd.h"
 
-extern char hostname[];
+static void	print_mesg __P((FILE *,CTL_MSG *,char *));
 
 /*
  * Announce an invitation to talk.
@@ -61,6 +64,7 @@ extern char hostname[];
  * process to any terminal that it writes on, we must fork a child
  * to protect ourselves
  */
+int
 announce(request, remote_machine)
 	CTL_MSG *request;
 	char *remote_machine;
@@ -94,6 +98,7 @@ announce(request, remote_machine)
  * See if the user is accepting messages. If so, announce that 
  * a talk is requested.
  */
+int
 announce_proc(request, remote_machine)
 	CTL_MSG *request;
 	char *remote_machine;
@@ -133,6 +138,7 @@ announce_proc(request, remote_machine)
  * try to keep the message in one piece if the recipient
  * in in vi at the time
  */
+static void
 print_mesg(tf, request, remote_machine)
 	FILE *tf;
 	CTL_MSG *request;

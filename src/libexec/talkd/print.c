@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /*
  * Copyright (c) 1983 Regents of the University of California.
  * All rights reserved.
@@ -43,6 +45,7 @@ static char rcsid[] = "$Id$";
 #include <protocols/talkd.h>
 #include <syslog.h>
 #include <stdio.h>
+#include "talkd.h"
 
 static	char *types[] =
     { "leave_invite", "look_up", "delete", "announce" };
@@ -52,6 +55,7 @@ static	char *answers[] =
       "unknown_request", "badversion", "badaddr", "badctladdr" };
 #define	NANSWERS	(sizeof (answers) / sizeof (answers[0]))
 
+void
 print_request(cp, mp)
 	char *cp;
 	register CTL_MSG *mp;
@@ -67,6 +71,7 @@ print_request(cp, mp)
 	    cp, tp, mp->id_num, mp->l_name, mp->r_name, mp->r_tty);
 }
 
+void
 print_response(cp, rp)
 	char *cp;
 	register CTL_RESPONSE *rp;
