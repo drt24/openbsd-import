@@ -1,4 +1,4 @@
-/*	$OpenBSD: proc.h,v 1.5 1999/05/29 04:41:45 smurph Exp $ */
+/*	$OpenBSD: proc.h,v 1.6 1999/09/27 20:46:19 smurph Exp $ */
 /*
  * Copyright (c) 1992, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -46,6 +46,8 @@
  * $Id$
  */
 
+#ifndef __MACHINE_PROC_H__
+#define __MACHINE_PROC_H__
 #include <machine/pcb.h>
 #include <machine/mmu.h>
 
@@ -61,3 +63,5 @@ struct mdproc {
 	unsigned md_ss_taken_addr;    /* single step address for ptrace */
 	unsigned md_ss_taken_instr;   /* single step instruction for ptrace */
 };
+#endif __MACHINE_PROC_H__
+
