@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: talkd.c,v 1.3 1996/07/15 05:10:12 mickey Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -69,7 +69,7 @@ int	debug = 0;
 void	timeout();
 long	lastmsgtime;
 
-char	hostname[32];
+char	hostname[MAXHOSTNAMELEN];
 
 #define TIMEOUT 30
 #define MAXIDLE 120
