@@ -783,7 +783,8 @@ init_signals(void)
      struct sigaction sa, osa;
 
      bzero(&sa, sizeof(sa));
-     sa.sa_mask = sigmask(SIGHUP);
+     sigemptyset(&sa.sa_mask);
+     sigaddset(&sa.sa_mask, SIGHUP);
      sa.sa_handler = reconfig;
      sigaction(SIGHUP, &sa, &osa);
 
