@@ -149,7 +149,8 @@ unsigned int cipher_mask()
 const
 char *cipher_name(int cipher)
 {
-  if (cipher < 0 || cipher >= sizeof(cipher_names) / sizeof(cipher_names[0]))
+  if (cipher < 0 || cipher >= sizeof(cipher_names) / sizeof(cipher_names[0]) ||
+	cipher_names[cipher] == NULL)
     fatal("cipher_name: bad cipher number: %d", cipher);
   return cipher_names[cipher];
 }
