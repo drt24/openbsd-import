@@ -58,7 +58,8 @@ struct rtentry;
 /*
  * Some FDDI interfaces use bit-swapped addresses.
  */
-#if defined(ultrix) || defined(__alpha)
+#if defined(ultrix) || defined(__alpha) || defined(__bsdi) || \
+	defined(__NetBSD__) || defined(__OpenBSD__)
 int	fddi_bitswap = 0;
 #else
 int	fddi_bitswap = 1;
