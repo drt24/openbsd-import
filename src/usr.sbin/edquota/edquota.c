@@ -520,7 +520,7 @@ readprivs(struct quotause *quplist, int infd)
 			if (dqblk.dqb_curblocks == qup->dqblk.dqb_curblocks &&
 			    dqblk.dqb_curinodes == qup->dqblk.dqb_curinodes)
 				break;
-			warnx("%s: cannot change current allocationn", fsp);
+			warnx("%s: cannot change current allocation", fsp);
 			break;
 		}
 	}
