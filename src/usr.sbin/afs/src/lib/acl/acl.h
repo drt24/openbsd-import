@@ -46,10 +46,6 @@
 #include <stds.h>
 #endif
 
-#ifndef __P
-#define __P(x) x
-#endif
-
 void acl_canonicalize_principal(char *principal, char *canon);
 int acl_initialize(char *acl_file, int perm);
 int acl_exact_match(char *acl, char *principal);

@@ -89,8 +89,8 @@ struct utmp_list	*log_in(struct utmp_list *, struct utmp *);
 struct utmp_list	*log_out(struct utmp_list *, struct utmp *);
 int			on_console(struct utmp_list *);
 void			show(char *, time_t);
-void			show_today __P((struct user_list *, struct utmp_list *,
-			    time_t));
+void			show_today(struct user_list *, struct utmp_list *,
+			    time_t);
 void			show_users(struct user_list *);
 struct user_list	*update_user(struct user_list *, char *, time_t);
 void			usage(void);

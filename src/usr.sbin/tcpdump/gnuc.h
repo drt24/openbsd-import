@@ -1,15 +1,6 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: gnuc.h,v 1.3 2000/10/03 14:31:55 ho Exp $	*/
 
 /* @(#) $Header$ (LBL) */
-
-/* Define __P() macro, if necessary */
-#ifndef __P
-#ifdef __STDC__
-#define __P(protos) protos
-#else
-#define __P(protos) ()
-#endif
-#endif
 
 /* inline foo */
 #ifdef __GNUC__
