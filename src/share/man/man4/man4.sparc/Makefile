@@ -3,7 +3,8 @@
 
 MAN=	intro.4  
 MAN+=	bwtwo.4 cgtwo.4 cgthree.4 cgfour.4 cgsix.4 cgeight.4 cgfourteen.4
-MAN+=	fd.4 kbd.4 le.4 mem.4 ms.4 openprom.4 tcx.4 zs.4  
+MAN+=	fd.4 esp.4 kbd.4 le.4 mem.4 ms.4 openprom.4 si.4 sw.4 tcx.4
+MAN+=	xd.4 xy.4 zs.4  
 MLINKS=	mem.4 kmem.4
 MANSUBDIR=/sparc
 
