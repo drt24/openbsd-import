@@ -1793,6 +1793,11 @@ void script_init (ip, reason, medium)
 	} while (fd < 0);
 #endif
 
+#ifdef HAVE_MKSTEMP
+	if (fd == -1)
+		error ("can't write script file: %m");
+#endif
+		
 	scriptFile = fdopen (fd, "w");
 	if (!scriptFile)
 		error ("can't write script file: %m");
