@@ -1,4 +1,0 @@
-#!/bin/sh
-# $Id$
-
-$objdir/test-setgroups nobody 1>&4
