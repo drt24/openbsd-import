@@ -1,8 +1,6 @@
 #!./perl
 
-# $RCSfile$$Revision$$Date$
-
-print "1..16\n";
+print "1..18\n";
 
 $foo = 'STDOUT';
 print $foo "ok 1\n";
@@ -30,3 +28,7 @@ print "ok","11";
 @x = ("ok","12\nok","13\nok");
 @y = ("15\nok","16");
 print @x,"14\nok",@y;
+{
+    local $\ = "ok 17\n# null =>[\000]\nok 18\n";
+    print "";
+}

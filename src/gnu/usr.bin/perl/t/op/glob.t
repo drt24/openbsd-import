@@ -1,6 +1,9 @@
 #!./perl
 
-# $RCSfile$$Revision$$Date$
+BEGIN {
+    chdir 't' if -d 't';
+    unshift @INC, '../lib';
+}
 
 print "1..6\n";
 
