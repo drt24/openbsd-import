@@ -1,4 +1,4 @@
-/* $OpenBSD: if_lmc_media.c,v 1.4.2.1 2001/07/04 10:42:15 niklas Exp $ */
+/* $OpenBSD$ */
 /* $Id$ */
 
 /*-
@@ -77,7 +77,7 @@
 #include <net/bpfdesc.h>
 #endif
 
-#include <vm/vm.h>
+#include <uvm/uvm_extern.h>
 
 #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
 #include <net/if_sppp.h>
