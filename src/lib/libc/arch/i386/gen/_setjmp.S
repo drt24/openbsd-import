@@ -37,6 +37,8 @@
  *	$Id$
  */
 
+#include <machine/asm.h>
+
 #if defined(LIBC_SCCS)
 	.text
 	.asciz "$Id$"
@@ -51,8 +53,6 @@
  * by restoring registers from the stack.
  * The previous signal state is NOT restored.
  */
-
-#include "DEFS.h"
 
 ENTRY(_setjmp)
 	movl	4(%esp),%eax

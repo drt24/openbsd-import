@@ -37,14 +37,14 @@
  *	$Id$
  */
 
+#include <machine/asm.h>
+
 #if defined(LIBC_SCCS)
 	.text
 	.asciz "$Id$"
 #endif
 
 /* like alloc, but automatic automatic free in return */
-
-#include "DEFS.h"
 
 ENTRY(alloca)
 	popl	%edx		/*  pop return addr */

@@ -37,12 +37,12 @@
  *	$Id$
  */
 
+#include <machine/asm.h>
+
 #if defined(LIBC_SCCS)
 	.text
 	.asciz "$Id$"
 #endif
-
-#include "DEFS.h"
 
 ENTRY(__fixdfsi)
 	fldl	4(%esp)
