@@ -713,6 +713,13 @@ main(int ac, char **av)
   if (remote_major == 1 && remote_minor == 0)
     packet_disconnect("Your ssh version is too old and is no longer supported.  Please install a newer version.");
 
+  if (strcmp(remote_version, SSH_VERSION) != 0)
+    {
+      debug("Agent forwarding disabled, remote version is not '%s'.",
+	    SSH_VERSION);
+      no_agent_forwarding_flag = 1;
+    }
+
   /* Check whether logins are permitted from this host. */
   if (options.num_allow_hosts > 0)
     {

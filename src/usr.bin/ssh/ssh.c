@@ -736,7 +736,7 @@ main(int ac, char **av)
   packet_set_interactive(interactive, options.keepalives);
 
   /* Clear agent forwarding if we don\'t have an agent. */
-  authfd = ssh_get_authentication_fd();
+  authfd = ssh_get_authentication_socket();
   if (authfd < 0)
     options.forward_agent = 0;
   else
