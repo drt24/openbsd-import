@@ -239,9 +239,10 @@ main(argc, argv)
 
 		/* Create original format password file entry */
 		if (makeold)
-			(void)fprintf(oldfp, "%s:*:%d:%d:%s:%s:%s\n",
+			if (fprintf(oldfp, "%s:*:%d:%d:%s:%s:%s\n",
 			    pwd.pw_name, pwd.pw_uid, pwd.pw_gid, pwd.pw_gecos,
-			    pwd.pw_dir, pwd.pw_shell);
+			    pwd.pw_dir, pwd.pw_shell) == EOF)
+				error("write old");
 	}
 
 	/* Store YP token, if needed. */
@@ -255,10 +256,12 @@ main(argc, argv)
 			error("put");
 	}
 
-	(void)(dp->close)(dp);
+	if ((dp->close)(dp))
+		error("close dp");
 	if (makeold) {
 		(void)fflush(oldfp);
-		(void)fclose(oldfp);
+		if (fclose(oldfp) == EOF)
+			error("close old");
 	}
 
 	/* Open the temporary encrypted password database. */
@@ -327,7 +330,8 @@ main(argc, argv)
 			error("put");
 	}
 
-	(void)(edp->close)(edp);
+	if ((edp->close)(edp))
+		error("close edp");
 
 	/* Set master.passwd permissions, in case caller forgot. */
 	(void)fchmod(fileno(fp), S_IRUSR|S_IWUSR);
