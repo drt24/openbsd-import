@@ -1,4 +1,4 @@
-/*	$OpenBSD: tcpdump.c,v 1.37 2004/05/21 05:48:50 brad Exp $	*/
+/*	$OpenBSD: tcpdump.c,v 1.38 2004/06/20 17:51:55 avsm Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -284,6 +284,8 @@ main(int argc, char **argv)
 				packettype = PT_CNFP;
 			else if (strcasecmp(optarg, "vrrp") == 0)
 				packettype = PT_VRRP;
+			else if (strcasecmp(optarg, "tcp") == 0)
+				packettype = PT_TCP;
 			else if (strcasecmp(optarg, "sack") == 0)
 				snaplen = SACK_SNAPLEN;
 			else
