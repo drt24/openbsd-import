@@ -11,5 +11,6 @@ MAN=cvsd.8 cvsd.conf.5
 CFLAGS+= -Wall
 CFLAGS+= -Wstrict-prototypes -Wmissing-prototypes
 CFLAGS+= -Wsign-compare
+CFLAGS+= -DCVSD
 
 .include <bsd.prog.mk>
