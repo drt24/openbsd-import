@@ -1077,7 +1077,7 @@ client_input_channel_req(int id, void *arg)
 	rtype = packet_get_string(&len);
 	reply = packet_get_char();
 
-	debug("session_input_channel_req: rtype %s reply %d", rtype, reply);
+	debug("client_input_channel_req: rtype %s reply %d", rtype, reply);
 
 	c = channel_lookup(id);
 	if (c == NULL)
