@@ -54,6 +54,7 @@ bin_file(FILE *f)
 	return 0;
 }
 
+#ifndef NOZ
 int
 gzbin_file(gzFile *f)
 {
@@ -73,12 +74,13 @@ gzbin_file(gzFile *f)
 	gzrewind(f);
 	return 0;
 }
+#endif
 
 int
 mmbin_file(mmf_t *f)
 {
 	int i;
-	
+
 	/* XXX knows too much about mmf internals */
 	for (i = 0; i < BUFFER_SIZE && i < f->len; i++)
 		if (!isprint(f->base[i]))
