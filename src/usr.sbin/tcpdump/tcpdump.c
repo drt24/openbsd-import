@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: tcpdump.c,v 1.19 2000/10/03 14:21:57 ho Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -298,6 +298,7 @@ main(int argc, char **argv)
 		 * Also, this prevents the user from reading anyone's
 		 * trace file.
 		 */
+		seteuid(getuid());
 		setuid(getuid());
 
 		pd = pcap_open_offline(RFileName, ebuf);
@@ -330,6 +331,7 @@ main(int argc, char **argv)
 		/*
 		 * Let user own process after socket has been opened.
 		 */
+		seteuid(getuid());
 		setuid(getuid());
 	}
 	if (infile)
