@@ -322,7 +322,6 @@ edit_cmd() {
 	(void) sprintf(Filename, "/tmp/crontab.XXXXXXXXXX");
 	if ((t = mkstemp(Filename)) == -1) {
 		perror(Filename);
-		(void) umask(um);
 		goto fatal;
 	}
 #ifdef HAS_FCHOWN
