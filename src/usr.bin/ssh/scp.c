@@ -1146,7 +1146,7 @@ progressmeter(int flag)
 	(void) gettimeofday(&now, (struct timezone *) 0);
 	cursize = statbytes;
 	if (totalbytes != 0) {
-		ratio = cursize * 100 / totalbytes;
+		ratio = 100.0 * cursize / totalbytes;
 		ratio = MAX(ratio, 0);
 		ratio = MIN(ratio, 100);
 	} else
