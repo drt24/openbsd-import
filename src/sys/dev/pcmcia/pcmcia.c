@@ -101,7 +101,7 @@ int  pcmcia_mapcard_and_configure __P((struct pcmcia_link *, int,
 int pcmcia_unconfigure __P((struct pcmcia_link *));
 int pcmcia_unmapcard __P((struct pcmcia_link *));
 
-int pcmcia_print __P((void *, char *));
+int pcmcia_print __P((void *, const char *));
 int pcmcia_submatch __P((struct device *, void *, void *));
 void pcmcia_probe_link __P((struct pcmcia_link *));
 
@@ -1317,7 +1317,7 @@ pcmciadumpcf(cf)
 int
 pcmcia_print(aux, pnp)
 	void *aux;
-	char *pnp;
+	const char *pnp;
 {
 #if 0
 	struct pcmcia_attach_args *paa = aux;
