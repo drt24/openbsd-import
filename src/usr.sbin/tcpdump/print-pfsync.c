@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-pfsync.c,v 1.17 2003/12/28 17:18:58 mcbride Exp $	*/
+/*	$OpenBSD: print-pfsync.c,v 1.18 2003/12/28 21:06:46 mcbride Exp $	*/
 
 /*
  * Copyright (c) 2002 Michael Shalayeff
@@ -140,6 +140,7 @@ pfsync_print(struct pfsync_header *hdr, int len)
 
 			bzero(&st, sizeof(st));
 			st.id = s->id;
+			strlcpy(st.u.ifname, s->ifname, sizeof(st.u.ifname));
 			pf_state_host_ntoh(&s->lan, &st.lan);
 			pf_state_host_ntoh(&s->gwy, &st.gwy);
 			pf_state_host_ntoh(&s->ext, &st.ext);
