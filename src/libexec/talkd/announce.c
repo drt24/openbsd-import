@@ -1,4 +1,4 @@
-/*	$OpenBSD: announce.c,v 1.7 1998/07/03 14:33:38 deraadt Exp $	*/
+/*	$OpenBSD: announce.c,v 1.8 1998/08/18 03:42:10 millert Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -160,6 +160,6 @@ print_mesg(tf, request, remote_machine)
 		*(bptr++) = '\n';
 	}
 	*bptr = '\0';
-	fprintf(tf, big_buf);
+	fprintf(tf, "%s", big_buf);
 	fflush(tf);
 }
