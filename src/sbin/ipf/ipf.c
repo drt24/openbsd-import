@@ -294,7 +294,7 @@ char	*arg;
 	fl |= (opts & FR_INACTIVE);
 	rem = fl;
 
-	if (opendevice() == -2 || ioctl(fd, SIOCIPFFL, &fl) == -1)
+	if (opendevice() != -2 && ioctl(fd, SIOCIPFFL, &fl) == -1)
 		perror("ioctl(SIOCIPFFL)");
 	if ((opts & (OPT_DONOTHING|OPT_VERBOSE)) == OPT_VERBOSE) {
 		printf("remove flags %s%s (%d)\n", (rem & FR_INQUE) ? "I" : "",
