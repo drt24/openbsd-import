@@ -291,7 +291,7 @@ setup_key(local)
 		exit(1);
 	}
 	key_sched(&kdata.kf_key, schedule);
-	des_set_key(&kdata.kf_key, schedule);
+	desrw_set_key(&kdata.kf_key, schedule);
 	return;
 }
 
