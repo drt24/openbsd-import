@@ -49,6 +49,7 @@
 	.globl	curbrk
 
 	.data
+	.align  2
 minbrk:	.long	0
 	.text
 

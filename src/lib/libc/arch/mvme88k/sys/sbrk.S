@@ -48,10 +48,11 @@
 	.globl	curbrk
 
 	.data
-curbrk:	.long	0
 /*
-curbrk:	.long	_end
+curbrk:	.long	0
 */
+	.align  2
+curbrk:	.long	_end
 	.text
 
 ENTRY(sbrk)
