@@ -610,7 +610,7 @@ handle_request()
 	struct host *hp = NULL;
 	struct host dummyhost;
 	int32 bootsize = 0;
-	unsigned hlen, hashcode;
+	unsigned int hlen, hashcode;
 	int32 dest;
 	char realpath[MAXPATHLEN];
 	char *clntpath;
