@@ -1,5 +1,6 @@
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
+ * Copyright (c) 1993, 1994 Chris Provenzano. 
  * All rights reserved.
  *
  * This code is derived from software contributed to Berkeley by
@@ -98,7 +99,7 @@ static u_char *__sccl();
 __svfscanf(fp, fmt0, ap)
 	register FILE *fp;
 	char const *fmt0;
-	va_list ap;
+	pthread_va_list ap;
 {
 	register u_char *fmt = (u_char *)fmt0;
 	register int c;		/* character from format, or conversion */
