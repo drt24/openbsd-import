@@ -33,6 +33,7 @@
 #define	P_TCP	1
 #define	P_UDP	2
 #define	P_ICMP	3
+#define P_IGMP	4
 
 /* Operations */
 #define	OP_NONE	0

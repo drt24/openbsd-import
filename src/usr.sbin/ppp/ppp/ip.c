@@ -139,8 +139,12 @@ FilterCheck(struct ip *pip, struct filter *filter)
                 if (log_IsKept(LogDEBUG))
 		  snprintf(dbuff, sizeof dbuff, "sport = %d", sport);
 		break;
-	      case IPPROTO_UDP:
 	      case IPPROTO_IGMP:
+		cproto = P_IGMP;
+		estab = syn = finrst = -1;
+		sport = ntohs(0);
+		break;
+	      case IPPROTO_UDP:
 	      case IPPROTO_IPIP:
 		cproto = P_UDP;
 		uh = (struct udphdr *) ptop;
