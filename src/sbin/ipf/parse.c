@@ -1,4 +1,4 @@
-/*     $OpenBSD: parse.c,v 1.18 1998/01/26 04:13:38 dgregor Exp $      */
+/*     $OpenBSD: parse.c,v 1.19 1998/02/27 19:37:35 deraadt Exp $      */
 /*
  * Copyright (C) 1993-1997 by Darren Reed.
  *
@@ -66,7 +66,7 @@ char	*proto = NULL;
 char	flagset[] = "FSRPAU";
 u_char	flags[] = { TH_FIN, TH_SYN, TH_RST, TH_PUSH, TH_ACK, TH_URG };
 
-static	char	thishost[64];
+static	char	thishost[MAXHOSTNAMELEN];
 
 
 void initparse()
