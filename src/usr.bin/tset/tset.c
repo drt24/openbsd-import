@@ -103,7 +103,7 @@ char *ttyname(int fd);
 #include <curses.h>	/* for bool typedef */
 #include <dump_entry.h>
 
-MODULE_ID("$Id$")
+MODULE_ID("$From: tset.c,v 0.34 1998/09/05 22:02:19 tom Exp $")
 
 extern char **environ;
 
