@@ -265,7 +265,7 @@ struct	friostat	*fiop;
 		FPRINTF(stderr, "showlist:opts %#x i %d\n", opts, i);
 
 	if (opts & OPT_VERBOSE)
-		PRINTF("fp %#x set %d\n", (u_int)fp, set);
+		PRINTF("fp %#x set %d\n", (u_long)fp, set);
 	if (!fp) {
 		FPRINTF(stderr, "empty list for %s%s\n",
 			(opts & OPT_INACTIVE) ? "inactive " : "", filters[i]);
