@@ -521,3 +521,14 @@ char*  gzerror (file, errnum)
     strcat(s->msg, m);
     return s->msg;
 }
+
+/* ===========================================================================
+     Returns true (1) if file is zipped, else returns false (0).
+*/
+int  gz_iszipped (file)
+    gzFile file;
+{
+    gz_stream *s = (gz_stream*)file;
+
+    return(!(s->transparent));
+}
