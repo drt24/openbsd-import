@@ -215,11 +215,11 @@ int sig;
 		pjob *p, *p2;
 
 		if (WIFSIGNALED(w))
-			plog(XLOG_ERROR, "Process %d exited with signal %ld",
+			plog(XLOG_ERROR, "Process %ld exited with signal %ld",
 				(long)pid, w.w_termsig);
 #ifdef DEBUG
 		else
-			dlog("Process %d exited with status %ld",
+			dlog("Process %ld exited with status %ld",
 				(long)pid, w.w_retcode);
 #endif /* DEBUG */
 
