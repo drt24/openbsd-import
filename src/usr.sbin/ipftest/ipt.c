@@ -175,7 +175,7 @@ char *argv[];
 	while ((i = (*r->r_readip)(buf, sizeof(buf), &iface, &dir)) > 0) {
 		ip->ip_off = ntohs(ip->ip_off);
 		ip->ip_len = ntohs(ip->ip_len);
-		switch (fr_check(ip, ip->ip_hl << 2, iface, dir)) /* XXX */
+		switch (fr_check(ip, ip->ip_hl << 2, (struct ifnet *)iface, dir)) /* XXX */
 		{
 		case -1 :
 			(void)printf("block");
