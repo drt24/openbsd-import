@@ -39,7 +39,6 @@ rcsinfo		-i /usr/local/bin/mkmodules CVSROOT rcsinfo
 
 # Add more modules here 
 #
-sys		src/sys
 #
 alpha		src/sys/arch/alpha
 amiga		src/sys/arch/amiga
@@ -74,3 +73,19 @@ ksrc-pmax       -a src/sys/arch/pmax
 ksrc-sparc      -a src/sys/arch/sparc
 ksrc-sun3       -a src/sys/arch/sun3
 ksrc-vax        -a src/sys/arch/vax
+
+bin		-a src/bin
+distrib		-a src/distrib
+etc		-a src/etc
+games		-a src/games
+gnu		-a src/gnu
+include		-a src/include
+kerberosIV	-a src/kerberosIV
+lib		-a src/lib
+libexec		-a src/libexec
+regress		-a src/regress
+sbin		-a src/sbin
+share		-a src/share
+sys		src/sys
+usr.bin		-a src/usr.bin
+usr.sbin	-a src/usr.sbin
