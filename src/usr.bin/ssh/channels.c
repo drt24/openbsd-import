@@ -250,7 +250,6 @@ void
 channel_close_fds(Channel *c)
 {
 	if (c->sock != -1) {
-		shutdown(c->sock, SHUT_RDWR);
 		close(c->sock);
 		c->sock = -1;
 	}
@@ -281,6 +280,8 @@ channel_free(int id)
 		debug("channel_free: channel %d: dettaching channel user", id);
 		c->dettach_user(c->self, NULL);
 	}
+	if (c->sock != -1)
+		shutdown(c->sock, SHUT_RDWR);
 	channel_close_fds(c);
 	buffer_free(&c->input);
 	buffer_free(&c->output);
