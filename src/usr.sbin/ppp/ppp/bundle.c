@@ -722,7 +722,7 @@ bundle_Create(const char *prefix, int type, const char **argv)
   static struct bundle bundle;		/* there can be only one */
   int enoentcount, err;
   const char *ifname;
-#ifdef TUNSIFMODE
+#if defined(TUNSIFMODE) || defined(TUNSLMODE)
   int iff;
 #endif
 
@@ -777,6 +777,14 @@ bundle_Create(const char *prefix, int type, const char **argv)
   iff = IFF_POINTOPOINT;
   if (ID0ioctl(bundle.dev.fd, TUNSIFMODE, &iff) < 0)
     log_Printf(LogERROR, "bundle_Create: ioctl(TUNSIFMODE): %s\n",
+	       strerror(errno));
+#endif
+
+#ifdef TUNSLMODE
+  /* Make sure we're POINTOPOINT */
+  iff = 0;
+  if (ID0ioctl(bundle.dev.fd, TUNSLMODE, &iff) < 0)
+    log_Printf(LogERROR, "bundle_Create: ioctl(TUNSLMODE): %s\n",
 	       strerror(errno));
 #endif
 
