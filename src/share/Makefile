@@ -3,6 +3,7 @@
 
 # Missing:  ms
 
-SUBDIR=	dict doc ipf lkm man me misc mk skel tabset termcap tmac zoneinfo
+SUBDIR=	dict doc ipf lkm man me misc mk skel tabset termcap terminfo \
+	tmac zoneinfo
 
 .include <bsd.subdir.mk>
