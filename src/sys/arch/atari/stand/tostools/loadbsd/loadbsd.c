@@ -1,3 +1,4 @@
+/*	$OpenBSD: loadbsd.c,v 1.11 1996/01/09 09:55:15 leo Exp $	*/
 /*	$NetBSD: loadbsd.c,v 1.11 1996/01/09 09:55:15 leo Exp $	*/
 
 /*

@@ -1,3 +1,4 @@
+/*	$OpenBSD: rawwrite.c,v 1.3 1996/01/09 09:55:17 leo Exp $	*/
 /*	$NetBSD: rawwrite.c,v 1.3 1996/01/09 09:55:17 leo Exp $	*/
 
 /*
