@@ -24,10 +24,13 @@
 	$Id$
 */
 
+#include "ansidecl.h"
+/* needed here for PTR */
+
 /* Remove these declarations when we have a complete libgnu.a. */
 /* #define STATIC_MALLOC */
 #if !defined (STATIC_MALLOC)
-extern char *xmalloc (), *xrealloc ();
+extern char *xmalloc (long), *xrealloc (PTR, long);
 #else
 static char *xmalloc (), *xrealloc ();
 #endif /* STATIC_MALLOC */
@@ -39,6 +42,7 @@ static char *xmalloc (), *xrealloc ();
 #include <sys/file.h>
 #endif
 #include <signal.h>
+
 
 #if defined (HAVE_UNISTD_H)
 #  include <unistd.h>
