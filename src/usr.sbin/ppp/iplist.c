@@ -149,7 +149,7 @@ iplist_next(struct iplist *list)
 int
 iplist_setsrc(struct iplist *list, const char *src)
 {
-  strncpy(list->src, src, sizeof(list->src));
+  strncpy(list->src, src, sizeof(list->src)-1);
   list->src[sizeof(list->src)-1] = '\0';
   list->cur.srcptr = list->src;
   do {

@@ -56,7 +56,7 @@ void
 SetLabel(const char *label)
 {
   if (label)
-    strncpy(dstsystem, label, sizeof dstsystem);
+    strncpy(dstsystem, label, sizeof(dstsystem) - 1);
   else
     *dstsystem = '\0';
 }

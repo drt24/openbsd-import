@@ -186,7 +186,7 @@ ExpandString(const char *str, char *result, int reslen, int sendmode)
       case 'T':
 	if (VarAltPhone == NULL) {
 	  if (VarNextPhone == NULL) {
-	    strncpy(VarPhoneCopy, VarPhoneList, sizeof(VarPhoneCopy));
+	    strncpy(VarPhoneCopy, VarPhoneList, sizeof(VarPhoneCopy) - 1);
 	    VarPhoneCopy[sizeof(VarPhoneCopy) - 1] = '\0';
 	    VarNextPhone = VarPhoneCopy;
 	  }

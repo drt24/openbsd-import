@@ -244,7 +244,7 @@ get_ether_addr(int s, u_long ipaddr, struct sockaddr_dl *hwaddr)
   for (ifr = ifc.ifc_req; ifr < ifend;) {
     if (ifr->ifr_addr.sa_family == AF_INET) {
       ina = ((struct sockaddr_in *) & ifr->ifr_addr)->sin_addr.s_addr;
-      strncpy(ifreq.ifr_name, ifr->ifr_name, sizeof(ifreq.ifr_name));
+      strncpy(ifreq.ifr_name, ifr->ifr_name, sizeof(ifreq.ifr_name) - 1);
       ifreq.ifr_name[sizeof(ifreq.ifr_name) - 1] = '\0';
 
       /*
