@@ -168,7 +168,7 @@ krb_passwd()
 
 	(void)des_string_to_key(pass, &okey);
 	(void)des_key_sched(&okey, osched);
-	(void)des_set_key(&okey, osched);
+	(void)desrw_set_key(&okey, osched);
 
 	/* wait on the verification string */
 
@@ -212,7 +212,7 @@ krb_passwd()
 	}
 
 	(void)des_key_sched(&proto_data.random_key, random_schedule);
-	(void)des_set_key(&proto_data.random_key, random_schedule);
+	(void)desrw_set_key(&proto_data.random_key, random_schedule);
 	(void)bzero(pass, sizeof(pass));
 
 	if (des_read_pw_string(pass,
