@@ -1,4 +1,4 @@
-/*  $KTH: 1.4 $
+/*  $Revision$
 **
 **  Internal header file for editline library.
 */
