@@ -21,8 +21,8 @@ PROG=		gdb
 CFLAGS+=	-I$(.CURDIR)/arch/$(MACHINE_ARCH) -I$(.CURDIR)/../bfd \
 		-I$(.CURDIR)/../readline -I$(.CURDIR)/../include \
 		-I$(.CURDIR) \
-		-DHOST_CANONICAL=\"$(MACHINE_ARCH)-netbsd\" \
-		-DTARGET_CANONICAL=\"$(MACHINE_ARCH)-netbsd\"
+		-DHOST_CANONICAL=\"$(MACHINE_ARCH)-openbsd\" \
+		-DTARGET_CANONICAL=\"$(MACHINE_ARCH)-openbsd\"
 
 CFLAGS+=	-DNO_MMALLOC -DKERNEL_DEBUG -DHAVE_TERMIOS
 YFLAGS+=	-p $(.PREFIX:S/-exp/_/:S/ch_/chill_/)
