@@ -576,6 +576,8 @@ PRIVATE void
 catcher(sig)
 	int sig;
 {
+    int save_errno = errno;
+
 	if (sig == SIGHUP)
 		do_readtab = 1;
 	if (sig == SIGUSR1)
@@ -585,6 +587,7 @@ catcher(sig)
 	/* XXX - Should just do it the POSIX way (sigaction). */
 	signal(sig, catcher);
 #endif
+    save_errno = errno;
 }
 
 
