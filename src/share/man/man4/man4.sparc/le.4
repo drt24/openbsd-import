@@ -44,7 +44,12 @@
 .Nm le
 .Nd SPARC AMD 7990 LANCE ethernet interface
 .Sh SYNOPSIS
-.Cd "le* at sbus? slot ? offset ?"
+.Cd "le* at sbus? slot ? offset ?            " Pq "sun4c onboard"
+.Cd "lebuffer* at sbus? slot ? offset ?      " Pq Sbus
+.Cd "le* at lebuffer?                        " Pq Sbus
+.Cd "ledma0 at sbus0 slot ? offset ?         " Pq "sun4m onboard"
+.Cd "le0 at ledma0                           " Pq "sun4m onboard"
+.Cd "le0 at obio0 addr 0xf9000000 level 6    " Pq sun4/300
 .Sh DESCRIPTION
 The 
 .Nm
