@@ -82,7 +82,7 @@ extern time_t clock_valid;	/* Clock needs recalculating */
 
 extern char *progname;		/* "amd"|"mmd" */
 extern char hostname[];		/* "kiska" */
-extern int mypid;		/* Current process id */
+extern pid_t mypid;		/* Current process id */
 
 #ifdef HAS_SYSLOG
 extern int syslogging;		/* Really using syslog */

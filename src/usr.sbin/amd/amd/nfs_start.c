@@ -382,7 +382,7 @@ void unregister_amq(P_void)
 }
 
 int mount_automounter(ppid)
-int ppid;
+pid_t ppid;
 {
 	int so = socket(AF_INET, SOCK_DGRAM, 0);
 	SVCXPRT *amqp;

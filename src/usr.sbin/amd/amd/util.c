@@ -495,10 +495,10 @@ am_node *mp;
  *
  * TODO: Need a better strategy for handling errors
  */
-static int dofork(P_void);
-static int dofork()
+static pid_t dofork(P_void);
+static pid_t dofork()
 {
-	int pid;
+	pid_t pid;
 top:
 	pid = fork();
 
@@ -515,10 +515,10 @@ top:
 	return pid;
 }
 
-int background(P_void);
-int background()
+pid_t background(P_void);
+pid_t background()
 {
-	int pid = dofork();
+	pid_t pid = dofork();
 	if (pid == 0) {
 #ifdef DEBUG
 		dlog("backgrounded");
