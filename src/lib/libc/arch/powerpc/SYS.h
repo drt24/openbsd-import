@@ -59,7 +59,7 @@
 #endif /* !__STDC__ */
 #define PSEUDO_SUFFIX		cmpwi 0, 0 ; \
 				beqlr+ ; \
-				b cerror 
+				b PIC_PLT(_ASM_LABEL(cerror))
 
 
 #define SUFFIX			PSEUDO_SUFFIX
