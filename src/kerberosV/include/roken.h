@@ -136,7 +136,6 @@ const char *get_default_username (void);
 
 
 
-void pidfile (const char*);
 
 #define bswap32 swap32
 #define bswap16 swap16
