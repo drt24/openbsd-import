@@ -1,4 +1,4 @@
-/*	$OpenBSD: flexdef.h,v 1.2 1996/06/26 05:35:33 deraadt Exp $	*/
+/*	$OpenBSD: flexdef.h,v 1.3 1996/07/13 22:21:59 millert Exp $	*/
 
 /* flexdef - definitions file for flex */
 
@@ -82,7 +82,7 @@
 #endif
 
 #ifndef PROTO
-#if __STDC__
+#ifdef __STDC__
 #define PROTO(proto) proto
 #else
 #define PROTO(proto) ()
