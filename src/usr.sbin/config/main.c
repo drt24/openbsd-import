@@ -428,8 +428,8 @@ crosscheck()
 		xerror(conffile, i->i_lineno,
 		    "%s at %s is orphaned", i->i_name, i->i_at);
 		if (i->i_atunit == WILD)
-			(void)fprintf(stderr, " (no %s's declared)\n",
-			    i->i_base->d_name);
+			(void)fprintf(stderr, " (no %s declared)\n",
+			    i->i_at);
 		else
 			(void)fprintf(stderr, " (no %s declared)\n", i->i_at);
 		errs++;
