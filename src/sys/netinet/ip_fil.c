@@ -1,4 +1,4 @@
-/*    $OpenBSD$    */
+/*    $OpenBSD: ip_fil.c,v 1.16 1998/01/26 04:10:39 dgregor Exp $    */
 /*
  * Copyright (C) 1993-1997 by Darren Reed.
  *
@@ -267,7 +267,7 @@ ipl_enable()
 	else
 		defpass = "no-match -> block";
 
-#ifdef __OpenBSD__	/* don't print this message */ 
+#ifndef __OpenBSD__	/* don't print this message */ 
 	printf("IP Filter: initialized.  Default = %s all, Logging = %s\n",
 		defpass,
 # ifdef	IPFILTER_LOG
