@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /*-
  * Copyright (c) 1997 Semen Ustimenko
  * All rights reserved.
