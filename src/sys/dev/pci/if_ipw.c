@@ -376,7 +376,7 @@ ipw_media_status(struct ifnet *ifp, struct ifmediareq *imr)
 		break;
 
 	case IEEE80211_M_IBSS:
-		imr->ifm_active |= IFM_IEEE80211_ADHOC;
+		imr->ifm_active |= IFM_IEEE80211_IBSS;
 		break;
 
 	case IEEE80211_M_MONITOR:
