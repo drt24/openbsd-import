@@ -2620,8 +2620,8 @@ in=\\n[.i] fi=\\n[.u] .d=\\n[.d] nl=\\n[nl] pg=\\n[%]
 .de AE
 ..
 .\" I am planning to use mgm some time :-)
-.nr *year \\n[yr]+1900
-.ds cov*new-date \\*[MO\\n[mo]] \\n[dy], \\n[*year]
+.ie \\n[yr]<50 .ds cov*new-date \\*[MO\\n[mo]] \\n[dy], 20\\n[yr]
+.el .ds cov*new-date \\*[MO\\n[mo]] \\n[dy], 19\\n[yr]
 .als DT cov*new-date
 .de ND
 .ds cov*new-date \\$1
