@@ -18,7 +18,13 @@ LIST=		${.CURDIR}/list
 CRUNCHCONF=	${.CURDIR}/${CBIN}.conf
 MTREE=		${.CURDIR}/mtree.conf
 
-all: ${CBIN}
+bsd:
+	cd ${.CURDIR}/../../../../sys/arch/i386/conf && config INST
+	cd ${.CURDIR}/../../../../sys/arch/i386/compile/INST && \
+	    make clean && make depend && make
+	cp ${.CURDIR}/../../../../sys/arch/i386/compile/INST/bsd bsd
+
+all: ${CBIN} bsd
 .ifndef FLOPPY3
 .else
 .endif
