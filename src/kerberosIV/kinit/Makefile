@@ -3,8 +3,7 @@
 
 PROG=	kinit
 DPADD=	${LIBKRB} ${LIBDES}
-LDADD=	-g -lkrb -ldes
+LDADD=	-lkrb -ldes
 BINDIR=	/usr/bin
-CFLAGS += -g
 
 .include <bsd.prog.mk>
