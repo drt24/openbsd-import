@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: print-atalk.c,v 1.15 2000/10/03 14:31:56 ho Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -544,7 +544,7 @@ ataddr_string(u_short atnet, u_char athost)
 {
 	register struct hnamemem *tp, *tp2;
 	register int i = (atnet << 8) | athost;
-	char nambuf[256];
+	char nambuf[MAXHOSTNAMELEN + 20];
 	static int first = 1;
 	FILE *fp;
 
