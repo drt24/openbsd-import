@@ -95,7 +95,6 @@ print-bootp.c	- BOOTP printer routines
 print-cnfp.c	- Cisco NetFlow printer routines
 print-decnet.c	- DECnet printer routines
 print-domain.c	- Domain Name System printer routines
-print-egp.c	- External Gateway Protocol printer routines
 print-enc.c	- Encapsulated printer routines
 print-ether.c	- ethernet printer routines
 print-fddi.c	- Fiber Distributed Data Interface printer routines
