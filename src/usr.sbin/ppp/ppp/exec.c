@@ -118,7 +118,7 @@ exec_Create(struct physical *p)
 	         strerror(errno));
     else {
       int stat, argc;
-      pid_t pid;
+      pid_t pid, realpid;
       char *argv[MAXARGS];
 
       stat = fcntl(fids[0], F_GETFL, 0);
@@ -126,6 +126,7 @@ exec_Create(struct physical *p)
         stat |= O_NONBLOCK;
         fcntl(fids[0], F_SETFL, stat);
       }
+      realpid = getpid();
       switch ((pid = fork())) {
         case -1:
           log_Printf(LogPHASE, "Unable to create pipe for line exec: %s\n",
@@ -156,7 +157,7 @@ exec_Create(struct physical *p)
           log_Printf(LogDEBUG, "Exec'ing ``%s''\n", p->name.base);
           argc = MakeArgs(p->name.base, argv, VECSIZE(argv));
           command_Expand(argv, argc, (char const *const *)argv,
-                         p->dl->bundle, 0);
+                         p->dl->bundle, 0, realpid);
           execvp(*argv, argv);
           fprintf(stderr, "execvp failed: %s: %s\r\n", *argv, strerror(errno));
           _exit(127);

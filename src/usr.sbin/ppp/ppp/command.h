@@ -55,7 +55,7 @@ extern const char Version[];
 extern const char VersionDate[];
 
 extern void command_Expand(char **, int, char const *const *, struct bundle *,
-                           int);
+                           int, pid_t);
 extern int command_Interpret(char *, int, char *vector[MAXARGS]);
 extern void command_Run(struct bundle *, int, char const *const *,
                         struct prompt *, const char *, struct datalink *);

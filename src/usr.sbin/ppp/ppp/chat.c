@@ -683,7 +683,7 @@ ExecStr(struct physical *physical, char *command, char *out, int olen)
   log_Printf(LogCHAT, "Exec: %s\n", command);
   argc = MakeArgs(command, vector, VECSIZE(vector));
   command_Expand(argv, argc, (char const *const *)vector,
-                 physical->dl->bundle, 0);
+                 physical->dl->bundle, 0, getpid());
 
   if (pipe(fids) < 0) {
     log_Printf(LogCHAT, "Unable to create pipe in ExecStr: %s\n",
