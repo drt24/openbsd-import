@@ -609,7 +609,7 @@ handle_request()
 	int32 bootsize = 0;
 	unsigned hlen, hashcode;
 	int32 dest;
-	char realpath[1024];
+	char realpath[MAXPATHLEN];
 	char *clntpath;
 	char *homedir, *bootfile;
 	int n;
