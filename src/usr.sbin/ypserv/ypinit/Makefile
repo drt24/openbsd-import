@@ -1,11 +1,11 @@
 #	from: @(#)Makefile	5.3 (Berkeley) 6/22/90
 #	$Id$
 
-FILES=	Makefile.main Makefile.yp
+FILES=	Makefile.yp
 NOOBJ=	noobj
 
 install:
-	install -c -o root -g wheel -m 751 ${FILES} ${DESTDIR}/var/yp
+	install -c -o root -g wheel -m 644 Makefile.yp ${DESTDIR}/var/yp/Makefile
 	install -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 	    ${.CURDIR}/ypinit.sh ${DESTDIR}/usr/sbin/ypinit
 
