@@ -406,6 +406,59 @@ iface_inDelete(struct iface *iface, struct in_addr ip)
   return 0;
 }
 
+#define IFACE_ADDFLAGS 1
+#define IFACE_DELFLAGS 2
+
+static int
+iface_ChangeFlags(struct iface *iface, int flags, int how)
+{
+  struct ifreq ifrq;
+  int s;
+
+  s = ID0socket(AF_INET, SOCK_DGRAM, 0);
+  if (s < 0) {
+    log_Printf(LogERROR, "iface_ClearFlags: socket: %s\n", strerror(errno));
+    return 0;
+  }
+
+  memset(&ifrq, '\0', sizeof ifrq);
+  strncpy(ifrq.ifr_name, iface->name, sizeof ifrq.ifr_name - 1);
+  ifrq.ifr_name[sizeof ifrq.ifr_name - 1] = '\0';
+  if (ID0ioctl(s, SIOCGIFFLAGS, &ifrq) < 0) {
+    log_Printf(LogERROR, "iface_ClearFlags: ioctl(SIOCGIFFLAGS): %s\n",
+       strerror(errno));
+    close(s);
+    return 0;
+  }
+
+  if (how == IFACE_ADDFLAGS)
+    ifrq.ifr_flags |= flags;
+  else
+    ifrq.ifr_flags &= ~flags;
+
+  if (ID0ioctl(s, SIOCSIFFLAGS, &ifrq) < 0) {
+    log_Printf(LogERROR, "iface_ClearFlags: ioctl(SIOCSIFFLAGS): %s\n",
+       strerror(errno));
+    close(s);
+    return 0;
+  }
+  close(s);
+
+  return 1;	/* Success */
+}
+
+int
+iface_SetFlags(struct iface *iface, int flags)
+{
+  return iface_ChangeFlags(iface, flags, IFACE_ADDFLAGS);
+}
+
+int
+iface_ClearFlags(struct iface *iface, int flags)
+{
+  return iface_ChangeFlags(iface, flags, IFACE_DELFLAGS);
+}
+
 void
 iface_Destroy(struct iface *iface)
 {

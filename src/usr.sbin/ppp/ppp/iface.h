@@ -57,4 +57,6 @@ extern int iface_inAdd(struct iface *, struct in_addr, struct in_addr,
                      struct in_addr, int);
 extern int iface_inDelete(struct iface *, struct in_addr);
 extern int iface_Show(struct cmdargs const *);
+extern int iface_SetFlags(struct iface *, int);
+extern int iface_ClearFlags(struct iface *, int);
 extern void iface_Destroy(struct iface *);
