@@ -1,7 +1,7 @@
 /* filesys.c -- File system specific functions for hacking this system.
    $Id$
 
-   Copyright (C) 1993, 97 Free Software Foundation, Inc.
+   Copyright (C) 1993, 97, 98 Free Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -38,6 +38,7 @@ static char *info_suffixes[] = {
   "",
   ".info",
   "-info",
+  "/index",
   (char *)NULL
 };
 
