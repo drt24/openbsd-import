@@ -329,10 +329,12 @@ ReadSystem(struct bundle *bundle, const char *name, const char *file,
             continue;
 
           if (!indent) {    /* start of next section */
-            wp = strchr(cp, ':');
-            if ((how == SYSTEM_EXEC) && (wp == NULL || wp[1] != '\0'))
-	      log_Printf(LogWARN, "Unindented command (%s line %d) - ignored\n",
-		         filename, linenum);
+            if (*cp != '!') {
+              wp = strchr(cp, ':');
+              if ((how == SYSTEM_EXEC) && (wp == NULL || wp[1] != '\0'))
+	        log_Printf(LogWARN, "Unindented command (%s line %d) -"
+                           " ignored\n", filename, linenum);
+            }
             break;
           }
 
