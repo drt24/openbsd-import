@@ -106,5 +106,5 @@ aic7870_attach(parent, self, aux)
 
 	ahcattach(ahc);
 
-	ahc->sc_ih = pci_map_int(pa->pa_tag, PCI_IPL_BIO, ahcintr, ahc);
+	ahc->sc_ih = pci_map_int(pa->pa_tag, IPL_BIO, ahcintr, ahc);
 }
