@@ -169,8 +169,6 @@ int get_window_size(int fd, struct winsize *);
 
 
 
-extern const char *__progname;
-
 extern char **environ;
 
 struct hostent *
