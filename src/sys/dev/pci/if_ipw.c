@@ -1234,7 +1234,7 @@ ipw_tx_start(struct ifnet *ifp, struct mbuf *m, struct ieee80211_node *ni)
 
 		m_copydata(m, 0, m->m_pkthdr.len, mtod(mnew, caddr_t));
 		m_freem(m);
-		m->m_len = m->m_pkthdr.len;
+		mnew->m_len = mnew->m_pkthdr.len;
 		m = mnew;
 
 		error = bus_dmamap_load_mbuf(sc->sc_dmat, sbuf->map, m,
