@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /*
  * Copyright (c) 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999
  *      The Regents of the University of California.  All rights reserved.
@@ -59,8 +61,9 @@ struct esp_hdr {
 	u_int esp_seq;
 };
 
-void esp_print(register const u_char *bp, register u_int len,
-	       register const u_char *bp2)
+void 
+esp_print (register const u_char *bp, register u_int len,
+	   register const u_char *bp2)
 {
 	const struct ip *ip;
 	const struct esp_hdr *esp;
@@ -86,8 +89,9 @@ struct ah_hdr {
 	u_int   ah_seq;
 };
 
-ah_print(register const u_char *bp, register u_int len,
-	 register const u_char *bp2)
+void
+ah_print (register const u_char *bp, register u_int len,
+	  register const u_char *bp2)
 {
 	const struct ip *ip;
 	const struct ah_hdr *ah;

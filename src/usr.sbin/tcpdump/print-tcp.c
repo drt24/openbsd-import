@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
  *	The Regents of the University of California.  All rights reserved.
@@ -172,8 +174,8 @@ tcp_print(register const u_char *bp, register u_int length,
 	register u_char flags;
 	register int hlen;
 	register char ch;
-	register struct tcp_seq_hash *th;
-	register int rev;
+	register struct tcp_seq_hash *th = NULL;
+	register int rev = 0;
 	u_int16_t sport, dport, win, urp;
 	tcp_seq seq, ack;
 #ifdef INET6
@@ -475,7 +477,7 @@ tcp_print(register const u_char *bp, register u_int length,
 							e -= th->ack;
 						}
 					}
-					(void) printf("{%u:%u} ", s, e);
+					(void) printf("{%lu:%lu} ", s, e);
 				}
 				break;
 			}

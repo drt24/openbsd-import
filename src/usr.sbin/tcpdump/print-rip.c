@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /*
  * Copyright (c) 1989, 1990, 1991, 1993, 1994, 1996
  *	The Regents of the University of California.  All rights reserved.
@@ -36,6 +38,7 @@ static const char rcsid[] =
 #include <netinet/udp_var.h>
 
 #include <stdio.h>
+#include <ctype.h>
 
 #include "interface.h"
 #include "addrtoname.h"
@@ -171,9 +174,11 @@ rip_print(const u_char *dat, u_int length)
 	case 0:
 		/* RFC 1058 */
 		printf(" RIPv0: ");
+#if 0 /* XXX this is broken, ni is uninitialized */
 		rip_printblk((u_char *)&ni->rip_family,
 			     (u_char *)&ni->rip_metric +
 			     sizeof(ni->rip_metric));
+#endif
 		break;
 	default:
 		switch (rp->rip_cmd) {
