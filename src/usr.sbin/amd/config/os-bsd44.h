@@ -160,6 +160,7 @@ XXX - Probably no hope of running Amd on this machine!
 #define	MNTOPT_INTR	"intr"		/* interrupts allowed */
 #define	MNTOPT_NOCONN	"noconn"	/* accept any responder */
 #define	MNTOPT_RESVPORT	"resvport"	/* use reserved port */
+#define	MNTOPT_NQNFS	"nqnfs"		/* use reserved port */
 
 #define NFSMNT_HOSTNAME	0		/* hostname on 4.4 is not optional */
 

@@ -615,6 +615,13 @@ mntfs *mf;
 		nfs_args.flags |= NFSMNT_RESVPORT;
 #endif /* MNTOPT_RESVPORT */
 
+#ifdef MNTOPT_NQNFS
+	if (hasmntopt(&mnt, MNTOPT_NQNFS) != NULL)
+		nfs_args.flags |= NFSMNT_NQNFS;
+	if (hasmntopt(&mnt, "nolooklease") == NULL)
+		nfs_args.flags |= NFSMNT_NQLOOKLEASE;
+#endif /* MNTOPT_NQNFS */
+
 #ifdef NFSMNT_PGTHRESH
 	if (nfs_args.pg_thresh = hasmntval(&mnt, "pgthresh"))
 		nfs_args.flags |= NFSMNT_PGTHRESH;
