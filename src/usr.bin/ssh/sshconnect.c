@@ -1058,14 +1058,12 @@ void ssh_login(int host_key_valid,
   packet_get_bignum(host_key->n, &clen);
   sum_len += clen;
 
-  if (options->check_host_ip && strcmp(host, inet_ntoa(hostaddr->sin_addr))) {
-    /* Store the host key from the known host file in here
-     * so that we can compare it with the key for the IP
-     * address. */
-    file_key = RSA_new();
-    file_key->n = BN_new();
-    file_key->e = BN_new();
-  }
+  /* Store the host key from the known host file in here
+   * so that we can compare it with the key for the IP
+   * address. */
+  file_key = RSA_new();
+  file_key->n = BN_new();
+  file_key->e = BN_new();
 
   /* Get protocol flags. */
   protocol_flags = packet_get_int();
@@ -1135,9 +1133,10 @@ void ssh_login(int host_key_valid,
       ip_status = HOST_DIFFER;
 
     RSA_free(ip_key);
-    RSA_free(file_key);
   } else
     ip_status = host_status;
+
+  RSA_free(file_key);
 
   switch (host_status) {
   case HOST_OK:

@@ -305,6 +305,10 @@ void process_config_line(Options *options, const char *host,
       intptr = &options->batch_mode;
       goto parse_flag;
 
+    case oCheckHostIP:
+      intptr = &options->check_host_ip;
+      goto parse_flag;
+
     case oStrictHostKeyChecking:
       intptr = &options->strict_host_key_checking;
       cp = strtok(NULL, WHITESPACE);
