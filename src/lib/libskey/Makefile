@@ -1,4 +1,4 @@
-# $Id$
+# $OpenBSD: Makefile,v 1.4 1997/04/27 20:56:15 millert Exp $
 
 LIB=	skey
 SRCS=	skeylogin.c skeysubr.c put.c
