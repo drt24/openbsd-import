@@ -24,12 +24,6 @@ RCSID("$Id$");
 #undef HAVE_DEV_PTMX
 #endif
 
-#ifdef HAVE_DEV_PTMX
-#include <sys/stream.h>
-#include <stropts.h>
-#include <sys/conf.h>
-#endif /* HAVE_DEV_PTMX */
-
 #ifndef O_NOCTTY
 #define O_NOCTTY 0
 #endif
@@ -252,17 +246,6 @@ void pty_make_controlling_tty(int *ttyfd, const char *ttyname)
   else
     {
       close(fd);
-#ifdef HAVE_VHANGUP
-      signal(SIGHUP, SIG_IGN);
-      vhangup();
-      signal(SIGHUP, SIG_DFL);
-      fd = open(ttyname, O_RDWR);
-      if (fd == -1)
-	error("pty_make_controlling_tty: reopening controlling tty after vhangup failed for %.100s",
-	      ttyname);
-      close(*ttyfd);
-      *ttyfd = fd;
-#endif /* HAVE_VHANGUP */
     }
 }
 
