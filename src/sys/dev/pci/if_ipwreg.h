@@ -106,6 +106,12 @@
 #define IPW_INFO_CURRENT_SSID	48
 #define IPW_INFO_CURRENT_BSSID	112
 
+/* supported rates */
+#define IPW_RATE_DS1	1
+#define IPW_RATE_DS2	2
+#define IPW_RATE_DS5	4
+#define IPW_RATE_DS11	8
+
 /* firmware binary image header */
 struct ipw_fw_hdr {
 	u_int32_t	version;
