@@ -402,7 +402,7 @@ void fatal(const char *fmt, ...);
    from the function. */
 void fatal_add_cleanup(void (*proc)(void *context), void *context);
 
-/* Removes a cleanup frunction to be called at fatal(). */
+/* Removes a cleanup function to be called at fatal(). */
 void fatal_remove_cleanup(void (*proc)(void *context), void *context);
 
 /*---------------- definitions for channels ------------------*/
@@ -518,9 +518,6 @@ void x11_request_forwarding(void);
    This should be called in the client only.  */
 void x11_request_forwarding_with_spoofing(const char *proto, const char *data);
 
-/* Local Xauthority file (server only). */
-extern char *xauthfile;
-
 /* Sends a message to the server to request authentication fd forwarding. */
 void auth_request_forwarding(void);
 
@@ -567,7 +564,8 @@ struct envstring {
    0 if the client could not be authenticated, and 1 if authentication was
    successful.  This may exit if there is a serious protocol violation. */
 int auth_krb4(const char *server_user, KTEXT auth, char **client);
-int ssh_tf_init(uid_t uid);
+int krb4_init(uid_t uid);
+void krb4_cleanup_proc(void *ignore);
 
 #ifdef AFS
 #include <kafs.h>
