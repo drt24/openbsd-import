@@ -49,7 +49,8 @@
 #define	ClearArray(x)		memset((char *)x, 0, sizeof x)
 #endif	/* defined(unix) */
 
-#if	defined(unix)		/* Define BSD equivalent mem* functions */
+/* Define BSD equivalent mem* functions */
+#if	defined(unix) && !defined(__NetBSD__)
 #define	memcpy(dest,src,n)	bcopy(src,dest,n)
 #define	memmove(dest,src,n)	bcopy(src,dest,n)
 #define	memset(s,c,n)		if (c == 0) { \
@@ -63,4 +64,4 @@
 				    } \
 				}
 #define	memcmp(s1,s2,n)		bcmp(s1,s2,n)
-#endif	/* defined(unix) */
+#endif	/* defined(unix) && !defined(__NetBSD__) */
