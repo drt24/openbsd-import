@@ -1,4 +1,4 @@
-/*	$OpenBSD: wicontrol.c,v 1.9 2000/08/11 09:13:21 ho Exp $	*/
+/*	$OpenBSD: wicontrol.c,v 1.10 2000/08/16 17:39:56 millert Exp $	*/
 
 /*
  * Copyright (c) 1997, 1998, 1999
@@ -640,7 +640,7 @@ int main(argc, argv)
 	int			argc;
 	char			*argv[];
 {
-	char			*iface = NULL;
+	char			*iface = "wi0";
 	int                     ch, p, dumpstats = 0, dumpinfo = 1;
 
 	if (argc > 1 && argv[1][0] != '-') {
