@@ -118,9 +118,6 @@
 
 /* -------------------------------------------------------------------- */
 
-/* affects include files on Solaris */
-#define BSD_COMP
-
 /* allow compilation outside an Apache build tree */
 #ifdef NO_APACHE_INCLUDES
 #include <sys/time.h>
@@ -153,23 +150,12 @@
 #endif				/* NO_APACHE_INCLUDES */
 
 #ifdef	USE_SSL
-#if ((!defined(RSAREF)) && (!defined(SYSSSL)))
-/* Libraries on most systems.. */
 #include <openssl/rsa.h>
 #include <openssl/crypto.h>
 #include <openssl/x509.h>
 #include <openssl/pem.h>
 #include <openssl/err.h>
 #include <openssl/ssl.h>
-#else
-/* Libraries for RSAref and SYSSSL */
-#include <rsa.h>
-#include <crypto.h>
-#include <x509.h>
-#include <pem.h>
-#include <err.h>
-#include <ssl.h>
-#endif
 #endif
 
 #include <math.h>
