@@ -56,7 +56,8 @@ xmit(int type,
 	msg.tsp_type = type;
 	msg.tsp_seq = seq;
 	msg.tsp_vers = TSPVERSION;
-	(void)strcpy(msg.tsp_name, hostname);
+	(void)strncpy(msg.tsp_name, hostname, sizeof msg.tsp_name-1);
+	msg.tsp_name[sizeof msg.tsp_name-1] = '\0';
 	bytenetorder(&msg);
 	if (sendto(sock, (char *)&msg, sizeof(struct tsp), 0,
 		   (struct sockaddr*)addr, sizeof(struct sockaddr)) < 0) {
