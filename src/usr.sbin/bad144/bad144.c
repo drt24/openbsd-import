@@ -152,7 +152,7 @@ usage:
 		(void)sprintf(name, "%sr%s%c", _PATH_DEV, argv[0],
 		    'a' + RAW_PART);
 	else
-		strcpy(name, argv[0]);
+		strlcpy(name, argv[0], MAXPATHLEN);
 	f = open(name, argc == 1? O_RDONLY : O_RDWR);
 	if (f < 0)
 		Perror(name);
