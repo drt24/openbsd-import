@@ -86,7 +86,7 @@ main(argc, argv)
 		exit(1);
 	}
 	while ((ch = getopt(argc, argv, "avug")) != -1) {
-		switch(ch) {
+		switch (ch) {
 		case 'a':
 			aflag++;
 			break;
