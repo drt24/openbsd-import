@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: print-sl.c,v 1.10 2000/10/03 14:31:58 ho Exp $	*/
 
 /*
  * Copyright (c) 1989, 1990, 1991, 1993, 1994, 1995, 1996, 1997
@@ -287,7 +287,7 @@ compressed_sl_print(const u_char *chdr, const struct ip *ip,
 	hlen = ip->ip_hl;
 	hlen += ((struct tcphdr *)&((int32_t *)ip)[hlen])->th_off;
 	lastlen[dir][lastconn] = length - (hlen << 2);
-	printf(" %d (%d)", lastlen[dir][lastconn], cp - chdr);
+	printf(" %d (%d)", lastlen[dir][lastconn], (int)(cp - chdr));
 }
 #else
 #include <sys/types.h>

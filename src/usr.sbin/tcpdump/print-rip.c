@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: print-rip.c,v 1.8 2000/10/03 14:21:57 ho Exp $	*/
 
 /*
  * Copyright (c) 1989, 1990, 1991, 1993, 1994, 1996
@@ -38,6 +38,7 @@ static const char rcsid[] =
 #include <netinet/udp_var.h>
 
 #include <stdio.h>
+#include <string.h>
 #include <ctype.h>
 
 #include "interface.h"
