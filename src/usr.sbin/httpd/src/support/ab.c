@@ -147,10 +147,8 @@
 #include <fcntl.h>
 #include <sys/time.h>
 
-#ifndef NO_WRITEV
 #include <sys/types.h>
 #include <sys/uio.h>
-#endif
 
 #endif				/* NO_APACHE_INCLUDES */
 
