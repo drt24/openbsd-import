@@ -3,7 +3,7 @@
 
 SUBDIR=	atrun comsat fingerd ftpd getNAME getty identd lfs_cleanerd \
 	mail.local makekey makewhatis rexecd rlogind rshd rpc.rquotad \
-	rpc.rstatd rpc.rusersd rpc.rwalld rpc.sprayd talkd telnetd \
-	tftpd uucpd
+	rpc.rstatd rpc.rusersd rpc.rwalld rpc.sprayd rpc.yppasswdd \
+	talkd telnetd tftpd uucpd
 
 .include <bsd.subdir.mk>
