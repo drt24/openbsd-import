@@ -48,7 +48,7 @@ all: ${CBIN}
 unconfig:
 	-umount -f ${MOUNT_POINT}
 	-vnconfig -u ${VND_DEV}
-	-/bin/rm -f ${IMAGE}
+	-/bin/rm -f ${REALIMAGE} ${IMAGE}
 
 ${CBIN}.mk ${CBIN}.cache ${CBIN}.c: ${CRUNCHCONF}
 	crunchgen -D ${TOP}/../../.. -L ${DESTDIR}/usr/lib ${CRUNCHCONF}
