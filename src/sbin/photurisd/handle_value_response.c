@@ -73,7 +73,7 @@ handle_value_response(u_char *packet, int size, char *address,
 	};
 	struct value_response *header;
 	struct stateob *st;
-	mpz_t test;
+	BIGNUM *test;
 
 	if (size < VALUE_RESPONSE_MIN)
 	     return -1;	/* packet too small  */
@@ -93,12 +93,13 @@ handle_value_response(u_char *packet, int size, char *address,
 	     return -1;     /* We don't want this packet */
 
 	/* Now check the exchange value for defects */
-	mpz_init_set_varpre(test, parts[0].where);
+	test = BN_new();
+	BN_varpre2bn(parts[0].where, parts[0].size, test);
 	if (!exchange_check_value(test, st->generator, st->modulus)) {
-	     mpz_clear(test);
+	     BN_clear_free(test);
 	     return 0;
 	}
-	mpz_clear(test);
+	BN_clear_free(test);
 
 	/* Reserved Field for TBV */
 	bcopy(header->reserved, st->uSPITBV, 3);

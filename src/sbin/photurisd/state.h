@@ -38,7 +38,7 @@
 
 #include <sys/socket.h>
 #include <netinet/in.h>
-#include <gmp.h>
+#include <ssl/bn.h>
 #include <time.h>
 #include "userdefs.h"
 #ifdef NEED_UTYPES
@@ -119,18 +119,18 @@ struct stateob {
   void *uSPIprivacyctx;
   time_t ulifetime;                 /* User SPI lifetime */
 
-  mpz_t modulus;                    /* Modulus for look up in cache */
-  mpz_t generator;                  /* Generator for look up in cache */
+  BIGNUM *modulus;			/* Modulus for look up in cache */
+  BIGNUM *generator;			/* Generator for look up in cache */
   u_int8_t *texchange;              /* Their exchange value */
-  u_int16_t texchangesize;
+  size_t texchangesize;
   u_int8_t *exchangevalue;          /* Our exchange value */
-  u_int16_t exchangesize;
+  size_t exchangesize;
   u_int8_t *shared;                 /* Shared secret */
-  u_int16_t sharedsize;
+  size_t sharedsize;
 
   int retries;                      /* Number of retransmits */
   u_int8_t *packet;                 /* Buffer for retransmits */
-  u_int16_t packetlen;
+  size_t packetlen;
   u_int8_t packetsig[16];           /* MD5 hash of an old packet */
 
   time_t lifetime;                  /* Lifetime for the exchange */

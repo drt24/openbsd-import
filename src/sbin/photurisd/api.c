@@ -97,7 +97,7 @@ process_api(int fd, int sendsock)
 
 #ifndef DEBUG
 	if (addresses != (char **) NULL && strlen(st->address))
-	     for (i = 0; i<num_ifs; i++) {
+	     for (i = 0; i < num_ifs; i++) {
 		  if (addresses[i] == (char *)NULL)
 		       continue;
 		  if (!strcmp(addresses[i], st->address)) {

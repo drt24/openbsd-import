@@ -48,7 +48,7 @@
 #define EXTERN extern 
 #endif
 
-EXTERN int compute_shared_secret(struct stateob *, u_int8_t **, u_int16_t *);
+EXTERN int compute_shared_secret(struct stateob *, u_int8_t **, size_t *);
 EXTERN int compute_session_key(struct stateob *st, u_int8_t *key, 
 			       u_int8_t *attribute, int owner, 
 			       u_int16_t *order);

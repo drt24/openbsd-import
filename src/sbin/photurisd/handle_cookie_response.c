@@ -91,15 +91,15 @@ handle_cookie_response(u_char *packet, int size,
 	/* Check scheme size */
 	p = COOKIE_RESPONSE_SCHEMES(header);
 	i = 0;
-	while(i<size-COOKIE_RESPONSE_MIN) {
+	while (i < size - COOKIE_RESPONSE_MIN) {
 	     if ((n = scheme_get_len(p + i)) == 0)
 		  break;
 	     i += n;
 	}
 
-	if (i != size-COOKIE_RESPONSE_MIN) {
+	if (i != size - COOKIE_RESPONSE_MIN) {
 	     log_error(0, "schemes corrupt in handle_cookie_response()");
-	     return -1;    /* Size didn't match UDP size */
+	     return (-1);    /* Size didn't match UDP size */
 	}
 
 	/* Copy responder cookies and offered schemes */

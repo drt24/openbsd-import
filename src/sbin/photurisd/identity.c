@@ -50,7 +50,7 @@ static char rcsid[] = "$Id$";
 #include <netinet/in.h> 
 #include <arpa/inet.h> 
 #include <md5.h>
-#include <gmp.h>
+#include <ssl/bn.h>
 #include <sha1.h>
 #include "config.h"
 #include "photuris.h"
