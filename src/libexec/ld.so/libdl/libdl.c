@@ -1,8 +1,8 @@
-/*	$OpenBSD$ */
+/*	$OpenBSD: libdl.c,v 1.1.1.2 2000/06/13 03:40:24 rahnds Exp $ */
 
 /*
  * Copyright (c) 1998 Per Fogelstrom, Opsycon AB
- * 
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
  * are met:
