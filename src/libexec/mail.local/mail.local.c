@@ -184,7 +184,8 @@ store(from)
 	int fd, eline;
 	char *tn, line[2048];
 
-	tn = strdup(_PATH_LOCTMP);
+	if ((tn = strdup(_PATH_LOCTMP)) == NULL)
+		err(FATAL, "unable to allocate memory");
 	if ((fd = mkstemp(tn)) == -1 || !(fp = fdopen(fd, "w+")))
 		err(FATAL, "unable to open temporary file");
 	(void)unlink(tn);
