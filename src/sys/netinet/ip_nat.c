@@ -1,4 +1,4 @@
-/*       $OpenBSD$       */
+/*       $OpenBSD: ip_nat.c,v 1.14 1998/02/17 01:39:05 dgregor Exp $       */
 /*
  * Copyright (C) 1995-1997 by Darren Reed.
  *
@@ -498,10 +498,8 @@ struct in_addr *inp;
 	}
 	if (!ifa)
 		sin = NULL;
-	if (!sin) {
-		KFREE(nat);
+	if (!sin)
 		return -1;
-	}
 #  endif /* (BSD < 199306) && (!__sgi && IFF_DRVLOCK) */
 	in = sin->sin_addr;
 	in.s_addr = ntohl(in.s_addr);
