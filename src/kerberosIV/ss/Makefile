@@ -10,7 +10,7 @@ CLEANFILES+=	ss_err.c ss_err.h std_rqs.c ss
 
 ss_err.h ss_err.c:	${.CURDIR}/ss_err.et
 	test -e ss_err.et || ln -s ${.CURDIR}/ss_err.et .
-	${COMPILE_ET} ss_err.et
+	compile_et ss_err.et
 	-test -h ss_err.et && rm ss_err.et
 
 std_rqs.c:		${.CURDIR}/std_rqs.ct
