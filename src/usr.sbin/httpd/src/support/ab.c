@@ -1079,11 +1079,12 @@ static void read_connection(struct connection * c)
 		 * this is first time, extract some interesting info
 		 */
 		char *p, *q;
+		int qlen;
 		p = strstr(c->cbuff, "Server:");
-		q = servername;
+		q = servername; qlen = sizeof(servername);
 		if (p) {
 		    p += 8;
-		    while (*p > 32)
+		    while (*p > 32 && qlen-- > 1) 
 			*q++ = *p++;
 		}
 		*q = 0;
@@ -1306,7 +1307,7 @@ static void test(void)
 
 	/* check for time limit expiry */
 	gettimeofday(&now, 0);
-	if (tlimit && timedif(now, start) > (tlimit * 1000)) {
+	if (tlimit && timedif(now, start) >= (tlimit * 1000)) {
 	    requests = done;	/* so stats are correct */
 	}
 	/* Timeout of 30 seconds. */
@@ -1575,9 +1576,9 @@ int main(int argc, char **argv)
 	    strcpy(content_type, optarg);
 	    break;
 	case 'C':
-	    strncat(cookie, "Cookie: ", sizeof(cookie));
-	    strncat(cookie, optarg, sizeof(cookie));
-	    strncat(cookie, "\r\n", sizeof(cookie));
+	    strncat(cookie, "Cookie: ", sizeof(cookie)-strlen(cookie)-1);
+	    strncat(cookie, optarg, sizeof(cookie)-strlen(cookie)-1);
+	    strncat(cookie, "\r\n", sizeof(cookie)-strlen(cookie)-1);
 	    break;
 	case 'A':
 	    /*
@@ -1589,9 +1590,9 @@ int main(int argc, char **argv)
 	    l = ap_base64encode(tmp, optarg, strlen(optarg));
 	    tmp[l] = '\0';
 
-	    strncat(auth, "Authorization: Basic ", sizeof(auth));
-	    strncat(auth, tmp, sizeof(auth));
-	    strncat(auth, "\r\n", sizeof(auth));
+	    strncat(auth, "Authorization: Basic ", sizeof(auth)-strlen(auth)-1);
+	    strncat(auth, tmp, sizeof(auth)-strlen(auth)-1);
+	    strncat(auth, "\r\n", sizeof(auth)-strlen(auth)-1);
 	    break;
 	case 'P':
 	    /*
@@ -1602,9 +1603,9 @@ int main(int argc, char **argv)
 	    l = ap_base64encode(tmp, optarg, strlen(optarg));
 	    tmp[l] = '\0';
 
-	    strncat(auth, "Proxy-Authorization: Basic ", sizeof(auth));
-	    strncat(auth, tmp, sizeof(auth));
-	    strncat(auth, "\r\n", sizeof(auth));
+	    strncat(auth, "Proxy-Authorization: Basic ", sizeof(auth)-strlen(auth)-1);
+	    strncat(auth, tmp, sizeof(auth)-strlen(auth)-1);
+	    strncat(auth, "\r\n", sizeof(auth)-strlen(auth)-1);
 	    break;
 	case 'X':
 	    {
@@ -1622,8 +1623,8 @@ int main(int argc, char **argv)
 	    }
 	    break;
 	case 'H':
-	    strncat(hdrs, optarg, sizeof(hdrs));
-	    strncat(hdrs, "\r\n", sizeof(hdrs));
+	    strncat(hdrs, optarg, sizeof(hdrs)-strlen(hdrs)-1);
+	    strncat(hdrs, "\r\n", sizeof(hdrs)-strlen(hdrs)-1);
 	    break;
 	case 'V':
 	    copyright();
