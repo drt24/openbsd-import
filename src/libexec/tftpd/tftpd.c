@@ -349,7 +349,7 @@ validate_access(filename, mode)
 		if ((stbuf.st_mode&(S_IWRITE >> 6)) == 0)
 			return (EACCESS);
 	}
-	fd = open(filename, mode == RRQ ? 0 : 1);
+	fd = open(filename, mode == RRQ ? O_RDONLY : (O_WRONLY|O_TRUNC));
 	if (fd < 0)
 		return (errno + 100);
 	file = fdopen(fd, (mode == RRQ)? "r":"w");
