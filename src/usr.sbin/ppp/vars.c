@@ -38,7 +38,7 @@
 #include "vars.h"
 #include "auth.h"
 
-char VarVersion[] = "PPP Version 1.5";
+char VarVersion[] = "PPP Version 1.65";
 char VarLocalVersion[] = "$Date$";
 int Utmp = 0;
 int ipInOctets = 0;

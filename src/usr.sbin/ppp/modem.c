@@ -94,7 +94,7 @@ Enqueue(struct mqueue * queue, struct mbuf * bp)
 }
 
 struct mbuf *
-Dequeue(struct mqueue * queue)
+Dequeue(struct mqueue *queue)
 {
   struct mbuf *bp;
 
@@ -110,6 +110,14 @@ Dequeue(struct mqueue * queue)
     }
   }
   return (bp);
+}
+
+void
+SequenceQueues()
+{
+  LogPrintf(LogDEBUG, "SequenceQueues\n");
+  while (OutputQueues[PRI_NORMAL].qlen)
+    Enqueue(OutputQueues + PRI_LINK, Dequeue(OutputQueues + PRI_NORMAL));
 }
 
 static struct speeds {

@@ -38,5 +38,6 @@ extern void HangupModem(int);
 extern int ShowModemStatus(struct cmdargs const *);
 extern void Enqueue(struct mqueue *, struct mbuf *);
 extern struct mbuf *Dequeue(struct mqueue *);
+extern void SequenceQueues(void);
 extern void ModemAddInOctets(int);
 extern void ModemAddOutOctets(int);

@@ -52,7 +52,7 @@ struct fsm {
   u_short max_code;
   int open_mode;
   int state;			/* State of the machine */
-  int reqid;			/* Next request id */
+  u_char reqid;			/* Next request id */
   int restart;			/* Restart counter value */
   int maxconfig;
 
