@@ -67,7 +67,7 @@ static char *rcsid = "$Id$";
 char *qfname = QUOTAFILENAME;
 char *qfextension[] = INITQFNAMES;
 char *quotagroup = QUOTAGROUP;
-char tmpfil[] = _PATH_TMP;
+char tmpfil[] = _PATH_TMPFILE;
 
 struct quotause {
 	struct	quotause *next;

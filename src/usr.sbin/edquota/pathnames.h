@@ -36,5 +36,4 @@
 
 #include <paths.h>
 
-#undef _PATH_TMP
-#define	_PATH_TMP	"/tmp/EdP.aXXXXX"
+#define	_PATH_TMPFILE	"/tmp/EdP.aXXXXX"
