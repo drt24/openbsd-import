@@ -48,6 +48,7 @@ typedef struct
   int fallback_to_rsh;		/* Use rsh if cannot connect with ssh. */
   int use_rsh;			/* Always use rsh (don\'t try ssh). */
   int batch_mode;		/* Batch mode: do not ask for passwords. */
+  int check_host_ip;		/* Also keep track of keys for IP address */
   int strict_host_key_checking;	/* Strict host key checking. */
   int compression;		/* Compress packets in both directions. */
   int compression_level;	/* Compression level 1 (fast) to 9 (best). */
