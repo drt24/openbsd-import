@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /*-
  * Copyright (c) 1985, 1993 The Regents of the University of California.
  * All rights reserved.
@@ -298,7 +300,7 @@ loop:
 				tmptv.tv_sec = msg->tsp_time.tv_sec;
 				tmptv.tv_usec = msg->tsp_time.tv_usec;
 				(void)settimeofday(&tmptv, 0);
-				logwtmp("}", "date", "");
+				logwtmp("{", "date", "");
 #endif /* sgi */
 				syslog(LOG_NOTICE,
 				       "date changed by %s from %s",
