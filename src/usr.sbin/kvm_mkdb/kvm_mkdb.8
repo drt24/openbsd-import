@@ -40,6 +40,7 @@
 .Nd create kernel database
 .Sh SYNOPSIS
 .Nm kvm_mkdb
+.Op Fl v
 .Op file
 .Sh DESCRIPTION
 .Nm Kvm_mkdb
@@ -57,6 +58,10 @@ used by the
 .Xr kvm_nlist 3
 function.  However, in the future the database may contain other static
 information about the current system.
+.Pp
+The
+.Fl v 
+option yields slightly more verbose operation.
 .Sh FILES
 .Bl -tag -width /var/db/kvm_bsd.db -compact
 .It Pa /bsd
