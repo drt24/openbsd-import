@@ -355,7 +355,7 @@ inline Fix24 operator<<(const Fix24& a, int b)
 
 inline Fix24 operator>>(const Fix24& a, int b) 	
 { 
-  return (a.m >> b) & 0xffffff00L; 
+  return (a.m >> b) & (long)0xffffff00L; 
 }
 
 inline  Fix24&  Fix24:: operator+=(const Fix24&  f)
