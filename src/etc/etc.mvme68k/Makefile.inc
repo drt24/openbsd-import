@@ -12,5 +12,5 @@ bsd-generic:
 	cd ${.CURDIR}/../sys/arch/mvme68k/compile/GENERIC && \
 	    make clean && make depend && make && gzip -9 bsd
 bootblocks:
-	cp ${DESTDIR}/usr/mdec/* .
+	cp ${DESTDIR}/usr/mdec/* ${DESTDIR}/snapshot/
 .endif	# DESTDIR check
