@@ -1,4 +1,4 @@
-/*	$OpenBSD: autoconf.c,v 1.4 2002/06/09 04:13:13 drahn Exp $	*/
+/*	$OpenBSD: autoconf.c,v 1.5 2002/09/14 18:47:30 deraadt Exp $	*/
 /*
  * Copyright (c) 1996, 1997 Per Fogelstrom
  * Copyright (c) 1995 Theo de Raadt
@@ -582,7 +582,7 @@ findtype(s)
 		dp++;
 	}
 	if (dp->att == NULL) {
-		printf("string [%s]not found\n", *s);
+		printf("string [%s] not found\n", *s);
 	}
 	return(dp);
 }
