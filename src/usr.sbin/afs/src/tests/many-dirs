@@ -1,4 +1,0 @@
-#!/bin/sh
-# $Id$
-
-$objdir/create-dirs 1000
