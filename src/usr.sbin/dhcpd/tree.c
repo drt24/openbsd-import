@@ -53,7 +53,7 @@ cons(caddr_t car, pair cdr)
 {
 	pair	foo = (pair)dmalloc(sizeof *foo, "cons");
 	if (!foo)
-		error ("no memory for cons.");
+		error("no memory for cons.");
 	foo->car = car;
 	foo->cdr = cdr;
 	return foo;
@@ -138,6 +138,7 @@ tree_concat(struct tree *left, struct tree *right)
 	if (left->op == TREE_CONST && right->op == TREE_CONST) {
 		unsigned char *buf = dmalloc(left->data.const_val.len
 		    + right->data.const_val.len, "tree_concat");
+
 		if (!buf)
 			error("No memory to concatenate constants.");
 		memcpy(buf, left->data.const_val.data,
