@@ -159,29 +159,11 @@ int ssh_create_socket(uid_t original_real_uid, int privileged)
   if (privileged)
     {
       struct sockaddr_in sin;
-      int p;
-      for (p = 1023; p > 512; p--)
-	{
-	  sock = socket(AF_INET, SOCK_STREAM, 0);
-	  if (sock < 0)
-	    fatal("socket: %.100s", strerror(errno));
-	  
-	  /* Initialize the desired sockaddr_in structure. */
-	  memset(&sin, 0, sizeof(sin));
-	  sin.sin_family = AF_INET;
-	  sin.sin_addr.s_addr = INADDR_ANY;
-	  sin.sin_port = htons(p);
+      int p = IPPORT_RESERVED - 1;
 
-	  /* Try to bind the socket to the privileged port. */
-	  if (bind(sock, (struct sockaddr *)&sin, sizeof(sin)) >= 0)
-	    break; /* Success. */
-	  if (errno == EADDRINUSE)
-	    {
-	      close(sock);
-	      continue;
-	    }
-	  fatal("bind: %.100s", strerror(errno));
-	}
+      sock = rresvport(&p);
+      if (sock < 0)
+        fatal("rresvport: %.100s", strerror(errno));
       debug("Allocated local port %d.", p);
     }
   else
