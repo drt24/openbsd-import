@@ -59,6 +59,8 @@ static char rcsid[] = "$Id$";
 #include <paths.h>
 #include "talkd.h"
 
+#define	satosin(sa)	((struct sockaddr_in *)(sa))
+
 void
 process_request(mp, rp)
 	register CTL_MSG *mp;
