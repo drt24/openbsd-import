@@ -5,7 +5,7 @@
 
 .ifdef DESTDIR
 
-snap_md: binutils bsd boot floppy
+snap_md: binutils bsd floppy
 
 binutils:
 	cd ${DESTDIR} && tar cf - usr/*openbsd* \
