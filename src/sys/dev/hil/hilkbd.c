@@ -1,4 +1,4 @@
-/*	$OpenBSD: hilkbd.c,v 1.8 2003/02/26 20:22:04 miod Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * Copyright (c) 2003, Miodrag Vallat.
  * All rights reserved.
