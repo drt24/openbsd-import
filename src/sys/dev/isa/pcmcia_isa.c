@@ -85,7 +85,6 @@ pcmcia_isa_init(parent, cf, aux, pca, flag)
 {
 	struct pcmciabus_attach_args *pa = aux;
 	bus_mem_handle_t memh;
-	vm_offset_t physaddr;
 
 #ifdef PCMCIA_ISA_DEBUG
 	if (parent != NULL)

@@ -221,6 +221,8 @@ pcic_wr(slot, reg, val)
 	}
 }
 
+static __inline int pcic_wait __P((struct slot *, int));
+
 static __inline int
 pcic_wait(slot, i)
 	struct slot *slot;
