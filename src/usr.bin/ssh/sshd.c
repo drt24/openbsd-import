@@ -74,6 +74,10 @@ char **saved_argv;
    the SIGHUP signal handler. */
 int listen_sock;
 
+/* the client's version string, passed by sshd2 in compat mode.
+   if != NULL, sshd will skip the version-number exchange */
+char *client_version_string = NULL;
+
 /* Flags set in auth-rsa from authorized_keys flags.  These are set in
   auth-rsa.c. */
 int no_port_forwarding_flag = 0;
@@ -254,7 +258,7 @@ main(int ac, char **av)
   initialize_server_options(&options);
 
   /* Parse command-line arguments. */
-  while ((opt = getopt(ac, av, "f:p:b:k:h:g:diqQ")) != EOF)
+  while ((opt = getopt(ac, av, "f:p:b:k:h:g:V:diqQ")) != EOF)
     {
       switch (opt)
 	{
@@ -288,6 +292,11 @@ main(int ac, char **av)
 	  break;
 	case 'h':
 	  options.host_key_file = optarg;
+	  break;
+	case 'V':
+	  client_version_string = optarg;
+	  /* only makes sense with inetd_flag, i.e. no listen() */
+	  inetd_flag = 1;
 	  break;
 	case '?':
 	default:
@@ -631,31 +640,36 @@ main(int ac, char **av)
   if (!debug_flag)
     alarm(options.login_grace_time);
 
-  /* Send our protocol version identification. */
-  snprintf(buf, sizeof buf, "SSH-%d.%d-%.100s\n", 
-	  PROTOCOL_MAJOR, PROTOCOL_MINOR, SSH_VERSION);
-  if (write(sock_out, buf, strlen(buf)) != strlen(buf))
-    fatal("Could not write ident string.");
-
-  /* Read other side\'s version identification. */
-  for (i = 0; i < sizeof(buf) - 1; i++)
-    {
-      if (read(sock_in, &buf[i], 1) != 1)
-	fatal("Did not receive ident string.");
-      if (buf[i] == '\r')
-	{
-	  buf[i] = '\n';
-	  buf[i + 1] = 0;
-	  break;
-	}
-      if (buf[i] == '\n')
-	{
-	  /* buf[i] == '\n' */
-	  buf[i + 1] = 0;
-	  break;
-	}
-    }
-  buf[sizeof(buf) - 1] = 0;
+  if (client_version_string != NULL) {
+     /* we are exec'ed by sshd2, so skip exchange of protocol version */
+     strlcpy(buf, client_version_string, sizeof(buf));
+  } else {
+    /* Send our protocol version identification. */
+    snprintf(buf, sizeof buf, "SSH-%d.%d-%.100s\n", 
+      	  PROTOCOL_MAJOR, PROTOCOL_MINOR, SSH_VERSION);
+    if (write(sock_out, buf, strlen(buf)) != strlen(buf))
+      fatal("Could not write ident string.");
+ 
+    /* Read other side\'s version identification. */
+    for (i = 0; i < sizeof(buf) - 1; i++)
+      {
+        if (read(sock_in, &buf[i], 1) != 1)
+      	fatal("Did not receive ident string.");
+        if (buf[i] == '\r')
+      	{
+      	  buf[i] = '\n';
+      	  buf[i + 1] = 0;
+      	  break;
+      	}
+        if (buf[i] == '\n')
+      	{
+      	  /* buf[i] == '\n' */
+      	  buf[i + 1] = 0;
+      	  break;
+      	}
+      }
+    buf[sizeof(buf) - 1] = 0;
+  }
   
   /* Check that the versions match.  In future this might accept several
      versions and set appropriate flags to handle them. */
