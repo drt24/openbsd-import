@@ -1,4 +1,4 @@
-/*       $OpenBSD: ip_nat.c,v 1.20 1999/02/05 05:58:52 deraadt Exp $       */
+/*       $OpenBSD: ip_nat.c,v 1.21 1999/06/07 22:00:34 deraadt Exp $       */
 /*
  * Copyright (C) 1995-1998 by Darren Reed.
  *
@@ -413,6 +413,26 @@ struct nat *natd;
 	KFREE(natd);
 }
 
+void
+nat_ifdetach(ifp)
+	struct ifnet *ifp;
+{
+	ipnat_t *n, **np;
+
+	for (np = &nat_list; (n = *np) != NULL; np = &n->in_next) {
+		*np = n->in_next;
+		if (!n->in_use) {
+			if (n->in_apr)
+				ap_free(n->in_apr);
+			KFREE(n);
+			nat_stats.ns_rules--;
+		} else {
+			n->in_flags |= IPN_DELETE;
+			n->in_next = NULL;
+		}
+		n = NULL;
+	}
+}
 
 /*
  * nat_flushtable - clear the NAT table of all mapping entries.
