@@ -491,6 +491,7 @@ main(int ac, char **av)
 		memset(&hints, 0, sizeof(hints));
 		hints.ai_family = AF_UNSPEC;
 		hints.ai_flags = AI_CANONNAME;
+		hints.ai_socktype = SOCK_STREAM;
 		errgai = getaddrinfo(host, NULL, &hints, &ai);
 		if (errgai == 0) {
 			if (ai->ai_canonname != NULL)
