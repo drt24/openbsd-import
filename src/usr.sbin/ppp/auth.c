@@ -43,6 +43,8 @@
 #include "auth.h"
 #include "chat.h"
 #include "systems.h"
+#include "iplist.h"
+#include "route.h"
 
 void
 LocalAuthInit()
@@ -106,7 +108,7 @@ AuthValidate(const char *fname, const char *system, const char *key)
 {
   FILE *fp;
   int n;
-  char *vector[4];
+  char *vector[5];
   char buff[LINE_LEN];
   char passwd[100];
 
@@ -125,17 +127,11 @@ AuthValidate(const char *fname, const char *system, const char *key)
       ExpandString(vector[1], passwd, sizeof passwd, 0);
       if (strcmp(passwd, key) == 0) {
 	CloseSecret(fp);
-	memset(&DefHisAddress, '\0', sizeof DefHisAddress);
-	n -= 2;
-	if (n > 0) {
-	  if (ParseAddr(n--, (char const *const *)(vector+2),
-			&DefHisAddress.ipaddr,
-			&DefHisAddress.mask,
-			&DefHisAddress.width) == 0) {
-	    return (0);		/* Invalid */
-	  }
-	}
+	if (n > 2 && !UseHisaddr(vector[2], 1))
+	    return (0);
 	IpcpInit();
+	if (n > 3)
+	  SetLabel(vector[3]);
 	return (1);		/* Valid */
       }
     }
@@ -149,7 +145,7 @@ AuthGetSecret(const char *fname, const char *system, int len, int setaddr)
 {
   FILE *fp;
   int n;
-  char *vector[4];
+  char *vector[5];
   char buff[LINE_LEN];
   static char passwd[100];
 
@@ -169,15 +165,13 @@ AuthGetSecret(const char *fname, const char *system, int len, int setaddr)
       if (setaddr) {
 	memset(&DefHisAddress, '\0', sizeof DefHisAddress);
       }
-      n -= 2;
-      if (n > 0 && setaddr) {
-	LogPrintf(LogDEBUG, "AuthGetSecret: n = %d, %s\n", n, vector[2]);
-	if (ParseAddr(n--, (char const *const *)(vector+2),
-		      &DefHisAddress.ipaddr,
-		      &DefHisAddress.mask,
-		      &DefHisAddress.width) != 0)
-	  IpcpInit();
-      }
+      if (n > 2 && setaddr)
+	if (UseHisaddr(vector[2], 1))
+          IpcpInit();
+        else
+          return NULL;
+      if (n > 3)
+        SetLabel(vector[3]);
       return (passwd);
     }
   }
