@@ -220,7 +220,7 @@ ahc_name(struct ahc_softc *ahc)
 	return (ahc->name);
 }
 
-/*********************** Miscelaneous Support Functions ***********************/
+/*********************** Miscellaneous Support Functions **********************/
 
 static __inline void	ahc_update_residual(struct scb *scb);
 static __inline struct ahc_initiator_tinfo *
@@ -385,7 +385,7 @@ ahc_queue_scb(struct ahc_softc *ahc, struct scb *scb)
 	ahc->qinfifonext++;
 
 	/*
-	 * Make sure our data is consistant from the
+	 * Make sure our data is consistent from the
 	 * perspective of the adapter.
 	 */
 	ahc_sync_scb(ahc, scb, BUS_DMASYNC_PREREAD|BUS_DMASYNC_PREWRITE);
