@@ -109,7 +109,7 @@ null_if_print(u_char *user, const struct pcap_pkthdr *h, const u_char *p)
 	if (eflag)
 		null_print(p, length, family);
 
-	switch (family) {
+	switch (ntohl(family)) {
 	case AF_INET:
 		ip_print(pkt, length);
 		break;

@@ -28,14 +28,14 @@
 
 struct tun_data {
 #ifdef __OpenBSD__
-  struct tunnel_header head;
+  u_int32_t head;
 #endif
   u_char data[MAX_MRU];
 };
 
 #ifdef __OpenBSD__
-#define tun_fill_header(f,proto) do { (f).head.tun_af = (proto); } while (0)
-#define tun_check_header(f,proto) ((f).head.tun_af == (proto))
+#define tun_fill_header(f,proto) do { (f).head = htonl(proto); } while (0)
+#define tun_check_header(f,proto) ((f).head == htonl(proto))
 #else
 #define tun_fill_header(f,proto) do { } while (0)
 #define tun_check_header(f,proto) (1)
