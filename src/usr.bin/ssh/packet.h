@@ -132,7 +132,7 @@ unsigned int packet_get_int(void);
  * must have been initialized before this call.
  */
 void    packet_get_bignum(BIGNUM * value, int *length_ptr);
-void	packet_get_bignum2(BIGNUM * value, int *length_ptr);
+void    packet_get_bignum2(BIGNUM * value, int *length_ptr);
 char	*packet_get_raw(int *length_ptr);
 
 /*
@@ -199,5 +199,8 @@ do { \
 /* remote host is connected via a socket/ipv4 */
 int	packet_connection_is_on_socket(void);
 int	packet_connection_is_ipv4(void);
+
+/* enable SSH2 packet format */
+void	packet_set_ssh2_format(void);
 
 #endif				/* PACKET_H */
