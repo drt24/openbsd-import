@@ -45,13 +45,13 @@ static char rcsid[] = "$Id$";
 #include <sys/param.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
-#include <sys/file.h>
 #include <sys/wait.h>
 
 #include <netinet/in.h>
 
 #include <ctype.h>
 #include <errno.h>
+#include <fcntl.h>
 #include <netdb.h>
 #include <paths.h>
 #include <pwd.h>
