@@ -1,4 +1,4 @@
-/*	$OpenBSD: layer_vnops.c,v 1.1 2003/05/12 20:58:40 tedu Exp $ */
+/*	$OpenBSD: layer_vnops.c,v 1.2 2003/06/02 23:28:10 millert Exp $ */
 /*	$NetBSD: layer_vnops.c,v 1.10 2001/12/06 04:29:23 chs Exp $	*/
 
 /*
@@ -301,7 +301,7 @@ layer_bypass(v)
 	 */
 	if (descp->vdesc_vp_offsets == NULL ||
 	    descp->vdesc_vp_offsets[0] == VDESC_NO_OFFSET)
-		panic ("layer_bypass: no vp's in map.\n");
+		panic("layer_bypass: no vp's in map");
 #endif
 
 	vps_p[0] = VOPARG_OFFSETTO(struct vnode**,descp->vdesc_vp_offsets[0],ap);
