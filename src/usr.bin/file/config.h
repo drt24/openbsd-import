@@ -4,7 +4,7 @@
  * but can still carefully import stuff from Christos' version.
  *
  * This file is in the public domain. Original Author Ian F. Darwin.
- * $OpenBSD$
+ * $OpenBSD: config.h,v 1.1 2003/03/03 23:06:46 ian Exp $
  */
 
 /* header file issues. */
