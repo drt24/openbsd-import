@@ -452,7 +452,7 @@ main(int argc, char **argv)
                         *next = '\0';
                     strlcpy(Buffer, start, sizeof Buffer);
                     Buffer[sizeof(Buffer)-2] = '\0';
-                    strcat(Buffer, "\n");
+                    strlcat(Buffer, "\n", sizeof Buffer);
                     if (verbose)
                         write(1, Buffer, strlen(Buffer));
                     write(fd, Buffer, strlen(Buffer));
