@@ -371,7 +371,7 @@ alias_LayerPull(struct bundle *bundle, struct link *l, struct mbuf *bp,
                 u_short *proto)
 {
   struct ip *pip, *piip;
-  int ret;
+  int ret, len;
   struct mbuf **last;
   char *fptr;
 
@@ -412,8 +412,9 @@ alias_LayerPull(struct bundle *bundle, struct link *l, struct mbuf *bp,
       last = &bp->pnext;
       while ((fptr = PacketAliasGetFragment(MBUF_CTOP(bp))) != NULL) {
 	PacketAliasFragmentIn(MBUF_CTOP(bp), fptr);
-        *last = mbuf_Alloc(ntohs(((struct ip *)fptr)->ip_len), MB_ALIASIN);
-        memcpy(MBUF_CTOP(*last), fptr, (*last)->cnt);
+        len = ntohs(((struct ip *)fptr)->ip_len);
+        *last = mbuf_Alloc(len, MB_ALIASIN);
+        memcpy(MBUF_CTOP(*last), fptr, len);
         free(fptr);
         last = &(*last)->pnext;
       }
