@@ -10,7 +10,7 @@ ttyC0	"/usr/libexec/getty Pc"		vt220	on  secure
 ttyC1	"/usr/libexec/getty Pc"		vt220	on secure
 ttyC2	"/usr/libexec/getty Pc"		vt220	on secure
 ttyC3	"/usr/libexec/getty Pc"		vt220	on secure
-ttyC4	"/usr/libexec/getty Pc"		vt220	on secure
+ttyC4	"/usr/libexec/getty Pc"		vt220	off secure
 ttyC5	"/usr/libexec/getty Pc"		vt220	on secure
 ttyC6	"/usr/libexec/getty Pc"		vt220	off secure
 ttyC7	"/usr/libexec/getty Pc"		vt220	off secure
