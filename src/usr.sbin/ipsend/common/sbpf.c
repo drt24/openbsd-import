@@ -43,7 +43,7 @@ static const char rcsid[] = "@(#)$Id$";
 #endif
 
 /*
- * the code herein is dervied from libpcap.
+ * the code herein is derived from libpcap.
  */
 static	u_char	*buf = NULL;
 static	int	bufsize = 0, timeout = 1;
