@@ -688,7 +688,7 @@ FindExec(struct cmdtab const *cmds, int argc, char const *const *argv)
   if (val == -1)
     LogPrintf(LogWARN, "Usage: %s\n", cmd->syntax);
   else if (val)
-    LogPrintf(LogCOMMAND, "%s: Failed %d\n", *argv, val);
+    LogPrintf(LogWARN, "%s: Failed %d\n", *argv, val);
 
   return val;
 }

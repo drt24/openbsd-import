@@ -279,7 +279,7 @@ ReadSystem(const char *name, const char *file, int doexec)
             return 0;	/* got it */
           break;
         default:
-          LogPrintf(LogCOMMAND, "%s: %s: Invalid command\n", name, cp);
+          LogPrintf(LogWARN, "%s: %s: Invalid command\n", filename, cp);
           break;
         }
       } else if (strcmp(cp, name) == 0) {
