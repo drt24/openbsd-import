@@ -41,7 +41,7 @@
 #define SPRAYOVERHEAD	86
 #endif
 
-void usage();
+void usage(void);
 void print_xferstats(int, int, double);
 
 /* spray buffer */
