@@ -108,7 +108,7 @@ main(argc, argv)
 	 * Discard setgid privileges if not the running kernel so that bad
 	 * guys can't print interesting stuff from kernel memory.
 	 */
-	if (system != _PATH_UNIX || kmemf != _PATH_KMEM)
+	if (!strcmp(kmemf, _PATH_KMEM) || !strcmp(system, _PATH_UNIX))
 		setgid(getgid());
 
 	if (kopen(system, kmemf, "slstats") < 0)
