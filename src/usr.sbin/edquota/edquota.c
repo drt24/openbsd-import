@@ -674,18 +674,18 @@ cvtstoa(time)
 
 	if (time % (24 * 60 * 60) == 0) {
 		time /= 24 * 60 * 60;
-		(void)sprintf(buf, "%d day%s", (int)time,
+		(void)snprintf(buf, sizeof buf, "%d day%s", (int)time,
 		    time == 1 ? "" : "s");
 	} else if (time % (60 * 60) == 0) {
 		time /= 60 * 60;
-		(void)sprintf(buf, "%d hour%s", (int)time,
+		(void)snprintf(buf, sizeof buf, "%d hour%s", (int)time,
 		    time == 1 ? "" : "s");
 	} else if (time % 60 == 0) {
 		time /= 60;
-		(void)sprintf(buf, "%d minute%s", (int)time,
+		(void)snprintf(buf, sizeof buf, "%d minute%s", (int)time,
 		    time == 1 ? "" : "s");
 	} else
-		(void)sprintf(buf, "%d second%s", (int)time,
+		(void)snprintf(buf, sizeof buf, "%d second%s", (int)time,
 		    time == 1 ? "" : "s");
 	return(buf);
 }

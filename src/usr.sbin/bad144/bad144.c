@@ -311,7 +311,8 @@ usage:
 		if (nflag == 0 && write(f, (caddr_t)&curbad, sizeof(curbad)) !=
 		    sizeof(curbad)) {
 			char msg[80];
-			(void)sprintf(msg, "bad144: write bad sector file %d",
+			(void)snprintf(msg, sizeof msg,
+			    "bad144: write bad sector file %d",
 			    i/2);
 			perror(msg);
 		}
@@ -360,7 +361,8 @@ struct dkbad *bad;
 				printf("Using bad-sector file %d\n", i/2);
 			return(sn);
 		}
-		(void)sprintf(msg, "bad144: read bad sector file at sn %d", sn);
+		(void)snprintf(msg, sizeof msg,
+		    "bad144: read bad sector file at sn %d", sn);
 		perror(msg);
 		if (badfile != -1)
 			break;
@@ -693,7 +695,8 @@ format(fd, blk)
 		Perror("write format");
 	if (fop.df_count != fp->f_bufsize) {
 		char msg[80];
-		(void)sprintf(msg, "bad144: write format %d", blk);
+		(void)snprintf(msg, sizeof msg,
+		    "bad144: write format %d", blk);
 		perror(msg);
 	}
 }
