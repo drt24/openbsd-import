@@ -18,7 +18,6 @@ to the system log.
 RCSID("$Id$");
 
 #include <syslog.h>
-#include <sys/syslog.h>
 #include "packet.h"
 #include "xmalloc.h"
 #include "ssh.h"

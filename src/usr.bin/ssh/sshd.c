@@ -35,8 +35,6 @@ RCSID("$Id$");
 #ifdef LIBWRAP
 #include <tcpd.h>
 #include <syslog.h>
-#include <sys/syslog.h>
-#include <sys/stat.h>
 int allow_severity = LOG_INFO;
 int deny_severity = LOG_WARNING;
 #endif /* LIBWRAP */

@@ -100,9 +100,6 @@ add_file(const char *filename)
   first = 1;
   while (!load_private_key(filename, pass, key, &comment))
     {
-      char buf[1024];
-      FILE *f;
-      
       /* Free the old passphrase. */
       memset(pass, 0, strlen(pass));
       xfree(pass);
