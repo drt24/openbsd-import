@@ -34,7 +34,7 @@
 #define	LAYER_LQR	7
 #define	LAYER_CCP	8
 #define	LAYER_VJ	9
-#define	LAYER_ALIAS	10
+#define	LAYER_NAT	10
 
 #define	LAYER_MAX	10	/* How many layers we can handle on a link */
 

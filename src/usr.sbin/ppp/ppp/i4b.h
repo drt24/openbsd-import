@@ -27,8 +27,11 @@
  */
 
 struct physical;
+struct device;
 
-extern struct device *tcp_Create(struct physical *);
-extern struct device *tcp_iov2device(int, struct physical *,
+#define DEF_I4BCDDELAY	6		/* Default ``set cd'' value */
+
+extern struct device *i4b_Create(struct physical *);
+extern struct device *i4b_iov2device(int, struct physical *,
                                      struct iovec *, int *, int, int *, int *);
-#define tcp_DeviceSize physical_DeviceSize
+extern int i4b_DeviceSize(void);

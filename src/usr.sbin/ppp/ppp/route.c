@@ -208,12 +208,19 @@ Index2Nam(int idx)
   static char **ifs;		/* Figure these out once */
   static int nifs, debug_done;	/* Figure out how many once, and debug once */
 
-  if (!nifs) {
+  if (idx > nifs || (idx > 0 && ifs[idx-1] == NULL)) {
     int mib[6], have, had;
     size_t needed;
     char *buf, *ptr, *end;
     struct sockaddr_dl *dl;
     struct if_msghdr *ifm;
+
+    if (ifs) {
+      free(ifs);
+      ifs = NULL;
+      nifs = 0;
+    }
+    debug_done = 0;
 
     mib[0] = CTL_NET;
     mib[1] = PF_ROUTE;
@@ -252,8 +259,11 @@ Index2Nam(int idx)
           if (!newifs) {
             log_Printf(LogDEBUG, "Index2Nam: %s\n", strerror(errno));
             nifs = 0;
-            if (ifs)
+            if (ifs) {
               free(ifs);
+              ifs = NULL;
+            }
+            free(buf);
             return "???";
           }
           ifs = newifs;

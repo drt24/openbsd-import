@@ -52,14 +52,13 @@ struct cmdtab {
 #define IsEnabled(x) ((x) & NEG_ENABLED)
 
 extern const char Version[];
-extern const char VersionDate[];
 
 extern void command_Expand(char **, int, char const *const *, struct bundle *,
                            int, pid_t);
 extern int command_Interpret(char *, int, char *vector[MAXARGS]);
 extern void command_Run(struct bundle *, int, char const *const *,
                         struct prompt *, const char *, struct datalink *);
-extern void command_Decode(struct bundle *, char *, int, struct prompt *,
+extern int command_Decode(struct bundle *, char *, int, struct prompt *,
                            const char *);
 extern struct link *command_ChooseLink(struct cmdargs const *);
 extern const char *command_ShowNegval(unsigned);
