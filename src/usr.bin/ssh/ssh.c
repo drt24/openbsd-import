@@ -102,12 +102,12 @@ usage()
 		  "``3des'', "
 		  "``blowfish''\n");
   fprintf(stderr, "  -p port     Connect to this port.  Server must be on the same port.\n");
-  fprintf(stderr, "  -g          Allow remote hosts to connect to forwarded ports.\n");
   fprintf(stderr, "  -L listen-port:host:port   Forward local port to remote address\n");
   fprintf(stderr, "  -R listen-port:host:port   Forward remote port to local address\n");
   fprintf(stderr, "              These cause %s to listen for connections on a port, and\n", av0);
   fprintf(stderr, "              forward them to the other side by connecting to host:port.\n");
   fprintf(stderr, "  -C          Enable compression.\n");
+  fprintf(stderr, "  -g          Allow remote hosts to connect to forwarded ports.\n");
   fprintf(stderr, "  -o 'option' Process the option as if it was read from a configuration file.\n");
   exit(1);
 }
