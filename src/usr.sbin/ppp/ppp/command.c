@@ -385,14 +385,20 @@ subst(char *tgt, const char *oldstr, const char *newstr)
 }
 
 static void
-expand(char **nargv, int argc, char const *const *oargv, struct bundle *bundle)
+expand(char **nargv, int argc, char const *const *oargv, struct bundle *bundle,
+       int inc0)
 {
   int arg;
   char pid[12];
 
-  nargv[0] = strdup(oargv[0]);
+  if (inc0)
+    arg = 0;		/* Start at arg 0 */
+  else {
+    nargv[0] = strdup(oargv[0]);
+    arg = 1;
+  }
   snprintf(pid, sizeof pid, "%d", getpid());
-  for (arg = 1; arg < argc; arg++) {
+  for (; arg < argc; arg++) {
     nargv[arg] = strdup(oargv[arg]);
     nargv[arg] = subst(nargv[arg], "HISADDR",
                        inet_ntoa(bundle->ncp.ipcp.peer_ip));
@@ -474,7 +480,7 @@ ShellCommand(struct cmdargs const *arg, int bg)
         argc = sizeof argv / sizeof argv[0] - 1;
         log_Printf(LogWARN, "Truncating shell command to %d args\n", argc);
       }
-      expand(argv, argc, arg->argv + arg->argn, arg->bundle);
+      expand(argv, argc, arg->argv + arg->argn, arg->bundle, 0);
       if (bg) {
 	pid_t p;
 
@@ -2442,7 +2448,7 @@ SetProcTitle(struct cmdargs const *arg)
     argc = sizeof argv / sizeof argv[0] - 1;
     log_Printf(LogWARN, "Truncating proc title to %d args\n", argc);
   }
-  expand(argv, argc, arg->argv + arg->argn, arg->bundle);
+  expand(argv, argc, arg->argv + arg->argn, arg->bundle, 1);
 
   ptr = title;
   remaining = sizeof title - 1;
