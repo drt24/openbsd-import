@@ -1,5 +1,5 @@
+/* * $OpenBSD: md.h,v 1.1.1.1 1995/10/18 08:40:57 deraadt Exp $*/
 /*
- * $Id$
  *	- m68k dependent definitions
  */
 

@@ -1,5 +1,5 @@
+/* * $OpenBSD: lib.c,v 1.1.1.1 1995/10/18 08:40:55 deraadt Exp $	- library routines*/
 /*
- * $Id$	- library routines
  */
 
 #include <sys/param.h>

@@ -1,10 +1,10 @@
+/* *	$OpenBSD: symseg.h,v 1.1.1.1 1995/10/18 08:40:55 deraadt Exp $*/
 /*-
  *
  * This code is derived from software copyrighted by the Free Software
  * Foundation.
  *
  *	from: @(#)symseg.h	5.4 (Berkeley) 4/30/91
- *	$Id$
  */
 
 /* GDB symbol table format definitions.
