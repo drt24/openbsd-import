@@ -34,4 +34,4 @@
 #	%s		- must follow other options at the end of the line
 #
 DEFAULT			$CVSROOT/CVSROOT/log -s -m source-changes -f $CVSROOT/CVSROOT/commitlog  %s
-ALL			$CVSROOT/CVSROOT/log_accum -m deraadt -f $CVSROOT/CVSROOT/ChangeLog -s %s
+ALL			$CVSROOT/CVSROOT/log_accum2 -m deraadt -f $CVSROOT/CVSROOT/ChangeLog -s %s
