@@ -22,6 +22,7 @@ LDADD+=	-lkrb -ldes
 .endif
 
 BINMODE=4555
+BINOWN=	root
 
 .include <bsd.prog.mk>
 
