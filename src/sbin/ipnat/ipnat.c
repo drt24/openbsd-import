@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*
  * (C)opyright 1993,1994,1995 by Darren Reed.
  *
@@ -49,10 +50,10 @@
 #include "ip_nat.h"
 #include <ctype.h>
 
-
+#if 0
 #ifndef lint
 static  char    sccsid[] ="@(#)ipnat.c	1.9 6/5/96 (C) 1993 Darren Reed";
-static	char	rcsid[] = "$Id$";
+#endif
 #endif
 
 #if	SOLARIS
