@@ -4,7 +4,7 @@
 #	$Id$
 
 .ifdef DESTDIR
-snap_md: binutils bsd
+snap_md: binutils bsd bootblocks
 
 binutils:
 	cd ${DESTDIR} && tar cf - usr/*openbsd* \
@@ -16,5 +16,8 @@ bsd:
 	    make clean && make depend && make
 	cp ${.CURDIR}/../sys/arch/powerpc/compile/GENERIC/bsd \
 	    ${DESTDIR}/snapshot/bsd
+
+bootblocks:
+	cp ${DESTDIR}/usr/mdec/*boot* ${DESTDIR}/snapshot
 
 .endif	# DESTDIR check
