@@ -32,7 +32,7 @@ SRCS= ${SRC_net} ${SRC_sa} ${SRC_kern} ${SRC_sun3} ${SRC_here}
 # DBG= -DDEBUG -DNETIF_DEBUG -DNFS_DEBUG -DRPC_DEBUG \
 # 	-DNET_DEBUG -DRARP_DEBUG -DETHER_DEBUG
 
-DEFS= -DCOMPAT_UFS
+#DEFS= -DCOMPAT_UFS
 INCL= -I. -I${S}/lib/libsa -I${S}
 COPTS= #-fno-defer-pop
 CFLAGS= -O ${COPTS} ${DEFS} ${DBG} ${INCL}
