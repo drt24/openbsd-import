@@ -2057,10 +2057,6 @@ void do_child(const char *command, struct passwd *pw, const char *term,
 	child_set_env(&env, &envsize, SSH_AUTHFD_ENV_NAME, buf);
       }
 
-  /* Read environment variable settings from /etc/environment.  (This exists
-     at least on AIX, but could be useful also elsewhere.) */
-  read_environment_file(&env, &envsize, "/etc/environment");
-
   /* Read $HOME/.ssh/environment. */
   snprintf(buf, sizeof buf, "%.200s/.ssh/environment", pw->pw_dir);
   read_environment_file(&env, &envsize, buf);
