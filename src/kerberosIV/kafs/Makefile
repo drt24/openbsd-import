@@ -1,8 +1,10 @@
 #	$Id$
 
 LIB=	kafs
-CFLAGS+=-I${.CURDIR}
+CFLAGS+=-I${.CURDIR} -I${.CURDIR}/../roken
 SRCS=	afskrb.c afssys.c common.c
+.PATH: ${.CURDIR}/../roken
+SRCS+=	resolve.c
 
 .include <bsd.own.mk> # for AFS
 
