@@ -1,4 +1,4 @@
-/*	$OpenBSD: timed.c,v 1.9 2001/04/07 19:58:07 ho Exp $	*/
+/*	$OpenBSD: timed.c,v 1.10 2001/05/05 05:10:05 mickey Exp $	*/
 
 /*-
  * Copyright (c) 1985, 1993 The Regents of the University of California.
@@ -81,6 +81,8 @@ int nnets;				/* nets I am connected to */
 FILE *fd;				/* trace file FD */
 
 jmp_buf jmpenv;
+
+volatile sig_atomic_t gotintr;
 
 struct netinfo *nettab = 0;
 struct netinfo *slavenet;

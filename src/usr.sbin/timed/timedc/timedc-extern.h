@@ -41,10 +41,13 @@ void	bytehostorder(struct tsp *);
 void	bytenetorder(struct tsp *);
 void	clockdiff(int, char *[]);
 void	help(int, char *[]);
-void	intr(int);
 void	makeargv(void);
 void	msite(int, char *[]);
 int	priv_resources(void);
 void	quit(void);
 void	testing(int, char *[]);
 void	tracing(int, char *[]);
+
+void	sigintr(int);
+extern volatile sig_atomic_t gotintr;
+
