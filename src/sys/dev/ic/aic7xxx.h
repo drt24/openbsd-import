@@ -1,5 +1,5 @@
 /*
- * $OpenBSD: aic7xxx.h,v 1.4 2002/06/28 00:34:54 smurph Exp $
+ * $OpenBSD: aic7xxx.h,v 1.5 2002/07/05 05:41:03 smurph Exp $
  * Core definitions and data structures shareable across OS platforms.
  *
  * Copyright (c) 1994-2001 Justin T. Gibbs.
@@ -708,7 +708,7 @@ struct ahc_syncrate {
 extern struct ahc_syncrate ahc_syncrates[];
 
 /*
- * Indexes into our table of syncronous transfer rates.
+ * Indexes into our table of synchronous transfer rates.
  */
 #define AHC_SYNCRATE_DT		0
 #define AHC_SYNCRATE_ULTRA2	1
