@@ -1,4 +1,4 @@
 #	$Id$
 
-# Revision is 1.0A
-REV=	10A
+# Revision is 1.1
+REV=	11

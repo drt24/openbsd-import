@@ -38,7 +38,7 @@ DT=/etc/disktab				# /etc/disktab
 FSTABDIR=/mnt/etc			# /mnt/etc
 #DONTDOIT=echo
 
-VERSION=1.0
+VERSION=1.1
 FSTAB=${FSTABDIR}/fstab
 
 getresp() {
@@ -236,7 +236,7 @@ $DONTDOIT cp /tmp/.hdprofile /mnt/.profile
 
 echo	""
 echo	"Mounting remaining partitions..."
-chroot /mnt mount -at ufs > /dev/null 2>&1
+chroot /mnt mount -at ffs > /dev/null 2>&1
 echo	"Done."
 
 echo    ""
