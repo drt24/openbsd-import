@@ -240,7 +240,7 @@ main(int argc, char **argv)
         hlen = strlen(host);
 
         if (strspn(host, "0123456789.") == hlen) {
-            if (!inet_aton(host, (struct in_addr *)&ifsin.sin_addr.s_addr)) {
+            if (!inet_aton(host, &ifsin.sin_addr)) {
                 fprintf(stderr, "Cannot translate %s\n", host);
                 return 1;
             }
