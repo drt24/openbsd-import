@@ -1,8 +1,7 @@
-/* $NetBSD: sigprocmask.S,v 1.2 1996/05/12 19:55:33 mark Exp $ */
+/* $NetBSD: fabs.c,v 1.1 1996/05/12 20:29:41 mark Exp $ */
 
-/*-
- * Copyright (c) 1990 The Regents of the University of California.
- * All rights reserved.
+/*
+ * Copyright (c) 1996 Mark Brinicombe
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -14,16 +13,15 @@
  *    documentation and/or other materials provided with the distribution.
  * 3. All advertising materials mentioning features or use of this software
  *    must display the following acknowledgement:
- *	This product includes software developed by the University of
- *	California, Berkeley and its contributors.
+ *	This product includes software developed by Mark Brinicombe
  * 4. Neither the name of the University nor the names of its contributors
  *    may be used to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
- * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
  * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
@@ -31,24 +29,20 @@
  * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
- *
- *	from: @(#)sigprocmask.s	5.2 (Berkeley) 12/17/90
- *	$Id$
  */
 
-#include "SYS.h"
+/*
+ * fabs(x) returns the absolute value of x.
+ */
 
-	.text
-	.align	0
-
-ENTRY(sigprocmask)
-	teq	r1, #0x00000000
-	moveq	r0, #0x00000001
-	moveq	r1, #0x00000000
-	ldrne	r1, [r1]
-	swi	SYS_sigprocmask
-	bcs	cerror
-	teq	r2, #0x00000000
-	strne	r0, [r2]
-	mov	r0, #0x00000000
-	mov	r15, r14
+#ifdef __STDC__
+	double fabs(double x)
+#else
+	double fabs(x)
+	double x;
+#endif
+{
+	if (x < 0)
+		x = -x;
+	return(x);
+}

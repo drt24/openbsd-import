@@ -1,4 +1,4 @@
-/* $NetBSD: _setjmp.S,v 1.1 1996/02/16 20:48:12 mark Exp $ */
+/* $NetBSD: _setjmp.S,v 1.2 1996/05/12 20:25:39 mark Exp $ */
 
 /*
  * Copyright (c) 1995 Mark Brinicombe

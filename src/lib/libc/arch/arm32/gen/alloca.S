@@ -1,4 +1,4 @@
-/* $NetBSD: alloca.S,v 1.1 1996/02/16 20:48:15 mark Exp $ */
+/* $NetBSD: alloca.S,v 1.2 1996/05/12 20:25:46 mark Exp $ */
 
 /*
  * Copyright (c) 1995 Mark Brinicombe
