@@ -102,7 +102,7 @@ load_database(old_db)
 
 	while (NULL != (dp = readdir(dir))) {
 		char	fname[MAXNAMLEN+1],
-			tabname[MAXNAMLEN+1];
+			tabname[MAXPATHLEN];
 
 		/* avoid file names beginning with ".".  this is good
 		 * because we would otherwise waste two guaranteed calls
