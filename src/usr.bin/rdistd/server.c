@@ -752,9 +752,9 @@ static void recvfile(new, opts, mode, owner, group, mtime, atime, size)
 	/*
 	 * Create temporary file
 	 */
-	if ((f = creat(new, mode)) < 0) {
+	if ((f = open(new, O_CREAT|O_EXCL|O_WRONLY, mode)) < 0) {
 		if (errno != ENOENT || chkparent(new, opts) < 0 ||
-		    (f = creat(new, mode)) < 0) {
+		    (f = open(new, O_CREAT|O_EXCL|O_WRONLY, mode)) < 0) {
 			error("%s: create failed: %s", new, SYSERR);
 			(void) unlink(new);
 			return;
