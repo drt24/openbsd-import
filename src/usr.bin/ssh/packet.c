@@ -27,6 +27,7 @@ RCSID("$Id$");
 #include "getput.h"
 
 #include "compress.h"
+#include "deattack.h"
 
 /* This variable contains the file descriptors used for communicating with
    the other side.  connection_in is used for reading; connection_out
@@ -204,7 +205,28 @@ void
 packet_decrypt(CipherContext *cc, void *dest, void *src, 
 	       unsigned int bytes)
 {
+  int i;
+  
   assert((bytes % 8) == 0);
+  
+  /*
+    Cryptographic attack detector for ssh - Modifications for packet.c 
+    (C)1998 CORE-SDI, Buenos Aires Argentina
+    Ariel Futoransky(futo@core-sdi.com)
+  */
+  switch (cc->type)
+    {
+    case SSH_CIPHER_NONE:
+      i = DEATTACK_OK;
+      break;
+    default:
+      i = detect_attack(src, bytes, NULL);
+      break;
+    }
+  
+  if (i == DEATTACK_DETECTED)
+    packet_disconnect("crc32 compensation attack: network attack detected");
+  
   cipher_decrypt(cc, dest, src, bytes);
 }
 
