@@ -75,7 +75,7 @@ ksrc-hppa	-a src/sys/arch/hppa
 ksrc-i386       -a src/sys/arch/i386
 ksrc-m68k       -a src/sys/arch/m68k
 ksrc-mac68k     -a src/sys/arch/mac68k ksrc-m68k
-ksrc-macppc     -a src/sys/arch/mac68k ksrc-powerpc
+ksrc-macppc     -a src/sys/arch/macppc ksrc-powerpc
 ksrc-mvme68k    -a src/sys/arch/mvme68k ksrc-m68k
 ksrc-mvme88k    -a src/sys/arch/mvme88k
 ksrc-mvmeppc    -a src/sys/arch/mvmeppc ksrc-powerpc
