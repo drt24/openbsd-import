@@ -1,4 +1,4 @@
-/*	$OpenBSD: dns.h,v 1.2 2003/05/14 22:51:57 jakob Exp $	*/
+/*	$OpenBSD: dns.h,v 1.3 2003/05/14 22:56:51 jakob Exp $	*/
 
 /*
  * Copyright (c) 2003 Wesley Griffin. All rights reserved.
