@@ -4,6 +4,6 @@
 PROG=	chown
 CFLAGS+=-DSUPPORT_DOT
 MAN=	chgrp.1 chown.8
-LINKS=	${BINDIR}/chown /usr/bin/chgrp
+LINKS=	${BINDIR}/chown ${BINDIR}/chgrp
 
 .include <bsd.prog.mk>
