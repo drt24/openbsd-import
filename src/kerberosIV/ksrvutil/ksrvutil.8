@@ -15,6 +15,8 @@ ksrvutil
 ] [ 
 .B \-i 
 ] [ 
+.B \-a 
+] [ 
 .B \-f filename 
 ]
 .SH DESCRIPTION
@@ -62,6 +64,13 @@ to add the key to the keyfile and then to change the key so that
 it will be random and unknown to either the system manager or
 the kerberos administrator.
 
+.PP
+If the \-a option is given,
+.I ksrvutil
+uses the AFS string-to-key function.  Use this if you are running
+an AFS kaserver.
+
+.PP
 .I ksrvutil
 always makes a backup copy of the keyfile before making any
 changes.  
