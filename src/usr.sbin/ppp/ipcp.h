@@ -79,3 +79,5 @@ extern void IpcpInput(struct mbuf *);
 extern void IpcpAddInOctets(int);
 extern void IpcpAddOutOctets(int);
 extern int  UseHisaddr(const char *, int);
+extern int  SetInitVJ(struct cmdargs const *);
+extern int  ShowInitVJ(struct cmdargs const *);
