@@ -1,4 +1,4 @@
-/* $OpenBSD: psm.c,v 1.2 2001/02/02 20:20:08 aaron Exp $ */
+/* $OpenBSD: psm.c,v 1.3 2001/02/19 02:27:05 jbm Exp $ */
 /* $NetBSD: psm.c,v 1.11 2000/06/05 22:20:57 sommerfeld Exp $ */
 
 /*-

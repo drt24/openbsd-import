@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_rlreg.h,v 1.12 2001/02/20 19:10:14 jason Exp $	*/
+/*	$OpenBSD: rtl81x9reg.h,v 1.1 2001/04/10 22:52:00 aaron Exp $	*/
 
 /*
  * Copyright (c) 1997, 1998

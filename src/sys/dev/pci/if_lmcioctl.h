@@ -1,4 +1,4 @@
-/*	$OpenBSD$ */
+/*	$OpenBSD: if_lmcioctl.h,v 1.4 2000/11/10 15:33:09 provos Exp $ */
 /*	$Id$	*/
 
 /*
@@ -230,7 +230,7 @@ struct lmc___ctl {
 
 /*
  * Some of the MII16 bits are mirrored in the MII17 register as well,
- * but let's keep thing seperate for now, and get only the cable from
+ * but let's keep thing separate for now, and get only the cable from
  * the MII17.
  */
 #define LMC_MII17_SSI_CABLE_MASK	0x0038	/* mask to extract the cable type */

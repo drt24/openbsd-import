@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: bktr_tuner.h,v 1.1 2001/03/28 03:27:10 fgsch Exp $	*/
 /* $FreeBSD: src/sys/dev/bktr/bktr_tuner.h,v 1.1 1999/09/26 22:06:20 roger Exp $ */
 
 /*

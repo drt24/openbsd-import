@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: bktr_audio.h,v 1.1 2001/03/28 03:27:09 fgsch Exp $	*/
 /* $FreeBSD: src/sys/dev/bktr/bktr_audio.h,v 1.2 1999/10/28 13:58:14 roger Exp $ */
 
 /*

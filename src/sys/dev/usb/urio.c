@@ -1,4 +1,4 @@
-/*	$OpenBSD: urio.c,v 1.4 2000/11/08 18:10:38 aaron Exp $	*/
+/*	$OpenBSD: urio.c,v 1.5 2001/01/28 09:43:42 aaron Exp $	*/
 /*	$NetBSD: urio.c,v 1.5 2000/10/24 14:53:59 augustss Exp $	*/
 
 /*

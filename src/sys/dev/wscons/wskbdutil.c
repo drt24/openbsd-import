@@ -1,4 +1,4 @@
-/*	$OpenBSD: wskbdutil.c,v 1.1 2000/05/16 23:49:12 mickey Exp $	*/
+/*	$OpenBSD: wskbdutil.c,v 1.2 2001/04/14 04:48:01 aaron Exp $	*/
 /*	$NetBSD: wskbdutil.c,v 1.7 1999/12/21 11:59:13 drochner Exp $	*/
 
 /*-

@@ -1,4 +1,4 @@
-/* $OpenBSD: wsemul_sun.c,v 1.2 2001/03/07 17:51:29 aaron Exp $ */
+/* $OpenBSD: wsemul_sun.c,v 1.3 2001/04/14 04:48:00 aaron Exp $ */
 /* $NetBSD: wsemul_sun.c,v 1.11 2000/01/05 11:19:36 drochner Exp $ */
 
 /*

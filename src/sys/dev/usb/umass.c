@@ -1,4 +1,4 @@
-/*	$OpenBSD: umass.c,v 1.9 2001/01/29 02:31:06 csapuntz Exp $ */
+/*	$OpenBSD: umass.c,v 1.10 2001/02/24 00:06:32 mickey Exp $ */
 /*	$NetBSD: umass.c,v 1.49 2001/01/21 18:56:38 augustss Exp $	*/
 /*-
  * Copyright (c) 1999 MAEKAWA Masahide <bishop@rr.iij4u.or.jp>,

@@ -1,4 +1,4 @@
-/*	$OpenBSD: aac.c,v 1.3 2000/12/13 16:03:11 mickey Exp $	*/
+/*	$OpenBSD: aac.c,v 1.4 2001/04/06 04:42:06 csapuntz Exp $	*/
 
 /*-
  * Copyright (c) 2000 Michael Smith

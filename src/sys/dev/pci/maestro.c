@@ -1,4 +1,4 @@
-/*	$OpenBSD: maestro.c,v 1.3 2001/01/16 12:07:19 espie Exp $	*/
+/*	$OpenBSD: maestro.c,v 1.4 2001/03/13 01:45:56 deraadt Exp $	*/
 /* $FreeBSD: /c/ncvs/src/sys/dev/sound/pci/maestro.c,v 1.3 2000/11/21 12:22:11 julian Exp $ */
 /*
  * FreeBSD's ESS Agogo/Maestro driver 

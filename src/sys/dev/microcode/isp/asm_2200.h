@@ -1,4 +1,4 @@
-/* $OpenBSD: asm_2200.h,v 1.1 2000/07/06 05:15:59 mjacob Exp $ */
+/* $OpenBSD: asm_2200.h,v 1.2 2001/02/12 23:17:02 mjacob Exp $ */
 /*
  * Copyright (C) 1995, 1996, 1997, 1998, 1999, 2000 Qlogic, Inc.
  * All rights reserved.

@@ -196,7 +196,4 @@ struct cue_softc {
 	char			cue_attached;
 	u_int			cue_rx_errs;
 	struct timeval		cue_rx_notice;
-
-	struct usb_task		cue_tick_task;
-	struct usb_task		cue_stop_task;
 };

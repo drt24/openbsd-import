@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: yds.c,v 1.1 2001/03/29 14:20:46 aaron Exp $	*/
 /*	$NetBSD$	*/
 
 /*

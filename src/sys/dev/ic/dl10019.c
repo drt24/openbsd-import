@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: dl10019.c,v 1.1 2001/03/29 01:26:47 aaron Exp $	*/
 /*	$NetBSD$	*/
 
 /*-

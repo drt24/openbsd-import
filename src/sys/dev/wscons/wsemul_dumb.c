@@ -1,4 +1,4 @@
-/* $OpenBSD$ */
+/* $OpenBSD: wsemul_dumb.c,v 1.1 2000/05/16 23:49:11 mickey Exp $ */
 /* $NetBSD: wsemul_dumb.c,v 1.7 2000/01/05 11:19:36 drochner Exp $ */
 
 /*

@@ -1,4 +1,4 @@
-/*	$OpenBSD: siopreg.h,v 1.2 2001/03/10 05:04:06 krw Exp $ */
+/*	$OpenBSD: siopreg.h,v 1.3 2001/04/15 06:01:29 krw Exp $ */
 /*	$NetBSD: siopreg.h,v 1.7 2000/10/06 16:35:13 bouyer Exp $	*/
 
 /*

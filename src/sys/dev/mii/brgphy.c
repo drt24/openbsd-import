@@ -1,4 +1,4 @@
-/*	$OpenBSD: brgphy.c,v 1.3 2001/04/11 05:47:51 deraadt Exp $	*/
+/*	$OpenBSD: brgphy.c,v 1.4 2001/04/12 04:51:27 deraadt Exp $	*/
 
 /*
  * Copyright (c) 2000

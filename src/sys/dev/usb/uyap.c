@@ -1,4 +1,4 @@
-/*	$OpenBSD$ */
+/*	$OpenBSD: uyap.c,v 1.1 2001/01/29 00:43:40 aaron Exp $ */
 /*	$NetBSD: uyap.c,v 1.2 2001/01/02 23:08:54 augustss Exp $	*/
 
 /*

@@ -1,4 +1,3 @@
-/* $OpenBSD$ */
 /* $NetBSD: bt485reg.h,v 1.1 1998/04/15 20:16:30 drochner Exp $ */
 
 /*

@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: tcic2reg.h,v 1.1 2000/05/15 04:17:28 jason Exp $	*/
 /*	$NetBSD: tcic2reg.h,v 1.1 1999/03/23 20:04:14 bad Exp $	*/
 
 /*-

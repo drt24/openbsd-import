@@ -1,4 +1,4 @@
-/* $OpenBSD: wscons_callbacks.h,v 1.2 2000/08/01 13:51:17 mickey Exp $ */
+/* $OpenBSD: wscons_callbacks.h,v 1.3 2001/02/10 19:42:06 mickey Exp $ */
 /* $NetBSD: wscons_callbacks.h,v 1.12 2000/03/06 21:37:16 thorpej Exp $ */
 
 /*

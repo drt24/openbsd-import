@@ -1,4 +1,4 @@
-/*	$OpenBSD: i82365_pci.c,v 1.2 2000/08/03 14:06:39 aaron Exp $ */
+/*	$OpenBSD: i82365_pci.c,v 1.3 2000/09/04 17:07:52 mickey Exp $ */
 /*	$NetBSD: i82365_pci.c,v 1.11 2000/02/24 03:42:44 itohy Exp $	*/
 
 /*

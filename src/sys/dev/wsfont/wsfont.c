@@ -1,4 +1,4 @@
-/*	$OpenBSD$ */
+/*	$OpenBSD: wsfont.c,v 1.1 2001/03/18 04:30:24 nate Exp $ */
 /* 	$NetBSD: wsfont.c,v 1.17 2001/02/07 13:59:24 ad Exp $	*/
 
 /*-

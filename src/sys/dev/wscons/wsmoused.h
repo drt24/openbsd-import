@@ -1,4 +1,4 @@
-/* $OpenBSD$ */
+/* $OpenBSD: wsmoused.h,v 1.1 2001/04/14 04:44:02 aaron Exp $ */
 
 /*
  * Copyright (c) 2001 Jean-Baptiste Marchand, Julien Montagne and Jerome Verdon

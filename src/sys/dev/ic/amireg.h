@@ -274,7 +274,6 @@ struct ami_iocmd {
 	u_int8_t	acc_cmplidl[AMI_MAXSTATACK];
 	u_int8_t	acc_poll;
 	u_int8_t	acc_ack;
-	u_int8_t	acc_pad[0x3e];	/* pad to 128 bytes */
 };
 
 struct ami_sgent {
@@ -330,8 +329,7 @@ struct ami_iocmd64 {
 	u_int8_t	acc_cmplidl[AMI_MAXSTATACK];
 	u_int8_t	acc_poll;
 	u_int8_t	acc_ack;
-	u_int8_t	acc_pad[0x32];	/* pad to 128 bytes */
-};
+} __attribute__((packed));
 
 struct ami_sgent64 {
 	u_int32_t	asg_addr_l;

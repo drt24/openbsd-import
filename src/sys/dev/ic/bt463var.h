@@ -1,4 +1,3 @@
-/* $OpenBSD$ */
 /* $NetBSD: bt485var.h,v 1.1 2000/03/04 10:25:57 elric Exp $ */
 
 /*-

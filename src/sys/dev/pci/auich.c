@@ -1,4 +1,4 @@
-/*	$OpenBSD: auich.c,v 1.7 2001/03/09 09:26:45 mickey Exp $	*/
+/*	$OpenBSD: auich.c,v 1.8 2001/04/16 03:18:18 deraadt Exp $	*/
 
 /*
  * Copyright (c) 2000,2001 Michael Shalayeff

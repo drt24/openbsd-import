@@ -1,4 +1,4 @@
-/*	$OpenBSD: fxpvar.h,v 1.3 2000/07/20 16:22:26 ho Exp $	*/
+/*	$OpenBSD: fxpvar.h,v 1.4 2000/09/17 17:08:16 aaron Exp $	*/
 /*	$NetBSD: if_fxpvar.h,v 1.1 1997/06/05 02:01:58 thorpej Exp $	*/
 
 /*                  

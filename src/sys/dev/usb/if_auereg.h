@@ -266,11 +266,6 @@ struct aue_softc {
 	u_int			aue_rx_errs;
 	u_int			aue_intr_errs;
 	struct timeval		aue_rx_notice;
-
-	struct usb_task		aue_tick_task;
-	struct usb_task		aue_stop_task;
-
-	struct lock		aue_mii_lock;
 };
 
 #define AUE_TIMEOUT		1000

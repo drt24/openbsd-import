@@ -97,7 +97,6 @@
 #include <dev/wscons/wsconsio.h>
 #include <dev/wscons/wsmousevar.h>
 #include <dev/wscons/wseventvar.h>
-#include <dev/wscons/wsdisplayvar.h>
 
 #include "wsmouse.h"
 #include "wsmux.h"
@@ -437,7 +436,6 @@ out:
 		sc->sc_ub = ub;
 		evar->put = put;
 		WSEVENT_WAKEUP(evar);
-		/* wsdisplay_burn(sc->sc_displaydv, WSDISPLAY_BURN_MOUSE); */
 	}
 }
 

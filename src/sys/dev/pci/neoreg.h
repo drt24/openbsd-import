@@ -1,4 +1,4 @@
-/*      $OpenBSD: if_fxp.c,v 1.25 2000/03/30 02:49:35 jason Exp $       */
+/*      $OpenBSD: neoreg.h,v 1.1 2000/04/13 00:10:52 csapuntz Exp $       */
 
 /*
  * Copyright (c) 1999 Cameron Grant <gandalf@vilnya.demon.co.uk>

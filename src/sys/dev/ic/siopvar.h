@@ -1,4 +1,4 @@
-/*	$OpenBSD: siopvar.h,v 1.3 2001/03/10 05:04:06 krw Exp $ */
+/*	$OpenBSD: siopvar.h,v 1.4 2001/04/15 06:01:29 krw Exp $ */
 /*	$NetBSD: siopvar.h,v 1.13 2000/10/23 23:18:11 bouyer Exp $	*/
 
 /*

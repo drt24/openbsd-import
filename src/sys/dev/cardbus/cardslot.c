@@ -1,4 +1,4 @@
-/*	$OpenBSD$ */
+/*	$OpenBSD: cardslot.c,v 1.1 2000/04/08 05:50:52 aaron Exp $ */
 /*	$NetBSD: cardslot.c,v 1.9 2000/03/22 09:35:06 haya Exp $	*/
 
 /*

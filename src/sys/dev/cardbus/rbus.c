@@ -1,4 +1,4 @@
-/*	$OpenBSD: rbus.c,v 1.1 2000/04/08 05:50:52 aaron Exp $ */
+/*	$OpenBSD: rbus.c,v 1.2 2000/05/31 15:52:50 aaron Exp $ */
 /*	$NetBSD: rbus.c,v 1.3 1999/11/06 06:20:53 soren Exp $	*/
 /*
  * Copyright (c) 1999

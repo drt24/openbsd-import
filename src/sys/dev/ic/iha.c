@@ -1,4 +1,4 @@
-/*	$OpenBSD: iha.c,v 1.2 2001/02/08 17:35:05 krw Exp $ */
+/*	$OpenBSD: iha.c,v 1.3 2001/02/20 00:47:33 krw Exp $ */
 /*
  * Initio INI-9xxxU/UW SCSI Device Driver
  *

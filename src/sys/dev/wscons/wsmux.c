@@ -1,4 +1,4 @@
-/*	$OpenBSD: wsmux.c,v 1.5 2001/02/02 08:08:17 aaron Exp $	*/
+/*	$OpenBSD: wsmux.c,v 1.6 2001/03/30 16:38:14 aaron Exp $	*/
 /*	$NetBSD: wsmux.c,v 1.9 2000/05/28 10:33:14 takemura Exp $	*/
 
 /*

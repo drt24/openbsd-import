@@ -1,4 +1,4 @@
-/* $OpenBSD$ */
+/* $OpenBSD: vga_subr.c,v 1.1 2000/11/15 20:17:38 aaron Exp $ */
 /* $NetBSD: vga_subr.c,v 1.6 2000/01/25 02:44:03 ad Exp $ */
 
 /*

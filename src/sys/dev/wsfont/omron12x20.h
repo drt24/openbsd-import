@@ -1,4 +1,4 @@
-/*	$OpenBSD$ */
+/*	$OpenBSD: omron12x20.h,v 1.1 2001/03/18 04:30:23 nate Exp $ */
 /*	$NetBSD$	*/
 /*
  * Copyright (c) 1992 OMRON Corporation.

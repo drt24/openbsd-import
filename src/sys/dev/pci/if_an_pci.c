@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_an_pci.c,v 1.1 2000/04/10 13:55:01 millert Exp $	*/
+/*	$OpenBSD: if_an_pci.c,v 1.2 2000/04/10 18:09:46 millert Exp $	*/
 
 /*
  * Copyright (c) 1997, 1998, 1999

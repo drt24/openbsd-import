@@ -1,4 +1,4 @@
-/*	$OpenBSD: aacreg.h,v 1.1 2000/11/10 09:39:36 niklas Exp $	*/
+/*	$OpenBSD: aacreg.h,v 1.2 2000/12/06 21:16:45 mickey Exp $	*/
 
 /*-
  * Copyright (c) 2000 Michael Smith

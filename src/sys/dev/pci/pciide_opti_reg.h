@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: pciide_opti_reg.h,v 1.1 2000/06/13 03:56:42 chris Exp $	*/
 /*	$NetBSD: pciide_opti_reg.h,v 1.2 2000/06/07 20:42:53 scw Exp $	*/
 
 /*-

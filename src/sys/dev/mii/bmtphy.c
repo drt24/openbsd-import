@@ -1,4 +1,4 @@
-/*	$OpenBSD: nsphy.c,v 1.9 2000/08/26 20:04:18 nate Exp $	*/
+/*	$OpenBSD: bmtphy.c,v 1.1 2001/04/11 06:47:31 deraadt Exp $	*/
 /*	$NetBSD: nsphy.c,v 1.25 2000/02/02 23:34:57 thorpej Exp $	*/
 
 /*

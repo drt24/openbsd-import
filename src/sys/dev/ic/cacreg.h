@@ -1,4 +1,4 @@
-/*	$OpenBSD: cacreg.h,v 1.1 2000/12/17 21:35:06 mickey Exp $	*/
+/*	$OpenBSD: cacreg.h,v 1.2 2001/02/07 04:47:26 mickey Exp $	*/
 /*	$NetBSD: cacreg.h,v 1.5 2001/01/10 16:48:04 ad Exp $	*/
 
 /*-

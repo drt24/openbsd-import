@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: i82802reg.h,v 1.1 2000/04/10 20:07:47 mickey Exp $	*/
 
 /*
  * Copyright (c) 2000 Michael Shalayeff

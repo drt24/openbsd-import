@@ -125,8 +125,6 @@ struct kue_ether_desc {
 #define KUE_CTL_READ		0x01
 #define KUE_CTL_WRITE		0x02
 
-#define KUE_WARM_REV		0x0202
-
 /*
  * The interrupt endpoint is currently unused
  * by the KLSI part.

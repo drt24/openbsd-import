@@ -115,7 +115,6 @@ struct wsdisplay_accessops {
 	int	(*load_font) __P((void *, void *, struct wsdisplay_font *));
 	void	(*scrollback) __P((void *, void *, int));
 	u_int16_t (*getchar) __P((void *, int, int));
-	void	(*burn_screen) __P((void *, u_int, u_int));
 	void	(*pollc) __P((void *, int));
 };
 
@@ -211,16 +210,8 @@ const struct wsscreen_descr *
 /*
  * for use by wskbd
  */
-void wsdisplay_burn __P((void *v, u_int flags));
-void wsscrollback __P((void *v, int op));
+void wsscrollback __P((void *, int op));
 
 #define WSDISPLAY_SCROLL_BACKWARD	0
 #define WSDISPLAY_SCROLL_FORWARD	1
 #define WSDISPLAY_SCROLL_RESET		2
-
-/*
- * screen burner
- */
-#define	WSDISPLAY_DEFBURNOUT	600000	/* ms */
-#define	WSDISPLAY_DEFBURNIN	250	/* ms */
-

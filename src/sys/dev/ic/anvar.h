@@ -1,4 +1,4 @@
-/*	$OpenBSD: anvar.h,v 1.2 2001/02/26 06:19:34 tholo Exp $	*/
+/*	$OpenBSD: anvar.h,v 1.3 2001/02/27 06:43:10 tholo Exp $	*/
 
 /*
  * Copyright (c) 1997, 1998, 1999

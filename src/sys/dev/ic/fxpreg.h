@@ -1,4 +1,4 @@
-/*	$OpenBSD: fxpreg.h,v 1.1 2000/04/18 18:44:27 jason Exp $	*/
+/*	$OpenBSD: fxpreg.h,v 1.2 2000/04/26 19:12:08 chris Exp $	*/
 
 /*
  * Copyright (c) 1995, David Greenman

@@ -1,4 +1,4 @@
-/*	$OpenBSD: ises.c,v 1.3 2001/01/30 14:07:44 ho Exp $	*/
+/*	$OpenBSD: ises.c,v 1.4 2001/03/28 20:02:59 angelos Exp $	*/
 
 /*
  * Copyright (c) 2000 Håkan Olsson (ho@crt.se)

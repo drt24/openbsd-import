@@ -1,4 +1,4 @@
-/*	$OpenBSD: auviavar.h,v 1.2 2000/10/14 18:04:07 aaron Exp $ */
+/*	$OpenBSD: auviavar.h,v 1.3 2000/12/27 02:50:07 mickey Exp $ */
 /*	$NetBSD: auviavar.h,v 1.1 2000/03/31 04:45:29 tsarna Exp $	*/
 
 /*-

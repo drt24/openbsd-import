@@ -1,4 +1,4 @@
-/* $OpenBSD: wsevent.c,v 1.1 2000/05/16 23:49:12 mickey Exp $ */
+/* $OpenBSD: wsevent.c,v 1.2 2000/08/01 13:51:18 mickey Exp $ */
 /* $NetBSD: wsevent.c,v 1.5 2000/03/30 12:45:44 augustss Exp $ */
 
 /*

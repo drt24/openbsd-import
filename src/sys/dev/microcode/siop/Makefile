@@ -1,4 +1,4 @@
-# $OpenBSD$
+# $OpenBSD: Makefile,v 1.1 2001/02/15 04:07:59 krw Exp $
 # $NetBSD: Makefile,v 1.1 2000/04/21 17:57:01 bouyer Exp $
 
 all: siop.out

@@ -1,4 +1,4 @@
-/* $OpenBSD$ */
+/* $OpenBSD: wseventvar.h,v 1.1 2000/05/16 23:49:12 mickey Exp $ */
 /* $NetBSD: wseventvar.h,v 1.1 1998/03/22 14:24:03 drochner Exp $ */
 
 /*

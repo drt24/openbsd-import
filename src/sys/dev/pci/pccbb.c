@@ -472,8 +472,6 @@ pccbbattach(parent, self, aux)
 	sc->sc_dmat = pa->pa_dmat;
 	sc->sc_tag = pa->pa_tag;
 	sc->sc_function = pa->pa_function;
-	sc->sc_sockbase = sock_base;
-	sc->sc_busnum = busreg;
 
 	sc->sc_intrline = pa->pa_intrline;
 	sc->sc_intrtag = pa->pa_intrtag;
@@ -3156,14 +3154,6 @@ pccbb_powerhook(why, arg)
 	}
 
 	if (why == PWR_RESUME) {
-		if (pci_conf_read (sc->sc_pc, sc->sc_tag, PCI_SOCKBASE) == 0)
-			/* BIOS did not recover this register */
-			pci_conf_write (sc->sc_pc, sc->sc_tag,
-					PCI_SOCKBASE, sc->sc_sockbase);
-		if (pci_conf_read (sc->sc_pc, sc->sc_tag, PCI_BUSNUM) == 0)
-			/* BIOS did not recover this register */
-			pci_conf_write (sc->sc_pc, sc->sc_tag,
-					PCI_BUSNUM, sc->sc_busnum);
 		/* CSC Interrupt: Card detect interrupt on */
 		reg = bus_space_read_4(base_memt, base_memh, CB_SOCKET_MASK);
 		/* Card detect intr is turned on. */

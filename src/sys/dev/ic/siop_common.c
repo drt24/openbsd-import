@@ -1,4 +1,4 @@
-/*	$OpenBSD: siop_common.c,v 1.5 2001/03/10 05:04:06 krw Exp $ */
+/*	$OpenBSD: siop_common.c,v 1.6 2001/04/15 06:01:29 krw Exp $ */
 /*	$NetBSD: siop_common.c,v 1.12 2001/02/11 18:04:50 bouyer Exp $	*/
 
 /*

@@ -1,4 +1,4 @@
-/* $OpenBSD: wsmousevar.h,v 1.1 2000/05/16 23:49:12 mickey Exp $ */
+/* $OpenBSD: wsmousevar.h,v 1.2 2000/08/01 13:51:18 mickey Exp $ */
 /* $NetBSD: wsmousevar.h,v 1.4 2000/01/08 02:57:24 takemura Exp $ */
 
 /*

@@ -1,4 +1,4 @@
-/* $OpenBSD$ */
+/* $OpenBSD: wskbdvar.h,v 1.1 2000/05/16 23:49:12 mickey Exp $ */
 /* $NetBSD: wskbdvar.h,v 1.8 1999/12/01 23:22:59 augustss Exp $ */
 
 /*

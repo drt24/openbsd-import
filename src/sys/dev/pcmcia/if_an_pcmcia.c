@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_an_pcmcia.c,v 1.3 2000/06/23 16:12:35 aaron Exp $	*/
+/*	$OpenBSD: if_an_pcmcia.c,v 1.4 2001/04/06 18:02:58 aaron Exp $	*/
 
 /*
  * Copyright (c) 1999 Michael Shalayeff

@@ -1,4 +1,4 @@
-/*	$OpenBSD: ami_pci.c,v 1.2 2001/03/27 19:17:14 mickey Exp $	*/
+/*	$OpenBSD: ami_pci.c,v 1.3 2001/04/16 03:18:18 deraadt Exp $	*/
 
 /*
  * Copyright (c) 2000 Michael Shalayeff

@@ -253,7 +253,7 @@ auvia_attach(struct device *parent, struct device *self, void *aux)
 	sc->sc_pc = pc;
 	sc->sc_pt = pt;
 
-	printf(": %s\n", intrstr);
+	printf("%s\n", intrstr);
 
 	if (pci_mapreg_map(pa, 0x10, PCI_MAPREG_TYPE_IO, 0, &sc->sc_iot,
 	    &sc->sc_ioh, &sc->sc_ioaddr, &sc->sc_iosize)) {

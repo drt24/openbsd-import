@@ -142,9 +142,6 @@ struct pccbb_softc {
 	bus_addr_t sc_io_start;		/* CardBus/PCMCIA io start */
 	bus_addr_t sc_io_end;		/* CardBus/PCMCIA io end */
 
-	pcireg_t sc_sockbase;		/* Socket base register */
-	pcireg_t sc_busnum;		/* bus number */
-
 	/* CardBus stuff */
 	struct cardslot_softc *sc_csc;
 

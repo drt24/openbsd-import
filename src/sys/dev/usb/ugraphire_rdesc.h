@@ -1,4 +1,4 @@
-/*	$OpenBSD$ */
+/*	$OpenBSD: ugraphire_rdesc.h,v 1.1 2001/01/28 09:43:41 aaron Exp $ */
 /*	$NetBSD:  $	*/
 /*
  * Copyright (c) 2000 Nick Hibma <n_hibma@freebsd.org>

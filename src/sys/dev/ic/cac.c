@@ -710,8 +710,8 @@ cac_scsi_cmd(xs)
 			splx(s);
 			xs->error = XS_DRIVER_STUFFUP;
 			scsi_done(xs);
-		} else
-			splx(s);
+		}
+		splx(s);
 		return (COMPLETE);
 
 

@@ -1,4 +1,3 @@
-/* $OpenBSD$ */
 /* $NetBSD$ */
 
 /*-

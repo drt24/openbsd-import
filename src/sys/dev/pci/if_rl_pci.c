@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_rl_pci.c,v 1.1 2001/04/10 22:52:00 aaron Exp $ */
+/*	$OpenBSD: if_rl_pci.c,v 1.2 2001/04/13 15:58:44 aaron Exp $ */
 
 /*
  * Copyright (c) 1997, 1998

@@ -1,4 +1,4 @@
-/*	$OpenBSD: rtl81x9.c,v 1.1 2001/04/10 22:52:00 aaron Exp $ */
+/*	$OpenBSD: rtl81x9.c,v 1.2 2001/04/13 15:58:43 aaron Exp $ */
 
 /*
  * Copyright (c) 1997, 1998

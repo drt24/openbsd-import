@@ -1,4 +1,4 @@
-/* $OpenBSD: wsdisplay_compat_usl.c,v 1.4 2001/02/10 19:42:06 mickey Exp $ */
+/* $OpenBSD: wsdisplay_compat_usl.c,v 1.5 2001/04/14 04:48:00 aaron Exp $ */
 /* $NetBSD: wsdisplay_compat_usl.c,v 1.12 2000/03/23 07:01:47 thorpej Exp $ */
 
 /*

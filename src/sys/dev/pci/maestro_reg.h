@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: maestro_reg.h,v 1.1 2001/01/11 23:36:38 espie Exp $	*/
 /*-
  * Copyright (c) 1999-2000 Taku YAMAMOTO <taku@cent.saitama-u.ac.jp>
  * All rights reserved.

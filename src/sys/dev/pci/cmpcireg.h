@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: cmpcireg.h,v 1.1 2000/04/27 02:19:41 millert Exp $	*/
 
 /*
  * Copyright (c) 2000 Takuya SHIOZAKI

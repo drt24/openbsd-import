@@ -1,4 +1,4 @@
-/*	$OpenBSD: siop_pci_common.c,v 1.4 2001/03/10 05:04:06 krw Exp $ */
+/*	$OpenBSD: siop_pci_common.c,v 1.5 2001/04/15 06:01:30 krw Exp $ */
 /*	$NetBSD: siop_pci_common.c,v 1.6 2001/01/10 15:50:20 thorpej Exp $	*/
 
 /*

@@ -1,4 +1,4 @@
-;	$OpenBSD: siop.ss,v 1.2 2001/03/01 17:14:27 krw Exp $
+;	$OpenBSD: siop.ss,v 1.3 2001/04/15 06:01:32 krw Exp $
 ;	$NetBSD: siop.ss,v 1.12 2000/10/23 14:53:53 bouyer Exp $
 
 ;

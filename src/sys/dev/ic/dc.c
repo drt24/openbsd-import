@@ -1,4 +1,4 @@
-/*	$OpenBSD: dc.c,v 1.26 2001/04/13 15:55:16 aaron Exp $	*/
+/*	$OpenBSD: dc.c,v 1.27 2001/04/13 15:56:10 aaron Exp $	*/
 
 /*
  * Copyright (c) 1997, 1998, 1999

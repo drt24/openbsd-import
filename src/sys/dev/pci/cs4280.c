@@ -1802,7 +1802,7 @@ cs4280_power(why, v)
 		for(i = 1; i <= CS4280_SAVE_REG_MAX; i++) {
 			if(i == 0x04) /* AC97_REG_MASTER_TONE */
 				continue;
-			cs4280_read_codec(sc, 2*i, &sc->ac97_reg[i]);
+			cs4280_read_codec(sc, 2*i, &sc->ac97_reg[i>>1]);
 		}
 		/* should I powerdown here ? */
 		cs4280_write_codec(sc, AC97_REG_POWER, CS4280_POWER_DOWN_ALL);
@@ -1820,7 +1820,7 @@ cs4280_power(why, v)
 		for(i = 1; i <= CS4280_SAVE_REG_MAX; i++) {
 			if(i == 0x04) /* AC97_REG_MASTER_TONE */
 				continue;
-			cs4280_write_codec(sc, 2*i, sc->ac97_reg[i]);
+			cs4280_write_codec(sc, 2*i, sc->ac97_reg[i>>1]);
 		}
 	}
 }

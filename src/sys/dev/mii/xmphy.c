@@ -1,4 +1,4 @@
-/*	$OpenBSD: xmphy.c,v 1.1 2000/08/28 13:40:23 jason Exp $	*/
+/*	$OpenBSD: xmphy.c,v 1.2 2000/08/29 19:00:36 jason Exp $	*/
 
 /*
  * Copyright (c) 2000

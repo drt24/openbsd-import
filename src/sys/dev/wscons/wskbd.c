@@ -589,8 +589,6 @@ wskbd_input(dev, type, value)
 	 * send upstream.
 	 */
 	if (sc->sc_translating) {
-		if (type == WSCONS_EVENT_KEY_DOWN && sc->sc_displaydv != NULL)
-			wsdisplay_burn(sc->sc_displaydv, WSDISPLAY_BURN_KBD);
 		num = wskbd_translate(sc->id, type, value);
 		if (num > 0) {
 			if (sc->sc_displaydv != NULL) {

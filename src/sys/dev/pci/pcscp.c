@@ -1,4 +1,4 @@
-/*	$OpenBSD: pcscp.c,v 1.1 2001/02/14 05:10:18 fgsch Exp $	*/
+/*	$OpenBSD: pcscp.c,v 1.2 2001/02/14 06:37:01 fgsch Exp $	*/
 /*	$NetBSD: pcscp.c,v 1.11 2000/11/14 18:42:58 thorpej Exp $	*/
 
 /*-
