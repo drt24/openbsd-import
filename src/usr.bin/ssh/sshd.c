@@ -13,6 +13,8 @@
 #include "includes.h"
 RCSID("$Id$");
 
+#include <poll.h>
+
 #include "xmalloc.h"
 #include "rsa.h"
 #include "ssh.h"
