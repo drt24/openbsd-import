@@ -1,5 +1,5 @@
 dnl
-dnl $Id$
+dnl $KTH: bsd-vop-lock.m4,v 1.3 2000/01/30 23:56:45 assar Exp $
 dnl
 
 dnl

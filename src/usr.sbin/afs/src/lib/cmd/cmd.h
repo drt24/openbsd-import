@@ -32,7 +32,7 @@
  */
 
 /*
- * $Id$
+ * $KTH: cmd.h,v 1.2 2000/06/01 18:37:26 lha Exp $
  */
 
 #ifndef _ARLA_CMD_H
