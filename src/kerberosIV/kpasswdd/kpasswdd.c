@@ -57,7 +57,7 @@ static char sccsid[] = "@(#)kpasswdd.c	8.1 (Berkeley) 6/4/93";
 #include <netinet/in.h>
 #include <pwd.h>
 #include <syslog.h>
-#include <kerberosIV/des.h>
+#include <des.h>
 #include <kerberosIV/krb.h>
 #include <kerberosIV/krb_db.h>
 #include <stdio.h>

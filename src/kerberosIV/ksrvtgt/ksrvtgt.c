@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include <strings.h>
 #include <sys/param.h>
-#include <kerberosIV/des.h>
+#include <des.h>
 #include <kerberosIV/krb.h>
 
 const char rcsid[] =

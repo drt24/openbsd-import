@@ -51,7 +51,7 @@ static char sccsid[] = "@(#)make_keypair.c	8.1 (Berkeley) 6/1/93";
 #include <strings.h>
 #include <netdb.h>
 #include <unistd.h>
-#include <kerberosIV/des.h>
+#include <des.h>
 #include <kerberosIV/krb.h>
 #include "pathnames.h"
 #include "register_proto.h"
