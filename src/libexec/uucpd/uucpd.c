@@ -170,7 +170,8 @@ struct sockaddr_in *sinp;
 
 	alarm(60);
 	do {
-		printf("login: "); fflush(stdout);
+		printf("login: ");
+		fflush(stdout);
 		if (readline(user, sizeof user) < 0) {
 			fprintf(stderr, "user read\n");
 			return;
@@ -180,7 +181,8 @@ struct sockaddr_in *sinp;
 	user[8] = '\0';
 	pw = getpwnam(user);
 	if (pw == NULL) {
-		printf("Password: "); fflush(stdout);
+		printf("Password: ");
+		fflush(stdout);
 		if (readline(passwd, sizeof passwd) < 0) {
 			fprintf(stderr, "passwd read\n");
 			return;
@@ -189,7 +191,8 @@ struct sockaddr_in *sinp;
 		return;
 	}
 	if (pw->pw_passwd && *pw->pw_passwd != '\0') {
-		printf("Password: "); fflush(stdout);
+		printf("Password: ");
+		fflush(stdout);
 		if (readline(passwd, sizeof passwd) < 0) {
 			fprintf(stderr, "passwd read\n");
 			return;
@@ -201,7 +204,7 @@ struct sockaddr_in *sinp;
 		}
 	}
 	if (strcmp(pw->pw_shell, _PATH_UUCICO)) {
-		fprintf(stderr, "Login incorrect.");
+		fprintf(stderr, "Login incorrect.\n");
 		return;
 	}
 	alarm(0);

@@ -3,6 +3,6 @@
 
 CFLAGS+= -DBSDINETD
 PROG=	uucpd
-NOMAN=	noman
+MAN=	uucpd.8
 
 .include <bsd.prog.mk>
