@@ -42,7 +42,7 @@ char *alloca ();
    tricks are need, but defaults to using the gettimeofday system call.
    Include <sys/time.h> if that will be used.  */
 
-#if !defined (USG) && !defined (sgi) && !defined (__NetBSD__)
+#if !defined (USG) && !defined (sgi) && !defined (__NetBSD__) && !defined(__OpenBSD__)
 #include <sys/time.h>
 #endif
 
@@ -874,7 +874,7 @@ get_date(p, now)
 #if sgi
 	    ftz.timezone = (int) _timezone / 60;
 #else /* not sgi */
-#ifdef __NetBSD__
+#if defined(__NetBSD__) || defined(__OpenBSD__)
 	    ftz.timezone = 0;
 #else /* neither sgi nor NetBSD */
 #if defined (USG)
