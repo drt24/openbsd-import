@@ -73,7 +73,7 @@ struct tr_query {
 	u_int  tr_src;			/* traceroute source */
 	u_int  tr_dst;			/* traceroute destination */
 	u_int  tr_raddr;		/* traceroute response address */
-#ifdef WORDS_BIGENDIAN
+#if BYTE_ORDER == BIG_ENDIAN
 	struct {
 		u_int   ttl : 8;	/* traceroute response ttl */
 		u_int   qid : 24;	/* traceroute query id */
