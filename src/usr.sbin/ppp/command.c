@@ -1202,11 +1202,13 @@ GetIpAddr(const char *cp)
   struct hostent *hp;
   struct in_addr ipaddr;
 
-  hp = gethostbyname(cp);
-  if (hp && hp->h_addrtype == AF_INET)
-    memcpy(&ipaddr, hp->h_addr, hp->h_length);
-  else if (inet_aton(cp, &ipaddr) == 0)
-    ipaddr.s_addr = 0;
+  if (inet_aton(cp, &ipaddr) == 0) {
+    hp = gethostbyname(cp);
+    if (hp && hp->h_addrtype == AF_INET)
+      memcpy(&ipaddr, hp->h_addr, hp->h_length);
+    else
+      ipaddr.s_addr = 0;
+  }
   return (ipaddr);
 }
 
