@@ -540,15 +540,21 @@ show_usage:
 		if (mlp) {
 			enum show_opt e = Calc;
 			int mwid = 0, dwid = 0, pwid = 0;
+
 			while (e != ShowDone) {
 				int i;
+
 				for (i = 0; i < mlp->amq_mount_tree_list_len; i++) {
 					show_mt(mlp->amq_mount_tree_list_val[i],
-						 e, &mwid, &dwid, &pwid);
+					    e, &mwid, &dwid, &pwid);
 				}
-				mwid++; dwid++, pwid++;
-				if (e == Calc) e = Short;
-				else if (e == Short) e = ShowDone;
+				mwid++;
+				dwid++;
+				pwid++;
+				if (e == Calc)
+					e = Short;
+				else if (e == Short)
+					e = ShowDone;
 			}
 		} else {
 			fprintf(stderr, "%s: ", __progname);
