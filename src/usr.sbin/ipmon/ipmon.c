@@ -548,6 +548,8 @@ char *argv[];
 	if (!(opts & OPT_SYSLOG)) {
 		log = argv[optind] ? fopen(argv[optind], "a") : stdout;
 		setvbuf(log, NULL, _IONBF, 0);
+	} else {
+		daemon(0, 0);
 	}
 
 	if (flushed) {
