@@ -89,7 +89,7 @@ GetShortHost()
   char *p;
 
   if (gethostname(VarShortHost, sizeof VarShortHost)) {
-    LogPrintf(LogERROR, "GetShortHost: gethostbyname: %s\n", strerror(errno));
+    LogPrintf(LogERROR, "GetShortHost: gethostname: %s\n", strerror(errno));
     return 0;
   }
 
