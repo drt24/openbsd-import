@@ -3262,6 +3262,11 @@ This, of course means that it is possible to execute an entirely external
 command rather than using the internal one.  See
 .Xr chat 8
 for a good alternative.
+.Pp
+The external command that is executed is subjected to the same special
+word expansions as the
+.Dq !bg
+command.
 .It set enddisc Op label|IP|MAC|magic|psn value
 This command sets our local endpoint discriminator.  If set prior to
 LCP negotiation,
