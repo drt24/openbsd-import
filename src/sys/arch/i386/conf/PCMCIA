@@ -17,7 +17,6 @@ options		MATH_EMULATE
 
 options		DUMMY_NOPS	# speed hack; recommanded
 options		XSERVER,UCONSOLE
-options		MACHINE_NONCONTIG
 
 maxusers	32		# estimated number of users
 options		TIMEZONE=300	# time zone to adjust RTC time by
