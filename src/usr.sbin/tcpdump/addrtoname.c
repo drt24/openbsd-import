@@ -194,7 +194,7 @@ getname(const u_char *ap)
 		break;
 
 	case 2:
-#ifdef WORDS_BIGENDIAN
+#if BYTE_ORDER == BIG_ENDIAN
 		addr = ((u_int32_t)*(u_short *)ap << 16) |
 			(u_int32_t)*(u_short *)(ap + 2);
 #else
@@ -204,7 +204,7 @@ getname(const u_char *ap)
 		break;
 
 	default:
-#ifdef WORDS_BIGENDIAN
+#if BYTE_ORDER == BIG_ENDIAN
 		addr = ((u_int32_t)ap[0] << 24) |
 			((u_int32_t)ap[1] << 16) |
 			((u_int32_t)ap[2] << 8) |
