@@ -833,7 +833,7 @@ int force;
 	}
 
 	/* we do not support sunos 3.0 insecure servers */
-	if (ntohs(raddrp->sin_port) < IPPORT_RESERVED)
+	if (ntohs(raddrp->sin_port) >= IPPORT_RESERVED)
 		return;
 
 	/* soft update, alive */
