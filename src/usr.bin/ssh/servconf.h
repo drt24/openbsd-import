@@ -51,6 +51,7 @@ typedef struct {
 	int     keepalives;	/* If true, set SO_KEEPALIVE. */
 	char   *ciphers;	/* Ciphers in order of preference. */
 	int	protocol;	/* Protocol in order of preference. */
+	int     gateway_ports;	/* If true, allow remote connects to forwarded ports. */
 	SyslogFacility log_facility;	/* Facility for system logging. */
 	LogLevel log_level;	/* Level for system logging. */
 	int     rhosts_authentication;	/* If true, permit rhosts
