@@ -79,11 +79,14 @@ Log all requests to
 .Xr syslog 3 .
 .El
 .Sh FILES
-.Bl -tag -width /etc/ethers -compact
+.Bl -tag -width /var/run/rarpd.pid -compact
 .It Pa /etc/ethers
 Ethernet host name data base
 .It Pa /etc/hosts
 host name data base
+.It Pa /var/run/rarpd.pid
+process id of
+.Nm
 .\" .It Pa /tftpboot
 .El
 .Sh SEE ALSO
