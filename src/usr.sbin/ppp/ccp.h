@@ -36,14 +36,14 @@
 #define	TY_DEFLATE	26	/* Deflate (gzip) - rfc 1979 */
 
 struct ccpstate {
-  u_long his_proto;		/* peer's compression protocol */
-  u_long my_proto;		/* our compression protocol */
+  int his_proto;		/* peer's compression protocol */
+  int my_proto;			/* our compression protocol */
 
   int reset_sent;		/* If != -1, ignore compressed 'till ack */
   int last_reset;		/* We can receive more (dups) w/ this id */
 
-  u_long his_reject;		/* Request codes rejected by peer */
-  u_long my_reject;		/* Request codes I have rejected */
+  u_int32_t his_reject;		/* Request codes rejected by peer */
+  u_int32_t my_reject;		/* Request codes I have rejected */
 
   int out_init;			/* Init called for out algorithm */
   int in_init;			/* Init called for in algorithm */

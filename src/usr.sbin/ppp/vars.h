@@ -55,8 +55,8 @@ struct confdesc {
 extern struct confdesc pppConfs[MAXCONFS + 1];
 
 struct pppvars {
-  u_long var_mru;		/* Initial MRU value */
-  u_long pref_mtu;		/* Preferred MTU value */
+  u_short var_mru;		/* Initial MRU value */
+  u_short pref_mtu;		/* Preferred MTU value */
   int var_accmap;		/* Initial ACCMAP value */
   int modem_speed;		/* Current modem speed */
   int modem_parity;		/* Parity setting */

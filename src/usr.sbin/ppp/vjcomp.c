@@ -155,11 +155,11 @@ VjCompInput(struct mbuf * bp, int proto)
 }
 
 const char *
-vj2asc(u_long val)
+vj2asc(u_int32_t val)
 {
   static char asc[50];
 
-  sprintf(asc, "%ld VJ slots %s slot compression",
-          ((val>>8)&15)+1, val & 1 ?  "with" : "without");
+  sprintf(asc, "%d VJ slots %s slot compression",
+          (int)((val>>8)&15)+1, val & 1 ?  "with" : "without");
   return asc;
 }

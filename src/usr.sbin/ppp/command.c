@@ -520,7 +520,7 @@ static int
 ShowInitialMRU(struct cmdargs const *arg)
 {
   if (VarTerm)
-    fprintf(VarTerm, " Initial MRU: %ld\n", VarMRU);
+    fprintf(VarTerm, " Initial MRU: %d\n", VarMRU);
   return 0;
 }
 
@@ -529,7 +529,7 @@ ShowPreferredMTU(struct cmdargs const *arg)
 {
   if (VarTerm)
     if (VarPrefMTU)
-      fprintf(VarTerm, " Preferred MTU: %ld\n", VarPrefMTU);
+      fprintf(VarTerm, " Preferred MTU: %d\n", VarPrefMTU);
     else
       fprintf(VarTerm, " Preferred MTU: unspecified\n");
   return 0;
