@@ -365,14 +365,15 @@ editit(tmpfile)
 	char *argp[] = {"sh", "-c", NULL, NULL};
 	char *ed, *p;
 	sigset_t mask, omask;
-	int stat;
+	int stat, len;
 
 	if ((ed = getenv("EDITOR")) == (char *)0)
 		ed = _PATH_VI;
-	p = (char *)malloc(strlen(ed) + 1 + strlen(tmpfile) + 1);
+	len = strlen(ed) + 1 + strlen(tmpfile) + 1;
+	p = (char *)malloc(len);
 	if (!p)
 		return(0);
-	(void)sprintf(p, "%s %s", ed, tmpfile);
+	(void)snprintf(p, len, "%s %s", ed, tmpfile);
 	argp[2] = p;
 
 	sigemptyset(&mask);

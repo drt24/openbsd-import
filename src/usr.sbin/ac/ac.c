@@ -514,7 +514,7 @@ ac(fp)
 	(void)fclose(fp);
 	if (!(Flags & AC_W))
 		usr.ut_time = time((time_t *)0);
-	(void)strcpy(usr.ut_line, "~");
+	(void)strlcpy(usr.ut_line, "~", sizeof usr.ut_line);
 
 	if (Flags & AC_D) {
 		ltm = localtime(&usr.ut_time);
