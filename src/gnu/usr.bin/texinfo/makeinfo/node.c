@@ -1797,7 +1797,7 @@ split_file (filename, size)
           }
       }
 
-    /* We have sucessfully created the subfiles.  Now write out the
+    /* We have successfully created the subfiles.  Now write out the
        original again.  We must use `output_stream', or
        write_tag_table_indirect () won't know where to place the output. */
     output_stream = fopen (filename, "w");
