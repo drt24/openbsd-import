@@ -1,4 +1,4 @@
-/*	$Id$	*/
+/*	$OpenBSD: kpasswdd.c,v 1.4 1997/06/29 10:32:15 provos Exp $	*/
 
 /*-
  * Copyright (c) 1990, 1993
