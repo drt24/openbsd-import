@@ -1,7 +1,7 @@
 #	$Id$
 
 MAN=	man/cvs.1 man/cvs.5 man/cvsbug.8 man/cvsinit.8
-GNUCFLAGS=	CFLAGS="${CFLAGS}"
+GNUCFLAGS=	CFLAGS="${CFLAGS} -DSERVER_FLOWCONTROL"
 CLEANFILES=	man/cvs.cat1 man/cvs.cat5 man/cvsbug.cat8 \
 		man/cvsinit.cat8
 
