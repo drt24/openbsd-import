@@ -46,6 +46,6 @@ extern void TermTimerService(void);
 extern void ShowTimers(void);
 
 #ifdef SIGALRM
-extern u_int nointr_sleep(u_int);
+extern void nointr_sleep(u_int);
 extern void nointr_usleep(u_int);
 #endif
