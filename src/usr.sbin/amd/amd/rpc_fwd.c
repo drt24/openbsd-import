@@ -328,7 +328,7 @@ fwd_reply()
 	int rc;
 	rpc_forward *p;
 	struct sockaddr_in src_addr;
-	int src_addr_len;
+	socklen_t src_addr_len;
 
 	/*
 	 * Determine the length of the packet
@@ -357,7 +357,7 @@ fwd_reply()
 again:
 	src_addr_len = sizeof(src_addr);
 	rc = recvfrom(fwd_sock, (char *) pkt, len, 0,
-			(struct sockaddr *) &src_addr, &src_addr_len);
+	    (struct sockaddr *) &src_addr, &src_addr_len);
 	if (rc < 0 || src_addr_len != sizeof(src_addr) ||
 			src_addr.sin_family != AF_INET) {
 		if (rc < 0 && errno == EINTR)
