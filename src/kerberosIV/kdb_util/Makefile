@@ -2,7 +2,7 @@
 #	$Id$
 
 PROG=	kdb_util
-SRCS=	kdb_util.c maketime.c
+SRCS=	kdb_util.c
 .PATH:	${.CURDIR}/../kdb_edit
 DPADD=	${LIBKDB} ${LIBKRB} ${LIBDES}
 LDADD=	-lkdb -lkrb -ldes
