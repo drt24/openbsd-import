@@ -1,5 +1,6 @@
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
+ * Copyright (c) 1993, 1994 Chris Provenzano. 
  * All rights reserved.
  *
  * This code is derived from software contributed to Berkeley by
@@ -91,13 +92,15 @@ int __swalk_sflush()
 				/* Is there anything to flush? */
 				if (fp->_bf._base && (fp->_bf._base - fp->_p)) {
 					if (ftrylockfile(fp)) {	/* Can we flush it */
-						if (!saven) {		/* No, save first fp we can't flush */
-							saven;
+						if (!saven) {	/* No, save first fp we can't flush */
+							saven = n;
 							saveg = g;
 							savefp = fp;
 							continue;
 						}
+					} else {
 						ret |= __sflush(fp);
+						funlockfile(fp);
 					}
 				}
 			}
@@ -109,11 +112,9 @@ int __swalk_sflush()
 				if (fp->_flags != 0) {		
  					/* Anything to flush */
 					while (fp->_bf._base && (fp->_bf._base - fp->_p)) {
-						if (ftrylockfile(fp)) {	/* Can we flush it */
-							pthread_yield();
-							continue;
-						}
+						flockfile(fp);
 						ret |= __sflush(fp);
+						funlockfile(fp);
 					}
 				}
 			}

@@ -51,4 +51,4 @@ struct __suio {
 	int	uio_resid;
 };
 
-extern int __sfvwrite	__P(( FILE *, struct __suio *));
+extern int __sfvwrite	__P_(( FILE *, struct __suio *));

@@ -1,5 +1,6 @@
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
+ * Copyright (c) 1993, 1994 Chris Provenzano. 
  * All rights reserved.
  *
  * This code is derived from software contributed to Berkeley by
@@ -52,3 +53,21 @@ fputc(c, fp)
 	funlockfile(fp);
 	return(ret);
 }
+
+int __putc(int _c, FILE *_p)
+{
+	int ret;
+	flockfile(_p);
+	ret = __sputc(_c, _p);
+	funlockfile(_p);
+	return(ret);
+}
+
+int __sputc(int _c, FILE *_p)
+{
+	if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
+		return (*_p->_p++ = _c);
+	else
+		return (__swbuf(_c, _p));
+}
+

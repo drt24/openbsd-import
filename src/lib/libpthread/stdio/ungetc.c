@@ -1,5 +1,6 @@
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
+ * Copyright (c) 1993, 1994 Chris Provenzano. 
  * All rights reserved.
  *
  * This code is derived from software contributed to Berkeley by
@@ -76,7 +77,7 @@ __submore(fp)
 	p = realloc(fp->_ub._base, i << 1);
 	if (p == NULL)
 		return (EOF);
-	(void) bcopy((void *)p, (void *)(p + i), (size_t)i);
+	(void) memcpy((void *)(p + i), (void *)p, (size_t)i);
 	fp->_p = p + i;
 	fp->_ub._base = p;
 	fp->_ub._size = i << 1;
@@ -89,7 +90,7 @@ ungetc(c, fp)
 {
 	if (c == EOF)
 		return (EOF);
-	pthread_once(&__sdidinit, __sinit);
+	__sinit ();
 
 	flockfile(fp);
 	if ((fp->_flags & __SRD) == 0) {

@@ -41,8 +41,9 @@
  * The first few FILEs are statically allocated; others are dynamically
  * allocated and linked in via this glue structure.
  */
-struct glue {
+typedef struct glue {
 	struct	glue *next;
 	int	niobs;
 	FILE	*iobs;
-} __sglue;
+} __sglue_type;
+extern struct glue __sglue;

@@ -1,5 +1,6 @@
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
+ * Copyright (c) 1993, 1994 Chris Provenzano. 
  * All rights reserved.
  *
  * This code is derived from software contributed to Berkeley by
@@ -62,6 +63,8 @@ fwrite(buf, size, count, fp)
 	uio.uio_resid = iov.iov_len = n = count * size;
 	uio.uio_iov = &iov;
 	uio.uio_iovcnt = 1;
+	if (! n)
+		return(0);
 
 	flockfile(fp);
 

@@ -1,5 +1,6 @@
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
+ * Copyright (c) 1993, 1994 Chris Provenzano. 
  * All rights reserved.
  *
  * This code is derived from software contributed to Berkeley by
@@ -40,7 +41,7 @@ static char *rcsid = "$Id$";
 #endif /* LIBC_SCCS and not lint */
 
 #include <pthread.h>
-#include <sys/errno.h>
+#include <errno.h>
 #include <stdio.h>
 #include "local.h"
 
@@ -51,7 +52,7 @@ fflush(fp)
 	int retval;
 
 	if (fp == NULL)
-		return (__swalk_sflush);
+		return (__swalk_sflush());
 	flockfile(fp);
 
 	if ((fp->_flags & (__SWR | __SRW)) == 0) {

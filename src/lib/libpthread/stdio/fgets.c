@@ -1,5 +1,6 @@
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
+ * Copyright (c) 1993, 1994 Chris Provenzano. 
  * All rights reserved.
  *
  * This code is derived from software contributed to Berkeley by
@@ -41,6 +42,7 @@ static char *rcsid = "$Id$";
 
 #include <pthread.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 /*
@@ -92,13 +94,13 @@ fgets(buf, n, fp)
 			len = ++t - p;
 			fp->_r -= len;
 			fp->_p = t;
-			(void) bcopy((void *)p, (void *)s, len);
+			(void) memcpy((void *)s, (void *)p, len);
 			s += len;
 			break;
 		}
 		fp->_r -= len;
 		fp->_p += len;
-		(void) bcopy((void *)p, (void *)s, len);
+		(void) memcpy((void *)s, (void *)p, len);
 		s += len;
 	} while ((n -= len) != 0);
 

@@ -55,8 +55,8 @@ tmpfile()
 #define	TRAILER	"tmp.XXXXXX"
 	char buf[sizeof(_PATH_TMP) + sizeof(TRAILER)];
 
-	bcopy(_PATH_TMP, buf, sizeof(_PATH_TMP) - 1);
-	bcopy(TRAILER, buf + sizeof(_PATH_TMP) - 1, sizeof(TRAILER));
+	memcpy(buf, _PATH_TMP, sizeof(_PATH_TMP) - 1);
+	memcpy( buf + sizeof(_PATH_TMP) - 1, TRAILER, sizeof(TRAILER));
 
 	sigfillset(&set);
 	(void)sigprocmask(SIG_BLOCK, &set, &oset);

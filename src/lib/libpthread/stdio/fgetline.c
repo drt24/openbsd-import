@@ -1,5 +1,6 @@
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
+ * Copyright (c) 1993, 1994 Chris Provenzano. 
  * All rights reserved.
  *
  * This code is derived from software contributed to Berkeley by
@@ -135,7 +136,7 @@ fgetline(fp, lenp)
 		 */
 		if (__slbexpand(fp, len + OPTIMISTIC))
 			goto error;
-		(void) bcopy((void *)fp->_p, (void *)(fp->_lb._base + off),
+		(void) memcpy((void *)(fp->_lb._base + off), (void *)fp->_p, 
 		    len - off);
 		off = len;
 		if (__srefill(fp))
@@ -149,7 +150,7 @@ fgetline(fp, lenp)
 		len += diff;
 		if (__slbexpand(fp, len))
 			goto error;
-		(void) bcopy((void *)fp->_p, (void *)(fp->_lb._base + off), diff);
+		(void) memcpy((void *)(fp->_lb._base + off), (void *)fp->_p, diff);
 		fp->_r -= diff + 1;
 		fp->_p = p + 1;
 		break;
