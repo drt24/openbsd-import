@@ -136,7 +136,7 @@ char *getwire()
 	 */
 	for (cp = buf; cp < cplim; cp += size(ifr)) {
 		addrlist *al;
-		ifr = (struct ifreq *) cp;
+		memcpy(&ifr, cp, sizeof(ifr));
 
 		if (ifr->ifr_addr.sa_family != AF_INET)
 			continue;
