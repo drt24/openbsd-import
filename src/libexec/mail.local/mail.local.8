@@ -43,6 +43,7 @@
 .Op Fl L
 .Op Fl l
 .Op Fl f Ar from
+.Op Fl H
 .Ar user ...
 .Sh DESCRIPTION
 .Nm Mail.local
@@ -67,6 +68,14 @@ Request that
 .Fn flock
 be used for locking the mail spool rather than
 .Nm username.lock .
+.It Fl H
+This mode is useful for a client mail program to attain proper locking.
+In this mode
+.Nm mail.local
+(ignoring all other arguments) attains a
+.Nm username.lock
+for the calling user and retains it until stdin is closed or a
+SIGINT signal is received.
 .El
 .Pp
 Individual mail messages in the mailbox are delimited by an empty
