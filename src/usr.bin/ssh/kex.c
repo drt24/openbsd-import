@@ -342,7 +342,7 @@ kex_choose_conf(char *cprop[PROPOSAL_MAX], char *sprop[PROPOSAL_MAX], int server
 		choose_enc (&k->enc [mode], cprop[nenc],  sprop[nenc]);
 		choose_mac (&k->mac [mode], cprop[nmac],  sprop[nmac]);
 		choose_comp(&k->comp[mode], cprop[ncomp], sprop[ncomp]);
-		log("kex: %s %s %s %s",
+		debug("kex: %s %s %s %s",
 		    ctos ? "client->server" : "server->client",
 		    k->enc[mode].name,
 		    k->mac[mode].name,

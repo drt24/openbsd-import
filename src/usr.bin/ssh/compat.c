@@ -65,7 +65,7 @@ compat_datafellows(const char *version)
 		len = strlen(check[i]);
 		if (strlen(version) >= len &&
 		   (strncmp(version, check[i], len) == 0)) {
-			log("datafellows: %.200s", version);
+			verbose("datafellows: %.200s", version);
 			datafellows = 1;
 			return;
 		}
