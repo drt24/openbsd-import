@@ -157,6 +157,7 @@ delay(n)
  * Start the real-time and statistics clocks. Leave stathz 0 since there
  * are no other timers available.
  */
+void
 cpu_initclocks()
 {
 	extern int tickadj;

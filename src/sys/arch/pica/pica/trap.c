@@ -625,7 +625,7 @@ trap(statusReg, causeReg, vadr, pc, args)
 #endif
 #ifdef KTRACE
 		if (KTRPOINT(p, KTR_SYSRET))
-			ktrsysret(p->p_tracep, code, i, rval);
+			ktrsysret(p->p_tracep, code, i, rval[0]);
 #endif
 		goto out;
 	    }

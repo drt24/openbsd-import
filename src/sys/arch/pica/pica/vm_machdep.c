@@ -180,10 +180,11 @@ void cpu_exit(p)
 /*
  * Dump the machine specific header information at the start of a core dump.
  */
-cpu_coredump(p, vp, cred)
+cpu_coredump(p, vp, cred, core)
 	struct proc *p;
 	struct vnode *vp;
 	struct ucred *cred;
+	struct core *core;
 {
 	extern struct proc *machFPCurProcPtr;
 
@@ -204,9 +205,10 @@ cpu_coredump(p, vp, cred)
  * Both addresses are assumed to reside in the Sysmap,
  * and size must be a multiple of CLSIZE.
  */
+void
 pagemove(from, to, size)
 	register caddr_t from, to;
-	int size;
+	size_t size;
 {
 	register pt_entry_t *fpte, *tpte;
 

@@ -517,6 +517,7 @@ consinit()
  * cpu_startup: allocate memory for variable-sized tables,
  * initialize cpu, and do autoconfiguration.
  */
+void
 cpu_startup()
 {
 	register unsigned i;
@@ -863,6 +864,7 @@ sys_sigreturn(p, v, retval)
 
 int	waittime = -1;
 
+void
 boot(howto)
 	register int howto;
 {

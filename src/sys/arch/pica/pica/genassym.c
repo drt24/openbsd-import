@@ -37,7 +37,6 @@
  *      $Id$
  */
 
-#define _KERNEL
 
 #include <sys/param.h>
 #include <sys/buf.h>
