@@ -125,6 +125,7 @@ int cyberflex_load_rsa_pub(int fd, int cla, unsigned char *key_fid,
 			   int key_len, unsigned char *key_data);
 int cyberflex_load_rsa_priv(int fd, int cla, unsigned char *key_fid,
 			    int nkey_elems, int keylen, unsigned char *key_elems[]);
+int cyberflex_verify_AUT0(int fd, int cla, unsigned char *aut0, int aut0len);
 
 /* SCPERF - performance evaluation */
 #ifdef SCPERF
