@@ -51,6 +51,7 @@
 #define SPI_OWNER      1
 #define SPI_NOTIFY     2
 #define SPI_TUNNEL     4
+#define SPI_ESP	       8	       /* Is used for ESP */
 
 struct spiob {
      struct spiob *next;            /* Linked list */

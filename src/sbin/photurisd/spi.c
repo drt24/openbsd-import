@@ -73,7 +73,7 @@ make_spi(struct stateob *st, char *local_address,
 	 u_int8_t **attributes, u_int16_t *attribsize)
 {
      u_int32_t tmp = 0;
-     u_int16_t i;
+     int i, flags = 0;
 
      if(*attributes == NULL) {           /* We are in need of attributes */
 	  if (select_attrib(st, attributes, attribsize) == -1) {
@@ -82,23 +82,20 @@ make_spi(struct stateob *st, char *local_address,
 	  }
      }
 	
-     /* Just grab a random number, this should be uniq */
-     for(i=0; i<SPI_SIZE; i++) {
-	  if(i%4 == 0) {
 #ifdef IPSEC
-	       int i, flags = 0;
-
-	       for (i=0; i<*attribsize; i += (*attributes)[i+1]+2)
-		    if ((*attributes)[i] == AT_ESP_ATTRIB)
-			 flags |= IPSEC_OPT_ENC;
-		    else if ((*attributes)[i] == AT_AH_ATTRIB)
-			 flags |= IPSEC_OPT_AUTH;
-		    
-	       tmp = kernel_reserve_spi(local_address, flags);
+     /* Let the kernel reserve a SPI for us */
+     for (i=0; i<*attribsize; i += (*attributes)[i+1]+2)
+	  if ((*attributes)[i] == AT_ESP_ATTRIB)
+	       flags |= IPSEC_OPT_ENC;
+	  else if ((*attributes)[i] == AT_AH_ATTRIB)
+	       flags |= IPSEC_OPT_AUTH;
+     
+     tmp = kernel_reserve_spi(local_address, st->address, flags);
 #else
-	       tmp = arc4random();
+     /* Just grab a random number, this should be uniq */
+     tmp = arc4random();
 #endif
-	  }
+     for (i = SPI_SIZE - 1; i >= 0; i--) {
 	  SPI[i] = tmp & 0xFF;
 	  tmp = tmp >> 8;
      }

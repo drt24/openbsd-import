@@ -155,6 +155,9 @@ handle_spi_update(u_char *packet, int size, char *address,
 	     return 0;
 	} 
 
+	/* The State object always retains the latest SPI pairs */
+	bcopy(header->SPI, st->uSPI, SPI_SIZE);
+
 	if ((spi = spi_new(st->address, header->SPI)) == NULL) {
 	     log_error(0, "spi_new() in handle_spi_update()"); 
 	     return -1; 
