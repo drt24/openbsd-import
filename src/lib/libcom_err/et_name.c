@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: et_name.c,v 1.1 1996/11/11 04:55:04 downsj Exp $	*/
 
 /*-
  * Copyright 1987, 1988 by the Student Information Processing Board
@@ -32,9 +32,10 @@ static const char char_set[] =
 static char buf[6];
 
 const char *
-error_table_name(num)
-    int num;
+error_table_name(n)
+    int n;
 {
+    unsigned num = n;
     int ch;
     int i;
     char *p;
