@@ -1,4 +1,4 @@
-/* $OpenBSD: if_lmc_media.c,v 1.12 2001/11/06 19:53:19 miod Exp $ */
+/* $OpenBSD: if_lmc_media.c,v 1.13 2003/02/11 19:20:27 mickey Exp $ */
 /* $Id$ */
 
 /*-
@@ -74,7 +74,6 @@
 #include "bpfilter.h"
 #if NBPFILTER > 0
 #include <net/bpf.h>
-#include <net/bpfdesc.h>
 #endif
 
 #include <uvm/uvm_extern.h>
