@@ -29,7 +29,7 @@ static char sccsid[] = "@(#)popen.c	5.7 (Berkeley) 2/14/89";
 #endif /* not lint */
 
 #include "cron.h"
-#include <sys/signal.h>
+#include <signal.h>
 
 
 #define MAX_ARGS 100
@@ -59,7 +59,11 @@ cron_popen(program, type)
 	extern char **glob(), **copyblk();
 #endif
 
-	if (*type != 'r' && *type != 'w' || type[1])
+#ifdef __GNUC__
+	(void) &iop;	/* Avoid vfork clobbering */
+#endif
+
+	if ((*type != 'r' && *type != 'w') || type[1])
 		return(NULL);
 
 	if (!pids) {

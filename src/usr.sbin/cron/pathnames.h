@@ -49,7 +49,7 @@
 			 */
 #define	ALLOW_FILE	"allow"		/*-*/
 #define DENY_FILE	"deny"		/*-*/
-/* #define LOG_FILE	"log"		/*-*/
+/* #define LOG_FILE	"log"		-*/
 
 			/* where should the daemon stick its PID?
 			 */
