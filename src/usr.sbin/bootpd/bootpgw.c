@@ -151,7 +151,7 @@ struct in_addr my_ip_addr;
  * main server loop is started.
  */
 
-void
+int
 main(argc, argv)
 	int argc;
 	char **argv;
