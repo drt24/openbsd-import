@@ -1,4 +1,4 @@
-/*	$OpenBSD: conf.c,v 1.6 1996/09/20 23:12:19 niklas Exp $ */
+/*	$OpenBSD: conf.c,v 1.8 1996/11/06 01:38:26 deraadt Exp $ */
 
 /*
  * Copyright (c) 1992, 1993
@@ -75,7 +75,7 @@ struct bdevsw	bdevsw[] =
 	bdev_disk_init(NVND,vnd),	/* 2: vnode disk driver */
 	bdev_disk_init(NCD,cd),		/* 3: SCSI CD-ROM */
 	bdev_disk_init(NWDC,wd),	/* 4: ST506/ESDI/IDE disk */
-	bdev_disk_init(NACD,cd),	/* 5: ATAPI CD-ROM */
+	bdev_disk_init(NACD,acd),	/* 5: ATAPI CD-ROM */
 	bdev_notdef(),			/* 6:  */
 	bdev_disk_init(NFDC,fd),	/* 7: Floppy disk driver */
 	bdev_notdef(),			/* 8:  */
