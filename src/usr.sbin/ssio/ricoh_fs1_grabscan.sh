@@ -56,8 +56,10 @@ set `get_scanner -p -l $scan_lname`
 width=$1
 height=$2
 
-dd if=/dev/$scan_lname of=/tmp/fs1_grabscan.$$ bs=256k
+tempfile=`mktemp -t fs1_grabscan.XXXXXXXXXX` || exit 1
 
-fs1toppm $width $height /tmp/fs1_grabscan.$$
+dd if=/dev/$scan_lname of=$tempfile bs=256k
 
-rm /tmp/fs1_grabscan.$$
+fs1toppm $width $height $tempfile
+
+rm $tempfile
