@@ -69,7 +69,7 @@ get_last_login_time(uid_t uid, const char *logname,
 
 void 
 record_login(int pid, const char *ttyname, const char *user, uid_t uid,
-	     const char *host, struct sockaddr_in * addr)
+	     const char *host, struct sockaddr * addr)
 {
 	int fd;
 	struct lastlog ll;

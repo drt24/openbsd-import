@@ -191,4 +191,7 @@ do { \
   } \
 } while (0)
 
+/* remote host is connected via a socket */
+int	packet_connection_is_on_socket(void);
+
 #endif				/* PACKET_H */
