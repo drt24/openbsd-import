@@ -567,7 +567,7 @@ lwres_print(register const u_char *bp, u_int length)
 
 			printf(" %s", tok2str(ns_type2str, "Type%d",
 			    ntohs(grbn->rdtype)));
-			if (ntohs(grbn->rdclass) != C_IN);
+			if (ntohs(grbn->rdclass) != C_IN)
 				printf(" %s", tok2str(ns_class2str, "Class%d",
 				    ntohs(grbn->rdclass)));
 			printf(" TTL ");
