@@ -427,12 +427,13 @@ IpInput(struct mbuf * bp)
       nb = ntohs(((struct ip *) tun.data)->ip_len);
       nb += sizeof tun - sizeof tun.data;
       nw = write(tun_out, &tun, nb);
-      if (nw != nb)
+      if (nw != nb) {
         if (nw == -1)
 	  LogPrintf(LogERROR, "IpInput: wrote %d, got %s\n", nb,
                     strerror(errno));
         else
 	  LogPrintf(LogERROR, "IpInput: wrote %d, got %d\n", nb, nw);
+      }
 
       if (iresult == PKT_ALIAS_FOUND_HEADER_FRAGMENT) {
 	while ((fptr = VarPacketAliasGetFragment(tun.data)) != NULL) {
@@ -442,12 +443,13 @@ IpInput(struct mbuf * bp)
 	    ((char *)fptr - sizeof tun + sizeof tun.data);
           nb += sizeof tun - sizeof tun.data;
 	  nw = write(tun_out, frag, nb);
-	  if (nw != nb)
+	  if (nw != nb) {
             if (nw == -1)
 	      LogPrintf(LogERROR, "IpInput: wrote %d, got %s\n", nb,
                         strerror(errno));
             else
 	      LogPrintf(LogERROR, "IpInput: wrote %d, got %d\n", nb, nw);
+          }
 	  free(frag);
 	}
       }
