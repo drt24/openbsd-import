@@ -19,6 +19,7 @@
 .Nd authentication key generation
 .Sh SYNOPSIS
 .Nm ssh-keygen
+.Op Fl q
 .Op Fl b Ar bits
 .Op Fl N Ar new_passphrase
 .Op Fl C Ar comment
@@ -84,6 +85,12 @@ Requests changing the passphrase of a private key file instead of
 creating a new private key.  The program will prompt for the file
 containing the private key, for the old passphrase, and twice for the
 new passphrase.
+.It Fl q
+Silence
+.Nm ssh-keygen .
+Used by
+.Pa /etc/rc
+when creating a new key.
 .It Fl C Ar comment
 Provides the new comment.
 .It Fl N Ar new_passphrase
