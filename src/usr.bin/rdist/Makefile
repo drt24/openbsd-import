@@ -12,3 +12,5 @@ LDADD=	-lcompat
 DPADD=	${LIBCOMPAT}
 
 .include <bsd.prog.mk>
+
+.depend: gram.c
