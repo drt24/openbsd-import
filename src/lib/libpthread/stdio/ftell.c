@@ -62,7 +62,7 @@ ftell(fp)
 	if (fp->_flags & __SOFF)
 		pos = fp->_offset;
 	else {
-		pos = lseek(fp, (fpos_t)0, SEEK_CUR);
+		pos = lseek(fileno(fp), (fpos_t)0, SEEK_CUR);
 	}
 
 	if (pos != -1L) {
