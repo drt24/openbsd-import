@@ -122,7 +122,7 @@ gensym(x)
 	}
 	symbol = (char *)malloc(32 * sizeof(char));
 	gensym_n++;
-	sprintf(symbol, "et%ld", gensym_n);
+	snprintf(symbol, 32 * sizeof(char), "et%ld", gensym_n);
 	return(symbol);
 }
 

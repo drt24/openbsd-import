@@ -124,7 +124,7 @@ main(int argc, char **argv)
     for (arg = 1; arg < argc; arg++) {
 	if (argv[arg][0] == '-')
 	    continue;
-	sprintf(fname, "%s-new-srvtab", argv[arg]);
+	snprintf(fname, sizeof(fname), "%s-new-srvtab", argv[arg]);
 	if ((fout = fopen(fname, "w")) == NULL) {
 	    fprintf(stderr, "Couldn't create file '%s'.\n", fname);
 	    fopen_errs++;
