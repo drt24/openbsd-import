@@ -569,6 +569,12 @@ The default is
 .Dq no .
 Note that disabling X11 forwarding does not improve security in any
 way, as users can always install their own forwarders.
+.It Cm XAuthLocation
+Specifies the location of the
+.Xr xauth 1
+program.
+The default is
+.Pa /usr/X11R6/bin/xauth .
 .El
 .Sh LOGIN PROCESS
 When a user successfully logs in,
