@@ -49,7 +49,6 @@
 #include <sys/device.h>
 #include <sys/proc.h>
 #include <sys/user.h>
-#include <sys/cpu.h>
 
 #include <machine/pio.h>
 
