@@ -68,7 +68,7 @@ struct {
     { "write", "input-filename", dwrite },
 
     /* Cyberflex commands */
-    { "ls", "", ls },
+    { "ls", "[ -l ] [ -a ]", ls },
     { "create", "fid size", jcreate },
     { "delete", "fid", jdelete },
     { "jdefault", "[ -d ]", jdefault },
