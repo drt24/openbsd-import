@@ -24,7 +24,7 @@ bsd.nfs:
 	cd ${.CURDIR}/../sys/arch/pmax/conf && config GENERIC_NFS
 	cd ${.CURDIR}/../sys/arch/pmax/compile/GENERIC_NFS && \
 	    make clean && make depend && make
-	cp ${.CURDIR}/../sys/arch/pmax/compile/GENERIC_NFS/bsd \
+	elf2ecoff ${.CURDIR}/../sys/arch/pmax/compile/GENERIC_NFS/bsd \
 	    ${DESTDIR}/snapshot/bsd.nfs
 
 bsd.rz0:
