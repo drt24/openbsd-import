@@ -626,7 +626,7 @@ static void output_results(void)
 							 * trailing newline */
 		fprintf(out, "%s\t%ld\t%ld\t%ld\t%ld\t%ld\n",
 			tmstring,
-			sttime,
+			(long)sttime,
 			stats[i].ctime,
 			stats[i].time - stats[i].ctime,
 			stats[i].time,
