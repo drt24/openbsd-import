@@ -113,6 +113,8 @@ main(argc, argv)
 			break;
 		case 'd':
 			basedir = optarg;
+			if (strlen(basedir) > MAXPATHLEN - 40)
+				error("basedir too long");
 			break;
 		case '?':
 		default:
