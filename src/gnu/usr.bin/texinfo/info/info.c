@@ -120,9 +120,9 @@ static struct option long_options[] = {
 
 /* String describing the shorthand versions of the long options found above. */
 #ifdef __MSDOS__
-static char *short_options = "d:n:f:o:ORsb";
+static char *short_options = "d:n:f:ho:ORsb";
 #else
-static char *short_options = "d:n:f:o:ORs";
+static char *short_options = "d:n:f:ho:ORs";
 #endif
 
 /* When non-zero, the Info window system has been initialized. */
@@ -197,6 +197,10 @@ main (argc, argv)
             free (user_filename);
 
           user_filename = xstrdup (optarg);
+          break;
+
+        case 'h':
+          print_help_p = 1;
           break;
 
           /* User is specifying the name of a file to output to. */
