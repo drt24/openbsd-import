@@ -49,7 +49,6 @@ static const char rcsid[] = "$Id$";
 #include <sys/stat.h>
 #include <sys/uio.h>
 #include <sys/ioctl.h>
-#include "config.h"
 #ifdef HAVE_SYS_FILIO_H
 #include <sys/filio.h>				/* For ioctl */
 #endif

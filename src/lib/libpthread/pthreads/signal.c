@@ -41,7 +41,6 @@ static const char rcsid[] = "$Id$";
 
 #include <pthread.h>
 #include <signal.h>
-#include <config.h>
 
 /* This will force init.o to get dragged in; if you've got support for
    C++ initialization, that'll cause pthread_init to be called at

@@ -57,8 +57,6 @@ static const char rcsid[] = "$Id$";
 #include <pthread/posix.h>
 #include <string.h>
 
-#include "config.h"
-
 #if defined (HAVE_SYSCALL_SENDTO) && !defined (HAVE_SYSCALL_SEND)
 
 pthread_ssize_t machdep_sys_send (int fd, const void *msg, size_t len,
