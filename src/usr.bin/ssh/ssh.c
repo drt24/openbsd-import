@@ -20,6 +20,7 @@ RCSID("$Id$");
 #include "authfd.h"
 #include "readconf.h"
 #include "uidswap.h"
+#include "channels.h"
 
 /* Flag indicating whether IPv4 or IPv6.  This can be set on the command line.
    Default value is AF_UNSPEC means both IPv4 and IPv6. */
