@@ -76,7 +76,7 @@
 
 static const u_short interactive_ports[32] = {
   544, 513, 514, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 21, 22, 23, 0, 0, 0, 0, 0, 0, 0, 543,
+  80, 81, 0, 0, 0, 21, 22, 23, 0, 0, 0, 0, 0, 0, 0, 543,
 };
 
 #define	INTERACTIVE(p)	(interactive_ports[(p) & 0x1F] == (p))
