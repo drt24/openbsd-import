@@ -50,7 +50,6 @@
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/errno.h>
-extern int errno;
 #include <sys/time.h>
 
 #define clocktime() (clock_valid ? clock_valid : time(&clock_valid))
