@@ -23,7 +23,7 @@ config.status:
 
 .ifdef NOMAN
 maninstall:
-        @echo NOMAN is set
+	@echo NOMAN is set
 .endif
 
 install:	maninstall
