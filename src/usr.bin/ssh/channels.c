@@ -1412,7 +1412,7 @@ void auth_input_request_forwarding(struct passwd *pw)
       /* Temporarily use a privileged uid. */
       temporarily_use_uid(pw->pw_uid);
 
-      if (bind(sock, (struct sockaddr *)&sunaddr, AF_UNIX_SIZE(sunaddr)) < 0)
+      if (bind(sock, (struct sockaddr *)&sunaddr, sizeof(sunaddr)) < 0)
 	packet_disconnect("bind: %.100s", strerror(errno));
 
       /* Restore the privileged uid. */

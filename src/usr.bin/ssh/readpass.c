@@ -23,11 +23,11 @@ RCSID("$Id$");
 static struct termios saved_tio;
 
 /* Old interrupt signal handler for read_passphrase. */
-static RETSIGTYPE (*old_handler)(int sig) = NULL;
+static void (*old_handler)(int sig) = NULL;
 
 /* Interrupt signal handler for read_passphrase. */
 
-RETSIGTYPE intr_handler(int sig)
+void intr_handler(int sig)
 {
   /* Restore terminal modes. */
   tcsetattr(fileno(stdin), TCSANOW, &saved_tio);

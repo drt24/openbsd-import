@@ -129,7 +129,7 @@ void enter_non_blocking()
 /* Signal handler for the window change signal (SIGWINCH).  This just
    sets a flag indicating that the window has changed. */
 
-RETSIGTYPE window_change_handler(int sig)
+void window_change_handler(int sig)
 {
   received_window_change_signal = 1;
   signal(SIGWINCH, window_change_handler);
@@ -138,7 +138,7 @@ RETSIGTYPE window_change_handler(int sig)
 /* Signal handler for signals that cause the program to terminate.  These
    signals must be trapped to restore terminal modes. */
 
-RETSIGTYPE signal_handler(int sig)
+void signal_handler(int sig)
 {
   if (in_raw_mode)
     leave_raw_mode();

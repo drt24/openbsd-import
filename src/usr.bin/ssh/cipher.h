@@ -33,12 +33,6 @@ Created: Wed Apr 19 16:50:42 1995 ylo
 typedef struct {
   unsigned int type;
   union {
-#ifdef WITH_DES
-    struct {
-      des_key_schedule key;
-      des_cblock iv;
-    } des;
-#endif /* WITH_DES */
     struct {
       des_key_schedule key1;
       des_key_schedule key2;
