@@ -742,8 +742,15 @@ static int
 arghidden(int argc, char const *const *argv, int n)
 {
   /* Is arg n of the given command to be hidden from the log ? */
+
+  /* set authkey xxxxx */
+  /* set key xxxxx */
   if (n == 2 && !strncasecmp(argv[0], "se", 2) &&
       (!strncasecmp(argv[1], "authk", 5) || !strncasecmp(argv[1], "ke", 2)))
+    return 1;
+
+  /* passwd xxxxx */
+  if (n == 1 && !strncasecmp(argv[0], "p", 1))
     return 1;
 
   return 0;
