@@ -20,7 +20,7 @@ RCSID("$Id$");
 #include <ssl/md5.h>
 
 /*
- * What kind of tripple DES are these 2 routines?
+ * What kind of triple DES are these 2 routines?
  *
  * Why is there a redundant initialization vector?
  *
