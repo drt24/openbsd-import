@@ -5,7 +5,8 @@
 
 SUBDIR=	ac accton arp bootpd bootpgw bootpef bootptest \
 	chown chroot config cron dev_mkdb \
-	diskpart edquota gettable gspa htable inetd iostat kgmon \
+	diskpart edquota gettable gspa htable inetd iostat \
+	ipftest ipmon ipsend kgmon \
 	kvm_mkdb lpr map-mbone mrinfo mrouted mtrace mtree named \
 	netgroup_mkdb portmap pppd pstat pwd_mkdb quot quotaon \
 	rarpd rbootd rdconfig rdate repquota rmt \
