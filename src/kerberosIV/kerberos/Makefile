@@ -6,6 +6,8 @@ DPADD=	${LIBKDB} ${LIBKRB} ${LIBDES}
 LDADD=	-lkdb -lkrb -ldes
 MAN=	kerberos.8
 
+BINDIR= /usr/libexec
+
 CFLAGS+=-I${.CURDIR}
 
 .include <bsd.prog.mk>
