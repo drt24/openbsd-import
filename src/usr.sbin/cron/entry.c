@@ -240,6 +240,9 @@ load_entry(file, error_func, pw, envp)
 			goto eof;
 		}
 		Debug(DPARS, ("load_entry()...uid %d, gid %d\n",e->uid,e->gid))
+	} else if (ch == '*') {
+	    ecode = e_cmd;
+	    goto eof;
 	}
 
 	e->uid = pw->pw_uid;
