@@ -266,6 +266,8 @@ struct exec *hp;
 		return 1;
 #if 0
 	return (((md_swap_long(hp->a_midmag)&0x00ff0000) >> 16) == MID_SUN020);
+#else
+	return (0);
 #endif
 }
 #endif /* RTLD */
