@@ -190,9 +190,9 @@ static char *find_username()
 			u = pw->pw_name;
 	}
 	if (!u)
-		u = getenv("USER");
-	if (!u)
 		u = getenv("LOGNAME");
+	if (!u)
+		u = getenv("USER");
 	if (!u)
 		u = "root";
 
