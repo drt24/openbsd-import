@@ -29,13 +29,13 @@ Test::Harness - Run Perl standard test scripts with statistics
 
 =head1 VERSION
 
-Version 2.40
+Version 2.42
 
     $Header$
 
 =cut
 
-$VERSION = '2.40';
+$VERSION = '2.42';
 
 # Backwards compatibility for exportable variable names.
 *verbose  = *Verbose;
@@ -1123,6 +1123,7 @@ Here's how Test::Harness tests itself
 
 =head1 SEE ALSO
 
+The included F<prove> utility for running test scripts from the command line,
 L<Test> and L<Test::Simple> for writing test scripts, L<Benchmark> for
 the underlying timing routines, L<Devel::CoreStack> to generate core
 dumps from failed tests and L<Devel::Cover> for test coverage

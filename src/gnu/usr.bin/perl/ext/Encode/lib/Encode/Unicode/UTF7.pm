@@ -38,7 +38,8 @@ sub encode($$;$){
 	    if ($1 eq "+"){
 		$bytes .= "+-";
 	    }else{
-		my $base64 = encode_base64($e_utf16->encode($1), '');
+		my $s = $1;
+		my $base64 = encode_base64($e_utf16->encode($s), '');
 		$base64 =~ s/=+$//;
 		$bytes .= "+$base64-";
 	    }

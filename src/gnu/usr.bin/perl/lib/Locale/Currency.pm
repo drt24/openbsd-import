@@ -105,10 +105,10 @@ sub all_currency_names
 # initialisation code - stuff the DATA into the CODES hash
 #=======================================================================
 {
-    my $code;
-    my $currency;
-
+    my    $code;
+    my    $currency;
     local $_;
+
 
     while (<DATA>)
     {
@@ -161,7 +161,7 @@ byb:Belarussian Ruble
 byr:Belarussian Ruble
 bzd:Belize Dollar
 
-cad:Candian Dollar
+cad:Canadian Dollar
 cdf:Franc Congolais
 chf:Swiss Franc
 clf:Unidades de Formento
