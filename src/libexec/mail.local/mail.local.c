@@ -495,14 +495,14 @@ usage()
 	err(FATAL, "usage: mail.local [-lLH] [-f from] user ...");
 }
 
-#if __STDC__
+#ifdef __STDC__
 #include <stdarg.h>
 #else
 #include <varargs.h>
 #endif
 
 void
-#if __STDC__
+#ifdef __STDC__
 err(int isfatal, const char *fmt, ...)
 #else
 err(isfatal, fmt)
@@ -512,7 +512,7 @@ err(isfatal, fmt)
 #endif
 {
 	va_list ap;
-#if __STDC__
+#ifdef __STDC__
 	va_start(ap, fmt);
 #else
 	va_start(ap);

@@ -699,14 +699,14 @@ fail:
  * connected to client, or older clients will hang waiting for that
  * connection first.
  */
-#if __STDC__
+#ifdef __STDC__
 #include <stdarg.h>
 #else
 #include <varargs.h>
 #endif
 
 void
-#if __STDC__
+#ifdef __STDC__
 error(const char *fmt, ...)
 #else
 error(fmt, va_alist)
@@ -717,7 +717,7 @@ error(fmt, va_alist)
 	va_list ap;
 	int len;
 	char *bp, buf[BUFSIZ];
-#if __STDC__
+#ifdef __STDC__
 	va_start(ap, fmt);
 #else
 	va_start(ap);

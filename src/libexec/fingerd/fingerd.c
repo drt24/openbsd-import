@@ -193,14 +193,14 @@ main(argc, argv)
 	exit(0);
 }
 
-#if __STDC__
+#ifdef __STDC__
 #include <stdarg.h>
 #else
 #include <varargs.h>
 #endif
 
 void
-#if __STDC__
+#ifdef __STDC__
 err(const char *fmt, ...)
 #else
 err(fmt, va_alist)
@@ -209,7 +209,7 @@ err(fmt, va_alist)
 #endif
 {
 	va_list ap;
-#if __STDC__
+#ifdef __STDC__
 	va_start(ap, fmt);
 #else
 	va_start(ap);
