@@ -275,6 +275,7 @@ main(argc, argv)
 		mktagfile(hp);
 		hp = (struct host *) hash_NextEntry(nmhashtable);
 	}
+	return 0;
 }
 
 

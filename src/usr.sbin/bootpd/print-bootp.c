@@ -47,6 +47,8 @@ static void cmu_print();
 static void other_print();
 static void dump_hex();
 
+extern int printfn(u_char *s, u_char *ep);
+
 /*
  * Print bootp requests
  */
