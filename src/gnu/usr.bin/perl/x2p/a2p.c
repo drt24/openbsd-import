@@ -5,7 +5,7 @@ static char yysccsid[] = "@(#)yaccpar 1.8 (Berkeley) 01/20/91";
 #line 2 "a2p.y"
 /* $RCSfile$$Revision$$Date$
  *
- *    Copyright (c) 1991-1997, Larry Wall
+ *    Copyright (c) 1991-2001, Larry Wall
  *
  *    You may distribute under the terms of either the GNU General Public
  *    License or the Artistic License, as specified in the README file.
