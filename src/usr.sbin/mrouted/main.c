@@ -179,7 +179,7 @@ usage:	fprintf(stderr,
 #else
     (void)openlog("mrouted", LOG_PID);
 #endif
-    sprintf(versionstring, "mrouted version %d.%d",
+    snprintf(versionstring, sizeof versionstring, "mrouted version %d.%d",
 			PROTOCOL_VERSION, MROUTED_VERSION);
 
     log(LOG_NOTICE, 0, "%s", versionstring);
@@ -634,7 +634,7 @@ log(int severity, int syserr, char *format, ...)
     time_t t;
 
     va_start(ap, format);
-    vsprintf(&fmt[10], format, ap);
+    vsnprintf(&fmt[10], sizeof fmt - 10, format, ap);
     va_end(ap);
     msg = (severity == LOG_WARNING) ? fmt : &fmt[10];
 
