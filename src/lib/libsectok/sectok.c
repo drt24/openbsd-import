@@ -46,6 +46,8 @@ such damages.
 
 #define myisprint(x) ((x) >= '!' && (x) <= 'z')
 
+unsigned char root_fid[] = {0x3f, 0x00};
+
 void
 sectok_fmt_fid(char *fname, int f0, int f1)
 {
