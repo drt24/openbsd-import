@@ -1934,14 +1934,16 @@ rp='What is your architecture name'
 archname="$ans"
 myarchname="$tarch"
 
-: is AFS running?
-echo " "
-if test -d /afs; then
-	echo "AFS may be running... I'll be extra cautious then..." >&4
-	afs=true
-else
-	echo "AFS does not seem to be running..." >&4
+if [ -z "$afs" ]; then
+	: is AFS running?
+	echo " "
+	if test -d /afs; then
+		echo "AFS may be running... I'll be extra cautious then..." >&4
+		afs=true
+	else
+		echo "AFS does not seem to be running..." >&4
 	afs=false
+	fi
 fi
 
 : decide how portable to be.  Allow command line overrides.
