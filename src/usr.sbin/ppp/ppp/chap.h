@@ -39,8 +39,9 @@ struct chap {
     } buf;
   } child;
   struct authinfo auth;
-  char challenge[CHAPCHALLENGELEN + AUTHLEN];
-  unsigned using_MSChap : 1;	/* A combination of MD4 & DES */
+  u_char challenge[CHAPCHALLENGELEN + AUTHLEN];
+  unsigned NTRespSent : 1;		/* Our last response */
+  int peertries;
 };
 
 #define descriptor2chap(d) \

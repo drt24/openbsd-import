@@ -47,7 +47,7 @@ struct authinfo {
 #define auth_Failure(a) (*a->fn.failure)(a);
 #define auth_Success(a) (*a->fn.success)(a);
 
-extern const char *Auth2Nam(u_short);
+extern const char *Auth2Nam(u_short, u_char);
 extern void auth_Init(struct authinfo *, struct physical *,
                       auth_func, auth_func, auth_func);
 extern void auth_StopTimer(struct authinfo *);

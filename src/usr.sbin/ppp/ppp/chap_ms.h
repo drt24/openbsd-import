@@ -28,4 +28,5 @@
 /* Don't rely on sizeof(MS_ChapResponse) in case of struct padding */  
 #define MS_CHAP_RESPONSE_LEN 49
 
-extern void chap_MS(char *, char *, int);
+extern void mschap_NT(char *, char *);
+extern void mschap_LANMan(char *, char *, char *);
