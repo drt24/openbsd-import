@@ -19,6 +19,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <errno.h>
 #include "error_table.h"
 
 static const char rcsid[] =
