@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-ip.c,v 1.19 2003/02/20 23:39:20 jason Exp $	*/
+/*	$OpenBSD: print-ip.c,v 1.20 2003/12/15 07:11:31 mcbride Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -558,7 +558,7 @@ ip_print(register const u_char *bp, register u_int length)
 			break;
 
 #ifndef IPPROTO_PFSYNC  
-#define IPPROTO_PFSYNC 136
+#define IPPROTO_PFSYNC 240
 #endif
 		case IPPROTO_PFSYNC:
 			if (vflag)
