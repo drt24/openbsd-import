@@ -68,12 +68,7 @@ handle_cookie_response(u_char *packet, int size,
 	header = (struct cookie_response *) packet;
 
 	/* Take multi home hosts into account */
-	st = state_root();
-	while(st != NULL) {
-	     if (!bcmp(header->icookie,st->icookie,COOKIE_SIZE))
-		  break;
-	     st = st->next;
-	}
+	st = state_find_icookie(header->icookie);
 	if (st == NULL)
 	     return -1;    /* Silently discard - XXX log perhaps ? */
 		

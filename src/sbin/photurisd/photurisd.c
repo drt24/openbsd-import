@@ -163,6 +163,7 @@ main(int argc, char **argv)
      argv += optind;
      
      spi_init();
+     state_init();
 
      init_vars();
 

@@ -197,10 +197,6 @@ schedule_process(int sock)
 	  remove = 0;
 	  switch(tmp->event) {
 	  case REKEY:
-#ifdef DEBUG
-	       if (state_root() != NULL)
-		    printf("Resetting secrets\n");
-#endif
 	       reset_secret();
 	       tmp->tm = time(NULL) + REKEY_TIMEOUT;
 	       break;
