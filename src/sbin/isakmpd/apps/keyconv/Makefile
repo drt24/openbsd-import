@@ -36,7 +36,7 @@ OS!=		awk '/^OS=/ { print $$2 }' ${.CURDIR}/../../Makefile
 .PATH:		${TOPSRC} ${TOPSRC}/sysdep/${OS} ${TOPOBJ}
 CFLAGS+=	-I${TOPSRC} -I${TOPSRC}/sysdep/${OS} -I${TOPOBJ} -Wall
 CFLAGS+=	-I/usr/local/include
-LDADD+=		-lcrypto ${LIBLWRES}
+LDADD+=		-lcrypto
 DPADD+=		${LIBCRYPTO}
 NOMAN=		yes
 
