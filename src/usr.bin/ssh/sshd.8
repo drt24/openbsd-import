@@ -213,6 +213,9 @@ The default is
 .It Cm HostKey
 Specifies the file containing the private host key (default
 .Pa /etc/ssh_host_key ) .
+Note that
+.Nm
+does not start if the private host key file is group/world-accessible.
 .It Cm IgnoreRhosts
 Specifies that rhosts and shosts files will not be used in
 authentication.

@@ -773,7 +773,11 @@ modify this file.
 .It Pa $HOME/.ssh/identity
 Contains the RSA authentication identity of the user.  This file
 contains sensitive data and should be readable by the user but not
-accessible by others.  It is possible to specify a passphrase when
+accessible by others (read/write/execute).
+Note that
+.Nm
+ignores this file if it is accessible by others.
+It is possible to specify a passphrase when
 generating the key; the passphrase will be used to encrypt the
 sensitive part of this file using 3DES.
 .It Pa $HOME/.ssh/identity.pub 
