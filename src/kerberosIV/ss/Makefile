@@ -4,7 +4,7 @@ LIB=	ss
 SRCS=	ss_err.c data.c error.c execute_cmd.c help.c invocation.c list_rqs.c \
 	listen.c pager.c parse.c prompt.c request_tbl.c requests.c \
 	std_rqs.c
-CFLAGS+=-I. -I${.CURDIR} -I${.CURDIR}/../com_err
+CFLAGS+=-I. -I${.CURDIR}/.. -I${.CURDIR} -I${.CURDIR}/../com_err
 LDADD+=	${COM_ERR}
 CLEANFILES+=	ss_err.c ss_err.h std_rqs.c ss
 
