@@ -69,21 +69,21 @@ The messages sent and received, are of the form:
 struct	outmp {
 	char	out_line[8];		/* tty name */
 	char	out_name[8];		/* user id */
-	long	out_time;		/* time on */
+	int32_t	out_time;		/* time on */
 };
 
 struct	whod {
 	char	wd_vers;
 	char	wd_type;
 	char	wd_fill[2];
-	int	wd_sendtime;
-	int	wd_recvtime;
+	int32_t	wd_sendtime;
+	int32_t	wd_recvtime;
 	char	wd_hostname[32];
-	int	wd_loadav[3];
-	int	wd_boottime;
+	int32_t	wd_loadav[3];
+	int32_t	wd_boottime;
 	struct	whoent {
 		struct	outmp we_utmp;
-		int	we_idle;
+		int32_t	we_idle;
 	} wd_we[1024 / sizeof (struct whoent)];
 };
 .Ed
