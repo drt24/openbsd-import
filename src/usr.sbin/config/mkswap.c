@@ -1,3 +1,6 @@
+/*	$OpenBSD$	*/
+/*	$NetBSD: mkswap.c,v 1.2 1996/03/03 17:28:29 thorpej Exp $	*/
+
 /* 
  * Copyright (c) 1992, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -40,7 +43,6 @@
  * SUCH DAMAGE.
  *
  *	from: @(#)mkswap.c	8.1 (Berkeley) 6/6/93
- *	$Id$
  */
 
 #include <sys/param.h>
