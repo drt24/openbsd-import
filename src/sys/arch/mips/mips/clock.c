@@ -1,4 +1,4 @@
-/*	$OpenBSD: clock.c,v 1.2 1998/01/29 14:55:54 pefo Exp $	*/
+/*	$OpenBSD: clock.c,v 1.3 1998/03/16 09:03:21 pefo Exp $	*/
 /*
  * Copyright (c) 1997 Per Fogelstrom.
  * Copyright (c) 1988 University of Utah.
@@ -166,14 +166,14 @@ clockattach(parent, self, aux)
 	case ALGOR_P5064:
 		BUS_INTR_ESTABLISH((struct confargs *)aux,
 			(intr_handler_t)hardclock, self);
-		set_intr(SOFT_INT_MASK_0 << 7, int5_dummy, 1);
+		set_intr(SOFT_INT_MASK_0 << 7, int5_dummy, 7);
 		break;
 
 	case DESKSTATION_RPC44:
 	case DESKSTATION_TYNE:
 		(void)isa_intr_establish(ia->ia_ic,
 				0, 1, 3, clockintr, 0, "clock");
-		set_intr(SOFT_INT_MASK_0 << 7, int5_dummy, 1);
+		set_intr(SOFT_INT_MASK_0 << 7, int5_dummy, 7);
 		break;
 #endif
 
