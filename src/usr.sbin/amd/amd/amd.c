@@ -302,7 +302,7 @@ char *argv[];
 	 * Now check we are root.
 	 */
 	if (geteuid() != 0) {
-		plog(XLOG_FATAL, "Must be root to mount filesystems (euid = %d)", geteuid());
+		plog(XLOG_FATAL, "Must be root to mount filesystems (euid = %u)", geteuid());
 		going_down(1);
 	}
 
