@@ -312,7 +312,7 @@ md_init_header(hp, magic, flags)
 	struct exec	*hp;
 	int		magic, flags;
 {
-#ifdef __NetBSD__
+#if defined(__NetBSD__) || defined(__OpenBSD__)
 	N_SETMAGIC((*hp), magic, MID_MACHINE, flags);
 
 	/* TEXT_START depends on the value of outheader.a_entry.  */
@@ -337,7 +337,7 @@ int
 md_midcompat(hp)
 	struct exec *hp;
 {
-#ifdef __NetBSD__
+#if defined(__NetBSD__) || defined(__OpenBSD__)
 #define SUN_M_SPARC	3
 	return (((md_swap_long(hp->a_midmag)&0x00ff0000) >> 16) == SUN_M_SPARC);
 #else
