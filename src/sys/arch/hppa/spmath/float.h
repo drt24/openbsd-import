@@ -35,11 +35,7 @@
  * Hewlett-Packard Company makes no representations about the 
  * suitability of this software for any purpose.
  */
-/*
- * @(#)float.h: $Revision$ $Date$
- * $Locker$
- * 
- */
+
 #include "../spmath/fpbits.h"
 #include "../spmath/hppa.h"
 

@@ -36,11 +36,7 @@
  * Hewlett-Packard Company makes no representations about the 
  * suitability of this software for any purpose.
  */
-/*
- * @(#)quad_float.h: $Revision$ $Date$
- * $Locker$
- * 
- */
+
 /******************************
  *  Quad precision functions  *
  ******************************/

@@ -36,11 +36,6 @@
  * Hewlett-Packard Company makes no representations about the 
  * suitability of this software for any purpose.
  */
-/*
- * @(#)md.h: $Revision$ $Date$
- * $Locker$
- * 
- */
 
 /*****************************************************************
  * Muliply/Divide SFU Internal State                             *

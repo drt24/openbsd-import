@@ -35,11 +35,6 @@
  * Hewlett-Packard Company makes no representations about the 
  * suitability of this software for any purpose.
  */
-/*
- * @(#)dbl_float.h: $Revision$ $Date$
- * $Locker$
- * 
- */
 /**************************************
  * Declare double precision functions *
  **************************************/

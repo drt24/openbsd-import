@@ -35,11 +35,6 @@
  * Hewlett-Packard Company makes no representations about the 
  * suitability of this software for any purpose.
  */
-/*
- * @(#)sgl_float.h: $Revision$ $Date$
- * $Locker$
- * 
- */
 /******************************
  * Single precision functions *
  ******************************/

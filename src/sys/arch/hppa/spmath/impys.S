@@ -36,11 +36,6 @@
  * Hewlett-Packard Company makes no representations about the 
  * suitability of this software for any purpose.
  */
-/* $Source$
- * $Revision$	$Author$
- * $State$   	$Locker$
- * $Date$
- */
 
 #include <machine/asm.h>
 
