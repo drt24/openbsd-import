@@ -1,5 +1,5 @@
 #	$Id$
 
-SUBDIR=	kerberosIV ss
+SUBDIR=	kerberosIV
 
 .include <bsd.subdir.mk>
