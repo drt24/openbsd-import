@@ -42,4 +42,6 @@ tags:
 
 .include <bsd.obj.mk>
 .include <bsd.subdir.mk>
+.ifndef NOMAN
 .include <bsd.man.mk>
+.endif
