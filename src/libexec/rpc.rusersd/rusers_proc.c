@@ -171,7 +171,7 @@ getidle(tty, display)
 #ifdef DEBUG
 			printf("%s: %m\n", devname);
 #endif
-			return (-1);
+			return (0);
 		}
 		time(&now);
 #ifdef DEBUG
