@@ -1,4 +1,4 @@
-/*	$OpenBSD: gss-serv.c,v 1.2 2003/08/31 13:30:18 markus Exp $	*/
+/*	$OpenBSD: gss-serv.c,v 1.3 2003/08/31 13:31:57 markus Exp $	*/
 
 /*
  * Copyright (c) 2001-2003 Simon Wilkinson. All rights reserved.
