@@ -17,7 +17,7 @@ Created: Wed Apr 19 16:50:42 1995 ylo
 #define CIPHER_H
 
 #include <des.h>
-#include "blowfish.h"
+#include <ssl/blowfish.h>
 
 /* Cipher types.  New types can be added, but old types should not be removed
    for compatibility.  The maximum allowed value is 31. */
