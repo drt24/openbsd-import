@@ -246,7 +246,7 @@ amqproc_getvers_1(void *argp, struct svc_req *rqstp)
 {
 	static amq_string res;
 
-	res = version;
+	res = "amd 1.1.1.1 of 1995/10/18 08:47:13 bsd44";
 	return &res;
 }
 

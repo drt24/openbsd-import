@@ -175,7 +175,6 @@ get_args(int c, char *v[])
 			break;
 
 		case 'v':
-			fprintf(stderr, "%s%s (%s-endian).\n", copyright, version, endian);
 			fputs("Map support for: ", stderr);
 			mapc_showtypes(stderr);
 			fputs(".\nFS: ", stderr);
