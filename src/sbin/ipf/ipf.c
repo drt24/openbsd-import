@@ -55,7 +55,7 @@ int main(argc,argv)
 int argc;
 char *argv[];
 {
-	char	c;
+	int	c;
 
 	while ((c = getopt(argc, argv, "AsInopvdryf:F:l:EDzZ")) != -1) {
 		switch (c)
