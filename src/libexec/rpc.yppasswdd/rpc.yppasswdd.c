@@ -91,17 +91,7 @@ main(argc, argv)
 			usage();
 	}
 
-	switch (fork()) {
-	case 0:
-		break;
-	case -1:
-		perror("fork");
-		exit(1);
-	default:
-		exit(0);
-	}
-
-	setsid();
+	(void) daemon(0, 0);
 	chdir("/etc");
 
 /*
