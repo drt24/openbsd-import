@@ -298,7 +298,6 @@ void read_server_config(ServerOptions *options, const char *filename)
 
 	case sHostKeyFile:
 	  charptr = &options->host_key_file;
-	parse_pathname:
 	  cp = strtok(NULL, WHITESPACE);
 	  if (!cp)
 	    {

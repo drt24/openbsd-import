@@ -61,6 +61,7 @@ static struct timeval start;
 unsigned long statbytes = 0;
 unsigned long totalbytes = 0;
 void progressmeter(int);
+int getttywidth(void);
 
 /* This is set to non-zero to enable verbose mode. */
 int verbose = 0;
@@ -1051,7 +1052,8 @@ lostconn(signo)
 	exit(1);
 }
 
-void alarmtimer(int wait)
+void
+alarmtimer(int wait)
 {
    struct itimerval itv;
 
@@ -1061,12 +1063,14 @@ void alarmtimer(int wait)
    setitimer(ITIMER_REAL, &itv, NULL);
 }
 
-static void updateprogressmeter(void)
+void
+updateprogressmeter(void)
 {
 	progressmeter(0);
 }
 
-void progressmeter(int flag)
+void
+progressmeter(int flag)
 {
 	static const char prefixes[] = " KMGTP";
 	static struct timeval lastupdate;
@@ -1153,7 +1157,8 @@ void progressmeter(int flag)
 	fflush(stdout);
 }
 
-int getttywidth(void)
+int
+getttywidth(void)
 {
 	struct winsize winsize;
 
