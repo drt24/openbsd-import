@@ -305,7 +305,7 @@ datalink_UpdateSet(struct descriptor *d, fd_set *r, fd_set *w, fd_set *e,
             case DATALINK_LOGIN:
               dl->phone.alt = NULL;
               datalink_LoginDone(dl);
-              break;
+              return datalink_UpdateSet(d, r, w, e, n);
           }
           break;
         case CHAT_FAILED:
