@@ -90,7 +90,7 @@ mopReadDL()
  */
 struct if_info *iflist;
 
-void   mopProcess    __P((struct if_info *, u_char *));
+void   mopProcess(struct if_info *, u_char *);
 
 /*
  * Loop indefinitely listening for MOP requests on the

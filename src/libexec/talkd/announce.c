@@ -1,4 +1,4 @@
-/*	$OpenBSD: announce.c,v 1.10 2000/10/10 12:44:37 itojun Exp $	*/
+/*	$OpenBSD: announce.c,v 1.11 2001/07/08 21:18:12 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -55,7 +55,7 @@ static char rcsid[] = "$Id$";
 #include <paths.h>
 #include "talkd.h"
 
-static void	print_mesg __P((FILE *,CTL_MSG *,char *));
+static void	print_mesg(FILE *,CTL_MSG *,char *);
 
 /*
  * Announce an invitation to talk.  If the user is

@@ -42,9 +42,9 @@ static char rcsid[] = "$Id$";
 #include "extern.h"
 #include "pathnames.h"
 
-static int check_junk __P((struct cmdinfo *));
-static void add_ci __P((const struct cmdinfo *, struct cmdinfo *));
-static void print_ci __P((const struct cmdinfo *, const struct cmdinfo *));
+static int check_junk(struct cmdinfo *);
+static void add_ci(const struct cmdinfo *, struct cmdinfo *);
+static void print_ci(const struct cmdinfo *, const struct cmdinfo *);
 
 static DB	*pacct_db;
 

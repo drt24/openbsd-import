@@ -44,7 +44,7 @@ struct	cmd *last_cmd;
 struct	namelist *last_n;
 struct	subcmd *last_sc;
 
-static char  *makestr __P((char *));
+static char  *makestr(char *);
 
 %}
 

@@ -40,8 +40,8 @@ struct string {
 };
 
 __BEGIN_DECLS
-void str_init		__P((struct string *));
-void str_append		__P((struct string *, const char *, int));
-void str_prepend	__P((struct string *, const char *, int));
-void str_free		__P((struct string *));
+void str_init(struct string *);
+void str_append(struct string *, const char *, int);
+void str_prepend(struct string *, const char *, int);
+void str_free(struct string *);
 __END_DECLS

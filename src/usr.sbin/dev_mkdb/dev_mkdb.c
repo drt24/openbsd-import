@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: dev_mkdb.c,v 1.5 2000/10/03 18:07:51 mickey Exp $	*/
 
 /*-
  * Copyright (c) 1990, 1993
@@ -60,7 +60,7 @@ static char rcsid[] = "$Id$";
 #include <string.h>
 #include <unistd.h>
 
-void	usage __P((void));
+void	usage(void);
 
 int
 main(argc, argv)

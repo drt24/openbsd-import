@@ -58,10 +58,10 @@ int dowhatis;
 char *mp = _PATH_MAN;
 char *sp = _MAN_SECTIONS;
 
-void usage __P((void));
-void catman __P((const char *, char *));
-void makewhatis __P((const char *));
-void dosystem __P((const char *));
+void usage(void);
+void catman(const char *, char *);
+void makewhatis(const char *);
+void dosystem(const char *);
 
 int
 main(argc, argv)

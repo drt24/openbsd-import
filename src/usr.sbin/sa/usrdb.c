@@ -41,7 +41,7 @@ static char rcsid[] = "$Id$";
 #include "extern.h"
 #include "pathnames.h"
 
-static int uid_compare __P((const DBT *, const DBT *));
+static int uid_compare(const DBT *, const DBT *);
 
 static DB	*usracct_db;
 

@@ -78,10 +78,10 @@ uid_t highid[MAXQUOTAS];	/* highest addid()'ed identifier per type */
 int	vflag;			/* verbose */
 int	aflag;			/* all file systems */
 
-void	usage __P((void));
-int	repquota __P((struct fstab *, int, char *));
-int	hasquota __P((struct fstab *, int, char **));
-int	oneof __P((char *, char *[], int));
+void	usage(void);
+int	repquota(struct fstab *, int, char *);
+int	hasquota(struct fstab *, int, char **);
+int	oneof(char *, char *[], int);
 
 int
 main(argc, argv)

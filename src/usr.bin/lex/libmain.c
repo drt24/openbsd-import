@@ -1,4 +1,4 @@
-/*	$OpenBSD: libmain.c,v 1.3 1996/07/13 22:22:05 millert Exp $	*/
+/*	$OpenBSD: libmain.c,v 1.4 1996/12/14 07:07:56 tholo Exp $	*/
 
 /* libmain - flex run-time support library "main" function */
 
@@ -6,8 +6,8 @@
 
 #include <sys/cdefs.h>
 
-int yylex __P((void));
-int main __P((int, char **, char **));
+int yylex(void);
+int main(int, char **, char **);
 
 /* ARGSUSED */
 int

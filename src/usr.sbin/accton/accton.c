@@ -49,7 +49,7 @@ static char *rcsid = "$Id$";
 #include <stdlib.h>
 #include <string.h>
 
-static void usage __P((void));
+static void usage(void);
 
 void
 usage()
