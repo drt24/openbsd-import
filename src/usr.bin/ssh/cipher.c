@@ -87,8 +87,6 @@ swap_bytes(const unsigned char *src, unsigned char *dst_, int n)
     char c[4];
   } t;
 
-  /* assert((n & 7) == 0); */
-
   /* Process 8 bytes every lap. */
   for (n = n / 8; n > 0; n--)
     {
@@ -242,7 +240,8 @@ void cipher_set_key(CipherContext *context, int cipher,
 void cipher_encrypt(CipherContext *context, unsigned char *dest,
 		    const unsigned char *src, unsigned int len)
 {
-  assert((len & 7) == 0);
+  if ((len & 7) != 0)
+    fatal("cipher_encrypt: bad plaintext length %d", len);
 
   switch (context->type)
     {
@@ -274,7 +273,8 @@ void cipher_encrypt(CipherContext *context, unsigned char *dest,
 void cipher_decrypt(CipherContext *context, unsigned char *dest,
 		    const unsigned char *src, unsigned int len)
 {
-  assert((len & 7) == 0);
+  if ((len & 7) != 0)
+    fatal("cipher_decrypt: bad ciphertext length %d", len);
 
   switch (context->type)
     {

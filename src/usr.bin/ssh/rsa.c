@@ -70,8 +70,8 @@ rsa_generate_key(RSA *prv, RSA *pub, unsigned int bits)
   }
 
   key = RSA_generate_key(bits, 35, NULL, NULL);
-
-  assert(key != NULL);
+  if (key == NULL)
+    fatal("rsa_generate_key: key generation failed.");
 
   /* Copy public key parameters */
   pub->n = BN_new();
