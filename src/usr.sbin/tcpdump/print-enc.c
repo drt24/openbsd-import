@@ -84,6 +84,10 @@ enc_if_print(u_char *user, const struct pcap_pkthdr *h,
 	
 	hdr = (struct enchdr *)p;
 	flags = hdr->flags;
+	if (flags == 0)
+	  printf("(unprotected): ");
+	else
+	  printf("(");
 	ENC_PRINT_TYPE(flags, M_AUTH, "authentic");
 	ENC_PRINT_TYPE(flags, M_CONF, "confidential");
 	/* ENC_PRINT_TYPE(flags, M_TUNNEL, "tunnel"); */
