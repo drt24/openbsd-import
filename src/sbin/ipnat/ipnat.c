@@ -1,4 +1,4 @@
-/*    $OpenBSD: ipnat.c,v 1.20 1998/02/24 04:03:38 dgregor Exp $    */
+/*    $OpenBSD: ipnat.c,v 1.21 1998/03/07 00:34:27 deraadt Exp $    */
 /*
  * Copyright (C) 1993-1997 by Darren Reed.
  *
@@ -134,7 +134,7 @@ char *argv[];
 
 	if (!(opts & OPT_NODO) && ((fd = open(IPL_NAT, O_RDWR)) == -1) &&
 	    ((fd = open(IPL_NAT, O_RDONLY)) == -1)) {
-		perror("open");
+		perror("open "IPL_NAT);
 		exit(-1);
 	}
 
