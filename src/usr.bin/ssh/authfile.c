@@ -19,7 +19,6 @@ RCSID("$Id$");
 
 #include <gmp.h>
 #include "xmalloc.h"
-#include "idea.h"
 #include "buffer.h"
 #include "bufaux.h"
 #include "cipher.h"
