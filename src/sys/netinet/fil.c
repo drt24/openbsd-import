@@ -1,4 +1,4 @@
-/*       $OpenBSD: fil.c,v 1.17 1999/12/15 05:20:20 kjell Exp $       */
+/*       $OpenBSD: fil.c,v 1.18 1999/12/15 07:04:20 itojun Exp $       */
 /*
  * Copyright (C) 1993-1998 by Darren Reed.
  *
@@ -1545,7 +1545,6 @@ struct in_addr *inp;
 	in = sin->sin_addr;
 #  endif /* linux */
 # endif /* SOLARIS */
-	in.s_addr = ntohl(in.s_addr);
 	*inp = in;
 	return 0;
 }
