@@ -93,6 +93,7 @@ int main (argc, argv, envp)
 		error ("unable to create sysconf socket: %m");
 
 	/* XXX for now... */
+	memset(&name, 0, sizeof(name));
 	name.sun_family = PF_UNIX;
 	strcpy (name.sun_path, "/var/run/sysconf");
 	name.sun_len = ((sizeof name) - (sizeof name.sun_path) +
