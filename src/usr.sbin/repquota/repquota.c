@@ -177,7 +177,7 @@ repquota(struct fstab *fs, int type, char *qfpathname)
 	FILE *qf;
 	uid_t id;
 	struct dqblk dqbuf;
-	char *timeprt();
+	char *timeprt(time_t);
 	static struct dqblk zerodqblk;
 	static int warned = 0;
 	static int multiple = 0;
