@@ -41,7 +41,7 @@ static char *rcsid = "$Id$";
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <paths.h>
+/* #include <paths.h> */
 
 char *
 tempnam(dir, pfx)

@@ -1,5 +1,6 @@
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
+ * Copyright (c) 1993, 1994 Chris Provenzano. 
  * All rights reserved.
  *
  * This code is derived from software contributed to Berkeley by
@@ -68,7 +69,7 @@ FILE *fdopen(int fd, const char *mode)
 		return (NULL);
 	}
 
-	pthread_once(&__sdidinit, __sinit);
+	__sinit ();
 	pthread_mutex_lock(&__sfp_mutex);
 	while (__sfp_state) {
 		pthread_cond_wait(&__sfp_cond, &__sfp_mutex);

@@ -1,5 +1,6 @@
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
+ * Copyright (c) 1993, 1994 Chris Provenzano. 
  * All rights reserved.
  *
  * This code is derived from software contributed to Berkeley by
@@ -39,19 +40,22 @@
 static char *rcsid = "$Id$";
 #endif /* LIBC_SCCS and not lint */
 
+#include <stdarg.h>
+#include <stddef.h>
 #include <stdio.h>
 
 vsnprintf(str, n, fmt, ap)
 	char *str;
 	size_t n;
 	const char *fmt;
-	va_list ap;
+	pthread_va_list ap;
 {
 	int ret;
 	FILE f;
 
 	if ((int)n < 1)
 		return (EOF);
+	f._file = -1;
 	f._flags = __SWR | __SSTR;
 	f._bf._base = f._p = (unsigned char *)str;
 	f._bf._size = f._w = n - 1;

@@ -1,5 +1,6 @@
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
+ * Copyright (c) 1993, 1994 Chris Provenzano. 
  * All rights reserved.
  *
  * This code is derived from software contributed to Berkeley by
@@ -141,7 +142,7 @@ nbf:
 		flags |= __SLBF;
 	if (flags & __SRW)
 		flags &= ~(__SRD | __SWR);
-	fp->_w = 0;
+	fp->_w = size; /* Was 0 (mevans) */
 	fp->_flags = flags;
 	fp->_bf._base = fp->_p = (unsigned char *)buf;
 	fp->_bf._size = size;

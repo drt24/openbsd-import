@@ -1,5 +1,6 @@
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
+ * Copyright (c) 1993, 1994 Chris Provenzano. 
  * All rights reserved.
  *
  * This code is derived from software contributed to Berkeley by
@@ -40,8 +41,9 @@ static char *rcsid = "$Id$";
 #endif /* LIBC_SCCS and not lint */
 
 #include <pthread.h>
-#include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "local.h"
 #include "fvwrite.h"
 
@@ -69,7 +71,7 @@ __sfvwrite(fp, uio)
 		return (EOF);
 
 #define	MIN(a, b) ((a) < (b) ? (a) : (b))
-#define	COPY(n)	  (void) bcopy((void *)p, (void *)fp->_p, (size_t)(n));
+#define	COPY(n)	  (void) memcpy((void *)fp->_p, (void *)p, (size_t)(n));
 
 	iov = uio->uio_iov;
 	p = iov->iov_base;

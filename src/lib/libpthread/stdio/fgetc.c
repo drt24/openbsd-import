@@ -1,5 +1,6 @@
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
+ * Copyright (c) 1993, 1994 Chris Provenzano. 
  * All rights reserved.
  *
  * This code is derived from software contributed to Berkeley by
@@ -45,7 +46,20 @@ static char *rcsid = "$Id$";
 fgetc(fp)
 	FILE *fp;
 {
+	int ret;
+
 	flockfile(fp);
-	return (__sgetc(fp));
+	ret = __sgetc(fp);
 	funlockfile(fp);
+	return(ret);
 }
+
+int __getc(FILE *_p)
+{
+	int ret;
+	flockfile(_p);
+	ret = __sgetc(_p);
+	funlockfile(_p);
+	return(ret);
+}
+

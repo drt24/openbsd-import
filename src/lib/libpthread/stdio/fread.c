@@ -1,5 +1,6 @@
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
+ * Copyright (c) 1993, 1994 Chris Provenzano. 
  * All rights reserved.
  *
  * This code is derived from software contributed to Berkeley by
@@ -63,7 +64,7 @@ fread(buf, size, count, fp)
 	total = resid;
 	p = buf;
 	while (resid > (r = fp->_r)) {
-		(void) bcopy((void *)fp->_p, (void *)p, (size_t)r);
+		(void) memcpy((void *)p, (void *)fp->_p, (size_t)r);
 		fp->_p += r;
 		/* fp->_r = 0 ... done in __srefill */
 		p += r;
@@ -74,7 +75,7 @@ fread(buf, size, count, fp)
 			goto done_fread;
 		}
 	}
-	(void) bcopy((void *)fp->_p, (void *)p, resid);
+	(void) memcpy((void *)p, (void *)fp->_p, resid);
 	fp->_r -= resid;
 	fp->_p += resid;
 done_fread:;
