@@ -582,7 +582,6 @@ void
 close_fd()
 {
     disestablish_ppp();
-    sleep(1);
 
     /* drop dtr to hang up */
     if (modem) {
