@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: com_err.c,v 1.1 1996/11/11 04:55:03 downsj Exp $	*/
 
 /*-
  * Copyright 1987, 1988 by the Student Information Processing Board
@@ -28,7 +28,7 @@
 #  include <varargs.h>
 #endif
 
-#include "kerberosIV/com_err.h"
+#include "com_err.h"
 #include "error_table.h"
 
 /*
@@ -37,7 +37,7 @@
  */
 #if VARARGS
 #define com_err com_err_external
-#include "kerberosIV/com_err.h"
+#include "com_err.h"
 #undef com_err
 #endif
 
