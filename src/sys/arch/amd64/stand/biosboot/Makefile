@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.21 2003/04/17 03:43:18 drahn Exp $
+#	$OpenBSD$
 
 MAN=	biosboot.8
 
@@ -7,6 +7,7 @@ PROG=	biosboot
 SRCS=	biosboot.S
 LD=ld
 LDFLAGS=-melf_i386 -nostdlib -Ttext 0 -N -x -Bstatic
+LDFLAGS+=-L/usr/libdata 
 INSTALL_STRIP=
 SADIR=	${.CURDIR}/..
 

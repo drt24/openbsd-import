@@ -74,10 +74,16 @@ x86_atomic_clearbits_u32(volatile u_int32_t *ptr, u_int32_t bits) {
 }
 
 
-
+/*
+ * XXX XXX XXX
+ * theoretically 64bit cannot be used as
+ * an "i" and thus if we ever try to give
+ * these anything from the high dword there
+ * is an asm error pending
+ */
 static __inline void
 x86_atomic_setbits_u64(volatile u_int64_t *ptr, u_int64_t bits) {
-    __asm __volatile("lock ; orq %1,%0" :  "=m" (*ptr) : "ir" (~bits));
+    __asm __volatile("lock ; orq %1,%0" :  "=m" (*ptr) : "ir" (bits));
 }
 
 static __inline void

@@ -48,9 +48,9 @@
 
 #define	_MACHINE	amd64
 #define	MACHINE		"amd64"
-#define	_MACHINE_ARCH	x86_64
-#define	MACHINE_ARCH	"x86_64"
-#define MID_MACHINE	MID_X86_64
+#define	_MACHINE_ARCH	amd64
+#define	MACHINE_ARCH	"amd64"
+#define MID_MACHINE	MID_AMD64
 
 /*
  * Round p (pointer or byte index) up to a correctly-aligned value
@@ -114,10 +114,7 @@
 #define	MCLSHIFT	11		/* convert bytes to m_buf clusters */
 #define	MCLBYTES	(1 << MCLSHIFT)	/* size of a m_buf cluster */
 #define MCLOFSET	(MCLBYTES - 1)	/* offset within a m_buf cluster */
-
-#ifndef NMBCLUSTERS
-#define	NMBCLUSTERS	2048		/* map size, max cluster allocation */
-#endif
+#define	NMBCLUSTERS	6144		/* map size, max cluster allocation */
 
 /*
  * Minimum and maximum sizes of the kernel malloc arena in PAGE_SIZE-sized

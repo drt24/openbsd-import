@@ -1,4 +1,4 @@
-/*	$OpenBSD: ansi.h,v 1.17 2004/01/03 14:08:53 espie Exp $	*/
+/*	$OpenBSD$	*/
 /*-
  * Copyright (c) 1990, 1993
  *	The Regents of the University of California.  All rights reserved.

@@ -1,4 +1,4 @@
-/*	$OpenBSD: exec.h,v 1.11 2003/10/11 22:08:57 miod Exp $ */
+/*	$OpenBSD$ */
 #ifndef __MACHINE_EXEC_H__
 #define __MACHINE_EXEC_H__
 

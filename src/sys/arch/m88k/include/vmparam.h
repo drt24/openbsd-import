@@ -1,4 +1,4 @@
-/*	$OpenBSD: vmparam.h,v 1.25 2003/12/28 22:12:34 miod Exp $ */
+/*	$OpenBSD$ */
 /*
  * Mach Operating System
  * Copyright (c) 1992 Carnegie Mellon University

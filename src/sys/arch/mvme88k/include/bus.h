@@ -1,4 +1,4 @@
-/*	$OpenBSD: bus.h,v 1.2 2004/04/30 21:32:54 miod Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * Copyright (c) 2004, Miodrag Vallat.
  *

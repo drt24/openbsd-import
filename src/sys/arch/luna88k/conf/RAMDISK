@@ -1,4 +1,4 @@
-#	$OpenBSD: RAMDISK,v 1.2 2004/04/26 12:34:02 miod Exp $
+#	$OpenBSD$
 
 machine		luna88k m88k
 

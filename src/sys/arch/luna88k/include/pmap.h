@@ -1,4 +1,4 @@
-/*	$OpenBSD: pmap.h,v 1.2 2004/05/20 09:20:42 kettenis Exp $ */
+/*	$OpenBSD$ */
 /*
  * Mach Operating System
  * Copyright (c) 1991 Carnegie Mellon University

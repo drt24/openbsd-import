@@ -1,4 +1,4 @@
-/*	$OpenBSD: trap.c,v 1.3 2004/06/03 05:17:36 miod Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * Copyright (c) 1998 Steve Murphree, Jr.
  * Copyright (c) 1996 Nivas Madhur

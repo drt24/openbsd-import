@@ -1,4 +1,4 @@
-/*	$OpenBSD: limits.h,v 1.12 2003/12/25 00:26:25 miod Exp $ */
+/*	$OpenBSD$ */
 /*
  * Copyright (c) 1988, 1993
  *	The Regents of the University of California.  All rights reserved.

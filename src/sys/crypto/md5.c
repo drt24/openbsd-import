@@ -1,4 +1,4 @@
-/*	$OpenBSD: md5.c,v 1.4 2004/04/29 18:38:23 millert Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * This code implements the MD5 message-digest algorithm.

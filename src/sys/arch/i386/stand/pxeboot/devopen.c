@@ -1,4 +1,4 @@
-/*	$OpenBSD: devopen.c,v 1.1 2004/03/19 13:48:19 tom Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2004 Tom Cosgrove

@@ -68,7 +68,9 @@ extern	caddr_t		vmmap;
 #define	pmap_clear_modify(pg)		pmap_unsetbit(pg, PG_M)
 #define	pmap_clear_reference(pg)	pmap_unsetbit(pg, PG_U)
 
-void pmap_bootstrap(vaddr_t, paddr_t *, paddr_t *, vaddr_t *, vaddr_t *);
+#define pmap_proc_iflush(p,va,len)	do { /* nothing */ } while (0)
+
+void pmap_bootstrap(vaddr_t);
 void pmap_cache_ctrl(pmap_t, vaddr_t, vaddr_t, u_int);
 boolean_t pmap_unsetbit(struct vm_page *, int);
 

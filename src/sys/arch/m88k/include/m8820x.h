@@ -1,4 +1,4 @@
-/*	$OpenBSD: m8820x.h,v 1.12 2004/01/19 17:21:23 miod Exp $ */
+/*	$OpenBSD$ */
 /*
  * Copyright (c) 2004, Miodrag Vallat.
  *

@@ -1,4 +1,4 @@
-/*	$OpenBSD: pcb.h,v 1.13 2004/01/12 21:33:15 miod Exp $ */
+/*	$OpenBSD$ */
 /*
  * Copyright (c) 1996 Nivas Madhur
  * Mach Operating System

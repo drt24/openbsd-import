@@ -1,4 +1,4 @@
-/*	$OpenBSD: psl.h,v 1.14 2003/10/11 22:08:57 miod Exp $ */
+/*	$OpenBSD$ */
 /*
  * Copyright (c) 1996 Nivas Madhur
  * All rights reserved.

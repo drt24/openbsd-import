@@ -1,4 +1,4 @@
-/*	$OpenBSD: mpt.c,v 1.5 2004/04/04 03:24:32 marco Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: mpt.c,v 1.4 2003/11/02 11:07:45 wiz Exp $	*/
 
 /*

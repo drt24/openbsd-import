@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic79xx.h,v 1.1 2004/05/20 03:11:45 marco Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * Core definitions and data structures shareable across OS platforms.
  *

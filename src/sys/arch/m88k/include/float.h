@@ -1,4 +1,4 @@
-/*	$OpenBSD: float.h,v 1.7 2003/06/02 23:27:52 millert Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 1989 Regents of the University of California.

@@ -1,4 +1,4 @@
-/*	$OpenBSD: conf.c,v 1.27 2003/10/23 18:33:45 fgsch Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2004 Tom Cosgrove

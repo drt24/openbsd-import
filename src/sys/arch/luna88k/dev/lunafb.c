@@ -1,4 +1,4 @@
-/* $OpenBSD: lunafb.c,v 1.2 2004/04/24 13:37:44 miod Exp $ */
+/* $OpenBSD$ */
 /* $NetBSD: lunafb.c,v 1.7.6.1 2002/08/07 01:48:34 lukem Exp $ */
 
 /*-

@@ -1,4 +1,4 @@
-/*	$OpenBSD: reg.h,v 1.14 2004/01/13 20:05:49 miod Exp $ */
+/*	$OpenBSD$ */
 /*
  * Copyright (c) 1999 Steve Murphree, Jr.
  * Copyright (c) 1996 Nivas Madhur

@@ -1,4 +1,4 @@
-/* $OpenBSD: machdep.c,v 1.4 2004/05/10 10:30:24 aoyama Exp $	*/
+/* $OpenBSD$	*/
 /*
  * Copyright (c) 1998, 1999, 2000, 2001 Steve Murphree, Jr.
  * Copyright (c) 1996 Nivas Madhur

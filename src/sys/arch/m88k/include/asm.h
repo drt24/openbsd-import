@@ -1,4 +1,4 @@
-/*	$OpenBSD: asm.h,v 1.26 2004/01/23 17:26:05 miod Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Mach Operating System

@@ -1,4 +1,4 @@
-/*	$OpenBSD: signal.h,v 1.12 2004/01/13 17:15:07 miod Exp $ */
+/*	$OpenBSD$ */
 /*
  * Copyright (c) 1996 Nivas Madhur
  * All rights reserved.

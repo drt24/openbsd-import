@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.1 2004/03/21 21:37:41 tom Exp $
+#	$OpenBSD$
 
 .include "${.CURDIR}/../Makefile.inc"
 

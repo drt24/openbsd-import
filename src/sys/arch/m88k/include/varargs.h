@@ -1,4 +1,4 @@
-/*	$OpenBSD: varargs.h,v 1.7 2002/03/23 23:27:13 miod Exp $	*/
+/*	$OpenBSD$	*/
 
 #ifndef _M88K_VARARGS_H_
 #define _M88K_VARARGS_H_

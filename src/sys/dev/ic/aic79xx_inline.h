@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic79xx_inline.h,v 1.1 2004/05/20 03:11:45 marco Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * Inline routines shareable across OS platforms.
  *

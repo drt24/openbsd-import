@@ -1,4 +1,4 @@
-#	$OpenBSD: files.m88k,v 1.1 2004/04/26 12:34:05 miod Exp $
+#	$OpenBSD$
 
 file	arch/m88k/m88k/cmmu.c
 file	arch/m88k/m88k/m88100_fp.S			m88100

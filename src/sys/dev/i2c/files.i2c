@@ -1,4 +1,4 @@
-# $OpenBSD: files.i2c,v 1.2 2004/05/23 18:12:37 grange Exp $
+# $OpenBSD$
 #	$NetBSD: files.i2c,v 1.3 2003/10/20 16:24:10 briggs Exp $
 
 device	iic { addr, [size = -1] }

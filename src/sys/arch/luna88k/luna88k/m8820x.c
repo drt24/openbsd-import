@@ -1,4 +1,4 @@
-/*	$OpenBSD: m8820x.c,v 1.1.1.1 2004/04/21 15:24:03 aoyama Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * Copyright (c) 2004, Miodrag Vallat.
  *

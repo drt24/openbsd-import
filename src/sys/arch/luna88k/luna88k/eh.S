@@ -1,4 +1,4 @@
-/*   $OpenBSD: eh.S,v 1.50 2004/01/29 21:39:05 deraadt Exp $   */
+/*   $OpenBSD$   */
 /*
  * Mach Operating System
  * Copyright (c) 1993-1991 Carnegie Mellon University

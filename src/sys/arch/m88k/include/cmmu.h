@@ -1,4 +1,4 @@
-/*	$OpenBSD: cmmu.h,v 1.1 2004/04/26 12:34:05 miod Exp $ */
+/*	$OpenBSD$ */
 /*
  * Mach Operating System
  * Copyright (c) 1993-1992 Carnegie Mellon University

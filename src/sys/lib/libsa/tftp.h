@@ -1,4 +1,4 @@
-/*	$OpenBSD: tftp.h,v 1.1 2004/03/19 13:48:20 tom Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: tftp.h,v 1.3 2003/08/07 16:32:30 agc Exp $	*/
 
 /*

@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic79xx.c,v 1.2 2004/05/20 04:35:47 marco Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * Core routines and tables shareable across OS platforms.
  *

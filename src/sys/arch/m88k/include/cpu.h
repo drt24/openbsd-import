@@ -1,4 +1,4 @@
-/*	$OpenBSD: cpu.h,v 1.25 2004/04/24 19:51:48 miod Exp $ */
+/*	$OpenBSD$ */
 /*
  * Copyright (c) 1996 Nivas Madhur
  * Copyright (c) 1992, 1993

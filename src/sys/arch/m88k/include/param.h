@@ -1,4 +1,4 @@
-/*	$OpenBSD: param.h,v 1.35 2004/04/19 22:55:49 deraadt Exp $ */
+/*	$OpenBSD$ */
 /*
  * Copyright (c) 1999 Steve Murphree, Jr.
  * Copyright (c) 1988 University of Utah.

@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic79xx_openbsd.h,v 1.2 2004/05/20 04:35:47 marco Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * FreeBSD platform specific driver option settings, data structures,
  * function declarations and includes.

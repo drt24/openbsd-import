@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic79xx_openbsd.c,v 1.2 2004/05/20 04:35:47 marco Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * Bus independent OpenBSD shim for the aic79xx based Adaptec SCSI controllers
  *

@@ -41,21 +41,18 @@
  */
 
 #include <sys/param.h>
-#include <sys/conf.h>
 #include <sys/buf.h>
 #include <sys/systm.h>
 #include <sys/uio.h>
 #include <sys/malloc.h>
 
 #include <machine/board.h>
+#include <machine/conf.h>
 
 #include <uvm/uvm_extern.h>
 
 caddr_t zeropage;
-
-#define	mmread	mmrw
-#define	mmwrite	mmrw
-cdev_decl(mm);
+extern vaddr_t last_addr;
 
 /*ARGSUSED*/
 int
@@ -127,7 +124,7 @@ mmrw(dev, uio, flags)
 		case 0:
 			/* move one page at a time */
 			v = uio->uio_offset;
-			if (v > MAXPHYSMEM) {
+			if (v > last_addr) {
 				error = EFAULT;
 				goto unlock;
 			}

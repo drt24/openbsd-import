@@ -1,4 +1,4 @@
-/*	$OpenBSD: spinlock.h,v 1.1 1999/09/27 20:46:19 smurph Exp $	*/
+/*	$OpenBSD$	*/
 
 #ifndef _M88K_SPINLOCK_H_
 #define _M88K_SPINLOCK_H_

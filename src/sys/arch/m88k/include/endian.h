@@ -1,4 +1,4 @@
-/*	$OpenBSD: endian.h,v 1.13 2003/06/03 21:09:01 deraadt Exp $ */
+/*	$OpenBSD$ */
 
 /*-
  * Copyright (c) 1997 Niklas Hallqvist.  All rights reserved.

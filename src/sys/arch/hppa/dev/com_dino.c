@@ -1,4 +1,4 @@
-/*	$OpenBSD: com_dino.c,v 1.1 2004/02/13 20:39:31 mickey Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2004 Michael Shalayeff

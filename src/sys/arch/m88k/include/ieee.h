@@ -1,4 +1,4 @@
-/*	$OpenBSD: ieee.h,v 1.5 2003/06/02 23:27:52 millert Exp $ */
+/*	$OpenBSD$ */
 /*
  * Copyright (c) 1992, 1993
  *	The Regents of the University of California.  All rights reserved.

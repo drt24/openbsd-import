@@ -696,4 +696,7 @@ cpu_init_msrs(struct cpu_info *ci)
 	wrmsr(MSR_FSBASE, 0);
 	wrmsr(MSR_GSBASE, (u_int64_t)ci);
 	wrmsr(MSR_KERNELGSBASE, 0);
+
+	if (cpu_feature & CPUID_NXE)
+		wrmsr(MSR_EFER, rdmsr(MSR_EFER) | EFER_NXE);
 }

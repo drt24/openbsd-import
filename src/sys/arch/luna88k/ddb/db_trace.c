@@ -1,4 +1,4 @@
-/*	$OpenBSD: db_trace.c,v 1.27 2004/01/29 21:39:05 deraadt Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * Mach Operating System
  * Copyright (c) 1993-1991 Carnegie Mellon University

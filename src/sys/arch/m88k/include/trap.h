@@ -1,4 +1,4 @@
-/*	$OpenBSD: trap.h,v 1.22 2004/01/12 07:46:17 miod Exp $ */
+/*	$OpenBSD$ */
 /*
  * Mach Operating System
  * Copyright (c) 1992 Carnegie Mellon University

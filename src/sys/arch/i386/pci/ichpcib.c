@@ -1,4 +1,4 @@
-/*	$OpenBSD: ichpcib.c,v 1.1 2004/05/06 19:47:03 grange Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * Copyright (c) 2004 Alexander Yurchenko <grange@openbsd.org>
  *
