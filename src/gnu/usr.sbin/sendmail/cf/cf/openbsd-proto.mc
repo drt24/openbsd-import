@@ -16,6 +16,11 @@ dnl mail.myisp.net with the hostname of your ISP's mail server.
 dnl
 dnl define(`SMART_HOST', `mail.myisp.net')dnl
 dnl
+dnl Disable EXPN and VRFY to help thwart address harvesters and require
+dnl senders to say hello.
+dnl
+define(`confPRIVACY_FLAGS', `authwarnings,needmailhelo,noexpn,novrfy')dnl
+dnl
 dnl We wish to make the existence of the local-host-names and
 dnl trusted-users files optional, hence the "-o" below.
 dnl
