@@ -35,7 +35,7 @@
  */
 
 #include <sys/syscall.h>
-#include <machine/reg.h>
+#include <machine/regnum.h>
 #include <machine/machAsmDefs.h>
 #include <machine/setjmp.h>
 
