@@ -1,4 +1,4 @@
-/*       $OpenBSD: fil.c,v 1.16 1999/12/08 06:50:18 itojun Exp $       */
+/*       $OpenBSD: fil.c,v 1.17 1999/12/15 05:20:20 kjell Exp $       */
 /*
  * Copyright (C) 1993-1998 by Darren Reed.
  *
@@ -55,11 +55,6 @@ static const char rcsid[] = "@(#)$Id$";
 # include <net/af.h>
 #endif
 #include <net/route.h>
-#ifdef _KERNEL
-# ifndef INET
-# error ipfilter assumes options INET
-# endif
-#endif
 #include <netinet/in.h>
 #include <netinet/in_systm.h>
 #include <netinet/ip.h>
