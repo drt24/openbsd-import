@@ -154,6 +154,7 @@ onalrm(signo)
 	static u_int utmpsize;		/* last malloced size for utmp */
 	static u_int utmpmtime;		/* last modification time for utmp */
 	struct stat statbf;
+	int save_errno = errno;
 
 	if (time(NULL) - lastmsgtime >= MAXIDLE)
 		exit(0);
@@ -171,6 +172,7 @@ onalrm(signo)
 		(void)lseek(uf, (off_t)0, L_SET);
 		nutmp = read(uf, utmp, (int)statbf.st_size)/sizeof(struct utmp);
 	}
+	errno = save_errno;
 }
 
 void
