@@ -176,8 +176,6 @@ handle_spi_update(u_char *packet, int size, char *address,
 	bcopy(st->icookie, spi->icookie, COOKIE_SIZE);
 	spi->lifetime = time(NULL) + lifetime;
 
-	spi_set_tunnel(st, spi);
-
 	make_session_keys(st, spi);
 
 	spi_insert(spi);

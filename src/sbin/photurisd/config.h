@@ -96,8 +96,6 @@ void reconfig(int sig);
 # define OPT_ENC            "enc"
 # define OPT_AUTH           "auth"
 #define OPT_USER            "user"
-#define OPT_TSRC            "tsrc"
-#define OPT_TDST            "tdst"
 
 struct cfgx {
      struct cfgx *next;

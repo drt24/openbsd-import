@@ -285,11 +285,12 @@ server(void)
 
 	  if (select(sockets[num_ifs-1]+1, 
 		     readfds, (fd_set *) NULL, (fd_set *) NULL, 
-		     (timeout.tv_sec == -1 ? NULL : &timeout)) < 0) 
+		     (timeout.tv_sec == -1 ? NULL : &timeout)) < 0) {
 	       if (errno == EINTR) 
                     continue; 
 	       else
                     crit_error(1, "select() in server()"); 
+	  }
 
 	  for (i=0; i<num_ifs; i++) {
 	       if (FD_ISSET(sockets[i], readfds)) {

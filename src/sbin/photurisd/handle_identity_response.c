@@ -274,8 +274,6 @@ handle_identity_response(u_char *packet, int size, char *address,
 	     /* Session keys for User */
 	     make_session_keys(st, spi);
 
-	     spi_set_tunnel(st, spi);
-
 	     spi_insert(spi);
 #ifdef IPSEC
 	     kernel_insert_spi(st, spi);
