@@ -1,4 +1,5 @@
 /*
+ * Copyright (c) 1998 Steve Murphree, Jr.
  * Copyright (c) 1996 Nivas Madhur
  * All rights reserved.
  *
@@ -65,6 +66,8 @@
 /* On some versions of 88200, page size flushes don't work. I am using
  * sledge hammer approach till I find for sure which ones are bad XXX nivas */
 #define BROKEN_MMU_MASK	
+#define CMMU_DEBUG 1
+
 #if defined(MVME187)
 #undef SNOOP_ENABLE
 #else
@@ -148,13 +151,13 @@ show_apr(unsigned value)
 	union apr_template apr_template;
 	apr_template.bits = value;
 
-	_printf("table @ 0x%x000", apr_template.field.st_base);
+	printf("table @ 0x%x000", apr_template.field.st_base);
 	if (apr_template.field.wt) printf(", writethrough");
 	if (apr_template.field.g)  printf(", global");
 	if (apr_template.field.ci) printf(", cache inhibit");
 	if (apr_template.field.te) printf(", valid");
 	else                       printf(", not valid");
-	printf("]\n");
+	printf("\n");
 }
 
 void
