@@ -1,4 +1,4 @@
-/*    $OpenBSD: fils.c,v 1.14 1999/02/05 05:58:43 deraadt Exp $    */
+/*    $OpenBSD: fils.c,v 1.15 1999/07/08 00:02:26 deraadt Exp $    */
 /*
  * Copyright (C) 1993-1998 by Darren Reed.
  *
@@ -92,7 +92,7 @@ char *argv[];
 	char	*name = NULL, *device = IPL_NAME;
 	int	c, fd;
 
-	while ((c = getopt(argc, argv, "AafhIinosvd:M:N:")) != -1)
+	while ((c = getopt(argc, argv, "AafhIinosvd:M:")) != -1)
 	{
 		switch (c)
 		{
@@ -128,9 +128,6 @@ char *argv[];
 			break;
 		case 'v' :
 			opts |= OPT_VERBOSE;
-			break;
-		case 'N':
-			nlistf = optarg;
 			break;
 		case 'M':
 			memf = optarg;
