@@ -155,6 +155,9 @@ init_attributes(void)
                } else if (!strcmp(p, "AT_MD5_DP")) { 
                     attrib[0] = AT_MD5_DP; 
                     attrib[1] = 0; 
+               } else if (!strcmp(p, "AT_SHA1_DP")) { 
+                    attrib[0] = AT_SHA1_DP; 
+                    attrib[1] = 0; 
                } else if (!strcmp(p, "AT_MD5_KDP")) {  
                     attrib[0] = AT_MD5_KDP;  
                     attrib[1] = 0;  

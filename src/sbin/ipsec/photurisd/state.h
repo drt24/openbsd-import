@@ -112,6 +112,8 @@ struct stateob {
   mpz_t generator;                  /* Generator for look up in cache */
   u_int8_t *texchange;              /* Their exchange value */
   u_int16_t texchangesize;
+  u_int8_t *exchangevalue;          /* Our exchange value */
+  u_int16_t exchangesize;
   u_int8_t *shared;                 /* Shared secret */
   u_int16_t sharedsize;
 

@@ -50,6 +50,8 @@ EXTERN u_int8_t *mpz_set_varpre(mpz_t a, u_int8_t *varpre);
 EXTERN u_int8_t *mpz_init_set_varpre(mpz_t a, u_int8_t *varpre);
 EXTERN void mpz_get_number_bits(mpz_t rop, mpz_t p);
 EXTERN int mpz_to_varpre(u_int8_t *value, u_int16_t *size, mpz_t p, mpz_t bits);
+EXTERN int exchange_set_generator(mpz_t, u_int8_t *, u_int8_t *);
+EXTERN int exchange_check_value(mpz_t, mpz_t, mpz_t);
 EXTERN int exchange_make_values(struct stateob *, mpz_t, mpz_t );
 EXTERN int exchange_value_generate(struct stateob *, u_int8_t *, u_int16_t *);
 

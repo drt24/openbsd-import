@@ -83,7 +83,7 @@ photuris_cookie_request(struct stateob *st, u_char *buffer, int *size)
 	     }
 	}
 
-	cookie_generate(st, st->icookie, COOKIE_SIZE);
+	cookie_generate(st, st->icookie, COOKIE_SIZE, NULL, 0);
 	st->phase = COOKIE_REQUEST;
 	st->lifetime = exchange_timeout + time(NULL);
 
