@@ -112,4 +112,4 @@ extern void hdlc_DecodePacket(struct bundle *, u_short, struct mbuf *,
 extern void hdlc_Input(struct bundle *, struct mbuf *, struct physical *);
 extern void hdlc_Output(struct link *, int, u_short, struct mbuf *bp);
 extern u_short hdlc_Fcs(u_short, u_char *, int);
-extern u_char *hdlc_Detect(struct physical *, u_char *, int);
+extern int hdlc_Detect(u_char const **, int, int);

@@ -156,6 +156,13 @@ pap_Input(struct physical *p, struct mbuf *bp)
   struct authinfo *authp = &p->dl->pap;
   u_char nlen, klen, *key;
 
+  if (bundle_Phase(p->dl->bundle) != PHASE_NETWORK &&
+      bundle_Phase(p->dl->bundle) != PHASE_AUTHENTICATE) {
+    log_Printf(LogPHASE, "Unexpected pap input - dropped !\n");
+    mbuf_Free(bp);
+    return;
+  }
+
   if ((bp = auth_ReadHeader(authp, bp)) == NULL &&
       ntohs(authp->in.hdr.length) == 0) {
     log_Printf(LogWARN, "Pap Input: Truncated header !\n");

@@ -36,6 +36,11 @@ struct physical {
   struct datalink *dl;         /* my owner */
 
   struct {
+    u_char buf[MAX_MRU];       /* Our input data buffer */
+    size_t sz;
+  } input;
+
+  struct {
     char full[40];
     char *base;
   } name;

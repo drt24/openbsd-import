@@ -57,7 +57,7 @@ void
 async_SetLinkParams(struct async *async, struct lcp *lcp)
 {
   async->my_accmap = lcp->want_accmap;
-  async->his_accmap = lcp->his_accmap;
+  async->his_accmap = lcp->his_accmap | lcp->want_accmap;
 }
 
 /*

@@ -543,6 +543,13 @@ chap_Input(struct physical *p, struct mbuf *bp)
   int lanman;
 #endif
 
+  if (bundle_Phase(p->dl->bundle) != PHASE_NETWORK &&
+      bundle_Phase(p->dl->bundle) != PHASE_AUTHENTICATE) {
+    log_Printf(LogPHASE, "Unexpected chap input - dropped !\n");
+    mbuf_Free(bp);
+    return;
+  }
+
   if ((bp = auth_ReadHeader(&chap->auth, bp)) == NULL &&
       ntohs(chap->auth.in.hdr.length) == 0)
     log_Printf(LogWARN, "Chap Input: Truncated header !\n");

@@ -380,7 +380,8 @@ prompt_vPrintf(struct prompt *p, const char *fmt, va_list ap)
       /* Stuff '\r' in front of '\n' 'cos we're in raw mode */
       int len = strlen(fmt);
 
-      if (len && len < sizeof nfmt - 1 && fmt[len-1] == '\n') {
+      if (len && len < sizeof nfmt - 1 && fmt[len-1] == '\n' &&
+          (len == 1 || fmt[len-2] != '\r')) {
         strcpy(nfmt, fmt);
         strcpy(nfmt + len - 1, "\r\n");
         pfmt = nfmt;
