@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*	$NetBSD: SYS.h,v 1.2 1999/02/15 04:54:36 hubertf Exp $	*/
 /*-
  * Copyright (c) 1992, 1993
