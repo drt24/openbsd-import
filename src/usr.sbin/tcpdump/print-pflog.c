@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-pflog.c,v 1.5 2001/06/26 22:26:14 deraadt Exp $	*/
+/*	$OpenBSD: print-pflog.c,v 1.6 2001/06/26 22:51:03 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1990, 1991, 1993, 1994, 1995, 1996
@@ -37,12 +37,13 @@ static const char rcsid[] =
 struct rtentry;
 #endif
 #include <net/if.h>
-#include <net/pfvar.h>
 #include <net/if_pflog.h>
 
 #include <netinet/in.h>
 #include <netinet/in_systm.h>
 #include <netinet/ip.h>
+
+#include <net/pfvar.h>
 
 #include <ctype.h>
 #include <netdb.h>
