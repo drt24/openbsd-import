@@ -1,14 +1,11 @@
 /* $RCSfile$$Revision$$Date$
  *
- *    Copyright (c) 1991-2001, Larry Wall
+ *    Copyright (c) 1991-2002, Larry Wall
  *
  *    You may distribute under the terms of either the GNU General Public
  *    License or the Artistic License, as specified in the README file.
  *
  * $Log$
- * Revision 1.5  2001/05/24 18:36:41  millert
- * merge in perl 5.6.1 with our local changes
- *
  */
 
 #include "EXTERN.h"
