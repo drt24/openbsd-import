@@ -28,6 +28,9 @@ Report problems and direct all questions to:
 
 /*
  * $Log$
+ * Revision 1.1.1.1  1995/10/18 08:41:03  deraadt
+ * initial import of NetBSD tree
+ *
  * Revision 1.3  1995/02/24 02:25:35  mycroft
  * RCS 5.6.7.4
  *
@@ -208,7 +211,7 @@ mainProg(rcsdiffId, "rcsdiff", "$Id$")
 		    /* fall into */
 	    case 'C': case 'F': case 'I': case 'L': case 'W':
 #if DIFF_L
-		    if (c == 'L'  &&  ++file_labels == 2)
+		    if (c == 'L'  &&  file_labels++ == 2)
 			faterror("too many -L options");
 #endif
 		    *dcp++ = c;
