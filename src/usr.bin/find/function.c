@@ -875,6 +875,11 @@ c_type(typestring)
 	ftsoptions &= ~FTS_NOSTAT;
 
 	switch (typestring[0]) {
+#ifdef S_IFWHT
+      case 'W':
+              mask = S_IFWHT;
+              break;
+#endif
 	case 'b':
 		mask = S_IFBLK;
 		break;
