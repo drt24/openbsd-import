@@ -1,9 +1,12 @@
 #	$Id$
 
 PROG=	sasyncd
-SRCS=	sasyncd.c carp.c conf.c log.c net.c net_ctl.c net_ssl.c \
+SRCS=	sasyncd.c carp.c conf.y log.c net.c net_ctl.c net_ssl.c \
 	pfkey.c timer.c
 MAN=	sasyncd.8 sasyncd.conf.5
+
+CFLAGS+=	-I${.CURDIR}
+CLEANFILES=	y.tab.h
 
 # ElectricFence
 #LDADD+=	-L/usr/local/lib -lefence
