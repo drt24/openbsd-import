@@ -1,5 +1,3 @@
-/*	$OpenBSD$	*/
-
 /*
  * (C)opyright 1993,1994,1995 by Darren Reed.
  *
@@ -23,6 +21,7 @@
 
 #ifndef lint
 static  char    sccsid[] = "@(#)kmem.c	1.4 1/12/96 (C) 1992 Darren Reed";
+static	char	rcsid[] = "$Id$";
 #endif
 
 static	int	kmemfd = -1;

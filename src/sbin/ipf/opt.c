@@ -1,5 +1,3 @@
-/*	$OpenBSD$	*/
-
 /*
  * (C)opyright 1993,1994,1995 by Darren Reed.
  *
@@ -24,6 +22,7 @@
 
 #ifndef	lint
 static	char	sccsid[] = "@(#)opt.c	1.8 4/10/96 (C) 1993-1995 Darren Reed";
+static	char	rcsid[] = "$Id$";
 #endif
 
 extern	int	opts;
