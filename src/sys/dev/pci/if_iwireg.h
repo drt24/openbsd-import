@@ -288,6 +288,7 @@ struct iwi_associate {
 	u_int16_t	intval;
 	u_int8_t	dst[IEEE80211_ADDR_LEN];
 	u_int32_t	reserved3;
+	u_int16_t	reserved4;
 } __attribute__((__packed__));
 
 /* structure for command IWI_CMD_SCAN */
