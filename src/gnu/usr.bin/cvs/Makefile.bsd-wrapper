@@ -8,6 +8,7 @@ all:	config.status
 .FORCE:	.IGNORE
 
 config: .FORCE
+	-rm config.cache
 	sh ${.CURDIR}/configure --prefix=/usr --with-krb4=/usr
 
 config.status:
