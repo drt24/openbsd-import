@@ -51,11 +51,7 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 
-static int search_ndbm P((DBM *db, char *key, char **val));
-static int search_ndbm(db, key, val)
-DBM *db;
-char *key;
-char **val;
+static int search_ndbm(DBM *db, char *key, char **val)
 {
 	datum k, v;
 	k.dptr = key;
@@ -68,13 +64,7 @@ char **val;
 	return ENOENT;
 }
 
-int ndbm_search P((mnt_map *m, char *map, char *key, char **pval, time_t *tp));
-int ndbm_search(m, map, key, pval, tp)
-mnt_map *m;
-char *map;
-char *key;
-char **pval;
-time_t *tp;
+int ndbm_search(mnt_map *m, char *map, char *key, char **pval, time_t *tp)
 {
 	DBM *db;
 
@@ -96,10 +86,7 @@ time_t *tp;
 	return errno;
 }
 
-int ndbm_init P((char *map, time_t *tp));
-int ndbm_init(map, tp)
-char *map;
-time_t *tp;
+int ndbm_init(char *map, time_t *tp)
 {
 	DBM *db;
 

@@ -91,8 +91,7 @@ int orig_umask;
  * SIGINT - tells amd to do a full shutdown, including unmounting all filesystem.
  * SIGTERM - tells amd to shutdown now.  Just unmounts the automount nodes.
  */
-static void sigterm(sig)
-int sig;
+static void sigterm(int sig)
 {
 #ifdef SYS5_SIGNALS
 	signal(sig, sigterm);
@@ -120,8 +119,7 @@ int sig;
  * When a SIGHUP arrives it schedules a call to mapc_reload
  */
 /*ARGSUSED*/
-static void sighup(sig)
-int sig;
+static void sighup(int sig)
 {
 #ifdef SYS5_SIGNALS
 	signal(sig, sighup);
@@ -139,8 +137,7 @@ int sig;
 }
 
 /*ARGSUSED*/
-static void parent_exit(sig)
-int sig;
+static void parent_exit(int sig)
 {
 	exit(0);
 }
@@ -192,9 +189,7 @@ static pid_t daemon_mode(P_void)
 }
 
 int
-main(argc, argv)
-int argc;
-char *argv[];
+main(int argc, char *argv[])
 {
 	char *domdot;
 	pid_t ppid = 0;
