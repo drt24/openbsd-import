@@ -551,7 +551,7 @@ sl_uncompress_tcp(u_char ** bufp, int len, u_int type, struct slcompress *comp,
 
   /* recompute the ip header checksum */
   {
-    register u_short sum, *bp = (u_short *)&cs->cs_ip;
+    u_short sum, *bp = (u_short *)&cs->cs_ip;
 
     for (changes = 0; hlen > 0; hlen -= 2)
       changes += *bp++;
