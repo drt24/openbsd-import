@@ -86,7 +86,7 @@ main(argc, argv)
 	int argc;
 	char *argv[];
 {
-	struct sockaddr_in from;
+	struct sockaddr_storage from;
 	register int cc;
 	int fromlen;
 	char msgbuf[100];
