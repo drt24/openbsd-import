@@ -1,4 +1,4 @@
-/*	$OpenBSD: machdep.c,v 1.30 1998/01/28 13:45:55 pefo Exp $	*/
+/*	$OpenBSD: machdep.c,v 1.31 1998/03/16 09:38:30 pefo Exp $	*/
 /*
  * Copyright (c) 1988 University of Utah.
  * Copyright (c) 1992, 1993
@@ -550,6 +550,7 @@ mips_init(argc, argv, envv)
 	/*
 	 * Initialize the virtual memory system.
 	 */
+	vm_set_page_size();	/* XXX Works when default page size is 4k */
 	pmap_bootstrap((vm_offset_t)sysend);
 }
 
