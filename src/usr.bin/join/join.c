@@ -559,7 +559,7 @@ obsolete(argv)
 
 	while ((ap = *++argv) != NULL) {
 		/* Return if "--". */
-		if (ap[0] == '-' && ap[1] == '-')
+		if (ap[0] != '-' || ap[0] == '-' && ap[1] == '-')
 			return;
 		switch (ap[1]) {
 		case 'a':
