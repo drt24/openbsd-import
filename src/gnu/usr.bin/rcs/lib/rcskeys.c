@@ -27,6 +27,10 @@ Report problems and direct all questions to:
 */
 
 /* $Log$
+/* Revision 1.2  1996/04/19 12:40:09  mickey
+/* -L<string> option added to support LOCALID behaviour.
+/* maybe set up in RCSINIT environment variable.
+/*
 /* Revision 1.1.1.1  1995/10/18 08:41:02  deraadt
 /* initial import of NetBSD tree
 /*
@@ -81,10 +85,16 @@ char const *Keyword[] = {
 setRCSlocalId(string)
 	char const *string;
 {
+	static int num;
+
 	if (strlen(string) > keylength)
 		error("LocalId is too long");
 	strcpy(local_id, string);
 	Keyword[LocalId] = local_id;
+
+	if (num++)
+		setenv("RCSLOCALID", local_id, 1);
+
 }
 
 	enum markers
