@@ -409,7 +409,7 @@ send_recv(dst, type, code, tries, save)
     else local = INADDR_ANY;
 
     /*
-     * If the reply address was not explictly specified, start off
+     * If the reply address was not explicitly specified, start off
      * with the unicast address of this host.  Then, if there is no
      * response after trying half the tries with unicast, switch to
      * the standard multicast reply address.  If the TTL was also not
@@ -1330,7 +1330,7 @@ Usage: mtrace [-Mlnps] [-w wait] [-m max_hops] [-q nqueries] [-g gateway]\n\
     /*
      * SunOS 5.X prior to SunOS 2.6, getsockname returns 0 for udp socket.
      * This call to sysinfo will return the hostname.
-     * If the default multicast interfface (set with the route
+     * If the default multicast interface (set with the route
      * for 224.0.0.0) is not the same as the hostname,
      * mtrace -i [if_addr] will have to be used.
      */
