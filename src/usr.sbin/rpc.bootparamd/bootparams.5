@@ -57,9 +57,9 @@ and may be continued onto multiple lines with a backslash.
 .Pp
 For example:
 .Bd -literal -offset indent
-dummy	root=/export/dummy/root \\
-	swap=/export/dummy/swap \\
-	dump=/export/dummy/swap
+dummy	root=server:/export/dummy/root \\
+	swap=server:/export/dummy/swap \\
+	dump=server:/export/dummy/swap
 .Ed
 .Pp
 When the client named "dummy" requests the pathname for
