@@ -112,6 +112,7 @@ usage()
 #ifdef AFS
 	fprintf(stderr, "  -k          Disable Kerberos ticket and AFS token forwarding.\n");
 #endif				/* AFS */
+        fprintf(stderr, "  -X          Enable X11 connection forwarding.\n");
 	fprintf(stderr, "  -x          Disable X11 connection forwarding.\n");
 	fprintf(stderr, "  -i file     Identity for RSA authentication (default: ~/.ssh/identity).\n");
 	fprintf(stderr, "  -t          Tty; allocate a tty even if command is given.\n");
@@ -422,7 +423,7 @@ main(int ac, char **av)
 	if (!host)
 		usage();
 
-        OpenSSL_add_all_algorithms();
+	OpenSSL_add_all_algorithms();
 
 	/* Initialize the command to execute on remote host. */
 	buffer_init(&command);
