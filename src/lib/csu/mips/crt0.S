@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /*
  * Copyright (c) 1991, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -34,7 +36,6 @@
  * SUCH DAMAGE.
  *
  *	from: @(#)crt0.s	8.2 (Berkeley) 3/21/94
- *	$Id$    
  */
 
 #include <machine/regdef.h>

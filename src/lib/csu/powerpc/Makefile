@@ -1,5 +1,5 @@
+#	$OpenBSD: Makefile,v 1.3 1999/01/28 05:01:14 rahnds Exp $
 #	from: @(#)Makefile	8.1 (Berkeley) 6/1/93
-#	$Id$
 
 CFLAGS=		-DLIBC_SCCS
 OBJS=		crt0.o gcrt0.o crtbegin.o crtend.o
