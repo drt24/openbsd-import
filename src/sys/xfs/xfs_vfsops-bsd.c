@@ -477,6 +477,7 @@ xfs_fhopen (struct proc *proc,
 #ifdef __APPLE__
     *fdflags(proc, index) &= ~UF_RESERVED;
 #endif
+    FILE_SET_MATURE(fp);
     return 0;
 out:
     XFSDEB(XDEBVFOPS, ("xfs_fhopen: error = %d\n", error));
