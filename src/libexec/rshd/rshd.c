@@ -250,7 +250,7 @@ doit(fromp)
 	if (!getsockopt(0, ipproto, IP_OPTIONS, (char *)&opts, &optsize) &&
 	    optsize != 0) {
 		for (i = 0; (void *)&opts.ipopt_list[i] - (void *)&opts <
-		    sizeof opts; ) {	
+		    optsize; ) {	
 			u_char c = (u_char)opts.ipopt_list[i];
 			if (c == IPOPT_LSRR || c == IPOPT_SSRR)
 				exit(1);
