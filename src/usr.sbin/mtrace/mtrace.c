@@ -1166,6 +1166,7 @@ char *argv[];
     int seed;
 
     init_igmp();
+    seteuid(getuid());
     setuid(getuid());
 
     argv++, argc--;
