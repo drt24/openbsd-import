@@ -1283,6 +1283,11 @@ backups
 # ./var/backups
 ..
 
+# ./var/yp.no
+yp.no		mode=775
+# ./var/yp.no
+..
+
 # ./var/crash
 crash		mode=775
 # ./var/crash
