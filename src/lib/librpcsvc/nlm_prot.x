@@ -135,7 +135,7 @@ struct	nlm_shareres {
 
 struct	nlm_notify {
 	string name<MAXNAMELEN>;
-	long state;
+	int state;
 };
 
 /*
