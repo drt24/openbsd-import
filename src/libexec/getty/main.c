@@ -130,10 +130,9 @@ jmp_buf timeout;
 static void
 dingdong()
 {
-
 	alarm(0);
 	signal(SIGALRM, SIG_DFL);
-	longjmp(timeout, 1);
+	longjmp(timeout, 1);		/* XXX signal/longjmp resource leaks */
 }
 
 jmp_buf	intrupt;
@@ -153,9 +152,9 @@ void
 timeoverrun(signo)
 	int signo;
 {
-
+	/* XXX signal race */
 	syslog(LOG_ERR, "getty exiting due to excessive running time");
-	exit(1);
+	_exit(1);
 }
 
 static int	getname __P((void));
