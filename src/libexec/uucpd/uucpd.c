@@ -193,6 +193,7 @@ struct sockaddr_in *sinp;
 	alarm(0);
 	sprintf(Username, "USER=%s", user);
 	dologin(pw, sinp);
+	setlogin(user);
 	setgid(pw->pw_gid);
 	initgroups(pw->pw_name, pw->pw_gid);
 	setuid(pw->pw_uid);
