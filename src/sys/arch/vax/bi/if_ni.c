@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_ni.c,v 1.2 2002/08/09 20:26:44 jsyn Exp $ */
+/*	$OpenBSD$ */
 /*	$NetBSD: if_ni.c,v 1.15 2002/05/22 16:03:14 wiz Exp $ */
 /*
  * Copyright (c) 2000 Ludd, University of Lule}, Sweden. All rights reserved.

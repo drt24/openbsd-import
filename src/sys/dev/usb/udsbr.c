@@ -1,4 +1,4 @@
-/*	$OpenBSD: udsbr.c,v 1.4 2002/07/25 02:18:10 nate Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: udsbr.c,v 1.7 2002/07/11 21:14:27 augustss Exp $	*/
 
 /*

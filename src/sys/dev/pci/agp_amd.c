@@ -1,4 +1,4 @@
-/*	$OpenBSD: agp_amd.c,v 1.1 2002/07/12 20:17:03 mickey Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: agp_amd.c,v 1.6 2001/10/06 02:48:50 thorpej Exp $	*/
 
 

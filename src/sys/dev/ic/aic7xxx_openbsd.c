@@ -32,7 +32,7 @@
  * $Id$
  *
  * $FreeBSD: src/sys/dev/aic7xxx/aic7xxx_freebsd.c,v 1.26 2001/07/18 21:39:47 gibbs Exp $
- * $OpenBSD: aic7xxx_openbsd.c,v 1.8 2002/07/05 05:41:03 smurph Exp $
+ * $OpenBSD$
  */
 
 #include <dev/ic/aic7xxx_openbsd.h>

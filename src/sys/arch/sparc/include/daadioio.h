@@ -1,4 +1,4 @@
-/*	$OpenBSD: daadioio.h,v 1.1 2002/07/09 15:27:59 jason Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002 Jason L. Wright (jason@thought.net)

@@ -1,4 +1,4 @@
-/*	$OpenBSD: creatorvar.h,v 1.6 2002/07/30 19:48:15 jason Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002 Jason L. Wright (jason@thought.net),

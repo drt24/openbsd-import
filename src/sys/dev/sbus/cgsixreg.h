@@ -1,4 +1,4 @@
-/*	$OpenBSD: cgsixreg.h,v 1.3 2002/07/30 23:03:30 jason Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002 Jason L. Wright (jason@thought.net)

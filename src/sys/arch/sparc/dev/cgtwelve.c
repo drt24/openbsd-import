@@ -1,4 +1,4 @@
-/*	$OpenBSD: cgtwelve.c,v 1.3 2002/09/20 11:17:56 fgsch Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002 Miodrag Vallat.  All rights reserved.

@@ -1,4 +1,4 @@
-/*	$OpenBSD: gpr.c,v 1.5 2002/07/10 21:53:26 mickey Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002, Federico G. Schwindt

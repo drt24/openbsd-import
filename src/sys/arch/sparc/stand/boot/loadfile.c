@@ -1,4 +1,4 @@
-/*	$OpenBSD: loadfile.c,v 1.12 2002/03/14 01:26:27 millert Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: loadfile.c,v 1.3 1997/04/06 08:40:59 cgd Exp $	*/
 
 /*

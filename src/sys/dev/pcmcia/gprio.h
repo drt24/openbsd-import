@@ -1,4 +1,4 @@
-/*	$OpenBSD: gprio.h,v 1.1 2002/06/17 18:44:15 fgsch Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002, Federico G. Schwindt

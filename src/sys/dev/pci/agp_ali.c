@@ -1,4 +1,4 @@
-/*	$OpenBSD: agp_ali.c,v 1.1 2002/07/12 20:17:03 mickey Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: agp_ali.c,v 1.2 2001/09/15 00:25:00 thorpej Exp $	*/
 
 

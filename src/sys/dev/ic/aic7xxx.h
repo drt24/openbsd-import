@@ -1,5 +1,5 @@
 /*
- * $OpenBSD: aic7xxx.h,v 1.4 2002/06/28 00:34:54 smurph Exp $
+ * $OpenBSD$
  * Core definitions and data structures shareable across OS platforms.
  *
  * Copyright (c) 1994-2001 Justin T. Gibbs.

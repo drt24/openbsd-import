@@ -1,4 +1,4 @@
-/*	$OpenBSD: creator_mainbus.c,v 1.3 2002/07/25 19:40:33 jason Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002 Jason L. Wright (jason@thought.net),

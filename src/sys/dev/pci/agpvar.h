@@ -1,4 +1,4 @@
-/*	$OpenBSD: agpvar.h,v 1.2 2002/07/15 13:23:48 mickey Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: agpvar.h,v 1.4 2001/10/01 21:54:48 fvdl Exp $	*/
 
 /*-

@@ -1,4 +1,4 @@
-/*	$OpenBSD: agp_i810.c,v 1.2 2002/07/15 13:23:48 mickey Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: agp_i810.c,v 1.8 2001/09/20 20:00:16 fvdl Exp $	*/
 
 /*-
