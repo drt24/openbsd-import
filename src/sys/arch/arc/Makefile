@@ -5,27 +5,30 @@
 
 .include "../../kern/Make.tags.inc"
 
-all:
-	@echo "make links or tags only"
 
-DIRS=	arc conf dev include isa pica
 NOPROG=	noprog
-NOOBJ=	noobj
 NOOBJ=	noman
 
-links::
-	-for i in ${DIRS}; do \
-	    (cd $$i && { rm -f tags; ln -s ${SYSTAGS} tags; }) done
+TARC=	../arc/tags
+SARC=	../arc/arc/*.[ch] ../arc/dev/*.[ch] ../arc/dti/*.[ch] \
+	../arc/include/*.h ../arc/isa/*.[ch] ../arc/pci/*.[ch] \
+	../arc/pica/*.[ch]
+AARC=	../arc/arc/*.S
 
-PICA=	/sys/pica/dev/*.[ch] /sys/pica/include/*.[ch] \
-	/sys/pica/pica/*.[ch] /sys/pica/ultrix/*.[ch]
-APICA=	/sys/pica/pica/*.s
+DARC=	arc dev dti include isa pci pica
 
-tags::
-	-ctags -wdtif ${COMM} ${PICA}
-	egrep "^LEAF(.*)|^[AN]LEAF(.*)|^NON_LEAF(.*)" ${APICA} | \
+tags:
+	-ctags -wdtf ${TARC} ${COMM} ${SARC}
+	egrep "^LEAF(.*)|^[AN]LEAF(.*)|^NON_LEAF(.*)" ${AARC} | \
 	    sed "s;\([^:]*\):\([^(]*\)(\([^, )]*\)\(.*\);\3 \1 /^\2(\3\4$$/;" \
-		>> tags
-	sort -o tags tags
+		>> ${TARC}
+	sort -o ${TARC} ${TARC}
+
+links:
+	-for i in ${DARC}; do \
+	    cd $$i && rm -f tags; ln -s ../tags tags; done
+
+
+obj:	_SUBDIRUSE
 
 .include <bsd.prog.mk>
