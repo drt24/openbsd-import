@@ -1,4 +1,4 @@
-/*	$OpenBSD: pcap.h,v 1.6 1996/07/12 13:19:12 mickey Exp $	*/
+/*	$OpenBSD: pcap.h,v 1.7 1999/07/20 04:49:55 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1993, 1994, 1995, 1996, 1997
@@ -117,6 +117,8 @@ char	*pcap_strerror(int);
 char	*pcap_geterr(pcap_t *);
 int	pcap_compile(pcap_t *, struct bpf_program *, char *, int,
 	    bpf_u_int32);
+int	pcap_compile_nopcap(int, int, struct bpf_program *,
+	    char *, int, bpf_u_int32);
 /* XXX */
 int	pcap_freecode(pcap_t *, struct bpf_program *);
 int	pcap_datalink(pcap_t *);
