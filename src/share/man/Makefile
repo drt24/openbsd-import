@@ -4,8 +4,6 @@
 SUBDIR=	man1 man3 man4 man5 man6 man7 man8 man9
 
 afterinstall:
-	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m 444 makewhatis.sed \
-	    ${DESTDIR}/usr/share/man/makewhatis.sed
 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m 444 man0/COPYRIGHT \
 	    ${DESTDIR}/usr/share/man/COPYRIGHT
 
