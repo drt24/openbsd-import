@@ -29,12 +29,13 @@
 #
 #       $Id$
 
-PATH=/sbin:/bin:/usr/bin:/usr/sbin:/usr/games:/
-export PATH
-TERM=vt100
-export TERM
+export PATH=/sbin:/bin:/usr/bin:/usr/sbin:/usr/games:/
+export HISTFILE=/.sh_history
+export TERM=vt100
 
 umask 022
+
+set -o emacs # emacs-style command line editing
 
 if [ "X${DONEPROFILE}" = "X" ]; then
 	DONEPROFILE=YES
