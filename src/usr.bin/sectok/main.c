@@ -145,7 +145,8 @@ char *av[];
 	dispatch(tc, tv);
     }
 
-    exit(0);
+    quit(0, NULL);
+    return 0;
 }
 
 void onintr(int sigraised)

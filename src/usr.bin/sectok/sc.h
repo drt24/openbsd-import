@@ -51,6 +51,7 @@ int quit(int ac, char *av[]);
 int apdu(int ac, char *av[]);
 int selfid(int ac, char *av[]);
 int isearch(int ac, char *av[]);
+int csearch(int ac, char *av[]);
 int class(int ac, char *av[]);
 int dread(int ac, char *av[]);
 int dwrite(int ac, char *av[]);
