@@ -75,7 +75,7 @@ static	int nis_not_running = 0;
 
 	if (!*default_domain) {
 		nis_not_running = 1;
-		plog(XLOG_WARNING, "NIS domain name is not set.  NIS ignored.");
+		plog(XLOG_INFO, "NIS domain name is not set.  NIS ignored.");
 		return ENOENT;
 	}
 
@@ -206,14 +206,27 @@ time_t *tp;
 		}
 	}
 
-	/*
-	 * Check if map has changed
-	 */
-	if (yp_order(domain, map, &order))
-		return EIO;
-	if ((time_t) order > *tp) {
-		*tp = (time_t) order;
-		return -1;
+
+	if (has_yp_order) {
+		/*
+		 * Check if map has changed
+		 */
+		if (yp_order(domain, map, &order))
+			return EIO;
+		if ((time_t) order > *tp) {
+			*tp = (time_t) order;
+			return -1;
+		}
+	} else {
+		/*
+		 * NIS+ server without yp_order
+		 * Check if timeout has expired to invalidate the cache 
+		 */
+		order = time(NULL);
+		if ((time_t)order - *tp > am_timeo) {
+			*tp = (time_t)order;
+			return(-1);
+		}
 	}
 
 	/*
