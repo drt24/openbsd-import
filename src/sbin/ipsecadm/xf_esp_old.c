@@ -1,4 +1,4 @@
-/* $OpenBSD: xf_ah_new.c,v 1.2 1997/09/23 21:41:00 angelos Exp $ */
+/* $OpenBSD: xf_esp_old.c,v 1.3 1998/05/24 13:29:08 provos Exp $ */
 /*
  * The authors of this code are John Ioannidis (ji@tla.org),
  * Angelos D. Keromytis (kermit@csd.uch.gr) and 
@@ -58,31 +58,32 @@
 #include <paths.h>
 #include "net/encap.h"
 #include "netinet/ip_ipsp.h"
-#include "netinet/ip_ah.h"
-
-extern char buf[]; 
+#include "netinet/ip_esp.h"
+ 
+extern char buf[];
 
 int xf_set __P(( struct encap_msghdr *));
 int x2i __P((char *));
 
 int
-xf_ah_new(src, dst, spi, auth, keyp, osrc, odst)
+xf_esp_old(src, dst, spi, enc, ivp, keyp, osrc, odst)
 struct in_addr src, dst;
 u_int32_t spi;
-int auth;
-u_char *keyp;
+int enc;
+u_char *ivp, *keyp;
 struct in_addr osrc, odst;
 {
-	int klen, i;
+	int i, ivlen, klen;
 
 	struct encap_msghdr *em;
-	struct ah_new_xencap *xd;
+	struct esp_old_xencap *xd;
 
 	klen = strlen(keyp)/2;
+	ivlen = ivp == NULL ? 0 : strlen(ivp)/2;
 
 	em = (struct encap_msghdr *)&buf[0];
 	
-	em->em_msglen = EMT_SETSPI_FLEN + AH_NEW_XENCAP_LEN + klen;
+	em->em_msglen = EMT_SETSPI_FLEN + ESP_OLD_XENCAP_LEN + ivlen + klen;
 	em->em_version = PFENCAP_VERSION_1;
 	em->em_type = EMT_SETSPI;
 	em->em_spi = spi;
@@ -90,18 +91,22 @@ struct in_addr osrc, odst;
 	em->em_dst = dst;
 	em->em_osrc = osrc;
 	em->em_odst = odst;
-	em->em_alg = XF_NEW_AH;
-	em->em_sproto = IPPROTO_AH;
+	em->em_alg = XF_OLD_ESP;
+	em->em_sproto = IPPROTO_ESP;
 
-	xd = (struct ah_new_xencap *)(em->em_dat);
+	xd = (struct esp_old_xencap *)(em->em_dat);
 
-	xd->amx_hash_algorithm = auth;
-	xd->amx_wnd = -1;	/* Manual setup -- no sequence number */
-	xd->amx_keylen = klen;
+	xd->edx_enc_algorithm = enc;
+	xd->edx_ivlen = ivlen;
+	xd->edx_keylen = klen;
 
-	bzero(xd->amx_key, klen);
-	for (i = 0; i < klen; i++ )
-	  xd->amx_key[i] = x2i(keyp+2*i);
+	for (i = 0; i < ivlen; i++)
+	  xd->edx_data[i] = x2i(ivp+2*i);
+
+	for (i = 0; i < klen; i++)
+	  xd->edx_data[i+ivlen] = x2i(keyp+2*i);
 
 	return xf_set(em);
 }
+
+

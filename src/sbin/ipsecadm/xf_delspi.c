@@ -1,4 +1,4 @@
-/* $OpenBSD: kernel.c,v 1.3 1998/05/24 13:29:02 provos Exp $ */
+/* $OpenBSD: xf_delspi.c,v 1.6 1998/05/24 13:29:06 provos Exp $ */
 /*
  * The authors of this code are John Ioannidis (ji@tla.org),
  * Angelos D. Keromytis (kermit@csd.uch.gr) and 
@@ -57,24 +57,35 @@
 #include <string.h>
 #include <paths.h>
 #include "net/encap.h"
+#include "netinet/ip_ipsp.h"
+
+extern char buf[];
+
+int xf_set __P((struct encap_msghdr *));
 
 int
-xf_set(em)
-	struct encap_msghdr *em;
+xf_delspi(dst, spi, proto, chain)
+struct in_addr dst;
+u_int32_t spi;
+int proto, chain;
 {
-	int sd;
+	struct encap_msghdr *em;
 
-	sd = socket(AF_ENCAP, SOCK_RAW, AF_UNSPEC);
-	if (sd < 0) {
-	  perror("socket");
-	  return 0;
-	}
+	em = (struct encap_msghdr *)&buf[0];
+	em->em_version = PFENCAP_VERSION_1;
 	
-	if (write(sd, (char *)em, em->em_msglen) != em->em_msglen) {
-	  perror("write");
-	  return 0;
+	if (chain) {
+	  em->em_msglen = EMT_DELSPICHAIN_FLEN;
+	  em->em_type = EMT_DELSPICHAIN;
+	} else {
+	  em->em_msglen = EMT_DELSPI_FLEN;
+	  em->em_type = EMT_DELSPI;
 	}
+	em->em_gen_spi = spi;
+	em->em_gen_dst = dst;
+	em->em_gen_sproto = proto;
 
-	close(sd);
-	return 1;
+	return xf_set(em);
 }
+
+

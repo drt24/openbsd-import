@@ -1,4 +1,4 @@
-/* $OpenBSD: xf_ip4.c,v 1.5 1998/05/24 13:29:11 provos Exp $ */
+/* $OpenBSD: xf_ah_old.c,v 1.3 1998/05/24 13:29:04 provos Exp $ */
 /*
  * The authors of this code are John Ioannidis (ji@tla.org),
  * Angelos D. Keromytis (kermit@csd.uch.gr) and 
@@ -58,6 +58,7 @@
 #include <paths.h>
 #include "net/encap.h"
 #include "netinet/ip_ipsp.h"
+#include "netinet/ip_ah.h"
  
 extern char buf[];
 
@@ -65,28 +66,40 @@ int xf_set __P(( struct encap_msghdr *));
 int x2i __P((char *));
 
 int
-xf_ip4(src, dst, spi, osrc, odst)
+xf_ah_old(src, dst, spi, auth, keyp, osrc, odst)
 struct in_addr src, dst;
 u_int32_t spi;
+int auth;
+u_char *keyp;
 struct in_addr osrc, odst;
 {
+	int klen, i;
+
 	struct encap_msghdr *em;
+	struct ah_old_xencap *xd;
+
+	klen = strlen(keyp)/2;
 
 	em = (struct encap_msghdr *)&buf[0];
 	
-	em->em_msglen = EMT_SETSPI_FLEN + 1;
-
+	em->em_msglen = EMT_SETSPI_FLEN + AH_OLD_XENCAP_LEN + klen;
 	em->em_version = PFENCAP_VERSION_1;
 	em->em_type = EMT_SETSPI;
-	em->em_sproto = IPPROTO_IPIP;
 	em->em_spi = spi;
 	em->em_src = src;
 	em->em_dst = dst;
 	em->em_osrc = osrc;
 	em->em_odst = odst;
-	em->em_alg = XF_IP4;
+	em->em_alg = XF_OLD_AH;
+	em->em_sproto = IPPROTO_AH;
 
+	xd = (struct ah_old_xencap *)(em->em_dat);
+
+	xd->amx_hash_algorithm = auth;
+	xd->amx_keylen = klen;
+
+	for (i = 0; i < klen; i++ )
+	  xd->amx_key[i] = x2i(keyp + 2*i);
+	
 	return xf_set(em);
 }
-
-

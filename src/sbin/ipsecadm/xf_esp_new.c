@@ -1,4 +1,4 @@
-/* $OpenBSD: xf_grp.c,v 1.8 1997/09/14 10:37:47 deraadt Exp $ */
+/* $OpenBSD: xf_esp_new.c,v 1.7 1998/05/24 13:29:07 provos Exp $ */
 /*
  * The authors of this code are John Ioannidis (ji@tla.org),
  * Angelos D. Keromytis (kermit@csd.uch.gr) and 
@@ -58,6 +58,7 @@
 #include <paths.h>
 #include "net/encap.h"
 #include "netinet/ip_ipsp.h"
+#include "netinet/ip_esp.h"
  
 extern char buf[];
 
@@ -65,30 +66,62 @@ int xf_set __P(( struct encap_msghdr *));
 int x2i __P((char *));
 
 int
-xf_grp(dst, spi, proto, dst2, spi2, proto2)
-struct in_addr dst, dst2;
-u_int32_t spi, spi2;
-int proto, proto2;
+xf_esp_new(src, dst, spi, enc, auth, ivp, keyp, authp, 
+	   osrc, odst, newpadding)
+struct in_addr src, dst;
+u_int32_t spi;
+int enc, auth;
+u_char *ivp, *keyp, *authp;
+struct in_addr osrc, odst;
+int newpadding;
 {
-     struct encap_msghdr *em;
+	int i, klen, alen, ivlen;
 
-     bzero(buf, EMT_GRPSPIS_FLEN);
+	struct encap_msghdr *em;
+	struct esp_new_xencap *xd;
 
-     em = (struct encap_msghdr *)&buf[0];
+	klen = strlen(keyp)/2;
+	alen = authp == NULL ? 0 : strlen(authp)/2;
+	ivlen = ivp == NULL ? 0 : strlen(ivp)/2;
 
-     em->em_msglen = EMT_GRPSPIS_FLEN;
-     em->em_version = PFENCAP_VERSION_1;
-     em->em_type = EMT_GRPSPIS;
-
-     em->em_rel_spi = spi;
-     em->em_rel_dst = dst;
-     em->em_rel_sproto = proto;
-
-     em->em_rel_spi2 = spi2;
-     em->em_rel_dst2 = dst2;
-     em->em_rel_sproto2 = proto2;
+	em = (struct encap_msghdr *)&buf[0];
 	
-     return xf_set(em);
+	em->em_msglen = EMT_SETSPI_FLEN + ESP_NEW_XENCAP_LEN + 
+	     ivlen + klen + alen;
+
+	em->em_version = PFENCAP_VERSION_1;
+	em->em_type = EMT_SETSPI;
+	em->em_spi = spi;
+	em->em_src = src;
+	em->em_dst = dst;
+	em->em_osrc = osrc;
+	em->em_odst = odst;
+	em->em_alg = XF_NEW_ESP;
+	em->em_sproto = IPPROTO_ESP;
+
+	xd = (struct esp_new_xencap *)(em->em_dat);
+
+	xd->edx_enc_algorithm = enc;
+	xd->edx_hash_algorithm = auth;
+	xd->edx_ivlen = ivlen;
+	xd->edx_confkeylen = klen;
+	xd->edx_authkeylen = alen;
+	xd->edx_wnd = -1;	/* Manual keying -- no seq */
+	xd->edx_flags = auth ? ESP_NEW_FLAG_AUTH : 0;
+	
+	if (newpadding)
+	  xd->edx_flags |= ESP_NEW_FLAG_NPADDING;
+
+	for (i = 0; i < ivlen; i++)
+	     xd->edx_data[i] = x2i(ivp+2*i);
+
+	for (i = 0; i < klen; i++)
+	     xd->edx_data[i+ivlen] = x2i(keyp+2*i);
+
+	for (i = 0; i < alen; i++)
+	     xd->edx_data[i+ivlen+klen] = x2i(authp+2*i);
+
+	return xf_set(em);
 }
 
 

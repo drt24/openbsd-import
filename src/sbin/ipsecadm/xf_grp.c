@@ -1,4 +1,4 @@
-/* $OpenBSD: xf_delspi.c,v 1.5 1997/08/26 12:04:41 provos Exp $ */
+/* $OpenBSD: xf_grp.c,v 1.9 1998/05/24 13:29:10 provos Exp $ */
 /*
  * The authors of this code are John Ioannidis (ji@tla.org),
  * Angelos D. Keromytis (kermit@csd.uch.gr) and 
@@ -58,34 +58,37 @@
 #include <paths.h>
 #include "net/encap.h"
 #include "netinet/ip_ipsp.h"
-
+ 
 extern char buf[];
 
-int xf_set __P((struct encap_msghdr *));
+int xf_set __P(( struct encap_msghdr *));
+int x2i __P((char *));
 
 int
-xf_delspi(dst, spi, proto, chain)
-struct in_addr dst;
-u_int32_t spi;
-int proto, chain;
+xf_grp(dst, spi, proto, dst2, spi2, proto2)
+struct in_addr dst, dst2;
+u_int32_t spi, spi2;
+int proto, proto2;
 {
-	struct encap_msghdr *em;
+     struct encap_msghdr *em;
 
-	em = (struct encap_msghdr *)&buf[0];
-	em->em_version = PFENCAP_VERSION_1;
+     bzero(buf, EMT_GRPSPIS_FLEN);
+
+     em = (struct encap_msghdr *)&buf[0];
+
+     em->em_msglen = EMT_GRPSPIS_FLEN;
+     em->em_version = PFENCAP_VERSION_1;
+     em->em_type = EMT_GRPSPIS;
+
+     em->em_rel_spi = spi;
+     em->em_rel_dst = dst;
+     em->em_rel_sproto = proto;
+
+     em->em_rel_spi2 = spi2;
+     em->em_rel_dst2 = dst2;
+     em->em_rel_sproto2 = proto2;
 	
-	if (chain) {
-	  em->em_msglen = EMT_DELSPICHAIN_FLEN;
-	  em->em_type = EMT_DELSPICHAIN;
-	} else {
-	  em->em_msglen = EMT_DELSPI_FLEN;
-	  em->em_type = EMT_DELSPI;
-	}
-	em->em_gen_spi = spi;
-	em->em_gen_dst = dst;
-	em->em_gen_sproto = proto;
-
-	return xf_set(em);
+     return xf_set(em);
 }
 
 
