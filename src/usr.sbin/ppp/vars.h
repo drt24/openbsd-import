@@ -160,7 +160,6 @@ extern int ipInOctets;
 extern int ipOutOctets;
 extern int ipKeepAlive;
 extern int ipConnectSecs;
-extern int ipIdleSecs;
 extern int reconnectState;
 extern int reconnectCount;
 
@@ -170,8 +169,8 @@ extern int reconnectCount;
 #define RECON_ENVOKED (4)
 #define reconnect(x)                          \
   do                                          \
-    if (reconnectState == RECON_UNKNOWN) { \
-      reconnectState = x;                  \
+    if (reconnectState == RECON_UNKNOWN) {    \
+      reconnectState = x;                     \
       if (x == RECON_FALSE)                   \
         reconnectCount = 0;                   \
     }                                         \

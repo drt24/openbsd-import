@@ -22,9 +22,10 @@
  */
 
 extern void IpStartOutput(void);
-extern int PacketCheck(char *, int, int);
+extern int  PacketCheck(char *, int, int);
 extern void IpEnqueue(int, char *, int);
 extern void IpInput(struct mbuf *);
 extern void StartIdleTimer(void);
 extern void StopIdleTimer(void);
 extern void UpdateIdleTimer(void);
+extern int  RemainingIdleTime(void);

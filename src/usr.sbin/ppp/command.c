@@ -444,10 +444,16 @@ ShowEscape(struct cmdargs const *arg)
 static int
 ShowTimeout(struct cmdargs const *arg)
 {
-  if (VarTerm)
+  if (VarTerm) {
+    int remaining;
+
     fprintf(VarTerm, " Idle Timer: %d secs   LQR Timer: %d secs"
 	    "   Retry Timer: %d secs\n", VarIdleTimeout, VarLqrTimeout,
 	    VarRetryTimeout);
+    remaining = RemainingIdleTime();
+    if (remaining != -1)
+    fprintf(VarTerm, " %d secs remaining\n", remaining);
+  }
   return 0;
 }
 
