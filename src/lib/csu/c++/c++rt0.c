@@ -40,8 +40,8 @@
  */
 #include <stdlib.h>
 
-void (*__CTOR_LIST__[0]) __P((void));
-void (*__DTOR_LIST__[0]) __P((void));
+extern void (*__CTOR_LIST__[]) __P((void));
+extern void (*__DTOR_LIST__[]) __P((void));
 
 static void	__dtors __P((void));
 static void	__ctors __P((void));
