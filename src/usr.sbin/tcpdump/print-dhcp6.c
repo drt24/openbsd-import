@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: print-dhcp6.c,v 1.1 2000/04/26 21:35:39 jakob Exp $	*/
 
 /*
  * Copyright (C) 1998 and 1999 WIDE Project.
@@ -33,6 +33,8 @@
 static const char rcsid[] =
     "@(#) $Header$";
 #endif
+
+#ifdef INET6
 
 #include <sys/param.h>
 #include <sys/time.h>
@@ -338,3 +340,5 @@ dhcp6_print(register const u_char *cp, u_int length,
 trunc:
 	printf("%s", tstr);
 }
+
+#endif /* INET6 */

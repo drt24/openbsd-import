@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: print-ospf6.c,v 1.1 2000/04/26 21:35:42 jakob Exp $	*/
 
 
 /*
@@ -28,6 +28,8 @@
 static const char rcsid[] =
     "@(#) $Header$ (LBL)";
 #endif
+
+#ifdef INET6
 
 #include <sys/param.h>
 #include <sys/time.h>
@@ -665,3 +667,5 @@ ospf6_print(register const u_char *bp, register u_int length)
 trunc:
 	fputs(tstr, stdout);
 }
+
+#endif /* INET6 */
