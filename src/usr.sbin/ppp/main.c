@@ -342,15 +342,6 @@ ProcessArgs(int argc, char **argv)
   return argc == 1 ? *argv : NULL;	/* Don't SetLabel yet ! */
 }
 
-static void
-Greetings(void)
-{
-  if (VarTerm) {
-    fprintf(VarTerm, "User Process PPP. Written by Toshiharu OHNO.\n");
-    fflush(VarTerm);
-  }
-}
-
 int
 main(int argc, char **argv)
 {
@@ -409,7 +400,7 @@ main(int argc, char **argv)
 
   if (!GetShortHost())
     return 1;
-  Greetings();
+  IsInteractive(1);
   IpcpDefAddress();
 
   if (mode & MODE_INTER)
@@ -423,9 +414,7 @@ main(int argc, char **argv)
     return EX_START;
   }
   CleanInterface(IfDevName);
-  if (mode & MODE_INTER)
-    fprintf(VarTerm, "Interactive mode\n");
-  else if ((mode & MODE_OUTGOING_DAEMON) && !(mode & MODE_DEDICATED))
+  if ((mode & MODE_OUTGOING_DAEMON) && !(mode & MODE_DEDICATED))
     if (label == NULL) {
       if (VarTerm)
 	fprintf(VarTerm, "Destination system must be specified in"
@@ -1003,7 +992,6 @@ DoLoop(void)
       netfd = wfd;
       VarTerm = fdopen(netfd, "a+");
       LocalAuthInit();
-      Greetings();
       IsInteractive(1);
       Prompt();
     }
