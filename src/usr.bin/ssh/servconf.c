@@ -161,7 +161,7 @@ fill_default_server_options(ServerOptions *options)
 		options->gateway_ports = 0;
 }
 
-#define WHITESPACE " \t\r\n"
+#define WHITESPACE " \t\r\n="
 
 /* Keyword tokens. */
 typedef enum {
