@@ -60,6 +60,7 @@ static char rcsid[] = "$Id$";
 #include "modulus.h"
 #include "api.h"
 #ifdef IPSEC
+#include "attributes.h"
 #include "kernel.h"
 #endif
 #ifdef DEBUG
@@ -234,7 +235,8 @@ schedule_process(int sock)
 			 log_error(0, "no anwser for cookie request to %s:%d",
 				   st->address, st->port);
 #ifdef IPSEC
-			 kernel_notify_result(st, NULL, 0);
+			 if (st->flags & IPSEC_NOTIFY)
+			      kernel_notify_result(st, NULL, 0);
 #endif
 			 break;
 		    } else if(st->phase == COOKIE_REQUEST) {

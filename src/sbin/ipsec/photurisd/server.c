@@ -67,6 +67,7 @@ static char rcsid[] = "$Id$";
 #include "buffer.h"
 #ifdef IPSEC
 #include "spi.h"
+#include "attributes.h"
 #include "kernel.h"
 #endif
 
@@ -275,11 +276,14 @@ server(void)
 
 	  for (i=0; i<num_ifs; i++) {
 	       if (FD_ISSET(sockets[i], readfds)) {
+#ifdef IPSEC
 		    if (i == 1)       /* PF_ENCAP NOTIFIES */
 			 kernel_handle_notify(sockets[i]);
-		    else if (addresses[i] == NULL)
+		    else
+#endif
+			 if (addresses[i] == NULL)
 			 process_api(sockets[i], global_socket); 
-		    else if (strcmp("127.0.0.1", inet_ntoa(sin.sin_addr))) {
+			 else if (strcmp("127.0.0.1", inet_ntoa(sin.sin_addr))) {
 			 d = sizeof(struct sockaddr_in);
 			 if (recvfrom(sockets[i], 
 #ifdef BROKEN_RECVFROM

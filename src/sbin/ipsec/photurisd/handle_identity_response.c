@@ -107,7 +107,7 @@ handle_identity_response(u_char *packet, int size, char *address,
 	     goto verification_failed;
 	}
 
-#ifdef DEBUG
+#ifdef DEBUG2
 	printf("Identity Response (after decryption):\n");
 	packet_dump((u_int8_t *)header, size, 0);
 #endif

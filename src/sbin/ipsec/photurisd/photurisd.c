@@ -56,6 +56,7 @@ static char rcsid[] = "$Id$";
 #include "schedule.h"
 #include "errlog.h"
 #ifdef IPSEC
+#include "attributes.h"
 #include "kernel.h"
 #endif
 

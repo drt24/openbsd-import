@@ -1,5 +1,5 @@
 /*
- * Copyright 1997 Niels Provos <provos@physnet.uni-hamburg.de>
+ * Copyright 1997,1998 Niels Provos <provos@physnet.uni-hamburg.de>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -61,9 +61,9 @@ putattrib(attrib_t *attrib)
 }
 
 attrib_t *
-getattrib(int id) 
+getattrib(u_int8_t id) 
 {
-     int hashval = id % ATTRIBHASHMOD;
+     u_int8_t hashval = id % ATTRIBHASHMOD;
      attrib_t *attrib;
 
      for(attrib=attribhash[hashval]; attrib; attrib = attrib->next)
