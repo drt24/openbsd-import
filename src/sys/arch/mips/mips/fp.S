@@ -1,4 +1,4 @@
-/*	$OpenBSD: fp.S,v 1.1.1.1 1996/06/24 09:07:20 pefo Exp $	*/
+/*	$OpenBSD: fp.S,v 1.1 1998/01/29 15:06:23 pefo Exp $	*/
 /*
  * Copyright (c) 1992, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -44,6 +44,7 @@
 
 #include <machine/regdef.h>
 #include <machine/asm.h>
+#include <machine/regnum.h>
 #include <machine/cpu.h>
 
 #include "assym.h"
