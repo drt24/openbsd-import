@@ -355,7 +355,11 @@ int is_nfs_mounted(path, statbuf, isvalid)
 	if ((mnt = (mntent_t *) getmntpt(path, statbuf, isvalid)) == NULL)
 		return(-1);
 
-	if (strcmp(mnt->me_type, METYPE_NFS) == 0)
+	/*
+	 * We treat "cachefs" just like NFS
+	 */
+	if ((strcmp(mnt->me_type, METYPE_NFS) == 0) ||
+	    (strcmp(mnt->me_type, "cachefs") == 0))
 		return(1);
 
 	return(0);

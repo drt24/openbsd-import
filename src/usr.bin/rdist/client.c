@@ -566,6 +566,17 @@ static int senddir(rname, opts, stb, user, group, destdir)
 	int didupdate = 0;
 
 	/*
+	 * Don't descend into directory
+	 */
+	if (IS_ON(opts, DO_NODESCEND))
+		return(0);
+
+	if ((d = opendir(target)) == NULL) {
+		error("%s: opendir failed: %s", target, SYSERR);
+		return(-1);
+	}
+
+	/*
 	 * Send recvdir command in recvit() format.
 	 */
 	(void) sendcmd(C_RECVDIR, "%o %04o 0 0 0 %s %s %s", 
@@ -573,21 +584,10 @@ static int senddir(rname, opts, stb, user, group, destdir)
 	if (response() < 0)
 		return(-1);
 
-	/*
-	 * Don't descend into directory
-	 */
-	if (IS_ON(opts, DO_NODESCEND))
-		return(0);
-
 	if (IS_ON(opts, DO_REMOVE))
 		if (rmchk(opts) > 0)
 			++didupdate;
 	
-	if ((d = opendir(target)) == NULL) {
-		error("%s: opendir failed: %s", target, SYSERR);
-		return(-1);
-	}
-
 	optarget = ptarget;
 	len = ptarget - target;
 	while (dp = readdir(d)) {

@@ -68,6 +68,7 @@ DISTOPTINFO distoptinfo[] = {
 	{ DO_QUIET,		"quiet" },
 	{ DO_REMOVE,		"remove" },
 	{ DO_SAVETARGETS,	"savetargets" },
+	{ DO_SPARSE,            "sparse" },
 	{ DO_VERIFY,		"verify" },
 	{ DO_WHOLE,		"whole" },
 	{ DO_YOUNGER,		"younger" },

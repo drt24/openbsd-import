@@ -432,6 +432,11 @@ static void doarrow(cmd, filev)
 	char *rhost;
 	int didupdate = 0;
 
+        if (setjmp_ok) {
+		error("reentrant call to doarrow");
+		abort();
+	}
+
 	if (!cmd) {
 		debugmsg(DM_MISC, "doarrow() NULL cmd parameter");
 		return;
@@ -461,12 +466,15 @@ static void doarrow(cmd, filev)
 		}
 
 		if (setjmp(finish_jmpbuf)) {
+			setjmp_ok = FALSE;
 			debugmsg(DM_MISC, "setjmp to finish_jmpbuf");
 			markfailed(cmd, cmds);
 			return;
 		}
+		setjmp_ok = TRUE;
 
 		if (!makeconn(rhost)) {
+			setjmp_ok = FALSE;
 			markfailed(cmd, cmds);
 			return;
 		}
@@ -583,6 +591,7 @@ done:
 		}
 		ihead = NULL;
 	}
+	setjmp_ok = FALSE;
 }
 
 okname(name)

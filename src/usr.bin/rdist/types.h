@@ -29,6 +29,7 @@
 #define DO_CHKSYM		0x020000
 #define DO_NUMCHKGROUP		0x040000
 #define DO_NUMCHKOWNER		0x080000
+#define DO_SPARSE		0x100000
 
 /*
  * Dist option information

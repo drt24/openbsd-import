@@ -72,7 +72,9 @@
  * Determine what routines we have to get filesystem info.
  */
 #define FSI_TYPE	FSI_GETFSSTAT
-#define FSTYPENAME	1
+#ifndef FSTYPENAME
+#define FSTYPENAME	1		/* For OpenBSD 1.x */
+#endif
 
 /*
  * Type of non-blocking I/O.
