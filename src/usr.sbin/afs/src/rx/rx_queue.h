@@ -1,4 +1,3 @@
-/*	$OpenBSD$	*/
 /* $Header$ */
 /* $Source$ */
 

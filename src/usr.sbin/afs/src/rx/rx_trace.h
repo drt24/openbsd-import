@@ -1,4 +1,3 @@
-/*	$OpenBSD$	*/
 /* $Header$ */
 
 #ifndef	_RX_TRACE

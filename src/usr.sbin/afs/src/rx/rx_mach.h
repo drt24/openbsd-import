@@ -1,4 +1,3 @@
-/*	$OpenBSD$	*/
 #ifndef _RX_MACHDEP_
 #define _RX_MACHDEP_
 
