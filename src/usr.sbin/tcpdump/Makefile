@@ -1,3 +1,4 @@
+#	$OpenBSD$
 #	$NetBSD: Makefile,v 1.6 1995/03/07 23:18:39 mycroft Exp $
 #
 #  Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994
@@ -35,7 +36,7 @@ SRCS=	tcpdump.c addrtoname.c \
 	print-icmp.c print-sl.c print-ppp.c print-rip.c \
 	print-snmp.c print-ntp.c print-null.c print-egp.c print-ospf.c \
 	print-fddi.c print-llc.c print-sunrpc.c \
-	print-wb.c print-decnet.c print-isoclns.c print-ipx.c \
+	print-wb.c print-decnet.c print-isoclns.c print-ipx.c print-skip.c \
 	util.c bpf_dump.c parsenfsfh.c version.c
 
 AWKS =	atime.awk packetdat.awk send-ack.awk stime.awk
