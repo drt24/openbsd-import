@@ -212,7 +212,7 @@ auth_GetSecret(struct bundle *bundle, const char *system, int len,
   FILE *fp;
   int n;
   char *vector[5];
-  char buff[LINE_LEN];
+  static char buff[LINE_LEN];
 
   fp = OpenSecret(SECRETFILE);
   if (fp == NULL)
