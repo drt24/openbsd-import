@@ -527,7 +527,7 @@ log_it(username, xpid, event, detail)
 		syslog_open = TRUE;		/* assume openlog success */
 	}
 
-	syslog(LOG_INFO, "(%s) %s (%s)\n", username, event, detail);
+	syslog(LOG_INFO, "(%s) %s (%s)", username, event, detail);
 
 #endif /*SYSLOG*/
 

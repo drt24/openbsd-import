@@ -154,7 +154,7 @@ timeoverrun(signo)
 	int signo;
 {
 
-	syslog(LOG_ERR, "getty exiting due to excessive running time\n");
+	syslog(LOG_ERR, "getty exiting due to excessive running time");
 	exit(1);
 }
 

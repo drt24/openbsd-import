@@ -178,7 +178,7 @@ doit(f, fromp)
 	}
 	if (port != 0) {
 		if (port < IPPORT_RESERVED) {
-			syslog(LOG_ERR, "client stderr port in reserved range\n");
+			syslog(LOG_ERR, "client stderr port in reserved range");
 			exit(1); 
 		}
 		s = socket(AF_INET, SOCK_STREAM, 0);

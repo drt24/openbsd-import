@@ -2669,14 +2669,13 @@ main(int argc, char **argv)
      * didn't get one from a getsockname. get our hostname and use
      * that. 
      */
-    char hname[66];
+    char hname[MAXHOSTNAMELEN];
     struct hostent *hp;
 
-    if (gethostname(hname, 65) != 0) {
+    if (gethostname(hname, sizeof hname) != 0) {
       syslog(LOG_ERR, "gethostname() call failed! (%m) Who am I?");
       exit(EX_OSERR);
     }
-    hname[65] = '\0';
     if ((hp = gethostbyname(hname)) != NULL) {
       peerinfo.my_clean_reverse_name = strdup(hp->h_name);
     } else {

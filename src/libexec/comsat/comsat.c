@@ -215,7 +215,7 @@ notify(utp, offset)
 		dsyslog(LOG_DEBUG, "%s: wrong mode on %s", utp->ut_name, tty);
 		return;
 	}
-	dsyslog(LOG_DEBUG, "notify %s on %s\n", utp->ut_name, tty);
+	dsyslog(LOG_DEBUG, "notify %s on %s", utp->ut_name, tty);
 	if (fork())
 		return;
 	(void)signal(SIGALRM, SIG_DFL);

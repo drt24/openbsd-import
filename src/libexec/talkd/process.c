@@ -1,4 +1,4 @@
-/*	$OpenBSD: process.c,v 1.7 1996/07/02 04:11:15 deraadt Exp $	*/
+/*	$OpenBSD: process.c,v 1.8 1996/07/19 03:09:41 millert Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -103,7 +103,7 @@ process_request(mp, rp)
 		char	buf1[32], buf2[32];
 		strcpy(buf1, inet_ntoa(satosin(&rp->addr)->sin_addr));
 		strcpy(buf2, inet_ntoa(satosin(&mp->ctl_addr)->sin_addr));
-		syslog(LOG_WARNING, "addresses are different, %s != %s\n",
+		syslog(LOG_WARNING, "addresses are different, %s != %s",
 		       buf1, buf2);
 	}
 	rp->addr.sa_family = 0;
