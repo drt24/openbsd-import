@@ -40,7 +40,6 @@ LINK	instbin			sbin/route
 #LINK	instbin			sbin/shutdown
 #LINK	instbin			sbin/slattach
 LINK	instbin			sbin/umount
-SYMLINK	/bin/cat		usr/bin/awk
 SYMLINK	/bin/cat		usr/bin/chgrp
 SYMLINK	/bin/cat		usr/bin/ftp
 SYMLINK	/bin/cat		usr/bin/less
