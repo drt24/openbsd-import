@@ -192,9 +192,6 @@ int parse_ip_addr (cfile, addr)
 	FILE *cfile;
 	struct iaddr *addr;
 {
-	char *val;
-	int token;
-
 	addr -> len = 4;
 	if (parse_numeric_aggregate (cfile, addr -> iabuf,
 				     &addr -> len, DOT, 10, 8))

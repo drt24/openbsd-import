@@ -751,10 +751,9 @@ struct option *parse_option_decl (cfile, options)
 			skip_to_semi (cfile);
 		return (struct option *)0;
 	}
-	vendor = malloc (strlen (val) + 1);
-	if (!vendor)
+	if ((vendor = (char *)malloc (strlen (val))) == NULL)
 		error ("no memory for vendor information.");
-	strcpy (vendor, val);
+	strlcpy(vendor, val, strlen(vendor));
 	token = peek_token (&val, cfile);
 	if (token == DOT) {
 		/* Go ahead and take the DOT token... */

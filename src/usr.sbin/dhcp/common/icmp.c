@@ -61,8 +61,6 @@ void icmp_startup (routep, handler)
 {
 	struct protoent *proto;
 	int protocol = 1;
-	struct sockaddr_in from;
-	int fd;
 	int state;
 
 	/* Only initialize icmp once. */

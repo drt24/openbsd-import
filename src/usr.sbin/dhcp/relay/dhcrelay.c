@@ -56,8 +56,6 @@ struct tree_cache *global_options [256];
 
 int log_perror = 1;
 
-char *path_dhcrelay_pid = _PATH_DHCRELAY_PID;
-
 #ifdef USE_FALLBACK
 struct interface_info fallback_interface;
 #endif
@@ -112,7 +110,7 @@ int main (argc, argv, envp)
 				usage ();
 			}
 			memset (tmp, 0, sizeof *tmp);
-			strcpy (tmp -> name, argv [i]);
+			strlcpy (tmp -> name, argv [i], sizeof(tmp->name));
 			tmp -> next = interfaces;
 			tmp -> flags = INTERFACE_REQUESTED;
 			interfaces = tmp;
@@ -194,21 +192,7 @@ int main (argc, argv, envp)
 		else if (pid)
 			exit (0);
 
-		pfdesc = open (path_dhcrelay_pid,
-			       O_CREAT | O_TRUNC | O_WRONLY, 0644);
-
-		if (pfdesc < 0) {
-			warn ("Can't create %s: %m", path_dhcrelay_pid);
-		} else {
-			pf = fdopen (pfdesc, "w");
-			if (!pf)
-				warn ("Can't fdopen %s: %m",
-				      path_dhcrelay_pid);
-			else {
-				fprintf (pf, "%ld\n", (long)getpid ());
-				fclose (pf);
-			}	
-		}
+		write_pidfile(_PATH_DHCRELAY_PID, getpid());
 
 		close (0);
 		close (1);

@@ -1183,7 +1183,6 @@ struct lease *find_lease (packet, share, ours)
 	struct iaddr cip;
 	struct host_decl *hp, *host = (struct host_decl *)0;
 	struct lease *fixed_lease;
-	int i;
 
 	/* Try to find a host or lease that's been assigned to the
 	   specified unique client identifier. */

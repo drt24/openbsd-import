@@ -250,7 +250,6 @@ ssize_t decode_udp_ip_header (interface, buf, bufix, from, data, len)
   struct ip *ip;
   struct udphdr *udp;
   u_int32_t ip_len = (buf [bufix] & 0xf) << 2;
-  u_int32_t sum, usum;
 
   ip = (struct ip *)(buf + bufix);
   udp = (struct udphdr *)(buf + bufix + ip_len);

@@ -1,6 +1,7 @@
 /* upf.c
-
-   Ultrix PacketFilter interface code.
+ *
+ *  Ultrix PacketFilter interface code.
+ */
 
 /*
  * Copyright (c) 1995, 1996, 1997 The Internet Software Consortium.
