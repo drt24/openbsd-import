@@ -1547,9 +1547,10 @@ cm_item ()
                  in this context, but I cannot find any way to force
                  them all render exactly one blank line.  */
               if (!itemx_flag
-                  && strncmp ((char *) output_paragraph
+                  && (output_paragraph_offset + 1 < sizeof (dl_tag) ||
+		      (strncmp ((char *) output_paragraph
                               + output_paragraph_offset - sizeof (dl_tag) + 1, 
-                              dl_tag, sizeof (dl_tag) - 1) != 0)
+                              dl_tag, sizeof (dl_tag) - 1) != 0)))
                 add_word ("<br>");
    
               add_word ("<dt>");
