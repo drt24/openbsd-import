@@ -1,4 +1,4 @@
-/*     $OpenBSD: parse.c,v 1.24 1999/06/06 20:34:55 deraadt Exp $      */
+/*     $OpenBSD: parse.c,v 1.25 1999/07/05 20:12:44 kjell Exp $      */
 /*
  * Copyright (C) 1993-1998 by Darren Reed.
  *
@@ -69,11 +69,9 @@ u_char	flags[] = { TH_FIN, TH_SYN, TH_RST, TH_PUSH, TH_ACK, TH_URG };
 
 static	char	thishost[MAXHOSTNAMELEN];
 
-
 void initparse()
 {
 	gethostname(thishost, sizeof(thishost));
-	thishost[sizeof(thishost) - 1] = '\0';
 }
 
 
