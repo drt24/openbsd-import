@@ -294,9 +294,6 @@ readskey(buf, n)
 	(void)fgets(buf, n, stdin);
 	rip(buf);
 
-	(void)putc('\n', stderr);
-	(void)fflush(stderr);
-
 	sevenbit (buf);
 
 	return buf;
