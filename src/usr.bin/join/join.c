@@ -65,22 +65,21 @@ static char rcsid[] = "$Id$";
  * compare the set of lines with an equivalent set from the other file.
  */
 typedef struct {
-	char *line;				/* line */
+	char *line;			/* line */
 	u_long linealloc;		/* line allocated count */
 	char **fields;			/* line field(s) */
 	u_long fieldcnt;		/* line field(s) count */
-	u_long fieldalloc;	/* line field(s) allocated count */
-	u_long cfieldc;		/* current field count */
+	u_long fieldalloc;		/* line field(s) allocated count */
+	u_long cfieldc;			/* current field count */
 	long	 fpos;			/* fpos of start of field */
 } LINE;
 
 typedef struct {
-	FILE *fp;				/* file descriptor */
+	FILE *fp;			/* file descriptor */
 	u_long joinf;			/* join field (-1, -2, -j) */
-	int unpair;				/* output unpairable lines (-a) */
-	int number;				/* 1 for file 1, 2 for file 2 */
-
-	LINE *set;				/* set of lines with same field */
+	int unpair;			/* output unpairable lines (-a) */
+	int number;			/* 1 for file 1, 2 for file 2 */
+	LINE *set;			/* set of lines with same field */
 	int pushbool;			/* if pushback is set */
 	u_long pushback;		/* line on the stack */
 	u_long setcnt;			/* set count */
@@ -250,14 +249,16 @@ main(argc, argv)
 			slurp(F2);
 		}
 		else {
-			if (F1->unpair && (cval < 0 || F2->set->cfieldc == F2->setusedc -1)) {
+			if (F1->unpair
+			&& (cval < 0 || F2->set->cfieldc == F2->setusedc -1)) {
 				joinlines(F1, NULL);
 				slurp(F1);
 			}
 			else if (cval < 0)	
 				/* File 1 takes the lead... */
 				slurp(F1);
-			if (F2->unpair && (cval > 0 || F1->set->cfieldc == F1->setusedc -1)) {
+			if (F2->unpair
+			&& (cval > 0 || F1->set->cfieldc == F1->setusedc -1)) {
 				joinlines(F2, NULL);
 				slurp(F2);
 			}
@@ -358,14 +359,14 @@ slurpit(F)
 		if ((bp = fgetln(F->fp, &len)) == NULL)
 			return;
 		/*
-		 * we depend on knowing on what field we are, one safe way is the 
-		 *	file position, though we should perhaps find another way so we
-		 *	won't have to call ftell() after each line read from file. 
+		 * we depend on knowing on what field we are, one safe way is
+		 * the file position.
 		*/
 		fpos = ftell(F->fp) - len;
 		if (lp->linealloc <= len + 1) {
 			lp->linealloc += MAX(100, len + 1 - lp->linealloc);
-			if ((lp->line = realloc(lp->line, lp->linealloc)) == NULL)
+			if ((lp->line = realloc(lp->line, lp->linealloc))
+			== NULL)
 				err(1, NULL);
 		}
 		F->setusedc++;
