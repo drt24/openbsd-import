@@ -288,10 +288,8 @@ ReadSystem(const char *name, const char *file, int doexec)
           if (issep(*cp)) {
 	    n = strspn(cp, " \t");
 	    cp += n;
-	    if (*cp == '#')
-	      continue;
             len = strlen(cp);
-            if (!len)
+            if (!len || *cp == '#')
               continue;
             if (cp[len-1] == '\n')
               cp[--len] = '\0';
