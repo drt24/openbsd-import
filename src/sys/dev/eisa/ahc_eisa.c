@@ -197,6 +197,8 @@ struct cfattach ahc_eisa_ca = {
 	sizeof(struct ahc_data), ahc_eisa_match, ahc_eisa_attach
 };
 
+int ahc_eisa_irq __P((bus_chipset_tag_t, bus_io_handle_t));
+
 /*
  * Return irq setting of the board, otherwise -1.
  */
