@@ -73,6 +73,7 @@ struct	gettystrs gettystrs[] = {
 	{ "fl", &tmode.c_cc[VDISCARD] },/* flush output */
 	{ "we", &tmode.c_cc[VWERASE] },	/* word erase */
 	{ "ln", &tmode.c_cc[VLNEXT] },	/* literal next */
+	{ "pp" },			/* ppp login program */
 	{ 0 }
 };
 
