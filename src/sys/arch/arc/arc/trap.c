@@ -1,4 +1,4 @@
-/*	$OpenBSD: trap.c,v 1.3 1996/07/30 20:24:18 pefo Exp $	*/
+/*	$OpenBSD: trap.c,v 1.4 1996/08/26 11:11:56 pefo Exp $	*/
 /*
  * Copyright (c) 1988 University of Utah.
  * Copyright (c) 1992, 1993
@@ -936,7 +936,9 @@ set_intr(mask, int_hand, prio)
 		out32(R4030_SYS_EXT_IMASK, cpu_int_mask & (~INT_MASK_4 >> 10));
 		break;
 
-	case DESKSTATION:
+	case DESKSTATION_TYNE:
+		break;
+	case DESKSTATION_RPC44:
 		break;
 	}
 }
