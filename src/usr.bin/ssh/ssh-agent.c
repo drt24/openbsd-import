@@ -51,7 +51,7 @@ Identity *identities = NULL;
 
 int max_fd = 0;
 
-/* pid of agent == parent of shell */
+/* pid of shell == parent of agent */
 int parent_pid = -1;
 
 /* pathname and directory for AUTH_SOCKET */
