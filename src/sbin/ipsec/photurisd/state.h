@@ -49,7 +49,7 @@
 /* Possible values of flags */
 #define IPSEC_OPT_ENC      0x001   /* Negotiate encryption */
 #define IPSEC_OPT_AUTH     0x002   /* Negotiate authentication */
-#define IPSEC_OPT_TUNNEL   0x004   /* Negotiate tunne mode */
+#define IPSEC_OPT_TUNNEL   0x004   /* Negotiate tunnel mode */
 #define IPSEC_OPT_REPLAY   0x100   /* Encryption with replay protection */
 #define IPSEC_OPT_ENC_AUTH 0x200   /* Encryption with authentication */
 #define IPSEC_OPT_XOR      0x400   /* Encryption with XOR */
