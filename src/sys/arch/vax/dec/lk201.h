@@ -141,6 +141,6 @@
 #define LEFT_BUTTON		0x04
 
 #ifdef _KERNEL
-extern int LKgetc __P((dev_t dev));
-extern void lkdivert __P ((int (*getc_fn)(dev_t dev), dev_t dev));
+extern int LKgetc(dev_t dev);
+extern void lkdivert(int (*getc_fn)(dev_t dev), dev_t dev);
 #endif

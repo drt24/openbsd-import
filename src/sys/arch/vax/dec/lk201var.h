@@ -34,7 +34,7 @@
  */
 
 struct lk201_attachment {
-	int (*sendchar) __P((void *, u_char));
+	int (*sendchar)(void *, u_char);
 	void *cookie;
 };
 
@@ -46,7 +46,7 @@ struct lk201_state {
 	int leds_state;
 };
 
-int lk201_init __P((struct lk201_state *));
-int lk201_decode __P((struct lk201_state *, int, u_int *, int *));
-void lk201_bell __P((struct lk201_state *, struct wskbd_bell_data *));
-void lk201_set_leds __P((struct lk201_state *, int));
+int lk201_init(struct lk201_state *);
+int lk201_decode(struct lk201_state *, int, u_int *, int *);
+void lk201_bell(struct lk201_state *, struct wskbd_bell_data *);
+void lk201_set_leds(struct lk201_state *, int);
