@@ -53,5 +53,3 @@ void	 setchars __P((void));
 void	 setdefaults __P((void));
 void	 setflags __P((int));
 int	 speed __P((int));
-
-int	 login_tty __P((int));			/* From libutil. */

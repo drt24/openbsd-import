@@ -61,6 +61,7 @@ static char rcsid[] = "$Id$";
 #include <syslog.h>
 #include <time.h>
 #include <unistd.h>
+#include <util.h>
 
 #include "gettytab.h"
 #include "pathnames.h"
