@@ -55,3 +55,22 @@ pmax		src/sys/arch/pmax
 sparc		src/sys/arch/sparc
 sun3		src/sys/arch/sun3
 vax		src/sys/arch/vax
+
+usrc            -a !src/sys src
+ksrc            -a src/sys
+ksrc-common     -a !src/sys/arch src/sys
+ksrc-alpha      -a src/sys/arch/alpha
+ksrc-amiga      -a src/sys/arch/amiga
+ksrc-atari      -a src/sys/arch/atari
+ksrc-hp300      -a src/sys/arch/hp300
+ksrc-i386       -a src/sys/arch/i386
+ksrc-m68k       -a src/sys/arch/m68k
+ksrc-mac68k     -a src/sys/arch/mac68k
+ksrc-mvme68k    -a src/sys/arch/mvme68k
+ksrc-mvme88k    -a src/sys/arch/mvme88k
+ksrc-pc532      -a src/sys/arch/pc532
+ksrc-pica       -a src/sys/arch/pica
+ksrc-pmax       -a src/sys/arch/pmax
+ksrc-sparc      -a src/sys/arch/sparc
+ksrc-sun3       -a src/sys/arch/sun3
+ksrc-vax        -a src/sys/arch/vax
