@@ -721,10 +721,12 @@ fail:
 		pwd->pw_shell = _PATH_BSHELL;
 
 	environ = envinit;
-	setenv("HOME", pwd->pw_dir, 1);
-	setenv("SHELL", pwd->pw_shell, 1);
-	setenv("USER", pwd->pw_name, 1);
-	setenv("LOGNAME", pwd->pw_name, 1);
+	if (setenv("HOME", pwd->pw_dir, 1) == -1 ||
+	    setenv("SHELL", pwd->pw_shell, 1) == -1 ||
+	    setenv("USER", pwd->pw_name, 1) == -1 ||
+	    setenv("LOGNAME", pwd->pw_name, 1) == -1)
+		errx(1, "cannot setup environment");
+	
 	if (setusercontext(lc, pwd, pwd->pw_uid, LOGIN_SETALL))
 		errx(1, "cannot set user context");
 

@@ -260,10 +260,11 @@ doit(f, fromp)
 		(void) close(f);
 
 	environ = envinit;
-	setenv("HOME", pwd->pw_dir, 1);
-	setenv("SHELL", pwd->pw_shell, 1);
-	setenv("LOGNAME", pwd->pw_name, 1);
-	setenv("USER", pwd->pw_name, 1);
+	if (setenv("HOME", pwd->pw_dir, 1) == -1 ||
+	    setenv("SHELL", pwd->pw_shell, 1) == -1 ||
+	    setenv("LOGNAME", pwd->pw_name, 1) == -1 ||
+	    setenv("USER", pwd->pw_name, 1) == -1)
+		err(1, "unable to setup environment");
 	if (setusercontext(lc, pwd, pwd->pw_uid, LOGIN_SETALL))
 		err(1, "unable to set user context");
 

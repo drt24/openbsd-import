@@ -84,7 +84,10 @@ main(argc, argv)
 	set_cron_cwd();
 
 #if defined(POSIX)
-	setenv("PATH", _PATH_DEFPATH, 1);
+	if (setenv("PATH", _PATH_DEFPATH, 1) == -1) {
+		log_it("CRON",getpid(),"DEATH","can't malloc");
+		exit(1);
+	}
 #endif
 
 	/* if there are no debug flags turned on, fork as a daemon should.
