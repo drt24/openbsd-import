@@ -175,6 +175,9 @@ yppasswddprog_1(rqstp, transp)
 void
 sig_child()
 {
+	int save_errno = errno;
+
 	while (wait3((int *) NULL, WNOHANG, (struct rusage *) NULL) > 0)
 		;
+	errno = save_errno;
 }

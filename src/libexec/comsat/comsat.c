@@ -141,7 +141,10 @@ void
 reapchildren(signo)
 	int signo;
 {
+	int save_errno = errno;
+
 	while (wait3(NULL, WNOHANG, NULL) > 0);
+	errno = save_errno;
 }
 
 void

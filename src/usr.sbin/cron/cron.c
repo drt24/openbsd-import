@@ -252,6 +252,7 @@ cron_sleep() {
 #ifdef USE_SIGCHLD
 static void
 sigchld_handler(x) {
+	int save_errno = errno;
 	WAIT_T		waiter;
 	PID_T		pid;
 
@@ -265,10 +266,12 @@ sigchld_handler(x) {
 		case -1:
 			Debug(DPROC,
 				("[%d] sigchld...no children\n", getpid()))
+			errno = save_errno;
 			return;
 		case 0:
 			Debug(DPROC,
 				("[%d] sigchld...no dead kids\n", getpid()))
+			errno = save_errno;
 			return;
 		default:
 			Debug(DPROC,
@@ -276,6 +279,7 @@ sigchld_handler(x) {
 				getpid(), pid, WEXITSTATUS(waiter)))
 		}
 	}
+	errno = save_errno;
 }
 #endif /*USE_SIGCHLD*/
 

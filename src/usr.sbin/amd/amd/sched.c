@@ -202,6 +202,7 @@ void sigchld(sig)
 int sig;
 {
 	union wait w;
+	int save_errno = errno;
 	int pid;
 
 #ifdef SYS5_SIGNALS
@@ -240,6 +241,7 @@ int sig;
 #endif /* SYS5_SIGNALS */
 	if (select_intr_valid)
 		longjmp(select_intr, sig);
+	errno = save_errno;
 }
 
 /*

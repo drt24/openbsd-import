@@ -246,6 +246,7 @@ void
 dologout()
 {
 	union wait status;
+	int save_errno = errno;
 	int pid, wtmp;
 
 #ifdef BSDINETD
@@ -263,6 +264,7 @@ dologout()
 			(void) close(wtmp);
 		}
 	}
+	errno = save_errno;
 }
 
 /*
