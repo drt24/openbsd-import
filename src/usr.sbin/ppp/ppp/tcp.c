@@ -36,6 +36,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/uio.h>
 #include <termios.h>
 #include <unistd.h>
 
@@ -116,6 +117,7 @@ tcp_iov2device(int type, struct physical *p, struct iovec *iov,
                int *niov, int maxiov)
 {
   if (type == TCP_DEVICE) {
+    free(iov[(*niov)++].iov_base);
     physical_SetupStack(p, tcpdevice.name, PHYSICAL_FORCE_ASYNC);
     return &tcpdevice;
   }
