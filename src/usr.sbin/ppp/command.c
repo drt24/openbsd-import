@@ -746,7 +746,8 @@ RunCommand(int argc, char const *const *argv, const char *label)
 
       *buf = '\0';
       if (label) {
-        strcpy(buf, label);
+        strncpy(buf, label, sizeof buf);
+        buf[sizeof(buf)-3] = '\0';
         strcat(buf, ": ");
       }
       n = strlen(buf);
