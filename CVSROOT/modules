@@ -1,5 +1,5 @@
 #
-# $OpenBSD: modules,v 1.16 1998/04/01 21:33:44 deraadt Exp $
+# $OpenBSD: modules,v 1.17 1998/07/12 04:44:24 todd Exp $
 # The CVS Modules File
 #
 # $CVSid: @(#)modules 1.5 92/03/31 $
@@ -52,11 +52,14 @@ hp300		src/sys/arch/hp300
 hppa		src/sys/arch/hppa
 i386		src/sys/arch/i386
 mac68k		src/sys/arch/mac68k
+macppc		src/sys/arch/macppc
 mvme68k		src/sys/arch/mvme68k
 mvme88k		src/sys/arch/mvme88k
+mvmeppc		src/sys/arch/mvmeppc
 pc532		src/sys/arch/pc532
 pmax		src/sys/arch/pmax
 sparc		src/sys/arch/sparc
+sparc64		src/sys/arch/sparc64
 sun3		src/sys/arch/sun3
 vax		src/sys/arch/vax
 
@@ -72,11 +75,15 @@ ksrc-hppa	-a src/sys/arch/hppa
 ksrc-i386       -a src/sys/arch/i386
 ksrc-m68k       -a src/sys/arch/m68k
 ksrc-mac68k     -a src/sys/arch/mac68k ksrc-m68k
+ksrc-macppc     -a src/sys/arch/mac68k ksrc-powerpc
 ksrc-mvme68k    -a src/sys/arch/mvme68k ksrc-m68k
 ksrc-mvme88k    -a src/sys/arch/mvme88k
+ksrc-mvmeppc    -a src/sys/arch/mvmeppc ksrc-powerpc
 ksrc-pc532      -a src/sys/arch/pc532
 ksrc-pmax       -a src/sys/arch/pmax
+ksrc-powerpc    -a src/sys/arch/powerpc
 ksrc-sparc      -a src/sys/arch/sparc
+ksrc-sparc64    -a src/sys/arch/sparc64
 ksrc-sun3       -a src/sys/arch/sun3 ksrc-m68k
 ksrc-vax        -a src/sys/arch/vax
 
