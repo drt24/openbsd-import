@@ -1,17 +1,17 @@
 /*
-
-buffer.c
-
-Author: Tatu Ylonen <ylo@cs.hut.fi>
-
-Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
-                   All rights reserved
-
-Created: Sat Mar 18 04:15:33 1995 ylo
-
-Functions for manipulating fifo buffers (that can grow if needed).
-
-*/
+ * 
+ * buffer.c
+ * 
+ * Author: Tatu Ylonen <ylo@cs.hut.fi>
+ * 
+ * Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
+ *                    All rights reserved
+ * 
+ * Created: Sat Mar 18 04:15:33 1995 ylo
+ * 
+ * Functions for manipulating fifo buffers (that can grow if needed).
+ * 
+ */
 
 #include "includes.h"
 RCSID("$Id$");

@@ -1,6 +1,9 @@
-/* The implementation here was originally done by Gary S. Brown.  I have
-   borrowed the tables directly, and made some minor changes to the
-   crc32-function (including changing the interface). //ylo */
+/*
+ * The implementation here was originally done by Gary S. Brown.
+ * I have borrowed the tables directly, and made some minor changes
+ * to the crc32-function (including changing the interface).
+ * //ylo
+ */
 
 #include "includes.h"
 RCSID("$Id$");

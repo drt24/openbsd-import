@@ -1,17 +1,17 @@
 /*
-
-hostfile.c
-
-Author: Tatu Ylonen <ylo@cs.hut.fi>
-
-Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
-                   All rights reserved
-
-Created: Thu Jun 29 07:10:56 1995 ylo
-
-Functions for manipulating the known hosts files.
-
-*/
+ * 
+ * hostfile.c
+ * 
+ * Author: Tatu Ylonen <ylo@cs.hut.fi>
+ * 
+ * Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
+ *                    All rights reserved
+ * 
+ * Created: Thu Jun 29 07:10:56 1995 ylo
+ * 
+ * Functions for manipulating the known hosts files.
+ * 
+ */
 
 #include "includes.h"
 RCSID("$Id$");

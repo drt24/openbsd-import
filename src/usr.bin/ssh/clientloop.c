@@ -1,18 +1,18 @@
 /*
-
-clientloop.c
-
-Author: Tatu Ylonen <ylo@cs.hut.fi>
-
-Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
-                   All rights reserved
-
-
-Created: Sat Sep 23 12:23:57 1995 ylo
-
-The main loop for the interactive session (client side).
-
-*/
+ * 
+ * clientloop.c
+ * 
+ * Author: Tatu Ylonen <ylo@cs.hut.fi>
+ * 
+ * Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
+ *                    All rights reserved
+ * 
+ * 
+ * Created: Sat Sep 23 12:23:57 1995 ylo
+ * 
+ * The main loop for the interactive session (client side).
+ * 
+ */
 
 #include "includes.h"
 RCSID("$Id$");

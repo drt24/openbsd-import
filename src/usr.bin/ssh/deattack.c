@@ -15,7 +15,8 @@
  * SOFTWARE.
  *
  * Ariel Futoransky <futo@core-sdi.com>
- * <http://www.core-sdi.com> */
+ * <http://www.core-sdi.com>
+ */
 
 #include "includes.h"
 #include "deattack.h"

@@ -1,17 +1,17 @@
 /*
-
-match.c
-
-Author: Tatu Ylonen <ylo@cs.hut.fi>
-
-Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
-                   All rights reserved
-
-Created: Thu Jun 22 01:17:50 1995 ylo
-
-Simple pattern matching, with '*' and '?' as wildcards.
-
-*/
+ * 
+ * match.c
+ * 
+ * Author: Tatu Ylonen <ylo@cs.hut.fi>
+ * 
+ * Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
+ *                    All rights reserved
+ * 
+ * Created: Thu Jun 22 01:17:50 1995 ylo
+ * 
+ * Simple pattern matching, with '*' and '?' as wildcards.
+ * 
+ */
 
 #include "includes.h"
 RCSID("$Id$");

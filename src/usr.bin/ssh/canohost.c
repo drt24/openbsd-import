@@ -1,17 +1,17 @@
 /*
-
-canohost.c
-
-Author: Tatu Ylonen <ylo@cs.hut.fi>
-
-Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
-                   All rights reserved
-
-Created: Sun Jul  2 17:52:22 1995 ylo
-
-Functions for returning the canonical host name of the remote site.
-
-*/
+ * 
+ * canohost.c
+ * 
+ * Author: Tatu Ylonen <ylo@cs.hut.fi>
+ * 
+ * Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
+ *                    All rights reserved
+ * 
+ * Created: Sun Jul  2 17:52:22 1995 ylo
+ * 
+ * Functions for returning the canonical host name of the remote site.
+ * 
+ */
 
 #include "includes.h"
 RCSID("$Id$");

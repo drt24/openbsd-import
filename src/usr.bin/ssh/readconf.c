@@ -1,17 +1,17 @@
 /*
-
-readconf.c
-
-Author: Tatu Ylonen <ylo@cs.hut.fi>
-
-Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
-                   All rights reserved
-
-Created: Sat Apr 22 00:03:10 1995 ylo
-
-Functions for reading the configuration files.
-
-*/
+ * 
+ * readconf.c
+ * 
+ * Author: Tatu Ylonen <ylo@cs.hut.fi>
+ * 
+ * Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
+ *                    All rights reserved
+ * 
+ * Created: Sat Apr 22 00:03:10 1995 ylo
+ * 
+ * Functions for reading the configuration files.
+ * 
+ */
 
 #include "includes.h"
 RCSID("$Id$");

@@ -1,13 +1,13 @@
 /*
-
-scp - secure remote copy.  This is basically patched BSD rcp which uses ssh
-to do the data transfer (instead of using rcmd).
-
-NOTE: This version should NOT be suid root.  (This uses ssh to do the transfer
-and ssh has the necessary privileges.)
-
-1995 Timo Rinne <tri@iki.fi>, Tatu Ylonen <ylo@cs.hut.fi>
-
+ * 
+ * scp - secure remote copy.  This is basically patched BSD rcp which uses ssh
+ * to do the data transfer (instead of using rcmd).
+ * 
+ * NOTE: This version should NOT be suid root.  (This uses ssh to do the transfer
+ * and ssh has the necessary privileges.)
+ * 
+ * 1995 Timo Rinne <tri@iki.fi>, Tatu Ylonen <ylo@cs.hut.fi>
+ * 
 */
 
 /*

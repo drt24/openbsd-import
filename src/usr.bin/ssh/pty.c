@@ -1,17 +1,17 @@
 /*
-
-pty.c
-
-Author: Tatu Ylonen <ylo@cs.hut.fi>
-
-Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
-                   All rights reserved
-
-Created: Fri Mar 17 04:37:25 1995 ylo
-
-Allocating a pseudo-terminal, and making it the controlling tty.
-
-*/
+ * 
+ * pty.c
+ * 
+ * Author: Tatu Ylonen <ylo@cs.hut.fi>
+ * 
+ * Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
+ *                    All rights reserved
+ * 
+ * Created: Fri Mar 17 04:37:25 1995 ylo
+ * 
+ * Allocating a pseudo-terminal, and making it the controlling tty.
+ * 
+ */
 
 #include "includes.h"
 RCSID("$Id$");
