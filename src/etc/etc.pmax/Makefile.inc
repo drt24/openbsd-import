@@ -5,7 +5,7 @@
 
 .ifdef DESTDIR
 
-snap_md: binutils bsd
+snap_md: binutils bsd simpleroot
 	cp ${.CURDIR}/../sys/arch/sparc/compile/GENERIC/bsd \
 	    ${DESTDIR}/snapshot/bsd
 
@@ -19,5 +19,9 @@ bsd:
 	    make clean && make depend && make
 	cp ${.CURDIR}/../sys/arch/pmax/compile/GENERIC/bsd \
 	    ${DESTDIR}/snapshot/bsd
+
+simpleroot:
+	cd ${.CURDIR}/../distrib/simpleroot && make cleandir && \
+	    make && make install
 
 .endif	# DESTDIR check
