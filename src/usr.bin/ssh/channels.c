@@ -237,7 +237,7 @@ channel_free(int id)
 	if (c == NULL)
 		packet_disconnect("channel free: bad local channel %d", id);
 	debug("channel_free: channel %d: status: %s", id, channel_open_message());
-	if (c->sock =! -1) {
+	if (c->sock != -1) {
 		shutdown(c->sock, SHUT_RDWR);
 		close(c->sock);
 	}
