@@ -47,7 +47,7 @@ ssh_get_authentication_fd()
     return -1;
 
   sunaddr.sun_family = AF_UNIX;
-  strncpy(sunaddr.sun_path, authsocket, sizeof(sunaddr.sun_path));
+  strlcpy(sunaddr.sun_path, authsocket, sizeof(sunaddr.sun_path));
   
   sock = socket(AF_UNIX, SOCK_STREAM, 0);
   if (sock < 0)

@@ -54,7 +54,9 @@ void xfree(void *ptr)
 
 char *xstrdup(const char *str)
 {
-  char *cp = xmalloc(strlen(str) + 1);
-  strcpy(cp, str);
+  int len = strlen(str) + 1;
+
+  char *cp = xmalloc(len);
+  strlcpy(cp, str, len);
   return cp;
 }

@@ -138,7 +138,8 @@ auth_rsa(struct passwd *pw, BIGNUM *client_n)
   BIGNUM *e, *n;
 
   /* Open the file containing the authorized keys. */
-  sprintf(line, "%.500s/%.100s", pw->pw_dir, SSH_USER_PERMITTED_KEYS);
+  snprintf(line, sizeof line, "%.500s/%.100s", pw->pw_dir,
+    SSH_USER_PERMITTED_KEYS);
   
   /* Temporarily use the user's uid. */
   temporarily_use_uid(pw->pw_uid);
