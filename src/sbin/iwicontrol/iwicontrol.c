@@ -102,7 +102,7 @@ usage(void)
 {
 	extern char *__progname;
 
-	fprintf(stderr, "usage: %s [interface] [-r]\n", __progname);
+	fprintf(stderr, "usage: %s [-i interface] [-r]\n", __progname);
 
 	exit(EX_USAGE);
 }
