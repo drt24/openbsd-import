@@ -597,6 +597,8 @@ main(int ac, char **av)
 	  /* Mark that the key has been used (it was "given" to the child). */
 	  key_used = 1;
 
+	  arc4random_stir();
+
 	  /* Close the new socket (the child is now taking care of it). */
 	  close(newsock);
 	}
