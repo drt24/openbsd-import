@@ -1311,6 +1311,7 @@ Usage: mtrace [-Mlnps] [-w wait] [-m max_hops] [-q nqueries] [-g gateway]\n\
     /*
      * Get default local address for multicasts to use in setting defaults.
      */
+    memset(&addr, 0, sizeof addr);
     addr.sin_family = AF_INET;
 #if (defined(BSD) && (BSD >= 199103))
     addr.sin_len = sizeof(addr);
