@@ -1,6 +1,6 @@
-/*     $OpenBSD$      */
+/*     $OpenBSD: ipf.h,v 1.8 1998/01/26 04:13:36 dgregor Exp $      */
 /*
- * Copyright (C) 1993-1997 by Darren Reed.
+ * Copyright (C) 1993-1998 by Darren Reed.
  *
  * Redistribution and use in source and binary forms are permitted
  * provided that this notice is preserved and due credit is given
@@ -70,6 +70,8 @@ extern	u_32_t	optname __P((char ***, u_short *));
 extern	void	printpacket __P((ip_t *));
 #if SOLARIS
 extern	int	inet_aton __P((const char *, struct in_addr *));
+extern	int	gethostname __P((char *, int ));
+extern	void	sync __P((void));
 #endif
 
 #ifdef	sun

@@ -1,6 +1,6 @@
-/*    $OpenBSD: ipft_tx.c,v 1.10 1998/01/26 04:16:38 dgregor Exp $     */
+/*    $OpenBSD: ipft_tx.c,v 1.11 1998/09/15 10:05:51 pattonme Exp $     */
 /*
- * Copyright (C) 1995-1997 by Darren Reed.
+ * Copyright (C) 1995-1998 by Darren Reed.
  *
  * Redistribution and use in source and binary forms are permitted
  * provided that this notice is preserved and due credit is given
@@ -313,6 +313,7 @@ int	*out;
 		if (tcp->th_flags)
 			cpp++;
 		assert(tcp->th_flags != 0);
+		tcp->th_win = htons(4096);
 	} else if (*cpp && ip->ip_p == IPPROTO_ICMP) {
 		extern	char	*tx_icmptypes[];
 		char	**s, *t;

@@ -1,6 +1,6 @@
-/*    $OpenBSD: ipft_hx.c,v 1.6 1998/01/26 04:16:34 dgregor Exp $     */
+/*    $OpenBSD: ipft_hx.c,v 1.7 1998/09/15 10:05:50 pattonme Exp $     */
 /*
- * Copyright (C) 1995-1997 by Darren Reed.
+ * Copyright (C) 1995-1998 by Darren Reed.
  *
  * Redistribution and use in source and binary forms are permitted
  * provided that this notice is preserved and due credit is given

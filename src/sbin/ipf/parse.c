@@ -1,6 +1,6 @@
-/*     $OpenBSD: parse.c,v 1.21 1998/09/15 09:55:45 pattonme Exp $      */
+/*     $OpenBSD: parse.c,v 1.22 1998/11/24 03:05:34 deraadt Exp $      */
 /*
- * Copyright (C) 1993-1997 by Darren Reed.
+ * Copyright (C) 1993-1998 by Darren Reed.
  *
  * Redistribution and use in source and binary forms are permitted
  * provided that this notice is preserved and due credit is given

@@ -1,6 +1,6 @@
-/*    $OpenBSD: misc.c,v 1.6 1998/01/26 04:16:42 dgregor Exp $     */
+/*    $OpenBSD: misc.c,v 1.7 1998/09/15 10:05:52 pattonme Exp $     */
 /*
- * Copyright (C) 1993-1997 by Darren Reed.
+ * Copyright (C) 1993-1998 by Darren Reed.
  *
  * Redistribution and use in source and binary forms are permitted
  * provided that this notice is preserved and due credit is given
@@ -57,19 +57,19 @@ extern	int	opts;
 void	printpacket(ip)
 ip_t	*ip;
 {
-	struct	tcphdr	*tcp;
+	tcphdr_t	*tcp;
 
 	tcp = (struct tcphdr *)((char *)ip + (ip->ip_hl << 2));
 	printf("ip %d(%d) %d ", ip->ip_len, ip->ip_hl << 2, ip->ip_p);
-	if (ip->ip_off & 0x1fff)
+	if (ip->ip_off & IP_OFFMASK)
 		printf("@%d", ip->ip_off << 3);
 	(void)printf(" %s", inet_ntoa(ip->ip_src));
-	if (!(ip->ip_off & 0x1fff))
+	if (!(ip->ip_off & IP_OFFMASK))
 		if (ip->ip_p == IPPROTO_TCP || ip->ip_p == IPPROTO_UDP)
 			(void)printf(",%d", ntohs(tcp->th_sport));
 	(void)printf(" > ");
 	(void)printf("%s", inet_ntoa(ip->ip_dst));
-	if (!(ip->ip_off & 0x1fff))
+	if (!(ip->ip_off & IP_OFFMASK))
 		if (ip->ip_p == IPPROTO_TCP || ip->ip_p == IPPROTO_UDP)
 			(void)printf(",%d", ntohs(tcp->th_dport));
 	putchar('\n');

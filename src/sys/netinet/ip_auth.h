@@ -1,6 +1,6 @@
-/*       $OpenBSD$       */
+/*       $OpenBSD: ip_auth.h,v 1.2 1998/02/17 01:39:02 dgregor Exp $       */
 /*
- * Copyright (C) 1997 by Darren Reed & Guido Van Rooij.
+ * Copyright (C) 1997-1998 by Darren Reed & Guido Van Rooij.
  *
  * Redistribution and use in source and binary forms are permitted
  * provided that this notice is preserved and due credit is given
