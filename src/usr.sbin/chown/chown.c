@@ -1,4 +1,4 @@
-/*	$OpenBSD: chown.c,v 1.6 1997/06/27 19:02:09 deraadt Exp $	*/
+/*	$OpenBSD: chown.c,v 1.7 1997/06/28 16:41:08 grr Exp $	*/
 
 /*
  * Copyright (c) 1988, 1993, 1994
@@ -60,11 +60,11 @@ static char *rcsid = "$Id$";
 #include <unistd.h>
 #include <locale.h>
 
-void	a_gid __P((char *));
-void	a_uid __P((char *));
-void	chownerr __P((char *));
-u_long	id __P((char *, char *));
-void	usage __P((void));
+void		a_gid __P((char *));
+void		a_uid __P((char *));
+void		chownerr __P((char *));
+u_int32_t	id __P((char *, char *));
+void		usage __P((void));
 
 uid_t uid;
 gid_t gid;
@@ -210,19 +210,19 @@ a_uid(s)
 	uid = ((pw = getpwnam(s)) == NULL) ? id(s, "user") : pw->pw_uid;
 }
 
-u_long
+u_int32_t
 id(name, type)
 	char *name, *type;
 {
-	u_long val;
+	u_int32_t val;
 	char *ep;
 
 	/*
 	 * XXX
-	 * We know that uid_t's and gid_t's are unsigned longs.
+	 * We know that uid_t's and gid_t's are unsigned 32bit ints.
 	 */
 	errno = 0;
-	val = strtoul(name, &ep, 10);
+	val = (u_int32_t)strtoul(name, &ep, 10);
 	if (errno)
 		err(1, "%s", name);
 	if (*ep != '\0')
