@@ -1030,6 +1030,13 @@ ssh_login(int host_key_valid,
 	int payload_len, clen, sum_len = 0;
 	u_int32_t rand = 0;
 
+	/*
+	 * Turn of check_host_ip for proxy connects, since
+	 * we don't have the remote ip-address
+	 */
+	if (options.proxy_command != NULL && options.check_host_ip)
+		options.check_host_ip = 0;
+
 	if (options.check_host_ip)
 		ip = xstrdup(inet_ntoa(hostaddr->sin_addr));
 
