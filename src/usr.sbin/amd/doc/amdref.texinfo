@@ -45,6 +45,11 @@
 @end tex
 
 @settitle 4.4 BSD Automounter Reference Manual
+@dircategory Miscellaneous
+@direntry
+* Amdref: (amdref).                 4.4 BSD Automounter Reference Manual
+@end direntry
+
 @titlepage
 @sp 6
 @center @titlefont{Amd}
