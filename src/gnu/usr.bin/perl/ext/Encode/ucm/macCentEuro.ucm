@@ -9,7 +9,6 @@
 <mb_cur_min> 1
 <mb_cur_max> 1
 <subchar> \x3F
-#
 CHARMAP
 <U0000> \x00 |0 # <control>
 <U0001> \x01 |0 # <control>

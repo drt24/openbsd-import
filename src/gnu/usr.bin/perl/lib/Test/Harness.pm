@@ -29,7 +29,7 @@ Test::Harness - Run Perl standard test scripts with statistics
 
 =head1 VERSION
 
-Version 2.42
+Version 2.42;
 
     $Header$
 
