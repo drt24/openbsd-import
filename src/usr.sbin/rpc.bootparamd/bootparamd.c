@@ -335,7 +335,7 @@ lookup_bootparam(client, client_canonical, id, server, path)
 #endif
 			/* See if this line's client is the one we are
 			 * looking for */
-			if (strcmp(word, client) != 0) {
+			if (strcasecmp(word, client) != 0) {
 				/*
 				 * If it didn't match, try getting the
 				 * canonical host name of the client
@@ -343,7 +343,7 @@ lookup_bootparam(client, client_canonical, id, server, path)
 				 * the client we are looking for
 				 */
 				struct hostent *hp = gethostbyname(word);
-				if (hp == NULL || strcmp(hp->h_name, client))
+				if (hp == NULL || strcasecmp(hp->h_name, client))
 					continue;
 			}
 			contin *= -1;
