@@ -55,7 +55,6 @@ struct fsm {
   int restart;			/* Restart counter value */
   int maxconfig;
 
-  int reqcode;			/* Request code sent */
   struct pppTimer FsmTimer;	/* Restart Timer */
   struct pppTimer OpenTimer;	/* Delay before opening */
 

@@ -41,10 +41,7 @@
 char VarVersion[] = "PPP Version 1.65";
 char VarLocalVersion[] = "$Date$";
 int Utmp = 0;
-int ipInOctets = 0;
-int ipOutOctets = 0;
 int ipKeepAlive = 0;
-int ipConnectSecs = 0;
 int reconnectState = RECON_UNKNOWN;
 int reconnectCount = 0;
 

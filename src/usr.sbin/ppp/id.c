@@ -32,7 +32,6 @@
 #include <sys/ioctl.h>
 #include <fcntl.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <sysexits.h>
 #include <unistd.h>
 
@@ -48,17 +47,13 @@
 #include "id.h"
 
 static int uid;
-static int gid;
 static int euid;
-static int egid;
 
 void
 ID0init()
 {
   uid = getuid();
-  gid = getgid();
   euid = geteuid();
-  egid = getegid();
 }
 
 static void

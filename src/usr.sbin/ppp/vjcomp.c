@@ -32,7 +32,6 @@
 #include "command.h"
 #include "mbuf.h"
 #include "log.h"
-#include "defs.h"
 #include "timer.h"
 #include "fsm.h"
 #include "lcpproto.h"
@@ -43,7 +42,7 @@
 
 #define MAX_VJHEADER 16		/* Maximum size of compressed header */
 
-struct slcompress cslc;
+static struct slcompress cslc;
 
 void
 VjInit(int max_state)
@@ -103,7 +102,7 @@ VjUncompressTcp(struct mbuf * bp, u_char type)
     len = sl_uncompress_tcp(&bufp, len, type, &cslc);
     if (len <= 0) {
       pfree(bp);
-      bp = NULLBUFF;
+      bp = NULL;
     }
     return (bp);
   }
@@ -121,7 +120,7 @@ VjUncompressTcp(struct mbuf * bp, u_char type)
   len = sl_uncompress_tcp(&bufp, olen, type, &cslc);
   if (len <= 0) {
     pfree(bp);
-    return NULLBUFF;
+    return NULL;
   }
   len -= olen;
   len += rlen;

@@ -36,8 +36,6 @@ struct mqueue {
   int qlen;
 };
 
-#define	NULLBUFF	((struct mbuf *)0)
-
 #define MBUF_CTOP(bp)   (bp->base + bp->offset)
 
 #define MB_ASYNC	1

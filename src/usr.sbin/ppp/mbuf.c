@@ -21,7 +21,6 @@
  *
  */
 #include <sys/param.h>
-#include <sys/socket.h>
 #include <netinet/in.h>
 
 #include <stdio.h>
@@ -36,7 +35,7 @@
 #include "vars.h"
 #include "server.h"
 
-struct memmap {
+static struct memmap {
   struct mbuf *queue;
   int count;
 }      MemMap[MB_MAX + 2];

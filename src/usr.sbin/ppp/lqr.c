@@ -42,9 +42,11 @@
 #include "lcp.h"
 #include "loadalias.h"
 #include "vars.h"
-#include "main.h"
 
-struct pppTimer LqrTimer;
+struct lqrdata MyLqrData, HisLqrData;
+struct lqrsave HisLqrSave;
+
+static struct pppTimer LqrTimer;
 
 static u_long lastpeerin = (u_long) - 1;
 

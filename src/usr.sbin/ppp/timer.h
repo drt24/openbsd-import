@@ -37,11 +37,8 @@ struct pppTimer {
 #define	TIMER_RUNNING	1
 #define	TIMER_EXPIRED	2
 
-extern struct pppTimer *TimerList;
-
 extern void StartTimer(struct pppTimer *);
 extern void StopTimer(struct pppTimer *);
-extern void TimerService(void);
 extern void TermTimerService(void);
 extern void ShowTimers(void);
 

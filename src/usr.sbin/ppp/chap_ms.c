@@ -29,12 +29,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <sys/time.h>
-#include <syslog.h>
 
 #include "command.h"
 #include "mbuf.h"
-#include "timer.h"
-#include "chap.h"
 #include "chap_ms.h"
 
 /* unused, for documentation only */

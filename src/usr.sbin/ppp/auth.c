@@ -31,20 +31,15 @@
 
 #include "command.h"
 #include "mbuf.h"
-#include "log.h"
 #include "defs.h"
 #include "timer.h"
 #include "fsm.h"
-#include "lcpproto.h"
 #include "ipcp.h"
 #include "loadalias.h"
 #include "vars.h"
-#include "filter.h"
 #include "auth.h"
 #include "chat.h"
 #include "systems.h"
-#include "iplist.h"
-#include "route.h"
 
 void
 LocalAuthInit()

@@ -22,12 +22,9 @@
  */
 #include <sys/param.h>
 #include <sys/time.h>
-#include <sys/select.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <net/if.h>
-#include <net/if_tun.h>
-#include <net/route.h>
 #include <arpa/inet.h>
 
 #include <errno.h>
@@ -54,7 +51,6 @@
 #include "route.h"
 #include "lcp.h"
 #include "ccp.h"
-#include "modem.h"
 
 char *IfDevName;
 
@@ -215,7 +211,6 @@ OsSetIpaddress(struct in_addr myaddr, struct in_addr hisaddr)
 }
 
 static struct in_addr peer_addr;
-struct in_addr defaddr;
 
 void
 OsLinkup()

@@ -21,8 +21,6 @@
  */
 
 extern int RawModem(void);
-extern void UpModem(int);
-extern void DownModem(int);
 extern void WriteModem(int, const char *, int);
 extern void ModemStartOutput(int);
 extern int OpenModem(void);

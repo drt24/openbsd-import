@@ -23,7 +23,6 @@
  */
 
 #include <sys/param.h>
-#include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
@@ -269,7 +268,7 @@ ParseUdpOrTcp(int argc, char const *const *argv, int proto)
   return (0);
 }
 
-const char *opname[] = {"none", "eq", "gt", NULL, "lt"};
+static const char *opname[] = {"none", "eq", "gt", NULL, "lt"};
 
 static int
 Parse(int argc, char const *const *argv, struct filterent * ofp)

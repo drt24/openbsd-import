@@ -28,7 +28,6 @@
 
 #include <sys/param.h>
 #include <netinet/in.h>
-#include <sys/socket.h>
 
 #include <stdarg.h>
 #include <stdio.h>

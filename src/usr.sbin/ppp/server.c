@@ -31,7 +31,6 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netinet/in_systm.h>
-#include <netinet/ip.h>
 
 #include <errno.h>
 #include <stdio.h>

@@ -156,10 +156,7 @@ extern char VarVersion[];
 extern char VarLocalVersion[];
 
 extern int Utmp;		/* Are we in /etc/utmp ? */
-extern int ipInOctets;
-extern int ipOutOctets;
 extern int ipKeepAlive;
-extern int ipConnectSecs;
 extern int reconnectState;
 extern int reconnectCount;
 

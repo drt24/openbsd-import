@@ -62,7 +62,6 @@ struct fsm CcpFsm = {
   0,
   ST_INITIAL,
   0, 0, 0,
-  0,
   {0, 0, 0, NULL, NULL, NULL},	/* FSM timer */
   {0, 0, 0, NULL, NULL, NULL},	/* Open timer */
   {0, 0, 0, NULL, NULL, NULL},	/* Stopped timer */

@@ -46,8 +46,8 @@ struct lqrsave {
   u_int32_t SaveInOctets;
 };
 
-struct lqrdata MyLqrData, HisLqrData;
-struct lqrsave HisLqrSave;
+extern struct lqrdata MyLqrData, HisLqrData;
+extern struct lqrsave HisLqrSave;
 
 /*
  *  We support LQR and ECHO as LQM method

@@ -35,8 +35,6 @@
 #include <string.h>
 #include <sys/ioctl.h>
 #include <sys/tty.h>
-#include <termios.h>
-#include <time.h>
 #include <unistd.h>
 #include <utmp.h>
 
@@ -293,7 +291,7 @@ StartModemTimer(void)
   StartTimer(&ModemTimer);
 }
 
-struct parity {
+static struct parity {
   const char *name;
   const char *name1;
   int set;

@@ -25,7 +25,6 @@
 #define	PHASE_AUTHENTICATE	2	/* Being authenticated */
 #define	PHASE_NETWORK		3
 #define	PHASE_TERMINATE		4	/* Terminating link */
-#define PHASE_OSLINKED		5	/* The OS is linked up */
 
 extern int phase;			/* Curent phase */
 

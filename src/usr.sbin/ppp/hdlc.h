@@ -62,7 +62,5 @@ extern void HdlcErrorCheck(void);
 extern void HdlcInput(struct mbuf *);
 extern void HdlcOutput(int, u_short, struct mbuf *bp);
 extern u_short HdlcFcs(u_short, u_char *, int);
-extern u_short HdlcFcsBuf(u_short, struct mbuf *);
-extern void DecodePacket(u_short, struct mbuf *);
 extern int ReportHdlcStatus(struct cmdargs const *);
 extern int ReportProtStatus(struct cmdargs const *);

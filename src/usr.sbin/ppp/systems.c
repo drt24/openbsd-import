@@ -39,11 +39,9 @@
 #include "timer.h"
 #include "fsm.h"
 #include "loadalias.h"
-#include "ipcp.h"
 #include "pathnames.h"
 #include "vars.h"
 #include "server.h"
-#include "chat.h"
 #include "systems.h"
 
 #define issep(ch) ((ch) == ' ' || (ch) == '\t')
