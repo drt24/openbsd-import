@@ -196,3 +196,8 @@ struct mntent {
  */
 #undef RE_HDR
 #define RE_HDR <regexp.h>
+
+/*
+ * Need precise length links
+ */
+#define	PRECISE_SYMLINKS
