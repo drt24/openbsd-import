@@ -15,6 +15,9 @@
 
 #include "zlib.h"
 
+#ifdef _STANDALONE
+#include <stand.h>
+#else
 #ifdef STDC
 #  include <stddef.h>
 #  include <string.h>
@@ -24,6 +27,7 @@
     extern int errno;
 #else
 #   include <errno.h>
+#endif
 #endif
 
 #ifndef local
