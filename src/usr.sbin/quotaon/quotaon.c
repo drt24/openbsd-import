@@ -171,12 +171,13 @@ quotaonoff(fs, offmode, type, qfpathname)
 			return (1);
 		}
 		if (vflag)
-			printf("%s: quotas turned off\n", fs->fs_file);
+			printf("%s: %s quotas turned off\n", fs->fs_file,
+			    qfextension[type]);
 		return (0);
 	}
 	if (quotactl(fs->fs_file, QCMD(Q_QUOTAON, type), 0, qfpathname) < 0) {
-		fprintf(stderr, "quotaon: using %s on", qfpathname);
-		perror(fs->fs_file);
+		warn("%s: %s quotas using %s", fs->fs_file,
+		    qfextension[type], qfpathname);
 		return (1);
 	}
 	if (vflag)
