@@ -692,8 +692,8 @@ recvf(cmd, type)
 	char *cmd;
 	int type;
 {
-	register char *cp;
-	int f, mode, opts, wrerr, olderrno;
+	register char *cp = cmd;
+	int f = -1, mode, opts = 0, wrerr, olderrno;
 	off_t i, size;
 	time_t mtime;
 	struct stat stb;
@@ -919,7 +919,7 @@ differ:			buf[0] = '\0';
 
 	if (fchog(f, new, owner, group, mode) < 0) {
 badnew2:	
-		if (f)		/*  Don't close if f hasn't been opened.  */
+		if (f == -1)
 			(void) close(f);
 		(void) unlink(new);
 		return;
@@ -952,8 +952,6 @@ hardlink(cmd)
 	char *oldname;
 	int opts, exists = 0;
 
-	cp = cmd;
-	opts = 0;
 	while (*cp >= '0' && *cp <= '7')
 		opts = (opts << 3) | (*cp++ - '0');
 	if (*cp++ != ' ') {
