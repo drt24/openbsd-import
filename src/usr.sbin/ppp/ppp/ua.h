@@ -65,9 +65,9 @@
 
 #  define ua_ntohs(src, tgt)				\
     do {						\
-      u_int32_t __nh;					\
-      __nh = ((u_int32_t)*(u_char *)(src) << 8) |	\
-          (u_int32_t)*((u_char *)(src) + 1);		\
+      u_int16_t __nh;					\
+      __nh = ((u_int16_t)*(u_char *)(src) << 8) |	\
+          (u_int16_t)*((u_char *)(src) + 1);		\
       memcpy((tgt), &__nh, sizeof __nh);		\
     } while (0)
 
