@@ -74,11 +74,12 @@ struct {
     { "jdefault", "[ -d ]", jdefault },
     { "jatr", "", jatr },
     { "jdata", "", jdata },
-    { "jaut", "[ -v ]", jaut },
+    { "jaut", "[ -d ] [ -v ] [ -x hex-aut0 ]", jaut },
     { "jload", "[ -p progID ] [ -c contID ] [ -s cont_size ] [ -i inst_size ] [ -a aid ] filename", jload },
     { "junload", "[ -p progID ] [ -c contID ]", junload },
     { "jselect", "[ -a aid ]", jselect },
     { "jdeselect", "", jdeselect },
+    { "setpass", "[ -d ] [ -x hex-aut0 ]", jsetpass },
     { NULL, NULL, NULL }
 };
 
