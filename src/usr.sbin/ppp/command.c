@@ -1267,13 +1267,14 @@ SetInterfaceAddr(struct cmdargs const *arg)
     DefMyAddress.width = 0;
   }
   IpcpInfo.want_ipaddr.s_addr = DefMyAddress.ipaddr.s_addr;
+
+  if (hisaddr && !UseHisaddr(hisaddr, mode & MODE_AUTO))
+    return 4;
+
   if (DefHisAddress.ipaddr.s_addr == 0) {
     DefHisAddress.mask.s_addr = 0;
     DefHisAddress.width = 0;
   }
-
-  if (hisaddr && !UseHisaddr(hisaddr, mode & MODE_AUTO))
-    return 4;
 
   return 0;
 }
