@@ -78,6 +78,9 @@ struct quotause {
 } *getprivs();
 #define	FOUND	0x01
 
+void putprivs __P((long, int, struct quotause *));
+void freeprivs __P((struct quotause *));
+
 void
 usage()
 {
