@@ -1,4 +1,4 @@
-/*	$OpenBSD: process_machdep.c,v 1.2 1998/09/15 10:50:13 pefo Exp $	*/
+/*	$OpenBSD: process_machdep.c,v 1.1 2004/08/06 20:56:03 pefo Exp $	*/
 /*
  * Copyright (c) 1994 Adam Glass   
  * Copyright (c) 1993 The Regents of the University of California.
@@ -88,6 +88,8 @@ process_read_regs(p, regs)
 	return (0);
 }
 
+#ifdef	PTRACE
+
 int
 process_write_regs(p, regs)
 	struct proc *p;
@@ -116,3 +118,4 @@ process_set_pc(p, addr)
 	return (0);
 }
 
+#endif	/* PTRACE */
