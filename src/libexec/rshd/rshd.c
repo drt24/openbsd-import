@@ -90,7 +90,13 @@ void	 usage __P((void));
 #include <kerberosIV/krb.h>
 #define	VERSION_SIZE	9
 #define SECURE_MESSAGE  "This rsh session is using DES encryption for all transmissions.\r\n"
-#define	OPTIONS		"alnkvxL"
+
+#ifdef CRYPT
+#define OPTIONS		"alnkvxL"
+#else
+#define	OPTIONS		"alnkvL"
+#endif
+
 char	authbuf[sizeof(AUTH_DAT)];
 char	tickbuf[sizeof(KTEXT_ST)];
 int	doencrypt, use_kerberos, vacuous;
