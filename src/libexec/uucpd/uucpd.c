@@ -169,11 +169,13 @@ struct sockaddr_in *sinp;
 	struct passwd *pw, *getpwnam();
 
 	alarm(60);
-	printf("login: "); fflush(stdout);
-	if (readline(user, sizeof user) < 0) {
-		fprintf(stderr, "user read\n");
-		return;
-	}
+	do {
+		printf("login: "); fflush(stdout);
+		if (readline(user, sizeof user) < 0) {
+			fprintf(stderr, "user read\n");
+			return;
+		}
+	} while (user[0] == '\0');
 	/* truncate username to 8 characters */
 	user[8] = '\0';
 	pw = getpwnam(user);
