@@ -62,7 +62,9 @@ int kernel_delete_spi(char *address, u_int8_t *spi, int proto);
 #define EXTERN extern
 #endif
 
-EXTERN u_int32_t kernel_reserve_spi( char *srcaddress);
+EXTERN u_int32_t kernel_reserve_spi( char *srcaddress, int options);
+EXTERN u_int32_t kernel_reserve_single_spi(char *srcaddress, u_int32_t spi, 
+					   int proto);
 
 EXTERN int kernel_insert_spi(struct spiob *SPI);
 EXTERN int kernel_unlink_spi(struct spiob *ospi);

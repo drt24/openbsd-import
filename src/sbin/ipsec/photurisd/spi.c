@@ -156,7 +156,7 @@ make_spi(struct stateob *st, char *local_address,
      for(i=0; i<SPI_SIZE; i++) {
 	  if(i%4 == 0)
 #ifdef IPSEC
-	       tmp = kernel_reserve_spi(local_address);
+	       tmp = kernel_reserve_spi(local_address, st->flags);
 #else
 	       tmp = arc4random();
 #endif
