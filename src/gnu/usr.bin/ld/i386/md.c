@@ -244,7 +244,7 @@ md_init_header(hp, magic, flags)
 struct exec	*hp;
 int		magic, flags;
 {
-#ifdef NetBSD
+#if defined(__NetBSD__) || defined(__OpenBSD__)
 	if (oldmagic || magic == QMAGIC)
 		hp->a_midmag = magic;
 	else
@@ -287,7 +287,7 @@ void
 md_swapout_exec_hdr(h)
 struct exec *h;
 {
-	/* NetBSD: Always leave magic alone */
+	/* NetBSD/OpenBSD: Always leave magic alone */
 	int skip = 1;
 #if 0
 	if (N_GETMAGIC(*h) == OMAGIC)

@@ -37,7 +37,7 @@
 
 #define	MAX_ALIGNMENT	(sizeof (double))
 
-#ifdef NetBSD
+#if defined(__NetBSD__) || defined(__OpenBSD__)
 #define PAGSIZ			__LDPGSZ
 
 #define N_SET_FLAG(ex,f)	N_SETMAGIC(ex,N_GETMAGIC(ex), \
@@ -65,7 +65,7 @@
 #undef  relocation_info
 #define relocation_info	                reloc_info_sparc
 #define r_symbolnum			r_index
-#endif /* NetBSD */
+#endif /* __NetBSD__ || __OpenBSD__ */
 
 #define N_BADMID(ex) \
 	(N_GETMID(ex) != 0 && N_GETMID(ex) != MID_MACHINE && \

@@ -37,13 +37,13 @@
 
 #define	MAX_ALIGNMENT		(sizeof (long))
 
-#ifdef NetBSD
+#if defined(__NetBSD__) || defined(__OpenBSD__)
 #define PAGSIZ			__LDPGSZ
 #else
 #define PAGSIZ			4096
 #endif
 
-#if defined(NetBSD) || defined(CROSS_LINKER)
+#if defined(__NetBSD__) || defined(__OpenBSD__) || defined(CROSS_LINKER)
 
 #define N_SET_FLAG(ex,f)	(oldmagic || N_GETMAGIC(ex)==QMAGIC ? (0) : \
 					N_SETMAGIC(ex,			\
