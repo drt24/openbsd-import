@@ -91,7 +91,7 @@ getline(fp, size)
 	}
 	if (ptr[s - 1] == '\n')		/* the newline may be missing at EOF */
 	    s--;			/* forget newline */
-	if ((cnt = (ptr[s - 1] == '\\')))	/* check for \\ */
+	if (s && (cnt = (ptr[s - 1] == '\\')))	/* check for \\ */
 	    s--;			/* forget \\ */
 
 	buf = erealloc(buf, len + s + 1);
