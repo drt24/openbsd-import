@@ -2,7 +2,7 @@
  *    Kerberos v5 authentication and ticket-passing routines.
  * 
  * $FreeBSD: src/crypto/openssh/auth-krb5.c,v 1.6 2001/02/13 16:58:04 assar Exp $
- * $OpenBSD$
+ * $OpenBSD: auth-krb5.c,v 1.1 2001/06/26 16:15:23 dugsong Exp $
  */
 
 #include "includes.h"
