@@ -239,7 +239,7 @@ int yywrap()
 static int first = 1;
 	if (first) {
 		char prog[16*1024];
-		strcpy(prog, "for file in ");
+		strlcpy(prog, "for file in ", sizeof(prog));
 		while (*++g_argv) {
 			if (access(*g_argv, 4) < 0) {
 				error("\"%s\": Cannot open for reading", *g_argv);
