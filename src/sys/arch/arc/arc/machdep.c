@@ -717,10 +717,11 @@ int sigpid = 0;
  * Send an interrupt to process.
  */
 void
-sendsig(catcher, sig, mask, code)
+sendsig(catcher, sig, mask, code, addr)
 	sig_t catcher;
 	int sig, mask;
 	u_long code;
+	caddr_t addr;
 {
 	register struct proc *p = curproc;
 	register struct sigframe *fp;
