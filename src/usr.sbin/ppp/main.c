@@ -428,6 +428,7 @@ main(int argc, char **argv)
     LogPrintf(LogWARN, "OpenTunnel: %s\n", strerror(errno));
     return EX_START;
   }
+  CleanInterface(IfDevName);
   if (mode & MODE_INTER)
     fprintf(VarTerm, "Interactive mode\n");
   else if ((mode & MODE_OUTGOING_DAEMON) && !(mode & MODE_DEDICATED))

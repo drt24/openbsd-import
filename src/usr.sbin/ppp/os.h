@@ -29,3 +29,4 @@ extern int  OpenTunnel(int *);
 extern void OsLinkup(void);
 extern int  OsLinkIsUp(void);
 extern void OsLinkdown(void);
+extern int  CleanInterface(const char *);
