@@ -81,7 +81,7 @@ unit=`expr $arg : '[a-z][a-z]*\([0-9][0-9]*\)'`
 case $arg in
 
 all)
-	sh MAKEDEV std sd0 sd1 sd2 sd3 st0 st1 pty0
+      sh MAKEDEV std fd sd0 sd1 sd2 sd3 st0 st1 pty0
 	;;
 
 std)
@@ -102,6 +102,9 @@ std)
 	mk klog		c 16 0 600
 	mk fb		c 22 0
 	mk kbd		c 29 0
+      mk stdin        c 23 0
+      mk stdout       c 23 1
+      mk stderr       c 23 2
 	;;
 
 fd)
