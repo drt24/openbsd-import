@@ -408,8 +408,10 @@ tty_Create(struct physical *p)
     ios.c_iflag |= IXOFF;
   }
   ios.c_iflag |= IXON;
-  if (p->type != PHYS_DEDICATED)
+  if (p->type != PHYS_DEDICATED) {
     ios.c_cflag |= HUPCL;
+    ios.c_cflag &= ~CLOCAL;
+  }
 
   if (p->type != PHYS_DIRECT) {
       /* Change tty speed when we're not in -direct mode */

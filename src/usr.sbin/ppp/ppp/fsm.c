@@ -863,6 +863,13 @@ FsmRecvProtoRej(struct fsm *fp, struct fsmheader *lhp, struct mbuf *bp)
       /* (*fp->parent->LayerFinish)(fp->parent->object, fp); */
     }
     break;
+  case PROTO_IPCP:
+    if (fp->proto == PROTO_LCP) {
+      log_Printf(LogPHASE, "%s: IPCP protocol reject closes IPCP !\n",
+                fp->link->name);
+      fsm_Close(&fp->bundle->ncp.ipcp.fsm);
+    }
+    break;
   case PROTO_MP:
     if (fp->proto == PROTO_LCP) {
       struct lcp *lcp = fsm2lcp(fp);
