@@ -1,5 +1,5 @@
 #include "includes.h"
-RCSID("$Id$");
+RCSID("$OpenBSD: auth-skey.c,v 1.6 2000/04/14 10:30:29 markus Exp $");
 
 #include "ssh.h"
 #include "packet.h"

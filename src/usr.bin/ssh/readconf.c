@@ -14,7 +14,7 @@
  */
 
 #include "includes.h"
-RCSID("$Id$");
+RCSID("$OpenBSD: readconf.c,v 1.36 2000/06/18 00:57:48 deraadt Exp $");
 
 #include "ssh.h"
 #include "cipher.h"

@@ -14,7 +14,7 @@
  */
 
 #include "includes.h"
-RCSID("$Id$");
+RCSID("$OpenBSD: authfd.c,v 1.19 2000/04/29 18:11:52 markus Exp $");
 
 #include "ssh.h"
 #include "rsa.h"
