@@ -1102,7 +1102,7 @@ static void read_connection(struct connection * c)
                 respcode[3] = '\0';
             }
             else {
-                strcpy(respcode, "500");
+                strlcpy(respcode, "500", sizeof(respcode));
             }
 
 	    if (respcode[0] != '2') {
