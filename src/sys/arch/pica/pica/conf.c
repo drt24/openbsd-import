@@ -1,4 +1,4 @@
-/*	$OpenBSD$ */
+/*	$OpenBSD: conf.c,v 1.7 1996/07/15 14:57:06 mickey Exp $ */
 
 /*
  * Copyright (c) 1992, 1993
@@ -140,8 +140,8 @@ cdev_decl(sd);
 cdev_decl(pc);
 cdev_decl(pms);
 cdev_decl(cd);
-#include "rnd.h"
-cdev_decl(rnd);
+#include "random.h"
+cdev_decl(random);
 
 /* open, close, read, ioctl */
 cdev_decl(ipl);
@@ -185,7 +185,7 @@ struct cdevsw	cdevsw[] =
 	cdev_notdef(),			/* 29: */
 	cdev_notdef(),			/* 30: */
 	cdev_gen_ipf(NIPF,ipl),         /* 31: IP filter log */
-	cdev_rnd_init(NRND,rnd),	/* 32: random data source */
+	cdev_random_init(NRANDOM,random), /* 32: random data source */
 };
 
 int	nchrdev = sizeof (cdevsw) / sizeof (cdevsw[0]);
