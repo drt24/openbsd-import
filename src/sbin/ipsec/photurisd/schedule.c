@@ -204,18 +204,18 @@ schedule_process(int sock)
 	       tmp->tm = time(NULL) + REKEY_TIMEOUT;
 	       break;
           case MODULUS: 
-#ifdef DEBUG 
+#ifdef DEBUG2
 	       printf("Checking moduli\n"); 
 #endif 
 	       mod_check_prime(MOD_PRIME_ITER, MOD_PRIME_TIME); 
 	       tmp->tm = time(NULL) + MODULUS_TIMEOUT; 
 	       break; 
 	  case CLEANUP:
-#ifdef DEBUG
+#ifdef DEBUG2
 	       printf("Cleaning up states\n");
 #endif
 	       state_expire();
-#ifdef DEBUG
+#ifdef DEBUG2
 	       printf("Cleaning up SPI's\n");
 #endif
 	       spi_expire();

@@ -54,6 +54,7 @@ static char rcsid[] = "$Id$";
 #include "packet.h"
 #include "exchange.h"
 #include "secrets.h"
+#include "server.h"
 #include "errlog.h"
 
 int
@@ -81,7 +82,7 @@ handle_value_request(u_char *packet, int size,
 	     tempst.initiator = 0;                   /* We are the Responder */ 
 	     bcopy(header->icookie, tempst.icookie, COOKIE_SIZE); 
 	     strncpy(tempst.address, address, 15); 
-	     tempst.port = port; 
+	     tempst.port = global_port; 
 	     tempst.counter = header->counter;
 	     
 	     cookie_generate(&tempst, rcookie, COOKIE_SIZE); 

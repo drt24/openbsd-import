@@ -240,7 +240,7 @@ server(void)
 	  timeout.tv_usec = 0;
 	  timeout.tv_sec = schedule_next();
 
-#ifdef DEBUG
+#ifdef DEBUG2
 	  printf("Sleeping for %ld seconds\n", timeout.tv_sec);
 #endif
 

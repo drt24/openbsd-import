@@ -44,6 +44,7 @@ static char rcsid[] = "$Id$";
 #include "packets.h"
 #include "state.h"
 #include "cookie.h"
+#include "server.h"
 
 
 /* XXX - on value_request receive we need to set the responder schemes */
@@ -70,7 +71,7 @@ photuris_cookie_response(struct stateob *st, u_char *buffer, int *size,
 	tempst.initiator = 0;                   /* We are the Responder */
 	bcopy(icookie, tempst.icookie, COOKIE_SIZE);
 	strncpy(tempst.address, address, 15);
-	tempst.port = port;
+	tempst.port = global_port;
 
       	bcopy(tempst.icookie, header->icookie, COOKIE_SIZE);
 

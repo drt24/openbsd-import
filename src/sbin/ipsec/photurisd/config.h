@@ -106,6 +106,8 @@ EXTERN int init_moduli(int);
 EXTERN int init_schemes(void);
 EXTERN int init_attributes(void);
 EXTERN int init_times(void);
+EXTERN void startup_parse(struct stateob *st, char *line);
+EXTERN void startup_end(struct stateob *st);
 EXTERN int init_startup(void);
 EXTERN int init_signals(void);
 
