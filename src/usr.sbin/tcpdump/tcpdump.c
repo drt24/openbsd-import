@@ -235,6 +235,8 @@ main(int argc, char **argv)
 				packettype = PT_RTCP;
 			else if (strcasecmp(optarg, "cnfp") == 0)
 				packettype = PT_CNFP;
+			else if (strcasecmp(optarg, "sack") == 0)
+				snaplen = SACK_SNAPLEN;
 			else
 				error("unknown packet type `%s'", optarg);
 			break;

@@ -66,6 +66,7 @@ extern int packettype;		/* as specified by -T */
  * 14 bytes of data (assuming no ip options).
  */
 #define DEFAULT_SNAPLEN 68
+#define SACK_SNAPLEN 94
 
 #ifndef BIG_ENDIAN
 #define BIG_ENDIAN 4321
