@@ -3880,7 +3880,7 @@ once.
 
 @item malformed IP dotted quad: @var{address}
 If the Internet address of an interface is incorrectly specified.  An
-Internet address definition is handled to @b{inet_addr}(3N) to see if it
+Internet address definition is handled to @b{inet_aton}(3N) to see if it
 can cope.  If not, then this message will be displayed.
 
 @item malformed netmask: @var{netmask}
