@@ -717,4 +717,5 @@ usage()
 #else
 	syslog(LOG_ERR, "usage: rlogind [-aln]");
 #endif
+	exit(2);
 }
