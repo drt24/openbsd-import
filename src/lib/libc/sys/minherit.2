@@ -43,7 +43,7 @@
 .Fd #include <sys/types.h>
 .Fd #include <sys/mman.h>
 .Ft int
-.Fn minherit "caddr_t addr" "size_t len" "int inherit"
+.Fn minherit "void *addr" "size_t len" "int inherit"
 .Sh DESCRIPTION
 The
 .Fn minherit
