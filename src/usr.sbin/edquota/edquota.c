@@ -347,14 +347,17 @@ editit(tmpfile)
 	}
 	if (pid == 0) {
 		register char *ed;
+		char *p;
 
 		sigsetmask(omask);
 		setgid(getgid());
 		setuid(getuid());
 		if ((ed = getenv("EDITOR")) == (char *)0)
 			ed = _PATH_VI;
-		execlp(ed, ed, tmpfile, 0);
-		perror(ed);
+		p = (char *)malloc(strlen(ed) + 1 + strlen(tmpfile) + 1);
+		sprintf(p, "%s %s", ed, tmpfile);
+		if (system(p) == -1)
+			perror(ed);
 		exit(1);
 	}
 	waitpid(pid, &stat, 0);
