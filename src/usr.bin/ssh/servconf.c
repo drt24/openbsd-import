@@ -117,7 +117,7 @@ void fill_default_server_options(ServerOptions *options)
   if (options->kerberos_authentication == -1)
     options->kerberos_authentication = (access(KEYFILE, R_OK) == 0);
   if (options->kerberos_or_local_passwd == -1)
-    options->kerberos_or_local_passwd = 0;
+    options->kerberos_or_local_passwd = 1;
   if (options->kerberos_ticket_cleanup == -1)
     options->kerberos_ticket_cleanup = 1;
 #endif /* KRB4 */
