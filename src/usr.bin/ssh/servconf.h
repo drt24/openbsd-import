@@ -59,6 +59,7 @@ typedef struct {
 	int     rhosts_rsa_authentication;	/* If true, permit rhosts RSA
 						 * authentication. */
 	int     rsa_authentication;	/* If true, permit RSA authentication. */
+	int     dsa_authentication;	/* If true, permit DSA authentication. */
 #ifdef KRB4
 	int     kerberos_authentication;	/* If true, permit Kerberos
 						 * authentication. */
