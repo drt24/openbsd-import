@@ -45,11 +45,11 @@
 .Nm edquota
 .Op Fl u
 .Op Fl p Ar proto-username
-.Ar username | uid ...
+.Ar username | uid Op Ar ...
 .Nm edquota
 .Fl g
 .Op Fl p Ar proto-groupname
-.Ar groupname | gid ...
+.Ar groupname | gid Op Ar ...
 .Nm edquota
 .Fl t
 .Op Fl u
@@ -57,15 +57,19 @@
 .Fl t
 .Fl g
 .Sh DESCRIPTION
-.Nm Edquota
+.Nm edquota
 is a quota editor.  
 By default, or if the 
 .Fl u
 flag is specified,
 one or more users may be specified on the command line.
-If a numeric id is given instead of a name that uid/gid
-will be used even if there is not a corresponding id in
-the passwd or group files.
+If a numeric ID is given instead of a name that UID/GID
+will be used even if there is not a corresponding ID in
+the
+.Pa /etc/passwd
+or
+.Pa /etc/group
+files.
 For each user a temporary file is created
 with an ASCII representation of the current
 disk quotas for that user.
@@ -145,7 +149,7 @@ grace period should be granted.
 .Pp
 Only the super-user may edit quotas.
 .Sh FILES
-.Bl -tag -width 24n -compact
+.Bl -tag -width quota.group -compact
 .It Pa quota.user
 at the filesystem root with user quotas
 .It Pa quota.group
