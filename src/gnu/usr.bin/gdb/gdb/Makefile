@@ -46,7 +46,7 @@ SRCS=		blockframe.c core.c gdbtypes.c main.c source.c		\
 		copying.c fork-child.c m2-valprint.c serial.c version.c \
 		dis-buf.c solib.c
 
-CLEANFILES+=	y.tab.h c-exp.c ch-exp.c m2-exp.c
+CLEANFILES+=	c-exp.tab.h ch-exp.tab.h m2-exp.tab.h c-exp.c ch-exp.c m2-exp.c
 
 LDADD=		$(LIBBFD) $(LIBREADLINE) $(LIBIBERTY)
 DPADD=		$(LIBBFD) $(LIBREADLINE) $(LIBIBERTY)
