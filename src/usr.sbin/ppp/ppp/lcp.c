@@ -921,7 +921,7 @@ LcpDecodeConfig(struct fsm *fp, u_char *cp, int plen, int mode_type,
 	  goto reqreject;
         break;
       case MODE_NAK:
-        /* We don't do what he NAKs want, we do things in our preferred order */
+        /* We don't do what he NAKs with, we do things in our preferred order */
         if (lcp->want_callback.opmask & CALLBACK_BIT(CALLBACK_AUTH))
           lcp->want_callback.opmask &= ~CALLBACK_BIT(CALLBACK_AUTH);
         else if (lcp->want_callback.opmask & CALLBACK_BIT(CALLBACK_CBCP))

@@ -553,13 +553,17 @@ datalink_CBCPFailed(struct datalink *dl)
 void
 datalink_AuthOk(struct datalink *dl)
 {
-  if (dl->physical->link.lcp.his_callback.opmask ==
-      CALLBACK_BIT(CALLBACK_CBCP) ||
-      dl->physical->link.lcp.want_callback.opmask ==
-      CALLBACK_BIT(CALLBACK_CBCP)) {
+  if ((dl->physical->link.lcp.his_callback.opmask &
+       CALLBACK_BIT(CALLBACK_CBCP) ||
+       dl->physical->link.lcp.want_callback.opmask &
+       CALLBACK_BIT(CALLBACK_CBCP)) &&
+      !(dl->physical->link.lcp.want_callback.opmask &
+        CALLBACK_BIT(CALLBACK_AUTH))) {
+    /* We must have agreed CBCP if AUTH isn't there any more */
     datalink_NewState(dl, DATALINK_CBCP);
     cbcp_Up(&dl->cbcp);
   } else if (dl->physical->link.lcp.want_callback.opmask) {
+    /* It's not CBCP */
     log_Printf(LogPHASE, "%s: Shutdown and await peer callback\n", dl->name);
     datalink_NewState(dl, DATALINK_LCP);
     fsm_Close(&dl->physical->link.lcp.fsm);
