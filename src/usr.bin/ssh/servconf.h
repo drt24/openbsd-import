@@ -26,7 +26,6 @@ typedef struct
   int port;			/* Port number to listen on. */
   struct in_addr listen_addr;	/* Address on which the server listens. */
   char *host_key_file;		/* File containing host key. */
-  char *random_seed_file;	/* File containing random seed. */
   int server_key_bits;		/* Size of the server key. */
   int login_grace_time;		/* Disconnect if no auth in this time (sec). */
   int key_regeneration_time;	/* Server key lifetime (seconds). */

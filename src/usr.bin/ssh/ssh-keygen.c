@@ -409,10 +409,6 @@ main(int ac, char **av)
   if (change_comment)
     do_change_comment(pw);
 
-  /* Initialize random number generator.  This may take a while if the
-     user has no seed file, so display a message to the user. */
-  if (!quiet)
-    printf("Initializing random number generator...\n");
   arc4random_stir();
 
   if (quiet)
