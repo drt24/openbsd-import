@@ -1205,7 +1205,7 @@ ${progname}" ${arguments}  "
         if [ -r ${subdir}/config.back ] ; then
                 mv -f ${subdir}/config.back ${subdir}/config.status
         fi
-        ${moveifchange} ${subdir}/config.new ${subdir}/config.status
+        ${config_shell} ${moveifchange} ${subdir}/config.new ${subdir}/config.status
         ;;
 
     *)  rm -f ${Makefile} ${subdir}/config.status ${links} ;;
