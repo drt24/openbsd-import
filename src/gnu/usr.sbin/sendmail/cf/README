@@ -3572,6 +3572,7 @@ confMAX_HEADERS_LENGTH	MaxHeadersLength
 confMAX_MIME_HEADER_LENGTH  MaxMimeHeaderLength
 					[undefined] Maximum length of
 					certain MIME header field values.
+					If not set, sendmail uses 2048/1024.
 confCONNECTION_RATE_THROTTLE ConnectionRateThrottle
 					[undefined] The maximum number of
 					connections permitted per second per
