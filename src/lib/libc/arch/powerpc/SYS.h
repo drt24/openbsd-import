@@ -45,21 +45,19 @@
 #include "machine/asm.h"
 
 #ifdef __STDC__
-#define PSEUDO_PREFIX(x,y)	.globl _C_LABEL(x) ; \
-				.align 2; \
-				.extern cerror ; \
-			_C_LABEL(x):	li 0, SYS_##y ; \
+#define PSEUDO_PREFIX(x,y)	.extern cerror ; \
+			ENTRY(x) \
+				li 0, SYS_##y ; \
 				/* sc */
 #else /* !__STDC__ */
-#define PSEUDO_PREFIX(x,y)	.globl _C_LABEL(x) ; \
-				.align 2; \
-				.extern cerror ; \
-			_C_LABEL(x):	li 0, SYS_/**/y ; \
+#define PSEUDO_PREFIX(x,y)	.extern cerror ; \
+			ENTRY(x) \
+				li 0, SYS_/**/y ; \
 				/* sc */
 #endif /* !__STDC__ */
 #define PSEUDO_SUFFIX		cmpwi 0, 0 ; \
 				beqlr+ ; \
-				b cerror
+				b cerror 
 
 #define PREFIX(x)		PSEUDO_PREFIX(x,x)
 
