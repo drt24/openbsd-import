@@ -787,7 +787,7 @@ main(int argc, char **argv)
 	    shell = pwd->pw_shell;
 	}
 
-	execl(shell, shell, NULL);
+	execl(shell, shell, (char *)NULL);
 
 	/* the AFS token is useless if the shell exec fails, because it
 	   is in a PAG that will soon go away. */

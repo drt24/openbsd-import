@@ -198,7 +198,7 @@ startSelectPC (char *progname)
 	if (dup2(pipa[1], 0) == -1)
 	    err(1, "dup2");
 	close(pipa[1]);
-	execl(progname, "testlwp", "selectproducer", NULL);
+	execl(progname, "testlwp", "selectproducer", (char *)NULL);
 	err(1, "execl");
     default:
 	break;
