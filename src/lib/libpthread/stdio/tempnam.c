@@ -56,7 +56,7 @@ tempnam(dir, pfx)
 	if (!pfx)
 		pfx = "tmp.";
 
-	if (f = getenv("TMPDIR")) {
+	if (issetugid() == 0 && f = getenv("TMPDIR")) {
 		(void)snprintf(name, MAXPATHLEN, "%s%s%sXXXXXX", f,
 			*(f + strlen(f) - 1) == '/'? "": "/", pfx);
 		if (f = mktemp(name))
