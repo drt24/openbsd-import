@@ -19,38 +19,42 @@ RCSID("$Id$");
 
 #include "ssh.h"
 
-void *xmalloc(size_t size)
+void *
+xmalloc(size_t size)
 {
-  void *ptr = malloc(size);
-  if (ptr == NULL)
-    fatal("xmalloc: out of memory (allocating %d bytes)", (int)size);
-  return ptr;
+	void *ptr = malloc(size);
+	if (ptr == NULL)
+		fatal("xmalloc: out of memory (allocating %d bytes)", (int) size);
+	return ptr;
 }
 
-void *xrealloc(void *ptr, size_t new_size)
+void *
+xrealloc(void *ptr, size_t new_size)
 {
-  void *new_ptr;
+	void *new_ptr;
 
-  if (ptr == NULL)
-    fatal("xrealloc: NULL pointer given as argument");
-  new_ptr = realloc(ptr, new_size);
-  if (new_ptr == NULL)
-    fatal("xrealloc: out of memory (new_size %d bytes)", (int)new_size);
-  return new_ptr;
+	if (ptr == NULL)
+		fatal("xrealloc: NULL pointer given as argument");
+	new_ptr = realloc(ptr, new_size);
+	if (new_ptr == NULL)
+		fatal("xrealloc: out of memory (new_size %d bytes)", (int) new_size);
+	return new_ptr;
 }
 
-void xfree(void *ptr)
+void 
+xfree(void *ptr)
 {
-  if (ptr == NULL)
-    fatal("xfree: NULL pointer given as argument");
-  free(ptr);
+	if (ptr == NULL)
+		fatal("xfree: NULL pointer given as argument");
+	free(ptr);
 }
 
-char *xstrdup(const char *str)
+char *
+xstrdup(const char *str)
 {
-  int len = strlen(str) + 1;
+	int len = strlen(str) + 1;
 
-  char *cp = xmalloc(len);
-  strlcpy(cp, str, len);
-  return cp;
+	char *cp = xmalloc(len);
+	strlcpy(cp, str, len);
+	return cp;
 }

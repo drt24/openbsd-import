@@ -30,6 +30,7 @@ hash_collapse(s)
 
 	return i;
 }
+
 char *
 skey_fake_keyinfo(char *username)
 {
