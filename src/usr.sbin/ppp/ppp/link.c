@@ -64,6 +64,7 @@
 #include "pap.h"
 #include "chap.h"
 #include "cbcp.h"
+#include "command.h"
 
 static void Despatch(struct bundle *, struct link *, struct mbuf *, u_short);
 
@@ -338,4 +339,19 @@ Despatch(struct bundle *bundle, struct link *l, struct mbuf *bp, u_short proto)
     }
     mbuf_Free(bp);
   }
+}
+
+int
+link_ShowLayers(struct cmdargs const *arg)
+{
+  struct link *l = command_ChooseLink(arg);
+  int layer;
+
+  for (layer = l->nlayers; layer; layer--)
+    prompt_Printf(arg->prompt, "%s%s", layer == l->nlayers ? "" : ", ",
+                  l->layer[layer - 1]->name);
+  if (l->nlayers)
+    prompt_Printf(arg->prompt, "\n");
+
+  return 0;
 }

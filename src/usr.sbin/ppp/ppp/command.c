@@ -757,6 +757,8 @@ static struct cmdtab const ShowCommands[] = {
   "Interface status", "show iface"},
   {"ipcp", NULL, ipcp_Show, LOCAL_AUTH,
   "IPCP status", "show ipcp"},
+  {"layers", NULL, link_ShowLayers, LOCAL_AUTH | LOCAL_CX_OPT,
+  "Protocol layers", "show layers"},
   {"lcp", NULL, lcp_ReportStatus, LOCAL_AUTH | LOCAL_CX,
   "LCP status", "show lcp"},
   {"link", "datalink", datalink_Show, LOCAL_AUTH | LOCAL_CX,

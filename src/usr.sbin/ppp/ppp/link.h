@@ -36,6 +36,7 @@
 
 struct bundle;
 struct prompt;
+struct cmdargs;
 
 struct link {
   int type;                               /* _LINK type */
@@ -73,3 +74,4 @@ extern void link_EmptyStack(struct link *);
 #define PROTO_OUT 2
 extern void link_ProtocolRecord(struct link *, u_short, int);
 extern void link_ReportProtocolStatus(struct link *, struct prompt *);
+extern int link_ShowLayers(struct cmdargs const *);
