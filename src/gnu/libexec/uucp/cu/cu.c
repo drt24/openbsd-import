@@ -2101,7 +2101,7 @@ fcusend_buf (qconn, zbufarg, cbufarg)
 	 of normal characters; when we send a newline we look for
 	 *zCuvar_echonl.  */
       if ((fCuvar_echocheck && ! fCuvar_binary)
-	  || (fnl && *zCuvar_echonl != '\0'))
+	  && (fnl && *zCuvar_echonl != '\0'))
 	{
 	  long iend;
 
