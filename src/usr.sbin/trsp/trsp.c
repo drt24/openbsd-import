@@ -149,7 +149,7 @@ again:
 	 * Discard setgid privileges if not the running kernel so that bad
 	 * guys can't print interesting stuff from kernel memory.
 	 */
-	if (system != _PATH_UNIX || core != _PATH_KMEM)
+	if (!strcmp(system, _PATH_UNIX) || !strcmp(core, _PATH_KMEM))
 		setgid(getgid());
 	(void) nlist(system, nl);
 	if (nl[0].n_value == 0) {
