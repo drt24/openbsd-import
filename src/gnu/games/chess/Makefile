@@ -5,7 +5,7 @@ PROG=	chess
 SRCS=	gnuchess.c uxdsp.c move.c
 CFLAGS+=-DNEWMOVE=12
 MAN=	chess.6
-DPADD=	${LIBCURSES} ${LIBTERM} /usr/lib/libgnumalloc.a
+DPADD=	${LIBCURSES} ${LIBTERMLIB} /usr/lib/libgnumalloc.a
 LDADD=	-lcurses -ltermlib -lgnumalloc
 HIDEGAME=hidegame
 CLEANFILES += chess.6
