@@ -14,5 +14,6 @@ CFLAGS+= -Wmissing-declarations
 CFLAGS+= -Wshadow -Wpointer-arith -Wcast-qual
 CFLAGS+= -Wsign-compare
 CFLAGS+= -DCVSD
+YFLAGS=
 
 .include <bsd.prog.mk>
