@@ -879,9 +879,10 @@ void
 channel_request_local_forwarding(int port, const char *host,
 				 int host_port)
 {
-	int ch, sock;
+	int ch, sock, on = 1;
 	struct sockaddr_in sin;
 	extern Options options;
+	struct linger linger;
 
 	if (strlen(host) > sizeof(channels[0].path) - 1)
 		packet_disconnect("Forward host name too long.");
@@ -899,6 +900,15 @@ channel_request_local_forwarding(int port, const char *host,
 	else
 		sin.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
 	sin.sin_port = htons(port);
+
+	/*
+	 * Set socket options.  We would like the socket to disappear as soon
+	 * as it has been closed for whatever reason.
+	 */
+	setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, (void *)&on, sizeof(on));
+	linger.l_onoff = 1;
+	linger.l_linger = 5;
+	setsockopt(sock, SOL_SOCKET, SO_LINGER, (void *) &linger, sizeof(linger));
 
 	/* Bind the socket to the address. */
 	if (bind(sock, (struct sockaddr *) & sin, sizeof(sin)) < 0)
