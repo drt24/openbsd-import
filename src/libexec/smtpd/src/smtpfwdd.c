@@ -793,7 +793,7 @@ main(int argc, char **argv)
 #ifdef GETOPT_EOF
   while ((opt = getopt(argc, argv, optstring)) != EOF) {
 #else
-  while ((opt = getopt(argc, argv, optstring)) > 0) {
+  while ((opt = getopt(argc, argv, optstring)) != -1) {
 #endif
     switch (opt) {
     case 'q':
