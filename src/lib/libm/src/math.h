@@ -64,7 +64,7 @@ extern  _LIB_VERSION_TYPE  _LIB_VERSION;
 #define _XOPEN_ fdlibm_xopen
 #define _POSIX_ fdlibm_posix
 
-#ifndef __cplusplus
+#ifdef __LIBM_PRIVATE
 struct exception {
 	int type;
 	char *name;
@@ -152,7 +152,9 @@ extern double nextafter __P((double, double));
 extern double remainder __P((double, double));
 extern double scalb __P((double, double));
 
+#ifdef __LIBM_PRIVATE
 extern int matherr __P((struct exception *));
+#endif
 
 /*
  * IEEE Test Vector
