@@ -216,6 +216,16 @@ main(int ac, char **av)
   int i;
   int deleting = 0;
 
+  /* check if RSA support exists */
+  if (rsa_alive() == 0) {
+    extern char *__progname;
+
+    fprintf(stderr,
+      "%s: no RSA support in libssl and libcrypto.  See ssl(8).\n",
+      __progname);
+    exit(1);
+  }
+
   for (i = 1; i < ac; i++)
     {
       if (strcmp(av[i], "-l") == 0)

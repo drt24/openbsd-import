@@ -539,6 +539,16 @@ main(int ac, char **av)
   int sockets[2], i;
   int *dups;
 
+  /* check if RSA support exists */
+  if (rsa_alive() == 0) {
+    extern char *__progname;
+
+    fprintf(stderr,
+      "%s: no RSA support in libssl and libcrypto.  See ssl(8).\n",
+      __progname);
+    exit(1);
+  }
+
   if (ac < 2)
     {
       fprintf(stderr, "ssh-agent version %s\n", SSH_VERSION);

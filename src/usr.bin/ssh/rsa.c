@@ -43,6 +43,19 @@ RCSID("$Id$");
 
 int rsa_verbose = 1;
 
+int
+rsa_alive()
+{
+  RSA *key;
+  extern char *__progname;
+
+  key = RSA_generate_key(32, 3, NULL, NULL);
+  if (key == NULL)
+    return (0);
+  RSA_free(key);
+  return (1);
+}
+
 /* Generates RSA public and private keys.  This initializes the data
    structures; they should be freed with rsa_clear_private_key and
    rsa_clear_public_key. */

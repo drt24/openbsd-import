@@ -268,6 +268,12 @@ main(int ac, char **av)
   else
     av0 = av[0];
 
+  /* check if RSA support exists */
+  if (rsa_alive() == 0) {
+    log("no RSA support in libssl and libcrypto -- exiting.  See ssl(8)");
+    exit(1);
+  }
+
   /* Initialize configuration options to their default values. */
   initialize_server_options(&options);
 
