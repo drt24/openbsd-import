@@ -48,9 +48,12 @@ static char *rcsid = "$Id$";
 #include <sys/file.h>
 #include <sys/mount.h>
 #include <ufs/ufs/quota.h>
+#include <err.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <fstab.h>
+#include <unistd.h>
 
 char *qfname = QUOTAFILENAME;
 char *qfextension[] = INITQFNAMES;

@@ -1,4 +1,4 @@
-/*	$OpenBSD: yppoll.c,v 1.6 2003/06/02 04:00:17 deraadt Exp $ */
+/*	$OpenBSD: yppoll.c,v 1.7 2003/07/10 08:00:28 deraadt Exp $ */
 /*	$NetBSD: yppoll.c,v 1.5 1996/05/13 02:46:36 thorpej Exp $	*/
 
 /*
@@ -43,6 +43,7 @@ static char rcsid[] = "$Id$";
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 #include <netdb.h>
 #include <unistd.h>
