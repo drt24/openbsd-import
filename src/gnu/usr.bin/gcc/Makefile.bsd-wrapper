@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 MAN=		cccp.1 gcc.1 cp/g++.1
 MLINKS+=	gcc.1 cc.1
