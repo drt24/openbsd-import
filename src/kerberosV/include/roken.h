@@ -210,6 +210,10 @@ struct hostent* roken_gethostbyaddr(const void*, size_t, int);
 
 #define roken_getsockname(a,b,c) getsockname(a,b,c)
 
+void setprogname(const char *argv0);
+
+const char *getprogname(void);
+
 void set_progname(char *argv0);
 const char *get_progname(void);
 
