@@ -61,6 +61,7 @@ void rip __ARGS ((char *buf));
 int skeychallenge __ARGS ((struct skey * mp, char *name, char *ss));
 int skeylookup __ARGS ((struct skey * mp, char *name));
 int skeyverify __ARGS ((struct skey * mp, char *response));
+int skeyzero __ARGS ((struct skey * mp, char *response));
 void sevenbit __ARGS ((char *s));
 void backspace __ARGS ((char *s));
 char *skipspace __ARGS ((char *s));
