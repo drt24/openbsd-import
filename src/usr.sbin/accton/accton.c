@@ -48,16 +48,14 @@ static char *rcsid = "$Id$";
 static void usage(void);
 
 void
-usage()
+usage(void)
 {
 	fputs("usage: accton [file]\n", stderr);
 	exit(1);
 }
 
 int
-main(argc, argv)
-	int argc;
-	char **argv;
+main(int argc, char *argv[])
 {
 	int ch;
 
