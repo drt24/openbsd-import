@@ -121,7 +121,10 @@ void sectok_fmt_fid(char *fname, int f0, int f1);
 int sectok_selectfile(int fd, int cla, unsigned char *fid, int verbose);
 
 /* Cyberflex */
-int cyberflex_load_rsa_priv(int fd, int cla, unsigned char *key_fid, int nkey_elems, int keylen, unsigned char *key_elems[]);
+int cyberflex_load_rsa_pub(int fd, int cla, unsigned char *key_fid,
+			   int key_len, unsigned char *key_data);
+int cyberflex_load_rsa_priv(int fd, int cla, unsigned char *key_fid,
+			    int nkey_elems, int keylen, unsigned char *key_elems[]);
 
 /* SCPERF - performance evaluation */
 #ifdef SCPERF
