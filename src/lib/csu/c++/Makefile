@@ -1,6 +1,9 @@
-#	$Id$
+#	$OpenBSD$
 
-CFLAGS+=	-DLIBC_SCCS -fpic
+CFLAGS+=	-DLIBC_SCCS
+.if !defined(NOPIC)
+CFLAGS+=	-fpic
+.endif
 OBJS=		c++rt0.o
 
 all: ${OBJS}
