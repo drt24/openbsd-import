@@ -97,9 +97,11 @@ char *identity = NULL;
 /* This is the port to use in contacting the remote site (is non-NULL). */
 char *port = NULL;
 
-/* This function executes the given command as the specified user on the given
-   host.  This returns < 0 if execution fails, and >= 0 otherwise.
-   This assigns the input and output file descriptors on success. */
+/*
+ * This function executes the given command as the specified user on the
+ * given host.  This returns < 0 if execution fails, and >= 0 otherwise. This
+ * assigns the input and output file descriptors on success.
+ */
 
 int 
 do_cmd(char *host, char *remuser, char *cmd, int *fdin, int *fdout)
@@ -110,8 +112,10 @@ do_cmd(char *host, char *remuser, char *cmd, int *fdin, int *fdout)
 		fprintf(stderr, "Executing: host %s, user %s, command %s\n",
 			host, remuser ? remuser : "(unspecified)", cmd);
 
-	/* Reserve two descriptors so that the real pipes won't get
-	   descriptors 0 and 1 because that will screw up dup2 below. */
+	/*
+	 * Reserve two descriptors so that the real pipes won't get
+	 * descriptors 0 and 1 because that will screw up dup2 below.
+	 */
 	pipe(reserved);
 
 	/* Create a socket pair for communicating with ssh. */

@@ -212,8 +212,10 @@ static struct {
 	{ NULL, 0 }
 };
 
-/* Returns the number of the token pointed to by cp of length len.
-   Never returns if the token is not known. */
+/*
+ * Returns the number of the token pointed to by cp of length len. Never
+ * returns if the token is not known.
+ */
 
 static ServerOpCodes 
 parse_token(const char *cp, const char *filename,
