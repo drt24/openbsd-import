@@ -290,8 +290,6 @@ CcpDecodeConfig(u_char *cp, int plen, int mode_type)
   rejp = RejBuff;
 
   while (plen >= sizeof(struct fsmconfig)) {
-    if (plen < 0)
-      break;
     type = *cp;
     length = cp[1];
     if (type < NCFTYPES)
