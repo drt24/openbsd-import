@@ -146,7 +146,7 @@ bootp_print(register const u_char *cp, u_int length,
 			return;
 		}
 	}
-	TCHECK2(bp->bp_sname[0], 1);		/* check first char only */
+	TCHECK2(bp->bp_file[0], 1);		/* check first char only */
 	if (*bp->bp_file) {
 		printf(" file \"");
 		if (fn_print(bp->bp_file, snapend)) {
