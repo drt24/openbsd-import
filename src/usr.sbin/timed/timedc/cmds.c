@@ -1,4 +1,4 @@
-/*	$Id$	*/
+/*	$OpenBSD: cmds.c,v 1.13 2002/03/14 16:44:25 mpech Exp $	*/
 
 /*-
  * Copyright (c) 1985, 1993 The Regents of the University of California.
@@ -570,37 +570,4 @@ tracing(int argc, char *argv[])
 	}
 bail:
 	siginterrupt(SIGINT, 0);
-}
-
-int
-priv_resources()
-{
-	struct sockaddr_in sin;
-
-	sock_raw = socket(AF_INET, SOCK_RAW, IPPROTO_ICMP);
-	if (sock_raw < 0)  {
-		perror("opening raw socket");
-		return (-1);
-	}
-
-	(void) seteuid(getuid());
-	(void) setuid(getuid());
-
-	sock = socket(AF_INET, SOCK_DGRAM, 0);
-	if (sock < 0) {
-		perror("opening socket");
-		(void)close(sock_raw);
-		return (-1);
-	}
-
-	memset(&sin, 0, sizeof sin);
-	sin.sin_family = AF_INET;
-	sin.sin_addr.s_addr = INADDR_ANY;
-	if (bind(sock, (struct sockaddr *)&sin, sizeof(sin)) < 0) {
-		fprintf(stderr, "all reserved ports in use\n");
-		(void)close(sock_raw);
-		return (-1);
-	}
-
-	return (1);
 }
