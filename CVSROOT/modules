@@ -40,3 +40,18 @@ rcsinfo		-i /usr/local/bin/mkmodules CVSROOT rcsinfo
 # Add more modules here 
 #
 sys		src/sys
+#
+alpha		src/sys/arch/alpha
+amiga		src/sys/arch/amiga
+atari		src/sys/arch/atari
+hp300		src/sys/arch/hp300
+i386		src/sys/arch/i386
+mac68k		src/sys/arch/mac68k
+mvme68k		src/sys/arch/mvme68k
+mvme88k		src/sys/arch/mvme88k
+pc532		src/sys/arch/pc532
+pica		src/sys/arch/pica
+pmax		src/sys/arch/pmax
+sparc		src/sys/arch/sparc
+sun3		src/sys/arch/sun3
+vax		src/sys/arch/vax
