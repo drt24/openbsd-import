@@ -54,7 +54,6 @@ YOU_LOSE
 #include <sys/ioctl.h>
 
 #include <termios.h>
-#define USING_TERMIOS
 
 #include <stdlib.h>
 #include <string.h>

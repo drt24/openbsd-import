@@ -49,10 +49,8 @@ typedef struct
   int use_rsh;			/* Always use rsh (don\'t try ssh). */
   int batch_mode;		/* Batch mode: do not ask for passwords. */
   int strict_host_key_checking;	/* Strict host key checking. */
-#ifdef WITH_ZLIB
   int compression;		/* Compress packets in both directions. */
   int compression_level;	/* Compression level 1 (fast) to 9 (best). */
-#endif /* WITH_ZLIB */
   int keepalives;		/* Set SO_KEEPALIVE. */
 
   int port;			/* Port to connect. */
