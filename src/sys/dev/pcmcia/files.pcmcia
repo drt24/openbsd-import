@@ -19,3 +19,8 @@ attach pcmcia at pcmciabus
 
 file	dev/pcmcia/pcmcia.c		pcmcia	needs-flag
 file	dev/pcmcia/pcmcia_conf.c	pcmcia
+
+# 3Com 3c589 Ethernet controllers
+# device declaration in sys/conf/files
+attach	ep at pcmcia with ep_pcmcia
+file	dev/pcmcia/if_ep_pcmcia.c	ep_pcmcia
