@@ -26,7 +26,7 @@
 #define LOCAL_LABELS_FB
 #define WORKING_DOT_WORD
 
-#ifdef __NetBSD__
+#if defined(__NetBSD__) || defined(__OpenBSD__)
 #define AOUT_MACHTYPE	138
 #endif
 

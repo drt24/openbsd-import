@@ -48,7 +48,7 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #include "parser-defs.h"
 #include "m2-lang.h"
 
-#ifndef __NetBSD__
+#if !defined (__NetBSD__) && !defined (__OpenBSD__)
 /* Remap normal yacc parser interface names (yyparse, yylex, yyerror, etc),
    as well as gratuitiously global symbol names, so we can have multiple
    yacc generated parsers in gdb.  Note that these are only the variables
@@ -85,7 +85,7 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #define	yylloc	m2_lloc
 #define	yyreds	m2_reds		/* With YYDEBUG defined */
 #define	yytoks	m2_toks		/* With YYDEBUG defined */
-#endif /* __NetBSD__ */
+#endif /* __NetBSD__ || __OpenBSD__ */
 
 #ifndef YYDEBUG
 #define	YYDEBUG	0		/* Default to no yydebug support */
