@@ -667,7 +667,7 @@ arpadate(clock)
 
 
 #ifdef HAVE_SAVED_UIDS
-static int save_euid;
+static uid_t save_euid;
 int swap_uids() { save_euid = geteuid(); return seteuid(getuid()); }
 int swap_uids_back() { return seteuid(save_euid); }
 #else /*HAVE_SAVED_UIDS*/

@@ -104,7 +104,7 @@ static char *restricted_environ[] = {
 
 int	unit;
 int	speed;
-int	uid;
+uid_t	uid;
 char	loginargs[BUFSIZ];
 char	loginfile[MAXPATHLEN];
 char	loginname[BUFSIZ];
