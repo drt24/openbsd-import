@@ -8,7 +8,7 @@ VND_DEV=	/dev/${VND}c
 VND_RDEV=	/dev/r${VND}c
 IMAGE=		kc${REV}.fs
 PID!=		echo $$$$
-REALIMAGE!=	echo /tmp/image.${PID}
+REALIMAGE!=	echo /var/tmp/image.${PID}
 MDEC=		${DESTDIR}/usr/mdec
 
 LISTS=		${.CURDIR}/list

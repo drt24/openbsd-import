@@ -10,7 +10,7 @@ VND?=		vnd0
 VND_DEV=	/dev/${VND}c
 VND_RDEV=	/dev/r${VND}c
 PID!=		echo $$$$
-REALIMAGE!=	echo /tmp/image.${PID}
+REALIMAGE!=	echo /var/tmp/image.${PID}
 IMAGE?=		inst${REV}.fs
 MDEC=		${DESTDIR}/usr/mdec
 
