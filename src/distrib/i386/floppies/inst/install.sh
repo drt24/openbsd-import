@@ -162,6 +162,23 @@ echo	"geometry.  This should either be in the User's Manual for your disk,"
 echo	"or you should have written down what NetBSD printed when booting."
 echo	"(Note that he geometry that's printed at boot time is preferred.)"
 echo	""
+echo    "You may choose to view the initial boot messages for your system"
+echo    "again right now if you like."
+echo -n "View the boot messages again? [n] "
+getresp "n"
+case "$resp" in
+	y*|Y*)
+		more /kern/msgbuf
+		;;
+	*)
+		echo	""
+		;;
+esac
+
+echo	""
+echo	"You will now enter the disk geometry information"
+echo	""
+
 echo -n	"Number of bytes per disk sector? [512] "
 getresp 512
 bytes_per_sect="$resp"

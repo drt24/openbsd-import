@@ -47,6 +47,9 @@ if [ "X${DONEPROFILE}" = "X" ]; then
 	# run update, so that installed software is written as it goes.
 	update
 
+	# mount the kern_fs so that we can examine the dmesg state
+	mount -t kernfs /kern /kern
+
 	# pull in the functions that people will use from the shell prompt.
 	. /.commonutils
 	. /.instutils

@@ -29,10 +29,6 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 /* Shared library code */
 #include "solib.h"
 
-/* We can't yet read %fs and %gs. */
-#undef NUM_REGS
-#define NUM_REGS 14
-
 /* We define our own fetch and store methods. */
 #define FETCH_INFERIOR_REGISTERS
 

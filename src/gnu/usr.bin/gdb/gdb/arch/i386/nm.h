@@ -37,10 +37,4 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
    to get the offset in the core file of the register values.  */
 #define	KERNEL_U_ADDR	USRSTACK
 
-#define	REGISTER_U_ADDR(addr, blockend, regno)				\
-{									\
-  extern int tregmap[];							\
-  addr = blockend + 4 * tregmap[regno];					\
-}
-
 #endif /* NM_I386BSD_H */
