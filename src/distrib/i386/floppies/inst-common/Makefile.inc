@@ -52,6 +52,9 @@ ${CBIN}.mk ${CBIN}.cache ${CBIN}.c: ${CRUNCHCONF}
 ${CBIN}: ${CBIN}.mk ${CBIN}.cache ${CBIN}.c
 	make -f ${CBIN}.mk all
 
+install:
+	cp ${IMAGE} ${DESTDIR}/snapshot/
+
 clean cleandir:
 	/bin/rm -f *.core ${IMAGE} ${CBIN} ${CBIN}.mk \
 		${CBIN}.cache *.o *.lo *.c
