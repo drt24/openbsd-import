@@ -11,7 +11,7 @@ includes:
 	@echo installing ${FILES}
 	@-for i in ${FILES}; do \
 		cmp -s $$i ${DESTDIR}/usr/include/kerberosIV/$$i || \
-		    install -c -m 444 $$i ${DESTDIR}/usr/include/kerberosIV/$$i; \
+		    ${INSTALL} ${INSTALL_COPY} -m 444 $$i ${DESTDIR}/usr/include/kerberosIV/$$i; \
 	done
 
 .include <bsd.prog.mk>
