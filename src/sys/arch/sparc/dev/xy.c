@@ -1038,9 +1038,6 @@ xystrategy(bp)
 
 	xyc_start(xy->parent, NULL);
 
-	/* Instrumentation. */
-	disk_busy(&xy->sc_dk);
-
 	/* done! */
 
 	splx(s);
@@ -1298,6 +1295,9 @@ xyc_startbuf(xycsc, xysc, bp)
 	    bp->b_bcount / XYFM_BPS, dbuf, bp);
 
 	xyc_rqtopb(iorq, iopb, (bp->b_flags & B_READ) ? XYCMD_RD : XYCMD_WR, 0);
+
+	/* Instrumentation. */
+	disk_busy(&xysc->sc_dk);
 
 	return (XY_ERR_AOK);
 }
@@ -1810,10 +1810,10 @@ xyc_remove_iorq(xycsc)
 			dvma_mapout((vm_offset_t) iorq->dbufbase,
 				    (vm_offset_t) bp->b_un.b_addr,
 				    bp->b_bcount);
-			iorq->mode = XY_SUB_FREE;
 			iorq->xy->xyq.b_actf = bp->b_actf;
 			disk_unbusy(&iorq->xy->sc_dk,
 			    (bp->b_bcount - bp->b_resid));
+			iorq->mode = XY_SUB_FREE;
 			biodone(bp);
 			break;
 		case XY_SUB_WAIT:
