@@ -1,3 +1,4 @@
+/*	$OpenBSD: SYS.h,v 1.6 1999/06/15 02:12:13 rahnds Exp $	*/
 /*-
  * Copyright (c) 1994
  *	Andrew Cagney.  All rights reserved.
@@ -34,7 +35,6 @@
  * SUCH DAMAGE.
  *
  *	from: @(#)SYS.h	8.1 (Berkeley) 6/4/93
- *      $Id$ 
  */
 
 #include <sys/syscall.h>
