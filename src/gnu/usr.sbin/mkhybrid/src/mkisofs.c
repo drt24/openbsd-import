@@ -57,7 +57,7 @@ static char rcsid[] ="$Id$";
 
 #include "exclude.h"
 
-#ifdef __NetBSD__
+#if defined(__NetBSD__) || defined(__OpenBSD__) 
 #include <sys/time.h>
 #include <sys/resource.h>
 #endif
@@ -1129,7 +1129,7 @@ int FDECL2(main, int, argc, char **, argv){
 
 parse_input_files:
 
-#ifdef __NetBSD__
+#if defined(__NetBSD__) || defined(__OpenBSD__) 
     {
 	int resource;
     struct rlimit rlp;
