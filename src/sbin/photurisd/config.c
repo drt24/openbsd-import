@@ -1,5 +1,5 @@
 /*
- * Copyright 1997,1998 Niels Provos <provos@physnet.uni-hamburg.de>
+ * Copyright 1997-2000 Niels Provos <provos@citi.umich.edu>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -466,6 +466,8 @@ init_moduli(int primes)
      struct moduli_cache *tmp;
      char *p, *p2;
      BIGNUM *m, *g, *a;
+
+     mod_init();
 
      open_config_file(NULL);
  

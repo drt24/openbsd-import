@@ -1,5 +1,5 @@
 /*
- * Copyright 1997 Niels Provos <provos@physnet.uni-hamburg.de>
+ * Copyright 1997-2000 Niels Provos <provos@citi.umich.edu>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -45,9 +45,10 @@ static char rcsid[] = "$Id$";
 #include <sys/socket.h> 
 #include <netinet/in.h> 
 #include <arpa/inet.h> 
+#include <ssl/bn.h>
+
 #include "config.h"
 #include "state.h"
-#include "gmp.h"
 #include "exchange.h"
 #include "modulus.h"
 #include "attributes.h"

@@ -1,5 +1,5 @@
 /*
- * Copyright 1997 Niels Provos <provos@physnet.uni-hamburg.de>
+ * Copyright 1997-2000 Niels Provos <provos@citi.umich.edu>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -35,16 +35,7 @@
 
 #ifndef _MODULUS_H_
 #define _MODULUS_H_
-
-#undef EXTERN
-
-#ifdef _MODULUS_C_
-#define EXTERN
-#else
-#define EXTERN extern
-#endif
-
-#include "gmp.h"
+#include <sys/queue.h>
 
 /* Possible values for the status field */
 
@@ -60,7 +51,8 @@
 #define MOD_TIMEOUT    120
 
 struct moduli_cache {
-     struct moduli_cache *next;		/* Link to next member */
+     TAILQ_ENTRY(moduli_cache) next;	/* Link to next member */
+
      BIGNUM *modulus;			/* Modulus for computation */
      BIGNUM *generator;			/* Used generator */
      BIGNUM *private_value;		/* Our own private value */
@@ -72,6 +64,8 @@ struct moduli_cache {
 };
 
 /* Prototypes */
+void mod_init(void);
+
 int mod_insert(struct moduli_cache *ob);
 int mod_unlink(struct moduli_cache *ob);
 
