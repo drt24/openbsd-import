@@ -2,8 +2,10 @@
 #	$Id$
 
 PROG=	pwd_mkdb
-SRCS=	pw_scan.c pwd_mkdb.c getpwent.c
+SRCS=	pwd_mkdb.c getpwent.c
 MAN=	pwd_mkdb.8
+LDADD+=	-lutil
+DPADD+=	${LIBUTIL}
 
 .PATH:	${.CURDIR}/../../lib/libc/gen
 

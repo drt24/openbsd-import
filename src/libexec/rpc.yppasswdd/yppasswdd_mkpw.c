@@ -64,8 +64,7 @@ make_passwd(argp)
 		return (1);
 
 	pw_init();
-	pfd = pw_lock();
-	tfd = pw_tmp();
+	tfd = pw_lock(0);
 
 	/*
 	 * Get the new password.  Reset passwd change time to zero; when

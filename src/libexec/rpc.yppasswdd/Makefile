@@ -11,9 +11,8 @@ BINDIR=/usr/sbin
 MLINKS= rpc.yppasswdd.8 yppasswdd.8
 .PATH:	${.CURDIR}/../../usr.sbin/vipw ${.CURDIR}/../../usr.bin/chpass \
 	${.CURDIR/../../ypserv
-#DPADD+= ${LIBCRYPT}
-#LDADD+= -lcrypt
-CFLAGS+=-I${.CURDIR}/../../usr.sbin/ypserv -I${.CURDIR}/../../usr.sbin/vipw \
-	-I${.CURDIR}/../../usr.bin/chpass
+DPADD+= ${LIBUTIL}
+LDADD+= -lutil
+CFLAGS+=-I${.CURDIR}/../../usr.sbin/vipw -I${.CURDIR}/../../usr.bin/chpass
 
 .include <bsd.prog.mk>

@@ -43,8 +43,7 @@ static char *rcsid = "$Id$";
 #include <stdlib.h>
 #include <utmp.h>
 #include <stdio.h>
-
-void login __P((struct utmp *));
+#include <util.h>
 
 void
 login(ut)
