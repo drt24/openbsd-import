@@ -1,5 +1,7 @@
 #	$Id$
 
+.include <bsd.obj.mk>
+
 PROG=	kadmin
 SRCS=	kadmin.c kadmin_cmds.c maketime.c
 .PATH:	${.CURDIR}/../kdb_edit
