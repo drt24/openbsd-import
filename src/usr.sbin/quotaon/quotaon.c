@@ -57,7 +57,7 @@ static char *rcsid = "$Id$";
 #include <fstab.h>
 
 char *qfname = QUOTAFILENAME;
-char *qfextension[] = INITQFNAMES;
+char *qfextension[] = INITQFNAMES
 
 int	aflag;		/* all file systems */
 int	gflag;		/* operate on group quotas */

@@ -67,7 +67,7 @@ static char *rcsid = "$Id$";
 #include "pathnames.h"
 
 char *qfname = QUOTAFILENAME;
-char *qfextension[] = INITQFNAMES;
+char *qfextension[] = INITQFNAMES
 char *quotagroup = QUOTAGROUP;
 char tmpfil[] = _PATH_TMPFILE;
 

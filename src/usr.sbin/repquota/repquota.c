@@ -60,7 +60,7 @@ static char *rcsid = "$Id$";
 #include <errno.h>
 
 char *qfname = QUOTAFILENAME;
-char *qfextension[] = INITQFNAMES;
+char *qfextension[] = INITQFNAMES
 
 struct fileusage {
 	struct	fileusage *fu_next;
