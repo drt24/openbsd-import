@@ -1660,7 +1660,7 @@ are compiled in.
 
 @item MALLOC_INCOMPATIBLE
 Define this if the system's prototype for @code{malloc} differs from the
-@sc{ANSI} definition.
+ANSI definition.
 
 @item MMAP_BASE_ADDRESS
 When using HAVE_MMAP, the first mapping should go at this address.
