@@ -1,4 +1,4 @@
-/*	$OpenBSD: tcpdump.c,v 1.35 2004/01/28 19:44:55 canacar Exp $	*/
+/*	$OpenBSD: tcpdump.c,v 1.36 2004/04/28 02:17:03 mcbride Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -122,6 +122,7 @@ static struct printer printers[] = {
 	{ pflog_if_print, 	DLT_PFLOG },
 	{ pflog_old_if_print, 	DLT_OLD_PFLOG },
 	{ pfsync_if_print, 	DLT_PFSYNC },
+	{ ppp_ether_if_print,	DLT_PPP_ETHER },
 	{ NULL,			0 },
 };
 
