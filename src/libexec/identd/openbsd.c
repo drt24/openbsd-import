@@ -40,7 +40,7 @@ k_getuid(faddr, fport, laddr, lport, uid)
 	int     fport;
 	struct in_addr *laddr;
 	int     lport;
-	int    *uid;
+	uid_t	*uid;
 {
 	struct tcp_ident_mapping tir;
 	struct sockaddr_in *fin, *lin;
