@@ -168,8 +168,8 @@ char hostname[MAXHOSTNAMELEN];	/* System host name */
 struct in_addr my_ip_addr;
 
 /* Flags set by signal catcher. */
-PRIVATE int do_readtab = 0;
-PRIVATE int do_dumptab = 0;
+PRIVATE volatile sig_atomic_t do_readtab = 0;
+PRIVATE volatile sig_atomic_t do_dumptab = 0;
 
 /*
  * Globals below are associated with the bootp database file (bootptab).
