@@ -636,7 +636,7 @@ out:
 		 * Finish off the expansion
 		 */
 		if (BUFSPACE(ep, strlen(cp))) {
-			strlcpy(ep, cp, envbuf + sizeof expbuf - ep);
+			strlcpy(ep, cp, expbuf + sizeof expbuf - ep);
 		} else {
 			plog(XLOG_ERROR, expand_error, *p->opt);
 		}
