@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: networkdelta.c,v 1.3 2001/04/07 20:00:16 ho Exp $	*/
 
 /*-
  * Copyright (c) 1985, 1993 The Regents of the University of California.
@@ -252,7 +252,7 @@ median(float a,				/* initial guess for the median */
 		else
 			a = (xm+a)/2;
 
-	} else 	if (npts != 0) {	/* odd number of points */
+	} else	if (npts != 0) {	/* odd number of points */
 		if (npts > 0)
 			a = xp;
 		else
