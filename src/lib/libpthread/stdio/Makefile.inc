@@ -7,7 +7,7 @@
 
 SRCS+=	clrerr.c fclose.c fdopen.c feof.c ferror.c fflush.c fgetc.c \
 	fgetline.c fgetpos.c fgets.c fileno.c findfp.c flags.c fopen.c \
-	fprintf.c fpurge.c fputc.c fputs.c fread.c freopen.c fscanf.c \
+	fpurge.c fputc.c fputs.c fread.c freopen.c fscanf.c \
 	fseek.c fsetpos.c ftell.c funopen.c fvwrite.c fwalk.c fwrite.c \
 	getc.c getchar.c gets.c getw.c makebuf.c perror.c putc.c \
 	putchar.c puts.c putw.c refill.c remove.c rewind.c rget.c scanf.c \
