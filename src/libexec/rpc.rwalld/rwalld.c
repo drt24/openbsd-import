@@ -73,10 +73,14 @@ main(argc, argv)
 
 	if (geteuid() == 0) {
 		struct passwd *pep = getpwnam("nobody");
-		if (pep)
+		if (pep) {
+			seteuid(pep->pw_uid);
 			setuid(pep->pw_uid);
-		else
+		}
+		else {
+			seteuid(getuid());
 			setuid(getuid());
+		}
 	}
 
 	/*

@@ -450,13 +450,19 @@ int main(argc,argv)
       ERROR("main: listen");
   }
   
-  if (set_gid)
+  if (set_gid) {
+    if (setegid(set_gid) == -1)
+      ERROR("main: setgid");
     if (setgid(set_gid) == -1)
       ERROR("main: setgid");
+  }
   
-  if (set_uid)
+  if (set_uid) {
+    if (seteuid(set_uid) == -1)
+      ERROR("main: setuid");
     if (setuid(set_uid) == -1)
       ERROR("main: setuid");
+  }
 
   /*
   ** Do some special handling if the "-b" or "-w" flags are used

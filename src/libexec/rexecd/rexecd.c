@@ -229,8 +229,10 @@ doit(f, fromp)
 	if (f > 2)
 		(void) close(f);
 	setlogin(pwd->pw_name);
+	(void) setegid((gid_t)pwd->pw_gid);
 	(void) setgid((gid_t)pwd->pw_gid);
 	initgroups(pwd->pw_name, pwd->pw_gid);
+	(void) seteuid((uid_t)pwd->pw_uid);
 	(void) setuid((uid_t)pwd->pw_uid);
 	(void)strcat(path, _PATH_DEFPATH);
 	environ = envinit;

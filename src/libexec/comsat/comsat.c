@@ -245,8 +245,10 @@ jkfprintf(tp, name, offset)
 	char line[BUFSIZ];
 
 	/* Set effective uid to user in case mail drop is on nfs */
-	if ((p = getpwnam(name)) != NULL)
+	if ((p = getpwnam(name)) != NULL) {
+		(void) seteuid(p->pw_uid);
 		(void) setuid(p->pw_uid);
+	}
 
 	if ((fi = fopen(name, "r")) == NULL)
 		return;

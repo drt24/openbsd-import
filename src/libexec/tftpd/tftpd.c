@@ -145,7 +145,9 @@ main(argc, argv)
 		exit(1);
 	}
 
+	(void) setegid(pw->pw_gid);
 	(void) setgid(pw->pw_gid);
+	(void) seteuid(pw->pw_uid);
 	(void) setuid(pw->pw_uid);
 
 	if (ioctl(fd, FIONBIO, &on) < 0) {

@@ -195,9 +195,13 @@ run_file(filename, uid)
 		if (initgroups(pentry->pw_name, pentry->pw_gid) < 0)
 			perr("Cannot init group list");
 
+		if (setegid(pentry->pw_gid) < 0)
+			perr("Cannot change primary group");
 		if (setgid(pentry->pw_gid) < 0)
 			perr("Cannot change primary group");
 
+		if (seteuid(uid) < 0)
+			perr("Cannot set user id");
 		if (setuid(uid) < 0)
 			perr("Cannot set user id");
 
