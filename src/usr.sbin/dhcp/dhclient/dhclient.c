@@ -181,7 +181,7 @@ int main (argc, argv, envp)
 	read_client_conf ();
 
 	/* Lock the leases file */
-	fd = open (path_dhclient_db, O_RDONLY | O_EXLOCK, 0);
+	fd = open (path_dhclient_db, O_RDONLY | O_EXLOCK | O_CREAT, 0);
 	if (fd < 0)
 		error ("can't open and lock %s: %m", path_dhclient_db);
 
@@ -509,7 +509,7 @@ void bind_lease (ip)
 	ip -> client -> new -> medium = ip -> client -> medium;
 
 	/* Lock the leases file */
-	fd = open (path_dhclient_db, O_RDONLY | O_EXLOCK, 0);
+	fd = open (path_dhclient_db, O_RDONLY | O_EXLOCK | O_CREAT, 0);
 	if (fd < 0)
 		error ("can't open and lock %s: %m", path_dhclient_db);
 
