@@ -70,9 +70,6 @@ SUBDIR+=	sysdep/common/libsysdep
 # Kludge around bug in /usr/share/mk/bsd.subdir.mk
 NO_REGRESS=	defined
 
-obj:
-	mkdir obj
-
 beforedepend:
 	rm -f ssl
 .if exists(/usr/pkg/include/openssl/rsa.h)
