@@ -24,7 +24,7 @@ void initialize_server_options(ServerOptions *options)
 {
   memset(options, 0, sizeof(*options));
   options->port = -1;
-  options->listen_addr.s_addr = INADDR_ANY;
+  options->listen_addr.s_addr = htonl(INADDR_ANY);
   options->host_key_file = NULL;
   options->random_seed_file = NULL;
   options->server_key_bits = -1;
