@@ -128,6 +128,8 @@ rsa_public_encrypt(BIGNUM *out, BIGNUM *in, RSA* key)
 
   BN_bin2bn(outbuf, len, out);
 
+  memset(outbuf, 0, len);
+  memset(inbuf, 0, len);
   xfree(outbuf);
   xfree(inbuf);
 }
@@ -151,6 +153,8 @@ rsa_private_decrypt(BIGNUM *out, BIGNUM *in, RSA *key)
 
   BN_bin2bn(outbuf, len, out);
 
+  memset(outbuf, 0, len);
+  memset(inbuf, 0, len);
   xfree(outbuf);
   xfree(inbuf);
 }
