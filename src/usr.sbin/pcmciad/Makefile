@@ -8,7 +8,7 @@ PROG=	pcmciad
 MAN=	pcmciad.8
 
 pcmcia_conf.o: pcmcia_conf.c
-	$(CC) $(CFLAGS) -D_KERNEL -c $<
+	${COMPILE.c} -D_KERNEL $<
 clean::
 	rm -f a.out [Ee]rrs mklog core *.core pcmciad pcmcia_conf.o pcmciad.o
 
