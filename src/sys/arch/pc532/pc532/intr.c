@@ -196,6 +196,10 @@ softnet()
 #if NPPP > 0
 	if (isr & (1 << NETISR_PPP)) pppintr();
 #endif
+#include "bridge.h"
+#if NBRIDGE > 0
+	if (isr & (1 << NETISR_BRIDGE)) bridgeintr();
+#endif
 }
 
 /*

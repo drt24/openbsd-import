@@ -1,4 +1,4 @@
-/*	$OpenBSD: trap.c,v 1.2 1997/07/23 06:58:33 denny Exp $	*/
+/*	$OpenBSD: trap.c,v 1.3 1999/01/08 00:03:00 deraadt Exp $	*/
 /*
  * Copyright (c) 1988 University of Utah.
  * Copyright (c) 1992, 1993
@@ -1039,6 +1039,13 @@ interrupt(statusReg, causeReg, pc, what, args)
 		if(netisr & (1 << NETISR_PPP)) {
 			netisr &= ~(1 << NETISR_PPP);
 			pppintr();
+		}
+#endif
+#include "bridge.h"
+#if NBRIDGE > 0
+		if(netisr & (1 << NETISR_BRIDGE)) {
+			netisr &= ~(1 << NETISR_BRIDGE);
+			bridgeintr();
 		}
 #endif
 	}
