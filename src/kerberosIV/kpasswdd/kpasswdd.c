@@ -114,7 +114,7 @@ main()
 		(struct sockaddr_in *) 0,	/* local addr */
 		&kdata,				/* returned krb data */
 		"",				/* service keys file */
-		(bit_64 *) NULL,		/* returned key schedule */
+		(struct des_ks_struct *) NULL,	/* returned key schedule */
 		version
 	);
 
