@@ -25,7 +25,7 @@ SUBDIR+=amd
 SUBDIR+=apm apmd bad144 config.old dbsym eeprom grfconfig grfinfo \
 	hilinfo iteconfig pcmciad screenblank
 .elif ${MACHINE} == "amiga" 
-SUBDIR+=grfconfig iteconfig videomode
+SUBDIR+=grfconfig iteconfig screenblank videomode
 .elif ${MACHINE} == "atari"
 SUBDIR+=iteconfig
 .elif ${MACHINE} == "hp300"
