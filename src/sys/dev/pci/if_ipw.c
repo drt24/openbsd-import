@@ -1876,7 +1876,6 @@ int
 ipw_init(struct ifnet *ifp)
 {
 	struct ipw_softc *sc = ifp->if_softc;
-	struct ieee80211com *ic = &sc->sc_ic;
 
 	/* exit immediately if firmware has not been ioctl'd */
 	if (!(sc->flags & IPW_FLAG_FW_INITED)) {
@@ -1894,8 +1893,6 @@ ipw_init(struct ifnet *ifp)
 
 	ifp->if_flags &= ~IFF_OACTIVE;
 	ifp->if_flags |= IFF_RUNNING;
-
-	ic->ic_bss->ni_chan = ic->ic_channels;
 
 	return 0;
 
