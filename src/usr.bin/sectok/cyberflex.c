@@ -38,7 +38,6 @@ such damages.
 #include <signal.h>
 #include <string.h>
 #include <fcntl.h>
-#include <openssl/des.h>
 #include <des.h>
 #ifdef __linux
 #include <sha.h>
