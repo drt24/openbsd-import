@@ -137,7 +137,7 @@ main(int argc, char **argv)
 	}
 
 	buffer = mmap(0, ftsent->fts_statp->st_size, PROT_READ, MAP_PRIVATE, fp, 0);
-	if (((int) buffer) <= 0)
+	if (((long) buffer) <= 0)
 	{
 	    err("mmap failed, errno = %d", errno);
 	    exit(1);
