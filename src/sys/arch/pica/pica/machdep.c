@@ -806,7 +806,7 @@ sys_sigreturn(p, v, retval)
 	void *v;
 	register_t *retval;
 {
-	struct sigreturn_args /* {
+	struct sys_sigreturn_args /* {
 		syscallarg(struct sigcontext *) sigcntxp;
 	} */ *uap = v;
 	register struct sigcontext *scp;
