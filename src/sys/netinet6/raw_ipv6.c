@@ -155,8 +155,8 @@ ripv6_init()
 	 * to allocate a one entry hash list than it is to check all
 	 * over the place for hashbase == NULL.
 	 */
-	ri6pcbinfo.hashbase = hashinit(1, M_PCB, &ri6pcbinfo.hashmask);
-	ri6pcbinfo.porthashbase = hashinit(1, M_PCB, &ri6pcbinfo.porthashmask);
+	ri6pcbinfo.hashbase = hashinit(1, M_PCB, M_WAITOK, &ri6pcbinfo.hashmask);
+	ri6pcbinfo.porthashbase = hashinit(1, M_PCB, M_WAITOK, &ri6pcbinfo.porthashmask);
 	ri6pcbinfo.ipi_zone = zinit("ri6pcb", sizeof(struct inpcb),
 				   nmbclusters / 4, ZONE_INTERRUPT, 0);
 #else /* __FreeBSD__ */
