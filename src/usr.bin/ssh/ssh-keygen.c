@@ -337,7 +337,7 @@ main(int ac, char **av)
       error("Could not create directory '%s'.", buf);
 
   /* Parse command line arguments. */
-  while ((opt = getopt(ac, av, "pcb:f:P:N:C:")) != EOF)
+  while ((opt = getopt(ac, av, "qpcb:f:P:N:C:")) != EOF)
     {
       switch (opt)
 	{
