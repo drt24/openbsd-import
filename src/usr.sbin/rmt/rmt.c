@@ -1,4 +1,4 @@
-/*	$OpenBSD: rmt.c,v 1.10 2002/11/08 05:07:34 millert Exp $	*/
+/*	$OpenBSD: rmt.c,v 1.11 2003/06/02 23:36:54 millert Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -50,6 +50,7 @@ static char rcsid[] = "$Id$";
 #include <sys/file.h>
 #include <sys/stat.h>
 #include <sys/mtio.h>
+#include <sys/param.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <errno.h>
@@ -61,7 +62,7 @@ char	*record;
 int	maxrecsize = -1;
 
 #define	STRSIZE	64
-char	device[STRSIZE];
+char	device[MAXPATHLEN];
 char	count[STRSIZE], mode[STRSIZE], pos[STRSIZE], op[STRSIZE];
 
 char	resp[BUFSIZ];
