@@ -51,7 +51,6 @@ static char rcsid[] = "$Id$";
 #include "validity.h"
 #include "attributes.h"
 #include "secrets.h"
-#include "schedule.h"
 #include "scheme.h"
 #include "log.h"
 #include "spi.h"
@@ -188,7 +187,7 @@ handle_spi_needed(u_char *packet, int size, char *address,
 	make_session_keys(st, spi);
 
 	spi_insert(spi);
-	schedule_insert(UPDATE, st->olifetime/2, spi->SPI, SPI_SIZE);
+	spi_update_insert(spi);
 #ifdef IPSEC
 	kernel_insert_spi(st, spi);
 #endif

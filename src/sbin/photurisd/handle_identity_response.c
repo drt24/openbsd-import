@@ -245,7 +245,7 @@ handle_identity_response(u_char *packet, int size, char *address,
 #ifdef IPSEC
 	     kernel_insert_spi(st, spi);
 #endif
-	     schedule_insert(UPDATE, st->olifetime/2, spi->SPI, SPI_SIZE);
+	     spi_update_insert(spi);
 	}
 	if (st->uSPI[0] || st->uSPI[1] || st->uSPI[2] || st->uSPI[3]) {
 	     /* Insert User SPI */

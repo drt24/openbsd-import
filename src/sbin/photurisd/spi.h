@@ -48,9 +48,10 @@
 
 #define SPI_LIFETIME   1800            /* 30 minutes default lifetime */
 
-#define SPI_OWNER      1
-#define SPI_NOTIFY     2
-#define SPI_ESP	       8	       /* Is used for ESP */
+#define SPI_OWNER	0x0001
+#define SPI_NOTIFY	0x0002
+#define SPI_UPDATED	0x0004
+#define SPI_ESP		0x0008	       /* Is used for ESP */
 
 struct spiob {
      TAILQ_ENTRY(spiob) next;          /* Linked list */
@@ -81,5 +82,7 @@ EXTERN struct spiob *spi_find_attrib(char *address,
 				     u_int8_t *attrib, u_int16_t attribsize);
 EXTERN struct spiob *spi_find(char *, u_int8_t *);
 EXTERN void spi_expire(void);
+EXTERN void spi_update(int, u_int8_t *);
+EXTERN void spi_update_insert(struct spiob *);
 
 #endif /* _SPI_H */
