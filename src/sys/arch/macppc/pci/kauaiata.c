@@ -1,4 +1,4 @@
-/*	$OpenBSD: kauaiata.c,v 1.2 2003/06/05 18:29:06 grange Exp $ */
+/*	$OpenBSD$ */
 
 /*
  * Copyright (c) 2003 Dale Rahn
