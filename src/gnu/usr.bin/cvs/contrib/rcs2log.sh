@@ -300,8 +300,11 @@ case $# in
 	esac
 esac
 
-llogout=$TMPDIR/rcs2log$$l
-rlogout=$TMPDIR/rcs2log$$r
+llogout=`mktemp $TMPDIR/rcs2log_l.XXXXXXXXXX` || exit 1
+rlogout=`mktemp $TMPDIR/rcs2log_r.XXXXXXXXXX` || {
+	rm -f $llogout
+	exit 1
+}
 trap exit 1 2 13 15
 trap "rm -f $llogout $rlogout; exit 1" 0
 
