@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: sched.c,v 1.10 2003/10/30 16:04:06 millert Exp $	*/
 
 /*
  * Copyright (c) 1990 Jan-Simon Pendry
@@ -224,7 +224,8 @@ sigchld(int sig)
 		}
 
 #ifdef DEBUG
-		if (p) ; else dlog("can't locate task block for pid %ld", (long)pid);
+		if (p == NULL)
+			dlog("can't locate task block for pid %ld", (long)pid);
 #endif /* DEBUG */
 	}
 
