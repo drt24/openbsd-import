@@ -2,9 +2,9 @@
 # $Id$
 
 BINDIR=		$(bindir)
-BINOWN=		$(owner)
-BINGRP=		dialer
-BINMODE=	4554
+#BINOWN=	$(owner)
+#BINGRP=	dialer
+#BINMODE=	4554
 
 PROG=		cu
 SRCS=		cu.c prot.c log.c chat.c conn.c copy.c
