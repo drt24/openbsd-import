@@ -1,4 +1,4 @@
-/*	$OpenBSD: machdep.c,v 1.1.1.1 1996/06/24 09:07:21 pefo Exp $	*/
+/*	$OpenBSD: machdep.c,v 1.2 1996/07/16 07:46:12 pefo Exp $	*/
 /*
  * Copyright (c) 1988 University of Utah.
  * Copyright (c) 1992, 1993
@@ -618,6 +618,13 @@ cpu_startup()
 	/*
 	 * Configure the system.
 	 */
+	if (boothowto & RB_CONFIG) {
+#ifdef BOOT_CONFIG
+		user_config();
+#else
+		printf("kernel does not support -c; continuing..\n");
+#endif
+	}
 	configure();
 }
 
