@@ -220,7 +220,7 @@ main(int argc, char **argv)
                             (start[1] ? start + 1 : argv[++arg]);
                         start = DoneWord;
                         break;
-    
+
                     case 'v':
                         verbose = REC_VERBOSE;
                         break;
@@ -238,7 +238,7 @@ main(int argc, char **argv)
                         }
                         start = DoneWord;
                         break;
-    
+
                     default:
                         usage();
                 }
@@ -472,6 +472,6 @@ main(int argc, char **argv)
     }
 
     close(fd);
-    
+
     return 0;
 }
