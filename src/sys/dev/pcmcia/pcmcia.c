@@ -44,6 +44,10 @@
 #include <dev/pcmcia/pcmciabus.h>
 #include <dev/pcmcia/pcmcia_ioctl.h>
 
+#include "ed.h"
+#include "com.h"
+#include "ep.h"
+
 #ifdef IBM_WD
 #define PCMCIA_DEBUG
 #endif
@@ -70,24 +74,24 @@ static int      ndeldevs = 0;
     build up the knowndevs struct.  Stefan may have ideas...
 */
 
-#ifdef PCMCIA_ED
+#if NED > 0
 extern struct pcmciadevs pcmcia_ed_devs[];
 #endif
-#ifdef PCMCIA_COM
+#if NCOM > 0
 extern struct pcmciadevs pcmcia_com_devs[];
 #endif
-#ifdef PCMCIA_EP
+#if NEP > 0
 extern struct pcmciadevs pcmcia_ep_devs[];
 #endif
 
 static struct pcmciadevs *knowndevs[] = {
-#ifdef PCMCIA_ED
+#if NED > 0
 	pcmcia_ed_devs,
 #endif
-#ifdef PCMCIA_COM
+#if NCOM > 0
 	pcmcia_com_devs,
 #endif
-#ifdef PCMCIA_EP
+#if NEP > 0
 	pcmcia_ep_devs,
 #endif
 	NULL
