@@ -1710,3 +1710,13 @@ bundle_Exception(struct bundle *bundle, int fd)
 
   return 0;
 }
+
+void
+bundle_AdjustFilters(struct bundle *bundle, struct in_addr *my_ip,
+                     struct in_addr *peer_ip)
+{
+  filter_AdjustAddr(&bundle->filter.in, my_ip, peer_ip);
+  filter_AdjustAddr(&bundle->filter.out, my_ip, peer_ip);
+  filter_AdjustAddr(&bundle->filter.dial, my_ip, peer_ip);
+  filter_AdjustAddr(&bundle->filter.alive, my_ip, peer_ip);
+}

@@ -1312,6 +1312,7 @@ SetInterfaceAddr(struct cmdargs const *arg)
     ipcp->cfg.my_range.width = 0;
   }
   ipcp->my_ip.s_addr = ipcp->cfg.my_range.ipaddr.s_addr;
+  bundle_AdjustFilters(arg->bundle, &ipcp->my_ip, NULL);
 
   if (hisaddr && !ipcp_UseHisaddr(arg->bundle, hisaddr,
                                   arg->bundle->phys_type.all & PHYS_AUTO))
