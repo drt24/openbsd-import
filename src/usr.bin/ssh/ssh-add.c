@@ -110,21 +110,8 @@ add_file(const char *filename)
       /* Ask for a passphrase. */
       if (getenv("DISPLAY") && !isatty(fileno(stdin)))
 	{
-	  snprintf(buf, sizeof buf,
-	    "ssh-askpass '%sEnter passphrase for %.100s'", 
-		  first ? "" : "You entered wrong passphrase.  ", 
-		  saved_comment);
-	  f = popen(buf, "r");
-	  if (!fgets(buf, sizeof(buf), f))
-	    {
-	      pclose(f);
 	      xfree(saved_comment);
 	      return;
-	    }
-	  pclose(f);
-	  if (strchr(buf, '\n'))
-	    *strchr(buf, '\n') = 0;
-	  pass = xstrdup(buf);
 	}
       else
 	{
