@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: afssysdefs.h,v 1.3 1997/12/12 11:46:32 art Exp $	*/
 /*
  * Copyright (c) 1995, 1996, 1997 Kungliga Tekniska Högskolan
  * (Royal Institute of Technology, Stockholm, Sweden).
@@ -80,7 +80,7 @@
 #define AFS_SYSCALL	31
 #endif
 
-#if defined(__NetBSD__)
+#if defined(__NetBSD__) || defined (__OpenBSD__)
 #define AFS_SYSCALL 210
 #endif
 
