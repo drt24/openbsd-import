@@ -715,7 +715,7 @@ physical_IsSet(struct descriptor *d, const fd_set *fdset)
 void
 physical_Login(struct physical *p, const char *name)
 {
-  if (p->type == PHYS_DIRECT && !p->Utmp) {
+  if (p->type == PHYS_DIRECT && *p->name.base && !p->Utmp) {
     struct utmp ut;
     const char *connstr;
 
