@@ -513,7 +513,7 @@ char *line;
 				ipn.in_flags = IPN_TCP;
 			else if (!strcasecmp(s, "udp"))
 				ipn.in_flags = IPN_UDP;
-			else if (!strcasecmp(s, "tcpudp"))
+			else if (!strcasecmp(s, "tcp/udp"))
 				ipn.in_flags = IPN_TCPUDP;
 			else {
 				fprintf(stderr,
