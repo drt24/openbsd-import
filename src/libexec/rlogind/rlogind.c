@@ -198,6 +198,7 @@ doit(f, fromp)
 	int authenticated = 0;
 	register struct hostent *hp;
 	char hostname[MAXHOSTNAMELEN];
+	int good = 0;
 	char c;
 
 	alarm(60);
@@ -214,29 +215,26 @@ doit(f, fromp)
 	fromp->sin_port = ntohs((u_short)fromp->sin_port);
 	hp = gethostbyaddr((char *)&fromp->sin_addr, sizeof(struct in_addr),
 	    fromp->sin_family);
-	if (hp)
+	if (hp) {
 		strncpy(hostname, hp->h_name, sizeof hostname);
-	else
+		if (check_all) {
+			hp = gethostbyname(hostname);
+			if (hp) {
+				for (; good == 0 && hp->h_addr_list[0] != NULL;
+				    hp->h_addr_list++)
+					if (!bcmp(hp->h_addr_list[0],
+					    (caddr_t)&fromp->sin_addr,
+					    sizeof(fromp->sin_addr)))
+						good = 1;
+			}
+	
+		} else
+			good = 1;
+	}
+	/* aha, the DNS looks spoofed */
+	if (hp == NULL || good == 0)
 		strncpy(hostname, inet_ntoa(fromp->sin_addr), sizeof hostname);
 
-	if (check_all) {
-		int good = 0;
-
-		hp = gethostbyname(hostname);
-		if (hp) {
-			for (; good == 0 && hp->h_addr_list[0] != NULL;
-			    hp->h_addr_list++)
-				if (!bcmp(hp->h_addr_list[0],
-				    (caddr_t)&fromp->sin_addr,
-				    sizeof(fromp->sin_addr)))
-					good = 1;
-		}
-
-		/* aha, the DNS looks spoofed */
-		if (hp == NULL || good == 0)
-			strncpy(hostname, inet_ntoa(fromp->sin_addr),
-			    sizeof hostname);
-	}
 
 #ifdef	KERBEROS
 	if (use_kerberos) {
