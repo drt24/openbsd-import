@@ -1,4 +1,4 @@
-/*	$OpenBSD: strncasecmp.c,v 1.1 1996/02/29 13:27:50 niklas Exp $	*/
+/*	$OpenBSD: strncasecmp.c,v 1.2 1996/05/01 15:18:52 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1994 Christian E. Hopps
@@ -33,7 +33,7 @@
 static char *rcsid = "$Id$";
 #endif /* LIBC_SCCS and not lint */
 
-#ifndef _KERNEL
+#if !defined(_KERNEL) && !defined(_STANDALONE)
 #include <string.h>
 #else
 #include <lib/libkern/libkern.h>
