@@ -149,7 +149,7 @@ main(argc, argv)
 			qup->dqblk.dqb_itime = 0;
 		}
 		while (argc-- > 0) {
-			if ((id = getentry(*argv++, quotatype)) < 0)
+			if ((id = getentry(*argv++, quotatype)) == -1)
 				continue;
 			putprivs(id, quotatype, protoprivs);
 		}
