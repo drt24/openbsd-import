@@ -1,3 +1,6 @@
+/*	$OpenBSD$ */
+/*	$NetBSD: yppoll.c,v 1.5 1996/05/13 02:46:36 thorpej Exp $	*/
+
 /*
  * Copyright (c) 1992, 1993 Theo de Raadt <deraadt@fsa.ca>
  * Copyright (c) 1992, 1993 John Brezak
