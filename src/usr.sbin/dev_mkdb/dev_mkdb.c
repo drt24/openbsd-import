@@ -76,7 +76,7 @@ main(argc, argv)
 	DBT data, key;
 	int ch;
 	u_char buf[MAXNAMLEN + 1];
-	char dbtmp[MAXPATHLEN + 1], dbname[MAXPATHLEN + 1];
+	char dbtmp[MAXPATHLEN], dbname[MAXPATHLEN];
 
 	while ((ch = getopt(argc, argv, "")) != -1)
 		switch((char)ch) {
