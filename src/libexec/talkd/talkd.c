@@ -1,4 +1,4 @@
-/*	$OpenBSD: talkd.c,v 1.6 1996/07/19 03:09:41 millert Exp $	*/
+/*	$OpenBSD: talkd.c,v 1.8 2001/01/11 19:14:43 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -129,8 +129,10 @@ main(argc, argv)
 void
 timeout()
 {
+	int save_errno = errno;
 
 	if (time(0) - lastmsgtime >= MAXIDLE)
 		_exit(0);
 	alarm(TIMEOUT);
+	errno = save_errno;
 }
