@@ -304,7 +304,8 @@ struct sockaddr_in *sin;
 
 		time(&ll.ll_time);
 		lseek(f, pw->pw_uid * sizeof(struct lastlog), 0);
-		strcpy(line, remotehost);
+		strncpy(line, remotehost, sizeof line-1);
+		line[sizeof line-1] = '\0';
 		SCPYN(ll.ll_line, line);
 		SCPYN(ll.ll_host, remotehost);
 		(void) write(f, (char *) &ll, sizeof ll);
