@@ -292,6 +292,7 @@ struct pcmcia_attach_args {
 struct pcmciabus_attach_args {
 	bus_space_tag_t pba_iot;
 	bus_space_tag_t pba_memt;
+	bus_space_tag_t pba_memh;
 	int	pba_maddr;
 	int	pba_msize;
 	void	*pba_aux;		/* driver specific */
