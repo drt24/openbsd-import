@@ -150,6 +150,11 @@ rpcsvc		gname=bin uname=bin mode=0555
 # ./usr/include/rpcsvc
 ..
 
+# ./usr/include/ss
+ss		gname=bin uname=bin mode=0555
+# ./usr/include/ss
+..
+
 # ./usr/include
 ..
 
