@@ -1293,6 +1293,8 @@ find_and_load (filename)
      extra unnecessary work each time it is called (that is a lot of times).
      The SIZE_OF_INPUT_TEXT is one past the actual end of the text. */
   input_text[size_of_input_text] = '\n';
+  /* Strictly necessary. */
+  input_text[size_of_input_text+1] = '\0';
   return (result);
 }
 
