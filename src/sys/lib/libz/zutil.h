@@ -194,6 +194,7 @@ extern const char *z_errmsg[10]; /* indexed by 2-zlib_error */
 #ifdef DEBUG
    extern int z_verbose;
    extern void z_error    OF((char *m));
+#  define z_error panic
 #  define Assert(cond,msg) {if(!(cond)) z_error(msg);}
 #  define Trace(x) {if (z_verbose>=0) printf x ;}
 #  define Tracev(x) {if (z_verbose>0) printf x ;}
