@@ -38,7 +38,7 @@ static char *rcs_id = "$Id$";
 #include <stdio.h>
 #include <string.h>
 #include <fcntl.h>
-#ifdef __NetBSD__
+#if defined (__NetBSD__) || defined(__OpenBSD__)
 #include <sys/ioctl.h>
 #endif
 #include <sys/scanio.h>
