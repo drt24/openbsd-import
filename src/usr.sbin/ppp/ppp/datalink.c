@@ -811,6 +811,7 @@ datalink_Destroy(struct datalink *dl)
     }
   }
 
+  timer_Stop(&dl->dial_timer);
   result = dl->next;
   modem_Destroy(dl->physical);
   free(dl->name);
