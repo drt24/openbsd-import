@@ -723,7 +723,7 @@ character_width (character, hpos)
   int width = 1;
 
   if (ISO_Latin_p)
-    printable_limit = 160;
+    printable_limit = 255;
 
   if (character > printable_limit)
     width = 3;
