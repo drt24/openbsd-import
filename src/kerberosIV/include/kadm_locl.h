@@ -50,10 +50,10 @@
 
 #include <kerberosIV/des.h>
 #include <kerberosIV/krb.h>
-#include "krb_err.h"
+#include <kerberosIV/krb_err.h>
 #include <kerberosIV/krb_db.h>
 #include <kerberosIV/kadm.h>
-#include "kadm_err.h"
+#include <kerberosIV/kadm_err.h>
 #include "kerberosIV/acl.h"
 
 #include "kadm_server.h"
