@@ -22,7 +22,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 #include "includes.h"
-RCSID("$OpenBSD: auth2-chall.c,v 1.4 2001/03/28 22:43:31 markus Exp $");
+RCSID("$OpenBSD: auth-skey.c,v 1.12 2001/05/18 14:13:28 markus Exp $");
 
 #ifdef SKEY
 
