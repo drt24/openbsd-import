@@ -89,8 +89,10 @@ int auth_krb4(const char *server_user, KTEXT auth, char **client)
     debug("getsockname failed: %.100s", strerror(errno));
   r = sizeof(foreign);
   memset(&foreign, 0, sizeof(foreign));
-  if (getpeername(s, (struct sockaddr *)&foreign, &r) < 0)
+  if (getpeername(s, (struct sockaddr *)&foreign, &r) < 0) {
     debug("getpeername failed: %.100s", strerror(errno));
+    fatal_cleanup();
+  }
   
   instance[0] = '*'; instance[1] = 0;
   

@@ -35,9 +35,8 @@ char *get_remote_hostname(int socket)
   memset(&from, 0, sizeof(from));
   if (getpeername(socket, (struct sockaddr *)&from, &fromlen) < 0)
     {
-      error("getpeername failed: %.100s", strerror(errno));
-      strlcpy(name, "UNKNOWN", sizeof name);
-      goto check_ip_options;
+      debug("getpeername failed: %.100s", strerror(errno));
+      fatal_cleanup();
     }
   
   /* Map the IP address to a host name. */
@@ -184,8 +183,8 @@ const char *get_remote_ipaddr()
   memset(&from, 0, sizeof(from));
   if (getpeername(socket, (struct sockaddr *)&from, &fromlen) < 0)
     {
-      error("getpeername failed: %.100s", strerror(errno));
-      return NULL;
+      debug("getpeername failed: %.100s", strerror(errno));
+      fatal_cleanup();
     }
 
   /* Get the IP address in ascii. */
@@ -207,8 +206,8 @@ int get_peer_port(int sock)
   memset(&from, 0, sizeof(from));
   if (getpeername(sock, (struct sockaddr *)&from, &fromlen) < 0)
     {
-      error("getpeername failed: %.100s", strerror(errno));
-      return 0;
+      debug("getpeername failed: %.100s", strerror(errno));
+      fatal_cleanup();
     }
 
   /* Return port number. */
