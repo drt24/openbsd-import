@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* config.h.  Generated automatically by configure.  */
 /*
  *  CU sudo version 1.5.2
@@ -18,7 +20,7 @@
  *
  *  Please send bugs, changes, problems to sudo-bugs@courtesan.com
  *
- *  $Id$
+ *  Id: config.h,v 1.1 1996/10/14 05:14:44 millert Exp $
  */
 
 /*
