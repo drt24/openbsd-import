@@ -104,11 +104,12 @@ announce_proc(request, remote_machine)
 	char *remote_machine;
 {
 	int pid, status;
-	char full_tty[32];
+	char full_tty[MAXPATHLEN];
 	FILE *tf;
 	struct stat stbuf;
 
-	(void)sprintf(full_tty, "%s/%s", _PATH_DEV, request->r_tty);
+	(void)snprintf(full_tty, sizeof full_tty, "%s/%s", _PATH_DEV,
+	    request->r_tty);
 	if (access(full_tty, 0) != 0)
 		return (FAILED);
 	if ((tf = fopen(full_tty, "w")) == NULL)
