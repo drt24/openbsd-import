@@ -526,8 +526,8 @@ bundle_UpdateSet(struct descriptor *d, fd_set *r, fd_set *w, fd_set *e, int *n)
         else if (bundle->autoload.timer.state != TIMER_RUNNING ||
                  bundle->autoload.comingup)
           bundle_StartAutoLoadTimer(bundle, 0);
-      } else if (bundle->autoload.timer.state != TIMER_RUNNING ||
-                 !bundle->autoload.comingup)
+      } else if (queued && (bundle->autoload.timer.state != TIMER_RUNNING ||
+                            !bundle->autoload.comingup))
         bundle_StartAutoLoadTimer(bundle, 1);
     }
 
