@@ -388,15 +388,27 @@ register long flags;
 		SET(oflag, OXTABS);
 	else
 		CLR(oflag, OXTABS);
+	if (ISSET(flags, LCASE))
+		SET(iflag, IUCLC);
+		SET(oflag, OLCUC);
+		SET(lflag, XCASE);
+	}
+	else {
+		CLR(iflag, IUCLC);
+		CLR(oflag, OLCUC);
+		CLR(lflag, XCASE);
+	}
 
 
 	if (ISSET(flags, RAW)) {
 		iflag &= IXOFF;
-		CLR(lflag, ISIG|ICANON|IEXTEN);
+		CLR(lflag, ISIG|ICANON|IEXTEN|XCASE);
 		CLR(cflag, PARENB);
 	} else {
 		SET(iflag, BRKINT|IXON|IMAXBEL);
 		SET(lflag, ISIG|IEXTEN);
+		if (ISSET(iflag, IUCLC) && ISSET(oflag, OLCUC))
+			SET(lflag, XCASE);
 		if (ISSET(flags, CBREAK))
 			CLR(lflag, ICANON);
 		else
