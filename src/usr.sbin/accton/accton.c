@@ -43,6 +43,7 @@ static char *rcsid = "$Id$";
 #endif /* not lint */
 
 #include <stdio.h>
+#include <unistd.h>
 
 int
 main(argc, argv)
