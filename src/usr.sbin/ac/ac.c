@@ -513,7 +513,8 @@ ac(fp)
 		}
 	}
 	(void)fclose(fp);
-	usr.ut_time = time((time_t *)0);
+	if (!(Flags & AC_W))
+		usr.ut_time = time((time_t *)0);
 	(void)strcpy(usr.ut_line, "~");
 	
 	if (Flags & AC_D) {
