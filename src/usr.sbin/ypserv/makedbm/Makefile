@@ -4,8 +4,7 @@
 PROG=	makedbm
 SRCS=	makedbm.c ypdb.c
 MAN=	makedbm.8
-BINDIR=	/usr/sbin
-.PATH:	${.CURDIR}/../../usr.sbin/ypserv
-CFLAGS+=-I${.CURDIR}/../../usr.sbin/ypserv
+.PATH:	${.CURDIR}/../common
+CFLAGS+=-I${.CURDIR}/../common
 
 .include <bsd.prog.mk>

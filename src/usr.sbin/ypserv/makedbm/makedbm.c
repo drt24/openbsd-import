@@ -37,6 +37,7 @@ static char rcsid[] = "$Id$";
 #include <sys/stat.h>
 #include <unistd.h>
 #include <strings.h>
+#include <sys/errno.h>
 #include "ypdb.h"
 #include "ypdef.h"
 
@@ -109,7 +110,7 @@ add_record(db, str1, str2, check)
 	}
 	
 	if (status != 0) {
-		printf("makedbm: problem storing %s %s\n",str1,str2);
+		printf("%s: problem storing %s %s\n",ProgramName,str1,str2);
 		exit(1);
 	}
 }
@@ -127,7 +128,7 @@ file_date(filename)
 	} else {
 		status = stat(filename, &finfo);
 		if (status < 0) {
-			fprintf(stderr, "makedbm: can't stat %s\n", filename);
+			fprintf(stderr, "%s: can't stat %s\n", ProgramName, filename);
 			exit(1);
 		}	
 		sprintf(datestr, "%010d", finfo.st_mtime);
@@ -146,7 +147,7 @@ list_database(database)
 	db = ypdb_open(database, O_RDONLY, 0444);
 	
 	if (db == NULL) {
-		fprintf(stderr, "makedbm: can't open database %s\n", database);
+		fprintf(stderr, "%s: can't open database %s\n", ProgramName, database);
 		exit(1);
 	}
 	
@@ -191,6 +192,11 @@ create_database(infile,database,
 		data_file = stdin;
 	} else {
 		data_file = fopen(infile, "r");
+		if (errno != 0) {
+			(void)fprintf(stderr,"%s: ",ProgramName);
+			perror(infile);
+			exit(1);
+		}
 	}
 	
 	j = 0;
