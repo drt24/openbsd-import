@@ -253,15 +253,15 @@ auth_rsa(struct passwd *pw, BIGNUM *client_n)
 		}
 		/* cp now points to the comment part. */
 
+		/* Check if the we have found the desired key (identified by its modulus). */
+		if (BN_cmp(n, client_n) != 0)
+			continue;
+
 		/* check the real bits  */
 		if (bits != BN_num_bits(n))
 			log("Warning: %s, line %ld: keysize mismatch: "
 			    "actual %d vs. announced %d.",
 			    file, linenum, BN_num_bits(n), bits);
-
-		/* Check if the we have found the desired key (identified by its modulus). */
-		if (BN_cmp(n, client_n) != 0)
-			continue;
 
 		/* We have found the desired key. */
 
