@@ -40,8 +40,10 @@ struct chap {
   } child;
   struct authinfo auth;
   u_char challenge[CHAPCHALLENGELEN + AUTHLEN];
+#ifdef HAVE_DES
   unsigned NTRespSent : 1;		/* Our last response */
   int peertries;
+#endif
 };
 
 #define descriptor2chap(d) \
