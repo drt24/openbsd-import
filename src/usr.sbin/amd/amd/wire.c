@@ -136,12 +136,15 @@ char *getwire()
 	 */
 	for (cp = buf; cp < cplim; cp += size(ifr)) {
 		addrlist *al;
+		struct sockaddr_in sintmp;
 		ifr = (struct ifreq *) cp;
 
 		if (ifr->ifr_addr.sa_family != AF_INET)
 			continue;
 		else
 			address = ((struct sockaddr_in *) &ifr->ifr_addr)->sin_addr.s_addr;
+
+		sintmp.sin_addr.s_addr = address;
 
 		/*
 		 * Get interface flags
@@ -161,6 +164,7 @@ char *getwire()
 		/*
 		 * Get the netmask of this interface
 		 */
+		memcpy(&ifr->ifr_addr, &sintmp, sizeof(sintmp));
 		if (ioctl(sk, SIOCGIFNETMASK, (caddr_t) ifr) < 0)
 			continue;
 
