@@ -64,8 +64,7 @@ main(int argc, char *argv[])
     }
   }
 
-  strcpy(device, "/dev/");
-  strcat(device, logical_name);
+  snprintf(device, sizeof device, "/dev/%s", logical_device);
 
   if ((sfd = openx(device, O_RDONLY, 0, SC_FORCED_OPEN)) < 0) {
     fprintf(stderr, "openx of %s failed: ", device);
@@ -78,9 +77,9 @@ main(int argc, char *argv[])
   if (fast)
     exit(0);
 
-  sprintf(cmd, "rmdev -l %s", logical_name);
+  snprintf(cmd, sizeof cmd, "rmdev -l %s", logical_name);
   system(cmd);
-  sprintf(cmd, "mkdev -l %s", logical_name);
+  snprintf(cmd, sizeof cmd, "mkdev -l %s", logical_name);
   system(cmd);
 }
 #else

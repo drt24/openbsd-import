@@ -83,8 +83,7 @@ main(int argc, char *argv[])
     exit(1);
   }
 	
-  strcpy(device, "/dev/");
-  strcat(device, logical_name);
+  snprintf(device, sizeof device, "/dev/%s", logical_name);
 
   if ((sfd = open(device, O_RDONLY)) < 0) {
     fprintf(stderr, "open of %s failed: ", device);
