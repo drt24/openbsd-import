@@ -517,5 +517,5 @@ usage(void)
 "\t\t[ -i interface ] [ -r file ] [ -s snaplen ]\n");
 	(void)fprintf(stderr,
 "\t\t[ -T type ] [ -w file ] [ expression ]\n");
-	exit(-1);
+	exit(1);
 }
