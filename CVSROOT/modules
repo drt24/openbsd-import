@@ -85,6 +85,7 @@ include		-a src/include
 kerberosIV	-a src/kerberosIV
 lib		-a src/lib
 libexec		-a src/libexec
+lkm		-a src/lkm
 regress		-a src/regress
 sbin		-a src/sbin
 share		-a src/share
