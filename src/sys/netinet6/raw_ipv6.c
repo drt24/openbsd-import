@@ -1,4 +1,4 @@
-/*	$OpenBSD: raw_ipv6.c,v 1.25 2000/07/13 13:41:45 itojun Exp $	*/
+/*	$OpenBSD: raw_ipv6.c,v 1.26 2000/07/27 04:05:27 itojun Exp $	*/
 
 /*
 %%% copyright-nrl-95
@@ -220,21 +220,6 @@ rip6_input(mp, offp, proto)
 	/* Be proactive about malicious use of IPv4 mapped address */
 	if (IN6_IS_ADDR_V4MAPPED(&ip6->ip6_src) ||
 	    IN6_IS_ADDR_V4MAPPED(&ip6->ip6_dst)) {
-		/* XXX stat */
-		goto ret;
-	}
-
-	/*
-	 * Be proactive about unspecified IPv6 address in source.
-	 * As we use all-zero to indicate unbounded/unconnected pcb,
-	 * unspecified IPv6 address can be used to confuse us.
-	 *
-	 * Note that packets with unspecified IPv6 destination is
-	 * already dropped in ip6_input.
-	 *
-	 * XXX not sure if we want this for raw IPv6 socket...
-	 */
-	if (IN6_IS_ADDR_UNSPECIFIED(&ip6->ip6_src)) {
 		/* XXX stat */
 		goto ret;
 	}
