@@ -44,7 +44,7 @@
 int
 xfs_mount(struct mount * mp,
 	  const char *user_path,
-	  caddr_t user_data,
+	  void *user_data,
 	  struct nameidata * ndp,
 	  struct proc * p);
 
