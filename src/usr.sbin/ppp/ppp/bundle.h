@@ -89,8 +89,13 @@ struct bundle {
   struct fsm_parent fsm;      /* Our callback functions */
   struct datalink *links;     /* Our data links */
 
+  time_t upat;                /* When the link came up */
+
   struct {
-    int idle_timeout;         /* NCP Idle timeout value */
+    struct {
+      int timeout;              /* NCP Idle timeout value */
+      int min_timeout;          /* Don't idle out before this */
+    } idle;
     struct {
       char name[AUTHLEN];     /* PAP/CHAP system name */
       char key[AUTHLEN];      /* PAP/CHAP key */
@@ -155,7 +160,7 @@ extern int bundle_FillQueues(struct bundle *);
 extern int bundle_ShowLinks(struct cmdargs const *);
 extern int bundle_ShowStatus(struct cmdargs const *);
 extern void bundle_StartIdleTimer(struct bundle *);
-extern void bundle_SetIdleTimer(struct bundle *, int);
+extern void bundle_SetIdleTimer(struct bundle *, int, int);
 extern void bundle_StopIdleTimer(struct bundle *);
 extern int bundle_IsDead(struct bundle *);
 extern struct datalink *bundle2datalink(struct bundle *, const char *);
