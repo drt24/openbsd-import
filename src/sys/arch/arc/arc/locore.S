@@ -1,4 +1,4 @@
-/*	$OpenBSD: locore.S,v 1.17 1998/03/25 11:42:08 pefo Exp $	*/
+/*	$OpenBSD: locore.S,v 1.19 1998/10/15 21:29:59 imp Exp $	*/
 /*
  * Copyright (c) 1992, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -69,6 +69,7 @@
 #include <machine/pte.h>
 
 #include "assym.h"
+#include "ksyms.h"
 
 	.set	noreorder
 
@@ -3029,12 +3030,14 @@ LEAF(longjmp)
 	li	v0, 1			# longjmp return
 END(longjmp)
 
+#endif /* DDB */
+#endif /* DDB || DEBUG */
+
+#if defined(DDB) || NKSYMS > 0
 	.data
 	.globl	esym
 esym:	.word	0
-
-#endif /* DDB */
-#endif /* DDB || DEBUGGER */
+#endif
 
 /*
  * Interrupt counters for vmstat.
