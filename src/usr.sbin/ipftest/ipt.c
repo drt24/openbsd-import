@@ -62,7 +62,7 @@ char *argv[];
 	struct	frentry	*f;
 	struct	ip	*ip;
 	u_long	buf[64];
-	char	c;
+	int	c;
 	char	*rules = NULL, *datain = NULL, *iface = NULL;
 	int	fd, i, dir = 0;
 
