@@ -208,7 +208,7 @@ repquota(struct fstab *fs, int type, char *qfpathname)
 		fup->fu_dqblk = dqbuf;
 	}
 	fclose(qf);
-	printf("                        Block limits               File limits\n");
+	printf("                        KByte limits               File limits\n");
 	printf("User            used    soft    hard  grace    used  soft  hard  grace\n");
 	for (id = 0; id <= highid[type]; id++) {
 		fup = lookup(id, type);
