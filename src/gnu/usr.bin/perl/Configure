@@ -86,10 +86,11 @@ PATH=.$p_$PATH
 export PATH
 
 : Sanity checks
-if test ! -t 0; then
-	echo "Say 'sh $me', not 'sh <$me'"
-	exit 1
-fi
+# WRONG: This makes it impossible to compile perl non-interactively
+#if test ! -t 0; then
+#	echo "Say 'sh $me', not 'sh <$me'"
+#	exit 1
+#fi
 
 : On HP-UX, large Configure scripts may exercise a bug in /bin/sh
 if test -f /hp-ux -a -f /bin/ksh; then
