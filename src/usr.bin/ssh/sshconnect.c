@@ -925,7 +925,7 @@ void ssh_exchange_identification()
     enable_compat13();
     if (options.forward_agent && strcmp(remote_version, SSH_VERSION) != 0) {
       log("Agent forwarding disabled, remote version '%s' is not compatible.",
-	    SSH_VERSION);
+	    remote_version);
       options.forward_agent = 0;
     }
   }
