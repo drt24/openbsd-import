@@ -32,7 +32,7 @@ CFLAGS+=-DNOALIAS
 .if !defined(RELEASE_CRUNCH)
 SRCS+=	alias_cmd.c
 .if (${OPSYS} == "OpenBSD")
-CFLAGS+=-I../libalias
+CFLAGS+=-I${.CURDIR}/../libalias
 LDADD+=	../libalias/libalias.a
 DPADD+= ../libalias/libalias.a
 .else
