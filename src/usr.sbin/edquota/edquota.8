@@ -45,11 +45,11 @@
 .Nm edquota
 .Op Fl u
 .Op Fl p Ar proto-username
-.Ar username ...
+.Ar username | uid ...
 .Nm edquota
 .Fl g
 .Op Fl p Ar proto-groupname
-.Ar groupname ...
+.Ar groupname | gid ...
 .Nm edquota
 .Fl t
 .Op Fl u
@@ -63,6 +63,9 @@ By default, or if the
 .Fl u
 flag is specified,
 one or more users may be specified on the command line.
+If a numeric id is given instead of a name that uid/gid
+will be used even if there is not a corresponding id in
+the passwd or group files.
 For each user a temporary file is created
 with an ASCII representation of the current
 disk quotas for that user.
