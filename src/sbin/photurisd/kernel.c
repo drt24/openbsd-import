@@ -1354,7 +1354,7 @@ kernel_insert_spi(struct stateob *st, struct spiob *SPI)
 	       if (kernel_enable_spi(SPI->isrc, SPI->ismask,
 				     SPI->idst, SPI->idmask,
 				     SPI->address, spi, proto, 
-				     /* ENABLE_FLAG_REPLACE|*/ SADB_SAFLAGS_X_LOCALFLOW |
+				     SADB_SAFLAGS_X_REPLACEFLOW | SADB_SAFLAGS_X_LOCALFLOW |
 				     (vpn_mode ? /*ENABLE_FLAG_MODIFY*/ : 0)) == -1)
 		    log_error(0, "kernel_enable_spi() in kernel_insert_spi()");
 	  } else {
