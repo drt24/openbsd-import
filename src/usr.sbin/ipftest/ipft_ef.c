@@ -1,4 +1,4 @@
-/*    $OpenBSD: ipft_ef.c,v 1.9 1998/09/15 10:05:50 pattonme Exp $     */
+/* $OpenBSD$ */
 /*
  * Copyright (C) 1993-1998 by Darren Reed.
  *
@@ -45,11 +45,7 @@ etherfind -n -t
 #include <netinet/ip_icmp.h>
 #include <net/if.h>
 #include <netdb.h>
-#if defined(__OpenBSD__)
-# include <netinet/ip_fil_compat.h>
-#else
-# include <netinet/ip_compat.h>
-#endif
+#include <netinet/ip_fil_compat.h>
 #include <netinet/tcpip.h>
 #include "ipf.h"
 #include "ipt.h"

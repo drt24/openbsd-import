@@ -1,4 +1,4 @@
-/*    $OpenBSD: ipft_pc.c,v 1.11 1998/09/15 10:05:50 pattonme Exp $     */
+/* $OpenBSD$ */
 /*
  * Copyright (C) 1993-1998 by Darren Reed.
  *
@@ -27,15 +27,11 @@
 #include <netinet/ip.h>
 #include <netinet/tcp.h>
 #include <net/if.h>
-#if defined(__OpenBSD__)
-# include <netinet/ip_fil_compat.h>
-#else
-# include <netinet/ip_compat.h>
-#endif
+#include <netinet/ip_fil_compat.h>
 #include <netinet/tcpip.h>
 #include "ipf.h"
-#include "ipt.h"
 #include "pcap.h"
+#include "ipt.h"
 
 #if !defined(lint)
 static const char rcsid[] = "@(#)$Id$";

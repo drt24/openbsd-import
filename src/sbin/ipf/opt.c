@@ -1,4 +1,4 @@
-/*     $OpenBSD: opt.c,v 1.9 1998/09/15 09:55:44 pattonme Exp $      */
+/* $OpenBSD$ */
 /*
  * Copyright (C) 1993-1998 by Darren Reed.
  *
@@ -21,11 +21,7 @@
 #include <netinet/tcp.h>
 #include <net/if.h>
 #include <arpa/inet.h>
-#if defined(__OpenBSD__)
-# include <netinet/ip_fil_compat.h>
-#else
-# include <netinet/ip_compat.h>
-#endif
+#include <netinet/ip_fil_compat.h>
 #include <netinet/tcpip.h>
 #include <netinet/ip_fil.h>
 #include "ipf.h"

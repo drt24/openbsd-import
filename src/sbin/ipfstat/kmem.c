@@ -1,4 +1,4 @@
-/*    $OpenBSD: kmem.c,v 1.10 1999/02/05 05:58:43 deraadt Exp $    */
+/* $OpenBSD$ */
 /*
  * Copyright (C) 1993-1998 by Darren Reed.
  *
@@ -68,5 +68,40 @@ register int	n;
 			buf += r;
 			n -= r;
 		    }
+	return 0;
+}
+
+int	kstrncpy(buf, pos, n)
+register char	*buf;
+long	pos;
+register int	n;
+{
+	register int	r;
+
+	if (!n)
+		return 0;
+	if (kmemfd == -1)
+		if (openkmem(nlistf, memf) == -1)
+			return -1;
+	if (lseek(kmemfd, pos, 0) == -1)
+	    {
+		perror("kmemcpy:lseek");
+		return -1;
+	    }
+	while (n > 0) {
+		r = read(kmemfd, buf, 1);
+		if (r <= 0)
+		    {
+			perror("kmemcpy:read");
+			return -1;
+		    }
+		else
+		    {
+			if (*buf == '\0')
+				break;
+			buf++;
+			n--;
+		    }
+	}
 	return 0;
 }

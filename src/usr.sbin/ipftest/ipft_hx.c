@@ -1,4 +1,4 @@
-/*    $OpenBSD: ipft_hx.c,v 1.7 1998/09/15 10:05:50 pattonme Exp $     */
+/* $OpenBSD$ */
 /*
  * Copyright (C) 1995-1998 by Darren Reed.
  *
@@ -36,11 +36,7 @@
 #include <netdb.h>
 #include <arpa/nameser.h>
 #include <resolv.h>
-#if defined(__OpenBSD__)
-# include <netinet/ip_fil_compat.h>
-#else
-# include <netinet/ip_compat.h>
-#endif
+#include <netinet/ip_fil_compat.h>
 #include <netinet/tcpip.h>
 #include "ipf.h"
 #include "ipt.h"
