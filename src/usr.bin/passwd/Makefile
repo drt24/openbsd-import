@@ -11,6 +11,8 @@ DPADD+= ${LIBRPCSVC}
 LDADD+= -lrpcsvc
 CFLAGS+=-I${.CURDIR} -I${.CURDIR}/../../usr.sbin/vipw -DYP
 
+.include <bsd.own.mk>	# For Kerberos
+
 .if defined(KERBEROS5)
 SRCS+= krb5_passwd.c
 CFLAGS+= -DKERBEROS5
