@@ -121,7 +121,7 @@ static const char *cftypes128[] = {
   "SECNBNS",	/* 132: Secondary NBNS Server Address */
 };
 
-#define NCFTYPES128 (sizeof(cftypes)/sizeof(char *))
+#define NCFTYPES128 (sizeof(cftypes128)/sizeof(char *))
 
 struct pppThroughput throughput;
 
