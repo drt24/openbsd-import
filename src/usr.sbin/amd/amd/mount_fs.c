@@ -256,8 +256,7 @@ char *opt;
 	char *f;
 	char *o = t;
 	int l = strlen(opt);
-	strncpy(t, mnt->mnt_opts, MNTMAXSTR - 1);
-	t[MNTMAXSTR - 1] = 0;
+	strlcpy(t, mnt->mnt_opts, sizeof(t));
 
 	while (*(f = nextmntopt(&o)))
 		if (strncmp(opt, f, l) == 0)

@@ -653,7 +653,8 @@ char *domain;
 #ifdef DEBUG
 				dlog("hs_get_ns_list: Saving name %s", name);
 #endif
-				strncpy(nsname[numns], name, MAXDATA);
+				strlcpy(nsname[numns], name,
+				    sizeof(nsname[numns]));
 				nshaveaddr[numns] = 0;
 				numns++;
 			}

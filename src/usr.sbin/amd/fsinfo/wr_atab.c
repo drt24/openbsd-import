@@ -177,12 +177,17 @@ int sk;
 				char sublink[1024];
 				sublink[0] = '\0';
 				if (exp_namelen < namelen) {
-					strcat(sublink, mp->m_name + exp_namelen + 1);
+					strlcat(sublink,
+					    mp->m_name + exp_namelen + 1,
+					    sizeof(sublink));
 					if (mvolnlen < volnlen)
-						strcat(sublink, "/");
+						strlcat(sublink, "/",
+						    sizeof(sublink));
 				}
 				if (mvolnlen < volnlen)
-					strcat(sublink, ap->a_volname + mvolnlen + 1);
+					strlcat(sublink,
+					    ap->a_volname + mvolnlen + 1,
+					    sizeof(sublink));
 
 				fprintf(af, ";sublink:=%s", sublink);
 			}

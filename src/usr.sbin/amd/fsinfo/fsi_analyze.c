@@ -122,10 +122,10 @@ char *hn;
 		d = strrchr(p, '.');
 		if (d) {
 			*d = 0;
-			strcat(path, d+1);
-			strcat(path, "/");
+			strlcat(path, d+1, sizeof(path));
+			strlcat(path, "/", sizeof(path));
 		} else {
-			strcat(path, p);
+			strlcat(path, p, sizeof(path));
 		}
 	} while (d);
 

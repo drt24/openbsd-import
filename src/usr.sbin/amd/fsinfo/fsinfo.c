@@ -107,7 +107,7 @@ char *v[];
 		dumpset_pref = optarg;
 		break;
 	case 'h':
-		strncpy(hostname, optarg, sizeof(hostname)-1);
+		strlcpy(hostname, optarg, sizeof(hostname));
 		break;
 	case 'e':
 		if (exportfs_pref)

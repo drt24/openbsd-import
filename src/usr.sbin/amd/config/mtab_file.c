@@ -282,7 +282,7 @@ mntlist *mp;
 		plog(XLOG_WARNING, "No '/' in mtab (%s), using \".\" as tmp directory", mtab);
 		tmpname[0] = '.'; tmpname[1] = '\0';
 	}
-	strcat(tmpname, "/mtabXXXXXX");
+	strlcat(tmpname, "/mtabXXXXXX", sizeof(tmpname));
 	mktemp(tmpname);
 	retries = 0;
 enfile1:

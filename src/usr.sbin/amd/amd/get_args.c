@@ -271,8 +271,8 @@ char *v[];
 			hostdomain = sub_domain;
 		if (*hostdomain == '.')
 			hostdomain++;
-		strcat(hostd,  ".");
-		strcat(hostd, hostdomain);
+		strlcat(hostd,  ".", 2 * MAXHOSTNAMELEN);
+		strlcat(hostd, hostdomain, 2 * MAXHOSTNAMELEN);
 
 #ifdef UPDATE_MTAB
 #ifdef DEBUG

@@ -125,11 +125,11 @@ time_t *tp;
 		do {
 			q = strrchr(p, '/');
 			if (q) {
-				strcat(rhost, q + 1);
-				strcat(rhost, ".");
+				strlcat(rhost, q + 1, sizeof(rhost));
+				strlcat(rhost, ".", sizeof(rhost));
 				*q = '\0';
 			} else {
-				strcat(rhost, p);
+				strlcat(rhost, p, sizeof(rhost));
 			}
 		} while (q);
 		/*
