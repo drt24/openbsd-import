@@ -502,7 +502,8 @@ pcmcia_get_cisver1(pc_link, data, len, manu, model, add_inf1, add_inf2)
 			u_char         *pp = p + 2;
 			maj = *pp++;
 			min = *pp++;
-			if (maj != 4 || min != 1) {
+			if ((maj != 4 || min != 1) &&
+			    (maj != 5 || min != 0)) {
 				printf("wrong version id %d.%d for card in slot %d\n",
 				       maj, min, pc_link->slot);
 				return ENODEV;
