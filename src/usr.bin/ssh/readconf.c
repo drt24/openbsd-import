@@ -697,7 +697,7 @@ void
 fill_default_options(Options * options)
 {
 	if (options->forward_agent == -1)
-		options->forward_agent = 1;
+		options->forward_agent = 0;
 	if (options->forward_x11 == -1)
 		options->forward_x11 = 0;
 	if (options->gateway_ports == -1)
