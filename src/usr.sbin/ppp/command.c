@@ -353,7 +353,7 @@ static struct cmdtab const Commands[] = {
   {"close", NULL, CloseCommand, LOCAL_AUTH,
   "Close connection", "close"},
   {"delete", NULL, DeleteCommand, LOCAL_AUTH,
-  "delete route", "delete ALL | dest [gateway [mask]]"},
+  "delete route", "delete dest"},
   {"deny", NULL, DenyCommand, LOCAL_AUTH,
   "Deny option request", "deny option .."},
   {"dial", "call", DialCommand, LOCAL_AUTH,
