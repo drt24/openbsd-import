@@ -171,6 +171,9 @@ todos_get_atr(int ttyn, int flags, unsigned char *atr, struct scparam *param)
     int hiproto = 0;
 
     if (flags & SCRFORCE) {
+	/* drain and ignore any atr bytes returned by the card */
+	while (scgetc(ttyn, atr, BYTETIME) == SCEOK)
+	    ;
 	len = sizeof dummyatr;
 	memcpy(atr, dummyatr, len);
 	param->t = 0;
