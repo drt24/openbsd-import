@@ -40,6 +40,9 @@
  *
  */
 
+#include <sys/types.h>
+#include <syslog.h>
+
 #include "am.h"
 #include "amq.h"
 extern bool_t xdr_amq_mount_info_qelem();
@@ -56,6 +59,17 @@ amq_program_1(struct svc_req *rqstp, SVCXPRT *transp)
 	char *result;
 	bool_t (*xdr_argument)(), (*xdr_result)();
 	char *(*local)();
+	extern SVCXPRT *lamqp;
+
+	if (transp != lamqp) {
+		struct sockaddr_in *fromsin = svc_getcaller(transp);
+
+		syslog(LOG_WARNING,
+		    "non-local amq attempt (might be from %s)",
+		    inet_ntoa(fromsin->sin_addr));
+		svcerr_noproc(transp);
+		return;
+	}
 
 	switch (rqstp->rq_proc) {
 	case AMQPROC_NULL:
