@@ -137,21 +137,21 @@ cpu_fork(struct proc *p1, struct proc *p2)
 }
 
 void
-cpu_set_kpc(struct proc *p, void (*func)(struct proc *))
+cpu_set_kpc(struct proc *p, void (*func)(void *), void *arg)
 {
 	/*
 	 * override func pointer in ksigframe with func.
 	 */
 
 	struct ksigframe {
-		void (*func)(struct proc *);
-		void *proc;
+		void (*func)(void *);
+		void *arg;
 	} *ksfp;
 
 	ksfp = (struct ksigframe *)p->p_addr->u_pcb.kernel_state.pcb_sp;
 
 	ksfp->func = func;
-
+	ksfp->arg = arg;
 }
 
 /*
