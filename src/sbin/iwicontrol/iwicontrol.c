@@ -85,20 +85,16 @@ main(int argc, char **argv)
 		iface = "iwi0";
 	else if (argc > 1 && argv[1][0] != '-') {
 		iface = argv[1];
-		optind++;
+		memcpy(&argv[1], &argv[2], argc * sizeof(char *));
+		argc--;
 	}
 
 	while ((ch = getopt(argc, argv, "d:i:km:r")) != -1) {
-		if (ch != 'i')
-			noflag = 0;
+		noflag = 0;
 
 		switch (ch) {
 		case 'd':
 			path = optarg;
-			break;
-
-		case 'i':
-			iface = optarg;
 			break;
 
 		case 'k':
@@ -145,7 +141,7 @@ usage(void)
 	extern char *__progname;
 
 	fprintf(stderr,
-	    "usage: %s [interface] [-i interface] [-d path] [-kr]\n",
+	    "usage: %s [interface] [-d path] [-kr]\n",
 	    __progname);
 
 	exit(EX_USAGE);
