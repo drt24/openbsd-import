@@ -19,5 +19,3 @@ char	*strdelim(char **s);
 
 /* set filedescriptor to non-blocking */
 void	set_nonblock(int fd);
-
-struct passwd * pwcopy(struct passwd *pw);

@@ -1,4 +1,4 @@
-/*      $OpenBSD: sshconnect.h,v 1.5 2001/01/29 01:58:18 niklas Exp $   */
+/*      $OpenBSD: mac.h,v 1.1 2001/02/11 12:59:24 markus Exp $   */
 /*
  * Copyright (c) 2001 Markus Friedl.  All rights reserved.
  *

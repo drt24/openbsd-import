@@ -26,10 +26,7 @@
 
 /* Client side of SSH2 filexfer protocol */
 
-/* 
- * Initialiase a SSH filexfer connection. Returns -1 on error or 
- * protocol version on success.
- */
+/* Initialiase a SSH filexfer connection */
 int do_init(int fd_in, int fd_out);
 
 /* Close file referred to by 'handle' */
@@ -69,12 +66,6 @@ char *do_realpath(int fd_in, int fd_out, char *path);
 
 /* Rename 'oldpath' to 'newpath' */
 int do_rename(int fd_in, int fd_out, char *oldpath, char *newpath);
-
-/* Rename 'oldpath' to 'newpath' */
-int do_symlink(int fd_in, int fd_out, char *oldpath, char *newpath);
-
-/* Return target of symlink 'path' - caller must free result */
-char *do_readlink(int fd_in, int fd_out, char *path);
 
 /* XXX: add callbacks to do_download/do_upload so we can do progress meter */
 
