@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 PROG=	ac
 MAN=	ac.8

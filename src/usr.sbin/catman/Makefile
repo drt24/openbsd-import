@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 BINDIR=		/usr/sbin
 PROG=		catman

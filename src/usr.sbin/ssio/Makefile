@@ -1,3 +1,5 @@
+#	$OpenBSD$
+
 #  PINT Makefile for utilities
 #  $Id$
 #

@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 PROG=	cron
 SRCS=	cron.c database.c user.c entry.c job.c do_command.c \

@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 .include <bsd.own.mk>
 

@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 PROG=	vnconfig
 MAN=	vnconfig.8

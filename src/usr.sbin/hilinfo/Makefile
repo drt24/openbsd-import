@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 PROG=	hilinfo
 NOMAN=

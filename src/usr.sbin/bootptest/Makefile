@@ -1,5 +1,4 @@
-# bootptest/Makefile
-# $Id$
+#	$OpenBSD$
 
 PROG=	bootptest
 SRCDIR= ${.CURDIR}/../bootpd

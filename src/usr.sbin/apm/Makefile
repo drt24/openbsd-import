@@ -1,4 +1,4 @@
-# $Id$
+#	$OpenBSD$
 
 SRCS=	apm.c apmsubr.c
 

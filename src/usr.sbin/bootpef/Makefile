@@ -1,5 +1,4 @@
-# bootpef/Makefile
-# $Id$
+#	$OpenBSD$
 
 PROG=	bootpef
 SRCDIR= ${.CURDIR}/../bootpd

@@ -1,5 +1,4 @@
-# bootpd/Makefile
-# $Id$
+#	$OpenBSD$
 
 PROG=	bootpd
 CFLAGS+= -DETC_ETHERS -DSYSLOG -DDEBUG -DVEND_CMU

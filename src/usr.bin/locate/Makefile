@@ -1,7 +1,4 @@
-#	$OpenBSD$
-#
-#	@(#)Makefile	8.1 (Berkeley) 6/6/93
-#	$Id$
+#	$OpenBSD: Makefile,v 1.4 1996/09/15 16:50:33 michaels Exp $
 
 SUBDIR=	bigram code locate
 

@@ -1,5 +1,4 @@
-#	from: @(#)Makefile	5.5 (Berkeley) 6/29/90
-#	$Id$
+#	$OpenBSD$
 
 PROG=	inetd
 MAN=	inetd.8

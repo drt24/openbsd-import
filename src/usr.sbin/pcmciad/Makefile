@@ -1,4 +1,4 @@
-# $Id$
+#	$OpenBSD$
 
 SRCS=	pcmciad.c pcmcia_conf.c
 .PATH:  ${.CURDIR}/../../sys/dev/pcmcia

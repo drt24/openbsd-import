@@ -1,5 +1,4 @@
-#	from: @(#)Makefile	5.1 (Berkeley) 5/11/90
-#	$Id$
+#	$OpenBSD$
 
 PROG=	sliplogin
 MAN=	sliplogin.8

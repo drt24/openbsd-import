@@ -1,4 +1,4 @@
-# @(#) $Id$
+#	$OpenBSD$
 
 PROG=	rarpd
 SRCS=	rarpd.c arptab.c

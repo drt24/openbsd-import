@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 PROG=dbsym
 MAN=dbsym.8

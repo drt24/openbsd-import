@@ -1,5 +1,4 @@
-#	from: @(#)Makefile	5.4 (Berkeley) 5/11/90
-#	$Id$
+#	$OpenBSD$
 
 PROG=	rmt
 MAN=	rmt.8
