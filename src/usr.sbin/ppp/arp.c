@@ -29,14 +29,10 @@
 #include <sys/time.h>
 #include <sys/socket.h>
 #include <net/if.h>
-#ifdef __FreeBSD__
-#include <net/if_var.h>
-#endif
 #include <net/route.h>
 #include <net/if_dl.h>
 #include <netinet/in.h>
 #include <net/if_types.h>
-#include <netinet/in_var.h>
 #include <netinet/if_ether.h>
 
 #include <fcntl.h>
