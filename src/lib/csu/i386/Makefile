@@ -1,7 +1,7 @@
 #	from: @(#)Makefile	5.5 (Berkeley) 5/21/91
 #	$Id$
 
-CFLAGS+=	-DLIBC_SCCS -I${.CURDIR}/..
+CFLAGS+=	-fno-omit-frame-pointer -DLIBC_SCCS -I${.CURDIR}/..
 OBJS=		crt0.o gcrt0.o scrt0.o
 SRCS=		crt0.c
 
