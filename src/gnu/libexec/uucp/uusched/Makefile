@@ -13,7 +13,7 @@ uusched:	uusched.in
 		$(.CURDIR)/uusched.in > $(.TARGET)
 
 install:
-	install ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
+	install ${INSTALL_COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 	    uusched ${DESTDIR}${BINDIR}
 
 .include <bsd.prog.mk>

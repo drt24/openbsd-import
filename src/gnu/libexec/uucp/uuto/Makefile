@@ -13,7 +13,7 @@ uuto:	uuto.in
 		$(.CURDIR)/uuto.in > $(.TARGET)
 
 install:
-	install ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
+	install ${INSTALL_COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 	    uuto ${DESTDIR}${BINDIR}
 
 .include <bsd.prog.mk>

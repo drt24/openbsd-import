@@ -13,7 +13,7 @@ afterinstall:
 	@echo installing ${FILES}
 	@-for i in ${FILES}; do \
 		if [ ! -f ${DESTDIR}/etc/sliphome/$$i ]; then \
-			${INSTALL} ${COPY} -o root -g wheel ${.CURDIR}/$$i \
+			${INSTALL} ${INSTALL_COPY} -o root -g wheel ${.CURDIR}/$$i \
 				${DESTDIR}/etc/sliphome/$$i; \
 		fi; \
 	done
