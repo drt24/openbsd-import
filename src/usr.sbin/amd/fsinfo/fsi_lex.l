@@ -245,15 +245,15 @@ static int first = 1;
 				error("\"%s\": Cannot open for reading", *g_argv);
 				file_io_errors++;
 			} else {
-				strcat(prog, *g_argv);
-				strcat(prog, " ");
+				strlcat(prog, *g_argv, sizeof(prog));
+				strlcat(prog, " ", sizeof(prog));
 			}
 		}
-		strcat(prog, "; do /usr/bin/cpp ");
-		strcat(prog, idvbuf);
-		strcat(prog, " -DHOSTNAME=\'");
-		strcat(prog, hostname);
-		strcat(prog, "\' \"$file\"; done");
+		strlcat(prog, "; do /usr/bin/cpp ", sizeof(prog));
+		strlcat(prog, idvbuf, sizeof(prog));
+		strlcat(prog, " -DHOSTNAME=\'", sizeof(prog));
+		strlcat(prog, hostname, sizeof(prog));
+		strlcat(prog, "\' \"$file\"; done", sizeof(prog));
 		yyin = popen(prog, "r");
 		if (yyin) {
 			/*if (filename) free(filename);*/
