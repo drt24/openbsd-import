@@ -1,3 +1,3 @@
 #	$Id$
 
-REV=	23
+REV=	${OSrev}
