@@ -1399,18 +1399,9 @@ SetVariable(struct cmdargs const *arg)
 
   switch (param) {
   case VAR_AUTHKEY:
-    switch (bundle_Phase(arg->bundle)) {
-      case PHASE_DEAD:
-      case PHASE_ESTABLISH:
-        strncpy(arg->bundle->cfg.auth.key, argp,
-                sizeof arg->bundle->cfg.auth.key - 1);
-        arg->bundle->cfg.auth.key[sizeof arg->bundle->cfg.auth.key - 1] = '\0';
-        break;
-      default:
-        err = "set authkey: Only available at phase DEAD/ESTABLISH\n";
-        log_Printf(LogWARN, err);
-        break;
-    }
+    strncpy(arg->bundle->cfg.auth.key, argp,
+            sizeof arg->bundle->cfg.auth.key - 1);
+    arg->bundle->cfg.auth.key[sizeof arg->bundle->cfg.auth.key - 1] = '\0';
     break;
 
   case VAR_AUTHNAME:
