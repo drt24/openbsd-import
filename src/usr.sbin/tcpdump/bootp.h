@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* @(#) $Header$ (LBL) */
 /*
  * Bootstrap Protocol (BOOTP).  RFC951 and RFC1048.

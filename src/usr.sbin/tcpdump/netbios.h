@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /*
  * NETBIOS protocol formats
  *

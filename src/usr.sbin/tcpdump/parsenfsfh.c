@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /*
  * parsenfsfh.c - portable parser for NFS file handles
  *			uses all sorts of heuristics

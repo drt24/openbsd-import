@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /*
  * IPX protocol formats 
  *

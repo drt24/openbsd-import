@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* @(#) $Header$ (LBL) */
 
 /* Define __P() macro, if necessary */
