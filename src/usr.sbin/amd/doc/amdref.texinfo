@@ -811,7 +811,7 @@ When the map name begins with the string @samp{hesiod.} lookups are made
 using the @dfn{Hesiod} name server.  The string following the dot is
 used as a name qualifier and is prepended with the key being located.
 The entire string is then resolved in the @code{automount} context.  For
-example, if the the key is @samp{jsp} and map name is
+example, if the key is @samp{jsp} and map name is
 @samp{hesiod.homes} then @dfn{Hesiod} is asked to resolve
 @samp{jsp.homes.automount}.
 

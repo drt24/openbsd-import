@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /*
  * Copyright (c) 1990 Jan-Simon Pendry
  * Copyright (c) 1990 Imperial College of Science, Technology & Medicine
@@ -244,7 +246,7 @@ do_task_notify(void)
 	/*
 	 * Keep taking the first item off the list and processing it.
 	 *
-	 * Done this way because the the callback can, quite reasonably,
+	 * Done this way because the callback can, quite reasonably,
 	 * queue a new task, so no local reference into the list can be
 	 * held here.
 	 */

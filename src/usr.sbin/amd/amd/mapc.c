@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /*-
  * Copyright (c) 1989 Jan-Simon Pendry
  * Copyright (c) 1989 Imperial College of Science, Technology & Medicine
@@ -808,7 +810,7 @@ mapc_keyiter(mnt_map *m, void (*fn)(char *,void *), void *arg)
 }
 
 /*
- * Iterate of the the root map
+ * Iterate over the root map
  * and call (*fn)() on the key
  * of all the nodes.
  * Finally throw away the root map.
