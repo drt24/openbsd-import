@@ -2016,6 +2016,8 @@ iwi_stop(struct ifnet *ifp, int disable)
 	struct ieee80211com *ic = &sc->sc_ic;
 
 	iwi_stop_master(sc);
+	CSR_WRITE_4(sc, IWI_CSR_RST, IWI_RST_SW_RESET);
+
 	iwi_free_queues(sc);
 
 	ifp->if_timer = 0;
