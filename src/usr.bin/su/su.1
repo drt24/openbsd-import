@@ -137,9 +137,13 @@ and
 options are mutually exclusive; the last one specified
 overrides any previous ones.
 .Pp
-Only users in group 0 (normally
+If group 0 (normally
 .Dq wheel )
-can
+has users listed then only those users can
+.Nm su
+to
+.Dq root .
+Otherwise, anyone can
 .Nm su
 to
 .Dq root .

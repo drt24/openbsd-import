@@ -155,7 +155,8 @@ main(argc, argv)
 #endif
 	    {
 		/* only allow those in group zero to su to root. */
-		if (pwd->pw_uid == 0 && (gr = getgrgid((gid_t)0)))
+		if (pwd->pw_uid == 0 && (gr = getgrgid((gid_t)0))
+		    && gr->gr_mem && *(gr->gr_mem))
 			for (g = gr->gr_mem;; ++g) {
 				if (!*g) {
 					(void)fprintf(stderr,
