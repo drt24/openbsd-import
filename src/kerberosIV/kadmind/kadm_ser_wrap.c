@@ -46,7 +46,7 @@ kadm_ser_init(int inter, char *realm)
 {
   struct servent *sep;
   struct hostent *hp;
-  char *dot, admin[MAXHOSTNAMELEN], hostname[MAXHOSTNAMELEN];
+  char hostname[MAXHOSTNAMELEN];
 
   (void) init_kadm_err_tbl();
   (void) init_krb_err_tbl();
@@ -54,11 +54,7 @@ kadm_ser_init(int inter, char *realm)
       return KADM_NO_HOSTNAME;
 
   (void) strcpy(server_parm.sname, PWSERV_NAME);
-  if (krb_get_admhst(admin, realm, 1) != KSUCCESS)
-      return KADM_NO_MAST;
-  if ((dot = strchr(admin, '.')) != NULL)
-      *dot = '\0';
-  (void) strcpy(server_parm.sinst, admin);
+  (void) strcpy(server_parm.sinst, KADM_SINST);
   (void) strcpy(server_parm.krbrlm, realm);
 
   server_parm.admin_fd = -1;
