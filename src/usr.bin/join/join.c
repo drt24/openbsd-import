@@ -1,4 +1,4 @@
-/* $Id$
+/* $Id$	*/
 
 /*-
  * Copyright (c) 1991, 1993, 1994
@@ -471,13 +471,13 @@ outtwoline(F1, lp1, F2, lp2)
 	int cnt;
 
 	/* Output a pair of lines according to the join list (if any). */
-	if (olist)
+	if (olist) {
 		for (cnt = 0; cnt < olistcnt; ++cnt)
 			if (olist[cnt].filenum == 1)
 				outfield(lp1, olist[cnt].fieldno, 0);
 			else /* if (olist[cnt].filenum == 2) */
 				outfield(lp2, olist[cnt].fieldno, 0);
-	else {
+	} else {
 		/*
 		 * Output the join field, then the remaining fields from F1
 		 * and F2.
@@ -504,7 +504,7 @@ outfield(lp, fieldno, out_empty)
 {
 	if (needsep++)
 		putchar((int)*tabchar);
-	if (!ferror(stdout))
+	if (!ferror(stdout)) {
 		if (lp->fieldcnt < fieldno || out_empty) {
 			if (empty != NULL)
 				fputs(empty, stdout);
@@ -513,6 +513,7 @@ outfield(lp, fieldno, out_empty)
 				return;
 			fputs(lp->fields[fieldno], stdout);
 		}
+	}
 	if (ferror(stdout))
 		err(1, "stdout");
 }
