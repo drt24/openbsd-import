@@ -557,7 +557,7 @@ main(int ac, char **av)
 			if (poll(&fds, 1, -1) == -1) {
 				if (errno == EINTR)
 					continue;
-				error("poll: %.100s", strerror(errno));
+				fatal("poll: %.100s", strerror(errno));
 				/*NOTREACHED*/
 			}
 			if (fds.revents == 0)
