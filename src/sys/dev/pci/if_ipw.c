@@ -524,7 +524,7 @@ ipw_newstate_intr(struct ipw_softc *sc, struct ipw_soft_buf *sbuf)
 		break;
 
 	case IPW_STATE_RADIO_DISABLED:
-		/* XXX should turn the interface down */
+		ipw_stop(&ic->ic_if, 1);
 		break;
 	}
 }
@@ -2008,6 +2008,8 @@ ipw_init(struct ifnet *ifp)
 		ifp->if_flags &= ~IFF_UP;
 		return EIO;
 	}
+
+	ipw_stop(ifp, 0);
 
 	if ((error = ipw_reset(sc)) != 0) {
 		printf("%s: could not reset adapter\n", sc->sc_dev.dv_xname);
