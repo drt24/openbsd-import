@@ -49,7 +49,7 @@ int todos_scioT1(int ttyn, int cla, int ins, int p1, int p2, int ilen, unsigned 
 int
 todos_scxreset(int ttyn, int flags, unsigned char *atr, int *ep)
 {
-    unsigned char *ap, buf[33];
+    unsigned char buf[33];
     int n, err;
 
     if (ep)

@@ -9,6 +9,9 @@ static char *rcsid = "$Id$";
 
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
+
+#include "sectok.h"
 
 #ifdef TEST
 main(ac, av)

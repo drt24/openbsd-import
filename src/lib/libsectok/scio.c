@@ -24,6 +24,9 @@ static char *rcsid = "$Id$";
 #include "sectok.h"
 #include "todos_scrw.h"
 
+int todos_scfdopen(int ttyn, int fd, int flags, int *ep);
+int todos_sccts(int ttyn);
+
 #ifdef __linux
 static char ttynametmpl[] = "/dev/cua%01d";
 #elif _AIX

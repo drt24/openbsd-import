@@ -190,7 +190,7 @@ IFD_Transmit_to_ICC(struct SCARD_IO_HEADER SendPci,
 		    struct SCARD_IO_HEADER *RecvPci)
 {
     unsigned char buf[255+2];
-    int n, p3, sw1, sw2;
+    int n, sw1, sw2;
 
 #ifdef DEBUG
     printf("p3 %x ilen %x *olen %x\n", ibuf[4], ilen, *olen);

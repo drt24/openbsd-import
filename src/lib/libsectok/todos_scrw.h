@@ -10,6 +10,7 @@ extern unsigned char todos_scinvert[];
 
 int todos_scopen(int ttyn, int flags, int *ep);
 int todos_scsetflags(int ttyn, int flags, int mask);
+int todos_scsetspeed(int ttyn, int speed);
 int todos_scrw(int ttyn, int cla, int ins, int p1, int p2, int ilen, unsigned char *ibuf, int olen, unsigned char *obuf, int *sw1p, int *sw2p);
 int todos_sccardpresent(int ttyn);
 int todos_scdsr(int ttyn);

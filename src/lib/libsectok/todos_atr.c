@@ -23,6 +23,10 @@ static char *rcsid = "$Id$";
 #include "sectok.h"
 #include "todos_scrw.h"
 
+#ifdef __unix__
+#define SCPPS
+#endif
+
 /*
  * 7816 says ATR will appear within 40000 clocks (12 msec)
  * BUT some cards violate the spec and require more time
@@ -129,9 +133,9 @@ static struct bps {
 int
 todos_get_atr(int ttyn, int flags, unsigned char *atr, struct scparam *param)
 {
-    int len, i, c, t, ts, t0, tck, nhb, pbn;
+    int len, i, t, ts, t0, tck, nhb, pbn;
     int F, D, Fi, Di, N, etu, WI;
-    unsigned char *ap, *hb;
+    unsigned char *ap;
     unsigned char tpb[8][4];
     int hiproto = 0;
 
