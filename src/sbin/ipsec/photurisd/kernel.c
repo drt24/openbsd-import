@@ -512,10 +512,10 @@ kernel_disable_spi(in_addr_t isrc, in_addr_t ismask,
      em->em_ena_sproto = proto;
      em->em_ena_flags = flags;
      
-/*     if (!kernel_xf_set(em) && errno != ENOENT) {
+     if (!kernel_xf_set(em) && errno != ENOENT) {
 	  log_error(1, "kernel_xf_set() in kernel_disable_spi()");
 	  return -1;
-     }*/
+     }
 
      return 1;
 }
