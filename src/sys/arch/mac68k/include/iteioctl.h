@@ -1,4 +1,4 @@
-/*	$OpenBSD: iteioctl.h,v 1.2 1996/05/26 18:35:53 briggs Exp $	*/
+/*	$OpenBSD: iteioctl.h,v 1.3 1997/04/06 02:59:55 briggs Exp $	*/
 /*	$NetBSD: iteioctl.h,v 1.1 1994/12/03 23:34:31 briggs Exp $	*/
 
 /*-
@@ -37,8 +37,12 @@
  *
  */
 
+#ifndef _MACHINE_ITEIOCTL_H_
+#define _MACHINE_ITEIOCTL_H_
 
-struct bellparams{
+#include <sys/ioctl.h>
+
+struct bellparams {
 	int freq;	/* hertz frequency */
 	int len;	/* length in clock ticks */ 
 	int vol;	/* percentage volume */
@@ -48,3 +52,5 @@ struct bellparams{
 #define ITEIOC_GETBELL            _IOR('I', 128, struct bellparams)
 #define ITEIOC_SETBELL            _IOW('I', 129, struct bellparams)
 #define ITEIOC_RINGBELL            _IO('I', 130)
+
+#endif	/* _MACHINE_ITEIOCTL_H_ */
