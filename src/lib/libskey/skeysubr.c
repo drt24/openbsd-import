@@ -187,7 +187,7 @@ f(x)
 	skey_algorithm_table[skey_hash_type].f(x);
 }
 
-void
+static void
 f_md4(x)
 	char *x;
 {
@@ -205,7 +205,7 @@ f_md4(x)
 	(void)memcpy((void *)x, (void *)results, 8);
 }
 
-void
+static void
 f_md5(x)
 	char *x;
 {
@@ -223,7 +223,7 @@ f_md5(x)
 	(void)memcpy((void *)x, (void *)results, 8);
 }
 
-void
+static void
 f_sha1(x)
 	char *x;
 {
