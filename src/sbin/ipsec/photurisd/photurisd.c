@@ -171,7 +171,7 @@ main(int argc, char **argv)
      init_server();
 
      /* Startup preconfigured exchanges */
-     if( !ignore)
+     if( !ignore && !vpn_mode)
 	  init_startup();
 
 #ifndef DEBUG
