@@ -87,7 +87,7 @@ usage()
   fprintf(stderr, "Options:\n");
   fprintf(stderr, "  -l user     Log in using this user name.\n");
   fprintf(stderr, "  -n          Redirect input from /dev/null.\n");
-  fprintf(stderr, "  -k          Disable authentication agent forwarding.\n");
+  fprintf(stderr, "  -a          Disable authentication agent forwarding.\n");
 #if defined(KERBEROS_TGT_PASSING) || defined(AFS)
   fprintf(stderr, "              This also disables passing of AFS tokens/Kerberos tickets.\n");
 #endif /* KERBEROS_TGT_PASSING || AFS */
