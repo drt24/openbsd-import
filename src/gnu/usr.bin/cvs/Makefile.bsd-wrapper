@@ -15,7 +15,7 @@ config.status:
 
 install: maninstall
 	${MAKE} prefix=${DESTDIR}/usr infodir=${DESTDIR}/usr/share/info \
-		bindir=${DESTDIR}${BINDIR} INSTALL_MAN= install
+		bindir=${DESTDIR}/usr/bin INSTALL_MAN= install
 
 clean cleandir:
 	-@if [ -e Makefile ]; then ${MAKE} realclean; fi

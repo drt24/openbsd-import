@@ -16,7 +16,7 @@ config.status:
 	/bin/sh ${.CURDIR}/configure --prefix=/usr
 
 install:	maninstall
-	${FSFMAKE} prefix=${DESTDIR}/usr bindir=${DESTDIR}${BINDIR} \
+	${FSFMAKE} prefix=${DESTDIR}/usr bindir=${DESTDIR}/usr/bin \
 	infodir=${DESTDIR}/usr/share/info mandir= INSTALL_MAN= install
 
 clean cleandir:
