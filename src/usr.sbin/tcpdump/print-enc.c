@@ -35,6 +35,7 @@ static const char rcsid[] =
 struct rtentry;
 #endif
 #include <net/if.h>
+#include <netinet/ip_ipsp.h>
 #include <net/if_enc.h>
 
 #include <netinet/in.h>
