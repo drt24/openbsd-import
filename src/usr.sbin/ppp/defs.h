@@ -92,4 +92,4 @@ extern void SetLabel(const char *);
 extern const char *GetLabel(void);
 extern void randinit(void);
 extern int GetShortHost(void);
-extern void DropClient(void);
+extern void DropClient(int);

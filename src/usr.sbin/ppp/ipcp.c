@@ -153,7 +153,10 @@ ReportIpcpStatus(struct cmdargs const *arg)
   fprintf(VarTerm, "Defaults:\n");
   fprintf(VarTerm, " My Address:  %s/%d\n",
 	  inet_ntoa(DefMyAddress.ipaddr), DefMyAddress.width);
-  fprintf(VarTerm, " His Address: %s/%d\n",
+  if (iplist_isvalid(&DefHisChoice))
+    fprintf(VarTerm, " His Address: %s\n", DefHisChoice.src);
+  else
+    fprintf(VarTerm, " His Address: %s/%d\n",
 	  inet_ntoa(DefHisAddress.ipaddr), DefHisAddress.width);
   if (HaveTriggerAddress)
     fprintf(VarTerm, " Negotiation(trigger): %s\n", inet_ntoa(TriggerAddress));

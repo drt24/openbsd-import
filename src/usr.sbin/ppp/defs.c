@@ -100,7 +100,7 @@ GetShortHost()
 }
 
 void
-DropClient()
+DropClient(int verbose)
 {
   FILE *oVarTerm;
 
@@ -111,6 +111,7 @@ DropClient()
       fclose(oVarTerm);
     close(netfd);
     netfd = -1;
-    LogPrintf(LogPHASE, "Client connection closed.\n");
+    if (verbose)
+      LogPrintf(LogPHASE, "Client connection dropped.\n");
   }
 }

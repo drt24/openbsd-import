@@ -307,7 +307,8 @@ Index2Nam(int idx)
   static int nifs, debug_done;
 
   if (!nifs) {
-    int mib[6], needed, len;
+    int mib[6], len;
+    size_t needed;
     char *buf, *ptr, *end;
     struct sockaddr_dl *dl;
     struct if_msghdr *ifm;
@@ -371,7 +372,7 @@ ShowRoute(struct cmdargs const *arg)
   struct rt_msghdr *rtm;
   struct sockaddr *sa_dst, *sa_gw, *sa_mask;
   char *sp, *ep, *cp, *wp;
-  int needed;
+  size_t needed;
   int mib[6];
 
   if (!VarTerm)
@@ -441,7 +442,8 @@ DeleteIfRoutes(int all)
   struct rt_msghdr *rtm;
   struct sockaddr *sa;
   struct in_addr sa_dst, sa_none;
-  int needed, pass;
+  int pass;
+  size_t needed;
   char *sp, *cp, *ep;
   int mib[6];
 
