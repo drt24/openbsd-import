@@ -1118,7 +1118,7 @@ alarmtimer(int wait)
 }
 
 void
-updateprogressmeter(void)
+updateprogressmeter(int ignore)
 {
 	int save_errno = errno;
 
@@ -1224,7 +1224,7 @@ progressmeter(int flag)
 	atomicio(write, fileno(stdout), buf, strlen(buf));
 
 	if (flag == -1) {
-		signal(SIGALRM, (void *) updateprogressmeter);
+		signal(SIGALRM, updateprogressmeter);
 		alarmtimer(1);
 	} else if (flag == 1) {
 		alarmtimer(0);
