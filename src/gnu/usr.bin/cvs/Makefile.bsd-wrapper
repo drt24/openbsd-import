@@ -1,9 +1,9 @@
 #	$Id$
 
-MAN=	man/cvs.1 man/cvs.5 man/cvsbug.8 man/cvsinit.8 man/mkmodules.1
+MAN=	man/cvs.1 man/cvs.5 man/cvsbug.8 man/cvsinit.8
 GNUCFLAGS=	CFLAGS="${CFLAGS}"
 CLEANFILES=	man/cvs.cat1 man/cvs.cat5 man/cvsbug.cat8 \
-		man/cvsinit.cat8 man/mkmodules.cat1
+		man/cvsinit.cat8
 
 all:	config.status
 	${MAKE} ${GNUCFLAGS} LDFLAGS=${LDSTATIC}
