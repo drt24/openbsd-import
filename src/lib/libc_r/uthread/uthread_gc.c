@@ -30,7 +30,7 @@
  * SUCH DAMAGE.
  *
  *	$Id$
- *	$OpenBSD$
+ *	$OpenBSD: uthread_gc.c,v 1.1 1998/11/09 03:13:19 d Exp $
  *
  * Garbage collector thread. Frees memory allocated for dead threads.
  *
@@ -63,7 +63,7 @@ _thread_gc(pthread_addr_t arg)
 	f_debug = (getenv("LIBC_R_DEBUG") != NULL);
 
 	/* Set the name of this thread. */
-	pthread_set_name_np(_thread_run,"GC");
+	pthread_set_name_np(_thread_run, "GC");
 
 	while (!f_done) {
 		/* Check if debugging this application. */
@@ -264,6 +264,10 @@ _thread_gc(pthread_addr_t arg)
 
 			/* Unlock the thread list: */
 			_unlock_thread_list();
+
+			/* Free memory allocated for the thread's name: */
+			if (pthread_cln->name != NULL)
+				free(pthread_cln->name);
 
 			/*
 			 * Free the memory allocated for the thread
