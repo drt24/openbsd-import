@@ -13,15 +13,15 @@ CLEANFILES+=stboot bootst bootst.bug
 #.PATH: ${S}/arch/${MACHINE_ARCH}/${MACHINE_ARCH}
 #.PATH: ${S}/lib/libsa
 
-.include "${S}/arch/${MACHINE}/stand/libsa/Makefile.inc"
-.include "${S}/arch/${MACHINE}/stand/libbug/Makefile.inc"
-.include "${S}/arch/${MACHINE}/stand/bugcrt/Makefile.inc"
-.include "${S}/arch/${MACHINE}/stand/libz/Makefile.inc"
-.include "${S}/arch/${MACHINE}/stand/wrtvid/Makefile.inc"
+.include "${S}/arch/mvme88k/stand/libsa/Makefile.inc"
+.include "${S}/arch/mvme88k/stand/libbug/Makefile.inc"
+.include "${S}/arch/mvme88k/stand/bugcrt/Makefile.inc"
+.include "${S}/arch/mvme88k/stand/libz/Makefile.inc"
+.include "${S}/arch/mvme88k/stand/wrtvid/Makefile.inc"
 
 SRCS=   bootst.c bcopy.c version.c
 
-LIBS=	${LIBSA} ${LIBBUG} ${LIBZ} libgcc.a
+LIBS=	${LIBSA} ${LIBBUG} ${LIBZ}
 
 OBJS= ${SRCS:N*.h:R:S/$/.o/g}
 

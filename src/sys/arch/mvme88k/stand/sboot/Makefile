@@ -4,7 +4,7 @@ S=	${.CURDIR}/../../../..
 INCL?= -I${.CURDIR} -I${.CURDIR}/../libsa -I${S}/lib/libsa -I${S}
 COPTS?= ${DEFS} ${INCL}
 
-.include "${S}/arch/${MACHINE}/stand/libsa/Makefile.inc"
+.include "${S}/arch/mvme88k/stand/libsa/Makefile.inc"
 
 SRCS=   sboot.c clock.c etherfun.c if_le.c
 
