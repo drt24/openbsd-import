@@ -425,4 +425,4 @@ struct iwi_wep_key {
 #define IWI_EEPROM_CTL(sc, val) do {					\
 	MEM_WRITE_4((sc), IWI_MEM_EEPROM_CTL, (val));			\
 	DELAY(IWI_EEPROM_DELAY);					\
-} while (0)
+} while (/* CONSTCOND */0)
