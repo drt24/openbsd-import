@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: libmain.c,v 1.2 1996/06/26 05:35:36 deraadt Exp $	*/
 
 /* libmain - flex run-time support library "main" function */
 
@@ -15,5 +15,8 @@ int argc;
 char *argv[];
 char *envp[];
 	{
-	return yylex();
+	while ( yylex() != 0 )
+		;
+
+	return 0;
 	}

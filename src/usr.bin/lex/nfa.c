@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: nfa.c,v 1.2 1996/06/26 05:35:40 deraadt Exp $	*/
 
 /* nfa - NFA construction routines */
 

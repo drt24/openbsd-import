@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: tblcmp.c,v 1.2 1996/06/26 05:35:43 deraadt Exp $	*/
 
 /* tblcmp - table compression routines */
 

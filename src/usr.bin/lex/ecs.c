@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: ecs.c,v 1.2 1996/06/26 05:35:30 deraadt Exp $	*/
 
 /* ecs - equivalence class routines */
 

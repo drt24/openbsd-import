@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: FlexLexer.h,v 1.2 1996/06/26 05:35:27 deraadt Exp $	*/
 
 // $Header$
 
@@ -180,6 +180,8 @@ protected:
 
 	int yy_more_flag;
 	int yy_more_len;
+	int yy_more_offset;
+	int yy_prev_more_offset;
 };
 
 #endif

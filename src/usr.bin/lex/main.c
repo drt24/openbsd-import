@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: main.c,v 1.2 1996/06/26 05:35:38 deraadt Exp $	*/
 
 /* flex - tool to generate fast lexical analyzers */
 
@@ -587,7 +587,7 @@ int argc;
 char **argv;
 	{
 	int i, sawcmpflag;
-	char *arg, *mktemp();
+	char *arg;
 
 	printstats = syntaxerror = trace = spprdflt = caseins = false;
 	lex_compat = C_plus_plus = backing_up_report = ddebug = fulltbl = false;
