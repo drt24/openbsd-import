@@ -1,4 +1,4 @@
-/*	$OpenBSD: chown.c,v 1.9 1997/06/30 06:21:31 millert Exp $	*/
+/*	$OpenBSD: chown.c,v 1.10 1997/09/20 12:44:29 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1988, 1993, 1994
@@ -233,7 +233,7 @@ usage()
 {
 
 	(void)fprintf(stderr,
-	    "usage: %s [-R [-H | -L | -P]] [-f] %s file ...\n",
+	    "usage: %s [-R [-H | -L | -P]] [-f] [-h] %s file ...\n",
 	    __progname, ischown ? "[owner][:group]" : "group");
 	exit(1);
 }
