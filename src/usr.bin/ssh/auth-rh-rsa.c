@@ -23,8 +23,8 @@ RCSID("$Id$");
 #include "uidswap.h"
 #include "servconf.h"
 
-#include <ssl/rsa.h>
-#include <ssl/dsa.h>
+#include <openssl/rsa.h>
+#include <openssl/dsa.h>
 #include "key.h"
 #include "hostfile.h"
 

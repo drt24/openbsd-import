@@ -17,7 +17,7 @@
 #include "includes.h"
 RCSID("$Id$");
 
-#include <ssl/bn.h>
+#include <openssl/bn.h>
 #include "xmalloc.h"
 #include "buffer.h"
 #include "bufaux.h"

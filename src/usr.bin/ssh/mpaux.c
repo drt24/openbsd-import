@@ -17,11 +17,11 @@
 #include "includes.h"
 RCSID("$Id$");
 
-#include <ssl/bn.h>
+#include <openssl/bn.h>
 #include "getput.h"
 #include "xmalloc.h"
 
-#include <ssl/md5.h>
+#include <openssl/md5.h>
 
 void
 compute_session_id(unsigned char session_id[16],

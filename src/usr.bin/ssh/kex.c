@@ -38,14 +38,14 @@ RCSID("$Id$");
 #include "cipher.h"
 #include "compat.h"
 
-#include <ssl/bn.h>
-#include <ssl/dh.h>
+#include <openssl/bn.h>
+#include <openssl/dh.h>
 
-#include <ssl/crypto.h>
-#include <ssl/bio.h>
-#include <ssl/bn.h>
-#include <ssl/dh.h>
-#include <ssl/pem.h>
+#include <openssl/crypto.h>
+#include <openssl/bio.h>
+#include <openssl/bn.h>
+#include <openssl/dh.h>
+#include <openssl/pem.h>
 
 #include "kex.h"
 

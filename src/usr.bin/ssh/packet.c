@@ -35,9 +35,9 @@ RCSID("$Id$");
 #include "compat.h"
 #include "ssh2.h"
 
-#include <ssl/bn.h>
-#include <ssl/dh.h>
-#include <ssl/hmac.h>
+#include <openssl/bn.h>
+#include <openssl/dh.h>
+#include <openssl/hmac.h>
 #include "buffer.h"
 #include "kex.h"
 #include "hmac.h"

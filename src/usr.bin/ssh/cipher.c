@@ -18,7 +18,7 @@ RCSID("$Id$");
 #include "cipher.h"
 #include "xmalloc.h"
 
-#include <ssl/md5.h>
+#include <openssl/md5.h>
 
 /*
  * This is used by SSH1:

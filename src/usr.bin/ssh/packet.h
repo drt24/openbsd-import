@@ -18,7 +18,7 @@
 #ifndef PACKET_H
 #define PACKET_H
 
-#include <ssl/bn.h>
+#include <openssl/bn.h>
 
 /*
  * Sets the socket used for communication.  Disables encryption until

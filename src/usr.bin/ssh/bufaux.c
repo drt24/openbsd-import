@@ -20,7 +20,7 @@
 RCSID("$Id$");
 
 #include "ssh.h"
-#include <ssl/bn.h>
+#include <openssl/bn.h>
 #include "bufaux.h"
 #include "xmalloc.h"
 #include "getput.h"

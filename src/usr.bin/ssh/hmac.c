@@ -34,7 +34,7 @@ RCSID("$Id$");
 #include "ssh.h"
 #include "getput.h"
 
-#include <ssl/hmac.h>
+#include <openssl/hmac.h>
 
 unsigned char *
 hmac(

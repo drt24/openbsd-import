@@ -24,7 +24,7 @@ RCSID("$Id$");
 #include "xmalloc.h"
 #include "getput.h"
 
-#include <ssl/rsa.h>
+#include <openssl/rsa.h>
 
 /* Returns the number of the authentication fd, or -1 if there is none. */
 

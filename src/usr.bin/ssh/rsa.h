@@ -18,8 +18,8 @@
 #ifndef RSA_H
 #define RSA_H
 
-#include <ssl/bn.h>
-#include <ssl/rsa.h>
+#include <openssl/bn.h>
+#include <openssl/rsa.h>
 
 /* Calls SSL RSA_generate_key, only copies to prv and pub */
 void    rsa_generate_key(RSA * prv, RSA * pub, unsigned int bits);

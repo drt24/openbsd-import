@@ -32,7 +32,7 @@ RCSID("$Id$");
 
 #include "ssh.h"
 #include "xmalloc.h"
-#include <ssl/md5.h>
+#include <openssl/md5.h>
 
 #define FPRINT "%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x"
 

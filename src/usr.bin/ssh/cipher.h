@@ -16,10 +16,10 @@
 #ifndef CIPHER_H
 #define CIPHER_H
 
-#include <ssl/des.h>
-#include <ssl/blowfish.h>
-#include <ssl/rc4.h>
-#include <ssl/cast.h>
+#include <openssl/des.h>
+#include <openssl/blowfish.h>
+#include <openssl/rc4.h>
+#include <openssl/cast.h>
 
 /* Cipher types.  New types can be added, but old types should not be removed
    for compatibility.  The maximum allowed value is 31. */
