@@ -12,6 +12,7 @@ works:
 	dss: verification works,
 		key database in ~/.ssh/known_hosts with bits == 0 hack
 	dss: signature works, keygen w/ openssl:
+		$ umask 077
 		$ openssl dsaparam 1024 -out dsa1024.pem
 		$ openssl gendsa -out /etc/ssh_dsa_key dsa1024.pem -rand /dev/arandom
 		start sshd with '-2' flag
