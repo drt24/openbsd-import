@@ -74,14 +74,14 @@ main(argc, argv)
 	extern int optind;
 	extern char *optarg;
 	struct passwd *pw;
-	int ch, fd, eval, lockfile=0;
+	int ch, fd, eval, lockfile=1;
 	uid_t uid;
 	char *from;
 
 	openlog("mail.local", LOG_PERROR, LOG_MAIL);
 
 	from = NULL;
-	while ((ch = getopt(argc, argv, "ldf:r:")) != EOF)
+	while ((ch = getopt(argc, argv, "lLdf:r:")) != EOF)
 		switch(ch) {
 		case 'd':		/* backward compatible */
 			break;
@@ -92,7 +92,10 @@ main(argc, argv)
 			from = optarg;
 			break;
 		case 'l':
-			lockfile++;
+			lockfile=1;
+			break;
+		case 'L':
+			lockfile=0;
 			break;
 		case '?':
 		default:
