@@ -2099,7 +2099,7 @@ tn(argc, argv)
     cmd = *argv;
     --argc; ++argv;
     while (argc) {
-	if (isprefix(*argv, "help") || isprefix(*argv, "?"))
+	if (isprefix(*argv, "?"))
 	    goto usage;
 	if (strcmp(*argv, "-l") == 0) {
 	    --argc; ++argv;
