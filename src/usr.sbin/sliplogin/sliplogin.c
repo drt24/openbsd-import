@@ -145,7 +145,8 @@ findid(name)
 		 * one specific to this host.  If none found, try for
 		 * a generic one.
 		 */
-		(void)sprintf(loginfile, "%s.%s", _PATH_LOGIN, name);
+		(void)snprintf(loginfile, sizeof loginfile, "%s.%s",
+		    _PATH_LOGIN, name);
 		if (access(loginfile, R_OK|X_OK) != 0) {
 			(void)strcpy(loginfile, _PATH_LOGIN);
 			if (access(loginfile, R_OK|X_OK)) {
@@ -186,14 +187,15 @@ hup_handler(s)
 	char logoutfile[MAXPATHLEN];
 
 	seteuid(0);
-	(void)sprintf(logoutfile, "%s.%s", _PATH_LOGOUT, loginname);
+	(void)snprintf(logoutfile, sizeof logoutfile, "%s.%s",
+	    _PATH_LOGOUT, loginname);
 	if (access(logoutfile, R_OK|X_OK) != 0)
 		(void)strcpy(logoutfile, _PATH_LOGOUT);
 	if (access(logoutfile, R_OK|X_OK) == 0) {
 		char logincmd[2*MAXPATHLEN+32];
 
-		(void) sprintf(logincmd, "%s %d %d %s", logoutfile, unit, speed,
-			      loginargs);
+		(void) snprintf(logincmd, sizeof logincmd, "%s %d %d %s",
+		    logoutfile, unit, speed, loginargs);
 		(void) system(logincmd);
 	}
 	(void) close(0);
