@@ -4,17 +4,17 @@
 #	$Id$
 
 .ifdef DESTDIR
-snap_md: netbsd-gen netbsd-dl
+snap_md: bsd-gen bsd-dl
 	cp -p ${.CURDIR}/etc.sun3/README ${DESTDIR}/snapshot/README
 
-netbsd-gen:
+bsd-gen:
 	cd ${.CURDIR}/../sys/arch/sun3/compile/GENERIC && make
-	gzip -9 < ${.CURDIR}/../sys/arch/sun3/compile/GENERIC/netbsd \
-	  > ${DESTDIR}/snapshot/netbsd-gen.gz
+	gzip -9 < ${.CURDIR}/../sys/arch/sun3/compile/GENERIC/bsd \
+	  > ${DESTDIR}/snapshot/bsd-gen.gz
 
-netbsd-dl:
+bsd-dl:
 	cd ${.CURDIR}/../sys/arch/sun3/compile/DISKLESS && make
-	gzip -9 < ${.CURDIR}/../sys/arch/sun3/compile/DISKLESS/netbsd \
-	  > ${DESTDIR}/snapshot/netbsd-dl.gz
+	gzip -9 < ${.CURDIR}/../sys/arch/sun3/compile/DISKLESS/bsd \
+	  > ${DESTDIR}/snapshot/bsd-dl.gz
 
 .endif	# DESTDIR check
