@@ -109,7 +109,7 @@ void fill_default_server_options(ServerOptions *options)
     options->rsa_authentication = 1;
 #ifdef KRB4
   if (options->kerberos_authentication == -1)
-    options->kerberos_authentication = 1;
+    options->kerberos_authentication = (access(KEYFILE, R_OK) == 0);
   if (options->kerberos_or_local_passwd == -1)
     options->kerberos_or_local_passwd = 0;
   if (options->kerberos_ticket_cleanup == -1)
@@ -119,7 +119,7 @@ void fill_default_server_options(ServerOptions *options)
   if (options->kerberos_tgt_passing == -1)
     options->kerberos_tgt_passing = 0;
   if (options->afs_token_passing == -1)
-    options->afs_token_passing = 1;
+    options->afs_token_passing = k_hasafs();
 #endif /* AFS */
   if (options->password_authentication == -1)
     options->password_authentication = 1;
