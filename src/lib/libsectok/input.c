@@ -36,6 +36,15 @@ such damages.
  * Jim Rees, University of Michigan, July 2000
  */
 
+#ifdef __palmos__
+#include <Common.h>
+#include <System/SysAll.h>
+#include <System/Unix/sys_types.h>
+#include <System/Unix/unix_stdlib.h>
+#include <System/Unix/unix_string.h>
+#include <UI/UIAll.h>
+#include "field.h"
+#endif
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>

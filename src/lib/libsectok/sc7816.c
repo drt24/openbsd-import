@@ -38,8 +38,17 @@ such damages.
  * University of Michigan CITI, August 2000
  */
 
+#ifdef __palmos__
+#include <Common.h>
+#include <System/SysAll.h>
+#include <System/Unix/unix_stdlib.h>
+#include <System/Unix/unix_string.h>
+#include <UI/UIAll.h>
+#include "field.h"
+#else
 #include <stdlib.h>
 #include <unistd.h>
+#endif
 #include <stdio.h>
 #include <string.h>
 
