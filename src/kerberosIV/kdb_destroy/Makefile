@@ -3,5 +3,6 @@
 
 PROG=	kdb_destroy
 MAN=	kdb_destroy.8
+CFLAGS+= -DHAVE_NEW_DB
 
 .include <bsd.prog.mk>
