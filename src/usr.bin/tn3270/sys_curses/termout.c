@@ -642,7 +642,7 @@ InitTerminal()
 #if	defined(unix)
 	char KSEbuffer[2050];
 	char *lotsofspace = KSEbuffer;
-	extern int abort();
+	extern void abort();
 	extern char *tgetstr();
 #endif	/* defined(unix) */
 
@@ -655,7 +655,7 @@ InitTerminal()
 	ClearArray(Terminal);
 	terminalCursorAddress = SetBufferAddress(0,0);
 #if defined(unix)
-	signal(SIGHUP, (void (*))abort);
+	signal(SIGHUP, abort);
 #endif
 
 	TryToSend = FastScreen;
