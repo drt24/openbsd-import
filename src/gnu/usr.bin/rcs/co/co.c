@@ -28,6 +28,10 @@ Report problems and direct all questions to:
 
 /*
  * $Log$
+ * Revision 1.2  1996/04/19 12:40:04  mickey
+ * -L<string> option added to support LOCALID behaviour.
+ * maybe set up in RCSINIT environment variable.
+ *
  * Revision 1.1.1.1  1995/10/18 08:41:00  deraadt
  * initial import of NetBSD tree
  *
@@ -194,7 +198,7 @@ static struct stat workstat;
 mainProg(coId, "co", "$Id$")
 {
 	static char const cmdusage[] =
-		"\nco usage: co -{fIlMpqru}[rev] -ddate -jjoins -ksubst -sstate -T -w[who] -Vn -xsuff -zzone file ...";
+		"\nco usage: co -{fIlMpqru}[rev] -ddate -jjoins -ksubst -sstate -T -w[who] -Vn -xsuff -zzone -LlocalId file ...";
 
 	char *a, **newargv;
 	char const *author, *date, *rev, *state;
@@ -310,7 +314,7 @@ mainProg(coId, "co", "$Id$")
 			zone_set(a);
 			break;
 
-		case 'L':    /*  add local $Id$ keyword string */
+		case 'L':    /*  add local 'Id' keyword string */
 			setRCSlocalId(*argv+2);
 			break;
 
