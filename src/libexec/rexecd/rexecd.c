@@ -57,6 +57,7 @@ static char rcsid[] = "$Id$";
 #include <string.h>
 #include <syslog.h>
 #include <paths.h>
+#include <err.h>
 #include <login_cap.h>
 
 #include <netinet/in.h>
