@@ -1,4 +1,4 @@
-/* $OpenBSD$ */
+/* $OpenBSD: if_lmc_media.c,v 1.3 2000/02/01 18:01:41 chris Exp $ */
 /* $Id$ */
 
 /*-
@@ -1143,7 +1143,7 @@ lmc_t1_watchdog(lmc_softc_t * const sc)
 		sc->lmc_red = 1;
 	} else { 
 		if (sc->lmc_red == 1)
-			printf ("%s: Red Alarm ok", sc->lmc_xname);
+			printf ("%s: Red Alarm ok\n", sc->lmc_xname);
 	lmc_led_off (sc, LMC_DS3_LED3);
 	lmc_led_on (sc, LMC_DS3_LED2);
 	sc->lmc_red = 0;
