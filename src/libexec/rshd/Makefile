@@ -7,7 +7,7 @@ MAN=	rshd.8
 
 .include <bsd.own.mk>
 
-.if defined(KERBEROS)
+.if (${KERBEROS} == "yes")
 SRCS+=	des_rw.c
 .PATH:	${.CURDIR}/../../usr.bin/rlogin
 CFLAGS+=-DKERBEROS

@@ -2,7 +2,7 @@
 
 .include <bsd.own.mk>
 
-.if defined(YP)
+.if (${YP} == "yes")
 CFLAGS+=-DYP
 .endif
 

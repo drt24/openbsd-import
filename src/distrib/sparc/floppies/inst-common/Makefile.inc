@@ -15,7 +15,7 @@ IMAGE?=		inst${REV}.fs
 MDEC=		${DESTDIR}/usr/mdec
 
 LISTS=		${COMMONDIR}/list ${.CURDIR}/list
-.if defined(KERBEROS)
+.if (${KERBEROS} == "yes")
 CRUNCHCONF=	${COMMONDIR}/${CBIN}-krb.conf
 .else
 CRUNCHCONF=	${COMMONDIR}/${CBIN}.conf
@@ -49,7 +49,7 @@ ${CBIN}.mk ${CBIN}.cache ${CBIN}.c: ${CRUNCHCONF}
 
 ${CBIN}: ${CBIN}.mk ${CBIN}.cache ${CBIN}.c
 	make -f ${CBIN}.mk all
-.if defined(KERBEROS)
+.if (${KERBEROS} == "yes")
 	mv ${CBIN}-krb ${CBIN}
 .endif
 
