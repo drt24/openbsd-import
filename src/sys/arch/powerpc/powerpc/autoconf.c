@@ -1,4 +1,4 @@
-/*	$OpenBSD: autoconf.c,v 1.10 2000/04/04 02:11:47 rahnds Exp $	*/
+/*	$OpenBSD: autoconf.c,v 1.11 2001/05/05 22:34:13 art Exp $	*/
 /*
  * Copyright (c) 1996, 1997 Per Fogelstrom
  * Copyright (c) 1995 Theo de Raadt
@@ -72,7 +72,7 @@ struct device * getdevunit __P((char *, int));
 static struct devmap * findtype __P((char **));
 void makebootdev __P((char *cp));
 int getpno __P((char **));
-void diskconf();
+void diskconf(void);
 
 /*
  * The following several variables are related to
