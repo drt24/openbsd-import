@@ -49,7 +49,7 @@ rcsfile.5 : rcsfile.5in
 check dvi info TAGS ::
 
 installdirs :: ../mkinstalldirs
-	-$(srcdir)/../mkinstalldirs $(man1dir) $(man5dir)
+	-sh $(srcdir)/../mkinstalldirs $(man1dir) $(man5dir)
 
 man1pages = ci co ident merge rcs rcsclean rcsdiff rcsintro rcsmerge rlog
 

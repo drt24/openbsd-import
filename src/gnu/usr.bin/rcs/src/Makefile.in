@@ -110,7 +110,7 @@ all :: $(PROGRAMS)
 	$(CC) -c $(ALL_CFLAGS) $<
 
 installdirs :: ../mkinstalldirs
-	$(srcdir)/../mkinstalldirs $(bindir)
+	sh $(srcdir)/../mkinstalldirs $(bindir)
 
 install :: all installdirs
 	for p in $(PROGRAMS); do \
