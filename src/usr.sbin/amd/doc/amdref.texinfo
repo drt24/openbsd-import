@@ -1973,7 +1973,7 @@ in a new task to avoid the possibilty of blocking @i{Amd}.
 @c NOTE: the current implementation of the @dfn{host} filesystem type
 @c sometimes fails to maintain a consistent view of the remote mount tree.
 @c This happens when the mount times out and only some of the remote mounts
-@c are successfully unmounted.  To prevent this from occuring, use the
+@c are successfully unmounted.  To prevent this from occurring, use the
 @c @samp{nounmount} mount option.
 
 The @dfn{host} filesystem allows access to the entire export tree of an
