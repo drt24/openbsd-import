@@ -14,11 +14,13 @@ BINOWN=root
 BINGRP=_cvsd
 BINMODE=555
 
+CFLAGS= -g -ggdb
 CFLAGS+= -Wall
 CFLAGS+= -Wstrict-prototypes -Wmissing-prototypes
 CFLAGS+= -Wsign-compare
 CFLAGS+= -DCVS
 
+INSTALL_STRIP=
 
 
 .include <bsd.prog.mk>
