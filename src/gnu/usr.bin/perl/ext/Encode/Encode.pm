@@ -195,11 +195,15 @@ sub encode_utf8($)
     return $str;
 }
 
-sub decode_utf8($)
+sub decode_utf8($;$)
 {
-    my ($str) = @_;
-    return undef unless utf8::decode($str);
-    return $str;
+    my ($str, $check) = @_;
+    if ($check){
+	return decode("utf8", $str, $check);
+    }else{
+	return undef unless utf8::decode($str);
+	return $str;
+    }
 }
 
 predefine_encodings(1);
