@@ -118,7 +118,7 @@ findid(name)
 	static char laddr[16];
 	static char raddr[16];
 	static char mask[16];
-	char user[16], *p;
+	char user[MAXLOGNAME], *p;
 	int i, j, n;
 
 	(void)strncpy(loginname, name, sizeof loginname-1);
