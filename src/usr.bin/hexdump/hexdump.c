@@ -55,11 +55,10 @@ main(argc, argv)
 	int argc;
 	char **argv;
 {
-	extern int errno;
 	register FS *tfs;
-	char *p, *rindex();
+	char *p;
 
-	if (!(p = rindex(argv[0], 'o')) || strcmp(p, "od"))
+	if (!(p = strrchr(argv[0], 'o')) || strcmp(p, "od"))
 		newsyntax(argc, &argv);
 	else
 		oldsyntax(argc, &argv);
