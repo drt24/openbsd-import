@@ -163,13 +163,8 @@ cmd:		  INSTALL options opt_namelist SM = {
 			$$ = $1;
 		}
 		| PATTERN namelist SM = {
-			struct namelist *nl;
-			char *cp, *re_comp();
-
-			for (nl = $2; nl != NULL; nl = nl->n_next)
-				if ((cp = re_comp(nl->n_name)) != NULL)
-					yyerror(cp);
-			$1->sc_args = expand($2, E_VARS);
+			if ($2 != NULL)
+				$1->sc_args = expand($2, E_VARS);
 			$$ = $1;
 		}
 		| SPECIAL opt_namelist STRING SM = {
