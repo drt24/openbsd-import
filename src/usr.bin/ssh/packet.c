@@ -294,7 +294,7 @@ packet_send()
 {
   char buf[8], *cp;
   int i, padding, len;
-  unsigned long checksum;
+  unsigned int checksum;
   u_int32_t rand = 0;
 
   /* If using packet compression, compress the payload of the outgoing
@@ -437,7 +437,7 @@ packet_read_poll(int *payload_len_ptr)
   unsigned int len, padded_len;
   unsigned char *ucp;
   char buf[8], *cp;
-  unsigned long checksum, stored_checksum;
+  unsigned int checksum, stored_checksum;
   
  restart:
 

@@ -56,7 +56,7 @@ int auth_krb4(const char *server_user, KTEXT auth, char **client)
   KTEXT_ST reply;
   char instance[INST_SZ];
   int r, s;
-  u_long cksum;
+  u_int cksum;
   Key_schedule schedule;
   struct sockaddr_in local, foreign;
   
