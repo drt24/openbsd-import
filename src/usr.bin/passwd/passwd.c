@@ -45,6 +45,9 @@ static char rcsid[] = "$Id$";
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#ifdef KERBEROS
+#include <kerberosIV/krb.h>
+#endif
 
 /*
  * Note on configuration:
@@ -69,9 +72,11 @@ main(argc, argv)
 	char *username;
 	int status = 0;
 	char *basename;
-
 #if defined(KERBEROS) || defined(KERBEROS5)
-	use_kerberos = 1;
+	extern char realm[];
+
+	if (krb_get_lrealm(realm,1) == KSUCCESS)
+		use_kerberos = 1;
 #endif
 #ifdef	YP
 	use_yp = _yp_check(NULL);
