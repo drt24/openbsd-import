@@ -111,6 +111,7 @@ int	dflag;			/* print disktab entry */
 
 struct	disklabel *promptfordisk();
 
+int
 main(argc, argv)
 	int argc;
 	char *argv[];
@@ -444,20 +445,6 @@ again:
 	return (dp);
 }
 
-gettype(t, names)
-	char *t;
-	char **names;
-{
-	register char **nm;
-
-	for (nm = names; *nm; nm++)
-		if (ustrcmp(t, *nm) == 0)
-			return (nm - names);
-	if (isdigit(*t))
-		return (atoi(t));
-	return (-1);
-}
-
 ustrcmp(s1, s2)
 	register char *s1, *s2;
 {
@@ -473,3 +460,19 @@ ustrcmp(s1, s2)
 	}
 	return (0);
 }
+
+int
+gettype(t, names)
+	char *t;
+	char **names;
+{
+	register char **nm;
+
+	for (nm = names; *nm; nm++)
+		if (ustrcmp(t, *nm) == 0)
+			return (nm - names);
+	if (isdigit(*t))
+		return (atoi(t));
+	return (-1);
+}
+

@@ -460,7 +460,7 @@ ac(fp)
 	struct utmp_list *lp, *head = NULL;
 	struct utmp usr;
 	struct tm *ltm;
-	time_t secs;
+	time_t secs = 0;
 	int day = -1;
 	
 	while (fread((char *)&usr, sizeof(usr), 1, fp) == 1) {
