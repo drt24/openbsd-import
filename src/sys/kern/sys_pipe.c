@@ -169,7 +169,11 @@ sys_pipe(p, v, retval)
 #endif
 	struct proc *p;
 	void *v;
+#if defined(__FreeBSD__)
 	int retval[];
+#else /* (__NetBSD__) || (__OpenBSD__) */
+	register_t *retval;
+#endif
 {
 	register struct filedesc *fdp = p->p_fd;
 	struct file *rf, *wf;
