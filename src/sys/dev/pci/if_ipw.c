@@ -29,7 +29,7 @@
 
 /*-
  * Intel(R) PRO/Wireless 2100 MiniPCI driver
- * www.intel.com/network/connectivity/products/wireless/prowireless_mobile.htm
+ * http://www.intel.com/network/connectivity/products/wireless/prowireless_mobile.htm
  */
 
 #include "bpfilter.h"
