@@ -1648,8 +1648,6 @@ ipw_load_ucode(struct ipw_softc *sc, u_char *uc, int size)
 	MEM_WRITE_1(sc, 0x210000, 0x00);
 	MEM_WRITE_1(sc, 0x210000, 0x80);
 
-	free(uc, M_DEVBUF);
-
 	for (ntries = 0; ntries < 100; ntries++) {
 		if (MEM_READ_1(sc, 0x210000) & 1)
 			break;
