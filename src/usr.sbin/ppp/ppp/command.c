@@ -354,10 +354,12 @@ strstrword(char *big, const char *little)
   len = strlen(little);
 
   while ((pos = strstr(pos, little)) != NULL)
-    if ((pos == big || !isinword(pos[-1])) && !isinword(pos[len]))
-      break;
-    else
+    if ((pos != big && isinword(pos[-1])) || isinword(pos[len]))
       pos++;
+    else if (pos != big && pos[-1] == '\\')
+      memmove(pos - 1, pos, strlen(pos) + 1);
+    else
+      break;
 
   return pos;
 }
