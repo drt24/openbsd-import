@@ -35,7 +35,7 @@
 #include "log.h"
 #include "sig.h"
 
-static caused[NSIG];		/* An array of pending signals */
+static int caused[NSIG];	/* An array of pending signals */
 static sig_type handler[NSIG];	/* all start at SIG_DFL */
 
 
