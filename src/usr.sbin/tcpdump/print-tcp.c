@@ -306,8 +306,8 @@ tcp_print(register const u_char *bp, register u_int length,
 							s -= th->ack;
 							e -= th->ack;
 						}
-					(void) printf("{%u:%u} ", s, e);
 					}
+					(void) printf("{%u:%u} ", s, e);
 				}
 				break;
 			}
