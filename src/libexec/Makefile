@@ -9,7 +9,7 @@ SUBDIR=	atrun comsat fingerd ftpd getNAME getty identd lfs_cleanerd \
 	talkd telnetd tftpd uucpd
 
 .if defined(YP)
-SUBDIR+=rpc.ypppasswd
+SUBDIR+=rpc.ypppasswdd
 .endif
 
 .include <bsd.subdir.mk>
