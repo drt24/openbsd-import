@@ -319,7 +319,7 @@ xfs_read_common(struct vnode *vp, struct uio *uio, int ioflag,
 
 	if (uio->uio_iovcnt && uio->uio_iov[0].iov_len > 0)
 	    XFSDEB(XDEBVNOPS, ("xfs_read: byte: %d\n",
-			       ((char*)uio->uio_iov[0].iov_base)[0]));
+			       ((char *)uio->uio_iov[0].iov_base)[0]));
     }
 
     XFSDEB(XDEBVNOPS, ("xfs_read offset: %lu resid: %d\n",
