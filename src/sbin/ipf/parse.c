@@ -1,4 +1,4 @@
-/*     $OpenBSD: parse.c,v 1.20 1998/07/09 06:12:23 deraadt Exp $      */
+/*     $OpenBSD: parse.c,v 1.21 1998/09/15 09:55:45 pattonme Exp $      */
 /*
  * Copyright (C) 1993-1997 by Darren Reed.
  *
@@ -661,6 +661,11 @@ u_char	*cp;
 				comp = FR_OUTRANGE;
 			else if (!strcmp(**seg, "><"))
 				comp = FR_INRANGE;
+			else {
+				fprintf(stderr,"unknown range operator (%s)\n",
+				    **seg);
+				return -1;
+			}
 			(*seg)++;
 			*tp = portnum(**seg);
 		} else if (!strcmp(**seg, "=") || !strcasecmp(**seg, "eq"))
