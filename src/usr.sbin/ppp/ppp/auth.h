@@ -40,7 +40,7 @@ struct authinfo {
   int id;
   struct physical *physical;
   struct {
-    u_int fsmretry;
+    struct fsm_retry fsm;	/* How often/frequently to resend requests */
   } cfg;
 };
 

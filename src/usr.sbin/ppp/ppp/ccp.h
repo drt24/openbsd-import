@@ -49,7 +49,7 @@ struct ccp_config {
       int winsize;
     } in, out;
   } deflate;
-  u_int fsmretry;		/* FSM retry frequency */
+  struct fsm_retry fsm;	/* How often/frequently to resend requests */
   unsigned neg[CCP_NEG_TOTAL];
 };
 

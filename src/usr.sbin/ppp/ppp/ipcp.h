@@ -77,7 +77,7 @@ struct ipcp {
       struct in_addr nbns[2];		/* NetBIOS NS addresses offered */
     } ns;
 
-    u_int fsmretry;			/* FSM retry frequency */
+    struct fsm_retry fsm;	/* How often/frequently to resend requests */
   } cfg;
 
   struct {

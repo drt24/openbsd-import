@@ -810,6 +810,8 @@ modem_Close(struct physical *modem)
 
   if (!modem->isatty) {
     modem_PhysicalClose(modem);
+    if (*modem->name.full == '/')
+      modem_Unlock(modem);
     *modem->name.full = '\0';
     modem->name.base = modem->name.full;
     return;

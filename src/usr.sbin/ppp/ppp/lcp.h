@@ -77,8 +77,7 @@ struct lcp {
     u_int32_t accmap;		/* Initial ACCMAP value */
     int openmode;		/* when to start CFG REQs */
     u_int32_t lqrperiod;	/* LQR frequency (seconds) */
-    u_int fsmretry;		/* FSM retry frequency */
-
+    struct fsm_retry fsm;	/* How often/frequently to resend requests */
     unsigned acfcomp : 2;	/* Address & Control Field Compression neg */
     unsigned chap05 : 2;	/* Challenge Handshake Authentication proto */
 #ifdef HAVE_DES
