@@ -458,9 +458,12 @@ void dhcpack (packet)
 	cancel_timeout (send_request, ip);
 
 	/* Figure out the lease time. */
-	ip -> client -> new -> expiry =
-		getULong (ip -> client ->
-			  new -> options [DHO_DHCP_LEASE_TIME].data);
+        if (ip -> client -> new -> options [DHO_DHCP_LEASE_TIME].data)
+		ip -> client -> new -> expiry =
+			getULong (ip -> client ->
+			  	  new -> options [DHO_DHCP_LEASE_TIME].data);
+	else
+		ip -> client -> new -> expiry = default_lease_time;
 
 	/* Take the server-provided renewal time if there is one;
 	   otherwise figure it out according to the spec. */
