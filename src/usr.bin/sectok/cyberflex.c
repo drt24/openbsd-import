@@ -37,12 +37,17 @@ such damages.
 #include <signal.h>
 #include <string.h>
 #include <fcntl.h>
-#ifdef __linux
 #include <openssl/des.h>
-#else /* __linux */
 #include <des.h>
-#endif
+#ifdef __linux
+#include <sha.h>
+#define SHA1_CTX SHA_CTX
+#define SHA1Init SHA1_Init
+#define SHA1Update SHA1_Update
+#define SHA1Final SHA1_Final
+#else /* __linux */
 #include <sha1.h>
+#endif
 #include <sectok.h>
 
 #include "sc.h"
