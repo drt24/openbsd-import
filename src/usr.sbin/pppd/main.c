@@ -863,7 +863,6 @@ run_program(prog, args, must_exist)
     int must_exist;
 {
     int pid;
-    char *nullenv[1];
 
     pid = fork();
     if (pid == -1) {
@@ -906,9 +905,7 @@ run_program(prog, args, must_exist)
 
 	/* SysV recommends a second fork at this point. */
 
-	/* run the program; give it a null environment */
-	nullenv[0] = NULL;
-	execve(prog, args, nullenv);
+	execve(prog, args);
 	if (must_exist || errno != ENOENT)
 	    syslog(LOG_WARNING, "Can't execute %s: %m", prog);
 	_exit(-1);
