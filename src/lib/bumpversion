@@ -31,9 +31,6 @@
 #	$Id$
 #
 
-PATH=/bin:/usr/bin
-export PATH
-
 while :
 	do case "$1" in
 		# -c says to create new shlib_version files
