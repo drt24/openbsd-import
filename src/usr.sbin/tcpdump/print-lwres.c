@@ -562,7 +562,7 @@ lwres_print(register const u_char *bp, u_int length)
 			/* BIND910: not used */
 			if (vflag > 2) {
 				printf(" flags:0x%lx",
-				    (unsigned long)ntohl(gnba->flags));
+				    (unsigned long)ntohl(grbn->flags));
 			}
 
 			printf(" %s", tok2str(ns_type2str, "Type%d",
