@@ -27,7 +27,6 @@
 #include <sys/time.h>
 #include <sys/socket.h>
 #include <net/if.h>
-#include <net/if_tun.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 

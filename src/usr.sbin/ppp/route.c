@@ -253,7 +253,7 @@ p_sockaddr(struct sockaddr *phost, struct sockaddr *pmask, int width)
 }
 
 static struct bits {
-  u_long b_mask;
+  u_int32_t b_mask;
   char b_val;
 } bits[] = {
   { RTF_UP, 'U' },
@@ -290,7 +290,7 @@ static struct bits {
 #endif
 
 static void
-p_flags(u_long f, int max)
+p_flags(u_int32_t f, int max)
 {
   if (VarTerm) {
     char name[33], *flags;

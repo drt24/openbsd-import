@@ -48,8 +48,8 @@ static struct async_state {
   int length;
   u_char hbuff[HDLCSIZE];	/* recv buffer */
   u_char xbuff[HDLCSIZE];	/* xmit buffer */
-  u_long my_accmap;
-  u_long his_accmap;
+  u_int32_t my_accmap;
+  u_int32_t his_accmap;
 } AsyncState;
 
 #define MODE_HUNT 0x01
