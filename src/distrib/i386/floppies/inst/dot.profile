@@ -44,9 +44,6 @@ if [ "X${DONEPROFILE}" = "X" ]; then
 	stty newcrt werase ^W intr ^C kill ^U erase ^? 9600
 	echo ''
 
-	# run update, so that installed software is written as it goes.
-	update
-
 	# mount the kern_fs so that we can examine the dmesg state
 	mount -t kernfs /kern /kern
 

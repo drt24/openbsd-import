@@ -53,7 +53,6 @@ SYMLINK	/bin/cat		usr/bin/tip
 SYMLINK	/bin/cat		usr/sbin/bad144
 SYMLINK	/bin/cat		usr/sbin/chown
 SYMLINK	/bin/cat		usr/sbin/chroot
-SYMLINK	/bin/cat		usr/sbin/update
 SPECIAL	/bin/rm instbin
 
 # copy the MAKEDEV script and make some devices
