@@ -1,4 +1,4 @@
-/*     $OpenBSD: ipf.c,v 1.15 1999/02/08 06:23:26 millert Exp $      */
+/*     $OpenBSD: ipf.c,v 1.17 1999/02/08 18:58:59 millert Exp $      */
 /*
  * Copyright (C) 1993-1998 by Darren Reed.
  *
@@ -80,7 +80,7 @@ static	char	*ipfname = IPL_NAME;
 void usage()
 {
 	fprintf(stderr, "usage: ipf [-AdDEInorsUvyzZ] [-l block|pass|nomatch] "
-	    "[-F i|o|a|s|S] -f file ...\n");
+	    "[-F i|o|a|s|S] [-f filename]\n");
 	exit(1);
 }
 
