@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* $XFree86: mit/server/ddx/x386/common/compiler.h,v 2.3 1993/10/03 14:55:28 dawes Exp $ */
 /*
  * Copyright 1990,91 by Thomas Roell, Dinkelscherben, Germany.

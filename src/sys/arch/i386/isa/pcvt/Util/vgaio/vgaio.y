@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* Hello emacs, this should be edited in -*- Fundamental -*- mode */
 %{
 /*
