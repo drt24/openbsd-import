@@ -27,6 +27,7 @@ extern int other_flag;
 extern int unknown_flag;
 extern int number_flag;
 extern int noident_flag;
+extern int token_flag;
 
 extern char *charset_name;
 extern char *indirect_host;
