@@ -628,6 +628,8 @@ void release_lease (lease)
 	lt = *lease;
 	lt.ends = cur_time;
 	supersede_lease (lease, &lt, 1);
+	note ("Released lease for IP address %s",
+	      piaddr (lease -> ip_addr));
 }
 
 /* Abandon the specified lease for the specified time. sets it's 
