@@ -5,7 +5,7 @@ NEWALIASES(1)                                       NEWALIASES(1)
 
 
 NNAAMMEE
-       nneewwaalliiaasseess  -  rebuild  the data base for the mail aliases
+       newaliases  -  rebuild  the data base for the mail aliases
        file
 
 SSYYNNOOPPSSIISS

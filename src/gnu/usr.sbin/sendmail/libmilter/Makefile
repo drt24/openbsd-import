@@ -1,4 +1,4 @@
-#       $Sendmail: Makefile,v 1.1 1999/11/04 00:03:40 ca Exp $
+#       $Id$
 
 SHELL= /bin/sh
 BUILD=   ./Build
