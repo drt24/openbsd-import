@@ -35,7 +35,7 @@ options         NFSSERVER       # Sun NFS-compatible filesystem (server)
 
 # Networking options
 options		INET		# Internet protocols
-options		"TCP_COMPAT_42"	# compatibility with 4.2BSD TCP/IP
+#options		"TCP_COMPAT_42"	# compatibility with 4.2BSD TCP/IP
 #options		GATEWAY		# IP packet forwarding
 
 # pmax specific

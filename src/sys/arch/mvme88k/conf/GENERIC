@@ -60,7 +60,7 @@ options		"CD9660"	# ISO 9660 file system, with Rock Ridge
 #
 options		"COMPAT_09"	# compatability with older NetBSD release
 options		"COMPAT_43"	# 4.3 BSD compatible system calls
-options		"TCP_COMPAT_42"	# Use 4.2 BSD style TCP
+#options		"TCP_COMPAT_42"	# Use 4.2 BSD style TCP
 options		"COMPAT_NOMID"	# allow nonvalid machine id executables
 #options	COMPAT_HPUX	# HP300 compatability
 
