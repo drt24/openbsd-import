@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996
+ * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
  *	The Regents of the University of California.  All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -298,7 +298,7 @@ tcp_print(register const u_char *bp, register u_int length,
 					LENCHECK (i + TCPOLEN_SACK);
 					s = EXTRACT_32BITS(cp + i);
 					e = EXTRACT_32BITS(cp + i + 4);
-					if (!Sflag)
+					if (!Sflag) {
 						if (rev) {
 							s -= th->seq;
 							e -= th->seq;
@@ -307,6 +307,7 @@ tcp_print(register const u_char *bp, register u_int length,
 							e -= th->ack;
 						}
 					(void) printf("{%u:%u} ", s, e);
+					}
 				}
 				break;
 			}
