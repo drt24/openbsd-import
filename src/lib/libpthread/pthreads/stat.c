@@ -94,7 +94,6 @@ int lstat(const char * path, struct stat * buf)
 
 }
 
-#ifdef HAVE_SYSCALL_FSTATFS
 /* ==========================================================================
  * fstatfs()
  *
@@ -113,4 +112,3 @@ int fstatfs(int fd, struct statfs *buf)
 	}
 	return(ret);
 }
-#endif
