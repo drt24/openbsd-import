@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* Native-dependent code for BSD Unix running on i386's, for GDB.
    Copyright 1988, 1989, 1991, 1992 Free Software Foundation, Inc.
 
@@ -16,8 +18,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-
-	$Id$
 */
 
 #include <sys/types.h>
@@ -85,15 +85,12 @@ fetch_core_registers (core_reg_sect, core_reg_size, which, ignore)
 
   core_reg = (struct md_core *)core_reg_sect;
 
-  if (which == 0) {
-    /* Integer registers */
-    memcpy(&registers[REGISTER_BYTE (0)],
-	   &core_reg->intreg, sizeof(struct reg));
-  } else if (which == 2) {
-    /* Floating point registers */
-    memcpy(&registers[REGISTER_BYTE (FP0_REGNUM)],
-	   &core_reg->freg, sizeof(struct fpreg));
-  }
+  /* Integer registers */
+  memcpy(&registers[REGISTER_BYTE (0)],
+	&core_reg->intreg, sizeof(struct reg));
+  /* Floating point registers */
+  memcpy(&registers[REGISTER_BYTE (FP0_REGNUM)],
+	&core_reg->freg, sizeof(struct fpreg));
 }
 
 /* Get registers from a kernel crash dump. */
