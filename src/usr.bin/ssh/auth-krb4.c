@@ -110,6 +110,7 @@ int auth_krb4(const char *server_user, KTEXT auth, char **client)
     packet_send_debug("Kerberos V4 .klogin authorization failed!");
     log("Kerberos V4 .klogin authorization failed for %s to account %s",
 	*client, server_user);
+    xfree(*client);
     return 0;
   }
   /* Increment the checksum, and return it encrypted with the session key. */
