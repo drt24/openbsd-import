@@ -90,7 +90,7 @@ auth_rsa_challenge_dialog(unsigned int bits, BIGNUM *e, BIGNUM *n)
   packet_write_wait();
 
   /* The response is MD5 of decrypted challenge plus session id. */
-  len = (BN_num_bits(challenge) + 7) / 8;
+  len = BN_num_bytes(challenge);
   assert(len <= 32 && len);
   memset(buf, 0, 32);
   BN_bn2bin(challenge, buf + 32 - len);

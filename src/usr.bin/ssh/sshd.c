@@ -853,6 +853,7 @@ void do_connection(int privileged_port)
   /* Extract session key from the decrypted integer.  The key is in the 
      least significant 256 bits of the integer; the first byte of the 
      key is in the highest bits. */
+  BN_mask_bits(session_key_int, sizeof(session_key) * 8);
   assert(BN_num_bytes(session_key_int) == sizeof(session_key));
   BN_bn2bin(session_key_int, session_key);
   
