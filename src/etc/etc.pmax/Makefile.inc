@@ -6,6 +6,8 @@
 .ifdef DESTDIR
 
 snap_md: binutils bsd
+	cp ${.CURDIR}/../sys/arch/sparc/compile/GENERIC/bsd \
+	    ${DESTDIR}/snapshot/bsd
 
 binutils:
 	cd ${DESTDIR} && tar cf - usr/*openbsd* \
