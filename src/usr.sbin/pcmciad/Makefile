@@ -1,10 +1,9 @@
 # $Id$
 
 SRCS=	pcmciad.c pcmcia_conf.c
-#LIBS=	-lutil
-VPATH= ${.CURDIR}/../../sys/dev/pcmcia
+VPATH=  ${.CURDIR}/../../sys/dev/pcmcia
 
-CFLAGS+=	-g -Wmissing-prototypes -I${.CURDIR}/../../sys
+CFLAGS+= -g -Wmissing-prototypes -I${.CURDIR}/../../sys
 PROG=	pcmciad
 MAN=	pcmciad.8
 
@@ -14,7 +13,4 @@ clean::
 	rm -f a.out [Ee]rrs mklog core *.core pcmciad pcmcia_conf.o pcmciad.o
 
 
-SUBDIR=dumpcor dumpinfo dumpreg
-.include <bsd.subdir.mk>
 .include <bsd.prog.mk>
-# DO NOT DELETE THIS LINE -- make depend depends on it.
