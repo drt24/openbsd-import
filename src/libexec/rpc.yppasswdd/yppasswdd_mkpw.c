@@ -53,10 +53,10 @@ int
 badchars(base)
 	char *base;
 {
-	char *s = match;
 	int ampr = 0;
+	char *s;
 
-	for (s = match; *s; s++) {
+	for (s = base; *s; s++) {
 		if (*s == '&')
 			ampr++;
 		if (!isprint(*s))
