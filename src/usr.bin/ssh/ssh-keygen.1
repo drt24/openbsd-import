@@ -30,6 +30,12 @@
 .Op Fl N Ar new_passphrase
 .Op Fl f Ar keyfile
 .Nm ssh-keygen
+.Fl x
+.Op Fl f Ar keyfile
+.Nm ssh-keygen
+.Fl X
+.Op Fl f Ar keyfile
+.Nm ssh-keygen
 .Fl c
 .Op Fl P Ar passphrase
 .Op Fl C Ar comment
@@ -131,6 +137,12 @@ Provides the (old) passphrase.
 If RSA support is functional, immediately exits with code 0.  If RSA
 support is not functional, exits with code 1.  This flag will be
 removed once the RSA patent expires.
+.It Fl x
+This option will read a
+OpenSSH DSA format file and prints to stdout a SSH2-compatible key.
+.It Fl X
+This option will read a
+SSH2-compatible key file and print to stdout an OpenSSH DSA compatible key.
 .El
 .Sh FILES
 .Bl -tag -width Ds
