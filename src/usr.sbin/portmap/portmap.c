@@ -155,7 +155,7 @@ main(argc, argv)
 		syslog(LOG_ERR, "cannot create udp socket: %m");
 		exit(1);
 	}
-	setsockopt(lsock, SOL_SOCKET, SO_REUSEADDR, &on, sizeof on);
+	setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &on, sizeof on);
 	if (bind(sock, (struct sockaddr *)&addr, len) != 0) {
 		syslog(LOG_ERR, "cannot bind udp: %m");
 		exit(1);
@@ -194,7 +194,7 @@ main(argc, argv)
 		syslog(LOG_ERR, "cannot create tcp socket: %m");
 		exit(1);
 	}
-	setsockopt(lsock, SOL_SOCKET, SO_REUSEADDR, &on, sizeof on);
+	setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &on, sizeof on);
 	if (bind(sock, (struct sockaddr *)&addr, len) != 0) {
 		syslog(LOG_ERR, "cannot bind udp: %m");
 		exit(1);
