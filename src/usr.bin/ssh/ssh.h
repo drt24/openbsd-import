@@ -317,8 +317,7 @@ int auth_rhosts(struct passwd *pw, const char *client_user,
    its host key.  Returns true if authentication succeeds. */
 int auth_rhosts_rsa(struct passwd *pw, const char *client_user,
 		    unsigned int bits, BIGNUM *client_host_key_e,
-		    BIGNUM *client_host_key_n, int ignore_rhosts,
-		    int strict_modes);
+		    BIGNUM *client_host_key_n);
 
 /* Tries to authenticate the user using password.  Returns true if
    authentication succeeds. */
