@@ -238,6 +238,8 @@ tty_Cooked(struct physical *p)
   struct ttydevice *dev = device2tty(p->handler);
   int oldflag;
 
+  tty_Offline(p);	/* In case of emergency close()s */
+
   tcflush(p->fd, TCIOFLUSH);
   if (!physical_IsSync(p)) {
     tcsetattr(p->fd, TCSAFLUSH, &dev->ios);
@@ -260,6 +262,7 @@ tty_Free(struct physical *p)
 {
   struct ttydevice *dev = device2tty(p->handler);
 
+  tty_Offline(p);	/* In case of emergency close()s */
   free(dev);
 }
 
