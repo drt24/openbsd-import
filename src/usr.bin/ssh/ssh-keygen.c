@@ -130,6 +130,7 @@ do_convert_to_ssh2(struct passwd *pw)
 	dump_base64(stdout, blob, len);
 	fprintf(stdout, SSH_COM_MAGIC_END "\n");
 	key_free(k);
+	xfree(blob);
 	exit(0);
 }
 
@@ -206,6 +207,7 @@ do_print_public(struct passwd *pw)
 	if (!key_write(k, stdout))
 		fprintf(stderr, "key_write failed");
 	key_free(k);
+	xfree(blob);
 	fprintf(stdout, "\n");
 	exit(0);
 }
