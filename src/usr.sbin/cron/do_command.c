@@ -380,7 +380,7 @@ child_process(e, u)
 					e->cmd);
 # if defined(MAIL_DATE)
 				fprintf(mail, "Date: %s\n",
-					arpadate(&TargetTime));
+					arpadate(&StartTime));
 # endif /* MAIL_DATE */
 				for (env = e->envp;  *env;  env++)
 					fprintf(mail, "X-Cron-Env: <%s>\n",
