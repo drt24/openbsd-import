@@ -1,4 +1,4 @@
-/*	$OpenBSD: tcpdump.c,v 1.36 2004/04/28 02:17:03 mcbride Exp $	*/
+/*	$OpenBSD: tcpdump.c,v 1.37 2004/05/21 05:48:50 brad Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -92,7 +92,7 @@ extern int esp_init(char *);
 
 /* Forwards */
 RETSIGTYPE cleanup(int);
-extern __dead void usage(void) __attribute__((volatile));
+extern __dead void usage(void);
 
 /* Length of saved portion of packet. */
 int snaplen = DEFAULT_SNAPLEN;
