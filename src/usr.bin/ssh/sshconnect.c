@@ -229,7 +229,7 @@ int ssh_connect(const char *host, int port, int connection_attempts,
 	  /* Create a socket. */
 	  sock = ssh_create_socket(original_real_uid, 
 				   !anonymous && geteuid() == 0 && 
-				     port < 1024);
+				     port < IPPORT_RESERVED);
       
 	  /* Connect to the host.  We use the user's uid in the hope that
 	     it will help with the problems of tcp_wrappers showing the
@@ -275,7 +275,7 @@ int ssh_connect(const char *host, int port, int connection_attempts,
 	      /* Create a socket for connecting. */
 	      sock = ssh_create_socket(original_real_uid, 
 				       !anonymous && geteuid() == 0 && 
-				         port < 1024);
+				         port < IPPORT_RESERVED);
 
 	      /* Connect to the host.  We use the user's uid in the hope that
 	         it will help with tcp_wrappers showing the remote uid as

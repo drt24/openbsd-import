@@ -721,7 +721,7 @@ main(int ac, char **av)
   
   /* Handle the connection.   We pass as argument whether the connection
      came from a privileged port. */
-  do_connection(get_remote_port() < 1024);
+  do_connection(get_remote_port() < IPPORT_RESERVED);
 
 #ifdef KRB4
   /* Cleanup user's ticket cache file. */
