@@ -44,9 +44,6 @@ if [ $# -ne 3 ]; then echo "Usage: newvers program arch os" >&2; exit 1; fi
 version="version.$1"
 if [ ! -r $version ]; then echo 0 > $version; chmod 444 $version; fi
 v=`cat $version`
-u=${LOGNAME-${USER-root}}
-h=`hostname`
-#h=`expr "$h" : '\([^.]*\)'`
 t=`date`
 if [ ! -s "$d../config/RELEASE"  -o ! -s "$d../text/COPYRIGHT" ]; then
 	echo ERROR: config file missing >&2
@@ -74,7 +71,6 @@ sed \
 	$d../config/RELEASE
 cat << %%
  #${v}: ${t}\\n\\
-Built by ${u}@${h} for \\
 %%
 case "$2" in
 [aeiou]*) echo "an \\" ;;
