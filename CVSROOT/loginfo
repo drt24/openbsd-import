@@ -35,4 +35,5 @@
 #
 #DEFAULT			$CVSROOT/CVSROOT/log -s -m source-changes -f $CVSROOT/CVSROOT/commitlog  %s
 ^netbsd-src		$CVSROOT/CVSROOT/log_accum2 -f $CVSROOT/CVSROOT/NetBSD-ChangeLog -s %s
+^ports			$CVSROOT/CVSROOT/log_accum2 -m ports-changes -f $CVSROOT/CVSROOT/ChangeLog -s %s
 DEFAULT			$CVSROOT/CVSROOT/log_accum2 -m source-changes -f $CVSROOT/CVSROOT/ChangeLog -s %s
