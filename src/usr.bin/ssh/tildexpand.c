@@ -32,8 +32,7 @@ char *tilde_expand_filename(const char *filename, uid_t my_uid)
   if (filename[0] != '~')
     return xstrdup(filename);
 
-
-  /* Skiop the tilde. */
+  /* Skip the tilde. */
   filename++;
 
   /* Find where the username ends. */
