@@ -1,5 +1,5 @@
 #	$Id$
 
-REV=	20
+REV=	21
 
 .include <bsd.own.mk>
