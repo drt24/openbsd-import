@@ -727,7 +727,7 @@ log(severity, syserr, format, va_alist)
 		syslog(severity, "%s", msg);
 	}
 
-	if (severity <= LOG_ERR) exit(-1);
+	if (severity <= LOG_ERR) exit(1);
     }
 }
 
