@@ -16,7 +16,7 @@ kadm_err.c kadm_err.h: kadm_err.et
 	${COMPILE_ET} kadm_err.et
 	-test -h kadm_err.et && rm kadm_err.et
 
-beforeinstall:
+includes: kadm_err.h
 	-cd ${.OBJDIR}; cmp -s kadm_err.h ${DESTDIR}/usr/include/kerberosIV/kadm_err.h || \
 	    install -c -o ${BINOWN} -g ${BINGRP} -m 444 kadm_err.h ${DESTDIR}/usr/include/kerberosIV
 

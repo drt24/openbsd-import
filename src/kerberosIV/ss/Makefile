@@ -18,7 +18,7 @@ std_rqs.c:		${.CURDIR}/std_rqs.ct
 	${MK_CMDS} std_rqs.ct
 	-test -h std_rqs.ct && rm std_rqs.ct
 
-beforeinstall:
+includes: ss_err.h
 	-cd ${.OBJDIR}; \
 	    if [ -f ss_err.h ]; then \
 		cmp -s ss_err.h ${DESTDIR}/usr/include/ss/ss_err.h || \
