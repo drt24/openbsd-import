@@ -36,6 +36,7 @@ export TERM=pc3
 umask 022
 
 set -o emacs # emacs-style command line editing
+alias dmesg="cat /kern/msgbuf"
 
 if [ "X${DONEPROFILE}" = "X" ]; then
 	DONEPROFILE=YES
