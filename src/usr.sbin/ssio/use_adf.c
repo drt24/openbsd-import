@@ -64,7 +64,6 @@ main(int argc, char *argv[])
   extern int optind;
   extern char *optarg;
 
-  extern int errno;
 
   while ((c = getopt(argc, argv, "l:")) != -1) {
     switch (c) {

@@ -95,7 +95,6 @@ char **argv;
 	register int s, tcp_socket;
 	struct servent *sp;
 #endif /* !BSDINETD */
-	extern int errno;
 
 	environ = nenv;
 #ifdef BSDINETD

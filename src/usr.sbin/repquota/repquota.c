@@ -189,7 +189,6 @@ repquota(fs, type, qfpathname)
 	static struct dqblk zerodqblk;
 	static int warned = 0;
 	static int multiple = 0;
-	extern int errno;
 
 	if (quotactl(fs->fs_file, QCMD(Q_SYNC, type), 0, 0) < 0 &&
 	    errno == EOPNOTSUPP && !warned && vflag) {
