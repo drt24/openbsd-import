@@ -16,7 +16,8 @@ DEPSRCS += astosc.OUT map3270.c mset.c
 PROG = mset
 
 MKASTOSC!=cd $(.CURDIR)/../tools/mkastosc; \
-	printf "xxx:\n\techo \$${.OBJDIR}/mkastosc\n" | ${MAKE} -r -s -f - xxx
+	printf "xxx:\n\techo \$${.OBJDIR}/mkastosc\n" | \
+	${MAKE} -r -s -f - xxx | grep mkastosc
 
 astosc.o: astosc.OUT
 CLEANFILES += astosc.OUT astosc.out

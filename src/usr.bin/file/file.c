@@ -51,9 +51,9 @@ static char *moduleid =
 #include "file.h"
 
 #ifdef S_IFLNK
-# define USAGE  "Usage: %s [-vczL] [-f namefile] [-m magicfile] file...\n"
+# define USAGE  "Usage: %s [-vczL] [-f namefile] [-m magicfiles] file...\n"
 #else
-# define USAGE  "Usage: %s [-vcz] [-f namefile] [-m magicfile] file...\n"
+# define USAGE  "Usage: %s [-vcz] [-f namefile] [-m magicfiles] file...\n"
 #endif
 
 #ifndef MAGIC
