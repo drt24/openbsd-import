@@ -234,6 +234,7 @@ baditem(path)
 	if (rename(path, npath) != -1)
 		err(NOTFATAL, "nasty spool item %s renamed to %s",
 		    path, npath);
+	/* XXX if we fail to rename, another attempt will happen later */
 }
 
 char lpath[MAXPATHLEN];
