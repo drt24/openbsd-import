@@ -863,7 +863,7 @@ void do_connection(int privileged_port)
      key is in the highest bits. */
   BN_mask_bits(session_key_int, sizeof(session_key) * 8);
   len = BN_num_bytes(session_key_int);
-  if (len <= 0 || len > sizeof(session_key))
+  if (len < 0 || len > sizeof(session_key))
     fatal("do_connection: bad len: session_key_int %d > sizeof(session_key) %d",
 	  len, sizeof(session_key));
   memset(session_key, 0, sizeof(session_key));
