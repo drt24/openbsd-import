@@ -504,8 +504,7 @@ static int
 ipcp_SetIPaddress(struct bundle *bundle, struct in_addr myaddr,
                   struct in_addr hisaddr, int silent)
 {
-  static struct in_addr none = { INADDR_ANY };
-  struct in_addr mask, oaddr;
+  struct in_addr mask, oaddr, none = { INADDR_ANY };
 
   mask = addr2mask(myaddr);
 

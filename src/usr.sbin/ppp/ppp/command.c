@@ -935,16 +935,20 @@ command_Run(struct bundle *bundle, int argc, char const *const *argv,
 {
   if (argc > 0) {
     if (log_IsKept(LogCOMMAND)) {
-      static char buf[LINE_LEN];
+      char buf[LINE_LEN];
       int f, n;
 
-      *buf = '\0';
       if (label) {
         strncpy(buf, label, sizeof buf - 3);
         buf[sizeof buf - 3] = '\0';
         strcat(buf, ": ");
+        n = strlen(buf);
+      } else {
+        *buf = '\0';
+        n = 0;
       }
-      n = strlen(buf);
+      buf[sizeof buf - 1] = '\0';	/* In case we run out of room in buf */
+
       for (f = 0; f < argc; f++) {
         if (n < sizeof buf - 1 && f)
           buf[n++] = ' ';
