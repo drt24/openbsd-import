@@ -1,9 +1,9 @@
 # $Id$
 
 SRCS=	pcmciad.c pcmcia_conf.c
-VPATH=  ${.CURDIR}/../../sys/dev/pcmcia
+.PATH:  ${.CURDIR}/../../sys/dev/pcmcia
 
-CFLAGS+= -g -Wmissing-prototypes -I${.CURDIR}/../../sys
+CFLAGS+=-Wmissing-prototypes -I${.CURDIR}/../../sys
 PROG=	pcmciad
 MAN=	pcmciad.8
 
