@@ -34,6 +34,7 @@ typedef struct
   int forward_agent;		/* Forward authentication agent. */
   int forward_x11;		/* Forward X11 display. */
   int gateway_ports;		/* Allow remote connects to forwarded ports. */
+  int use_privileged_port;	/* Don't use privileged port if false. */
   int rhosts_authentication;	/* Try rhosts authentication. */
   int rhosts_rsa_authentication;/* Try rhosts with RSA authentication. */
   int rsa_authentication;	/* Try RSA authentication. */
