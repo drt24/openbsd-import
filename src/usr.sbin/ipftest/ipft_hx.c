@@ -93,14 +93,14 @@ int	cnt, *dir;
  	ip = (struct ip *)buf;
 	*ifn = NULL;
 	while (fgets(line, sizeof(line)-1, tfp)) {
-		if ((s = index(line, '\n'))) {
+		if ((s = strchr(line, '\n'))) {
 			if (s == line)
 				return (char *)ip - buf;
 			*s = '\0';
 		}
-		if ((s = index(line, '\r')))
+		if ((s = strchr(line, '\r')))
 			*s = '\0';
-		if ((s = index(line, '#')))
+		if ((s = strchr(line, '#')))
 			*s = '\0';
 		if (!*line)
 			continue;

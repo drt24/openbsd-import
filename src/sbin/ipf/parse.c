@@ -423,7 +423,7 @@ char *to;
 	int	r = 0;
 	char	*s;
 
-	s = index(to, ':');
+	s = strchr(to, ':');
 	fdp->fd_ifp = NULL;
 	if (s) {
 		*s++ = '\0';
@@ -465,13 +465,13 @@ u_char	*cp;
 	/*
 	 * is it possibly hostname/num ?
 	 */
-	if ((s = index(**seg, '/'))) {
+	if ((s = strchr(**seg, '/'))) {
 		*s++ = '\0';
 		if (!isdigit(*s))
 			return -1;
-		if (index(s, '.'))
+		if (strchr(s, '.'))
 			*msk = inet_addr(s);
-		if (!index(s, '.') && !index(s, 'x')) {
+		if (!strchr(s, '.') && !strchr(s, 'x')) {
 			/*
 			 * set x most significant bits
 			 */
@@ -651,7 +651,7 @@ u_char *mask;
 			fp = &tcpfm;
 			continue;
 		}
-		if (!(t = index(flagset, *s))) {
+		if (!(t = strchr(flagset, *s))) {
 			(void)fprintf(stderr, "unknown flag (%c)\n", *s);
 			return 0;
 		}

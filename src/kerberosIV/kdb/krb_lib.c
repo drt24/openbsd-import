@@ -108,8 +108,8 @@ kerb_get_principal(name, inst, principal, max, more)
      * preceeded by a backslash. 
      */
     wild = 0;
-    if (index(name, '*') || index(name, '?') ||
-	index(inst, '*') || index(inst, '?'))
+    if (strchr(name, '*') || strchr(name, '?') ||
+	strchr(inst, '*') || strchr(inst, '?'))
 	wild = 1;
 
     if (!wild) {
@@ -214,8 +214,8 @@ kerb_get_dba(name, inst, dba, max, more)
      */
 
     wild = 0;
-    if (index(name, '*') || index(name, '?') ||
-	index(inst, '*') || index(inst, '?'))
+    if (strchr(name, '*') || strchr(name, '?') ||
+	strchr(inst, '*') || strchr(inst, '?'))
 	wild = 1;
 
     if (!wild) {

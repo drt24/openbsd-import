@@ -251,7 +251,7 @@ placebo_read_pw_string(s,max,prompt,verify)
 	    clearerr(stdin);
 	    continue;
 	}
-	if ((ptr = index(s, '\n')))
+	if ((ptr = strchr(s, '\n')))
 	    *ptr = '\0';
 	if (verify) {
 	    printf("\nVerifying, please re-enter %s",prompt);
@@ -260,7 +260,7 @@ placebo_read_pw_string(s,max,prompt,verify)
 		clearerr(stdin);
 		continue;
 	    }
-            if ((ptr = index(key_string, '\n')))
+            if ((ptr = strchr(key_string, '\n')))
 	    *ptr = '\0';
 	    if (strcmp(s,key_string)) {
 		printf("\n\07\07Mismatch - try again\n");

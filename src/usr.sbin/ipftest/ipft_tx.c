@@ -177,11 +177,11 @@ int	cnt, *dir;
  	ip = (struct ip *)buf;
 	*ifn = NULL;
 	while (fgets(line, sizeof(line)-1, tfp)) {
-		if ((s = index(line, '\n')))
+		if ((s = strchr(line, '\n')))
 			*s = '\0';
-		if ((s = index(line, '\r')))
+		if ((s = strchr(line, '\r')))
 			*s = '\0';
-		if ((s = index(line, '#')))
+		if ((s = strchr(line, '#')))
 			*s = '\0';
 		if (!*line)
 			continue;
@@ -264,7 +264,7 @@ int	*out;
 	if (ip->ip_p == IPPROTO_TCP || ip->ip_p == IPPROTO_UDP) {
 		char	*last;
 
-		last = index(*cpp, ',');
+		last = strchr(*cpp, ',');
 		if (!last) {
 			fprintf(stderr, "tcp/udp with no source port\n");
 			return 1;
@@ -280,7 +280,7 @@ int	*out;
 	if (ip->ip_p == IPPROTO_TCP || ip->ip_p == IPPROTO_UDP) {
 		char	*last;
 
-		last = index(*cpp, ',');
+		last = strchr(*cpp, ',');
 		if (!last) {
 			fprintf(stderr, "tcp/udp with no destination port\n");
 			return 1;
@@ -296,7 +296,7 @@ int	*out;
 		char	*s, *t;
 
 		for (s = *cpp; *s; s++)
-			if ((t  = index(tcp_flagset, *s)))
+			if ((t  = strchr(tcp_flagset, *s)))
 				tcp->th_flags |= tcp_flags[t - tcp_flagset];
 		if (tcp->th_flags)
 			cpp++;
@@ -310,7 +310,7 @@ int	*out;
 		     s++, i++)
 			if (*s && !strncasecmp(*cpp, *s, strlen(*s))) {
 				ic->icmp_type = i;
-				if ((t = index(*cpp, ',')))
+				if ((t = strchr(*cpp, ',')))
 					ic->icmp_code = atoi(t+1);
 				cpp++;
 				break;

@@ -64,7 +64,6 @@ main(argc, argv)
 {
 	SVCXPRT *transp;
 	int     i, s, pid;
-	char   *rindex();
 	struct hostent *he;
 	struct stat buf;
 	char   *optstring;
@@ -204,7 +203,7 @@ bootparamproc_getfile_1_svc(getfile, rqstp)
 	bp_getfile_arg *getfile;
 	struct svc_req *rqstp;
 {
-	char   *where, *index();
+	char   *where;
 	static bp_getfile_res res;
 	int     err;
 

@@ -181,7 +181,7 @@ split(line, name)
 	register char *cp, *dp;
 	char *sp, *sep;
 
-	cp = index(line, '-');
+	cp = strchr(line, '-');
 	if (cp == 0)
 		return;
 	sp = cp + 1;
@@ -191,7 +191,7 @@ split(line, name)
 	while (*sp && (*sp == ' ' || *sp == '\t'))
 		sp++;
 	for (sep = "", dp = line; dp && *dp; dp = cp, sep = "\n") {
-		cp = index(dp, ',');
+		cp = strchr(dp, ',');
 		if (cp) {
 			register char *tp;
 

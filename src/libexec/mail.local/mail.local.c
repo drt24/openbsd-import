@@ -209,7 +209,7 @@ store(from)
 	}
 
 	/* If message not newline terminated, need an extra. */
-	if (!index(line, '\n'))
+	if (!strchr(line, '\n'))
 		(void)putc('\n', fp);
 	/* Output a newline; note, empty messages are allowed. */
 	(void)putc('\n', fp);

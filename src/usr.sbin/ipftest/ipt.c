@@ -131,14 +131,14 @@ char *argv[];
 			/*
 			 * treat both CR and LF as EOL
 			 */
-			if ((s = index(line, '\n')))
+			if ((s = strchr(line, '\n')))
 				*s = '\0';
-			if ((s = index(line, '\r')))
+			if ((s = strchr(line, '\r')))
 				*s = '\0';
 			/*
 			 * # is comment marker, everything after is a ignored
 			 */
-			if ((s = index(line, '#')))
+			if ((s = strchr(line, '#')))
 				*s = '\0';
 
 			if (!*line)

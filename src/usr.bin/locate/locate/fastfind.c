@@ -1,4 +1,4 @@
-/*	$OpenBSD: fastfind.c,v 1.1 1996/09/15 16:50:38 michaels Exp $	*/
+/*	$OpenBSD: fastfind.c,v 1.3 1996/10/20 00:52:54 michaels Exp $	*/
 
 /*
  * Copyright (c) 1995 Wolfram Schneider <wosch@FreeBSD.org>. Berlin.
@@ -172,7 +172,7 @@ fastfind
 
 	/* find optimal (last) char for searching */
 	for (p = pathpart; *p != '\0'; p++)
-		if (index(LOCATE_REG, *p) != NULL)
+		if (strchr(LOCATE_REG, *p) != NULL)
 			break;
 
 	if (*p == '\0')
