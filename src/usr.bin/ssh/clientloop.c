@@ -1027,6 +1027,7 @@ client_input_channel_req(int id, void *arg)
 	} else if (strcmp(rtype, "exit-status") == 0) {
 		success = 1;
 		exit_status = packet_get_int();
+		packet_done();
 	}
 	if (reply) {
 		packet_start(success ?

@@ -1055,6 +1055,12 @@ packet_get_raw(int *length_ptr)
 	return buffer_ptr(&incoming_packet);
 }
 
+int
+packet_remaining(void)
+{
+	return buffer_len(&incoming_packet);
+}
+
 /*
  * Returns a string from the packet data.  The string is allocated using
  * xmalloc; it is the responsibility of the calling program to free it when
