@@ -43,9 +43,6 @@
 %#include <sys/time.h>
 %#include <sys/errno.h>
 %#include <sys/ucred.h>
-%#include <nfs/nfsv2.h>
-%#include <nfs/rpcv2.h>
-%#include <nfs/nfs.h>
 #else
 %#ifndef lint
 %/*static char sccsid[] = "from: @(#)bootparam_prot.x 1.2 87/06/24 Copyr 1987 Sun Micro";*/
