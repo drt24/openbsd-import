@@ -1,4 +1,4 @@
-/*    $OpenBSD: ip_fil.c,v 1.19 1998/09/15 09:51:17 pattonme Exp $    */
+/*    $OpenBSD: ip_fil.c,v 1.20 1999/02/05 05:58:50 deraadt Exp $    */
 /*
  * Copyright (C) 1993-1998 by Darren Reed.
  *
@@ -911,8 +911,11 @@ struct tcpiphdr *ti;
 	/*
 	 * extra 0 in case of multicast
 	 */
-/* XXX if openbsd, add ", NULL" to end of ip_output?? */
+#  ifdef __OpenBSD__
+	err = ip_output(m, (struct mbuf *)0, 0, 0, 0, 0);
+#  else
 	err = ip_output(m, (struct mbuf *)0, 0, 0, 0);
+#  endif
 # endif
 	return err;
 }
