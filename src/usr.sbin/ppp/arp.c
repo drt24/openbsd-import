@@ -314,7 +314,7 @@ get_ether_addr(int s, struct in_addr ipaddr, struct sockaddr_dl *hwaddr)
         sa_gw = (struct sockaddr *)wp;
         if (sa_gw->sa_family == AF_LINK) {
           dl = (struct sockaddr_dl *)wp;
-          if (dl->sdl_alen && dl->sdl_type == IFT_ETHER) {
+          if (!dl->sdl_nlen && !dl->sdl_alen && !dl->sdl_slen) {
             memcpy(hwaddr, dl, dl->sdl_len);
             free(sp);
             return 1;
