@@ -1,4 +1,4 @@
-/*	$OpenBSD: pmap.c,v 1.1 2004/01/28 01:39:39 mickey Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: pmap.c,v 1.3 2003/05/08 18:13:13 thorpej Exp $	*/
 
 /*
@@ -2303,6 +2303,7 @@ pmap_pageidlezero(struct vm_page *pg)
 	int *ptr;
 	unsigned int i;
 
+printf("pmap_pageidlezero()\n");
 #ifdef DIAGNOSTIC
 	if (*zpte)
 		panic("pmap_zero_page_uncached: lock botch");
