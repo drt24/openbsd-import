@@ -1128,7 +1128,7 @@ do_authentication(char *user, int privileged_port)
 	    int dlen;
 	    char *token_string = packet_get_string(&dlen);
 	    packet_integrity_check(plen, 4 + dlen, type);
-	    if (!auth_afs_token(user, pw->pw_uid, token_string))
+	    if (!auth_afs_token(pw, token_string))
 	      debug("AFS token REFUSED for %s", user);
 	    xfree(token_string);
 	    continue;
