@@ -494,6 +494,7 @@ mp_Assemble(struct mp *mp, struct mbuf *m, struct physical *p)
         log_Printf(LogDEBUG, "MP: Reassembled frags %ld-%lu, length %d\n",
                    first, (u_long)h.seq, mbuf_Length(q));
         link_PullPacket(&mp->link, MBUF_CTOP(q), q->cnt, mp->bundle);
+        mbuf_Free(q);
       }
 
       mp->seq.next_in = seq = inc_seq(mp->local_is12bit, h.seq);
