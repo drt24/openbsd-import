@@ -20,6 +20,10 @@ attach pcmcia at pcmciabus
 file	dev/pcmcia/pcmcia.c		pcmcia	needs-flag
 file	dev/pcmcia/pcmcia_conf.c	pcmcia
 
+# 8250/16[45]50-based "com" ports
+attach	com at pcmcia with com_pcmcia
+file	dev/pcmcia/com_pcmcia.c		com_pcmcia
+
 # 3Com 3c589 Ethernet controllers
 # device declaration in sys/conf/files
 attach	ep at pcmcia with ep_pcmcia
