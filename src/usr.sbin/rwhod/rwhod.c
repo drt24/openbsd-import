@@ -141,7 +141,7 @@ main(argc, argv)
 	/*
 	 * Establish host name as returned by system.
 	 */
-	if (gethostname(myname, sizeof(myname) - 1) < 0) {
+	if (gethostname(myname, sizeof(myname)) < 0) {
 		syslog(LOG_ERR, "gethostname: %m");
 		exit(1);
 	}
