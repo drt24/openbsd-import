@@ -6813,7 +6813,7 @@ if "$useshrplib"; then
 	solaris|netbsd)
 		xxx="-R $shrpdir"
 		;;
-	freebsd)
+	freebsd|openbsd)
 		xxx="-Wl,-R$shrpdir"
 		;;
 	linux|irix*|dec_osf)
