@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: sftp.h,v 1.2 2001/01/29 01:58:18 niklas Exp $	*/
 
 /*
  * Copyright (c) 2001 Markus Friedl.  All rights reserved.
