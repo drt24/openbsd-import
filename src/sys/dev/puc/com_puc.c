@@ -1,4 +1,4 @@
-/*	$OpenBSD: com_puc.c,v 1.2 2001/03/15 17:52:20 deraadt Exp $	*/
+/*	$OpenBSD: com_puc.c,v 1.4 2002/01/30 20:45:34 nordin Exp $	*/
 
 /*
  * Copyright (c) 1997 - 1999, Jason Downs.  All rights reserved.
@@ -66,7 +66,6 @@
 #include <dev/ic/ns16550reg.h>
 
 #define	com_lcr		com_cfcr
-#define	SET(t, f)	(t) |= (f)
 
 int com_puc_match __P((struct device *, void *, void *));
 void com_puc_attach __P((struct device *, struct device *, void *));

@@ -1,4 +1,4 @@
-/*	$OpenBSD: ip_input.c,v 1.95 2001/12/06 02:12:52 itojun Exp $	*/
+/*	$OpenBSD: ip_input.c,v 1.98 2002/01/25 15:50:23 art Exp $	*/
 /*	$NetBSD: ip_input.c,v 1.30 1996/03/16 23:53:58 christos Exp $	*/
 
 /*
@@ -225,7 +225,7 @@ ip_init()
 	const u_int16_t defbaddynamicports_udp[] = DEFBADDYNAMICPORTS_UDP;
 
 	pool_init(&ipqent_pool, sizeof(struct ipqent), 0, 0, 0, "ipqepl",
-	    0, NULL, NULL, M_IPQ);
+	    NULL);
 
 	pr = pffindproto(PF_INET, IPPROTO_RAW, SOCK_RAW);
 	if (pr == 0)
@@ -262,12 +262,9 @@ struct	route ipforward_rt;
 void
 ipintr()
 {
-	register struct mbuf *m;
+	struct mbuf *m;
 	int s;
 
-	if (needqueuedrain)
-		m_reclaim();
-	
 	while (1) {
 		/*
 		 * Get next datagram off input queue and get IP header

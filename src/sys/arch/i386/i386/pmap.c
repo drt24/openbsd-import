@@ -1,4 +1,4 @@
-/*	$OpenBSD: pmap.c,v 1.55 2001/12/11 17:24:34 art Exp $	*/
+/*	$OpenBSD: pmap.c,v 1.58 2002/01/23 00:39:47 art Exp $	*/
 /*	$NetBSD: pmap.c,v 1.120 2001/04/22 23:42:14 thorpej Exp $	*/
 
 /*
@@ -897,16 +897,7 @@ pmap_bootstrap(kva_start)
 	 */
 
 	pool_init(&pmap_pmap_pool, sizeof(struct pmap), 0, 0, 0, "pmappl",
-		  0, pool_page_alloc_nointr, pool_page_free_nointr, M_VMPMAP);
-
-  	/*
-	 * initialize the PDE pool and cache.
-	 */
-
-	pool_init(&pmap_pdp_pool, PAGE_SIZE, 0, 0, 0, "pdppl",
-		  0, pool_page_alloc_nointr, pool_page_free_nointr, M_VMPMAP);
-	pool_cache_init(&pmap_pdp_cache, &pmap_pdp_pool,
-			pmap_pdp_ctor, NULL, NULL);
+	    &pool_allocator_nointr);
 
 	/*
 	 * ensure the TLB is sync'd with reality by flushing it...

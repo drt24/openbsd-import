@@ -1,4 +1,4 @@
-/*	$OpenBSD: vs.c,v 1.11 2001/11/06 00:30:38 art Exp $ */
+/*	$OpenBSD: vs.c,v 1.15 2002/01/14 21:34:39 miod Exp $ */
 
 /*
  * Copyright (c) 1999 Steve Murphree, Jr.
@@ -61,7 +61,7 @@
 #include <mvme88k/dev/vsreg.h>
 #include <mvme88k/dev/vsvar.h>
 #include <mvme88k/dev/vme.h>		/* vme_findvec() */
-#include <machine/mmu.h>		/* DMA_CACHE_SYNC, etc... */
+#include <machine/cmmu.h>		/* DMA_CACHE_SYNC, etc... */
 #else
 #include <mvme68k/dev/vsreg.h>
 #include <mvme68k/dev/vsvar.h>
@@ -107,11 +107,12 @@ vs_copy(src, dst, cnt)
 	void *dst;
 	unsigned short cnt;
 { 
-	register unsigned short volatile *x, *y, z; 
+	register unsigned short *volatile x, *volatile y;
+	register unsigned short volatile z; 
 
 	z = cnt >> 1; 
-	x = (unsigned short *) src; 
-	y = (unsigned short *) dst; 
+	x = (unsigned short *)src; 
+	y = (unsigned short *)dst; 
 
 	while (z--) {
 		*y++ = *x++; 

@@ -1,4 +1,4 @@
-/*	$OpenBSD: uperf_psycho.c,v 1.2 2002/01/31 18:27:26 jason Exp $	*/
+/*	$OpenBSD: uperf_psycho.c,v 1.3 2002/01/31 18:35:19 jason Exp $	*/
 
 /*
  * Copyright (c) 2002 Jason L. Wright (jason@thought.net)

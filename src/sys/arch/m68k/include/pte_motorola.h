@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: pte_motorola.h,v 1.3 2002/01/10 21:08:41 miod Exp $	*/
 
 /*
  * Copyright (c) 1988 University of Utah.

@@ -1,4 +1,4 @@
-/*	$OpenBSD: ufs_readwrite.c,v 1.21 2001/12/10 02:19:34 art Exp $	*/
+/*	$OpenBSD: ufs_readwrite.c,v 1.24 2002/01/09 17:55:56 tholo Exp $	*/
 /*	$NetBSD: ufs_readwrite.c,v 1.9 1996/05/11 18:27:57 mycroft Exp $	*/
 
 /*-
@@ -218,6 +218,13 @@ WRITE(v)
 	if (uio->uio_rw != UIO_WRITE)
 		panic("%s: mode", WRITE_S);
 #endif
+
+	/*
+	 * If writing 0 bytes, succeed and do not change
+	 * update time or file offset (standards compliance)
+	 */
+	if (uio->uio_resid == 0)
+		return (0);
 
 	switch (vp->v_type) {
 	case VREG:

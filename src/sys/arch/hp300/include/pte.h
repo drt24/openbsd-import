@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: pte.h,v 1.5 2002/01/10 21:10:47 miod Exp $	*/
 
 #ifndef	_MACHINE_PTE_H_
 #define	_MACHINE_PTE_H_

@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: bha_isa.c,v 1.1 2002/01/24 22:38:03 mickey Exp $	*/
 /*	$NetBSD: bha_isa.c,v 1.14 1998/08/15 10:10:51 mycroft Exp $	*/
 
 /*-

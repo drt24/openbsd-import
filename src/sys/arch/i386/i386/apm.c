@@ -1,4 +1,4 @@
-/*	$OpenBSD: apm.c,v 1.49 2001/08/18 06:08:08 mickey Exp $	*/
+/*	$OpenBSD: apm.c,v 1.51 2002/01/16 20:50:16 miod Exp $	*/
 
 /*-
  * Copyright (c) 1998-2001 Michael Shalayeff. All rights reserved.
@@ -46,7 +46,6 @@
 #include <sys/kernel.h>
 #include <sys/kthread.h>
 #include <sys/lock.h>
-#include <sys/map.h>
 #include <sys/proc.h>
 #include <sys/user.h>
 #include <sys/malloc.h>

@@ -1,4 +1,4 @@
-/*	$OpenBSD: conf.h,v 1.5 2001/11/15 03:59:08 jason Exp $	*/
+/*	$OpenBSD: conf.h,v 1.10 2002/01/30 23:58:03 jason Exp $	*/
 /*	$NetBSD: conf.h,v 1.9 2001/03/26 12:33:26 lukem Exp $	*/
 
 /*-
@@ -47,12 +47,27 @@ cdev_decl(ksyms);
 
 cdev_decl(openprom);
 
+
 /* open, close, ioctl */
 #define cdev_openprom_init(c,n) { \
 	dev_init(c,n,open), dev_init(c,n,close), (dev_type_read((*))) enodev, \
 	(dev_type_write((*))) enodev, dev_init(c,n,ioctl), \
 	(dev_type_stop((*))) nullop, 0, (dev_type_select((*))) enodev, \
 	(dev_type_mmap((*))) enodev }
+
+cdev_decl(uperf);
+
+/* open, close, ioctl */
+#define cdev_uperf_init(c,n) { \
+	dev_init(c,n,open), dev_init(c,n,close), (dev_type_read((*))) enodev, \
+	(dev_type_write((*))) enodev, dev_init(c,n,ioctl), \
+	(dev_type_stop((*))) nullop, 0, (dev_type_select((*))) enodev, \
+	(dev_type_mmap((*))) enodev }
+
+#define	cdev_gen_init(c,n) { \
+	dev_init(c,n,open), dev_init(c,n,close), dev_init(c,n,read), \
+	dev_init(c,n,write), dev_init(c,n,ioctl), (dev_type_stop((*))) nullop, \
+	0, dev_init(c,n,select), (dev_type_mmap((*))) enodev }
 
 cdev_decl(cn);
 
@@ -97,3 +112,16 @@ cdev_decl(sabtty);
 cdev_decl(pcons);
 
 cdev_decl(com);
+
+cdev_decl(usb);
+cdev_decl(uhid);
+cdev_decl(ugen);
+cdev_decl(ulpt);
+cdev_decl(urio);
+cdev_decl(ucom);
+cdev_decl(uscanner);
+
+cdev_decl(mtty);
+cdev_decl(mbpp);
+cdev_decl(stty);
+cdev_decl(sbpp);

@@ -1,4 +1,4 @@
-/*	$OpenBSD: pmap.h,v 1.13 2001/11/30 20:58:18 miod Exp $	*/
+/*	$OpenBSD: pmap.h,v 1.16 2002/01/10 22:25:40 miod Exp $	*/
 
 #ifndef	_MAC68K_PMAP_H_
 #define	_MAC68K_PMAP_H_

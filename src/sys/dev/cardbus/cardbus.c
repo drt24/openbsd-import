@@ -1,4 +1,4 @@
-/*	$OpenBSD: cardbus.c,v 1.2 2000/05/15 06:36:21 niklas Exp $ */
+/*	$OpenBSD: cardbus.c,v 1.4 2002/01/03 20:28:02 nate Exp $ */
 /*	$NetBSD: cardbus.c,v 1.24 2000/04/02 19:11:37 mycroft Exp $	*/
 
 /*
@@ -501,6 +501,7 @@ cardbus_attach_card(sc)
     ca.ca_dmat = sc->sc_dmat;
 
     ca.ca_tag = tag;
+    ca.ca_bus = sc->sc_bus;
     ca.ca_device = sc->sc_device;
     ca.ca_function = function;
     ca.ca_id = id;

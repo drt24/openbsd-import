@@ -1,4 +1,4 @@
-/*	$OpenBSD: bus_space.c,v 1.13 2001/11/28 15:34:16 art Exp $	*/
+/*	$OpenBSD: bus_space.c,v 1.15 2002/01/16 20:50:16 miod Exp $	*/
 /*	$NetBSD: bus_space.c,v 1.5 1999/03/26 23:41:30 mycroft Exp $	*/
 
 /*-
@@ -45,7 +45,6 @@
 #include <sys/param.h>
 #include <sys/systm.h>
 #include <sys/extent.h>
-#include <sys/map.h>
 
 #include <machine/bus.h>
 
