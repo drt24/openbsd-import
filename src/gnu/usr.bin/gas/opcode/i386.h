@@ -757,6 +757,7 @@ static const reg_entry i386_regtab[] = {
   {"ds", SReg2, 3}, {"fs", SReg3, 4}, {"gs", SReg3, 5},
   /* control registers */
   {"cr0", Control, 0},   {"cr2", Control, 2},   {"cr3", Control, 3},
+  {"cr4", Control, 4},
   /* debug registers */
   {"db0", Debug, 0},   {"db1", Debug, 1},   {"db2", Debug, 2},
   {"db3", Debug, 3},   {"db6", Debug, 6},   {"db7", Debug, 7},
