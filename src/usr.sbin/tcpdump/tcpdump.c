@@ -507,10 +507,12 @@ __dead void
 usage(void)
 {
 	extern char version[];
+	extern char pcap_version[];
 
 	(void)fprintf(stderr, "%s version %s\n", program_name, version);
+	(void)fprintf(stderr, "libpcap version %s\n", pcap_version);
 	(void)fprintf(stderr,
-"Usage: tcpdump [-adeflnNOpqStvxX] [-c count] [ -F file ]\n");
+"Usage: %s [-adeflnNOpqStvxX] [-c count] [ -F file ]\n", program_name);
 	(void)fprintf(stderr,
 "\t\t[ -i interface ] [ -r file ] [ -s snaplen ]\n");
 	(void)fprintf(stderr,
