@@ -56,7 +56,7 @@ kadm_ser_init(int inter, char *realm)
   (void) strcpy(server_parm.sname, PWSERV_NAME);
   if (krb_get_admhst(admin, realm, 1) != KSUCCESS)
       return KADM_NO_MAST;
-  if ((dot = strchr(server_parm.sinst, '.')) != NULL)
+  if ((dot = strchr(admin, '.')) != NULL)
       *dot = '\0';
   (void) strcpy(server_parm.sinst, admin);
   (void) strcpy(server_parm.krbrlm, realm);
