@@ -54,6 +54,10 @@
 #define	_BSD_CLOCKID_T_	int
 #define	_BSD_TIMER_T_	int
 
+#if 0
+#define	_BSD_VA_LIST_	char*			/* va_list */
+#endif
+
 #include "va-m88k.h"
 
 #define _BSD_VA_LIST_	__gnuc_va_list

@@ -1,4 +1,6 @@
+/*	$OpenBSD: ptrace.h,v 1.1 1998/12/15 04:45:50 smurph Exp $ */
 /*
+ * Copyright (c) 1999, Steve Murphree, Jr.
  * Copyright (c) 1992, 1993
  *	The Regents of the University of California.  All rights reserved.
  *
@@ -48,7 +50,9 @@
 /*
  * m88k-dependent ptrace definitions.
  */
-#define	PT_GETREGS	(PT_FIRSTMACH + 0)
-#define	PT_SETREGS	(PT_FIRSTMACH + 1)
-#define	PT_GETFPREGS	(PT_FIRSTMACH + 2)
-#define	PT_SETFPREGS	(PT_FIRSTMACH + 3)
+
+#define	PT_STEP		(PT_FIRSTMACH + 0)
+#define	PT_GETREGS	(PT_FIRSTMACH + 1)
+#define	PT_SETREGS	(PT_FIRSTMACH + 2)
+#define	PT_GETFPREGS	(PT_FIRSTMACH + 3)
+#define	PT_SETFPREGS	(PT_FIRSTMACH + 4)

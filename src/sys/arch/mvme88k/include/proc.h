@@ -1,3 +1,4 @@
+/*	$OpenBSD: proc.h,v 1.1 1998/12/15 06:02:55 smurph Exp $ */
 /*
  * Copyright (c) 1992, 1993
  *	The Regents of the University of California.  All rights reserved.

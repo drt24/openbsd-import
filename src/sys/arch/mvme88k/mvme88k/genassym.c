@@ -1,3 +1,4 @@
+/*	$OpenBSD: genassym.c,v 1.28 1995/04/19 22:37:27 smurph Exp $	*/
 /*
  * Copyright (c) 1982, 1990 The Regents of the University of California.
  * All rights reserved.
