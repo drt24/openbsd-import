@@ -35,13 +35,6 @@ ssh_get_authentication_fd()
   int sock;
   struct sockaddr_un sunaddr;
 
-  /* Get the file descriptor number from environment. */
-  authfd = getenv(SSH_AUTHFD_ENV_NAME);
-
-  /* Convert the value to an integer and return it if we got a value. */
-  if (authfd)
-    return atoi(authfd);
-
   authsocket = getenv(SSH_AUTHSOCKET_ENV_NAME);
   if (!authsocket)
     return -1;

@@ -2054,18 +2054,9 @@ void do_child(const char *command, struct passwd *pw, const char *term,
       child_set_env(&env, &envsize, "XAUTHORITY", xauthfile);
 
   /* Set variable for forwarded authentication connection, if we have one. */
-  if (get_permanent_fd(pw->pw_shell) < 0)
-    {
-      if (auth_get_socket_name() != NULL)
-	child_set_env(&env, &envsize, SSH_AUTHSOCKET_ENV_NAME, 
-		      auth_get_socket_name());
-    }
-  else
-    if (auth_get_fd() >= 0)
-      {
-	snprintf(buf, sizeof buf, "%d", auth_get_fd());
-	child_set_env(&env, &envsize, SSH_AUTHFD_ENV_NAME, buf);
-      }
+  if (auth_get_socket_name() != NULL)
+      child_set_env(&env, &envsize, SSH_AUTHSOCKET_ENV_NAME, 
+		    auth_get_socket_name());
 
   /* Read $HOME/.ssh/environment. */
   snprintf(buf, sizeof buf, "%.200s/.ssh/environment", pw->pw_dir);

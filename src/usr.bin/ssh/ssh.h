@@ -130,9 +130,6 @@ only by root, whereas ssh_config should be world-readable. */
    might not be able to create and chown the file to the user\'s uid. */
 #define SSH_AGENT_SOCKET	"/tmp/ssh_agent.%d"
 
-/* Name of the environment variable containing the authentication fd. */
-#define SSH_AUTHFD_ENV_NAME	"SSH_AUTHENTICATION_FD"
-
 /* Name of the environment variable containing the pathname of the
    authentication socket. */
 #define SSH_AUTHSOCKET_ENV_NAME	"SSH_AUTHENTICATION_SOCKET"
