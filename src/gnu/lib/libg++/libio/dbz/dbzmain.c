@@ -83,6 +83,7 @@ extern char *malloc();
 /*
  - main - parse arguments and handle options
  */
+int
 main(argc, argv)
 int argc;
 char *argv[];
