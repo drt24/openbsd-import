@@ -640,7 +640,7 @@ search(search_forward, pattern, n, wantmatch)
 		}
 		else
 			regfree(cpattern);
-		if (regcomp(cpattern, pattern, 0))
+		if (regcomp(cpattern, pattern, REG_EXTENDED))
 		{
 			error("Invalid pattern");
 			return(0);
