@@ -158,6 +158,13 @@ main(int argc, char **argv)
 
      init_schemes();
 
+#ifndef DEBUG
+     init_signals();
+     if (fork())
+          exit(0);
+     daemon_mode = 1;
+#endif
+
 #ifdef IPSEC
      init_kernel();
 #endif
@@ -175,13 +182,6 @@ main(int argc, char **argv)
      /* Startup preconfigured exchanges */
      if( !ignore && !vpn_mode)
 	  init_startup();
-
-#ifndef DEBUG
-     init_signals();
-     if (fork())
-	  exit(0);
-     daemon_mode = 1;
-#endif
 
      server();
      exit(0);
