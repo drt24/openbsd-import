@@ -1,4 +1,4 @@
-/*	$NetBSD: ncrreg.h,v 1.2.2.1 1995/10/19 01:33:12 phil Exp $ */
+/*	$NetBSD: ncrreg.h,v 1.3 1995/11/30 00:58:56 jtc Exp $ */
 
 /*
  * Copyright (c) 1994 Matthias Pfaller.
