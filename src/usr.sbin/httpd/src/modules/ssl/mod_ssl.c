@@ -92,6 +92,11 @@ static command_rec ssl_config_cmds[] = {
     AP_SRV_CMD(SessionCache, TAKE1,
                "SSL Session Cache storage "
                "(`none', `dbm:/path/to/file')")
+#ifdef SSL_EXPERIMENTAL_ENGINE
+    AP_SRV_CMD(CryptoDevice, TAKE1,
+               "SSL external Crypto Device usage "
+               "(`builtin', `...')")
+#endif
     AP_SRV_CMD(RandomSeed, TAKE23,
                "SSL Pseudo Random Number Generator (PRNG) seeding source "
                "(`startup|connect builtin|file:/path|exec:/path [bytes]')")
