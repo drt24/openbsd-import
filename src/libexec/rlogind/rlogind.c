@@ -664,7 +664,7 @@ do_krb_login(dest)
 			ticket, "rcmd",
 			instance, dest, &faddr,
 			kdata, "", schedule, version);
-		 des_set_key(&kdata->session, schedule);
+		 desrw_set_key(&kdata->session, schedule);
 
 	} else
 		rc = krb_recvauth(
