@@ -34,7 +34,12 @@
 /* A union which permits us to convert between a double and two 32 bit
    ints.  */
 
-#if BYTE_ORDER == BIG_ENDIAN
+/*
+ * The arm32 port is little endian except for the FP word order which is
+ * big endian.
+ */
+
+#if (BYTE_ORDER == BIG_ENDIAN) || defined(arm32)
 
 typedef union 
 {
@@ -48,7 +53,7 @@ typedef union
 
 #endif
 
-#if BYTE_ORDER == LITTLE_ENDIAN
+#if (BYTE_ORDER == LITTLE_ENDIAN) && !defined(arm32)
 
 typedef union 
 {
