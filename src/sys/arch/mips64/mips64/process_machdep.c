@@ -1,6 +1,7 @@
-/*	$OpenBSD: process_machdep.c,v 1.1 2004/08/06 20:56:03 pefo Exp $	*/
+/*	$OpenBSD: process_machdep.c,v 1.2 2004/08/08 14:21:27 pefo Exp $	*/
+
 /*
- * Copyright (c) 1994 Adam Glass   
+ * Copyright (c) 1994 Adam Glass
  * Copyright (c) 1993 The Regents of the University of California.
  * Copyright (c) 1993 Jan-Simon Pendry
  * All rights reserved.
