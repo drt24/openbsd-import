@@ -1,4 +1,4 @@
-/* $OpenBSD: $ */
+/* $OpenBSD: isp_tpublic.h,v 1.1 2000/02/20 21:22:40 mjacob Exp $ */
 /*
  * Qlogic ISP Host Adapter Public Target Interface Structures && Routines
  *---------------------------------------

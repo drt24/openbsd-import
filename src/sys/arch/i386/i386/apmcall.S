@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: apmcall.S,v 1.1 2000/02/21 17:09:01 mickey Exp $	*/
 
 /*
  * Copyright (c) 2000 Michael Shalayeff
