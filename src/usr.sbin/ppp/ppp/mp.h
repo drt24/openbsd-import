@@ -94,6 +94,7 @@ struct mp {
   struct {
     u_short mrru;		/* Max Reconstructed Receive Unit */
     unsigned shortseq : 2;	/* I want short Sequence Numbers */
+    unsigned negenddisc : 2;	/* I want an endpoint discriminator */
     struct enddisc enddisc;	/* endpoint discriminator */
   } cfg;
 
