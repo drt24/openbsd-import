@@ -41,14 +41,16 @@
 #	$Id$
 
 PROG = amdref
-SRCS = amdref.texinfo
+SRCS = ${.CURDIR}/amdref.texinfo
 
 ${PROG}: amdref.dvi
 
 amdref.dvi: ${SRCS}
-	-tex amdref.texinfo; tex amdref.texinfo
+	-tex ${.CURDIR}/amdref.texinfo; tex ${.CURDIR}/amdref.texinfo
 
 clean:
 	-rm -f amdref.aux amdref.cp amdref.cps amdref.dvi amdref.fn \
 	amdref.fns amdref.ky amdref.kys amdref.log amdref.pg amdref.pgs \
 	amdref.toc amdref.tp amdref.tps amdref.vr amdref.vrs
+
+.include <bsd.prog.mk>
