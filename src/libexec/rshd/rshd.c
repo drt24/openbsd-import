@@ -426,7 +426,7 @@ doit(fromp)
 		    "%s@%s as %s: unknown login. cmd='%.80s'",
 		    remuser, hostname, locuser, cmdbuf);
 		if (errorstr == NULL)
-			errorstr = "Login incorrect.\n";
+			errorstr = "Permission denied.\n";
 		goto fail;
 	}
 
