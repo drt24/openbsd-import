@@ -298,8 +298,12 @@ main(int argc, char **argv)
 			warning("snaplen raised from %d to %d", snaplen, i);
 			snaplen = i;
 		}
-		if (pcap_lookupnet(device, &localnet, &netmask, ebuf) < 0)
-			error("%s", ebuf);
+		if (pcap_lookupnet(device, &localnet, &netmask, ebuf) < 0) {
+			warning("%s", ebuf);
+			localnet = 0;
+			netmask = 0;
+		}
+
 		/*
 		 * Let user own process after socket has been opened.
 		 */
