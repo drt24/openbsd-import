@@ -8,10 +8,11 @@
  *
  * Modifications:
  *          Scott Chasin <chasin@crimelab.com>
+ *          Todd C. Miller <Todd.Miller@courtesan.com>
  *
  * Main client header
  *
- * $Id$
+ * $OpenBSD: skey.h,v 1.9 1997/07/23 06:53:12 millert Exp $
  */
 
 /* Server-side data structure for reading keys file during login */

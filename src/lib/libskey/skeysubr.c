@@ -7,10 +7,11 @@
  *
  * Modifications: 
  *          Scott Chasin <chasin@crimelab.com>
+ *          Todd C. Miller <Todd.Miller@courtesan.com>
  *
  * S/KEY misc routines.
  *
- * $Id$
+ * $OpenBSD: skeysubr.c,v 1.16 1997/07/24 23:00:27 millert Exp $
  */
 
 #include <stdio.h>
