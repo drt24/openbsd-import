@@ -239,8 +239,15 @@ main(argc, argv)
 		 * and ensure that the slip line is our controlling terminal.
 		 */
 #ifdef POSIX
-		if (fork() > 0)
+		switch (fork()) {
+		case -1:
+			perror("fork");
+			exit(1);
+		case 0:
+			break;
+		default:
 			exit(0);
+		}
 		if (setsid() == -1)
 			perror("setsid");
 #else
