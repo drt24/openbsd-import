@@ -323,7 +323,7 @@ char *argv[];
 #endif /* DEBUG */
 	ppid = daemon_mode();
 
-	sprintf(pid_fsname, "%s:(pid%ld)", hostname, (long)mypid);
+	snprintf(pid_fsname, sizeof(pid_fsname), "%s:(pid%ld)", hostname, (long)mypid);
 
 	do_mapc_reload = clocktime() + ONE_HOUR;
 

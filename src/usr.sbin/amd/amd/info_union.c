@@ -87,7 +87,7 @@ time_t *tp;
 	for (p = v; p[1]; p++)
 		;
 	*pval = xmalloc(strlen(*p) + 5);
-	sprintf(*pval, "fs:=%s", *p);
+	snprintf(*pval, strlen(*p) + 5, "fs:=%s", *p);
 	free(mapd);
 	free(v);
 	return 0;
@@ -131,7 +131,7 @@ void (*fn)();
 			dlog("... gives %s", dp->d_name);
 #endif
 			val = xmalloc(dlen + 5);
-			sprintf(val, "fs:=%s", *dir);
+			snprintf(val, dlen + 5, "fs:=%s", *dir);
 			(*fn)(m, strdup(dp->d_name), val);
 		}
 		closedir(dirp);
@@ -140,7 +140,7 @@ void (*fn)();
 	 * Add wildcard entry
 	 */
 	{ char *val = xmalloc(strlen(dir[-1]) + 5);
-	  sprintf(val, "fs:=%s", dir[-1]);
+	  snprintf(val, strlen(dir[-1]) + 5, "fs:=%s", dir[-1]);
 	  (*fn)(m, strdup("*"), val);
 	}
 	free(mapd);

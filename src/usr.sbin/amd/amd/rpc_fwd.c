@@ -292,7 +292,7 @@ fwd_fun cb;
 	 */
 #ifdef DEBUG
 	{ char dq[20]; 
-	dlog("Sending packet id %#x to %s.%d", p->rf_xid, inet_dquad(dq, fwdto->sin_addr.s_addr), ntohs(fwdto->sin_port));
+	dlog("Sending packet id %#x to %s.%d", p->rf_xid, inet_dquad(dq, sizeof(dq), fwdto->sin_addr.s_addr), ntohs(fwdto->sin_port));
 	}
 #endif /* DEBUG */
 	if (sendto(fwd_sock, (char *) pkt, len, 0,

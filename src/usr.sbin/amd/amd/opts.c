@@ -520,7 +520,7 @@ static char expand_error[] = "No space to expand \"%s\"";
 						/*
 						 * Copy the string across unexpanded
 						 */
-						sprintf(xbuf, "${%s%s%s}",
+						snprintf(xbuf, sizeof(xbuf), "${%s%s%s}",
 							todo == E_File ? "/" :
 								todo == E_Domain ? "." : "",
 							nbuf,

@@ -111,7 +111,8 @@ char *map;
 	char *sublink = fs ? strchr(fs+1, ':') : 0;
 	char keybuf[MAXPATHLEN];
 
-	sprintf(keybuf, "type:=nfs;rhost:=%s;rfs:=%s;sublink:=%s;opts:=%s", host,
+	snprintf(keybuf, sizeof(keybuf),
+		"type:=nfs;rhost:=%s;rfs:=%s;sublink:=%s;opts:=%s", host,
 		fs ? fs+1 : "",
 		sublink ? sublink+1  : "",
 		g_key);

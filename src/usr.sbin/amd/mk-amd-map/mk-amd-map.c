@@ -284,7 +284,7 @@ char *argv[];
 			exit(1);
 		}
 		mktemp(maptmp);
-		sprintf(maptpag, "%s%s", maptmp, DBM_SUFFIX);
+		snprintf(maptpag, sizeof(maptpag), "%s%s", maptmp, DBM_SUFFIX);
 		if (remove_file(maptpag) < 0) {
 			fprintf(stderr, "Can't remove existing temporary file");
 			perror(maptpag);
@@ -298,8 +298,8 @@ char *argv[];
 			exit(1);
 		}
 		mktemp(maptmp);
-		sprintf(maptpag, "%s.pag", maptmp);
-		sprintf(maptdir, "%s.dir", maptmp);
+		snprintf(maptpag, sizeof(maptpag), "%s.pag", maptmp);
+		snprintf(maptdir, sizeof(maptdir), "%s.dir", maptmp);
 		if (remove_file(maptpag) < 0 || remove_file(maptdir) < 0) {
 			fprintf(stderr, "Can't remove existing temporary files; %s and", maptpag);
 			perror(maptdir);
@@ -334,7 +334,7 @@ char *argv[];
 				rc = 1;
 			} else {
 #ifdef USING_DB
-				sprintf(mappag, "%s%s", map, DBM_SUFFIX);
+				snprintf(mappag, sizeof(mappag), "%s%s", map, DBM_SUFFIX);
 				if (rename(maptpag, mappag) < 0) {
 					fprintf(stderr, "Couldn't rename %s to ", maptpag);
 					perror(mappag);
@@ -343,8 +343,8 @@ char *argv[];
 					rc = 1;
 				}
 #else
-				sprintf(mappag, "%s.pag", map);
-				sprintf(mapdir, "%s.dir", map);
+				snprintf(mappag, sizeof(mappag), "%s.pag", map);
+				snprintf(mapdir, sizeof(mapdir), "%s.dir", map);
 				if (rename(maptpag, mappag) < 0) {
 					fprintf(stderr, "Couldn't rename %s to ", maptpag);
 					perror(mappag);

@@ -189,7 +189,7 @@ struct svc_req *rqstp;
 	      sin->sin_addr.s_addr == myipaddr.s_addr)) {
 		char dq[20];
 		plog(XLOG_INFO, "AMQ request from %s.%d DENIED",
-		     inet_dquad(dq, sin->sin_addr.s_addr),
+		     inet_dquad(dq, sizeof(dq), sin->sin_addr.s_addr),
 		     ntohs(sin->sin_port));
 		return(0);
 	}

@@ -316,7 +316,7 @@ char *val;
 		/*
 		 * Make sure the string is bound to the start and end
 		 */
-		sprintf(keyb, "^%s$", key);
+		snprintf(keyb, sizeof(keyb), "^%s$", key);
 		re = regcomp(keyb);
 		if (re == 0) {
 			plog(XLOG_USER, "error compiling RE \"%s\": %s", keyb, reg_error);
@@ -818,7 +818,7 @@ char *map;
 	 */
 	dir = strdup(dir);
 	if (map)
-		sprintf(str, "cache:=mapdefault;type:=toplvl;fs:=\"%s\";%s",
+		snprintf(str, sizeof(str), "cache:=mapdefault;type:=toplvl;fs:=\"%s\";%s",
 			map, opts ? opts : "");
 	else
 		strcpy(str, opts);

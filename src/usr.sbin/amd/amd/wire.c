@@ -236,7 +236,7 @@ char *getwire()
 				if (hp)
 					s = hp->h_name;
 				else
-					s = inet_dquad(buf, subnet);
+					s = inet_dquad(buf, sizeof(buf), subnet);
 			}
 			netname = strdup(s);
 		}
@@ -275,7 +275,7 @@ u_int32_t addr;
 
 #ifdef DEBUG
 	{ char buf[16];
-	plog(XLOG_INFO, "%s is on a remote network", inet_dquad(buf, addr));
+	plog(XLOG_INFO, "%s is on a remote network", inet_dquad(buf, sizeof(buf), addr));
 	}
 #endif
 	return FALSE;

@@ -143,7 +143,7 @@ time_t *tp;
 		q = strchr(rhost, '.');
 		if (q)
 			*q = '\0';
-		sprintf(val, "rfs:=%s/%s;rhost:=%s;sublink:=%s;fs:=${autodir}%s",
+		snprintf(val, sizeof(val), "rfs:=%s/%s;rhost:=%s;sublink:=%s;fs:=${autodir}%s",
 			dir, rhost, rhost, user, pw->pw_dir);
 		if (q)
 			*q = '.';
