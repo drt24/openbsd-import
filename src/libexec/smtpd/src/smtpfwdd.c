@@ -760,7 +760,7 @@ forward(char *fname)
  * The brains of this operation
  */
 
-void
+int
 main(int argc, char **argv)
 {
   int opt;

@@ -1965,7 +1965,7 @@ snarfdata(int in, int out, long *size, int bin)
  * The brains of this operation
  */
 
-void
+int
 main(int argc, char **argv)
 {
   int opt;
