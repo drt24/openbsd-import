@@ -95,6 +95,7 @@ fi
 if [ ! -d ${YP_DIR} -o -f ${YP_DIR} ]
 then
 	echo "The directory ${YP_DIR} doesn't exist. Restore it from the distribution." 1>&2
+	echo "(Or move ${YP_DIR}.no to ${YP_DIR} if YP has not been activated before." 1>&2
 	exit 1
 
 fi
