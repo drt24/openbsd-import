@@ -840,6 +840,11 @@ generate
 # ./usr/share/groff_font
 ..
 
+# ./usr/share/info
+info
+# ./usr/share/info
+..
+
 # ./usr/share/lkm
 lkm		gname=bin uname=bin
 
