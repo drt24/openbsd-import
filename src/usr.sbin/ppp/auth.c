@@ -160,11 +160,12 @@ AuthGetSecret(const char *fname, const char *system, int len, int setaddr)
       if (setaddr) {
 	memset(&DefHisAddress, '\0', sizeof DefHisAddress);
       }
-      if (n > 2 && setaddr)
+      if (n > 2 && setaddr) {
 	if (UseHisaddr(vector[2], 1))
           IpcpInit();
         else
           return NULL;
+      }
       if (n > 3)
         SetLabel(vector[3]);
       return (passwd);

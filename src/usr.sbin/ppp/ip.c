@@ -473,11 +473,12 @@ IpInput(struct mbuf * bp)
     IpcpAddInOctets(nb);
     nb += sizeof tun - sizeof tun.data;
     nw = write(tun_out, &tun, nb);
-    if (nw != nb)
+    if (nw != nb) {
       if (nw == -1)
 	LogPrintf(LogERROR, "IpInput: wrote %d, got %s\n", nb, strerror(errno));
       else
         LogPrintf(LogERROR, "IpInput: wrote %d, got %d\n", nb, nw);
+    }
   }
   pfree(bp);
 

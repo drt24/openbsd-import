@@ -389,12 +389,13 @@ DecodePacket(u_short proto, struct mbuf * bp)
    * If proto isn't PROTO_COMPD, we still want to pass it to the
    * decompression routines so that the dictionary's updated
    */
-  if (CcpFsm.state == ST_OPENED)
+  if (CcpFsm.state == ST_OPENED) {
     if (proto == PROTO_COMPD) {
       if ((bp = CompdInput(&proto, bp)) == NULL)
         return;
     } else if ((proto & 0xfff1) == 0x21)	/* Network Layer protocol */
       CcpDictSetup(proto, bp);
+  }
 
   switch (proto) {
   case PROTO_LCP:

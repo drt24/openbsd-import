@@ -277,7 +277,7 @@ DeflateInput(u_short *proto, struct mbuf *mi)
         flush = Z_SYNC_FLUSH;
     }
 
-    if (InputState.cx.avail_out == 0)
+    if (InputState.cx.avail_out == 0) {
       /* overflow */
       if (first) {
         if (!(wp[1] & 1)) {
@@ -295,6 +295,7 @@ DeflateInput(u_short *proto, struct mbuf *mi)
         InputState.cx.next_out = MBUF_CTOP(mo);
         InputState.cx.avail_out = DEFLATE_CHUNK_LEN;
       }
+    }
   }
 
   if (mi != NULL)
