@@ -50,7 +50,7 @@ such damages.
 #include <sys/time.h>
 #endif
 
-#include "sectok.h"
+#include "sc7816.h"
 
 #ifdef __palmos__
 #undef printf

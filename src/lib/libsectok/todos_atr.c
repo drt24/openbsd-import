@@ -51,7 +51,7 @@ typedef long int32_t;
 #include <sys/types.h>
 #endif
 
-#include "sectok.h"
+#include "sc7816.h"
 #include "todos_scrw.h"
 
 #ifdef __unix__

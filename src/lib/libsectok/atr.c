@@ -50,7 +50,7 @@ typedef long int32_t;
 #include <sys/types.h>
 #endif
 
-#include "sectok.h"
+#include "sc7816.h"
 
 /* Global interface bytes */
 #define TA1 (tpb[0][0])
