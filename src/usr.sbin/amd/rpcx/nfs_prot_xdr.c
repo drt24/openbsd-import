@@ -359,7 +359,8 @@ xdr_readokres(xdrs, objp)
 	if (!xdr_fattr(xdrs, &objp->attributes)) {
 		return (FALSE);
 	}
-	if (!xdr_bytes(xdrs, (char **)&objp->data.data_val, (u_int *)&objp->data.data_len, NFS_MAXDATA)) {
+	if (!xdr_bytes(xdrs, (char **)&objp->data.data_val,
+	    (u_int *)&objp->data.data_len, NFS_MAXDATA)) {
 		return (FALSE);
 	}
 	return (TRUE);
@@ -406,7 +407,8 @@ xdr_writeargs(xdrs, objp)
 	if (!xdr_u_int(xdrs, &objp->totalcount)) {
 		return (FALSE);
 	}
-	if (!xdr_bytes(xdrs, (char **)&objp->data.data_val, (u_int *)&objp->data.data_len, NFS_MAXDATA)) {
+	if (!xdr_bytes(xdrs, (char **)&objp->data.data_val,
+	    (u_int *)&objp->data.data_len, NFS_MAXDATA)) {
 		return (FALSE);
 	}
 	return (TRUE);
@@ -534,7 +536,8 @@ xdr_entry(xdrs, objp)
 	if (!xdr_nfscookie(xdrs, objp->cookie)) {
 		return (FALSE);
 	}
-	if (!xdr_pointer(xdrs, (char **)&objp->nextentry, sizeof(entry), xdr_entry)) {
+	if (!xdr_pointer(xdrs, (char **)&objp->nextentry,
+	    sizeof(entry), xdr_entry)) {
 		return (FALSE);
 	}
 	return (TRUE);
@@ -548,7 +551,8 @@ xdr_dirlist(xdrs, objp)
 	XDR *xdrs;
 	dirlist *objp;
 {
-	if (!xdr_pointer(xdrs, (char **)&objp->entries, sizeof(entry), xdr_entry)) {
+	if (!xdr_pointer(xdrs, (char **)&objp->entries,
+	    sizeof(entry), xdr_entry)) {
 		return (FALSE);
 	}
 	if (!xdr_bool(xdrs, &objp->eof)) {
