@@ -80,6 +80,5 @@
 				PSEUDO_SUFFIX
 
 #define RSYSCALL(x)		PSEUDO(x,x)
-#define PASSTHRU(x)		ENTRY(x)	b _CONCAT(_thread_sys_,x)
 
 #endif /* _THREAD_SAFE */
