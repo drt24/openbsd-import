@@ -126,6 +126,7 @@ sub catfile {
     return $self->canonpath($file) unless @_;
     my $dir = $self->catdir(@_);
     for ($dir) {
+	$_ =~ s/:.*$//;
 	$_ .= "/" unless substr($_,length($_)-1,1) eq "/";
     }
     return $self->canonpath($dir.$file);
@@ -1603,7 +1604,12 @@ from the perl source tree.
 	# we should also consider $ENV{PERL5LIB} here
 	$self->{PERL_LIB}     ||= $Config::Config{privlibexp};
 	$self->{PERL_ARCHLIB} ||= $Config::Config{archlibexp};
-	$self->{PERL_INC}     = $self->catdir("$self->{PERL_ARCHLIB}","CORE"); # wild guess for now
+	foreach (split(':', $self->{PERL_ARCHLIB})) {
+	    last if (-d ($self->{PERL_INC} = $self->catdir($_, "CORE")));
+	}
+	# use the primary path compenents of privlibexp and archlibexp
+	$self->{PERL_LIB} =~ s/:.*//;
+	$self->{PERL_ARCHLIB} =~ s/:.*//;
 	my $perl_h;
 	unless (-f ($perl_h = $self->catfile($self->{PERL_INC},"perl.h"))){
 	    die qq{
