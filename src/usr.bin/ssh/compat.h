@@ -31,5 +31,9 @@
 #ifndef COMPAT_H
 #define COMPAT_H
 void    enable_compat13(void);
+void    enable_compat20(void);
+void    compat_datafellows(const char *s);
 extern int compat13;
+extern int compat20;
+extern int datafellows;
 #endif
