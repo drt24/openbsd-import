@@ -364,7 +364,7 @@ addid(id, type, name)
 	if (name) {
 		bcopy(name, fup->fu_name, len + 1);
 	} else {
-		sprintf(fup->fu_name, "%u", id);
+		snprintf(fup->fu_name, len, "%u", id);
 	}
 	return (fup);
 }
