@@ -1,5 +1,5 @@
 %{
-/*	$OpenBSD: scanner.l,v 1.9 2000/04/26 21:25:53 jakob Exp $	*/
+/*	$OpenBSD: scanner.l,v 1.10 2000/06/29 06:56:13 dugsong Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -31,6 +31,7 @@ static const char rcsid[] =
 #include <sys/time.h>
 
 #include <ctype.h>
+#include <string.h>
 #include <unistd.h>
 
 #include "pcap-int.h"
