@@ -149,8 +149,11 @@ again:
 	 * Discard setgid privileges if not the running kernel so that bad
 	 * guys can't print interesting stuff from kernel memory.
 	 */
-	if (!strcmp(system, _PATH_UNIX) || !strcmp(core, _PATH_KMEM))
+	if (!strcmp(system, _PATH_UNIX) || !strcmp(core, _PATH_KMEM)) {
+		setegid(getgid());
 		setgid(getgid());
+	}
+
 	(void) nlist(system, nl);
 	if (nl[0].n_value == 0) {
 		fprintf(stderr, "trsp: %s: no namelist\n", system);

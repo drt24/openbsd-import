@@ -167,8 +167,10 @@ main(argc, argv)
 	 * Discard setgid priviledges if not the running kernel so that bad
 	 * guys can't print interesting stuff from kernel memory.
 	 */
-	if (!strcmp(core, _PATH_KMEM) || !strcmp(system, _PATH_UNIX))
+	if (!strcmp(core, _PATH_KMEM) || !strcmp(system, _PATH_UNIX)) {
+		setegid(getgid());
 		setgid(getgid());
+	}
 
 	if (nlist(system, nl) < 0 || !nl[0].n_value) {
 		fprintf(stderr, "trpt: %s: no namelist\n", system);

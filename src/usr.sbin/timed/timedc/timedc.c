@@ -77,6 +77,9 @@ main(int argc, char *argv[])
 		fprintf(stderr, "Could not get privileged resources\n");
 		exit(1);
 	}
+	/* revoke privs */
+
+	(void) seteuid(getuid());
 	(void) setuid(getuid());
 
 	if (--argc > 0) {
