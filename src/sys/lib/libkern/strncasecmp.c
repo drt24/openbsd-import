@@ -1,4 +1,4 @@
-/*	$OpenBSD: strncasecmp.c,v 1.2 1996/05/01 15:18:52 deraadt Exp $	*/
+/*	$OpenBSD: strncasecmp.c,v 1.3 1998/06/27 01:21:09 mickey Exp $	*/
 
 /*
  * Copyright (c) 1994 Christian E. Hopps
@@ -40,10 +40,7 @@ static char *rcsid = "$Id$";
 #endif
 
 int
-strncasecmp(s1, s2, n)
-	const char *s1;
-	const char *s2;
-	size_t n;
+strncasecmp(const char *s1, const char *s2, size_t n)
 {
 	if (n == 0)
 		return 0;
