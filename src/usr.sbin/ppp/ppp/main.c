@@ -474,6 +474,17 @@ DoLoop(struct bundle *bundle)
       /* Don't select - we'll be here forever */
       break;
 
+    /*
+     * It's possible that we've had a signal since we last checked.  If
+     * we don't check again before calling select(), we may end up stuck
+     * after having missed the event.... sig_Handle() tries to be as
+     * quick as possible if nothing is likely to have happened.
+     * This is only really likely if we block in open(... O_NONBLOCK)
+     * which will happen with a misconfigured device.
+     */
+    if (sig_Handle())
+      continue;
+
     i = select(nfds, &rfds, &wfds, &efds, NULL);
 
     if (i < 0 && errno != EINTR) {
