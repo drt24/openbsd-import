@@ -333,6 +333,8 @@ char *chat_file;
 
 	linect++;
 	sp = buf;
+	if ( *sp == '#')
+		continue;
 	while (*sp != '\0')
 	    {
 	    if (*sp == ' ' || *sp == '\t')
