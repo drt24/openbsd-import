@@ -1,7 +1,10 @@
 #	$Id$
 
 PROG =	rpc.rstatd
-SRCS =	rstatd.c rstat_proc.c
+.PATH: ${.CURDIR}/../../usr.bin/vmstat
+
+CFLAGS+=-I${.CURDIR}/../../usr.bin/vmstat
+SRCS =	dkstats.c rstatd.c rstat_proc.c
 MAN =	rpc.rstatd.8
 MLINKS=	rpc.rstatd.8 rstatd.8
 
