@@ -28,6 +28,7 @@ static const char rcsid[] =
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "gnuc.h"
 #ifdef HAVE_OS_PROTO_H
