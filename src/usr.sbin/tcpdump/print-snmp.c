@@ -49,6 +49,9 @@ static const char rcsid[] =
 #include <sys/time.h>
 
 #include <ctype.h>
+#ifdef HAVE_MEMORY_H
+#include <memory.h>
+#endif
 #include <stdio.h>
 #include <string.h>
 

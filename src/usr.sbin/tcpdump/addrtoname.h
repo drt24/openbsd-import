@@ -21,8 +21,16 @@
  * @(#) $Header$ (LBL)
  */
 
-/* Name to address translation routines. */
+#ifndef BYTE_ORDER
+#error "No byte order defined"
+#endif
 
+#if BYTE_ORDER == BIG_ENDIAN
+#define WORDS_BIGENDIAN
+#endif /* BYTE_ORDER */
+
+/* Name to address translation routines. */
+extern char *linkaddr_string(const u_char *, const int);
 extern char *etheraddr_string(const u_char *);
 extern char *etherproto_string(u_short);
 extern char *tcpport_string(u_short);

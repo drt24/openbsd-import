@@ -38,7 +38,6 @@ static const char rcsid[] =
 #include <netinet/udp.h>
 #include <netinet/udp_var.h>
 #include <netinet/tcp.h>
-#include <netinet/tcpip.h>
 
 #ifdef __STDC__
 #include <stdlib.h>

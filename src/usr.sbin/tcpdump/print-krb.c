@@ -206,14 +206,14 @@ krb4_print(const u_char *cp)
 	case AUTH_MSG_KDC_REQUEST:
 		if ((cp = krb4_print_hdr(cp)) == NULL)
 			return;
-		 cp += 4; 	  /* ctime */
-		 TCHECK2(cp, 0);
-		 printf(" %dmin ", *cp++ * 5);
-		 TCHECK2(cp, 0);
-		 PRINT;
-		 TCHECK2(cp, 0);
-		 putchar('.');  PRINT;
-		 break;
+		cp += 4; 	  /* ctime */
+		TCHECK2(cp, 0);
+		printf(" %dmin ", *cp++ * 5);
+		TCHECK2(cp, 0);
+		PRINT;
+		TCHECK2(cp, 0);
+		putchar('.');  PRINT;
+		break;
 
 	case AUTH_MSG_APPL_REQUEST:
 		cp += 2;

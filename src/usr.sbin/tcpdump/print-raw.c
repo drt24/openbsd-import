@@ -44,7 +44,6 @@ struct rtentry;
 #include <netinet/udp.h>
 #include <netinet/udp_var.h>
 #include <netinet/tcp.h>
-#include <netinet/tcpip.h>
 
 #include <pcap.h>
 #include <stdio.h>

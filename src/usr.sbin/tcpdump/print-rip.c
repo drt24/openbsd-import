@@ -100,8 +100,10 @@ rip_print(const u_char *dat, u_int length)
 	register int i, j, trunc;
 
 	i = min(length, snapend - dat) - sizeof(*rp);
-	if (i < 0)
+	if (i < 0) {
+		printf(" [|rip]");
 		return;
+	}
 
 	rp = (struct rip *)dat;
 	switch (rp->rip_cmd) {
@@ -116,7 +118,7 @@ rip_print(const u_char *dat, u_int length)
 			printf(" rip-resp %d[%d]:", j, length);
 		else
 			printf(" rip-resp %d:", j);
-		trunc = ((i / sizeof(*ni)) * sizeof(*ni) != i);
+		trunc = (i / sizeof(*ni)) != j;
 		ni = (struct rip_netinfo *)(rp + 1);
 		for (; (i -= sizeof(*ni)) >= 0; ++ni)
 			rip_entry_print(rp->rip_vers, ni);

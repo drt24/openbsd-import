@@ -283,6 +283,9 @@ main(int argc, char **argv)
 			/* NOTREACHED */
 		}
 
+	if (aflag && nflag)
+		error("-a and -n options are incompatible");
+
 	if (tflag > 0)
 		thiszone = gmt2local(0);
 

@@ -507,9 +507,11 @@ ospf_print(register const u_char *bp, register u_int length,
 	op = (struct ospfhdr *)bp;
 	ip = (struct ip *)bp2;
 	/* Print the source and destination address  */
+#if 0
 	(void) printf("%s > %s:",
 	    ipaddr_string(&ip->ip_src),
 	    ipaddr_string(&ip->ip_dst));
+#endif
 
         /* XXX Before we do anything else, strip off the MD5 trailer */
         TCHECK(op->ospf_authtype);

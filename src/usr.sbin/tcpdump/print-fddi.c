@@ -45,7 +45,6 @@ struct rtentry;
 #include <ctype.h>
 #include <netdb.h>
 #include <pcap.h>
-#include <signal.h>
 #include <stdio.h>
 #include <string.h>
 

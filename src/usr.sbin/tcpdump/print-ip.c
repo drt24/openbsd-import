@@ -456,6 +456,24 @@ ip_print(register const u_char *bp, register u_int length)
 			}
 			break;
 
+#ifdef INET6
+#ifndef IP6PROTO_ENCAP
+#define IP6PROTO_ENCAP 41
+#endif
+		case IP6PROTO_ENCAP:
+			/* ip6-in-ip encapsulation */
+			if (vflag)
+				(void)printf("%s > %s: ",
+					     ipaddr_string(&ip->ip_src),
+					     ipaddr_string(&ip->ip_dst));
+			ip6_print(cp, len);
+			if (! vflag) {
+ 				printf(" (encap)");
+ 				return;
+ 			}
+ 			break;
+#endif /*INET6*/
+
 #ifndef IPPROTO_GRE
 #define IPPROTO_GRE 47
 #endif
