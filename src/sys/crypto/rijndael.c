@@ -1,4 +1,4 @@
-/*	$OpenBSD: rijndael.c,v 1.5 2000/11/11 20:07:36 markus Exp $	*/
+/*	$OpenBSD: rijndael.c,v 1.6 2000/12/09 18:51:34 markus Exp $	*/
 
 /* This is an independent implementation of the encryption algorithm:   */
 /*                                                                      */

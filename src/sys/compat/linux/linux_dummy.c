@@ -1,4 +1,4 @@
-/*	$OpenBSD: linux_dummy.c,v 1.3 2001/01/29 07:23:54 jasoni Exp $ */
+/*	$OpenBSD: linux_dummy.c,v 1.4 2001/04/02 21:43:11 niklas Exp $ */
 
 /*-
  * Copyright (c) 1994-1995 Søren Schmidt

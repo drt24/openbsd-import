@@ -1,4 +1,4 @@
-/*	$OpenBSD: netbsd_signal.h,v 1.2 1999/09/26 11:16:36 kstailey Exp $	*/
+/*	$OpenBSD: freebsd_signal.h,v 1.1 2001/02/02 19:48:08 tholo Exp $	*/
 /*	$NetBSD: signal.h,v 1.42 1998/12/21 10:35:00 drochner Exp $	*/
 
 /*

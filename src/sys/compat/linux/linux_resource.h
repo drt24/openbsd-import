@@ -1,4 +1,4 @@
-/*	$OpenBSD: linux_misc.h,v 1.3 1999/05/13 00:31:57 thorpej Exp $	*/
+/*	$OpenBSD: linux_resource.h,v 1.1 2000/06/07 13:35:02 niklas Exp $	*/
 
 /*
  * Copyright (c) 2000 Niklas Hallqvist

@@ -1,4 +1,4 @@
-/*      $OpenBSD: mbuf.c,v 1.2 2000/04/20 13:05:30 art Exp $	*/
+/*      $OpenBSD: mbuf.c,v 1.3 2000/04/24 04:54:19 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1999 Theo de Raadt
