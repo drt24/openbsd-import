@@ -23,7 +23,7 @@ crtbegin.o: crtbegin.c
 	@${LD} -x -r -o ${.TARGET} ${.TARGET}.o
 	@rm -f ${.TARGET}.o
  
-crtend.o: crtend.s
+crtend.o: crtend.c
 	@echo ${CC} ${CFLAGS} -c ${.ALLSRC} -o ${.TARGET}
 	@${CC} ${CFLAGS} -c ${.ALLSRC} -o ${.TARGET}.o
 	@${LD} -x -r -o ${.TARGET} ${.TARGET}.o
