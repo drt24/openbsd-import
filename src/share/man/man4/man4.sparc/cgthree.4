@@ -44,13 +44,14 @@
 .Nm cgthree
 .Nd 8-bit color frame buffer
 .Sh SYNOPSIS
-...Cd "bwtwo*  at sbus? slot ? offset ?"
 .Cd "cgthree* at sbus? slot ? offset ?"
+.Cd "cgthree* at obio0 slot ? offset ?" Pq some sun4m models
 .Sh DESCRIPTION
 The 
 .Nm
 is a memory based color frame buffer.
-It supports the minimal ioctl's needed to run X11.
+It supports the minimal ioctl's needed to run
+.Xr X 1 .
 .Sh SEE ALSO
 .Xr bwtwo 4 ,
 .Xr cgtwo 4 ,
