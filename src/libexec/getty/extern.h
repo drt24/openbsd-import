@@ -1,3 +1,5 @@
+/*	$OpenBSD: extern.h,v 1.2 1996/05/22 12:10:12 deraadt Exp $*/
+
 /*
  * Copyright (c) 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -31,7 +33,6 @@
  * SUCH DAMAGE.
  *
  *	from: @(#)extern.h	8.1 (Berkeley) 6/4/93
- *	$Id$
  */
 
 struct delayval;

@@ -1,5 +1,4 @@
-#	from: @(#)Makefile	8.1 (Berkeley) 6/4/93
-#	$Id$
+#	$OpenBSD: Makefile,v 1.4 2000/09/03 18:41:14 espie Exp $
 
 PROG=	rlogind
 SRCS=	rlogind.c

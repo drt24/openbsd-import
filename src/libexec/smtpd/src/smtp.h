@@ -1,7 +1,8 @@
+/* $OpenBSD: smtp.h,v 1.2 1998/06/03 08:57:07 beck Exp $ */
+
 /*
  * Obtuse smtp store/forward daemon include file
  *
- * $Id$ 
  *
  * Copyright (c) 1996, 1997 Obtuse Systems Corporation. All rights
  * reserved.
