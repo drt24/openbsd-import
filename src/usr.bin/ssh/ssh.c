@@ -610,9 +610,6 @@ main(int ac, char **av)
 	if (host_private_key_loaded)
 		RSA_free(host_private_key);	/* Destroys contents safely */
 
-	/* Close connection cleanly after attack. */
-	cipher_attack_detected = packet_disconnect;
-
 	/* Enable compression if requested. */
 	if (options.compression) {
 		debug("Requesting compression at level %d.", options.compression_level);
