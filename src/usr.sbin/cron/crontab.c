@@ -430,7 +430,10 @@ edit_cmd() {
 	/* parent */
 	while (1) {
 		xpid = waitpid(pid, &waiter, WUNTRACED);
-		if (xpid != pid) {
+		if (xpid == -1) {
+			fprintf(stderr, "%s: waitpid() failed waiting for PID %d from \"%s\": %s\n",
+				ProgramName, pid, editor, strerror(errno));
+		} else if (xpid != pid) {
 			fprintf(stderr, "%s: wrong PID (%d != %d) from \"%s\"\n",
 				ProgramName, xpid, pid, editor);
 			goto fatal;
