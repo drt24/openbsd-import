@@ -1,9 +1,8 @@
 /*	$Id$ */
 
 /*
- *	NOTE ANY CHANGES YOU MAKE TO THE BOOTBLOCKS HERE.
- *
- *	1.1
+ * make a random change to this file when you want the bootblock
+ * revision to increase. like change this x to a y, or something.
  */
 
 char *version = "$Revision$";

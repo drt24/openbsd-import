@@ -1,6 +1,6 @@
 #    $Id$
 
-CFLAGS+=-I${.CURDIR}/../../include
+CFLAGS+=-I${.CURDIR}/../../include -O2
 
 .include "${MACHINE_ARCH}/Makefile.inc"
 
@@ -13,7 +13,7 @@ CLEANFILES+=a.out
 all:	${OBJS}
 
 bugcrt.o: bugcrt.c
-	${CC} ${CFLAGS} -c -O ${.ALLSRC}
+	${CC} ${CFLAGS} -c ${.ALLSRC}
 	${LD} -x -r ${.TARGET}
 	mv a.out ${.TARGET}
 

@@ -31,11 +31,18 @@ all: ${ALL}
 devopen.o machdep.o: Makefile
 
 bootsd.bug:	${OBJS} ${BUGCRT} ${LIBS}
-	${LD} -s -N -T ${RELOC} ${BUGCRT} ${OBJS} ${LIBS} -o $@
+	${LD} -N -T ${RELOC} ${BUGCRT} ${OBJS} ${LIBS} -o $@
 	@size bootsd.bug
 
 bootsd sdboot: bootsd.bug ${WRTVID}
-	${WRTVID} bootsd.bug
+	cp bootsd.bug bootsd.bin
+	strip bootsd.bin
+	@if [ `size bootsd.bin | awk 'BEGIN {getline} {print $$1+$$2;}'` -gt 7168 ];\
+	then\
+		echo BOOTBLOCKS ARE TOO BIG;\
+		fail;\
+	fi
+	${WRTVID} bootsd.bin
 
 install:
 	install -c -m 555 -g bin -o bin ${BOOTS} ${DESTDIR}${MDEC_DIR}
