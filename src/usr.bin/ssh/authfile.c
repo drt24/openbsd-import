@@ -267,7 +267,8 @@ load_private_key(const char *filename, const char *passphrase,
     xfree(buffer_get_string(&buffer, NULL));
 
   /* Check that it is a supported cipher. */
-  if ((cipher_mask() & (1 << cipher_type)) == 0)
+  if (cipher_type != SSH_CIPHER_NONE && 
+     (cipher_mask() & (1 << cipher_type)) == 0)
     {
       debug("Unsupported cipher %.100s used in key file %.200s.",
 	    cipher_name(cipher_type), filename);
