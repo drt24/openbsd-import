@@ -42,7 +42,7 @@ static char *rcsid = "$Id$";
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#if __STDC__
+#ifdef __STDC__
 #include <stdarg.h>
 #else
 #include <varargs.h>

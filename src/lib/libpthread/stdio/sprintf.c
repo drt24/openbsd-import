@@ -40,7 +40,7 @@ static char *rcsid = "$Id$";
 #endif /* LIBC_SCCS and not lint */
 
 #include <stdio.h>
-#if __STDC__
+#ifdef __STDC__
 #include <stdarg.h>
 #else
 #include <varargs.h>
@@ -48,7 +48,7 @@ static char *rcsid = "$Id$";
 #include <limits.h>
 #include "local.h"
 
-#if __STDC__
+#ifdef __STDC__
 sprintf(char *str, char const *fmt, ...)
 #else
 sprintf(str, fmt, va_alist)
@@ -64,7 +64,7 @@ sprintf(str, fmt, va_alist)
 	f._flags = __SWR | __SSTR;
 	f._bf._base = f._p = (unsigned char *)str;
 	f._bf._size = f._w = INT_MAX;
-#if __STDC__
+#ifdef __STDC__
 	va_start(ap, fmt);
 #else
 	va_start(ap);

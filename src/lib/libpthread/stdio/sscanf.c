@@ -41,14 +41,14 @@ static char *rcsid = "$Id$";
 
 #include <stdio.h>
 #include <string.h>
-#if __STDC__
+#ifdef __STDC__
 #include <stdarg.h>
 #else
 #include <varargs.h>
 #endif
 #include "local.h"
 
-#if __STDC__
+#ifdef __STDC__
 sscanf(const char *str, char const *fmt, ...)
 #else
 sscanf(str, fmt, va_alist)
@@ -67,7 +67,7 @@ sscanf(str, fmt, va_alist)
 	f._bf._size = f._r = strlen(str);
 	f._ub._base = NULL;
 	f._lb._base = NULL;
-#if __STDC__
+#ifdef __STDC__
 	va_start(ap, fmt);
 #else
 	va_start(ap);

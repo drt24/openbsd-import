@@ -48,7 +48,7 @@ FILE *
 funopen(cookie, readfn, writefn, seekfn, closefn)
 	const void *cookie;
 	int (*readfn)(), (*writefn)();
-#if __STDC__
+#ifdef __STDC__
 	fpos_t (*seekfn)(void *cookie, fpos_t off, int whence);
 #else
 	fpos_t (*seekfn)();

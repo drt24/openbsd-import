@@ -1,4 +1,4 @@
-/*	$OpenBSD: com_err.c,v 1.1 1996/11/11 04:55:03 downsj Exp $	*/
+/*	$OpenBSD: com_err.c,v 1.2 1996/11/11 09:49:47 downsj Exp $	*/
 
 /*-
  * Copyright 1987, 1988 by the Student Information Processing Board
@@ -19,7 +19,7 @@
 
 #include <stdio.h>
 
-#if __STDC__
+#ifdef __STDC__
 #  undef VARARGS
 #  include <stdarg.h>
 #else

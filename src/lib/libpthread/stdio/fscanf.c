@@ -41,13 +41,13 @@ static char *rcsid = "$Id$";
 
 #include <pthread.h>
 #include <stdio.h>
-#if __STDC__
+#ifdef __STDC__
 #include <stdarg.h>
 #else
 #include <varargs.h>
 #endif
 
-#if __STDC__
+#ifdef __STDC__
 fscanf(FILE *fp, char const *fmt, ...) {
 	int r;
 	va_list ap;

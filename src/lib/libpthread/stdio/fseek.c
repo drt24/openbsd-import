@@ -58,7 +58,7 @@ fseek(fp, offset, whence)
 	long offset;
 	int whence;
 {
-#if __STDC__
+#ifdef __STDC__
 	register fpos_t (*seekfn)(void *, fpos_t, int);
 #else
 	register fpos_t (*seekfn)();
