@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.1 2000/04/27 02:26:24 bjc Exp $
+#	$OpenBSD: Makefile,v 1.2 2000/10/04 05:03:10 bjc Exp $
 #	$NetBSD: Makefile,v 1.4 1999/05/23 21:58:19 ragge Exp $
 
 S!=	cd ${.CURDIR}/../../../../; pwd
