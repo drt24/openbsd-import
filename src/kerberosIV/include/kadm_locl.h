@@ -48,7 +48,7 @@
 #include "kerberosIV/com_err.h"
 #include <ss/ss.h>
 
-#include <kerberosIV/des.h>
+#include <des.h>
 #include <kerberosIV/krb.h>
 #include <kerberosIV/krb_err.h>
 #include <kerberosIV/krb_db.h>

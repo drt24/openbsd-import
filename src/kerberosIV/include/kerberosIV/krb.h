@@ -32,7 +32,7 @@
 #include <kerberosIV/site.h>
 
 /* Need some defs from des.h	 */
-#include <kerberosIV/des.h>
+#include <des.h>
 
 /* Global library variables. */
 extern int krbONE;

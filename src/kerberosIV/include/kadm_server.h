@@ -38,7 +38,7 @@
 
 #include <sys/types.h>
 #include <kerberosIV/krb.h>
-#include <kerberosIV/des.h>
+#include <des.h>
 
 typedef struct {
   struct sockaddr_in admin_addr;
