@@ -565,6 +565,9 @@ xyattach(parent, self, aux)
 	newstate = XY_DRIVE_NOLABEL;
 
 	xy->hw_spt = spt = 0; /* XXX needed ? */
+	/* Attach the disk: must be before getdisklabel to malloc label */
+	disk_attach(&xy->sc_dk);
+
 	if (xygetdisklabel(xy, xa->dvmabuf) != XY_ERR_AOK)
 		goto done;
 
@@ -652,9 +655,6 @@ xyattach(parent, self, aux)
 	} else {
 		bcopy(xa->dvmabuf, &xy->dkb, XYFM_BPS);
 	}
-
-	/* Attach the disk. */
-	disk_attach(&xy->sc_dk);
 
 	dk_establish(&xy->sc_dk, &xy->sc_dev);		/* XXX */
 

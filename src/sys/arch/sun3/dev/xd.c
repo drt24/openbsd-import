@@ -632,6 +632,9 @@ xdattach(parent, self, aux)
 	newstate = XD_DRIVE_NOLABEL;
 
 	xd->hw_spt = spt;
+	/* Attach the disk: must be before getdisklabel to malloc label */
+	disk_attach(&xd->sc_dk);
+
 	if (xdgetdisklabel(xd, xa->dvmabuf) != XD_ERR_AOK)
 		goto done;
 
@@ -690,9 +693,6 @@ xdattach(parent, self, aux)
 	} else {
 		bcopy(xa->dvmabuf, &xd->dkb, XDFM_BPS);
 	}
-
-	/* Attach the disk. */
-	disk_attach(&xd->sc_dk);
 
 	/* XXX - Where is this and what does it do? -gwr */
 	dk_establish(&xd->sc_dk, &xd->sc_dev);
