@@ -44,8 +44,9 @@ static PID_T *pids;
 static int fds;
 
 FILE *
-cron_popen(program, type)
+cron_popen(program, type, e)
 	char *program, *type;
+	entry *e;
 {
 	register char *cp;
 	FILE *iop;
@@ -119,6 +120,10 @@ cron_popen(program, type)
 				(void)close(pdes[0]);
 			}
 			(void)close(pdes[1]);
+		}
+		if (e) {
+			setgid(e->gid);
+			setuid(e->uid);
 		}
 #if WANT_GLOBBING
 		execvp(gargv[0], gargv);

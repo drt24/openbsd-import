@@ -387,7 +387,7 @@ child_process(e, u)
 				(void) gethostname(hostname, MAXHOSTNAMELEN);
 				(void) snprintf(mailcmd, sizeof(mailcmd),
 				    MAILARGS, MAILCMD);
-				if (!(mail = cron_popen(mailcmd, "w"))) {
+				if (!(mail = cron_popen(mailcmd, "w", e))) {
 					perror(MAILCMD);
 					(void) _exit(ERROR_EXIT);
 				}

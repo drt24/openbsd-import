@@ -42,11 +42,12 @@
 			 */
 
 #define MAILCMD _PATH_SENDMAIL					/*-*/
-#define MAILARGS "%s -FCronDaemon -odi -oem -oi -or0s -t"	/*-*/
+#define MAILARGS "%s -FCronDaemon -odi -oem -oi -t"		/*-*/
 			/* -Fx	 = set full-name of sender
 			 * -odi	 = Option Deliverymode Interactive
 			 * -oem	 = Option Errors Mailedtosender
 			 * -or0s = Option Readtimeout -- don't time out
+			 *	   XXX - causes sendmail to drop privs.
 			 * -t    = read recipient from header of message
 			 */
 
