@@ -1045,7 +1045,7 @@ same_t *same;
     same_t *same2;
 
     for (visit(same, same2); !visited(same2); visit_next(same2)) {
-	printf(same2->string->string);
+	printf("%s", same2->string->string);
     }
     visit_end();
 }
@@ -1068,7 +1068,7 @@ do_dump()
 	printf("%s =\t", same->string->string);
 	for (visit(same->value_list, same2); !visited(same2);
 						visit_next(same2)) {
-	    printf(same2->string->string);
+	    printf("%s", same2->string->string);
 	}
 	visit_end();
 	printf("\n");
@@ -1080,13 +1080,13 @@ do_dump()
 	printf("\n%s:\t", same->string->string);
 	for (visit(same->depend_list, same2); !visited(same2);
 						visit_next(same2)) {
-	    printf(same2->string->string);
+	    printf("%s", same2->string->string);
 	}
 	visit_end();
 	printf("\n\t");
 	for (visit(same->action_list, same2); !visited(same2);
 					    visit_next(same2)) {
-	    printf(same2->string->string);
+	    printf("%s", same2->string->string);
 	    if (same2->string->string[0] == '\n') {
 		printf("\t");
 	    }
