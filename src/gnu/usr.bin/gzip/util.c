@@ -368,9 +368,9 @@ void write_error()
  * Display compression ratio on the given stream on 6 characters.
  */
 void display_ratio(num, den, file)
-    long num;
-    long den;
-    FILE *file;
+	off_t	num;
+	off_t	den;
+	FILE	*file;
 {
     long ratio;  /* 1000 times the compression ratio */
 
