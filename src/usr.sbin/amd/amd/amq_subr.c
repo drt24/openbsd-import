@@ -201,6 +201,7 @@ struct svc_req *rqstp;
 	char *cp;
 
 	plog(XLOG_INFO, "amq requested mount of %s", s);
+#if 0
 	/*
 	 * Minimalist security check.
 	 */
@@ -208,6 +209,16 @@ struct svc_req *rqstp;
 		rc = EACCES;
 		return &rc;
 	}
+#else
+	/*
+	 * Better security check. amd does not allocate a seperate
+	 * socket to distinguish local connects; so the above security
+	 * check is useless
+	 */
+	rc = EACCES;
+	return &rc;
+#endif
+
 
 	/*
 	 * Find end of key
