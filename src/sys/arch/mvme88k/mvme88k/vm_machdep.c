@@ -1,4 +1,4 @@
-/*	$OpenBSD: vm_machdep.c,v 1.7 1999/02/09 06:36:30 smurph Exp $	*/
+/*	$OpenBSD: vm_machdep.c,v 1.8 1999/05/29 04:41:47 smurph Exp $	*/
 /*
  * Copyright (c) 1998 Steve Murphree, Jr.
  * Copyright (c) 1996 Nivas Madhur
@@ -79,7 +79,7 @@ int
 #else
 void
 #endif
-cpu_fork(struct proc *p1, struct proc *p2)
+cpu_fork(struct proc *p1, struct proc *p2, void *stack, size_t stacksize)
 {
 	struct switchframe *p2sf;
 	int off, ssz;
@@ -111,6 +111,12 @@ cpu_fork(struct proc *p1, struct proc *p2)
 	p2sf->sf_pc = (u_int)proc_do_uret;
 	p2sf->sf_proc = p2;
 	p2->p_addr->u_pcb.kernel_state.pcb_sp = (u_int)p2sf;
+
+	/*
+	 * If specified, give the child a different stack.
+	 */
+	if (stack != NULL)
+		USER_REGS(p2)->pcb_sp = (u_int)stack + stacksize;
 
 	ksfp = (struct ksigframe *)p2->p_addr->u_pcb.kernel_state.pcb_sp - 1;
 
