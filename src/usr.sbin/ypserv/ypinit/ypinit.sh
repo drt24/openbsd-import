@@ -10,6 +10,7 @@ YPXFR=/usr/sbin/ypxfr
 YP_DIR=/var/yp
 MAKEDBM=/usr/sbin/makedbm
 ERROR_EXISTS="NO"
+umask 077
 
 #set -xv
 
