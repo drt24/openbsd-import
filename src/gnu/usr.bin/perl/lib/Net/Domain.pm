@@ -16,7 +16,7 @@ use Net::Config;
 @ISA = qw(Exporter);
 @EXPORT_OK = qw(hostname hostdomain hostfqdn domainname);
 
-$VERSION = "2.17"; # $Id$
+$VERSION = "2.19"; # $Id$
 
 my($host,$domain,$fqdn) = (undef,undef,undef);
 
@@ -164,14 +164,20 @@ sub _hostdomain {
 		    : undef;
         };
 
+	if ( $^O eq 'VMS' ) {
+	    $dom ||= $ENV{'TCPIP$INET_DOMAIN'}
+		 || $ENV{'UCX$INET_DOMAIN'};
+	}
+
 	chop($dom = `domainname 2>/dev/null`)
 		unless(defined $dom || $^O =~ /^(?:cygwin|MSWin32)/);
 
 	if(defined $dom) {
 	    my @h = ();
+	    $dom =~ s/^\.+//;
 	    while(length($dom)) {
 		push(@h, "$host.$dom");
-		$dom =~ s/^[^.]+.//;
+		$dom =~ s/^[^.]+.+// or last;
 	    }
 	    unshift(@hosts,@h);
     	}

@@ -46,7 +46,7 @@ are as follows.
                                              Annex 3 of KS X 1001:1998
   iso-2022-kr                   iso-2022-kr                  [RFC1557]
   --------------------------------------------------------------------
-  
+
 To find how to use this module in detail, see L<Encode>.
 
 =head1 BUGS

@@ -37,6 +37,7 @@ our %ESC =  (
 	 KSC_5601 => "\e\$(C",
 	 ASC      => "\e\(B",
 	 KANA     => "\e\(I",
+	 '2022_KR' => "\e\$)C",
 	 );
 
 our %RE =
@@ -60,6 +61,6 @@ our %RE =
 
 =head1 NAME
 
-  Encode::CJKConstants.pm -- Internally used by Encode::??::ISO_2022_*
+Encode::CJKConstants.pm -- Internally used by Encode::??::ISO_2022_*
 
 =cut
