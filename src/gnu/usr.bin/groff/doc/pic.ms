@@ -299,7 +299,8 @@ possible to set a global style variable \fBscale\fP that changes the
 unit.  Setting \fBscale = 2.54\fP will effectively change the internal
 unit to centimeters (all other size variable valuess will be scaled
 correspondingly).
-.NH 2 Default Sizes of Objects
+.NH 2
+Default Sizes of Objects
 .PP
 Here are the default sizes for \fBpic\fP objects:
 .RS

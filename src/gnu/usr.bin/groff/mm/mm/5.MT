@@ -18,7 +18,7 @@
 .\"------------
 .de cov@print-date
 .rj 1
-.B "\\*[cov*new-date]"
+\f[\\*[@sdf_font]]\\*[cov*new-date]\fP
 .br
 ..
 .\"------------
