@@ -1,4 +1,4 @@
-/* $OpenBSD: ip_nat.c,v 1.23 1999/12/15 05:20:22 kjell Exp $ */
+/* $OpenBSD: ip_nat.c,v 1.24 1999/12/17 06:17:08 kjell Exp $ */
 /*
  * Copyright (C) 1995-1998 by Darren Reed.
  *
@@ -323,6 +323,14 @@ int mode;
 
 	switch (cmd)
 	{
+#ifdef  IPFILTER_LOG
+	case SIOCIPFFB :
+		if (!(mode & FWRITE))
+			error = EPERM;
+		else
+			*(int *)data = ipflog_clear(IPL_LOGNAT);
+		break;
+#endif
 	case SIOCADNAT :
 		if (!(mode & FWRITE)) {
 			error = EPERM;
