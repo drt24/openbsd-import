@@ -44,6 +44,7 @@ static char rcsid[] = "$Id$";
 
 #include <sys/types.h>
 #include <stdio.h>
+#include <string.h>
 #include "hexdump.h"
 
 FS *fshead;				/* head of format strings */
