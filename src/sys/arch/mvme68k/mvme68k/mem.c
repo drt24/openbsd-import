@@ -169,6 +169,8 @@ mmrw(dev, uio, flags)
 			if (!kernacc((caddr_t)v, c,
 			    uio->uio_rw == UIO_READ ? B_READ : B_WRITE))
 				return (EFAULT);
+			if (v < NBPG)
+				return (EFAULT);
 			error = uiomove((caddr_t)v, c, uio);
 			continue;
 
