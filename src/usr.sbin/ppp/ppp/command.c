@@ -1295,7 +1295,7 @@ SetInterfaceAddr(struct cmdargs const *arg)
     if (arg->argc > arg->argn+1) {
       hisaddr = arg->argv[arg->argn+1];
       if (arg->argc > arg->argn+2) {
-        ipcp->cfg.netmask = GetIpAddr(arg->argv[arg->argn+2]);
+        ipcp->ifmask = ipcp->cfg.netmask = GetIpAddr(arg->argv[arg->argn+2]);
 	if (arg->argc > arg->argn+3) {
 	  ipcp->cfg.TriggerAddress = GetIpAddr(arg->argv[arg->argn+3]);
 	  ipcp->cfg.HaveTriggerAddress = 1;

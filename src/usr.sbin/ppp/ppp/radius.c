@@ -183,7 +183,7 @@ radius_Process(struct radius *r, int got)
         else {
           if (dest.width == 32 && strchr(argv[0], '/') == NULL)
             /* No mask specified - use the natural mask */
-            dest.mask.s_addr = addr2mask(dest.ipaddr.s_addr);
+            dest.mask = addr2mask(dest.ipaddr);
           addrs = 0;
 
           if (!strncasecmp(argv[0], "HISADDR", 7))

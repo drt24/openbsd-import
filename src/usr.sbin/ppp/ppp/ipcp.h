@@ -34,14 +34,6 @@
 #define TY_SECONDARY_NBNS	132
 #define TY_ADJUST_NS		119 /* subtract from NS val for REJECT bit */
 
-#define addr2mask(addr) (			\
-  IN_CLASSA(addr) ?				\
-    htonl(IN_CLASSA_NET) :			\
-  IN_CLASSB(addr) ?				\
-    htonl(IN_CLASSB_NET) : htonl(IN_CLASSC_NET)	\
-)
-
-
 struct sticky_route;
 
 struct in_range {
@@ -124,3 +116,4 @@ extern int  ipcp_UseHisaddr(struct bundle *, const char *, int);
 extern int  ipcp_vjset(struct cmdargs const *);
 extern void ipcp_CleanInterface(struct ipcp *);
 extern int  ipcp_InterfaceUp(struct ipcp *);
+extern struct in_addr addr2mask(struct in_addr);
