@@ -1,4 +1,4 @@
-/*	$OpenBSD: tcpdump.c,v 1.39 2004/09/16 11:29:51 markus Exp $	*/
+/*	$OpenBSD: tcpdump.c,v 1.40 2005/03/06 18:44:50 reyk Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -681,7 +681,7 @@ usage(void)
 	(void)fprintf(stderr, "%s version %s\n", program_name, version);
 	(void)fprintf(stderr, "libpcap version %s\n", pcap_version);
 	(void)fprintf(stderr,
-"Usage: %s [-adeflLnNoOpqStvxX] [-c count] [-E [espalg:]espkey] [-F file]\n",
+"Usage: %s [-adefLlNnOopqStvXx] [-c count] [-E [espalg:]espkey] [-F file]\n",
 	    program_name);
 	(void)fprintf(stderr,
 "\t\t[-i interface] [-r file] [-s snaplen] [-T type] [-w file]\n");
