@@ -367,7 +367,7 @@ chap_Input(struct physical *p, struct mbuf *bp)
             if (myans == NULL)
               key = NULL;
             else {
-              if (memcmp(myans, ans, 1 + *myans))
+              if (*myans != alen || memcmp(myans + 1, ans + 1, *myans))
                 key = NULL;
               free(myans);
             }
