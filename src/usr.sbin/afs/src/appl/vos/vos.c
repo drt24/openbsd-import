@@ -132,8 +132,8 @@ help_cmd(int argc, char **argv)
 static int
 apropos_cmd(int argc, char **argv)
 {
-    if (argc == 0) {
-	fprintf (stderr, "apropos: missing topic");
+    if (argc < 2) {
+	fprintf (stderr, "apropos: missing topic\n");
 	return 0;
     }
 
