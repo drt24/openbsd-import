@@ -181,15 +181,14 @@ SVCXPRT *transp;
 		return;
 	}
 	bzero((char *)&argument, sizeof(argument));
-	if (!svc_getargs(transp, xdr_argument, (caddr_t) &argument)) {
+	if (!svc_getargs(transp, xdr_argument, (char *)&argument)) {
 		svcerr_decode(transp);
 		return;
 	}
 	result = (*local)(&argument, rqstp);
-	if (result != NULL && !svc_sendreply(transp, xdr_result, result)) {
+	if (result != NULL && !svc_sendreply(transp, xdr_result, result))
 		svcerr_systemerr(transp);
-	}
-	if (!svc_freeargs(transp, xdr_argument, (caddr_t) &argument)) {
+	if (!svc_freeargs(transp, xdr_argument, (char *)&argument)) {
 		plog(XLOG_FATAL, "unable to free rpc arguments in nfs_program_1");
 		going_down(1);
 	}
