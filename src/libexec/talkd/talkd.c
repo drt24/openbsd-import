@@ -1,4 +1,4 @@
-/*	$OpenBSD: talkd.c,v 1.18 2003/06/02 19:38:24 millert Exp $	*/
+/*	$OpenBSD: talkd.c,v 1.19 2003/06/11 14:24:46 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -62,7 +62,7 @@ static char rcsid[] = "$Id$";
 #include "talkd.h"
 
 int	debug = 0;
-void	timeout();
+void	timeout(int);
 long	lastmsgtime;
 
 char	hostname[MAXHOSTNAMELEN];
@@ -131,7 +131,7 @@ main(int argc, char *argv[])
 }
 
 void
-timeout(void)
+timeout(int signo)
 {
 	int save_errno = errno;
 
