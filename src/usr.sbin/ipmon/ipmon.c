@@ -487,7 +487,8 @@ int	blen;
 		dumphex(log, buf, sizeof(struct ipl_ci));
 	if (opts & OPT_HEXBODY)
 		dumphex(log, ip, lp->plen + lp->hlen);
-	fflush(log);
+	if (!(opts & OPT_SYSLOG))
+		fflush(log);
 }
 
 int main(argc, argv)
