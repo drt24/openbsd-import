@@ -44,6 +44,7 @@
 %#include <sys/errno.h>
 %#include <sys/ucred.h>
 %#include <nfs/nfsv2.h>
+%#include <nfs/rpcv2.h>
 %#include <nfs/nfs.h>
 #else
 %#ifndef lint
