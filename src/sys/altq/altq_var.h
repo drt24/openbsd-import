@@ -35,6 +35,13 @@
 #include <sys/kernel.h>
 #include <sys/queue.h>
 
+#ifndef ALTQ_RED
+#define ALTQ_RED		/* RED is enabled by default */
+#endif
+#ifndef ALTQ_CBQ
+#define ALTQ_CBQ		/* CBQ is enabled by default */
+#endif
+
 /*
  * filter structure for altq common classifier
  */

@@ -131,7 +131,8 @@ main(int argc, char *argv[])
 void
 usage()
 {
+	extern char *__progname;
 
-	fprintf(stderr, "usage: %s infile outfile\n", getprogname());
+	fprintf(stderr, "usage: %s infile outfile\n", __progname);
 	exit(1);
 }

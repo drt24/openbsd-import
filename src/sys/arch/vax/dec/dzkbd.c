@@ -175,6 +175,8 @@ dzkbd_attach(struct device *parent, struct device *self, void *aux)
 	} else {
 		dzi = malloc(sizeof(struct dzkbd_internal),
 				       M_DEVBUF, M_NOWAIT);
+		if (dzi == NULL)
+			panic("dzkbd_attach");
 		dzi->dzi_ks.attmt.sendchar = dzkbd_sendchar;
 		dzi->dzi_ks.attmt.cookie = ls;
 		dzi->dzi_ls = ls;

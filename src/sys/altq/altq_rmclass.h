@@ -81,8 +81,8 @@ struct red;
 	if ((xxs = (a)->tv_sec - (b)->tv_sec)) { \
 		switch (xxs) { \
 		default: \
-			if (xxs < 0) \
-				printf("rm_class: bogus time values\n"); \
+			/* if (xxs < 0) \
+				printf("rm_class: bogus time values\n"); */ \
 			delta = 0; \
 			/* fall through */ \
 		case 2: \
