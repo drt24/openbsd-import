@@ -1053,6 +1053,7 @@ LcpDecodeConfig(struct fsm *fp, u_char *cp, int plen, int mode_type,
       break;
 
     case TY_ENDDISC:
+      mp = &lcp->fsm.bundle->ncp.mp;
       log_Printf(LogLCP, "%s %s\n", request,
                 mp_Enddisc(cp[2], cp + 3, length - 3));
       switch (mode_type) {
