@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- *	$Id$
+ *	$OpenBSD: bundle.h,v 1.11 2000/02/27 01:34:04 brian Exp $
  */
 
 #define	PHASE_DEAD		0	/* Link is dead */

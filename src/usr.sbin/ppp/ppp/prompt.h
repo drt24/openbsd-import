@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- *	$Id$
+ *	$OpenBSD: prompt.h,v 1.3 2000/02/27 00:21:09 brian Exp $
  */
 
 #define LOCAL_AUTH	0x01

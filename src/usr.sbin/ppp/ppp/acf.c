@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- *	$Id$
+ *	$OpenBSD: acf.c,v 1.3 2000/01/07 03:26:52 brian Exp $
  */
 
 #include <sys/types.h>
