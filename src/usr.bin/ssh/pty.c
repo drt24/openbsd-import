@@ -16,6 +16,7 @@
 #include "includes.h"
 RCSID("$Id$");
 
+#include <util.h>
 #include "pty.h"
 #include "ssh.h"
 
