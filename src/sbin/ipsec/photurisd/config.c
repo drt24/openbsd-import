@@ -537,7 +537,7 @@ init_times(void)
 	  else if (!strcmp(p, CONFIG_RET_TIMEOUT))
 	       value = &retrans_timeout;
 	  else if (!strcmp(p, CONFIG_EX_TIMEOUT))
-	       value = &exchange_lifetime;
+	       value = &exchange_timeout;
 	  else if (!strcmp(p, CONFIG_EX_LIFETIME))
 	       value = &exchange_lifetime;
 	  else if (!strcmp(p, CONFIG_SPI_LIFETIME))
