@@ -49,8 +49,8 @@
 	.globl	curbrk
 
 	.data
-	.align  2
-minbrk:	.long	0
+	.align 8
+minbrk:	.long	_end
 	.text
 
 ENTRY(brk)

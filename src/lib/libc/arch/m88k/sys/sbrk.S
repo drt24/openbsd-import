@@ -48,10 +48,7 @@
 	.globl	curbrk
 
 	.data
-/*
-curbrk:	.long	0
-*/
-	.align  2
+	.align 8
 curbrk:	.long	_end
 	.text
 
