@@ -9,7 +9,7 @@ snap_md: binutils
 
 binutils:
 	cd ${DESTDIR} && tar cf - usr/*openbsd* \
-	    | ${SNAP_GZIP_CMD} > snapshot/usr.binutils.tar${SNAP_GZIP_EXT}
+	    | ${GZIP} ${GZIPFLAGS} > snapshot/usr.binutils.tar${GZIPEXT}
 
 bsd:
 	cd ${.CURDIR}/../sys/arch/alpha/conf && config GENERIC
