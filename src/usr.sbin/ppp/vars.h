@@ -70,6 +70,7 @@ struct pppvars {
   int redial_next_timeout;	/* Redial next timeout value */
   int dial_tries;		/* Dial attempts before giving up, 0 == inf */
   int loopback;			/* Turn around packets addressed to me */
+  char modem_devlist[LINE_LEN];	/* Comma-separated list of devices */
   char modem_dev[40];		/* Name of device / host:port */
   const char *base_modem_dev;	/* Pointer to base of modem_dev */
   int open_mode;		/* LCP open mode */
@@ -102,6 +103,7 @@ struct pppvars {
 #define VarMRU			pppVars.var_mru
 #define VarPrefMTU		pppVars.pref_mtu
 #define	VarDevice		pppVars.modem_dev
+#define	VarDeviceList		pppVars.modem_devlist
 #define	VarBaseDevice		pppVars.base_modem_dev
 #define	VarSpeed		pppVars.modem_speed
 #define	VarParity		pppVars.modem_parity
