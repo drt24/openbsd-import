@@ -21,17 +21,17 @@ bsd:
 	    ${DESTDIR}/snapshot/bsd
 
 bsd.nfs:
-	cd ${.CURDIR}/../sys/arch/pmax/conf && config GENERIC_NFS
-	cd ${.CURDIR}/../sys/arch/pmax/compile/GENERIC_NFS && \
+	cd ${.CURDIR}/../sys/arch/pmax/conf && config GENERIC.NFS
+	cd ${.CURDIR}/../sys/arch/pmax/compile/GENERIC.NFS && \
 	    make clean && make depend && make
-	elf2ecoff ${.CURDIR}/../sys/arch/pmax/compile/GENERIC_NFS/bsd \
+	elf2ecoff ${.CURDIR}/../sys/arch/pmax/compile/GENERIC.NFS/bsd \
 	    ${DESTDIR}/snapshot/bsd.nfs
 
 bsd.rz0:
-	cd ${.CURDIR}/../sys/arch/pmax/conf && config GENERIC_rz0
-	cd ${.CURDIR}/../sys/arch/pmax/compile/GENERIC_rz0 && \
+	cd ${.CURDIR}/../sys/arch/pmax/conf && config GENERIC.rz0
+	cd ${.CURDIR}/../sys/arch/pmax/compile/GENERIC.rz0 && \
 	    make clean && make depend && make
-	cp ${.CURDIR}/../sys/arch/pmax/compile/GENERIC_rz0/bsd \
+	cp ${.CURDIR}/../sys/arch/pmax/compile/GENERIC.rz0/bsd \
 	    ${DESTDIR}/snapshot/bsd.rz0
 
 simpleroot:
