@@ -306,7 +306,7 @@ Parse(struct ipcp *ipcp, int argc, char const *const *argv,
   struct filterent filterdata;
 
   val = strtol(*argv, &wp, 0);
-  if (*argv == wp || val > MAXFILTERS) {
+  if (*argv == wp || val >= MAXFILTERS) {
     log_Printf(LogWARN, "Parse: invalid filter number.\n");
     return (0);
   }
