@@ -1,4 +1,4 @@
-/*	$OpenBSD: dev_mkdb.c,v 1.6 2002/02/16 21:28:01 millert Exp $	*/
+/*	$OpenBSD: dev_mkdb.c,v 1.7 2002/03/14 16:44:24 mpech Exp $	*/
 
 /*-
  * Copyright (c) 1990, 1993
@@ -63,9 +63,7 @@ static char rcsid[] = "$Id$";
 void	usage(void);
 
 int
-main(argc, argv)
-	int argc;
-	char *argv[];
+main(int argc, char *argv[])
 {
 	DIR *dirp;
 	struct dirent *dp;
@@ -150,7 +148,7 @@ main(argc, argv)
 }
 
 void
-usage()
+usage(void)
 {
 
 	(void)fprintf(stderr, "usage: dev_mkdb\n");
