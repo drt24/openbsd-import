@@ -64,7 +64,7 @@ badchars(base)
 		if (strchr(":\n\t\r", *s))
 			return 1;
 	}
-	if (ampr > _PASSWORD_LEN)
+	if (ampr > 10)
 		return 1;
 	return 0;
 }
@@ -75,7 +75,7 @@ make_passwd(argp)
 {
 	struct passwd *pw;
 	int     pfd, tfd;
-	char	buf[_PASSWORD_LEN], *p;
+	char	buf[10], *p;
 	int	alen;
 
 	pw = getpwnam(argp->newpw.pw_name);
