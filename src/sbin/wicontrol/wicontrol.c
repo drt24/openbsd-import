@@ -1,4 +1,4 @@
-/*	$OpenBSD: wicontrol.c,v 1.6 2000/02/26 23:36:28 ho Exp $	*/
+/*	$OpenBSD: wicontrol.c,v 1.7 2000/03/02 18:50:00 ho Exp $	*/
 
 /*
  * Copyright (c) 1997, 1998, 1999
@@ -93,7 +93,7 @@ static void wi_getval(iface, wreq)
 
 	bzero((char *)&ifr, sizeof(ifr));
 
-	strcpy(ifr.ifr_name, iface);
+	strlcpy(ifr.ifr_name, iface, sizeof(ifr.ifr_name));
 	ifr.ifr_data = (caddr_t)wreq;
 
 	s = socket(AF_INET, SOCK_DGRAM, 0);
@@ -118,7 +118,7 @@ static void wi_setval(iface, wreq)
 
 	bzero((char *)&ifr, sizeof(ifr));
 
-	strcpy(ifr.ifr_name, iface);
+	strlcpy(ifr.ifr_name, iface, sizeof(ifr.ifr_name));
 	ifr.ifr_data = (caddr_t)wreq;
 
 	s = socket(AF_INET, SOCK_DGRAM, 0);
