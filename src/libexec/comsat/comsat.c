@@ -243,7 +243,7 @@ jkfprintf(tp, name, offset)
 	off_t offset;
 {
 	register char *cp, ch;
-	char visout[4], *s2;
+	char visout[5], *s2;
 	register FILE *fi;
 	register int linecnt, charcnt, inheader;
 	register struct passwd *p;
