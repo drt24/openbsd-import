@@ -29,6 +29,6 @@ beforeinstall:
 	    fi
 
 beforedepend:
-	ln -s . ss
+	test -h ss || ln -s . ss
 
 .include <bsd.lib.mk>
