@@ -36,6 +36,7 @@
 #ifndef _STATE_H_
 #define _STATE_H_
 
+#include <sys/socket.h>
 #include <netinet/in.h>
 #include <gmp.h>
 #include <time.h>

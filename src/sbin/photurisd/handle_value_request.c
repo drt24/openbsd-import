@@ -42,6 +42,7 @@ static char rcsid[] = "$Id$";
 #include <string.h>
 #include <time.h>
 #include <sys/time.h>
+#include <sys/socket.h>
 #include <netinet/in.h>
 #include "config.h"
 #include "photuris.h"
