@@ -67,6 +67,7 @@ transform xf[] = {
      { 18, ALG_ENC_3DES, XF_ENC|ESP_NEW},
      { 16, ALG_ENC_BLF, XF_ENC|ESP_NEW},
      { 17, ALG_ENC_CAST, XF_ENC|ESP_NEW},
+     { 19, ALG_ENC_SKIPJACK, XF_ENC|ESP_NEW},
 };
 
 transform *kernel_get_transform(int id);
