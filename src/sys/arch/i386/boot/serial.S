@@ -72,7 +72,7 @@ WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 	.file	"serial.s"
 
 #include <machine/asm.h>
-#include "../../../dev/isa/comreg.h"
+#include "../../../dev/ic/comreg.h"
 #define	COMBRD(x) (1843200 / (16*(x)))
 	.text
 
