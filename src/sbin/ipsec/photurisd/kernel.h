@@ -81,5 +81,6 @@ EXTERN int kernel_insert_spi(struct spiob *SPI);
 EXTERN int kernel_unlink_spi(struct spiob *ospi);
 EXTERN int init_kernel(void);
 EXTERN int kernel_get_socket(void);
+EXTERN void kernel_set_socket_policy(int sd);
 
 #endif /* _KERNEL_H */

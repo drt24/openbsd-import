@@ -156,6 +156,28 @@ kernel_get_socket(void)
      return sd;
 }
 
+void
+kernel_set_socket_policy(int sd)
+{
+     u_char level;
+
+     /*
+      * Need to bypass system security policy, so I can send and
+      * receive key management datagrams in the clear.
+      */
+
+     level = IPSEC_LEVEL_BYPASS;   /* Did I mention I'm privileged? */
+     if (setsockopt(sd, IPPROTO_IP, IP_AUTH_LEVEL, (char *)&level,
+		    sizeof (u_char)) == -1)
+	  crit_error(1, "setsockopt: can not bypass ipsec authentication policy");
+     if (setsockopt(sd, IPPROTO_IP, IP_ESP_TRANS_LEVEL,
+			(char *)&level, sizeof (u_char)) == -1)
+	  crit_error(1, "setsockopt: can not bypass ipsec esp transport policy");
+     if (setsockopt(sd, IPPROTO_IP, IP_ESP_NETWORK_LEVEL,
+		    (char *)&level, sizeof (u_char)) == -1)
+	  crit_error(1, "setsockopt: can not bypass ipsec esp network policy");
+}
+
 int
 kernel_xf_set(struct encap_msghdr *em)
 {

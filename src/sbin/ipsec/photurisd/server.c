@@ -193,6 +193,9 @@ init_server(void)
 	       crit_error(1, "socket() in init_server()"); 
 	  setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, (void *)&on, 
 		     sizeof(on)); 
+#ifdef IPSEC
+	  kernel_set_socket_policy(sock);
+#endif	  
 	  sockets[i] = sock;
 
 #ifdef DEBUG 
