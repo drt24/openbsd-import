@@ -153,7 +153,9 @@ extern float _maxfloat, _minfloat;
 #define MAXDOUBLE   1.701411834604692293e+38
 #define MINDOUBLE   (2.938735877055718770e-39)
 
+#ifndef __NetBSD__	/* XXX */
 #define MAXFLOAT    1.7014117331926443e+38
+#endif /* ! __NetBSD__ */
 #define MINFLOAT    2.9387358770557188e-39
 
 #define _IEEE       0
