@@ -273,7 +273,7 @@ PacketCheck(char *cp, int nb, int direction)
   int logit, loglen;
   static char logbuf[200];
 
-  logit = LogIsKept(LogTCPIP);
+  logit = LogIsKept(LogTCPIP) && direction != FL_DIAL;
   loglen = 0;
 
   pip = (struct ip *) cp;
