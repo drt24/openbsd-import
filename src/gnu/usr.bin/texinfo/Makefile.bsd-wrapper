@@ -24,7 +24,7 @@ all:	config.status
 
 config: .FORCE
 	-rm -f config.cache
-	/bin/sh ${.CURDIR}/configure --prefix=/usr
+	INSTALL_PROGRAM=$(INST_PROG) /bin/sh ${.CURDIR}/configure --prefix=/usr
 
 config.status:
 	INSTALL_PROGRAM=$(INST_PROG) /bin/sh ${.CURDIR}/configure --prefix=/usr
