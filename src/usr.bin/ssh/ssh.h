@@ -109,6 +109,7 @@
  * file should only be readable by the user him/herself.
  */
 #define SSH_CLIENT_IDENTITY	".ssh/identity"
+#define SSH_CLIENT_ID_DSA	".ssh/id_dsa"
 
 /*
  * Configuration file in user\'s home directory.  This file need not be

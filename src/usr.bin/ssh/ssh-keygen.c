@@ -72,7 +72,8 @@ ask_filename(struct passwd *pw, const char *prompt)
 {
 	char buf[1024];
 	snprintf(identity_file, sizeof(identity_file), "%s/%s",
-		 pw->pw_dir, SSH_CLIENT_IDENTITY);
+	    pw->pw_dir,
+	    dsa_mode ? SSH_CLIENT_ID_DSA: SSH_CLIENT_IDENTITY);
 	printf("%s (%s): ", prompt, identity_file);
 	fflush(stdout);
 	if (fgets(buf, sizeof(buf), stdin) == NULL)
