@@ -69,13 +69,13 @@ char *av[];
     int i, tc;
     char buf[256], *scriptfile = NULL, *tp, *tv[MAXTOKENS];
 
-    while ((i = getopt(ac, av, "1234c:d:f:Hhs:")) != -1) {
+    while ((i = getopt(ac, av, "0123f:s:h")) != -1) {
 	switch (i) {
+	case '0':
 	case '1':
 	case '2':
 	case '3':
-	case '4':
-	    port = i - '1';
+	    port = i - '0';
 	    break;
 	case 'f':
 	    scriptfile = optarg;

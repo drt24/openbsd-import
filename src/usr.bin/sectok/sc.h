@@ -60,6 +60,4 @@ int jlogin(int ac, char *av[]);
 int jaut(int ac, char *av[]);
 int jload(int ac, char *av[]);
 int junload(int ac, char *av[]);
-int jselect(int ac, char *av[]);
-int jdeselect(int ac, char *av[]);
 int jsetpass(int ac, char *av[]);
