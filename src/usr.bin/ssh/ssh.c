@@ -131,14 +131,13 @@ usage()
 void
 rsh_connect(char *host, char *user, Buffer *command)
 {
-#ifdef RSH_PATH
   char *args[10];
   int i;
   
   log("Using rsh.  WARNING: Connection will not be encrypted.");
   /* Build argument list for rsh. */
   i = 0;
-  args[i++] = RSH_PATH;
+  args[i++] = _PATH_RSH;
   args[i++] = host;    /* may have to come after user on some systems */
   if (user)
     {
@@ -161,12 +160,9 @@ rsh_connect(char *host, char *user, Buffer *command)
 	}
       fprintf(stderr, "\n");
     }
-  execv(RSH_PATH, args);
-  perror(RSH_PATH);
+  execv(_PATH_RSH, args);
+  perror(_PATH_RSH);
   exit(1);
-#else /* RSH_PATH */
-  fatal("Rsh not available.");
-#endif /* RSH_PATH */
 }
 
 /* Main program for the ssh client. */
