@@ -66,7 +66,7 @@ struct filterent {
   } opt;
 };
 
-#define	MAXFILTERS		20	/* in each filter set */
+#define	MAXFILTERS		40	/* in each filter set */
 
 struct filter {
   struct filterent rule[MAXFILTERS];	/* incoming packet filter */
