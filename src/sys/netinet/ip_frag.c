@@ -1,4 +1,4 @@
-/*       $OpenBSD: ip_frag.c,v 1.11 1999/02/05 05:58:51 deraadt Exp $       */
+/*       $OpenBSD: ip_frag.c,v 1.12 1999/12/08 06:50:19 itojun Exp $       */
 /*
  * Copyright (C) 1993-1998 by Darren Reed.
  *
@@ -51,11 +51,6 @@ static const char rcsid[] = "@(#)$Id$";
 #include <net/af.h>
 #endif
 #include <net/route.h>
-#ifdef _KERNEL
-#ifndef INET
-#error ipfilter assumes options INET
-#endif
-#endif
 #include <netinet/in.h>
 #include <netinet/in_systm.h>
 #include <netinet/ip.h>
