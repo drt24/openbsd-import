@@ -32,6 +32,8 @@ VPATH = @srcdir@
 @SET_MAKE@
 SHELL = /bin/sh
 
+CC = @CC@
+CPPFLAGS = @CPPFLAGS@
 CFLAGS = @CFLAGS@
 LDFLAGS = @LDFLAGS@
  
@@ -49,7 +51,7 @@ manext = 1
 # Documentation directories; special handling
 INSTALL_MAN = man
 # All other subdirs:
-SUBDIRS = src $(INSTALL_MAN)
+SUBDIRS = $(INSTALL_MAN) src
 
 default :: all
 
@@ -63,7 +65,7 @@ maintainer-clean ::
 
 MDEFINES = bindir='$(bindir)' mandir='$(mandir)' manext='$(manext)' \
         prefix='$(prefix)' binprefix='$(binprefix)' \
-        manprefix='$(manprefix)' CFLAGS='$(CFLAGS)' \
+        manprefix='$(manprefix)' CFLAGS='$(CFLAGS)' CPPFLAGS='$(CPPFLAGS)'\
         CC='$(CC)' LDFLAGS='$(LDFLAGS)' \
         INSTALL_MAN='$(INSTALL_MAN)'
 
