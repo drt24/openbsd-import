@@ -1,4 +1,4 @@
-/*	$OpenBSD:$	*/
+/*	$OpenBSD: bcopy.c,v 1.2 1996/12/28 06:21:37 rahnds Exp $	*/
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
  * All rights reserved.
@@ -45,6 +45,7 @@ static char *rcsid = "$Id$";
 #include <string.h>
 */
 #include <sys/types.h>
+#include <sys/systm.h>
 
 /*
  * sizeof(word) MUST BE A POWER OF TWO
