@@ -25,7 +25,7 @@
  */
 
 #include "includes.h"
-RCSID("$OpenBSD: monitor.c,v 1.10 2002/05/12 23:53:45 djm Exp $");
+RCSID("$OpenBSD: monitor.c,v 1.11 2002/05/15 15:47:49 mouring Exp $");
 
 #include <openssl/dh.h>
 

@@ -85,7 +85,7 @@ mm_create(struct mm_master *mmalloc, size_t size)
 	address = mmap(NULL, size, PROT_WRITE|PROT_READ, MAP_ANON|MAP_SHARED,
 	    -1, 0);
 	if (address == MAP_FAILED)
-		fatal("mmap(%lu): %s", (u_long)size, strerror(errno));
+		fatal("mmap(%lu)", (u_long)size);
 
 	mm->address = address;
 	mm->size = size;
@@ -124,8 +124,7 @@ mm_destroy(struct mm_master *mm)
 	mm_freelist(mm->mmalloc, &mm->rb_allocated);
 
 	if (munmap(mm->address, mm->size) == -1)
-		fatal("munmap(%p, %lu): %s", mm->address, (u_long)mm->size,
-		    strerror(errno));
+		fatal("munmap(%p, %lu)", mm->address, (u_long)mm->size);
 	if (mm->mmalloc == NULL)
 		xfree(mm);
 	else
