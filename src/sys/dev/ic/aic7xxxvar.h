@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: aic7xxxvar.h,v 1.17 2003/12/24 23:10:21 krw Exp $	*/
 /*
  * Core definitions and data structures shareable across OS platforms.
  *
@@ -1020,9 +1020,6 @@ struct ahc_softc {
 	struct ahc_tmode_tstate  *enabled_targets[AHC_NUM_TARGETS];
 
 	char inited_target[AHC_NUM_TARGETS];
-#define	INITED_TARGET_START	0
-#define INITED_TARGET_INQUIRYOK	1
-#define INITED_TARGET_MODEOK	2
 
 	/*
 	 * The black hole device responsible for handling requests for
