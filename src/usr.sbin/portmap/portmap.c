@@ -302,7 +302,7 @@ reg_service(rqstp, xprt)
 		if (xprt != ltcpxprt && xprt != ludpxprt) {
 			syslog(LOG_WARNING,
 			    "non-local set attempt (might be from %s)",
-			    inet_ntoa(fromsin));
+			    inet_ntoa(fromsin->sin_addr));
 			svcerr_noproc(xprt);
 			return;
 		}
@@ -361,7 +361,7 @@ reg_service(rqstp, xprt)
 		if (xprt != ltcpxprt && xprt != ludpxprt) {
 			syslog(LOG_WARNING,
 			    "non-local unset attempt (might be from %s)",
-			    inet_ntoa(fromsin));
+			    inet_ntoa(fromsin->sin_addr));
 			svcerr_noproc(xprt);
 			return;
 		}
