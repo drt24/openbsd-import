@@ -142,7 +142,7 @@ prop_to_slaves(struct slave_host *sl, int fd, char *fslv)
     KTEXT_ST     ticket;
     CREDENTIALS  cred;
     MSG_DAT msg_dat;
-    static char tkstring[] = "/tmp/kproptktXXXXXX";
+    static char tkstring[] = "/tmp/kproptktXXXXXXXXXX";
     
     des_key_schedule session_sched;
 
