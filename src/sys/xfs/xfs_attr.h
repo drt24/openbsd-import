@@ -1,3 +1,4 @@
+/* $OpenBSD$ */
 /*
  * Copyright (c) 1998 Kungliga Tekniska Högskolan
  * (Royal Institute of Technology, Stockholm, Sweden).
@@ -36,7 +37,6 @@
  * SUCH DAMAGE.
  */
 
-/* $Id$ */
 
 #ifndef _XFS_ATTR_H
 #define _XFS_ATTR_H

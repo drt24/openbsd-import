@@ -1,5 +1,5 @@
+#	$OpenBSD$
 #	from: @(#)Makefile	8.1 (Berkeley) 6/16/93
-#	$Id$
 
 # Makefile for arc links, tags file
 

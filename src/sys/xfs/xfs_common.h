@@ -1,3 +1,4 @@
+/* $OpenBSD$ */
 /*
  * Copyright (c) 1995, 1996, 1997 Kungliga Tekniska Högskolan
  * (Royal Institute of Technology, Stockholm, Sweden).
@@ -36,7 +37,6 @@
  * SUCH DAMAGE.
  */
 
-/* $Id$ */
 
 #ifndef _xfs_common_h
 #define _xfs_common_h

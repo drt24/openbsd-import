@@ -1,4 +1,4 @@
-/*	$OpenBSD: timeout.h,v 1.5 2000/03/23 15:47:50 art Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * Copyright (c) 2000 Artur Grabowski <art@openbsd.org>
  * All rights reserved. 

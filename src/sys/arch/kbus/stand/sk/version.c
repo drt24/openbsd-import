@@ -1,4 +1,4 @@
-/*	$Id$ */
+/*	$OpenBSD$ */
 
 /*
  *	NOTE ANY CHANGES YOU MAKE TO THE BOOTBLOCKS HERE.

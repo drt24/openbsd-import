@@ -1,4 +1,4 @@
-/*	$OpenBSD: ip_xform.c,v 1.6 2000/03/10 03:51:59 deraadt Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * The authors of this code are John Ioannidis (ji@tla.org),

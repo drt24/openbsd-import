@@ -1,3 +1,4 @@
+/* $OpenBSD$ */
 /*
  * Copyright (c) 1995, 1996, 1997, 1998 Kungliga Tekniska Högskolan
  * (Royal Institute of Technology, Stockholm, Sweden).
@@ -36,7 +37,6 @@
  * SUCH DAMAGE.
  */
 
-/* $Id$ */
 
 #if 1 /* XXX - ugly hack */
 #include <xfs/xfs_config.h>

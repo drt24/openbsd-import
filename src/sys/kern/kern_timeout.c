@@ -1,4 +1,4 @@
-/*	$OpenBSD: kern_timeout.c,v 1.2 2000/03/23 10:27:05 art Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * Copyright (c) 2000 Artur Grabowski <art@openbsd.org>
  * All rights reserved. 

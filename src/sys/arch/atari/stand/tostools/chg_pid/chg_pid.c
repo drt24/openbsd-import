@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*	$NetBSD: chg_pid.c,v 1.3 1996/01/09 09:55:06 leo Exp $	*/
 
 /*

@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /*
  * Copyright (c) 1995, 1996, 1997, 1998, 1999 Kungliga Tekniska Högskolan
  * (Royal Institute of Technology, Stockholm, Sweden).
@@ -49,7 +51,7 @@
 #include <xfs/xfs_syscalls.h>
 #include <xfs/xfs_vnodeops.h>
 
-RCSID("$Id$");
+RCSID("$OpenBSD$");
 
 int
 xfs_open_valid(struct vnode * vp, struct ucred * cred, u_int tok)

@@ -1,3 +1,4 @@
+/*	$OpenBSD$ */
 /*	$NetBSD: version.c,v 1.3 1995/10/17 22:58:32 gwr Exp $ */
 
 /*

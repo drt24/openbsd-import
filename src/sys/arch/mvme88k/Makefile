@@ -1,5 +1,5 @@
+#	$OpenBSD$
 #	from: @(#)Makefile	7.3 (Berkeley) 6/9/91
-#	$Id$
 
 SUBDIR= stand
 DIRS= conf dev ddb mvme88k include

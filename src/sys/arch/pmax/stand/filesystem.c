@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*
  * Copyright (c) 1993 Philip A. Nelson.
  * All rights reserved.
@@ -30,7 +31,6 @@
  *
  *	filesystem.c
  *
- *	$Id$
  */
 
 #include <stand.h>
