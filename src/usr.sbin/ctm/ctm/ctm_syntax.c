@@ -56,12 +56,12 @@ static int ctmDR[] = /* Directory Remove */
     { Name|Dir, 0 };
 
 struct CTM_Syntax Syntax[] = {
-    { "FM", ctmFM },
-    { "FS", ctmFS },
-    { "FE", ctmFE },
-    { "FN", ctmFE },
-    { "FR", ctmFR },
-    { "AS", ctmAS },
-    { "DM", ctmDM },
-    { "DR", ctmDR },
-    { 0, 0} };
+    { "FM",  	ctmFM },
+    { "FS",  	ctmFS },
+    { "FE",  	ctmFE },
+    { "FN",  	ctmFE },
+    { "FR",  	ctmFR },
+    { "AS", 	ctmAS },
+    { "DM",  	ctmDM },
+    { "DR",  	ctmDR },
+    { 0,    	0} };
