@@ -170,7 +170,7 @@ load_env(envstr, f)
 			if (val[0] == '\'' || val[0] == '"') {
 				if (val[len-1] == val[0]) {
 					val[len-1] = '\0';
-					(void) strcpy(val, val+1);
+					memmove(val, val+1, len);
 				}
 			}
 		}
