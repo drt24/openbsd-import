@@ -166,7 +166,7 @@ main(argc, argv)
 	fromlen = sizeof (from);
 	if (getpeername(0, (struct sockaddr *)&from, &fromlen) < 0) {
 		syslog(LOG_ERR, "getpeername: %m");
-		_exit(1);
+		exit(1);
 	}
 	if (keepalive &&
 	    setsockopt(0, SOL_SOCKET, SO_KEEPALIVE, (char *)&on,
