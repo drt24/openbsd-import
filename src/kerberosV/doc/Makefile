@@ -12,7 +12,7 @@ infodir = ${DESTDIR}/usr/share/info
 
 INSTALL = /usr/bin/install
 
-info = heimdal.info
+info = heimdal.info heimdal.info-1 heimdal.info-2
 
 SRCS = 	heimdal.texi intro.texi install.texi setup.texi kerberos4.texi
 
@@ -27,7 +27,7 @@ $(info): $(SRCS)
 	${MAKEINFO} -I${KRB5SRC}/doc -o ${.OBJDIR}/$@ ${KRB5SRC}/doc/heimdal.texi
 
 clean:
-	(cd ${.OBJDIR} ; rm -f *.aux *.cp *.cps *.dvi *.fn *.ky *.log *.pg *.toc *.tp *.vr *.info)
+	(cd ${.OBJDIR} ; rm -f *.aux *.cp *.cps *.dvi *.fn *.ky *.log *.pg *.toc *.tp *.vr *.info *.info-[0-9])
 
 cleandir: clean
 
