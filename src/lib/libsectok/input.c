@@ -137,9 +137,10 @@ sectok_parse_input(char *ibuf, unsigned char *obuf, int olen)
 void
 sectok_parse_fname(char *buf, unsigned char *fid)
 {
-    if (buf[0] == '/' || sectok_parse_input(buf, fid, 2) < 2) {
+    fid[1] = 0;
+
+    if (buf[0] == '/' || sectok_parse_input(buf, fid, 2) < 1) {
 	/* root */
 	fid[0] = 0x3f;
-	fid[1] = 0;
     }
 }
