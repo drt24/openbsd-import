@@ -232,7 +232,7 @@ ReadSystem(const char *name, const char *file, int doexec)
   int n, len;
   u_char olauth;
   char line[LINE_LEN];
-  char filename[200];
+  char filename[MAXPATHLEN];
   int linenum;
   int argc;
   char **argv;
