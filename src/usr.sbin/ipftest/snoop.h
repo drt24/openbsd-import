@@ -1,10 +1,14 @@
+/*     $OpenBSD$     */
 /*
- * (C)opyright 1993,1994,1995 by Darren Reed.
+ * Copyright (C) 1993-1997 by Darren Reed.
  *
  * Redistribution and use in source and binary forms are permitted
  * provided that this notice is preserved and due credit is given
  * to the original author and the contributors.
  */
+
+#ifndef	__SNOOP_H__
+#define	__SNOOP_H__
 
 /*
  * written to comply with the RFC (1761) from Sun.
@@ -40,3 +44,5 @@ struct	snooppkt	{
 	int	sp_sec;
 	int	sp_usec;
 };
+
+#endif /* __SNOOP_H__ */
