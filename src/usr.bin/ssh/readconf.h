@@ -56,6 +56,7 @@ typedef struct
 
   int port;			/* Port to connect. */
   int connection_attempts;	/* Max attempts (seconds) before giving up */
+  int number_of_password_prompts; /* Max number of password prompts. */
   int cipher;			/* Cipher to use. */
   char *hostname;		/* Real host to connect. */
   char *proxy_command;		/* Proxy command for connecting the host. */
