@@ -18,7 +18,8 @@ install: maninstall
 		bindir=${DESTDIR}/usr/bin INSTALL_MAN= install
 
 clean cleandir:
-	-@if [ -e Makefile ]; then ${MAKE} realclean; fi
+	-@if [ -e Makefile ]; then ${MAKE} distclean; fi
+	rm -f man/cvs.cat1 man/cvs.cat5 man/cvsbug.cat8 man/cvsinit.cat8 man/mkmodules.cat1
 
 depend:
 	# Nothing here so far...
