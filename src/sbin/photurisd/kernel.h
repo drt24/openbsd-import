@@ -92,7 +92,8 @@ int kernel_bind_spis(struct spiob *spi1, struct spiob *spi2);
 
 int kernel_delete_spi(char *address, u_int32_t spi, int proto);
 
-int kernel_request_sa(void *em /* struct encap_msghdr *em */);
+struct sadb_msg;
+int kernel_request_sa(struct sadb_msg *);
 #else
 #define EXTERN extern
 #endif
