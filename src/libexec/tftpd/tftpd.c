@@ -67,10 +67,6 @@ static char rcsid[] = "$Id$";
 #include <string.h>
 #include <stdlib.h>
 
-/* XXX svr4 defines UID_NOBODY and GID_NOBODY constants in <sys/param.h> */
-#define UID_NOBODY	32767
-#define GID_NOBODY	32766
-
 #define	TIMEOUT		5
 
 extern	int errno;
@@ -103,6 +99,7 @@ main(argc, argv)
 	char **argv;
 {
 	register struct tftphdr *tp;
+	struct pwent *pw;
 	register int n = 0;
 	int on = 1;
 	int fd = 0;
@@ -135,20 +132,19 @@ main(argc, argv)
 		}
 	}
 
+	pw = getpwnam("nobody");
+	if (!pw) {
+		syslog(LOG_ERR, "no nobody: %m\n");
+		exit(1);
+	}
+
 	if (secure && chroot(".")) {
 		syslog(LOG_ERR, "chroot: %m\n");
 		exit(1);
 	}
 
-	if (setgid(GID_NOBODY)) {
-		syslog(LOG_ERR, "setgid: %m");
-		exit(1);
-	}
-
-	if (setuid(UID_NOBODY)) {
-		syslog(LOG_ERR, "setuid: %m");
-		exit(1);
-	}
+	(void) setgid(pw->pw_gid);
+	(void) setuid(pw->pw_uid);
 
 	if (ioctl(fd, FIONBIO, &on) < 0) {
 		syslog(LOG_ERR, "ioctl(FIONBIO): %m\n");
