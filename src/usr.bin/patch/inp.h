@@ -1,4 +1,4 @@
-/*	$Id$ */
+/*	$OpenBSD: inp.h,v 1.1.1.1 1995/10/18 08:45:55 deraadt Exp $ */
 
 EXT LINENUM input_lines INIT(0);	/* how long is input file in lines */
 EXT LINENUM last_frozen_line INIT(0);	/* how many input lines have been */

@@ -1,4 +1,4 @@
-/*	$Id$ */
+/*	$OpenBSD: INTERN.h,v 1.1.1.1 1995/10/18 08:45:55 deraadt Exp $ */
 
 #ifdef EXT
 #undef EXT
