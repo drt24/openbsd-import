@@ -21,7 +21,7 @@ des_cblock ret;
 	((u_int32_t *)key)[1]=(u_int32_t)((pid)|((c++)<<16));
 
 	des_set_odd_parity((des_cblock *)data);
-	des_set_key((des_cblock *)data,ks);
+	des_set_key_schedule((des_cblock *)data,ks);
 	des_cbc_cksum((des_cblock *)key,(des_cblock *)key,
 		(int32_t)sizeof(key),ks,(des_cblock *)data);
 	des_set_odd_parity((des_cblock *)key);

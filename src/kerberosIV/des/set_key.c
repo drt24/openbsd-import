@@ -95,7 +95,7 @@ static char shifts2[16]={0,0,1,1,1,1,1,1,0,1,1,1,1,1,1,0};
  * return -1 if key parity error,
  * return -2 if illegal weak key.
  */
-int des_set_key(des_cblock (*key), struct des_ks_struct *schedule)
+int des_set_key_schedule(des_cblock (*key), struct des_ks_struct *schedule)
 {
   register u_int32_t c,d,t,s;
   register unsigned char *in;
@@ -175,5 +175,5 @@ int des_set_key(des_cblock (*key), struct des_ks_struct *schedule)
 
 int des_key_sched(des_cblock *key, des_key_schedule schedule)
 {
-  return(des_set_key(key, (struct des_ks_struct *)schedule));
+  return(des_set_key_schedule(key, (struct des_ks_struct *)schedule));
 }
