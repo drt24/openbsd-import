@@ -548,17 +548,17 @@ CcpRecvResetAck(struct fsm *fp, u_char id)
 
   if (ccp->reset_sent != -1) {
     if (id != ccp->reset_sent) {
-      log_Printf(LogWARN, "CCP: %s: Incorrect ResetAck (id %d, not %d)"
+      log_Printf(LogCCP, "%s: Incorrect ResetAck (id %d, not %d)"
                 " ignored\n", fp->link->name, id, ccp->reset_sent);
       return;
     }
     /* Whaddaya know - a correct reset ack */
   } else if (id == ccp->last_reset)
     log_Printf(LogCCP, "%s: Duplicate ResetAck (resetting again)\n",
-              fp->link->name);
+               fp->link->name);
   else {
-    log_Printf(LogWARN, "CCP: %s: Unexpected ResetAck (id %d) ignored\n",
-              fp->link->name, id);
+    log_Printf(LogCCP, "%s: Unexpected ResetAck (id %d) ignored\n",
+               fp->link->name, id);
     return;
   }
 

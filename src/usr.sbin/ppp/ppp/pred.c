@@ -43,6 +43,8 @@
 #include "hdlc.h"
 #include "lcp.h"
 #include "ccp.h"
+#include "throughput.h"
+#include "link.h"
 #include "pred.h"
 
 /* The following hash code is the heart of the algorithm:
@@ -232,8 +234,8 @@ Pred1Input(void *v, struct ccp *ccp, u_short *proto, struct mbuf *bp)
     ccp->compin += olen;
     len &= 0x7fff;
     if (len != len1) {		/* Error is detected. Send reset request */
-      log_Printf(LogCCP, "Pred1: Length error\n");
-      ccp_SendResetReq(&ccp->fsm);
+      log_Printf(LogCCP, "Pred1: Length error (got %d, not %d)\n", len1, len);
+      fsm_Reopen(&ccp->fsm);
       mbuf_Free(bp);
       mbuf_Free(wp);
       return NULL;
@@ -269,8 +271,8 @@ Pred1Input(void *v, struct ccp *ccp, u_short *proto, struct mbuf *bp)
     mbuf_Free(bp);
     return wp;
   } else {
-    log_DumpBp(LogHDLC, "Bad FCS", wp);
-    ccp_SendResetReq(&ccp->fsm);
+    log_Printf(LogCCP, "%s: Bad CRC-16\n", ccp->fsm.link->name);
+    fsm_Reopen(&ccp->fsm);
     mbuf_Free(wp);
   }
   mbuf_Free(bp);
