@@ -132,10 +132,6 @@ u_int32_t tdst = 0;		/* Address where trace is sent (last-hop) */
 
 vifi_t  numvifs;		/* to keep loader happy */
 				/* (see kern.c) */
-#ifndef SYSV
-extern long random(void);
-#endif
-extern int errno;
 
 char *			inet_name(u_int32_t addr);
 u_int32_t			host_addr(char *name);
