@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: if_tx.c,v 1.3 1998/10/10 04:30:09 jason Exp $	*/
 
 /*-
  * Copyright (c) 1997 Semen Ustimenko (semen@iclub.nsu.ru)
@@ -904,14 +904,7 @@ epic_rx_done __P((
 #else /* __OpenBSD__ */
 			bpf_mtap( sc->sc_if.if_bpf, m );
 #endif /* __FreeBSD__ */
-
-		/* Accept only our packets, broadcasts and multicasts */
-		if( (eh->ether_dhost[0] & 1) == 0 &&
-		    bcmp(eh->ether_dhost,sc->sc_macaddr,ETHER_ADDR_LEN)){
-			m_freem(m);
-			continue;
-		}
-#endif
+#endif /* NBPFILTER > 0 */
 
 		/* Second mbuf holds packet ifself */
 		m->m_pkthdr.len = m->m_len = len - sizeof(struct ether_header);
