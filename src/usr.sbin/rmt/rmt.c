@@ -49,8 +49,11 @@ static char rcsid[] = "$Id$";
 #include <sgtty.h>
 #include <sys/types.h>
 #include <sys/socket.h>
+#include <sys/file.h>
 #include <sys/stat.h>
 #include <sys/mtio.h>
+#include <unistd.h>
+#include <stdlib.h>
 #include <errno.h>
 #include <string.h>
 
@@ -71,6 +74,10 @@ FILE	*debug;
 #define	DEBUG1(f,a)	if (debug) fprintf(debug, f, a)
 #define	DEBUG2(f,a1,a2)	if (debug) fprintf(debug, f, a1, a2)
 
+void	getstring __P((char *));
+void	error __P((int));
+
+int
 main(argc, argv)
 	int argc;
 	char **argv;
@@ -188,6 +195,7 @@ ioerror:
 	goto top;
 }
 
+void
 getstring(bp)
 	char *bp;
 {
@@ -226,6 +234,7 @@ checkbuf(record, size)
 	return (record);
 }
 
+void
 error(num)
 	int num;
 {
