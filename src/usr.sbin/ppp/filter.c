@@ -301,7 +301,7 @@ Parse(int argc, char const *const *argv, struct filterent * ofp)
   argv++;
 
   proto = P_NONE;
-  memset(&filterdata, '\0', sizeof(filterdata));
+  memset(&filterdata, '\0', sizeof filterdata);
 
   if (!strcmp(*argv, "permit")) {
     action = A_PERMIT;

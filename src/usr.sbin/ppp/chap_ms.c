@@ -53,7 +53,7 @@ ChallengeResponse(u_char *challenge, u_char *pwHash, u_char *response)
 {
     char    ZPasswordHash[21];
 
-    memset(ZPasswordHash, '\0', sizeof(ZPasswordHash));
+    memset(ZPasswordHash, '\0', sizeof ZPasswordHash);
     memcpy(ZPasswordHash, pwHash, 16);
 
     DesEncrypt(challenge, ZPasswordHash +  0, response + 0);

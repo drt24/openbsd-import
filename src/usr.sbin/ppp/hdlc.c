@@ -355,7 +355,7 @@ static struct {
   { 0xc481, 0xc481, "Proprietary Node ID Authentication Protocol" }
 };
 
-#define NPROTOCOLS (sizeof(protocols)/sizeof(protocols[0]))
+#define NPROTOCOLS (sizeof protocols/sizeof protocols[0])
 
 static const char *
 Protocol2Nam(u_short proto)
@@ -477,7 +477,7 @@ HdlcErrorCheck()
   struct hdlcstat *hp = &HdlcStat;
   struct hdlcstat *op = &laststat;
 
-  if (memcmp(hp, op, sizeof(laststat))) {
+  if (memcmp(hp, op, sizeof laststat)) {
     LogPrintf(LogPHASE, "HDLC errors -> FCS: %u ADDR: %u COMD: %u PROTO: %u\n",
 	      hp->badfcs - op->badfcs, hp->badaddr - op->badaddr,
       hp->badcommand - op->badcommand, hp->unknownproto - op->unknownproto);

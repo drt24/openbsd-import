@@ -56,7 +56,7 @@ void
 SetLabel(const char *label)
 {
   if (label)
-    strncpy(dstsystem, label, sizeof(dstsystem) - 1);
+    strncpy(dstsystem, label, sizeof dstsystem - 1);
   else
     *dstsystem = '\0';
 }
@@ -88,7 +88,7 @@ GetShortHost()
 {
   char *p;
 
-  if (gethostname(VarShortHost, sizeof(VarShortHost))) {
+  if (gethostname(VarShortHost, sizeof VarShortHost)) {
     LogPrintf(LogERROR, "GetShortHost: gethostbyname: %s\n", strerror(errno));
     return 0;
   }

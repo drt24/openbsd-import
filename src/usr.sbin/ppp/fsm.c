@@ -345,7 +345,7 @@ FsmRecvConfigReq(struct fsm * fp, struct fsmheader * lhp, struct mbuf * bp)
   int ackaction = 0;
 
   plen = plength(bp);
-  flen = ntohs(lhp->length) - sizeof(*lhp);
+  flen = ntohs(lhp->length) - sizeof *lhp;
   if (plen < flen) {
     LogPrintf(LogERROR, "FsmRecvConfigReq: plen (%d) < flen (%d)\n",
 	      plen, flen);
@@ -464,7 +464,7 @@ FsmRecvConfigNak(struct fsm * fp, struct fsmheader * lhp, struct mbuf * bp)
   int plen, flen;
 
   plen = plength(bp);
-  flen = ntohs(lhp->length) - sizeof(*lhp);
+  flen = ntohs(lhp->length) - sizeof *lhp;
   if (plen < flen) {
     pfree(bp);
     return;
@@ -574,7 +574,7 @@ FsmRecvConfigRej(struct fsm * fp, struct fsmheader * lhp, struct mbuf * bp)
   int plen, flen;
 
   plen = plength(bp);
-  flen = ntohs(lhp->length) - sizeof(*lhp);
+  flen = ntohs(lhp->length) - sizeof *lhp;
   if (plen < flen) {
     pfree(bp);
     return;

@@ -79,11 +79,11 @@ LocalAuthValidate(const char *fname, const char *system, const char *key)
   fp = OpenSecret(fname);
   if (fp == NULL)
     return (rc);
-  while (fgets(buff, sizeof(buff), fp)) {
+  while (fgets(buff, sizeof buff, fp)) {
     if (buff[0] == '#')
       continue;
     buff[strlen(buff) - 1] = 0;
-    memset(vector, '\0', sizeof(vector));
+    memset(vector, '\0', sizeof vector);
     n = MakeArgs(buff, vector, VECSIZE(vector));
     if (n < 1)
       continue;
@@ -113,19 +113,19 @@ AuthValidate(const char *fname, const char *system, const char *key)
   fp = OpenSecret(fname);
   if (fp == NULL)
     return (0);
-  while (fgets(buff, sizeof(buff), fp)) {
+  while (fgets(buff, sizeof buff, fp)) {
     if (buff[0] == '#')
       continue;
     buff[strlen(buff) - 1] = 0;
-    memset(vector, '\0', sizeof(vector));
+    memset(vector, '\0', sizeof vector);
     n = MakeArgs(buff, vector, VECSIZE(vector));
     if (n < 2)
       continue;
     if (strcmp(vector[0], system) == 0) {
-      ExpandString(vector[1], passwd, sizeof(passwd), 0);
+      ExpandString(vector[1], passwd, sizeof passwd, 0);
       if (strcmp(passwd, key) == 0) {
 	CloseSecret(fp);
-	memset(&DefHisAddress, '\0', sizeof(DefHisAddress));
+	memset(&DefHisAddress, '\0', sizeof DefHisAddress);
 	n -= 2;
 	if (n > 0) {
 	  if (ParseAddr(n--, (char const *const *)(vector+2),
@@ -156,18 +156,18 @@ AuthGetSecret(const char *fname, const char *system, int len, int setaddr)
   fp = OpenSecret(fname);
   if (fp == NULL)
     return (NULL);
-  while (fgets(buff, sizeof(buff), fp)) {
+  while (fgets(buff, sizeof buff, fp)) {
     if (buff[0] == '#')
       continue;
     buff[strlen(buff) - 1] = 0;
-    memset(vector, '\0', sizeof(vector));
+    memset(vector, '\0', sizeof vector);
     n = MakeArgs(buff, vector, VECSIZE(vector));
     if (n < 2)
       continue;
     if (strlen(vector[0]) == len && strncmp(vector[0], system, len) == 0) {
-      ExpandString(vector[1], passwd, sizeof(passwd), 0);
+      ExpandString(vector[1], passwd, sizeof passwd, 0);
       if (setaddr) {
-	memset(&DefHisAddress, '\0', sizeof(DefHisAddress));
+	memset(&DefHisAddress, '\0', sizeof DefHisAddress);
       }
       n -= 2;
       if (n > 0 && setaddr) {

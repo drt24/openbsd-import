@@ -59,7 +59,7 @@ sl_compress_init(struct slcompress * comp, int max_state)
   register u_int i;
   register struct cstate *tstate = comp->tstate;
 
-  memset(comp, '\0', sizeof(*comp));
+  memset(comp, '\0', sizeof *comp);
   for (i = max_state; i > 0; --i) {
     tstate[i].cs_id = i;
     tstate[i].cs_next = &tstate[i - 1];

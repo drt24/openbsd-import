@@ -230,10 +230,10 @@ RecvChapTalk(struct fsmheader *chp, struct mbuf *bp)
 		      VarBaseDevice);
 	  else {
 	    struct utmp ut;
-	    memset(&ut, 0, sizeof(ut));
+	    memset(&ut, 0, sizeof ut);
 	    time(&ut.ut_time);
-	    strncpy(ut.ut_name, name, sizeof(ut.ut_name)-1);
-	    strncpy(ut.ut_line, VarBaseDevice, sizeof(ut.ut_line)-1);
+	    strncpy(ut.ut_name, name, sizeof ut.ut_name - 1);
+	    strncpy(ut.ut_line, VarBaseDevice, sizeof ut.ut_line - 1);
 	    if (logout(ut.ut_line))
 	      logwtmp(ut.ut_line, "", "");
 	    login(&ut);

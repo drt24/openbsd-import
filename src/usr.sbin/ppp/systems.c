@@ -250,7 +250,7 @@ ReadSystem(const char *name, const char *file, int doexec)
   LogPrintf(LogDEBUG, "ReadSystem: Checking %s (%s).\n", name, filename);
 
   linenum = 0;
-  while (fgets(line, sizeof(line), fp)) {
+  while (fgets(line, sizeof line, fp)) {
     linenum++;
     cp = line;
     switch (*cp) {
@@ -283,7 +283,7 @@ ReadSystem(const char *name, const char *file, int doexec)
           break;
         }
       } else if (strcmp(cp, name) == 0) {
-	while (fgets(line, sizeof(line), fp)) {
+	while (fgets(line, sizeof line, fp)) {
 	  cp = line;
           if (issep(*cp)) {
 	    n = strspn(cp, " \t");
