@@ -267,7 +267,7 @@ int	len;
 		if (j && !(j & 0xf)) {
 			*t++ = '\n';
 			*t = '\0';
-			fputs(line, stdout);
+			fputs(line, log);
 			t = (u_char *)line;
 			*t = '\0';
 		}
@@ -300,8 +300,8 @@ int	len;
 		*t++ = '\n';
 		*t = '\0';
 	}
-	fputs(line, stdout);
-	fflush(stdout);
+	fputs(line, log);
+	fflush(log);
 }
 
 
