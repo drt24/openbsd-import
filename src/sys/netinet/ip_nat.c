@@ -1,4 +1,4 @@
-/*       $OpenBSD: ip_nat.c,v 1.16 1998/09/15 09:51:18 pattonme Exp $       */
+/*       $OpenBSD: ip_nat.c,v 1.17 1998/10/11 05:37:28 deraadt Exp $       */
 /*
  * Copyright (C) 1995-1997 by Darren Reed.
  *
@@ -580,10 +580,8 @@ int direction;
 			in.s_addr = np->in_nip;
 			if (!in.s_addr && (np->in_outmsk == 0xffffffff)) {
 				if ((l > 1) ||
-				    nat_ifpaddr(nat, fin->fin_ifp, &in) == -1) {
-					KFREE(nat);
+				    nat_ifpaddr(nat, fin->fin_ifp, &in) == -1)
 					return NULL;
-				}
 			} else if (!in.s_addr && !np->in_outmsk) {
 				if (l > 1) {
 					KFREE(nat);
