@@ -8,7 +8,7 @@ CFLAGS+= -Wall -Wno-unused
 
 .include <bsd.own.mk>
 
-.if (${KERBEROS} == "yes")
+.if (${KERBEROS:L} == "yes")
 SRCS+=	des_rw.c
 .PATH:	${.CURDIR}/../../usr.bin/rlogin
 CFLAGS+=-DKERBEROS

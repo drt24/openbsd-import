@@ -9,7 +9,7 @@ LDADD=	-lutil
 
 .include <bsd.own.mk>	# For KERBEROS
 
-.if (${KERBEROS} == "yes")
+.if (${KERBEROS:L} == "yes")
 SRCS=	rlogind.c des_rw.c
 .PATH:	${.CURDIR}/../../usr.bin/rlogin
 CFLAGS+=-DKERBEROS

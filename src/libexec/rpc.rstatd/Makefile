@@ -13,7 +13,7 @@ LDADD=	-lrpcsvc -lkvm
 
 .include <bsd.prog.mk>
 
-.if (${UVM} == "yes")
+.if (${UVM:L} == "yes")
 CFLAGS+=-DUVM
 .endif
 
