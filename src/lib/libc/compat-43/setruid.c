@@ -51,5 +51,5 @@ setruid(ruid)
 	uid_t ruid;
 #endif
 {
-	return (__setreuid(ruid, -1));
+	return (__setreuid(ruid, (uid_t)-1));
 }

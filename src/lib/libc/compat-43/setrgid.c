@@ -51,5 +51,5 @@ setrgid(rgid)
 	gid_t rgid;
 #endif
 {
-	return (__setregid(rgid, -1));
+	return (__setregid(rgid, (gid_t)-1));
 }
