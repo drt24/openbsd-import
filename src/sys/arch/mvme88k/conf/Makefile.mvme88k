@@ -110,7 +110,6 @@ SYSTEM_LD_TAIL=	@size $@; chmod 755 $@; \
 
 assym.s: genassym
 	./genassym >assym.s
-	cp assym.s ${.CURDIR}/../../include
 
 genassym:
 	${HOSTCC} -static ${INCLUDES} ${IDENT} ${PARAM} -Dmvme88k -Dm88k \
