@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
  * All rights reserved.
@@ -38,10 +40,6 @@
  */
 
 #include <machine/asm.h>
-
-#if defined(LIBC_SCCS)
-RCSID("$Id$")
-#endif
 
 /* hostorder = ntohs(netorder) */
 ENTRY(ntohs)
