@@ -387,11 +387,10 @@ doit(fromp)
 			}
 		}
 		hostname = strncpy(hostnamebuf, hostname,
-				   sizeof(hostnamebuf) - 1);
+		    sizeof(hostnamebuf) - 1);
 	} else
 		errorhost = hostname = strncpy(hostnamebuf,
-					       inet_ntoa(fromp->sin_addr),
-					       sizeof(hostnamebuf) - 1);
+		    inet_ntoa(fromp->sin_addr), sizeof(hostnamebuf) - 1);
 
 	hostnamebuf[sizeof(hostnamebuf) - 1] = '\0';
 #ifdef	KERBEROS
