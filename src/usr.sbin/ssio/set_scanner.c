@@ -82,7 +82,7 @@ main(int argc, char *argv[])
       image_mode =
 	UNINITIALIZED;
 
-  while ((c = getopt(argc, argv, "w:h:x:y:l:b:c:r:i:d")) != EOF) {
+  while ((c = getopt(argc, argv, "w:h:x:y:l:b:c:r:i:d")) != -1) {
     switch (c) {
     case 'w':
       width = inches_to_1200th(optarg);

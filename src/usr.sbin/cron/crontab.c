@@ -154,7 +154,7 @@ parse_args(argc, argv)
 	Filename[0] = '\0';
 	Option = opt_unknown;
 
-	while (EOF != (argch = getopt(argc, argv, getoptarg))) {
+	while (-1 != (argch = getopt(argc, argv, getoptarg))) {
 		switch (argch) {
 #if DEBUGGING
 		case 'x':

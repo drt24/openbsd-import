@@ -48,7 +48,7 @@ main(int argc, char *argv[])
   extern int optind;
   extern char *optarg;
 
-  while ((c = getopt(argc, argv, "fl:")) != EOF) {
+  while ((c = getopt(argc, argv, "fl:")) != -1) {
     switch (c) {
     case 'l':
       logical_name = optarg;

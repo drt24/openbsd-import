@@ -90,7 +90,7 @@ main(int argc, char *argv[])
   extern int optind;
   extern char *optarg;
 
-  while ((c = getopt(argc, argv, "tpql:")) != EOF) {
+  while ((c = getopt(argc, argv, "tpql:")) != -1) {
     switch (c) {
     case 'q':
       quiet = TRUE;

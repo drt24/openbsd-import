@@ -384,7 +384,7 @@ parse_args(argc, argv)
 {
 	int	argch;
 
-	while (EOF != (argch = getopt(argc, argv, "x:"))) {
+	while (-1 != (argch = getopt(argc, argv, "x:"))) {
 		switch (argch) {
 		default:
 			usage();
