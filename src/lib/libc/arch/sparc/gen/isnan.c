@@ -45,6 +45,7 @@ static char sccsid[] = "@(#)isnan.c	8.1 (Berkeley) 6/4/93";
 #include <sys/types.h>
 #include <machine/ieee.h>
 
+int
 isnan(d)
 	double d;
 {
