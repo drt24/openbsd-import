@@ -1,4 +1,4 @@
-/* 	$OpenBSD: Makefile,v 1.1 2004/02/01 05:12:54 drahn Exp $	*/
+/* 	$OpenBSD$	*/
 #	$NetBSD: Makefile,v 1.1 2001/06/12 08:32:46 chris Exp $
 
 # Makefile for cats tags file and boot blocks
@@ -25,6 +25,6 @@ links:
 	    cd $$i && rm -f tags; ln -s ../tags tags; done
 
 
-SUBDIR=
+SUBDIR=	compile include
 
 .include <bsd.subdir.mk>

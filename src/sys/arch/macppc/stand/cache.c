@@ -2,9 +2,7 @@
 #define CACHELINESIZE   32                      /* For now              XXX */
 
 void
-syncicache(from, len)  
-	void *from;
-	int len;
+syncicache(void *from, int len)
 {
 	int l = len;
 	void *p = from;
@@ -20,4 +18,3 @@ syncicache(from, len)
 	} while ((len -= CACHELINESIZE) > 0);
 	asm volatile ("isync");
 }
-

@@ -20,7 +20,7 @@ elf_is_okay(Elf_Ehdr *ehdr)
 	 * We need to check magic, class size, endianess,
 	 * and version before we look at the rest of the
 	 * Elf_Ehdr structure.  These few elements are
-	 * represented in a machine independant fashion.
+	 * represented in a machine independent fashion.
 	 */
 
 	if (IS_ELF(*ehdr) &&

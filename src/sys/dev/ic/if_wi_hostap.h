@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_wi_hostap.h,v 1.7 2002/12/30 03:23:58 mickey Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002
@@ -64,7 +64,7 @@ struct hostap_sta {
 #define WIHAPFL_ACTIVE		0x0001
 #define WIHAPFL_MAC_FILT	0x0002
 
-/* Flags set inernally only: */
+/* Flags set internally only: */
 #define WIHAPFL_CANTCHANGE	(WIHAPFL_ACTIVE)
 
 struct hostap_getall {

@@ -1,4 +1,4 @@
-/*	$OpenBSD: pf_osfp.c,v 1.8 2004/01/04 06:57:48 pvalchev Exp $ */
+/*	$OpenBSD$ */
 
 /*
  * Copyright (c) 2003 Mike Frantzen <frantzen@w4g.org>

@@ -1,4 +1,4 @@
-# 	$OpenBSD: files.cats,v 1.1 2004/02/01 05:12:54 drahn Exp $
+# 	$OpenBSD$
 #	$NetBSD: files.cats,v 1.27 2003/10/21 08:15:40 skrll Exp $
 #
 # CATS-specific configuration info

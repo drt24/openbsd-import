@@ -29,7 +29,7 @@
  *
  * TC9216P, TC9217P, TC9217F are a high speed PLL-LSI with built-in 2 modulus
  * prescaler. Each function is controlled through 3 serial bus lines and high
- * performance digital tuning system can be constitued.
+ * performance digital tuning system can be constituted.
  *
  * Each function is controlled by the data setting to a pair of 24-bit
  * registers. Each data of these registers is exchanged with controller side

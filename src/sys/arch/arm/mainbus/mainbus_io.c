@@ -1,4 +1,4 @@
-/*	$OpenBSD: mainbus_io.c,v 1.2 2004/01/29 16:17:16 drahn Exp $ */
+/*	$OpenBSD$ */
 /*	$NetBSD: mainbus_io.c,v 1.14 2003/12/06 22:05:33 bjh21 Exp $	*/
 
 /*

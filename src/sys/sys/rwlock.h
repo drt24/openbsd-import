@@ -1,4 +1,4 @@
-/*	$OpenBSD: rwlock.h,v 1.2 2003/12/28 17:14:33 tedu Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * Copyright (c) 2002 Artur Grabowski <art@openbsd.org>
  * All rights reserved. 

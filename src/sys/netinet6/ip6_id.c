@@ -1,4 +1,4 @@
-/*	$OpenBSD: ip6_id.c,v 1.2 2003/12/10 07:21:01 itojun Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: ip6_id.c,v 1.7 2003/09/13 21:32:59 itojun Exp $	*/
 /*	$KAME: ip6_id.c,v 1.8 2003/09/06 13:41:06 itojun Exp $	*/
 

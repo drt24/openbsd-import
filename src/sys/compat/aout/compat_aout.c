@@ -1,4 +1,4 @@
-/* 	$OpenBSD: compat_aout.c,v 1.1 2003/06/24 22:45:33 espie Exp $ */
+/* 	$OpenBSD$ */
 
 /*
  * Copyright (c) 2003 Marc Espie

@@ -1,4 +1,4 @@
-/*	$OpenBSD: safevar.h,v 1.4 2003/08/14 15:26:03 jason Exp $	*/
+/*	$OpenBSD$	*/
 
 /*-
  * Copyright (c) 2003 Sam Leffler, Errno Consulting

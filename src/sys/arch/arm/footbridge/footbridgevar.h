@@ -1,4 +1,4 @@
-/*	$OpenBSD: footbridgevar.h,v 1.2 2004/01/29 16:17:16 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: footbridgevar.h,v 1.2 2002/02/10 12:26:00 chris Exp $	*/
 
 /*

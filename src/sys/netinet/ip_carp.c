@@ -1,4 +1,4 @@
-/*	$OpenBSD: ip_carp.c,v 1.34 2004/01/15 15:47:05 dhartmei Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002 Michael Shalayeff. All rights reserved.

@@ -1,4 +1,4 @@
-/*	$OpenBSD: kern_rwlock.c,v 1.1 2003/11/18 06:11:10 tedu Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * Copyright (c) 2002, 2003 Artur Grabowski <art@openbsd.org>
  * All rights reserved. 

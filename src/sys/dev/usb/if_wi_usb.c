@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_wi_usb.c,v 1.6 2003/12/23 21:52:52 drahn Exp $ */
+/*	$OpenBSD$ */
 
 /*
  * Copyright (c) 2003 Dale Rahn. All rights reserved.

@@ -1,4 +1,4 @@
-/*	$OpenBSD: sysbeep_isa.c,v 1.2 2004/01/29 16:17:16 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: sysbeep_isa.c,v 1.4 2002/10/02 15:45:10 thorpej Exp $	*/
 
 /*-

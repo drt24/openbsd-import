@@ -1,4 +1,4 @@
-/*	$OpenBSD: param.h,v 1.1 2004/02/01 05:12:54 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: param.h,v 1.4 2002/02/12 06:58:19 thorpej Exp $	*/
 
 /*
@@ -37,6 +37,13 @@
 #define	_CATS_PARAM_H_
 
 /*
+ * Machine dependent constants for ARM6+ processors
+ */
+
+#define	_MACHINE	cats
+#define	MACHINE		"cats"
+
+/*
  * cats boot dmesg is bigger than 4k
  */
 #ifndef MSGBUFSIZE
@@ -44,8 +51,5 @@
 #endif
 
 #include <arm/param.h>
-
-#define	_MACHINE	cats
-#define	MACHINE		"cats"
 
 #endif	/* _CATS_PARAM_H_ */

@@ -1,4 +1,4 @@
-/*	$OpenBSD: yukonreg.h,v 1.1 2003/08/01 04:46:13 nate Exp $ */
+/*	$OpenBSD$ */
 /*
  * Copyright (c) 2003 Nathan L. Binkert <binkertn@umich.edu>
  *

@@ -1,4 +1,4 @@
-/*	$OpenBSD: machdep.h,v 1.2 2004/01/29 16:17:16 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /* $NetBSD: machdep.h,v 1.7 2002/02/21 02:52:21 thorpej Exp $ */
 
 #ifndef _ARM32_BOOT_MACHDEP_H_

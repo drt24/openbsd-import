@@ -1,4 +1,4 @@
-/*	$OpenBSD: ip_carp.h,v 1.3 2003/11/07 23:38:48 mcbride Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002 Michael Shalayeff. All rights reserved.

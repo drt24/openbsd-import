@@ -1,4 +1,4 @@
-/*	$OpenBSD: conf.h,v 1.1 2004/01/15 01:18:53 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: conf.h,v 1.8 2002/02/10 12:26:03 chris Exp $	*/
 
 #ifndef _CATS_CONF_H

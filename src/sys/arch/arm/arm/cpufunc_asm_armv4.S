@@ -1,4 +1,4 @@
-/*	$OpenBSD: cpufunc_asm_armv4.S,v 1.2 2004/01/29 16:17:11 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: cpufunc_asm_armv4.S,v 1.1 2001/11/10 23:14:09 thorpej Exp $	*/
 
 /*

@@ -1,4 +1,4 @@
-/*	$OpenBSD: dc21285mem.h,v 1.2 2004/01/29 16:17:16 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: dc21285mem.h,v 1.2 2001/06/09 10:44:11 chris Exp $	*/
 
 /*

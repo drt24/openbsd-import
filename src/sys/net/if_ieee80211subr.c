@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_ieee80211subr.c,v 1.1 2004/01/07 00:13:22 fgsch Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: if_ieee80211subr.c,v 1.43 2003/07/06 20:54:25 dyoung Exp $	*/
 /*	$FreeBSD: src/sys/net/if_ieee80211subr.c,v 1.4 2003/01/21 08:55:59 alfred Exp $	*/
 

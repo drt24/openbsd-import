@@ -1,4 +1,4 @@
-/*	$OpenBSD: in_cksum_arm.S,v 1.2 2004/01/29 16:17:11 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: in_cksum_arm.S,v 1.3 2003/11/26 10:31:53 rearnsha Exp $ */
 
 /*

@@ -1,4 +1,4 @@
-/*	$OpenBSD: pcib.c,v 1.3 2004/01/29 03:15:34 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: pcib.c,v 1.4 2003/01/01 01:25:34 thorpej Exp $	*/
 
 /*-

@@ -1,4 +1,4 @@
-/*	$OpenBSD: stp4020var.h,v 1.1 2003/06/23 09:28:00 miod Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: stp4020.c,v 1.23 2002/06/01 23:51:03 lukem Exp $	*/
 
 /*-

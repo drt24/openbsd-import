@@ -1,4 +1,4 @@
-/*	$OpenBSD: endian.h,v 1.2 2004/01/29 16:17:16 drahn Exp $	*/
+/*	$OpenBSD$	*/
 
 #ifdef __ARMEB__
 #define BYTE_ORDER BIG_ENDIAN

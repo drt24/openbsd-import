@@ -1,4 +1,4 @@
-/*	$OpenBSD: linux_emuldata.h,v 1.1 2003/06/21 00:42:58 tedu Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: linux_emuldata.h,v 1.4 2002/02/15 16:48:02 christos Exp $	*/
 /*-
  * Copyright (c) 1998,2002 The NetBSD Foundation, Inc.

@@ -1,4 +1,4 @@
-/*	$OpenBSD: disassem.c,v 1.2 2004/01/29 16:17:11 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: disassem.c,v 1.14 2003/03/27 16:58:36 mycroft Exp $	*/
 
 /*

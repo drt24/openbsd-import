@@ -1,4 +1,4 @@
-/*	$OpenBSD: locore.S,v 1.1 2003/10/31 03:54:33 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: locore.S,v 1.2 1996/10/16 19:33:09 ws Exp $	*/
 
 /*

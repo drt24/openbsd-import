@@ -1,4 +1,4 @@
-/*	$OpenBSD: footbridge_pci.c,v 1.3 2004/01/29 16:17:16 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: footbridge_pci.c,v 1.4 2001/09/05 16:17:35 matt Exp $	*/
 
 /*

@@ -1,4 +1,4 @@
-/*	$OpenBSD: varargs.h,v 1.1 2004/01/03 14:08:54 espie Exp $ */
+/*	$OpenBSD$ */
 /*
  * Copyright (c) 2003, 2004  Marc espie <espie@openbsd.org>
  *

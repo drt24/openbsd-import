@@ -19,8 +19,7 @@ Debugger()
 }
 
 int
-ddb_trap_glue(frame)
-	struct trapframe *frame;
+ddb_trap_glue(struct trapframe *frame)
 {
 	if (!(frame->srr1 & PSL_PR)
 	    && (frame->exc == EXC_TRC

@@ -1,4 +1,4 @@
-/* $OpenBSD: nsclpcsio_isa.c,v 1.1 2004/01/05 17:27:29 markus Exp $ */
+/* $OpenBSD$ */
 /* $NetBSD: nsclpcsio_isa.c,v 1.5 2002/10/22 16:18:26 drochner Exp $ */
 
 /*

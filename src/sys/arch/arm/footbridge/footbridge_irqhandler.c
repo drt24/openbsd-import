@@ -1,4 +1,4 @@
-/*	$OpenBSD: footbridge_irqhandler.c,v 1.2 2004/01/29 16:17:16 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: footbridge_irqhandler.c,v 1.9 2003/06/16 20:00:57 thorpej Exp $	*/
 
 /*

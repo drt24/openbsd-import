@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.1.2.1 2003/10/10 17:04:14 drahn Exp $
+#	$OpenBSD$
 #	$NetBSD: Makefile,v 1.1 1996/09/30 16:34:59 ws Exp $
 
 #SUBDIR=	ofwboot mbr tbxidata

@@ -1,4 +1,4 @@
-/*	$OpenBSD: bootconfig.h,v 1.1 2004/01/15 01:18:53 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: bootconfig.h,v 1.2 2001/06/21 22:08:28 chris Exp $	*/
 
 /*

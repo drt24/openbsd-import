@@ -436,7 +436,7 @@ struct bha_setup_reply {
 	u_int8_t	disc_sts;
 };
 
-/* additional reply data supplied by wide controlers */
+/* additional reply data supplied by wide controllers */
 struct bha_setup_reply_wide {
 	u_int8_t	signature;
 	u_int8_t	letter_d;

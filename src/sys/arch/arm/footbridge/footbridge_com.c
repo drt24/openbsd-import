@@ -1,4 +1,4 @@
-/*	$OpenBSD: footbridge_com.c,v 1.1 2004/02/01 05:09:49 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: footbridge_com.c,v 1.13 2003/03/23 14:12:25 chris Exp $	*/
 
 /*-
@@ -381,9 +381,6 @@ fcomioctl(dev, cmd, data, flag, p)
 			return (error); 
 		sc->sc_swflags = *(int *)data;
 		break;
-
-	default:
-		return ENOTTY;
 	}
 
 	return 0;

@@ -1,4 +1,4 @@
-/*	$OpenBSD: safereg.h,v 1.3 2003/08/14 18:53:36 jason Exp $	*/
+/*	$OpenBSD$	*/
 
 /*-
  * Copyright (c) 2003 Sam Leffler, Errno Consulting
