@@ -82,7 +82,7 @@ void readutmp __P((int));
 void doreadutmp __P((void));
 void reapchildren __P((int));
 
-volatile int wantreadutmp;
+sig_atomic_t wantreadutmp;
 
 int
 main(argc, argv)
@@ -120,14 +120,15 @@ main(argc, argv)
 	(void)signal(SIGTTOU, SIG_IGN);
 	(void)signal(SIGCHLD, reapchildren);
 	for (;;) {
+		if (wantreadutmp) {
+			doreadutmp();
+			wantreadutmp = 0;
+		}
+
 		cc = recv(0, msgbuf, sizeof(msgbuf) - 1, 0);
 		if (cc <= 0) {
 			if (errno != EINTR)
 				sleep(1);
-			if (wantreadutmp) {
-				doreadutmp();
-				wantreadutmp = 0;
-			}
 			continue;
 		}
 		if (!nutmp)		/* no one has logged in yet */
