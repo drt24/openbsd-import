@@ -249,7 +249,7 @@ parse_atr(int ttyn, int flags, unsigned char *atr, int len, struct scparam *para
     /* got enough bytes? */
 
     if (ap - atr != len && (flags & SCRV))
-	printf("expected %d proto bytes + %d historical bytes, got %d\n", ap - atr - nhb, nhb, len);
+	printf("expected %d proto bytes + %d historical bytes, got %d\n", (int) (ap - atr) - nhb, nhb, len);
     if (ap - atr > len) {
 	if (flags & SCRV)
 	    printf("atr underrun\n");
