@@ -50,6 +50,7 @@ static const char rcsid[] =
 #include <rpc/rpc.h>
 
 #include <stdio.h>
+#include <string.h>
 
 #ifdef INET6
 #include <netinet/ip6.h>
