@@ -1168,7 +1168,7 @@ x11_create_display_inet(int screen_number, int x11_display_offset)
 		port = 6000 + display_number;
 		memset(&hints, 0, sizeof(hints));
 		hints.ai_family = IPv4or6;
-		hints.ai_flags = 0 /*AI_PASSIVE*/;	/* XXX loopback only ? */
+		hints.ai_flags = AI_PASSIVE;		/* XXX loopback only ? */
 		hints.ai_socktype = SOCK_STREAM;
 		snprintf(strport, sizeof strport, "%d", port);
 		if ((gaierr = getaddrinfo(NULL, strport, &hints, &aitop)) != 0) {
