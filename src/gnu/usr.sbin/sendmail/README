@@ -294,9 +294,7 @@ No ident server is included with this distribution.  It is available
 from:
 
   ftp://ftp.lysator.liu.se/pub/ident/servers/
-  ftp://romulus.ucs.uoknor.edu/networking/ident/servers/
-  ftp://ftp.cyf-kr.edu.pl/agh/uciagh/network/ident/
-
+  http://sf.www.lysator.liu.se/~pen/pidentd/
 
 +-------------------------+
 | INTEROPERATION PROBLEMS |
