@@ -42,7 +42,7 @@ dispatch_protocol_error(int type, int plen)
 {
 	error("Hm, dispatch protocol error: type %d plen %d", type, plen);
 }
-void 
+void
 dispatch_init(dispatch_fn *dflt)
 {
 	int i;

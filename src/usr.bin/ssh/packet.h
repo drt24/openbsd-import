@@ -1,16 +1,16 @@
 /*
- * 
+ *
  * packet.h
- * 
+ *
  * Author: Tatu Ylonen <ylo@cs.hut.fi>
- * 
+ *
  * Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
  *                    All rights reserved
- * 
+ *
  * Created: Sat Mar 18 02:02:14 1995 ylo
- * 
+ *
  * Interface for the packet protocol functions.
- * 
+ *
  */
 
 /* RCSID("$Id$"); */
@@ -47,7 +47,7 @@ void    packet_close(void);
  * key is used for both sending and reception.  However, both directions are
  * encrypted independently of each other.  Cipher types are defined in ssh.h.
  */
-void 
+void
 packet_set_encryption_key(const unsigned char *key, unsigned int keylen,
     int cipher_type);
 
