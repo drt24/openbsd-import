@@ -362,6 +362,17 @@ main(int argc, char **argv)
 {
   FILE *lockfile;
   char *name, *label;
+  int nfds;
+
+  nfds = getdtablesize();
+  if (nfds >= FD_SETSIZE)
+    /*
+     * If we've got loads of file descriptors, make sure they're all
+     * closed.  If they aren't, we may end up with a seg fault when our
+     * `fd_set's get too big when select()ing !
+     */
+    while (--nfds > 2)
+      close(nfds);
 
   VarTerm = 0;
   name = strrchr(argv[0], '/');
