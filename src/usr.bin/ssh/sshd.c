@@ -1041,7 +1041,7 @@ do_authentication(char *user, int privileged_port)
 	  packet_send();
 	  packet_write_wait();
           if (++authentication_failures >= MAX_AUTH_FAILURES) {
-	    packet_disconnect("To many authentication failures for %.100s from %.200s", 
+	    packet_disconnect("Too many authentication failures for %.100s from %.200s", 
             		       user, get_canonical_hostname());
           }
 	}
@@ -1344,7 +1344,7 @@ do_authentication(char *user, int privileged_port)
       packet_write_wait();
 
       if (++authentication_failures >= MAX_AUTH_FAILURES) {
-	packet_disconnect("To many authentication failures for %.100s from %.200s", 
+	packet_disconnect("Too many authentication failures for %.100s from %.200s", 
           pw->pw_name, get_canonical_hostname());
       }
     }
