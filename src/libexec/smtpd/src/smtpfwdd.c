@@ -680,7 +680,6 @@ forward(char *fname)
       case EX_OSERR:
       case EX_OSFILE:
       case EX_IOERR:	
-      case EX_UNAVAILABLE:
       case EX_TEMPFAIL:
 	syslog(LOG_INFO, "Temporary sendmail failure (status %d), will retry later", status);
 	fail_retry(f, fname);
