@@ -101,11 +101,14 @@ struct iwi_softc {
 	bus_space_handle_t	sc_sh;
 	void 			*sc_ih;
 	pci_chipset_tag_t	sc_pct;
+	pcitag_t		sc_pcitag;
 	bus_size_t		sc_sz;
 
 	int			authmode;
 
 	int			sc_tx_timer;
+
+	void			*powerhook;
 
 #if NBPFILTER > 0
 	caddr_t			sc_drvbpf;
