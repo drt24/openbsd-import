@@ -13,11 +13,7 @@ CFLAGS+=-I${.CURDIR}/../krb/${__objdir}
 .else
 CFLAGS+=-I${.CURDIR}/../krb
 .endif
-.if exists(${.CURDIR}/../ss/${__objdir})
-CFLAGS+=-I${.CURDIR}/../ss/${__objdir}
-.else
-CFLAGS+=-I${.CURDIR}/../ss
-.endif
+CFLAGS+=-I${.CURDIR}/../../lib/libss
 LDADD+=	-lkadm -lkrb -ldes -lss -lcom_err
 DPADD+=	${LIBKADM} ${LIBKRB} ${LIBDES} ${LIBSS} ${LIBCOM_ERR}
 CLEANFILES+= kadmin_cmds.c
@@ -25,7 +21,7 @@ MAN=	kadmin.8
 
 kadmin_cmds.c:  kadmin_cmds.ct
 	test -e kadmin_cmds.ct || ln -s ${.CURDIR}/kadmin_cmds.ct .
-	${MK_CMDS} kadmin_cmds.ct
+	mk_cmds kadmin_cmds.ct
 	-test -h kadmin_cmds.ct && rm kadmin_cmds.ct
 
 .include <bsd.prog.mk>
