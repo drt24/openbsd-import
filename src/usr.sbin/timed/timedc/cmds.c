@@ -1,4 +1,4 @@
-/*	$OpenBSD: cmds.c,v 1.17 2003/06/12 21:09:48 deraadt Exp $	*/
+/*	$OpenBSD: cmds.c,v 1.18 2003/06/26 21:36:40 deraadt Exp $	*/
 
 /*-
  * Copyright (c) 1985, 1993 The Regents of the University of California.
@@ -238,7 +238,7 @@ clockdiff(int argc, char *argv[])
 			printf("%s is down\n", hp->h_name);
 			continue;
 		case NONSTDTIME:
-			printf("%s transmitts a non-standard time format\n",
+			printf("%s transmits a non-standard time format\n",
 			    hp->h_name);
 			continue;
 		case UNREACHABLE:
