@@ -1,4 +1,4 @@
-/*	$OpenBSD: vm_machdep.c,v 1.10 1999/09/03 18:01:33 art Exp $	*/
+/*	$OpenBSD: vm_machdep.c,v 1.11 1999/09/27 19:13:24 smurph Exp $	*/
 /*
  * Copyright (c) 1998 Steve Murphree, Jr.
  * Copyright (c) 1996 Nivas Madhur
@@ -175,10 +175,9 @@ void
 cpu_exit(struct proc *p)
 {
 	extern volatile void switch_exit();
-	vmspace_free(p->p_vmspace);
 
 	(void) splimp();
-	kmem_free(kernel_map, (vm_offset_t)p->p_addr, ctob(UPAGES));
+	exit2(p);		/* XXX - can't be right! */
 	switch_exit(p);
 	/* NOTREACHED */
 }
