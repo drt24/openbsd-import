@@ -41,6 +41,7 @@ static char rcsid[] = "$Id$";
 #include <sys/types.h>
 #include <unistd.h>
 #include <string.h>
+#include <pwd.h>
 
 #include "yppasswd.h"
 
@@ -51,13 +52,15 @@ int     noshell, nogecos, nopw, domake;
 char    make_arg[1024] = "make";
 char   *progname = "yppasswdd";
 char   *tempname;
+char   *dir;
 
 void
 usage()
 {
-	fprintf(stderr, "%s%s",
+	fprintf(stderr, "%s%s%s",
 	    "usage: rpc.yppasswdd ",
-	    "[-noshell] [-nogecos] [-nopw] [-m arg1 arg2 ... ]\n");
+	    "[-d dir] [-noshell] [-nogecos] [-nopw]\n",
+	    "                     [-m arg1 arg2 ... ]\n");
 	exit(1);
 }
 
@@ -84,6 +87,10 @@ main(argc, argv)
 					strcat(make_arg, argv[i]);
 					i++;
 				}
+			} else if (strcmp("-d", argv[i]) == 0
+			    && i < argc + 1) {
+				i++;
+				dir = argv[i];
 			} else
 				usage();
 			i++;
