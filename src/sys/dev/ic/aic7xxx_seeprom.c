@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: aic7xxx_seeprom.c,v 1.1 2003/12/24 22:45:45 krw Exp $	*/
 /*	$NetBSD: aic7xxx_seeprom.c,v 1.8 2003/05/02 19:12:19 dyoung Exp $	*/
 
 /*       
@@ -198,7 +198,7 @@ ahc_check_extport(struct ahc_softc *ahc, u_int *sxfrctl1)
 	if (!have_seeprom) {
 		if (bootverbose)
 			printf("%s: No SEEPROM available.\n", ahc_name(ahc));
-		ahc->flags |= AHC_USEDEFAULTS;
+		ahc->flags |= AHC_USEDEFAULTS | AHC_NO_BIOS_INIT;
 		free(ahc->seep_config, M_DEVBUF);
 		ahc->seep_config = NULL;
 		sc = NULL;
