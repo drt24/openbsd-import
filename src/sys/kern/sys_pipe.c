@@ -73,7 +73,6 @@
 #include <sys/mount.h>
 #include <sys/syscallargs.h>
 #endif
-#include <sys/pipe.h>
 
 #include <vm/vm.h>
 #include <vm/vm_prot.h>
@@ -85,6 +84,8 @@
 #include <vm/pmap.h>
 #include <vm/vm_map.h>
 #include <vm/vm_page.h>
+
+#include <sys/pipe.h>
 
 /*
  * Use this define if you want to disable *fancy* VM things.  Expect an
