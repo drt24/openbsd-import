@@ -420,7 +420,7 @@ leinit(unit)
 	register int s;
 
 	if ((ifp->if_flags & IFF_RUNNING) == 0) {
-		s = splimp();
+		s = splnet();
 		ifp->if_flags |= IFF_RUNNING;
 		lereset(&sc->sc_dev);
 		lestart(ifp);
@@ -819,7 +819,7 @@ leioctl(ifp, cmd, data)
 	register struct ifaddr *ifa;
 	register struct le_softc *sc = lecd.cd_devs[ifp->if_unit];
 	register struct lereg1 *ler1;
-	int s = splimp(), error = 0;
+	int s = splnet(), error = 0;
 
 	switch (cmd) {
 
