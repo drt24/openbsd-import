@@ -1,4 +1,4 @@
-/*       $OpenBSD: ip_nat.c,v 1.15 1998/06/27 08:07:58 deraadt Exp $       */
+/*       $OpenBSD: ip_nat.c,v 1.16 1998/09/15 09:51:18 pattonme Exp $       */
 /*
  * Copyright (C) 1995-1997 by Darren Reed.
  *
@@ -350,6 +350,9 @@ int mode;
 		IWCOPY((caddr_t)&iplused[IPL_LOGNAT], (caddr_t)data,
 		       sizeof(iplused[IPL_LOGNAT]));
 #endif
+		break;
+	default :
+		error = EINVAL;
 		break;
 	}
 	RWLOCK_EXIT(&ipf_nat);
