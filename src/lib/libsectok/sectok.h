@@ -116,6 +116,13 @@ char *get_r1r2s(int r1, int r2);
 char *scr1r2s(int r1, int r2);
 char *lookup_cmdname(int ins);
 
+/* Common card routines */
+void sectok_fmt_fid(char *fname, int f0, int f1);
+int sectok_selectfile(int fd, int cla, unsigned char *fid, int verbose);
+
+/* Cyberflex */
+int cyberflex_load_rsa_priv(int fd, int cla, unsigned char *key_fid, int nkey_elems, int keylen, unsigned char *key_elems[]);
+
 /* SCPERF - performance evaluation */
 #ifdef SCPERF
 #ifdef SCPERF_FIRST_APPEARANCE
