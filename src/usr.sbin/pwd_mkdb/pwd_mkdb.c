@@ -140,7 +140,7 @@ main(argc, argv)
 	/* We don't care what the user wants. */
 	(void)umask(0);
 
-	pname = *argv;
+	pname = strdup(changedir(*argv, basedir));
 	/* Open the original password file */
 	if (!(fp = fopen(pname, "r")))
 		error(pname);
