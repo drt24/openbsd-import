@@ -33,8 +33,8 @@
 
 #define	_PATH_KEYFILE	"/etc/skeykeys"
 
-char *skipspace __ARGS((char *));
-int skeylookup __ARGS((struct skey *, char *));
+char *skipspace __P((char *));
+int skeylookup __P((struct skey *, char *));
 
 /* Issue a skey challenge for user 'name'. If successful,
  * fill in the caller's skey structure and return 0. If unsuccessful
