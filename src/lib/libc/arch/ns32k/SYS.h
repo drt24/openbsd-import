@@ -33,12 +33,9 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- *	@(#)SYS.h	5.5 (Berkeley) 5/7/91
- *
- *	$Id$
+ *	$OpenBSD: SYS.h,v 1.1.1.1 1995/10/18 08:41:36 deraadt Exp $
  *
  *  Modified for the ns532 by Phil Nelson, 12/1/92
- *
  */
 
 #include <machine/asm.h>

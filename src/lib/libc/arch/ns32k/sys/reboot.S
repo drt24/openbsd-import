@@ -14,13 +14,12 @@
  * USE OF THIS SOFTWARE.
  */
 
-/*	This is a modified copy of mount.s.  Phil Nelson
- *
- *	$Id$
- */
-
 #include "SYS.h"
+
+#if defined(SYSLIBC_SCCS)
+	.text
+	.asciz "$OpenBSD$"
+#endif /* SYSLIBC_SCCS */
 
 SYSCALL(reboot)
 	dia
-

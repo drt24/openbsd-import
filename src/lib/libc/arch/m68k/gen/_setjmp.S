@@ -35,11 +35,10 @@
  * SUCH DAMAGE.
  */
 
-#if defined(LIBC_SCCS) && !defined(lint)
+#if defined(LIBC_SCCS)
 	.text
-	/*.asciz "from: @(#)_setjmp.s	5.1 (Berkeley) 5/12/90"*/
-	.asciz "$Id$"
-#endif /* LIBC_SCCS and not lint */
+	.asciz "$OpenBSD: _setjmp.S,v 1.1.1.1 1995/10/18 08:41:27 deraadt Exp $"
+#endif /* LIBC_SCCS */
 
 /*
  * C library -- _setjmp, _longjmp

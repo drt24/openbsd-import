@@ -25,15 +25,13 @@
  * any improvements or extensions that they make and grant Carnegie Mellon 
  * the rights to redistribute these changes.
  */
-/*
- * HISTORY
- * 11-May-92  Johannes Helander (jvh) at Helsinki University of Technology
- *	Created.
- *
- *	$Id$
- */
 
 #include <machine/asm.h>
+
+#if defined(LIBC_SCCS)
+	.text
+	.asciz "$OpenBSD$"
+#endif /* LIBC_SCCS */
 
 	.text
 ENTRY(htons)

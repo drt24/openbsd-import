@@ -32,15 +32,13 @@
  * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
- *
- *	from: @(#)abs.s	5.2 (Berkeley) 12/17/90
- *	$Id$
  */
 
 #include <machine/asm.h>
 
 #if defined(LIBC_SCCS)
-RCSID("$Id$")
+	.text
+	.asciz "$OpenBSD$"
 #endif
 
 ENTRY(labs)

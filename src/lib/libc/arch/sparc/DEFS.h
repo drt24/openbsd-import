@@ -34,9 +34,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- *	From: @(#)DEFS.h	8.1 (Berkeley) 6/4/93
- *	$Id$
+ *	$OpenBSD: DEFS.h,v 1.1.1.1 1995/10/18 08:41:39 deraadt Exp $
  */
 
 #include <machine/asm.h>
-
