@@ -1,4 +1,4 @@
-/*	$Id$	*/
+/*	$OpenBSD: sysdep.c,v 1.3 2001/01/26 11:34:04 niklas Exp $	*/
 
 /*
  * Copyright (c) 1998, 1999 Niklas Hallqvist.  All rights reserved.
