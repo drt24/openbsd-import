@@ -1445,6 +1445,7 @@ void do_authenticated(struct passwd *pw)
 	  }
 	  else {
 	    xfree(xauthfile);
+	    xauthfile = NULL;
 	  }
 	  break;
 #else /* XAUTH_PATH */
