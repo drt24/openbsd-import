@@ -1,4 +1,4 @@
-/*	$OpenBSD: conf.c,v 1.16 1997/05/18 13:45:21 pefo Exp $ */
+/*	$OpenBSD: conf.c,v 1.17 1997/05/21 18:31:31 pefo Exp $ */
 
 /*
  * Copyright (c) 1992, 1993
@@ -155,8 +155,6 @@ cdev_decl(uk);
 cdev_decl(wd);
 cdev_decl(acd);
 
-/* open, close, read, ioctl */
-cdev_decl(ipl);
 #ifdef IPFILTER
 #define NIPF 1
 #else
