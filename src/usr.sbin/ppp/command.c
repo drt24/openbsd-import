@@ -1260,8 +1260,10 @@ SetInterfaceAddr(struct cmdargs const *arg)
     IpcpInfo.his_ipaddr.s_addr = DefHisAddress.ipaddr.s_addr;
 
     if ((mode & MODE_AUTO) &&
-        OsSetIpaddress(DefMyAddress.ipaddr, DefHisAddress.ipaddr) < 0)
+        OsSetIpaddress(DefMyAddress.ipaddr, DefHisAddress.ipaddr) < 0) {
+      DefMyAddress.ipaddr.s_addr = DefHisAddress.ipaddr.s_addr = 0L;
       return 4;
+    }
   }
 
   return 0;
