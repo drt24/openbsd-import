@@ -92,10 +92,10 @@ static char *max_mem = 0;
 	/*if (max_mem == 0) {
 		max_mem = next_mem;
 	} else*/ if (max_mem < next_mem) {
-		dlog("%#x bytes of memory allocated; total is %#x (%d pages)",
-			next_mem - max_mem,
-			next_mem,
-			((int)next_mem+getpagesize()-1)/getpagesize());
+		dlog("%#lx bytes of memory allocated; total is %#lx (%ld pages)",
+			(unsigned long)(next_mem - max_mem),
+			(unsigned long)next_mem,
+			((unsigned long)next_mem+getpagesize()-1)/getpagesize());
 		max_mem = next_mem;
 	}
 }

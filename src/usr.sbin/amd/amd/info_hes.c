@@ -423,7 +423,7 @@ char *msg, *eom;
 	int qdcount, ancount;
 	char key[PACKETSZ];
 	char *key_cpy, *value, *hs_make_value();
-	short type;
+	int16_t type;
 
 	hp = (HEADER *)msg;
 	if (hp->rcode != NOERROR || hp->opcode != QUERY) {
@@ -452,9 +452,9 @@ char *msg, *eom;
 		if ((type = _getshort(cp)) == T_SOA) {
 			soacnt++;
 		}
-		cp += 2*sizeof(u_short) + sizeof(u_long);
+		cp += 2*sizeof(u_int16_t) + sizeof(u_int32_t);
 		len = _getshort(cp);
-		cp += sizeof(u_short);
+		cp += sizeof(u_int16_t);
 		/* Check to see if key is in our domain */
 		if (type == T_TXT && hs_strip_our_domain(key)) {
 			value = hs_make_value(cp, len);

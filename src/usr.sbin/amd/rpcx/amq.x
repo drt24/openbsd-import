@@ -53,8 +53,9 @@ typedef string amq_string<AMQ_STRLEN>;
 
 /*
  * The type time_type should correspond to the system time_t
+ * XXX int/long time_t garbage; this needs to be a 32-bit integer
  */
-typedef long time_type;
+typedef int time_type;
 
 /*
  * A tree of what is mounted

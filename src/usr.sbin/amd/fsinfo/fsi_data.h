@@ -120,7 +120,7 @@ struct ether_if {
 #define	EF_INADDR 0
 	struct in_addr e_inaddr;
 #define	EF_NETMASK 1
-	u_long e_netmask;
+	u_int32_t e_netmask;
 #define	EF_HWADDR 2
 	char *e_hwaddr;
 };

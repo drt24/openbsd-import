@@ -46,7 +46,7 @@ typedef char *amq_string;
 bool_t xdr_amq_string();
 
 
-typedef long *time_type;
+typedef int *time_type;
 bool_t xdr_time_type();
 
 

@@ -295,7 +295,8 @@ xdr_amq_mount_tree_node(xdrs, objp)
 	if (!xdr_amq_string(xdrs, &mp->am_mnt->mf_ops->fs_type)) {
 		return (FALSE);
 	}
-	if (!xdr_long(xdrs, &mp->am_stats.s_mtime)) {
+	/* XXX really a time_t, but need to transmit a 32-bit integer */
+	if (!xdr_int(xdrs, (int *)&mp->am_stats.s_mtime)) {
 		return (FALSE);
 	}
 	if (!xdr_u_short(xdrs, &mp->am_stats.s_uid)) {

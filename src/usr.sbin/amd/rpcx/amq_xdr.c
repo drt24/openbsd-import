@@ -63,7 +63,7 @@ xdr_time_type(xdrs, objp)
 	XDR *xdrs;
 	time_type *objp;
 {
-	if (!xdr_long(xdrs, (long *) objp)) {
+	if (!xdr_int(xdrs, (int *) objp)) {
 		return (FALSE);
 	}
 	return (TRUE);
