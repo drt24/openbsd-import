@@ -4,5 +4,6 @@
 LIB=	kdb
 CFLAGS+=-I${.CURDIR}
 SRCS=	copykey.c krb_cache.c krb_dbm.c krb_kdb_utils.c krb_lib.c print_princ.c
+COPTS+=	-DNDBM -DHAVE_NEW_DB
 
 .include <bsd.lib.mk>
