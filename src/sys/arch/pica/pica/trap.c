@@ -399,11 +399,6 @@ trap(statusReg, causeReg, vadr, pc, args)
 		printf("vm_fault(%x (pmap %x), %x (%x), %x, %d) -> %x at pc %x\n",
 		       map, &vm->vm_pmap, va, vadr, ftype, FALSE, rv, pc);
 #endif
-/*XXXX*/
-if(rv != KERN_SUCCESS) {
-	printf("vm_fault(%x (pmap %x), %x (%x), %x) at pc %x\n",
-	       map, &vm->vm_pmap, va, vadr, ftype, pc);
-}
 		/*
 		 * If this was a stack access we keep track of the maximum
 		 * accessed stack size.  Also, if vm_fault gets a protection
