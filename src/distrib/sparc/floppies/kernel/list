@@ -1,4 +1,0 @@
-#	$Id$
-
-# copy the kernel
-COPY	${CURDIR}/../../../../sys/arch/sparc/compile/FLOPPY/bsd	bsd
