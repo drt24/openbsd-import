@@ -1,4 +1,4 @@
-/* $OpenBSD$ */
+/* $OpenBSD: sftp-glob.h,v 1.1 2001/03/13 22:42:54 djm Exp $ */
 
 /*
  * Copyright (c) 2001 Damien Miller.  All rights reserved.
