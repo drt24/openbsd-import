@@ -218,11 +218,6 @@ main(int ac, char **av)
   /* Save our own name. */
   av0 = av[0];
 
-#ifdef SOCKS
-  /* Initialize SOCKS (the firewall traversal library). */
-  SOCKSinit(av0);
-#endif /* SOCKS */
-
   /* Initialize option structure to indicate that no values have been set. */
   initialize_options(&options);
 
