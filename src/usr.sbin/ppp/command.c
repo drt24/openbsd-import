@@ -1355,6 +1355,8 @@ SetVariable(struct cmdargs const *arg)
     VarLoginScript[sizeof VarLoginScript - 1] = '\0';
     break;
   case VAR_DEVICE:
+    if (mode & MODE_INTER)
+      HangupModem(0);
     if (modem != -1)
       LogPrintf(LogWARN, "Cannot change device to \"%s\" when \"%s\" is open\n",
                 argp, VarDevice);
