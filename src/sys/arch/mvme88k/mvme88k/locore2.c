@@ -82,14 +82,14 @@ setrunqueue(p)
  * Remove process p from its run queue, which should be the one
  * indicated by its priority.  Calls should be made at splstatclock().
  */
-remrq(p)
+remrunqueue(p)
 	register struct proc *p;
 {
 	register int which = p->p_priority >> 2;
 	register struct prochd *q;
 
 	if ((whichqs & (1 << which)) == 0)
-		panic("remrq");
+		panic("remrunqueue");
 	p->p_forw->p_back = p->p_back;
 	p->p_back->p_forw = p->p_forw;
 	p->p_back = NULL;
