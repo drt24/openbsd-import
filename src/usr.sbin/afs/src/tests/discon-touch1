@@ -1,7 +1,0 @@
-#!/bin/sh
-# $Id$
-FS=${FS:-${objdir}/../appl/fs/fs}
-> foobar
-${FS} conn disconn
-touch foobar
-${FS} conn conn

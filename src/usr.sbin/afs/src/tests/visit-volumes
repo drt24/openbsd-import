@@ -1,6 +1,0 @@
-#!/bin/sh
-# $Id$
-ls ${AFSROOT}/nada.kth.se/* >&4 2>&4 || exit 1
-ls -l ${AFSROOT}/nada.kth.se/* >&4 2>&4 || exit 1
-ls ${AFSROOT}/nada.kth.se/*/* >&4 2>&4 || exit 1
-ls -l ${AFSROOT}/nada.kth.se/*/* >&4 2>&4 || exit 1
