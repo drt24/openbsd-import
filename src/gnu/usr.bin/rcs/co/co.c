@@ -28,6 +28,9 @@ Report problems and direct all questions to:
 
 /*
  * $Log$
+ * Revision 1.4  1996/05/10 15:25:04  deraadt
+ * Z not L
+ *
  * Revision 1.3  1996/05/07 09:52:38  mickey
  * fix comments s/$Id$/Id/, and usage string.
  *
@@ -201,7 +204,7 @@ static struct stat workstat;
 mainProg(coId, "co", "$Id$")
 {
 	static char const cmdusage[] =
-		"\nco usage: co -{fIlMpqru}[rev] -ddate -jjoins -ksubst -sstate -T -w[who] -Vn -xsuff -zzone -LlocalId file ...";
+		"\nco usage: co -{fIlMpqru}[rev] -ddate -jjoins -ksubst -sstate -T -w[who] -Vn -xsuff -zzone -ZlocalId file ...";
 
 	char *a, **newargv;
 	char const *author, *date, *rev, *state;
