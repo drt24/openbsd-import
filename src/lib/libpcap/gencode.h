@@ -1,4 +1,4 @@
-/*	$OpenBSD: gencode.h,v 1.9 2002/02/19 19:39:37 millert Exp $	*/
+/*	$OpenBSD: gencode.h,v 1.10 2002/03/23 01:33:16 frantzen Exp $	*/
 
 /*
  * Copyright (c) 1990, 1991, 1992, 1993, 1994, 1995, 1996
@@ -178,6 +178,8 @@ struct block *gen_inbound(int);
 
 struct block *gen_pf_ifname(char *);
 struct block *gen_pf_rnr(int);
+struct block *gen_pf_srnr(int);
+struct block *gen_pf_ruleset(char *);
 struct block *gen_pf_reason(int);
 struct block *gen_pf_action(int);
 struct block *gen_pf_dir(int);
