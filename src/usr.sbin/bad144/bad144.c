@@ -105,7 +105,7 @@ main(argc, argv)
 		(*argv)++;
 		while (**argv) {
 			switch (**argv) {
-#if vax
+#if __vax__
 			    case 'f':
 				fflag++;
 				break;
@@ -181,7 +181,7 @@ usage:
 			dp->d_secsize);
 		exit(7);
 	}
-#ifdef i386
+#ifdef __i386__
 	if (dp->d_type == DTYPE_SCSI) {
 		fprintf(stderr, "SCSI disks don't use bad144!\n");
 		exit(1);
