@@ -2342,7 +2342,7 @@ main(int argc, char **argv)
 	failures = 0;
 
 	rval = fork();
-	if ( rval == 0 ) {
+	if ( rval > 0 ) {
 
 	  /*
 	   * Parent - close the accepted fd and continue the loop
@@ -2350,7 +2350,7 @@ main(int argc, char **argv)
 
 	  close(fd);
 
-	} else if ( rval > 0 ) {
+	} else if ( rval == 0 ) {
 
 	  /*
 	   * Child - make ourselves look like an inetd child
