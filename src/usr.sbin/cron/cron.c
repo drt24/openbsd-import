@@ -352,6 +352,7 @@ sigchld_handler(x) {
 #else
 		pid = wait3(&waiter, WNOHANG, (struct rusage *)0);
 #endif
+		/* XXX unsafe */
 		switch (pid) {
 		case -1:
 			Debug(DPROC,
@@ -378,6 +379,7 @@ static void
 sighup_handler(x) {
 	int save_errno = errno;
 
+	/* XXX unsafe */
 	log_close();
 	errno = save_errno;
 }
