@@ -169,7 +169,7 @@ onalrm(signo)
 				exit(1);
 			}
 		}
-		(void)lseek(uf, (off_t)0, L_SET);
+		(void)lseek(uf, (off_t)0, SEEK_SET);
 		nutmp = read(uf, utmp, (int)statbf.st_size)/sizeof(struct utmp);
 	}
 	errno = save_errno;
@@ -258,7 +258,7 @@ jkfprintf(tp, name, offset)
 	if ((fi = fopen(name, "r")) == NULL)
 		return;
 
-	(void)fseek(fi, offset, L_SET);
+	(void)fseek(fi, offset, SEEK_SET);
 	/*
 	 * Print the first 7 lines or 560 characters of the new mail
 	 * (whichever comes first).  Skip header crap other than
