@@ -95,6 +95,7 @@ process_api(int fd, int sendsock)
 
 	startup_parse(st, buffer);
 
+#ifndef DEBUG
 	if (addresses != (char **) NULL && strlen(st->address))
 	     for (i = 0; i<num_ifs; i++) {
 		  if (addresses[i] == (char *)NULL)
@@ -107,6 +108,7 @@ process_api(int fd, int sendsock)
 		       return;
 		  }
 	     }
+#endif
 
 	startup_end(st);
 

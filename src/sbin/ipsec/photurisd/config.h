@@ -99,6 +99,12 @@ void reconfig(int sig);
 #define OPT_TSRC            "tsrc"
 #define OPT_TDST            "tdst"
 
+struct cfgx {
+     struct cfgx *next;
+     char *name;
+     int id;
+};
+
 EXTERN int bin2hex(char *, int *, u_int8_t *, u_int16_t);
 EXTERN char *chomp(char *);
 
@@ -113,6 +119,7 @@ EXTERN int init_signals(void);
 
 EXTERN int pick_scheme(u_int8_t **, u_int16_t *, u_int8_t *, u_int16_t);
 EXTERN int pick_attrib(struct stateob *, u_int8_t **, u_int16_t *);
+EXTERN int select_attrib(struct stateob *, u_int8_t **, u_int16_t *);
 
 #endif /* _CONFIG_H_ */
 

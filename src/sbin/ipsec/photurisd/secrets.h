@@ -57,7 +57,7 @@ EXTERN int get_session_key_length(u_int8_t *attribute);
 EXTERN int init_privacy_key(struct stateob *st, int owner);
 EXTERN int compute_privacy_key(struct stateob *st, u_int8_t *key, 
 			       u_int8_t *packet, u_int16_t bits, 
-			       u_int16_t order, int owner);
+			       u_int16_t *order, int owner);
 EXTERN int make_session_keys(struct stateob *st, struct spiob *spi);
 
 #endif /* _SECRETS_H_ */

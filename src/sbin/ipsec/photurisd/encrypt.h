@@ -46,8 +46,6 @@
 #define EXTERN extern 
 #endif
 
-EXTERN int packet_make_iv(u_int32_t *iv, u_int32_t *packet);
-
 EXTERN int packet_create_padding(struct stateob *st, u_int16_t size, 
 				 u_int8_t *padd,  u_int16_t *rsize);
 EXTERN int packet_encrypt(struct stateob *st, 

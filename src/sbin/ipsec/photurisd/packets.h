@@ -53,6 +53,29 @@
 #define COOKIE_SIZE 16
 #define SPI_SIZE 4
 
+/* General packet definition */
+
+#define FLD_CONST	0
+#define FLD_VARPRE	1
+#define FLD_ATTRIB	2
+
+#define FMD_ATT_ONE	0
+#define FMD_ATT_FILL	1
+
+struct packet_sub {
+        char *field;		/* Name of Field */
+        int type;		/* Type of Field */
+        int mod;		/* Modifier: */
+        u_int16_t size;		/* Pointer to start of Field */
+        void *where;		/* Pointer to start of Field */
+};
+
+struct packet {
+        char *name;
+        int min, max;
+        struct packet_sub *parts;
+};
+
 struct cookie_request {
 	u_int8_t icookie[COOKIE_SIZE];
 	u_int8_t rcookie[COOKIE_SIZE];

@@ -45,6 +45,11 @@
 
 EXTERN int handle_packet(int, char *);
 EXTERN void send_packet(void);
+EXTERN int packet_check(u_char *packet, u_int16_t size, struct packet *format);
 EXTERN void packet_save(struct stateob *, u_int8_t *, u_int16_t);
+#ifdef DEBUG
+EXTERN void packet_ordered_dump(u_int8_t *packet, u_int16_t size, struct packet *format);
+EXTERN void packet_dump(u_int8_t *packet, u_int16_t plen, u_int16_t start);
+#endif
 
 #endif /* _STATE_H */

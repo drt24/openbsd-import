@@ -40,8 +40,8 @@
 #define BUFFER_SIZE        8192
 
 #ifndef _BUFFER_C
-extern char buffer[];
-extern char packet_buffer[];
+extern u_char buffer[];
+extern u_char packet_buffer[];
 extern int packet_size;
 #endif
 

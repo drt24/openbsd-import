@@ -42,5 +42,5 @@ static char rcsid[] = "$Id$";
 #include "buffer.h"
 
 int packet_size;
-char buffer[BUFFER_SIZE];
-char packet_buffer[PACKET_BUFFER_SIZE];
+u_char buffer[BUFFER_SIZE];
+u_char packet_buffer[PACKET_BUFFER_SIZE];

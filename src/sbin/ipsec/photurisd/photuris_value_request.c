@@ -80,6 +80,8 @@ photuris_value_request(struct stateob *st, u_char *buffer, int *size)
 	header->counter = st->counter;
 	bcopy(st->scheme, header->scheme, 2 );        /* Only scheme */
 
+	bcopy(&header->counter, st->oSPITBV, 3);
+
 	*size = asize;
 	return 0;
 }
