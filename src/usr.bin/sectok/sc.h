@@ -35,7 +35,7 @@ if it has been or is hereafter advised of the possibility of
 such damages.
 */
 
-extern int port, fd, cla;
+extern int port, fd, cla, aut0_vfyd;
 extern FILE *cmdf;
 
 int dispatch(int ac, char *av[]);
