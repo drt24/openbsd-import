@@ -621,9 +621,9 @@ makeenv(env)
 		termbuf[sizeof(termbuf)-1] = '\0';
 		*ep++ = termbuf;
 	}
-	if (p = EV) {
+	if ((p = EV)) {
 		q = p;
-		while (q = strchr(q, ',')) {
+		while ((q = strchr(q, ','))) {
 			*q++ = '\0';
 			*ep++ = p;
 			p = q;

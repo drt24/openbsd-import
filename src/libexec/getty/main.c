@@ -174,7 +174,6 @@ main(argc, argv)
 {
 	extern char **environ;
 	char *tname;
-	long allflags;
 	int repcnt = 0, failopenlogged = 0;
 	struct rlimit limit;
 	int rval;
@@ -356,7 +355,7 @@ getname()
 	register int c;
 	register char *np;
 	unsigned char cs;
-	int ppp_state;
+	int ppp_state = 0;
 	int ppp_connection = 0;
 
 	/*
