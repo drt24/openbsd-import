@@ -101,7 +101,6 @@
  /*
   * BUGS:
   *
-  * - uses strcpy/etc.
   * - has various other poor buffer attacks related to the lazy parsing of
   *   response headers from the server
   * - doesn't implement much of HTTP/1.x, only accepts certain forms of
@@ -1440,9 +1439,9 @@ static int parse_url(char * purl)
     }
     if ((cp = strchr(purl, '/')) == NULL)
 	return 1;
-    strcpy(path, cp);
+    strlcpy(path, cp, sizeof(path));
     *cp = '\0';
-    strcpy(hostname, h);
+    strlcpy(hostname, h, sizeof(hostname));
     if (p != NULL)
 	port = atoi(p);
 
@@ -1572,7 +1571,7 @@ int main(int argc, char **argv)
 					 * something */
 	    break;
 	case 'T':
-	    strcpy(content_type, optarg);
+	    strlcpy(content_type, optarg, sizeof(content_type));
 	    break;
 	case 'C':
 	    strncat(cookie, "Cookie: ", sizeof(cookie)-strlen(cookie)-1);
@@ -1617,7 +1616,7 @@ int main(int argc, char **argv)
 		    p++;
 		    proxyport = atoi(p);
 		};
-		strcpy(proxyhost, optarg);
+		strlcpy(proxyhost, optarg, sizeof(proxyhost));
 		isproxy = 1;
 	    }
 	    break;
@@ -1661,8 +1660,8 @@ int main(int argc, char **argv)
 	fprintf(stderr, "%s: wrong number of arguments\n", argv[0]);
 	usage(argv[0]);
     }
-    strcpy(url, argv[optind++]);
-    strcpy(fullurl, url);
+    strlcpy(url, argv[optind++], sizeof(url));
+    strlcpy(fullurl, url, sizeof(fullurl));
     if (parse_url(url)) {
 	fprintf(stderr, "%s: invalid URL\n", argv[0]);
 	usage(argv[0]);
