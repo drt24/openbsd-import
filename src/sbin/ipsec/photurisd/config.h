@@ -74,7 +74,7 @@
 #define EXTERN
 
 #ifndef DEBUG
-void reconfig(int sig, siginfo_t *sip, struct sigcontext *scp);
+void reconfig(int sig);
 #endif
 
 #else

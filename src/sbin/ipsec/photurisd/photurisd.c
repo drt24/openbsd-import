@@ -113,6 +113,8 @@ void main(int argc, char **argv)
      int primes = 1, ignore = 0;
      char *dir = PHOTURIS_DIR;
 
+     daemon_mode = 0;
+
      while ((ch = getopt(argc, argv, "fid:")) != -1)
 	  switch((char)ch) {
 	  case 'f':
@@ -165,6 +167,7 @@ void main(int argc, char **argv)
      init_signals();
      if (fork())
 	  exit(0);
+     daemon_mode = 1;
 #endif
 
      server();

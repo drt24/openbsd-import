@@ -63,6 +63,8 @@ EXTERN int exchange_timeout;
 EXTERN int exchange_lifetime;
 EXTERN int spi_lifetime;
 
+EXTERN int daemon_mode;
+
 /* Infos about our interfaces */
 EXTERN char **addresses;
 EXTERN int *sockets;

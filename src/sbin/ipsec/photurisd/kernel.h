@@ -44,14 +44,17 @@ int kernel_xf_set(struct encap_msghdr *em);
 int kernel_xf_read(struct encap_msghdr *em, int msglen);
 
 int kernel_des(char *srcaddress, char *dstaddress, 
-	       u_int8_t *spi, u_int8_t *secret);
+	       u_int8_t *spi, u_int8_t *secret, int tunnel);
 int kernel_md5(char *srcaddress, char *dstaddress, 
-	       u_int8_t *spi, u_int8_t *secret);
+	       u_int8_t *spi, u_int8_t *secret, int tunnel);
+
 int kernel_group_spi(char *address, u_int8_t *spi);
 
-int kernel_enable_spi(char *isrc, char *ismask, char *idst, char *idmask, 
+int kernel_enable_spi(in_addr_t isrc, in_addr_t ismask, 
+		      in_addr_t idst, in_addr_t idmask, 
 		      char *address, u_int8_t *spi, int proto, int flags);
-int kernel_disable_spi(char *isrc, char *ismask, char *idst, char *idmask, 
+int kernel_disable_spi(in_addr_t isrc, in_addr_t ismask, 
+		       in_addr_t idst, in_addr_t idmask, 
 		       char *address, u_int8_t *spi, int proto, int flags);
 int kernel_delete_spi(char *address, u_int8_t *spi, int proto);
 

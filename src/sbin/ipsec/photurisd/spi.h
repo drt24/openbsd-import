@@ -48,12 +48,17 @@
 
 #define SPI_LIFETIME   1800            /* 30 minutes default lifetime */
 
+#define SPI_OWNER      1
+#define SPI_NOTIFY     2
+#define SPI_TUNNEL     4
+
 struct spiob {
      struct spiob *next;            /* Linked list */
      char *address;
      char *local_address;
-     int owner;
-     int notify;                       /* Created due to kernel notify */
+     in_addr_t isrc, ismask;
+     in_addr_t idst, idmask;
+     int flags;
      u_int8_t SPI[SPI_SIZE];           /* SPI */ 
      u_int8_t icookie[COOKIE_SIZE];    /* Initator cookie */
      u_int8_t *attributes;             /* SPI attributes */
@@ -68,6 +73,7 @@ EXTERN int make_spi(struct stateob *st, char *local_address,
 		    u_int8_t *SPI, time_t *lifetime, 
 		    u_int8_t **attributes, u_int16_t *attribsize);
 
+EXTERN int spi_set_tunnel(struct stateob *st, struct spiob *spi);
 EXTERN int spi_insert(struct spiob *);
 EXTERN int spi_unlink(struct spiob *);
 EXTERN struct spiob *spi_new(char *, u_int8_t *);

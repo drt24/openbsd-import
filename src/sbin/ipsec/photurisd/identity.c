@@ -111,6 +111,8 @@ init_identities(char *name, struct identity *root)
 	       p++;
 	  if(*p == '#')       /* Ignore comments */
 	       continue;
+	  if(!strlen(p))
+	       continue;
 
 	  if (!strncmp(p, IDENT_LOCAL, strlen(IDENT_LOCAL))) {
 	       type = ID_LOCAL;

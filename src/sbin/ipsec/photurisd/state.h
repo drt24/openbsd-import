@@ -119,6 +119,8 @@ struct stateob {
   u_int8_t *packet;                 /* Buffer for retransmits */
   u_int16_t packetlen;
   time_t lifetime;                  /* Lifetime for the exchange */
+  time_t exchange_lifetime;         /* Use this as default */
+  time_t spi_lifetime;              /* Use this as default */
 };
 
 /* Prototypes */

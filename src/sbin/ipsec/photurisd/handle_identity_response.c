@@ -203,7 +203,7 @@ handle_identity_response(u_char *packet, int size, char *address,
 	st->ulifetime = (header->lifetime[0] << 16) + 
 	     (header->lifetime[1] << 8) + header->lifetime[2];
 
-	st->lifetime = exchange_lifetime + time(NULL) + random() % 20;
+	st->lifetime = st->exchange_lifetime + time(NULL) + random() % 20;
 	st->retries = 0;
 	st->phase = SPI_UPDATE;
 
@@ -228,7 +228,7 @@ handle_identity_response(u_char *packet, int size, char *address,
 		  return -1;
 	     }
 	     bcopy(st->icookie, spi->icookie, COOKIE_SIZE);
-	     spi->owner = 1;
+	     spi->flags |= SPI_OWNER;
 	     spi->attribsize = st->oSPIattribsize;
 	     spi->attributes = calloc(spi->attribsize, sizeof(u_int8_t));
 	     if (spi->attributes == NULL) {
@@ -271,6 +271,8 @@ handle_identity_response(u_char *packet, int size, char *address,
 
 	     /* Session keys for User */
 	     make_session_keys(st, spi);
+
+	     spi_set_tunnel(st, spi);
 
 	     spi_insert(spi);
 #ifdef IPSEC

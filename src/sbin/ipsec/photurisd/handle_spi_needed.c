@@ -177,7 +177,7 @@ handle_spi_needed(u_char *packet, int size, char *address,
 	     return -1;
 	}
 	bcopy(st->icookie, spi->icookie, COOKIE_SIZE);
-	spi->owner = 1;
+	spi->flags |= SPI_OWNER;
 	spi->attribsize = st->oSPIattribsize;
 	spi->attributes = calloc(spi->attribsize, sizeof(u_int8_t));
 	if (spi->attributes == NULL) {
