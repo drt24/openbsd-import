@@ -7,8 +7,5 @@ BINGRP=	kmem
 BINMODE=2555
 DPADD=	${LIBKVM}
 LDADD=	-lkvm
-.if (${MACHINE_ARCH} == "m68k")
-CFLAGS+=-D${MACHINE}
-.endif
 
 .include <bsd.prog.mk>
