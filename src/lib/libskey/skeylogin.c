@@ -430,7 +430,8 @@ skey_authenticate(username)
 			*(p = pbuf) = '.';
 		else
 			for (p = pbuf; *p && isalnum(*p); p++)
-				;
+				if (isalpha(*p) && isupper(*p))
+					*p = tolower(*p);
 		if (*p)
 			strncpy(p, "asjd", 4 - (pbuf - p));
 		p = &pbuf[4];
