@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: usrdb.c,v 1.5 2002/05/30 18:43:40 deraadt Exp $	*/
 /*
  * Copyright (c) 1994 Christopher G. Demetriou
  * All rights reserved.
@@ -88,7 +88,7 @@ usracct_init()
 				warn("initializing user accounting stats");
 				error = -1;
 				break;
-			} 
+			}
 
 			serr = DB_SEQ(saved_usracct_db, &key, &data, R_NEXT);
 			if (serr < 0) {
@@ -154,7 +154,7 @@ usracct_add(const struct cmdinfo *ci)
 	newui.ui_mem += ci->ci_mem;
 	newui.ui_io += ci->ci_io;
 
-	data.data = &newui; 
+	data.data = &newui;
 	data.size = sizeof(newui);
 	rv = DB_PUT(usracct_db, &key, &data, 0);
 	if (rv < 0) {
@@ -272,7 +272,7 @@ uid_compare(const DBT *k1, const DBT *k2)
 
 	memcpy(&d1, k1->data, sizeof(d1));
 	memcpy(&d2, k2->data, sizeof(d2));
-	
+
 	if (d1 < d2)
 		return -1;
 	else if (d1 == d2)
