@@ -505,7 +505,7 @@ outfield(lp, fieldno, out_empty)
 	if (needsep++)
 		putchar((int)*tabchar);
 	if (!ferror(stdout)) {
-		if (lp->fieldcnt < fieldno || out_empty) {
+		if (lp->fieldcnt <= fieldno || out_empty) {
 			if (empty != NULL)
 				fputs(empty, stdout);
 		} else {
