@@ -75,7 +75,7 @@
  *      gns = Greg Shapiro of WPI
  */
 
-/*#define DEBUG		/* enable -d flag and SIGUSR[12] support (ucb) */
+#define DEBUG		/* enable -d flag and SIGUSR[12] support (ucb) */
 /*#define ALLOW_T_UNSPEC /* enable the "unspec" RR type for old athena (ucb) */
 /*#define INVQ		/* enable inverse queries (nslookup) (ucb/vix) */
 /*#define DSTORAGE	/* debug malloc overruns using storage.o (ucb/vix) */
