@@ -20,6 +20,7 @@
 #include "includes.h"
 #include "deattack.h"
 #include "ssh.h"
+#include "crc32.h"
 #include "getput.h"
 #include "xmalloc.h"
 

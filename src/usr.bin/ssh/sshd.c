@@ -2102,11 +2102,7 @@ void do_child(const char *command, struct passwd *pw, const char *term,
      initgroups, because at least on Solaris 2.3 it leaves file descriptors
      open. */
   for (i = 3; i < 64; i++)
-    {
-      if (i == auth_get_fd())
-	continue;
-      close(i);
-    }
+    close(i);
 
   /* Change current directory to the user\'s home directory. */
   if (chdir(pw->pw_dir) < 0)

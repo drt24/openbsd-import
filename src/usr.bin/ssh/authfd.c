@@ -31,7 +31,7 @@ RCSID("$Id$");
 int
 ssh_get_authentication_fd()
 {
-  const char *authfd, *authsocket;
+  const char *authsocket;
   int sock;
   struct sockaddr_un sunaddr;
 
