@@ -323,8 +323,8 @@ reg_service(rqstp, xprt)
 		}
 
 		/* check if secure */
-		if ((pml->pml_map.pm_port < IPPORT_RESERVED ||
-		    pml->pml_map.pm_port == NFS_PORT) &&
+		if (fnd && (fnd->pml_map.pm_port < IPPORT_RESERVED ||
+		    fnd->pml_map.pm_port == NFS_PORT) &&
 		    htons(fromsin->sin_port) >= IPPORT_RESERVED) {
 			syslog(LOG_WARNING, "resvport set attempt by non-root");
 			goto done;
