@@ -74,8 +74,8 @@ In this mode
 .Nm mail.local
 (ignoring all other arguments) attains a
 .Nm username.lock
-for the calling user and retains it until stdin is closed or a
-SIGINT signal is received.
+for the calling user and retains it until stdin is closed or a signal
+like SIGINT, SIGTERM, or SIGHUP is received.
 .El
 .Pp
 Individual mail messages in the mailbox are delimited by an empty
