@@ -71,6 +71,9 @@
 #ifndef ETHERTYPE_AARP
 #define ETHERTYPE_AARP		0x80f3
 #endif
+#ifndef ETHERTYPE_VLAN
+#define ETHERTYPE_VLAN		0x8100
+#endif
 #ifndef	ETHERTYPE_LOOPBACK
 #define	ETHERTYPE_LOOPBACK	0x9000
 #endif

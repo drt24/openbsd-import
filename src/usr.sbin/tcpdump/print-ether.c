@@ -185,6 +185,17 @@ ether_encap_print(u_short ethertype, const u_char *p,
 		aarp_print(p, length);
 		return (1);
 
+	case ETHERTYPE_VLAN:
+		printf("802.1q");
+		if (eflag) {
+			printf(" %s %d",
+				etherproto_string(ntohs(*(u_int16_t *)p)),
+				length - 4);
+		}
+		printf(": ");
+		ether_print(p + 4, length - 4);
+ 		return (1);
+
 	case ETHERTYPE_LAT:
 	case ETHERTYPE_SCA:
 	case ETHERTYPE_MOPRC:
