@@ -1,4 +1,4 @@
-#	$OpenBSD$
+#	$OpenBSD: Makefile,v 1.1 1998/05/19 16:56:49 millert Exp $
 #
 
 NOOBJ=	noobj
