@@ -1,4 +1,4 @@
-/*	$OpenBSD: optimize.c,v 1.6 1999/07/20 04:49:55 deraadt Exp $	*/
+/*	$OpenBSD: optimize.c,v 1.8 2002/07/09 17:03:00 provos Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1993, 1994, 1995, 1996
@@ -1926,7 +1926,7 @@ convert_code_r(p)
 
 	/* generate offset[] for convenience  */
 	if (slen) {
-		offset = (struct slist **)calloc(sizeof(struct slist *), slen);
+		offset = (struct slist **)calloc(slen, sizeof(struct slist *));
 		if (!offset) {
 			bpf_error("not enough core");
 			/*NOTREACHED*/
