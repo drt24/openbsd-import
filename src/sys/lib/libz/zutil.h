@@ -21,9 +21,13 @@
 #else
     extern int errno;
 #endif
+#ifdef _STANDALONE
+#include <stand.h>
+#else
 #ifdef STDC
 #  include <string.h>
 #  include <stdlib.h>
+#endif
 #endif
 
 #ifndef local
