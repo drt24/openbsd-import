@@ -453,7 +453,7 @@ ReportProtStatus(struct cmdargs const *arg)
   } while (statp->number);
   if (cnt)
     fprintf(VarTerm, "\n");
-  return (1);
+  return (0);
 }
 
 int
