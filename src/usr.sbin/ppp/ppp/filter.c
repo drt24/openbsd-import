@@ -488,7 +488,7 @@ filter_Action2Nam(int act)
   static char	buf[8];
 
   if (act >= 0 && act < MAXFILTERS) {
-    snprintf(buf, 8, "%6d ", act);
+    snprintf(buf, sizeof buf, "%6d ", act);
     return buf;
   } else if (act >= A_NONE && act < A_NONE + sizeof(actname)/sizeof(char *))
     return actname[act - A_NONE];
