@@ -23,10 +23,6 @@
 #define KRBLOG 		"/var/log/kerberos.log"  /* master server  */
 #define KRBSLAVELOG	"/var/log/kerberos_slave.log" /* master (?) server  */
 
-#define	KRB_MASTER	"kerberos"
-#define	KRB_HOST	"kowande.bu.oz.au" 
-#define	KRB_REALM	"KOWANDE.BU.OZ.AU"
-
 /* from: kadm_server.h  */
 /* the default syslog file */
 #define KADM_SYSLOG	"/var/log/admin_server.log"
