@@ -1,5 +1,5 @@
 /*
- * CU sudo version 1.5.2 (based on Root Group sudo version 1.1)
+ * CU sudo version 1.5.3 (based on Root Group sudo version 1.1)
  *
  * This software comes with no waranty whatsoever, use at your own risk.
  *
@@ -92,7 +92,7 @@ struct command_match {
 /*
  * Structure containing Cmnd_Alias's if "sudo -l" is used.
  */
-struct command_alias {
+struct generic_alias {
     char *alias;
     char *entries;
     size_t entries_size;

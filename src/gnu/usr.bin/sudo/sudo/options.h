@@ -1,5 +1,5 @@
 /*
- *  CU sudo version 1.5.2
+ *  CU sudo version 1.5.3
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -55,7 +55,7 @@
 #define MAILER _PATH_SENDMAIL	/* what mailer to use */
 #define UMASK 0022		/* umask that the root-run prog should use */
 #define INCORRECT_PASSWORD "Sorry, try again." /* message for bad passwd */
-#define MAILSUBJECT "*** SECURITY information ***" /* subject of mail sent */
+#define MAILSUBJECT "*** SECURITY information for %h ***" /* mail subject */
 #define PASSPROMPT "Password:"	/* default password prompt */
 /*#define IGNORE_DOT_PATH	/* ignore '.' in $PATH if it exists */
 /*#define SECURE_PATH	"/bin:/usr/ucb:/usr/bin:/usr/etc:/etc" /* secure path */
