@@ -398,7 +398,7 @@ doit(fromp)
 				"rcmd", instance, &fromaddr,
 				&local_addr, kdata, "", schedule,
 				version);
-			des_set_key(kdata->session, schedule);
+			desrw_set_key(kdata->session, schedule);
 		} else
 #endif
 			rc = krb_recvauth(authopts, 0, ticket, "rcmd",
