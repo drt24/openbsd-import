@@ -1,7 +1,0 @@
-#!/bin/sh
-# $Id$
-FS=${FS:-${objdir}/../appl/fs/fs}
-${FS} conn disconn
-mkdir dir || exit 1
-cd dir || exit 1
-${FS} conn conn
