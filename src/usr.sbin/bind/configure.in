@@ -1791,9 +1791,6 @@ AC_OUTPUT(
 	lib/lwres/unix/Makefile
 	lib/lwres/unix/include/Makefile
 	lib/lwres/unix/include/lwres/Makefile
-	lib/lwres/win32/Makefile
-	lib/lwres/win32/include/Makefile
-	lib/lwres/win32/include/lwres/Makefile
 	lib/tests/Makefile
 	lib/tests/include/Makefile
 	lib/tests/include/tests/Makefile
