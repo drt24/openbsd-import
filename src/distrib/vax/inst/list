@@ -1,7 +1,0 @@
-#	$Id$
-
-# the disktab explanation file
-COPY	disktab.preinstall		etc
-
-# and the installation tools
-COPY	dot.profile			.profile
