@@ -1,7 +1,7 @@
 #
 #	$Id$
 #
-FILES=	example.*
+FILES=	example.* nat.* firewall.*
 NOOBJ=	noobj
 
 all clean cleandir depend lint tags:
