@@ -1,4 +1,4 @@
-/*	$OpenBSD: gencode.c,v 1.16 2002/03/23 01:33:16 frantzen Exp $	*/
+/*	$OpenBSD: gencode.c,v 1.17 2002/07/09 17:03:00 provos Exp $	*/
 
 /*
  * Copyright (c) 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998
@@ -623,6 +623,11 @@ init_linktype(type)
 	case DLT_PFLOG:
 		off_linktype = 0;
 		off_nl = 28;
+		return;
+
+	case DLT_PFSYNC:
+		off_linktype = -1;
+		off_nl = 4;
 		return;
 
 	case DLT_RAW:
