@@ -1,5 +1,5 @@
+#	$OpenBSD: Makefile,v 1.2 1996/07/18 05:57:20 dm Exp $
 #
-#	$Id$
 #
 FILES=	example.* nat.* firewall.*
 NOOBJ=	noobj

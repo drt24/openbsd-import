@@ -1,3 +1,4 @@
+/*	$OpenBSD: kernfsmod.c,v 1.2 2000/01/28 05:29:59 fgsch Exp $	*/
 /*
  * kernfsmod.c
  *
@@ -33,7 +34,6 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- *	$Id$
  */
 #include <sys/param.h>
 #include <sys/ioctl.h>

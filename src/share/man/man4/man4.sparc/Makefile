@@ -1,5 +1,5 @@
-# 	from: @(#)Makefile	8.2 (Berkeley) 2/16/94
-#	$Id$
+#	$OpenBSD: Makefile,v 1.17 1999/09/09 03:03:22 jason Exp $
+#	from: @(#)Makefile	8.2 (Berkeley) 2/16/94
 
 MAN=	intro.4
 MAN+=	audioamd.4 audiocs.4 be.4 bwtwo.4 cgtwo.4 cgthree.4 cgfour.4 cgsix.4
