@@ -66,6 +66,7 @@
 #define START 7
 #define UNION 8
 #define IDENT 9
+#define EXPECT 10
 
 
 /*  symbol classes  */
@@ -263,6 +264,7 @@ extern short *to_state;
 
 extern action **parser;
 extern int SRtotal;
+extern int SRexpect;
 extern int RRtotal;
 extern short *SRconflicts;
 extern short *RRconflicts;
