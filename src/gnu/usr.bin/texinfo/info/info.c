@@ -621,7 +621,7 @@ Any remaining arguments are treated as the names of menu\n\
 items in the initial node visited.  For example, `info emacs buffers'\n\
 moves to the node `buffers' in the info file `emacs'.\n\
 \n\
-Email bug reports to bug-texinfo@gnu.org."), program_name);
+Email bug reports to bug-texinfo@gnu.org.\n"), program_name);
 
   exit (0);
 }
