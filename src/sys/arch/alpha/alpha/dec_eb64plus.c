@@ -68,9 +68,9 @@
 #endif
 static int comcnrate = CONSPEED;
 
-void dec_eb64plus_init __P((void));
-static void dec_eb64plus_cons_init __P((void));
-static void dec_eb64plus_device_register __P((struct device *, void *));
+void dec_eb64plus_init(void);
+static void dec_eb64plus_cons_init(void);
+static void dec_eb64plus_device_register(struct device *, void *);
 
 const struct alpha_variation_table dec_eb64plus_variations[] = {
 	{ 0, "DEC EB64+" },
