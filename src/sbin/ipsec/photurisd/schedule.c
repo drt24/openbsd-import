@@ -246,6 +246,7 @@ schedule_process(int sock)
 				"counter.\n", newst->address, newst->port);
 #endif /* DEBUG */
 			 start_exchange(sock, newst, st->address, st->port);
+			 state_insert(newst);
 			 break;
 		    } else {
 			 log_error(0, "exchange terminated, phase %d to %s:%d",
