@@ -206,9 +206,9 @@ doit(fromp)
 	struct passwd *pwd;
 	u_short port;
 	fd_set ready, readfrom;
-	int cc, nfd, pv[2], pid, s;
+	int cc, nfd, pv[2], pid, s = 0;
 	int one = 1;
-	char *hostname, *errorstr, *errorhost;
+	char *hostname, *errorstr, *errorhost = (char *) NULL;
 	char *cp, sig, buf[BUFSIZ];
 	char cmdbuf[NCARGS+1], locuser[16], remuser[16];
 	char remotehost[2 * MAXHOSTNAMELEN + 1];
