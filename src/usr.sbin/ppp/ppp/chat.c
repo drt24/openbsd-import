@@ -318,7 +318,7 @@ static int
 chat_IsSet(struct descriptor *d, const fd_set *fdset)
 {
   struct chat *c = descriptor2chat(d);
-  return physical_IsSet(&c->physical->desc, fdset);
+  return c->argptr && physical_IsSet(&c->physical->desc, fdset);
 }
 
 static void
