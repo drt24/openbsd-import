@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: process_machdep.c,v 1.1.1.1 1996/06/24 09:07:21 pefo Exp $	*/
 /*
  * Copyright (c) 1994 Adam Glass   
  * Copyright (c) 1993 The Regents of the University of California.
@@ -72,9 +72,11 @@
 #include <sys/user.h>
 #include <sys/vnode.h>
 #include <sys/ptrace.h>
+#include <machine/pte.h>
 #include <machine/psl.h>
 #include <machine/reg.h>
 
+extern void cpu_singlestep __P((struct proc *));
 int
 process_read_regs(p, regs)
 	struct proc *p;
