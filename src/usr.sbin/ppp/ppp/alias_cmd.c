@@ -403,7 +403,7 @@ alias_LayerPull(struct bundle *bundle, struct link *l, struct mbuf *bp,
     case PKT_ALIAS_UNRESOLVED_FRAGMENT:
       /* Save the data for later */
       fptr = malloc(bp->cnt);
-      mbuf_Read(bp, fptr, bp->cnt);
+      bp = mbuf_Read(bp, fptr, bp->cnt);
       PacketAliasSaveFragment(fptr);
       break;
 
