@@ -44,5 +44,8 @@ unconfig:
 clean cleandir:
 	/bin/rm -f ${IMAGE} bsd
 
+beforeinstall:
+	cp ${IMAGE} ${DESTDIR}/snapshot
+
 .include <bsd.obj.mk>
 .include <bsd.subdir.mk>

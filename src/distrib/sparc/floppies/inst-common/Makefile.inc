@@ -57,5 +57,8 @@ clean cleandir:
 	/bin/rm -f ${IMAGE} ${CBIN} ${CBIN}-krb.mk ${CBIN}-krb.cache \
 	    ${CBIN}.mk ${CBIN}.cache *.o *.lo *.c
 
+beforeinstall:
+	cp ${IMAGE} ${DESTDIR}/snapshot
+
 .include <bsd.obj.mk>
 .include <bsd.subdir.mk>
