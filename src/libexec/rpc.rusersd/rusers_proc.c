@@ -156,9 +156,9 @@ getidle(tty, display)
 #if !defined(i386)
 		kbd_idle = getidle("kbd", NULL);
 #else
-#if __GNUC__ >= 2
-#warning i386 console hack here
-#endif
+		/*
+		 * XXX Icky i386 console hack.
+		 */
 		kbd_idle = getidle("vga", NULL);
 #endif
 		mouse_idle = getidle("mouse", NULL);
