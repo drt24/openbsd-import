@@ -81,7 +81,7 @@
    **    - Cleaned up by Ralf S. Engelschall <rse@apache.org>, March 1998
    **    - POST and verbosity by Kurt Sussman <kls@merlot.com>, August 1998
    **    - HTML table output added by David N. Welton <davidw@prosa.it>, January 1999
-   **    - Added Cookie, Arbitrary header and auth support. <dirkx@webweaving.org>, April 199
+   **    - Added Cookie, Arbitrary header and auth support. <dirkx@webweaving.org>, April 1999
    **
  */
 
