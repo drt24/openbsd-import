@@ -1,4 +1,4 @@
-/*     $OpenBSD$      */
+/*     $OpenBSD: opt.c,v 1.8 1998/01/26 04:13:37 dgregor Exp $      */
 /*
  * Copyright (C) 1993-1997 by Darren Reed.
  *
@@ -21,9 +21,13 @@
 #include <netinet/tcp.h>
 #include <net/if.h>
 #include <arpa/inet.h>
-#include "ip_fil_compat.h"
+#if defined(__OpenBSD__)
+# include <netinet/ip_fil_compat.h>
+#else
+# include <netinet/ip_compat.h>
+#endif
 #include <netinet/tcpip.h>
-#include "ip_fil.h"
+#include <netinet/ip_fil.h>
 #include "ipf.h"
 
 #if !defined(lint)

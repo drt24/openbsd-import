@@ -1,4 +1,4 @@
-/*    $OpenBSD$    */
+/*    $OpenBSD: kmem.h,v 1.5 1998/01/26 04:13:44 dgregor Exp $    */
 /*
  * Copyright (C) 1993-1997 by Darren Reed.
  *
@@ -21,6 +21,14 @@
 extern	int	openkmem __P((void));
 extern	int	kmemcpy __P((char *, long, int));
 
-#define	KMEM	"/dev/kmem"
+#if defined(__NetBSD__) || defined(__OpenBSD)
+# include <paths.h>
+#endif
+
+#ifdef _PATH_KMEM
+# define	KMEM	_PATH_KMEM
+#else
+# define	KMEM	"/dev/kmem"
+#endif
 
 #endif /* __KMEM_H__ */
