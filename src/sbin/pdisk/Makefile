@@ -1,6 +1,6 @@
 #	$Id$
 
-.if ${MACHINE} == "powerpc
+.if ${MACHINE} == "powerpc"
 PROG=	pdisk
 
 SRCS=	pdisk.c dump.c partition_map.c convert.c io.c errors.c bitfield.c \
