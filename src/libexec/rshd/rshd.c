@@ -406,7 +406,8 @@ doit(fromp)
 			rc = krb_recvauth(authopts, 0, ticket, "rcmd",
 				instance, &fromaddr,
 				(struct sockaddr_in *) 0,
-				kdata, "", (bit_64 *) 0, version);
+				kdata, "", (struct des_ks_struct *) 0,
+				version);
 		if (rc != KSUCCESS) {
 			error("Kerberos authentication failure: %s\n",
 				  krb_err_txt[rc]);
