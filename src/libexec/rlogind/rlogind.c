@@ -255,9 +255,8 @@ doit(f, fromp)
 			hints.ai_family = fromp->sa_family;
 			hints.ai_socktype = SOCK_STREAM;
 			hints.ai_flags = AI_CANONNAME;
+			res0 = NULL;
 			gaierror = getaddrinfo(hostname, "0", &hints, &res0);
-			if (gaierror)
-				res0 = NULL;
 			for (res = res0; good == 0 && res; res = res->ai_next) {
 				if (res->ai_family != fromp->sa_family)
 					continue;
