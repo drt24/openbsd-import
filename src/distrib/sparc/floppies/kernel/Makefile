@@ -43,7 +43,7 @@ unconfig:
 	-/bin/rm -f ${IMAGE}
 
 clean cleandir:
-	/bin/rm -f ${IMAGE}
+	/bin/rm -f ${IMAGE} bsd
 
 .include <bsd.obj.mk>
 .include <bsd.subdir.mk>
