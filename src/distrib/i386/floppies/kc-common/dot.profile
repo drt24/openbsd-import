@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 PATH=/sbin:/bin:/
 export PATH

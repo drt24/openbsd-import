@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 #
 #	Kernel copy script
 
@@ -38,7 +38,7 @@ warning() {
 }
 
 trap "cancel;" 2 3
-echo	"NetBSD kernel copy program"
+echo	"OpenBSD kernel copy program"
 echo	""
 echo	"Default answers are displayed in brackets.  You may hit Control-C"
 echo	"at any time to cancel this operation (though if you hit Control-C at"

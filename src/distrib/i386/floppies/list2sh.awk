@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 BEGIN {
 	printf("cd ${CURDIR}\n");

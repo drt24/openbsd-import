@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 # copy the crunched binary, link to it, and kill it
 COPY	${OBJDIR}/kcbin	kcbin

@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 # copy the crunched binary, link to it, and kill it
 COPY	${OBJDIR}/instbin	instbin
@@ -71,5 +71,5 @@ COPY	${DESTDIR}/etc/spwd.db		etc
 # and the common installation tools
 COPY	${TOPDIR}/inst-common/termcap.vt	usr/share/misc/termcap
 
-COPY	/gennetbsd			.
+COPY	/genbsd			.
 COPY	/boot				.

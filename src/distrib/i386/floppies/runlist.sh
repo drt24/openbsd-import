@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 if [ "X$1" = "X-d" ]; then
 	SHELLCMD=cat

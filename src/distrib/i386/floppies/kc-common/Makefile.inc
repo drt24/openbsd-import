@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 # TOP is assumed to be defined by Makefile including this one.
 
