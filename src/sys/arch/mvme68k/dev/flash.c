@@ -112,6 +112,8 @@ flashmatch(parent, cf, args)
 	 */
 	if (cputyp == CPU_166)
 		return (0);
+	if (cputyp == CPU_167)
+		return (0);
 #endif
 
 	if (badpaddr(ca->ca_paddr, 1))
