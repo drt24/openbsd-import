@@ -87,3 +87,6 @@
 			 * places.
 			 */
 #define SYSLOG	 			/*-*/
+
+			/* if your OS supports a BSD-style login.conf file */
+#define LOGIN_CAP	 		/*-*/
