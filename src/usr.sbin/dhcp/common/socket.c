@@ -127,6 +127,11 @@ int if_register_socket (info)
 			(char *)&flag, sizeof flag) < 0)
 		error ("Can't set SO_REUSEADDR option on dhcp socket: %m");
 
+	flag = 1;
+	if (setsockopt (sock, SOL_SOCKET, SO_REUSEPORT,
+			(char *)&flag, sizeof flag) < 0)
+	        error ("Can't set SO_REUSEPORT option on dhcp socket: %m");
+
 	/* Set the BROADCAST option so that we can broadcast DHCP responses. */
 	if (setsockopt (sock, SOL_SOCKET, SO_BROADCAST,
 			(char *)&flag, sizeof flag) < 0)
