@@ -330,6 +330,17 @@ main(int argc, char *argv[])
 		break;
 	case 'z':
 		Zflag++;
+		switch(progname[1]) {
+		case 'e':
+			Eflag++;
+			break;
+		case 'f':
+			Fflag++;
+			break;
+		case 'g':
+			Gflag++;
+			break;
+		}
 		break;
 	}
 
