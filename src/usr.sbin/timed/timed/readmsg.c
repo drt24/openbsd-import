@@ -487,7 +487,7 @@ struct sockaddr_in *addr;
 		break;
 
 	case TSP_ADJTIME:
-		fprintf(fd, "%s %d %-6u (%ld,%ld) %-15s %s\n",
+		fprintf(fd, "%s %d %-6u (%d,%d) %-15s %s\n",
 			tsptype[msg->tsp_type],
 			msg->tsp_vers,
 			msg->tsp_seq,

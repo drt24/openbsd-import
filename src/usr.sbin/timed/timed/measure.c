@@ -87,6 +87,7 @@ measure(u_long maxmsec,			/* wait this many msec at most */
 	min_idelta = min_odelta = 0x7fffffff;
 	measure_status = HOSTDOWN;
 	measure_delta = HOSTDOWN;
+	trials = 0;
 	errno = 0;
 
 	/* open raw socket used to measure time differences */
