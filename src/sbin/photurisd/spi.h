@@ -35,7 +35,7 @@
  
 #ifndef _SPI_H_
 #define _SPI_H_
-
+#include <sys/queue.h>
 #include "state.h"
 
 #undef EXTERN
@@ -53,7 +53,8 @@
 #define SPI_ESP	       8	       /* Is used for ESP */
 
 struct spiob {
-     struct spiob *next;            /* Linked list */
+     TAILQ_ENTRY(spiob) next;          /* Linked list */
+
      char *address;
      char *local_address;
      int flags;
@@ -66,6 +67,7 @@ struct spiob {
      time_t lifetime;                  /* Lifetime for the SPI */
 };
 
+EXTERN void spi_init(void);
 EXTERN time_t getspilifetime(struct stateob *st);
 EXTERN int make_spi(struct stateob *st, char *local_address,
 		    u_int8_t *SPI, time_t *lifetime, 
@@ -78,8 +80,6 @@ EXTERN int spi_value_reset(struct spiob *);
 EXTERN struct spiob *spi_find_attrib(char *address,
 				     u_int8_t *attrib, u_int16_t attribsize);
 EXTERN struct spiob *spi_find(char *, u_int8_t *);
-EXTERN struct spiob *spi_root(void);
-EXTERN void spi_cleanup(void);
 EXTERN void spi_expire(void);
 
 #endif /* _SPI_H */

@@ -150,8 +150,8 @@ handle_spi_update(u_char *packet, int size, char *address,
 #ifdef IPSEC
 	     kernel_unlink_spi(spi);
 #endif
-	     spi_unlink(spi);
 	     spi_value_reset(spi);
+	     spi_unlink(spi);
 	     return 0;
 	} 
 

@@ -115,5 +115,6 @@ EXTERN int kernel_get_socket(void);
 EXTERN void kernel_set_socket_policy(int sd);
 EXTERN void kernel_handle_notify(int sd);
 EXTERN void kernel_notify_result(struct stateob *, struct spiob *, int);
+EXTERN void kernel_handle_queue(void);
 
 #endif /* _KERNEL_H */

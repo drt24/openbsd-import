@@ -162,6 +162,8 @@ main(int argc, char **argv)
      argc -= optind;
      argv += optind;
      
+     spi_init();
+
      init_vars();
 
      init_times();
@@ -170,12 +172,12 @@ main(int argc, char **argv)
 
      init_schemes();
 
-#ifndef DEBUG
+#ifndef USE_DEBUG
      init_signals();
      if (fork())
           exit(0);
      daemon_mode = 1;
-#endif
+#endif /* USE_DEBUG */
 
 #ifdef IPSEC
      init_kernel();

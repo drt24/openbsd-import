@@ -320,6 +320,14 @@ server(void)
 	       } 
 	  }
 
+#ifdef IPSEC
+	  /* 
+	   * Deal with queue acquire and expire message, since we
+	   * dont have proper timeout code, it needs to go here.
+	   */
+	  kernel_handle_queue();
+#endif
+
 	  schedule_process(global_socket);
 	  fflush(stdout);
 	  fflush(stderr);
