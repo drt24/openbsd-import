@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD: Makefile,v 1.1 1996/10/10 10:05:46 deraadt Exp $
 
 SUBDIR= kernel inst upgr
 

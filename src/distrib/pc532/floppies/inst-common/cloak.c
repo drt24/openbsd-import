@@ -1,3 +1,4 @@
+/*	$OpenBSD: cloak.c,v 1.2 1996/09/05 21:26:50 deraadt Exp $	*/
 /*
  * Copyright (c) 1995 Matthias Pfaller.
  * All rights reserved.
@@ -27,7 +28,6 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- *	$Id$
  */
 
 #include <stdio.h>
