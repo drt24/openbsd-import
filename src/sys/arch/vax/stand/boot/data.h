@@ -1,4 +1,4 @@
-/*	$OpenBSD: data.h,v 1.2 1997/05/29 00:04:21 niklas Exp $ */
+/*	$OpenBSD: data.h,v 1.1 2000/04/27 02:26:25 bjc Exp $ */
 /*	$NetBSD: data.h,v 1.4 1995/09/16 15:58:57 ragge Exp $ */
 /*
  * Copyright (c) 1995 Ludd, University of Lule}, Sweden.
