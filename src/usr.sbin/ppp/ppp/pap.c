@@ -135,6 +135,14 @@ PapValidate(struct bundle *bundle, u_char *name, u_char *key,
 }
 
 void
+pap_Failed(struct physical *p)
+{
+  auth_StopTimer(&p->dl->pap);
+  log_Printf(LogPHASE, "Pap: No response from server\n");
+  datalink_AuthNotOk(p->dl);
+}
+
+void
 pap_Input(struct bundle *bundle, struct mbuf *bp, struct physical *physical)
 {
   int len = mbuf_Length(bp);
@@ -164,7 +172,6 @@ pap_Input(struct bundle *bundle, struct mbuf *bp, struct physical *physical)
              * told that I got the answer right.
              */
             datalink_AuthOk(physical->dl);
-
 	} else {
 	  SendPapCode(php->id, PAP_NAK, "Login incorrect", physical);
           datalink_AuthNotOk(physical->dl);

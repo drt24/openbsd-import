@@ -244,7 +244,8 @@ AuthTimeout(void *vauthp)
   if (--authp->retry > 0) {
     timer_Start(&authp->authtimer);
     (*authp->ChallengeFunc)(authp, ++authp->id, authp->physical);
-  }
+  } else if (authp->FailedFunc)
+    (*authp->FailedFunc)(authp->physical);
 }
 
 void
@@ -256,9 +257,11 @@ auth_Init(struct authinfo *authinfo)
 
 void
 auth_StartChallenge(struct authinfo *authp, struct physical *physical,
-                   void (*fn)(struct authinfo *, int, struct physical *))
+                   void (*chal)(struct authinfo *, int, struct physical *),
+                   void (*fail)(struct physical *))
 {
-  authp->ChallengeFunc = fn;
+  authp->ChallengeFunc = chal;
+  authp->FailedFunc = fail;
   authp->physical = physical;
   timer_Stop(&authp->authtimer);
   authp->authtimer.func = AuthTimeout;
