@@ -1,4 +1,4 @@
-/*	$OpenBSD: process_machdep.c,v 1.2 2004/08/08 14:21:27 pefo Exp $	*/
+/*	$OpenBSD: process_machdep.c,v 1.3 2004/08/10 20:15:47 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1994 Adam Glass
@@ -105,7 +105,7 @@ int
 process_sstep(p, sstep)
 	struct proc *p;
 {
-	if(sstep)
+	if (sstep)
 		cpu_singlestep(p);
 	return (0);
 }
