@@ -426,6 +426,9 @@ doit(fromp)
 			errorstr = "Login incorrect.\n";
 		goto fail;
 	}
+
+	setegid(pwd->pw_gid);
+	seteuid(pwd->pw_uid);
 	if (chdir(pwd->pw_dir) < 0) {
 		(void) chdir("/");
 #ifdef notdef
@@ -436,6 +439,8 @@ doit(fromp)
 		exit(1);
 #endif
 	}
+	seteuid(0);
+	setegid(0);	/* XXX use a saved gid instead? */
 
 #ifdef	KERBEROS
 	if (use_kerberos) {

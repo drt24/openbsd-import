@@ -161,10 +161,15 @@ doit(f, fromp)
 			exit(1);
 		}
 	}
+	setegid(pwd->pw_gid);
+	seteuid(pwd->pw_uid);
 	if (chdir(pwd->pw_dir) < 0) {
 		error("No remote directory.\n");
 		exit(1);
 	}
+	seteuid(0);
+	setegid(0);	/* XXX use a saved gid instead? */
+
 	(void) write(2, "\0", 1);
 	if (port) {
 		(void) pipe(pv);
