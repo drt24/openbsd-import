@@ -11,7 +11,7 @@ CFLAGS+= -I.
 
 CLEANFILES= nlm_prot_svc.c nlm_prot.h
 
-RPCSRC= ${.DESTDIR}/usr/include/rpcsvc/nlm_prot.x
+RPCSRC= ${DESTDIR}/usr/include/rpcsvc/nlm_prot.x
 RPCGEN= rpcgen -L -C
 
 nlm_prot_svc.c: ${RPCSRC} nlm_prot.h
