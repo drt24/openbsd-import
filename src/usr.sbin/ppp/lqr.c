@@ -191,7 +191,7 @@ LqrInput(struct mbuf * bp)
      */
     if (LqrTimer.load == 0 || lastpeerin == HisLqrData.PeerInLQRs ||
         (LqrTimer.arg &&
-         LqrTimer.rest * 100 / SECTICKS > (u_int32_t)LqrTimer.arg)) {
+         LqrTimer.rest * 100 / SECTICKS > (u_long)LqrTimer.arg)) {
       lqmmethod |= LQM_LQR;
       SendLqrReport(LqrTimer.arg);
     }
@@ -229,7 +229,7 @@ StartLqm()
     LqrTimer.state = TIMER_STOPPED;
     LqrTimer.load = lcp->want_lqrperiod * SECTICKS / 100;
     LqrTimer.func = SendLqrReport;
-    LqrTimer.arg = (void *)lcp->his_lqrperiod;
+    LqrTimer.arg = (void *)(u_long)lcp->his_lqrperiod;
     SendLqrReport(LqrTimer.arg);
   } else {
     LqrTimer.load = 0;

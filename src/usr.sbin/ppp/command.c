@@ -1330,7 +1330,7 @@ SetVariable(struct cmdargs const *arg)
 {
   u_long map;
   const char *argp;
-  int param = (int)arg->data;
+  long param = (long)arg->data;
 
   if (arg->argc > 0)
     argp = *arg->argv;

@@ -31,8 +31,9 @@ struct iplist {
     struct in_addr ip;
     int pos;
     char *srcptr;
-    int srcitem;
-    u_long lstart, nItems;
+    u_long srcitem;
+    u_int32_t lstart;
+    u_long nItems;
   } cur;
   int nItems;
   char src[LINE_LEN];

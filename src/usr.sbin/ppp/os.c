@@ -69,7 +69,7 @@ SetIpDevice(struct in_addr myaddr,
 {
   struct sockaddr_in *sock_in;
   int s;
-  u_long mask, addr;
+  u_int32_t mask, addr;
 
   s = ID0socket(AF_INET, SOCK_DGRAM, 0);
   if (s < 0) {

@@ -48,8 +48,8 @@ struct ccpstate {
   int out_init;			/* Init called for out algorithm */
   int in_init;			/* Init called for in algorithm */
 
-  u_long uncompout, compout;
-  u_long uncompin, compin;
+  u_long uncompout, compout;	/* Outgoing bytes before/after compression */
+  u_long uncompin, compin;	/* Incoming bytes after/before decompression */
 };
 
 extern struct ccpstate CcpInfo;

@@ -142,7 +142,7 @@ StopTimerNoBlock(struct pppTimer * tp)
 }
 
 static void
-TimerService()
+TimerService(void)
 {
   struct pppTimer *tp, *exp, *wt;
 
