@@ -209,7 +209,7 @@ main (argc, argv)
           break;
 
         default:
-          fprintf (stderr, _("Try --help for more information."));
+          fprintf (stderr, _("Try --help for more information.\n"));
           exit (1);
         }
     }
