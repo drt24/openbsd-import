@@ -134,6 +134,7 @@ static pid_t BGPid = 0;
 static void
 KillChild(int signo)
 {
+  signal(signo, SIG_IGN);
   log_Printf(LogPHASE, "Parent: Signal %d\n", signo);
   kill(BGPid, SIGINT);
 }
