@@ -47,12 +47,13 @@
 #include <unistd.h>
 
 #ifndef NONAT
-#ifdef __FreeBSD__
-#include <alias.h>
-#else
+#ifdef LOCALNAT
 #include "alias.h"
+#else
+#include <alias.h>
 #endif
 #endif
+
 #include "layer.h"
 #include "defs.h"
 #include "command.h"
@@ -1903,8 +1904,8 @@ static struct cmdtab const SetCommands[] = {
   {"lcpretry", "lcpretries", SetVariable, LOCAL_AUTH | LOCAL_CX, "LCP retries",
    "set lcpretry value [attempts]", (const void *)VAR_LCPRETRY},
   {"log", NULL, log_SetLevel, LOCAL_AUTH, "log level",
-  "set log [local] [+|-]async|cbcp|ccp|chat|command|connect|debug|hdlc|id0|"
-  "ipcp|lcp|lqm|phase|physical|sync|tcp/ip|timer|tun..."},
+  "set log [local] [+|-]async|cbcp|ccp|chat|command|connect|debug|dns|hdlc|"
+  "id0|ipcp|lcp|lqm|phase|physical|sync|tcp/ip|timer|tun..."},
   {"login", NULL, SetVariable, LOCAL_AUTH | LOCAL_CX,
   "login script", "set login chat-script", (const void *) VAR_LOGIN},
   {"logout", NULL, SetVariable, LOCAL_AUTH | LOCAL_CX,
