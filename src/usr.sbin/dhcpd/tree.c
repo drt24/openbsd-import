@@ -1,4 +1,4 @@
-/*	$Id$	*/
+/*	$OpenBSD$ */
 
 /* Routines for manipulating parse trees... */
 

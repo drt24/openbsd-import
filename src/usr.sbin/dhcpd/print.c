@@ -1,4 +1,4 @@
-/*	$Id$	 */
+/*	$OpenBSD$ */
 
 /* Turn data structures into printable text. */
 
