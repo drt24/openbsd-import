@@ -32,11 +32,11 @@
 #include <netdb.h>
 #include <sys/un.h>
 
+#include <errno.h>
 #include <fcntl.h>
 #include <resolv.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sys/errno.h>
 #include <termios.h>
 #include <unistd.h>
 

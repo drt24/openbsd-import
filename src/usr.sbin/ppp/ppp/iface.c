@@ -37,12 +37,12 @@
 #include <netinet/ip.h>
 #include <sys/un.h>
 
-#include <sys/errno.h>
-#include <sys/ioctl.h>
-#include <sys/sysctl.h>
+#include <errno.h>
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/ioctl.h>
+#include <sys/sysctl.h>
 #include <termios.h>
 #include <unistd.h>
 

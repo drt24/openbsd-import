@@ -36,9 +36,9 @@
 #include <netinet/ip.h>
 #include <sys/un.h>
 
+#include <errno.h>
 #include <string.h>
 #include <sys/ioctl.h>
-#include <sys/errno.h>
 
 #include "mbuf.h"
 #include "log.h"
