@@ -46,9 +46,9 @@ such damages.
 #else
 #include <stdlib.h>
 #include <unistd.h>
-#endif
 #include <stdio.h>
 #include <string.h>
+#endif
 
 #include "sectok.h"
 

@@ -42,8 +42,9 @@ such damages.
 #include <System/Unix/unix_string.h>
 #include <UI/UIAll.h>
 #include "field.h"
-#endif
+#else
 #include <stdio.h>
+#endif
 
 #include "sectok.h"
 

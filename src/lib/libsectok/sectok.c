@@ -45,7 +45,6 @@ such damages.
 #include <System/Unix/unix_string.h>
 #include <UI/UIAll.h>
 #include "field.h"
-#include <stdio.h>
 #undef open
 #else
 #include <sys/types.h>

@@ -48,9 +48,9 @@ such damages.
 #else
 #include <stdlib.h>
 #include <unistd.h>
-#endif
 #include <stdio.h>
 #include <string.h>
+#endif
 
 #ifdef SCPERF
 #define SCPERF_FIRST_APPEARANCE
