@@ -4,7 +4,7 @@
 #	$Id$
 
 .ifdef DESTDIR
-snap_md: bsd floppy.fs
+snap_md: bsd floppy
 
 bsd:
 	cd ${.CURDIR}/../sys/arch/i386/conf && config GENERIC
