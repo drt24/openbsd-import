@@ -452,7 +452,7 @@ main(int argc, char **argv)
 		ntp->dest_addr.sin_port = port;
 
 		for (nt = nets; nt; nt = nt->next) {
-			if (ntp->net.s_addr == nt->net)
+			if (ntohl(ntp->net.s_addr) == nt->net)
 				break;
 		}
 		if (nflag && !nt || iflag && nt)
