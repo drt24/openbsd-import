@@ -588,6 +588,40 @@ int masked_ip_match(char *tok, char *string)
   return(madt == adt);
 }
 
+/* do a Vixie style rbl lookup for dotquad addr in rbl domain
+ * rbl_domain.
+ */
+int vixie_rbl_lookup(char * rbl_domain, char * addr) {
+  char *t, *d, *a;
+  t = strdup(addr);
+  if (t==NULL) {
+    syslog(LOG_ERR, "Malloc failed!"); 
+    Failure = 1;
+    return(0);
+  }
+  d = (char *) malloc(strlen(t)+strlen(rbl_domain)+1);
+  if (d==NULL) {
+    syslog(LOG_ERR, "Malloc failed!"); 
+    free(t);
+    Failure = 1;
+    return(0);
+  }
+  *d='\0';
+  while((a = strrchr(t, '.'))) {
+    strcat(d, a+1);
+    strcat(d, ".");
+    *a='\0';
+  }
+  strcat(d, t);
+  strcat(d, rbl_domain);
+  if (gethostbyname(d) != NULL) {
+    free(t); free(d);
+    return(1);
+  }
+  free(t); free(d);
+  return(0);
+}
+
 static int ip_match(char *tok, char *string)
 {
     /*
@@ -601,12 +635,17 @@ static int ip_match(char *tok, char *string)
     else if ((string == NULL)) {
       return(0);
     } 
+    else if (strncmp(tok, "RBL.", 4) == 0) {
+      /* do an rbl style lookup on the IP address in string usind
+       * rbl domain of whatever followed RBL in tok
+       */
+      return(vixie_rbl_lookup(tok+3, string));
+    }
     else {
       return(masked_ip_match(tok, string));
     }
     return(0);
 }
-
 
 
 #if NS_MATCH  

@@ -209,6 +209,12 @@ char * make_check_fail_reply(char *user, char *host, char *hostIP,
       int len;
       c++;
       switch (*c) {
+      case '%':
+	add = "%";
+	break;
+      case 'C':
+	add = ":";
+	break;
       case 'F':
 	add = from;
 	break;
