@@ -12,7 +12,8 @@ CLEANFILES=	.gdbinit cp/.gdbinit *.info* bi-parser.c bi-parser.h \
 		objc-parse.c objc-parse.y
 
 all:	config.status
-	${MAKE} ${GNUCFLAGS} BISON=yacc LDFLAGS=${LDSTATIC}
+	${MAKE} ${GNUCFLAGS} BISON=yacc LDFLAGS=${LDSTATIC} \
+		build_infodir=. all doc
 
 .FORCE:	.IGNORE
 
@@ -28,6 +29,7 @@ config.status:
 install:	maninstall
 	${MAKE} ${GNUCFLAGS} prefix=${DESTDIR}/usr \
 		infodir=${DESTDIR}/usr/share/info \
+		build_infodir=. \
 		tooldir=/tmp assertdir=/tmp INSTALL_MAN= NO_TARGET_GCC=true \
 		bindir=${DESTDIR}/usr/bin install
 	ln -f ${DESTDIR}/usr/bin/gcc ${DESTDIR}/usr/bin/cc
