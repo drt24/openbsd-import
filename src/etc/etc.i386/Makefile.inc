@@ -4,8 +4,7 @@
 #	$Id$
 
 .ifdef DESTDIR
-snap_md: bsd
-#snap_md: kc.fs		# too big?
+snap_md: bsd floppy.fs
 
 bsd:
 	cd ${.CURDIR}/../sys/arch/i386/conf && config GENERIC
@@ -14,11 +13,9 @@ bsd:
 	cp ${.CURDIR}/../sys/arch/i386/compile/GENERIC/bsd \
 	    ${DESTDIR}/snapshot/bsd
 
-kc.fs:
-	make -f ${.CURDIR}/etc.i386/Makefile.kc \
-	    IMAGE=${DESTDIR}/snapshot/kc.fs \
-	    KERNEL=${DESTDIR}/snapshot/bsd || \
-	make -f ${.CURDIR}/etc.i386/Makefile.kc \
-	    IMAGE=${DESTDIR}/snapshot/kc.fs unconfig
+floppy:
+	cd ${.CURDIR}/../distrib/i386/floppies/ramdisk && \
+	    make cleandir && make && make install
+
 
 .endif	# DESTDIR check
