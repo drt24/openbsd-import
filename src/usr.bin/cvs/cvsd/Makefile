@@ -3,7 +3,7 @@
 .PATH:	${.CURDIR}/..
 
 PROG=cvsd
-SRCS= cvsd.c conf.y log.c msg.c sock.c
+SRCS= cvsd.c buf.c conf.y log.c msg.c rcs.c rcsnum.c sock.c
 
 BINDIR=/usr/sbin
 MAN=cvsd.8 cvsd.conf.5
