@@ -513,7 +513,7 @@ dophn_core(int class, int swap, int fd, off_t off, int num, size_t size)
 				 * is in SunOS 5.x and Linux).
 				 *
 				 * Unfortunately, it's at a different offset
-				 * in varous OSes, so try multiple offsets.
+				 * in various OSes, so try multiple offsets.
 				 * If the characters aren't all printable,
 				 * reject it.
 				 */
