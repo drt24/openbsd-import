@@ -1,23 +1,23 @@
 /*
- * Copyright (c) 1995, 1996, 1997, 1998, 1999 Kungliga Tekniska Högskolan
+ * Copyright (c) 1995 - 2001 Kungliga Tekniska Högskolan
  * (Royal Institute of Technology, Stockholm, Sweden).
  * All rights reserved.
- *
+ * 
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
  * are met:
- *
+ * 
  * 1. Redistributions of source code must retain the above copyright
  *    notice, this list of conditions and the following disclaimer.
- *
+ * 
  * 2. Redistributions in binary form must reproduce the above copyright
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
- *
+ * 
  * 3. Neither the name of the Institute nor the names of its contributors
  *    may be used to endorse or promote products derived from this software
  *    without specific prior written permission.
- *
+ * 
  * THIS SOFTWARE IS PROVIDED BY THE INSTITUTE AND CONTRIBUTORS ``AS IS'' AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -33,40 +33,71 @@
 
 /* $Id$ */
 
-#ifndef _xfs_common_h
-#define _xfs_common_h
+/*
+ * This section is for machines using single entry point AFS syscalls!
+ * and/or
+ * This section is for machines using multiple entry point AFS syscalls!
+ *
+ * SunOS 4 is an example of single entry point and sgi of multiple
+ * entry point syscalls.
+ */
 
-#if defined(MALLOC_DECLARE)
-MALLOC_DECLARE(M_XFS);
-#elif !defined(M_XFS)
-#define M_XFS M_TEMP
+#if SunOS == 40
+#define AFS_SYSCALL	31
 #endif
 
-#ifdef XFS_DEBUG
-void *xfs_alloc(u_int size);
-void xfs_free(void *, u_int size);
-#else
-#ifdef __osf__
-#define xfs_alloc(a) malloc((a), BUCKETINDEX(a), M_XFS, M_WAITOK)
-#else
-#define xfs_alloc(a) malloc((a), M_XFS, M_WAITOK)
-#endif
-#define xfs_free(a, size) free(a, M_XFS)
-#endif /* XFS_DEBUG */
-
-int xfs_suser(struct proc *p);
-
-#ifndef HAVE_KERNEL_MEMCPY
-void *
-memcpy (void *s1, const void *s2, size_t n);
+#if SunOS >= 50 && SunOS < 57
+#define AFS_SYSCALL	105
 #endif
 
-const char *
-xfs_devtoname_r (dev_t dev, char *buf, size_t sz);
-
-#ifndef HAVE_KERNEL_STRLCPY
-size_t
-strlcpy (char *dst, const char *src, size_t dst_sz);
+#if SunOS >= 57
+#define AFS_SYSCALL	73
 #endif
 
-#endif /* _xfs_common_h */
+#if SunOS >= 58
+#define AFS_SYSCALL     65
+#endif
+
+#if defined(__hpux)
+#define AFS_SYSCALL	50
+#define AFS_SYSCALL2	49
+#define AFS_SYSCALL3	48
+#endif
+
+#if defined(_AIX)
+/* _AIX is too weird */
+#endif
+
+#if defined(__sgi)
+#define AFS_PIOCTL      (64+1000)
+#define AFS_SETPAG      (65+1000)
+#endif
+
+#if defined(__osf__)
+#define AFS_SYSCALL	232
+#define AFS_SYSCALL2	258
+#endif
+
+#if defined(__ultrix)
+#define AFS_SYSCALL	31
+#endif
+
+#if defined(__NetBSD__)
+#define AFS_SYSCALL 210
+#endif
+
+#if defined(__FreeBSD__)
+#define AFS_SYSCALL 339
+#endif
+
+#if defined(__OpenBSD__)
+#define AFS_SYSCALL 208
+#endif
+
+#ifdef __APPLE__		/* MacOS X */
+#define AFS_SYSCALL 230
+#endif
+
+#ifdef SYS_afs_syscall
+#define AFS_SYSCALL3	SYS_afs_syscall
+#endif
