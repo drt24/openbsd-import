@@ -364,7 +364,7 @@ IpcpDecodeConfig(u_char * cp, int plen, int mode_type)
     if (type < NCFTYPES)
       snprintf(tbuff, sizeof(tbuff), " %s[%d] ", cftypes[type], length);
     else if (type > 128 && type < 128 + NCFTYPES128)
-      snprintf(tbuff, sizeof(tbuff), " %s[%d] ", cftypes128[type], length);
+      snprintf(tbuff, sizeof(tbuff), " %s[%d] ", cftypes128[type-128], length);
     else
       snprintf(tbuff, sizeof(tbuff), " ??? ");
 
