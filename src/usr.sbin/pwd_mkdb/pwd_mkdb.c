@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: pwd_mkdb.c,v 1.7 1996/09/28 05:44:33 downsj Exp $	*/
 /*-
  * Copyright (c) 1991, 1993, 1994
  *	The Regents of the University of California.  All rights reserved.
@@ -64,9 +64,6 @@ static char *rcsid = "$Id$";
 #define	SECURE		2
 #define	PERM_INSECURE	(S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH)
 #define	PERM_SECURE	(S_IRUSR|S_IWUSR)
-
-/* pull this out of the C library. */
-extern const char __yp_token[];
 
 HASHINFO openinfo = {
 	4096,		/* bsize */
@@ -259,8 +256,8 @@ main(argc, argv)
 
 	/* Store YP token, if needed. */
 	if(hasyp) {
-		ypkey.data = (u_char *)__yp_token;
-		ypkey.size = strlen(__yp_token);
+		ypkey.data = (u_char *)_PW_YPTOKEN;
+		ypkey.size = strlen(_PW_YPTOKEN);
 		ypdata.data = (u_char *)NULL;
 		ypdata.size = 0;
 
@@ -333,8 +330,8 @@ main(argc, argv)
 
 	/* Store YP token, if needed. */
 	if(hasyp) {
-		ypkey.data = (u_char *)__yp_token;
-		ypkey.size = strlen(__yp_token);
+		ypkey.data = (u_char *)_PW_YPTOKEN;
+		ypkey.size = strlen(_PW_YPTOKEN);
 		ypdata.data = (u_char *)NULL;
 		ypdata.size = 0;
 
