@@ -336,7 +336,6 @@ xfs_fhopen (struct proc *proc,
     int flags = FFLAGS(user_flags);
     int index;
     struct file *fp;
-    extern struct fileops vnops;
 
     XFSDEB(XDEBVFOPS, ("xfs_fhopen: fileid = %ld, flags = %d\n",
 		       fileid, user_flags));
