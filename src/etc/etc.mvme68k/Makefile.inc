@@ -4,7 +4,7 @@
 #	$Id$
 
 .ifdef DESTDIR
-snap_md: bsd-generic bootblocks ramdisk
+snap_md: bsd-generic bootblocks distrib
 	cp ${.CURDIR}/../sys/arch/mvme68k/compile/GENERIC/bsd \
 	    ${DESTDIR}/snapshot/bsd
 
@@ -16,8 +16,8 @@ bsd-generic:
 bootblocks:
 	cp ${DESTDIR}/usr/mdec/* ${DESTDIR}/snapshot/
 
-ramdisk:
-	cd ${.CURDIR}/../distrib/mvme68k/ramdisk && make cleandir && \
+distrib:
+	cd ${.CURDIR}/../distrib && make cleandir && \
 	    make && make install
 
 .endif	# DESTDIR check

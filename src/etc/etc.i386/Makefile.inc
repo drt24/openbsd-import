@@ -4,7 +4,7 @@
 #	$Id$
 
 .ifdef DESTDIR
-snap_md: bsd floppy
+snap_md: bsd distrib
 
 bsd:
 	cd ${.CURDIR}/../sys/arch/i386/conf && config GENERIC
@@ -13,9 +13,8 @@ bsd:
 	cp ${.CURDIR}/../sys/arch/i386/compile/GENERIC/bsd \
 	    ${DESTDIR}/snapshot/bsd
 
-floppy:
-	cd ${.CURDIR}/../distrib/i386/floppies/ramdisk && \
-	    make cleandir && make && make install
-
+distrib:
+	cd ${.CURDIR}/../distrib && make cleandir && \
+	    make && make install
 
 .endif	# DESTDIR check

@@ -5,7 +5,7 @@
 
 .ifdef DESTDIR
 
-snap_md: binutils bsd floppy
+snap_md: binutils bsd distrib
 
 binutils:
 	cd ${DESTDIR} && tar cf - usr/*openbsd* \
@@ -18,8 +18,8 @@ bsd:
 	cp ${.CURDIR}/../sys/arch/alpha/compile/GENERIC/bsd \
 	    ${DESTDIR}/snapshot/bsd
 
-floppy:
-	cd ${.CURDIR}/../distrib/alpha/ramdisk && \
+distrib:
+	cd ${.CURDIR}/../distrib && \
 	    make cleandir && make && make install
 
 .endif	# DESTDIR check
