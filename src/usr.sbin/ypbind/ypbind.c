@@ -350,6 +350,11 @@ main(argc, argv)
 			(void) unlink(path);
 		}
 		closedir(dirp);
+	} else {
+		printf("Enabling yp client subsystem.\n");
+		printf("To disable: kill ypbind and remove %s\n",
+		    BINDINGDIR);
+		(void)mkdir(BINDINGDIR, 0755);
 	}
 
 #ifdef O_SHLOCK
