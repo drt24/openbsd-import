@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD:$
 
 PROG=	ipsecctl
 MAN=	ipsecctl.8 ipsec.conf.5

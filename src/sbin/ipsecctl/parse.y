@@ -1,4 +1,4 @@
-/*	$Id$	*/
+/*	$OpenBSD:$	*/
 
 /*
  * Copyright (c) 2002, 2003, 2004 Henning Brauer <henning@openbsd.org>
