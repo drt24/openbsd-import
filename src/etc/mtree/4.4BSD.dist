@@ -132,6 +132,11 @@ gen		gname=bin uname=bin mode=0555
 # ./usr/include/g++/gen
 ..
 
+# ./include/g++/std
+std             gname=bin uname=bin mode=0555
+# ./include/g++/std
+..
+
 # ./usr/include/g++
 ..
 
