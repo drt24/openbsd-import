@@ -29,6 +29,9 @@ Report problems and direct all questions to:
 
 /*
  * $Log$
+ * Revision 1.2  1996/08/12 20:20:04  millert
+ * fixes core dump if RCSLOCALID not set--oops.
+ *
  * Revision 1.1  1996/08/12 04:08:22  millert
  * rcs 5.7 + OpenBSD changes
  *
@@ -89,19 +92,20 @@ trymatch(string)
         register int j;
 	register char const *p, *s;
 	for (j = sizeof(Keyword)/sizeof(*Keyword);  (--j);  ) {
-		/* try next keyword */
-		if ((p = Keyword[j]) == NULL)
-			continue;
-		s = string;
-		while (*p++ == *s++) {
-			if (!*p)
-			    switch (*s) {
-				case KDELIM:
-				case VDELIM:
-				    return (enum markers)j;
-				default:
-				    return Nomatch;
-			    }
+		if (Keyword[j]) {
+			/* try next keyword */
+			p = Keyword[j];
+			s = string;
+			while (*p++ == *s++) {
+				if (!*p)
+				    switch (*s) {
+					case KDELIM:
+					case VDELIM:
+					    return (enum markers)j;
+					default:
+					    return Nomatch;
+				    }
+			}
 		}
         }
         return(Nomatch);
