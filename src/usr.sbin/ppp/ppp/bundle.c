@@ -1003,8 +1003,9 @@ bundle_SetRoute(struct bundle *bundle, int cmd, struct in_addr dst,
   cp += rtdata.sin_len;
   if (cmd == RTM_ADD) {
     if (gateway.s_addr == INADDR_ANY) {
-      log_Printf(LogERROR, "bundle_SetRoute: Cannot add a route with"
-                 " destination 0.0.0.0\n");
+      if (!ssh)
+        log_Printf(LogERROR, "bundle_SetRoute: Cannot add a route with"
+                   " destination 0.0.0.0\n");
       close(s);
       return result;
     } else {
