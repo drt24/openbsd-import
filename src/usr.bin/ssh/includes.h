@@ -213,10 +213,6 @@ struct	sockaddr_un {
 #include <sys/resource.h>
 #endif
 
-#ifndef HAVE_VSNPRINTF
-#define vsnprintf(buf, len, fmt, args) vsprintf(buf, fmt, args)
-#endif
-
 /* These POSIX macros are not defined in every system. */
 
 #ifndef S_IRWXU
