@@ -92,7 +92,7 @@ pfourattach(parent, self, args)
 		return;
 	}
 
-	sc->sc_vaddr = (u_long *)mapiodev((caddr_t)(ca->ca_ra.ra_paddr + PFOUR_REG),
+	sc->sc_vaddr = (u_long *)mapiodev(ca->ca_ra.ra_reg, PFOUR_REG,
 	    NBPG, ca->ca_bustype);
 	if (sc->sc_vaddr == NULL) {
 		printf("\n");
