@@ -501,7 +501,7 @@ send_recv(dst, type, code, tries, save)
 		continue;
 
 	    iphdrlen = ip->ip_hl << 2;
-	    ipdatalen = ip->ip_len;
+	    ipdatalen = ntohs(ip->ip_len);
 	    if (iphdrlen + ipdatalen != recvlen) {
 		fprintf(stderr,
 			"packet shorter (%u bytes) than hdr+data len (%u+%u)\n",
@@ -657,7 +657,7 @@ passive_mode()
 	    continue;
 
 	iphdrlen = ip->ip_hl << 2;
-	ipdatalen = ip->ip_len;
+	ipdatalen = ntohs(ip->ip_len);
 	if (iphdrlen + ipdatalen != recvlen) {
 	    fprintf(stderr,
 		    "packet shorter (%u bytes) than hdr+data len (%u+%u)\n",
