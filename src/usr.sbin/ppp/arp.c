@@ -299,6 +299,7 @@ get_ether_addr(int s, struct in_addr ipaddr, struct sockaddr_dl *hwaddr)
         LogPrintf(LogDEBUG, "%.*s interface is a candidate for proxy\n",
                   dl->sdl_nlen, dl->sdl_data);
       b = 1;
+      ifa = mask = NULL;
       while (b < (RTA_NETMASK|RTA_IFA) && sa < (struct sockaddr *)ptr) {
         switch (b) {
         case RTA_IFA:
