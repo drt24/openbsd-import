@@ -86,3 +86,5 @@ struct smtp_victim {
   long location;  /* start of RCPT line in spoolfile */
   struct smtp_victim * next;
 };
+
+extern int accumlog(int level, const char *fmt, ...);

@@ -122,6 +122,8 @@ int children = 0;
 int maxchildren = MAXCHILDREN;
 int poll_time = POLL_TIME;
 int gc_int = COMPLETION_WAIT;
+int VerboseSyslog = 1;
+
 
 #ifdef SUNOS_GETOPT
 extern char *optarg;
@@ -591,6 +593,9 @@ forward(char *fname)
   body = ftell(f);
   victim = victims;
   sentout = 0;
+  if (!VerboseSyslog) {
+    accumlog(LOG_INFO, "Forwading %s", fname);
+  }
   while (victim != NULL) {
     int status, pid, pidw, i, rstart;
     struct smtp_victim *sv = victim;
@@ -616,7 +621,11 @@ forward(char *fname)
     av[i++] = from;
     rstart = i;
     while (i < MAXARGS - 2) {
-      syslog(LOG_INFO, "forwarding to recipient %s", victim->name);
+      if (VerboseSyslog) {      
+	syslog(LOG_INFO, "forwarding to recipient %s", victim->name);
+      } else {
+	accumlog(LOG_INFO, " to=%s", victim->name);
+      }
       av[i++] = victim->name;
       victim = victim->next;
       if (victim == NULL) {
@@ -731,8 +740,12 @@ forward(char *fname)
   /*
    * All seems to have worked 
    */
-
-  syslog(LOG_INFO, "%s forwarded to %d recipients", fname, sentout);
+  if (VerboseSyslog) {
+    syslog(LOG_INFO, "%s forwarded to %d recipients", fname, sentout);
+  } else {
+    accumlog(LOG_INFO, ", forwarded to %d recipients", sentout);
+    accumlog(LOG_INFO, 0);		/* flush */
+  }    
   if (unlink(fname) != 0) {
     syslog(LOG_CRIT, "Couldn't remove spool file %s! (%m)", fname);
     exit(EX_CONFIG);
@@ -764,7 +777,7 @@ int
 main(int argc, char **argv)
 {
   int opt;
-  char *optstring = "u:g:d:s:C:M:P:";
+  char *optstring = "qu:g:d:s:M:P:";
   int pid;
 
   char *username = SMTP_USER;
@@ -783,6 +796,9 @@ main(int argc, char **argv)
   while ((opt = getopt(argc, argv, optstring)) > 0) {
 #endif
     switch (opt) {
+    case 'q':
+      VerboseSyslog = 0;
+      break;    
     case 'd':
       if (optarg[0] != '/') {
 	fprintf(stderr, "The \"-d\" option requires an absolute pathname argument, \"%s\" is bogus\n", optarg);
@@ -1101,6 +1117,10 @@ main(int argc, char **argv)
 	  }
 	  sleep(1);
 	  reap_children();
+	}
+ 	if (!VerboseSyslog) {
+	  /* should be empty - but just in case */
+	  accumlog(LOG_INFO, 0);
 	}
 	/*
 	 * If we have a file with an appropriate name and it is
