@@ -16,7 +16,7 @@ DPADD+=	${LIBKRB5} ${LIBCRYPTO}
 LDADD+=	-lkrb5 -lcrypto
 .elif defined(KERBEROS)
 SRCS+= krb_passwd.c des_rw.c
-CFLAGS+= -DKERBEROS -DCRYPT
+CFLAGS+= -DKERBEROS
 DPADD+=	${LIBKRB} ${LIBDES}
 LDADD+=	-lkrb -ldes
 .endif

@@ -2,6 +2,17 @@
 #	$Id$
 
 PROG=	rshd
+SRCS=	rshd.c
 MAN=	rshd.8
+
+.include <bsd.own.mk>
+
+.if defined(KERBEROS)
+SRCS+=	des_rw.c
+.PATH:	${.CURDIR}/../../usr.bin/rlogin
+CFLAGS+=-DKERBEROS
+DPADD+=	${LIBKRB} ${LIBDES}
+LDADD+=	-lkrb -ldes
+.endif
 
 .include <bsd.prog.mk>

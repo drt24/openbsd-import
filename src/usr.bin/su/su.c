@@ -311,7 +311,6 @@ kerberos(username, user, uid)
 	char *username, *user;
 	int uid;
 {
-	extern char *krb_err_txt[];
 	KTEXT_ST ticket;
 	AUTH_DAT authdata;
 	struct hostent *hp;
