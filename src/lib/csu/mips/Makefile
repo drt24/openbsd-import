@@ -2,7 +2,7 @@
 #	$Id$
 
 CFLAGS+=	-DLIBC_SCCS -I${.CURDIR}
-OBJS=		crt0.o gcrt0.o scrt0.o
+OBJS=		crt0.o gcrt0.o scrt0.o crtn.o
 CLEANFILES+=	core a.out
 SRCS=		crt0.c
 DEPS=
@@ -10,6 +10,12 @@ DEPS=
 all: ${OBJS}
 
 crt0.o: ${SRCS} ${DEPS}
+	@echo "${COMPILE.c} -DCRT0 -DDYNAMIC ${.CURDIR}/${SRCS} -o ${.TARGET}"
+	@${COMPILE.c} -DCRT0 -DDYNAMIC ${.CURDIR}/${SRCS} -o ${.TARGET}.o
+	@${LD} -x -r ${.TARGET}.o -o ${.TARGET}
+	@rm -f ${.TARGET}.o
+
+crtn.o: ${SRCS} ${DEPS}
 	@echo "${COMPILE.c} -DCRT0 -DDYNAMIC ${.CURDIR}/${SRCS} -o ${.TARGET}"
 	@${COMPILE.c} -DCRT0 -DDYNAMIC ${.CURDIR}/${SRCS} -o ${.TARGET}.o
 	@${LD} -x -r ${.TARGET}.o -o ${.TARGET}
