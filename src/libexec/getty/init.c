@@ -114,8 +114,8 @@ struct	gettyflags gettyflags[] = {
 	{ "ec",	1 },			/* no echo */
 	{ "co",	0 },			/* console special */
 	{ "cb",	0 },			/* crt backspace */
-	{ "ck",	0 },			/* crt kill */
-	{ "ce",	0 },			/* crt erase */
+	{ "ck",	1 },			/* crt kill */
+	{ "ce",	1 },			/* crt erase */
 	{ "pe",	0 },			/* printer erase */
 	{ "rw",	1 },			/* don't use raw */
 	{ "xc",	1 },			/* don't ^X ctl chars */
