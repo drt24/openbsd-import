@@ -25,6 +25,10 @@ MAILER(smtp)
 DAEMON_OPTIONS(`Family=inet, address=0.0.0.0, Name=MTA')dnl
 DAEMON_OPTIONS(`Family=inet6, address=::, Name=MTA6, M=O')dnl
 dnl
+dnl Some broken nameservers will return SERVFAIL (a temporary failure) 
+dnl on T_AAAA (IPv6) lookups.
+define(`confBIND_OPTS', `WorkAroundBrokenAAAA')dnl
+dnl
 dnl Enforce valid Message-Id to help stop spammers
 dnl
 LOCAL_RULESETS
