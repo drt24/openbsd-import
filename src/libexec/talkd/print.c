@@ -1,4 +1,4 @@
-/*	$OpenBSD: print.c,v 1.5 2002/11/25 07:40:09 itojun Exp $	*/
+/*	$OpenBSD: print.c,v 1.6 2003/06/02 19:38:24 millert Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -52,9 +52,7 @@ static	char *answers[] =
 #define	NANSWERS	(sizeof(answers) / sizeof(answers[0]))
 
 void
-print_request(cp, mp)
-	char *cp;
-	CTL_MSG *mp;
+print_request(char *cp, CTL_MSG *mp)
 {
 	char tbuf[80], *tp;
 	
@@ -68,9 +66,7 @@ print_request(cp, mp)
 }
 
 void
-print_response(cp, rp)
-	char *cp;
-	CTL_RESPONSE *rp;
+print_response(char *cp, CTL_RESPONSE *rp)
 {
 	char tbuf[80], *tp, abuf[80], *ap;
 	

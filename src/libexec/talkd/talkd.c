@@ -1,4 +1,4 @@
-/*	$OpenBSD: talkd.c,v 1.17 2002/11/25 07:40:09 itojun Exp $	*/
+/*	$OpenBSD: talkd.c,v 1.18 2003/06/02 19:38:24 millert Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -71,9 +71,7 @@ char	hostname[MAXHOSTNAMELEN];
 #define MAXIDLE 120
 
 int
-main(argc, argv)
-	int argc;
-	char *argv[];
+main(int argc, char *argv[])
 {
 	if (getuid() != 0) {
 		fprintf(stderr, "%s: getuid: not super-user\n", argv[0]);
@@ -133,7 +131,7 @@ main(argc, argv)
 }
 
 void
-timeout()
+timeout(void)
 {
 	int save_errno = errno;
 
