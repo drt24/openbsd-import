@@ -41,6 +41,10 @@
 	ASMSTR("$Id$")
 #endif /* LIBC_SCCS and not lint */
 
+#ifdef ABICALLS
+	.abicalls
+#endif
+
 /*
  * pid = vfork();
  *
@@ -49,10 +53,16 @@
  */
 
 LEAF(vfork)
+#ifdef ABICALLS
+	.set	noreorder
+	.cpload	t9
+	.set	reorder
+#endif
 	li	v0, SYS_vfork		# system call number for vfork
 	syscall
 	beq	a3, zero, 1f		# jump if no errors
-	j	_C_LABEL(cerror)
+	la	t9, cerror
+	jr	t9
 1:
 	beq	v1, zero, 2f		# parent process ?
 	move	v0, zero		# return zero in child

@@ -34,7 +34,11 @@
  * SUCH DAMAGE.
  */
 
+#if MACHINE==pica
+#include <machine/asm.h>
+#else
 #include <machine/machAsmDefs.h>
+#endif
 
 #if defined(LIBC_SCCS) && !defined(lint)
 	ASMSTR("from: @(#)bcopy.s	8.1 (Berkeley) 6/4/93")
@@ -43,6 +47,10 @@
 
 /* bcopy(s1, s2, n) */
 
+
+#ifdef ABICALLS
+	.abicalls
+#endif
 #ifdef MIPSEL
 #	define	LWHI	lwr
 #	define	LWLO	lwl

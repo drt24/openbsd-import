@@ -41,7 +41,16 @@
 	ASMSTR("$Id$")
 #endif /* LIBC_SCCS and not lint */
 
+#ifdef ABICALLS
+	.abicalls
+#endif
+
 LEAF(sigpending)
+#ifdef ABICALLS
+	.set	noreorder
+	.cpload	t9
+	.set	reorder
+#endif
 	li	v0, SYS_sigpending	# setlogin(name)
 	syscall
 	bne	a3, zero, 1f
@@ -49,5 +58,6 @@ LEAF(sigpending)
 	move	v0, zero
 	j	ra
 1:
-	j	_C_LABEL(cerror)
+	la	t9, _C_LABEL(cerror)
+	jr	t9
 END(sigpending)

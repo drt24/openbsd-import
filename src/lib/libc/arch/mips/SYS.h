@@ -38,16 +38,46 @@
  */
 
 #include <sys/syscall.h>
+#if MACHINE==pica
+#include <machine/asm.h>
+#else
 #include <machine/machAsmDefs.h>
+#endif
 
 #ifdef __STDC__
+#ifdef ABICALLS
+#define RSYSCALL(x)     .abicalls; \
+			LEAF(x); .set noreorder; .cpload t9; .set reorder; \
+			li v0,SYS_ ## x; syscall; \
+			bne a3,zero,err; j ra; \
+			err: la t9, _C_LABEL(cerror); jr t9; END(x);
+#define PSEUDO(x,y)     .abicalls; \
+			LEAF(x); .set noreorder; .cpload t9; .set reorder; \
+			li v0,SYS_ ## y; syscall; \
+			bne a3,zero,err; j ra; \
+			err: la t9, _C_LABEL(cerror); jr t9; END(x);
+#else
 #define RSYSCALL(x)     LEAF(x); li v0,SYS_ ## x; syscall; \
 			bne a3,zero,err; j ra; err: j _C_LABEL(cerror); END(x);
 #define PSEUDO(x,y)     LEAF(x); li v0,SYS_ ## y; syscall; \
 			bne a3,zero,err; j ra; err: j _C_LABEL(cerror); END(x);
+#endif
+#else
+#ifdef ABICALLS
+#define RSYSCALL(x)     .abicalls; \
+			LEAF(x); .set noreorder; .cpload t9; .set reorder; \
+			li v0,SYS_/**/x; syscall; \
+			bne a3,zero,err; j ra; \
+			err: la t9, _C_LABEL(cerror); jr t9; END(x);
+#define PSEUDO(x,y)     .abicalls; \
+			LEAF(x); .set noreorder; .cpload t9; .set reorder; \
+			li v0,SYS_/**/y; syscall; \
+			bne a3,zero,err; j ra; \
+			err: la t9, _C_LABEL(cerror); jr t9; END(x);
 #else
 #define RSYSCALL(x)     LEAF(x); li v0,SYS_/**/x; syscall; \
 			bne a3,zero,err; j ra; err: j _C_LABEL(cerror); END(x);
 #define PSEUDO(x,y)     LEAF(x); li v0,SYS_/**/y; syscall; \
 			bne a3,zero,err; j ra; err: j _C_LABEL(cerror); END(x);
+#endif
 #endif

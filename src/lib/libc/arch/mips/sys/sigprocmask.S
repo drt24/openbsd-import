@@ -41,7 +41,16 @@
 	ASMSTR("$Id$")
 #endif /* LIBC_SCCS and not lint */
 
+#ifdef ABICALLS
+	.abicalls
+#endif
+
 LEAF(sigprocmask)	# sigprocmask(how, new, old) sigset_t *new, *old;
+#ifdef ABICALLS
+	.set	noreorder
+	.cpload	t9
+	.set	reorder
+#endif
 	bne	a1, zero, gotptr	# if new sigset pointer not null
 	li	a0, 1			# how = SIG_BLOCK
 	b	doit			# mask = zero
@@ -57,5 +66,6 @@ out:
 	move	v0, zero
 	j	ra
 err:
-	j	_C_LABEL(cerror)
+	la	t9, _C_LABEL(cerror)
+	jr	t9
 END(sigprocmask)

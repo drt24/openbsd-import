@@ -34,13 +34,21 @@
  * SUCH DAMAGE.
  */
 
+#if MACHINE==pica
+#include <machine/asm.h>
+#else
 #include <machine/machAsmDefs.h>
+#endif
 
 #if defined(LIBC_SCCS) && !defined(lint)
 	ASMSTR("from: @(#)bcmp.s	8.1 (Berkeley) 6/4/93")
 	ASMSTR("$Id$")
 #endif /* LIBC_SCCS and not lint */
 
+
+#ifdef ABICALLS
+	.abicalls
+#endif
 /* bcmp(s1, s2, n) */
 
 #ifdef MIPSEL

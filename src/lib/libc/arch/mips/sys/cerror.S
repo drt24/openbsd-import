@@ -41,6 +41,10 @@
 	ASMSTR("$Id$")
 #endif /* LIBC_SCCS and not lint */
 
+#ifdef ABICALLS
+	.abicalls
+#endif
+
 	.globl	_C_LABEL(errno)
 LEAF(cerror)
 	.set	noreorder

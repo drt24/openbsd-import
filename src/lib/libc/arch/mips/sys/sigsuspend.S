@@ -41,7 +41,16 @@
 	ASMSTR("$Id$")
 #endif /* LIBC_SCCS and not lint */
 
+#ifdef ABICALLS
+	.abicalls
+#endif
+
 LEAF(sigsuspend)
+#ifdef ABICALLS
+	.set	noreorder
+	.cpload	t9
+	.set	reorder
+#endif
 	lw	a0, 0(a0)		# indirect to mask arg
 	li	v0, SYS_sigsuspend
 	syscall
@@ -49,5 +58,6 @@ LEAF(sigsuspend)
 	move	v0, zero		# should not happen
 	j	ra
 1:
-	j	_C_LABEL(cerror)
+	la	t9, _C_LABEL(cerror)
+	jr	t9
 END(sigsuspend)

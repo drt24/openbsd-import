@@ -41,6 +41,10 @@
 	ASMSTR("$Id$")
 #endif /* LIBC_SCCS and not lint */
 
+#ifdef ABICALLS
+	.abicalls
+#endif
+
 	.globl	curbrk
 
 	.data
@@ -48,6 +52,11 @@ curbrk:	.word	_C_LABEL(end)
 	.text
 
 LEAF(sbrk)
+#ifdef ABICALLS
+	.set	noreorder
+	.cpload	t9
+	.set	reorder
+#endif
 	lw	v1, curbrk
 	li	v0, SYS_break
 	addu	a0, a0, v1	# compute current break
@@ -57,5 +66,6 @@ LEAF(sbrk)
 	sw	a0, curbrk	# save current val of curbrk from above
 	j	ra
 1:
-	j	_C_LABEL(cerror)
+	la	t9, _C_LABEL(cerror)
+	jr	t9
 END(sbrk)

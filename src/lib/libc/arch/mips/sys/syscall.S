@@ -43,4 +43,8 @@
 
 #define SYS_syscall	0
 
+#ifdef ABICALLS
+	.abicalls
+#endif
+
 RSYSCALL(syscall)

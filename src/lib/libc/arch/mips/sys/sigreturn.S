@@ -41,6 +41,10 @@
 	ASMSTR("$Id$")
 #endif /* LIBC_SCCS and not lint */
 
+#ifdef ABICALLS
+	.abicalls
+#endif
+
 /*
  * We must preserve the state of the registers as the user has set them up.
  */
