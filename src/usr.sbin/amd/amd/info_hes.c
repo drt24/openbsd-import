@@ -396,16 +396,22 @@ hs_res_selwait(sock, timeout)
 int sock;
 struct timeval *timeout;
 {
-	fd_set dsmask;
+	fd_set *fdsp;
+	int fdsn;
 	register int n;
 
 	/*
 	 * Wait for reply
 	 */
-	FD_ZERO(&dsmask);
-	FD_SET(sock, &dsmask);
-	n = select(sock+1, &dsmask, (fd_set *)NULL,
+	fdsn = howmany(sock+1, NFDBITS) * sizeof(fd_mask);
+	if ((fdsp = (fd_set *)malloc(fdsn)) == NULL)
+		return(0);
+	memset(fdsp, 0, fdsn);
+
+	FD_SET(sock, fdsp);
+	n = select(sock+1, fdsp, (fd_set *)NULL,
 		   (fd_set *)NULL, timeout);
+	free(fdsp);
 	return(n);
 }
 
