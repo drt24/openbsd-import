@@ -1557,7 +1557,7 @@ infcmd.c
 Define this if the system declares @code{fclose} in the headers included in
 @code{defs.h}.  This isn't needed unless your compiler is unusually anal.
 
-@sc{ANSI} definition.
+@sc{ansi} definition.
 
 @item FILES_INFO_HOOK
 target.c
