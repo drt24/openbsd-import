@@ -1,4 +1,4 @@
-/*     $OpenBSD: ipf.c,v 1.17 1999/02/08 18:58:59 millert Exp $      */
+/*     $OpenBSD: ipf.c,v 1.18 1999/03/06 23:18:23 deraadt Exp $      */
 /*
  * Copyright (C) 1993-1998 by Darren Reed.
  *
@@ -75,11 +75,19 @@ static	void	closedevice __P((void));
 static	char	*getline __P((char *, size_t, FILE *));
 static	char	*ipfname = IPL_NAME;
 
+#if SOLARIS
 #define OPTS	"AdDEf:F:Il:noPrsUvyzZ"
+#else
+#define OPTS	"AdDEf:F:Il:noPrsvyzZ"
+#endif
 
 void usage()
 {
+#if SOLARIS
 	fprintf(stderr, "usage: ipf [-AdDEInorsUvyzZ] [-l block|pass|nomatch] "
+#else
+	fprintf(stderr, "usage: ipf [-AdDEInorsvyzZ] [-l block|pass|nomatch] "
+#endif
 	    "[-F i|o|a|s|S] [-f filename]\n");
 	exit(1);
 }
