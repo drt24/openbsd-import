@@ -21,8 +21,8 @@ install = install -m 644
 
 # Do not change anything below this line
 srcdir = .
-version = 1.28
-mdate = 1996-05-15
+version = 1.29
+mdate = 1996-09-06
 
 .SUFFIXES: .n .man
 
