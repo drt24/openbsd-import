@@ -242,7 +242,7 @@ parse_args(argc, argv)
 				perror(Filename);
 				exit(ERROR_EXIT);
 			}
-			if (swap_uids() < OK) {
+			if (swap_uids_back() < OK) {
 				perror("swapping uids back");
 				exit(ERROR_EXIT);
 			}
