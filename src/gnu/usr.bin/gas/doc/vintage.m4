@@ -1,5 +1,5 @@
 _divert__(-1)
-<$Id$>
+<$OpenBSD: vintage.m4,v 1.1.1.1 1995/10/18 08:39:09 deraadt Exp $>
 _define__(<_ALL_ARCH__>,<1>)
 _define__(<_GENERIC__>,<1>)	In case none.m4 changes its mind abt default
 
