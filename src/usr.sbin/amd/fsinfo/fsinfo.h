@@ -84,6 +84,7 @@ typedef char *voidp;
 
 #include <string.h>
 #include <stdlib.h>
+#include <err.h>
 
 #include "fsi_data.h"
 
@@ -123,7 +124,7 @@ extern char *fsmount_strings[];
 extern char *host_strings[];
 extern char *ether_if_strings[];
 extern char *autodir;
-extern char *progname;
+extern char *__progname;
 extern char hostname[];
 extern char *username;
 extern char **g_argv;

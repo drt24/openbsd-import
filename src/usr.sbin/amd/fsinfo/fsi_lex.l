@@ -262,7 +262,7 @@ static int first = 1;
 			first = 0;
 			return 0;
 		} else {
-			perror(prog);
+			warn(prog);
 		}
 	}
 
