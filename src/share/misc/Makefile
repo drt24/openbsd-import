@@ -2,7 +2,7 @@
 #	$Id$
 
 FILES=	airport ascii birthtoken eqnchar getopt inter.phone man.template \
-	mdoc.template na.phone operator style zipcodes
+	mdoc.template na.phone operator scsi_modes style zipcodes
 NOOBJ=	noobj
 
 all clean cleandir depend lint tags:
