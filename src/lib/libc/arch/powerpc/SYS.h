@@ -73,9 +73,14 @@
 
 #define RSYSCALL(x)		PSEUDO(x,x)
 #else /* _THREAD_SAFE */
-#define PREFIX(x)		PSEUDO_PREFIX(_thread_sys_,x,x)
-#define PREFIX2(x,y)		PSEUDO_PREFIX(_thread_sys_,x,y)
-#define	PSEUDO(x,y)		PSEUDO_PREFIX(_thread_sys_,x,y) ; \
+#define ALIAS(x,y)		.weak y; .set y,_CONCAT(x,y);
+		
+#define PREFIX(x)		ALIAS(_thread_sys_,x) \
+				PSEUDO_PREFIX(_thread_sys_,x,x)
+#define PREFIX2(x,y)		ALIAS(_thread_sys_,x) \
+				PSEUDO_PREFIX(_thread_sys_,x,y)
+#define	PSEUDO(x,y)		ALIAS(_thread_sys_,x) \
+				PSEUDO_PREFIX(_thread_sys_,x,y) ; \
 				sc ; \
 				PSEUDO_SUFFIX
 
