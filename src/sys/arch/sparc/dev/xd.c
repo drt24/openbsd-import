@@ -1094,9 +1094,6 @@ xdstrategy(bp)
 		return;
 	}
 
-	/* Instrumentation. */
-	disk_busy(&xd->sc_dk);
-
 	/* done! */
 
 	splx(s);
@@ -1440,6 +1437,9 @@ xdc_startbuf(xdcsc, xdsc, bp)
 	    bp->b_bcount / XDFM_BPS, dbuf, bp);
 
 	xdc_rqtopb(iorq, iopb, (bp->b_flags & B_READ) ? XDCMD_RD : XDCMD_WR, 0);
+
+	/* Instrumentation. */
+	disk_busy(&xdsc->sc_dk);
 
 	/* now submit [note that xdc_submit_iorq can never fail on NORM reqs] */
 
@@ -1928,9 +1928,9 @@ xdc_remove_iorq(xdcsc)
 			dvma_mapout((vm_offset_t) iorq->dbufbase,
 				    (vm_offset_t) bp->b_un.b_addr,
 				    bp->b_bcount);
-			XDC_FREE(xdcsc, rqno);
 			disk_unbusy(&iorq->xd->sc_dk,
 			    (bp->b_bcount - bp->b_resid));
+			XDC_FREE(xdcsc, rqno);
 			biodone(bp);
 			break;
 		case XD_SUB_WAIT:
