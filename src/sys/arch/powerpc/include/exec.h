@@ -1,8 +1,8 @@
-/*	$OpenBSD: exec.h,v 1.6 2001/01/22 14:51:06 art Exp $ */
+/*	$OpenBSD: exec.h,v 1.7 2001/09/01 15:49:05 drahn Exp $ */
 
 /*
  * Copyright (c) 1997 Per Fogelstrom, Opsycon AB.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
  * are met:
