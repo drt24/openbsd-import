@@ -1,4 +1,4 @@
-/* $OpenBSD: aicasm.c,v 1.1 2000/03/22 02:50:49 smurph Exp $ */
+/* $OpenBSD: aicasm.c,v 1.2 2002/02/16 04:36:33 smurph Exp $ */
 /*
  * Aic7xxx SCSI host adapter firmware asssembler
  *
@@ -45,7 +45,7 @@
 
 #include "aicasm.h"
 #include "aicasm_symbol.h"
-#include "sequencer.h"
+#include "aicasm_insformat.h"
 
 typedef struct patch {
 	TAILQ_ENTRY(patch) links;
