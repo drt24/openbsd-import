@@ -134,5 +134,5 @@ extern int physical_RemoveFromSet(struct physical *, fd_set *, fd_set *,
                                   fd_set *);
 extern int physical_SetMode(struct physical *, int);
 extern void physical_DeleteQueue(struct physical *);
-extern void physical_SetupStack(struct physical *, int);
+extern void physical_SetupStack(struct physical *, const char *, int);
 extern void physical_StopDeviceTimer(struct physical *);
