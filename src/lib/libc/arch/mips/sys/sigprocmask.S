@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*-
  * Copyright (c) 1991, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -41,16 +42,9 @@
 	ASMSTR("$Id$")
 #endif /* LIBC_SCCS and not lint */
 
-#ifdef ABICALLS
-	.abicalls
-#endif
 
 LEAF(sigprocmask)	# sigprocmask(how, new, old) sigset_t *new, *old;
-#ifdef ABICALLS
-	.set	noreorder
-	.cpload	t9
 	.set	reorder
-#endif
 	bne	a1, zero, gotptr	# if new sigset pointer not null
 	li	a0, 1			# how = SIG_BLOCK
 	b	doit			# mask = zero

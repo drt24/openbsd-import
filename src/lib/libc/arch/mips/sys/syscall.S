@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*-
  * Copyright (c) 1991, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -43,8 +44,5 @@
 
 #define SYS_syscall	0
 
-#ifdef ABICALLS
-	.abicalls
-#endif
 
 RSYSCALL(syscall)

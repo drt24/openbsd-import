@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*-
  * Copyright (c) 1991, 1993, 1995
  *	The Regents of the University of California.  All rights reserved.
@@ -42,18 +43,13 @@
 #endif /* LIBC_SCCS and not lint */
 
 
-#ifdef ABICALLS
-	.abicalls
-#endif
 /*
  * double modf(val, iptr)
  *	double val, *iptr;
  * returns: xxx and n (in *iptr) where val == n.xxx
  */
 LEAF(modf)
-        .set    noreorder
-        .cpload t9
-        .set    reorder
+	.set	reorder
 	cfc1	t0, $31			# get the control register
 	li.d	$f2, 4503599627370496e0 # f2 <- 2^52
 

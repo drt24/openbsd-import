@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*-
  * Copyright (c) 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -34,22 +35,14 @@
  * SUCH DAMAGE.
  */
 
-#if MACHINE==pica
 #include <machine/asm.h>
-#else
-#include <machine/machAsmDefs.h>
-#endif
 
 #if defined(LIBC_SCCS) && !defined(lint)
 	ASMSTR("from: @(#)fabs.s	8.1 (Berkeley) 2/16/94")
 	ASMSTR("$Id$")
 #endif /* LIBC_SCCS and not lint */
 
-#ifdef ABICALLS
-	.abicalls
-#endif
 
-	.set	noreorder
 
 /*
  * fabs(x)
@@ -58,6 +51,7 @@
  * Return absolute value of x.
  */
 LEAF(fabs)
+	.set	noreorder
 	j	ra
 	abs.d	$f0, $f12		# compute absolute value of x
 END(fabs)

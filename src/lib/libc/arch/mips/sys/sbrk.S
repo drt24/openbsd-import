@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*-
  * Copyright (c) 1991, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -41,10 +42,6 @@
 	ASMSTR("$Id$")
 #endif /* LIBC_SCCS and not lint */
 
-#ifdef ABICALLS
-	.abicalls
-#endif
-
 	.globl	curbrk
 
 	.data
@@ -52,15 +49,12 @@ curbrk:	.word	_C_LABEL(end)
 	.text
 
 LEAF(sbrk)
-#ifdef ABICALLS
-	.set	noreorder
-	.cpload	t9
 	.set	reorder
-#endif
 	lw	v1, curbrk
 	li	v0, SYS_break
 	addu	a0, a0, v1	# compute current break
 	syscall
+
 	bne	a3, zero, 1f
 	move	v0, v1		# return old val of curbrk from above
 	sw	a0, curbrk	# save current val of curbrk from above

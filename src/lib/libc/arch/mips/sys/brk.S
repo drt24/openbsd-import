@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*-
  * Copyright (c) 1991, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -41,9 +42,6 @@
 	ASMSTR("$Id$")
 #endif /* LIBC_SCCS and not lint */
 
-#ifdef ABICALLS
-	.abicalls
-#endif
 
 	.globl	minbrk
 	.globl	curbrk
@@ -53,15 +51,23 @@ minbrk:	.word	_C_LABEL(end)
 	.text
 
 LEAF(brk)
-#ifdef ABICALLS
-	.set	noreorder
-	.cpload	t9
 	.set	reorder
-#endif
 	lw	v0, minbrk
 	bgeu	a0, v0, _C_LABEL(_brk)
 	move	a0, v0		# dont allow break < minbrk
-ALEAF(_brk)
+	li	v0, SYS_break
+	syscall
+	bne	a3, zero, 1f
+	sw	a0, curbrk
+	move	v0, zero
+	j	ra
+1:
+	la	t9, _C_LABEL(cerror)
+	jr	t9
+END(brk)
+
+LEAF(_brk)
+	.set	reorder
 	li	v0, SYS_break
 	syscall
 	bne	a3, zero, 1f

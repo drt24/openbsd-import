@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*-
  * Copyright (c) 1991, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -41,18 +42,13 @@
 	ASMSTR("$Id$")
 #endif /* LIBC_SCCS and not lint */
 
-#ifdef ABICALLS
-	.abicalls
-#endif
 
 LEAF(reboot)
 #ifdef ABICALLS
-	.set	noreorder
-	.cpload t9
-	.set	reorder
 	subu	sp, sp, 32
 	.cprestore 16
 #endif
+	.set	reorder
 	li	v0, SYS_reboot
 	syscall
 	bne	a3, zero, 1f

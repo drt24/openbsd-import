@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*-
  * Copyright (c) 1991, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -41,16 +42,9 @@
 	ASMSTR("$Id$")
 #endif /* LIBC_SCCS and not lint */
 
-#ifdef ABICALLS
-	.abicalls
-#endif
 
 LEAF(fork)
-#ifdef ABICALLS
-	.set	noreorder
-	.cpload	t9
 	.set	reorder
-#endif
 	li	v0, SYS_fork	# pid = fork()
 	syscall
 	bne	a3, zero, 2f

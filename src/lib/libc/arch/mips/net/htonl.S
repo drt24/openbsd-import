@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*-
  * Copyright (c) 1991, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -34,11 +35,7 @@
  * SUCH DAMAGE.
  */
 
-#if MACHINE==pica
 #include <machine/asm.h>
-#else
-#include <machine/machAsmDefs.h>
-#endif
 
 #if defined(LIBC_SCCS) && !defined(lint)
 	ASMSTR("from: @(#)htonl.s	8.1 (Berkeley) 6/4/93")
@@ -46,15 +43,13 @@
 #endif /* LIBC_SCCS and not lint */
 
 
-#ifdef ABICALLS
-	.abicalls
-#endif
 /*
  * netorder = htonl(hostorder)
  * hostorder = ntohl(netorder)
  */
-NLEAF(htonl)				# a0 = 0x11223344, return 0x44332211
 ALEAF(ntohl)
+NLEAF(htonl)				# a0 = 0x11223344, return 0x44332211
+	.set	reorder
 #ifdef MIPSEL
 	srl	v1, a0, 24		# v1 = 0x00000011
 	sll	v0, a0, 24		# v0 = 0x44000000

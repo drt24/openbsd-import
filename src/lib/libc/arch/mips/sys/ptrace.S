@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*-
  * Copyright (c) 1991, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -41,16 +42,8 @@
 	ASMSTR("$Id$")
 #endif /* LIBC_SCCS and not lint */
 
-#ifdef ABICALLS
-	.abicalls
-#endif
-
 LEAF(ptrace)
-#ifdef ABICALLS
-	.set	noreorder
-	.cpload	t9
 	.set	reorder
-#endif
 	sw	zero, _C_LABEL(errno)
 	li	v0, SYS_ptrace
 	syscall

@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*-
  * Copyright (c) 1991, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -34,11 +35,7 @@
  * SUCH DAMAGE.
  */
 
-#if MACHINE==pica
 #include <machine/asm.h>
-#else
-#include <machine/machAsmDefs.h>
-#endif
 
 #if defined(LIBC_SCCS) && !defined(lint)
 	ASMSTR("from: @(#)bcmp.s	8.1 (Berkeley) 6/4/93")
@@ -46,23 +43,7 @@
 #endif /* LIBC_SCCS and not lint */
 
 
-#ifdef ABICALLS
-	.abicalls
-#endif
 /* bcmp(s1, s2, n) */
-
-#ifdef MIPSEL
-#	define	LWHI	lwr
-#	define	LWLO	lwl
-#	define	SWHI	swr
-#	define	SWLO	swl
-#endif
-#ifdef MIPSEB
-#	define	LWHI	lwl
-#	define	LWLO	lwr
-#	define	SWHI	swl
-#	define	SWLO	swr
-#endif
 
 LEAF(bcmp)
 	.set	noreorder

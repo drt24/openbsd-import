@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*-
  * Copyright (c) 1991, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -40,10 +41,6 @@
 	ASMSTR("from: @(#)sigreturn.s	8.1 (Berkeley) 6/4/93")
 	ASMSTR("$Id$")
 #endif /* LIBC_SCCS and not lint */
-
-#ifdef ABICALLS
-	.abicalls
-#endif
 
 /*
  * We must preserve the state of the registers as the user has set them up.
