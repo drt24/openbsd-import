@@ -47,7 +47,7 @@ creates a database in
 .Pa /var/db
 containing information about the specified file.
 If no file is specified,
-.Pa /netbsd
+.Pa /bsd
 is used by default.
 The file is named ``kvm_filename.db'', where ``filename'' is the
 name of the file read.
@@ -58,9 +58,9 @@ used by the
 function, however, in the future the database may contain other static
 information about the current system.
 .Sh FILES
-.Bl -tag -width /var/db/kvm_netbsd.db -compact
-.It Pa /netbsd
-.It Pa /var/db/kvm_netbsd.db
+.Bl -tag -width /var/db/kvm_bsd.db -compact
+.It Pa /bsd
+.It Pa /var/db/kvm_bsd.db
 .El
 .Sh SEE ALSO
 .Xr kvm_nlist 3
