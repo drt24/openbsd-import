@@ -8,20 +8,7 @@
 
 /*
  *	Base utility set v0.1
- *
- *	  $Source$
- *	   $State$
- *	$Revision$
- *	  $Author$
- *	    $Date$
- *
  */
-
-static const char *RCSid="$id: $";
-
-/* RCS_HEADER_ENDS_HERE */
-
-
 
 #include <stdio.h>
 #include <unistd.h>

@@ -8,19 +8,7 @@
 
 /*
  *	Base utility set v0.1
- *
- *	  $Source$
- *	   $State$
- *	$Revision$
- *	  $Author$
- *	    $Date$
- *
  */
-
-/* RCS_HEADER_ENDS_HERE */
-
-
-
 
 #ifndef _ERRORS_H
 #define _ERRORS_H

@@ -8,18 +8,7 @@
 
 /*
  *	Base utility set v0.1
- *
- *	  $Source$
- *	   $State$
- *	$Revision$
- *	  $Author$
- *	    $Date$
- *
  */
-
-/* RCS_HEADER_ENDS_HERE */
-
-
 
 #include <unistd.h>
 #include "tcfsdefines.h"
