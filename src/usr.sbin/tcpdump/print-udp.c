@@ -400,7 +400,7 @@ udp_print(register const u_char *bp, u_int length, register const u_char *bp2)
 		    (atalk_port(sport) || atalk_port(dport))) {
 			if (vflag)
 				fputs("kip ", stdout);
-			atalk_print(cp, length);
+			atalk_print_llap(cp, length);
 			return;
 		}
 	}

@@ -121,6 +121,12 @@ struct atNBPtuple {
 #define	nbpBrRq		0x10
 #define	nbpLkUp		0x20
 #define	nbpLkUpReply	0x30
+#define	nbpFwd		0x40
+/* The following are not standard, but netatalk uses them. */
+#define	nbpNATLKrgstr	0xc0
+#define	nbpNATLKunrgstr	0xd0
+#define	nbpNATLKok	0xe0
+#define	nbpNATLKerr	0xf0
 
 #define	nbpNIS		2
 #define	nbpTupleMax	15
