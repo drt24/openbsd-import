@@ -154,6 +154,8 @@ load_env(envstr, f)
 		}
 	}
 
+	if (strlen(name) + 1 + strlen(val) >= MAX_ENVSTR-1)
+		return (FALSE);
 	(void) sprintf(envstr, "%s=%s", name, val);
 	Debug(DPARS, ("load_env, <%s> <%s> -> <%s>\n", name, val, envstr))
 	return (TRUE);
