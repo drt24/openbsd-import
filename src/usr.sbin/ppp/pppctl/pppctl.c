@@ -365,8 +365,11 @@ main(int argc, char **argv)
                       size = 20;
                 } else
                     size = 20;
+#ifdef __NetBSD__
+                history(hist, NULL, H_SETSIZE, size);
+#else
                 history(hist, H_EVENT, size);
-
+#endif
                 edit = el_init("pppctl", stdin, stdout);
                 el_source(edit, NULL);
                 el_set(edit, EL_PROMPT, GetPrompt);
@@ -380,7 +383,11 @@ main(int argc, char **argv)
                 el_set(edit, EL_HIST, history, (const char *)hist);
                 while ((l = smartgets(edit, &len, fd))) {
                     if (len > 1)
+#ifdef __NetBSD__
+                        history(hist, NULL, H_ENTER, l);
+#else
                         history(hist, H_ENTER, l);
+#endif
                     write(fd, l, len);
                     if (Receive(fd, REC_SHOW) != 0)
                         break;
