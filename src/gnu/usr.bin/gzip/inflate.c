@@ -767,6 +767,8 @@ int inflate_dynamic()
     return i;                   /* incomplete code set */
   }
 
+  if (tl == NULL)
+    return 2;
 
   /* read in literal and distance code lengths */
   n = nl + nd;
