@@ -33,9 +33,6 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <net/if.h>
-#ifdef __FreeBSD__
-#include <net/if_var.h>
-#endif
 #include <net/if_tun.h>
 
 #include <errno.h>

@@ -35,9 +35,6 @@
 #include <netinet/tcp.h>
 #include <arpa/inet.h>
 #include <net/if.h>
-#ifdef __FreeBSD__
-#include <net/if_var.h>
-#endif
 #include <net/if_tun.h>
 
 #ifndef NOALIAS
