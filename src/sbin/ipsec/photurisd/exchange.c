@@ -213,11 +213,11 @@ exchange_check_value(mpz_t exchange, mpz_t gen, mpz_t mod)
      mpz_t test;
      
      bits = mpz_sizeinbase(mod, 2);
-     if (mpz_sizeinbase(mod, 2) < bits/2)
+     if (mpz_sizeinbase(exchange, 2) < bits/2)
 	  return 0;
 
      mpz_init(test);
-     mpz_sub_ui(test, gen, 1);
+     mpz_sub_ui(test, mod, 1);
      if (!mpz_cmp(exchange,test)) {
 	  mpz_clear(test);
 	  return 0;
