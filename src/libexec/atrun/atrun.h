@@ -31,3 +31,5 @@
  */
 
 #define ATRUN_MAXLOAD	1.5
+#define NOBODY_UID	32767
+#define NOBODY_GID	32767
