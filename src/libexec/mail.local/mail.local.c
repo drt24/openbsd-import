@@ -393,8 +393,8 @@ retry:
 			goto bad;
 		}
 	} else {
-		if (sb.st_nlink != 1 || S_ISLNK(sb.st_mode)) {
-			err(NOTFATAL, "%s: linked file", path);
+		if (sb.st_nlink != 1 || !S_ISREG(sb.st_mode)) {
+			err(NOTFATAL, "%s: linked or special file", path);
 			goto bad;
 		}
 		if ((mbfd = open(path, O_APPEND|O_WRONLY|O_EXLOCK,
@@ -412,8 +412,8 @@ retry:
 			goto bad;
 		}
 		/* paranoia? */
-		if (fsb.st_nlink != 1 || S_ISLNK(fsb.st_mode)) {
-			err(NOTFATAL, "%s: linked file", path);
+		if (fsb.st_nlink != 1 || !S_ISREG(fsb.st_mode)) {
+			err(NOTFATAL, "%s: linked or special file", path);
 			goto bad;
 		}
 	}
