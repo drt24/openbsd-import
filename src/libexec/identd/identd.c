@@ -178,10 +178,12 @@ child_handler()
 #else
   int status;
 #endif
+  int save_errno = errno;
 
   while (wait3(&status, WNOHANG, NULL) > 0)
     ;
   
+  errno = save_errno;
 #ifndef SIGRETURN_TYPE_IS_VOID
   return 0;
 #endif
