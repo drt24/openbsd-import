@@ -2,7 +2,7 @@
 #	$Id$
 
 PROG=	kdb_edit
-SRCS=	kdb_edit.c maketime.c
+SRCS=	kdb_edit.c
 CFLAGS+=-I${.CURDIR}
 DPADD=	${LIBKDB} ${LIBKRB} ${LIBDES}
 LDADD=	-lkdb -lkrb -ldes
