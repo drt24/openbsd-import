@@ -162,7 +162,7 @@ IFD_Set_Capabilities(u_long Tag, u_char Value[])
 #ifdef DEBUG
 	    fprintf (stderr, "cap_table[%x].flags = %d\n",
 		     (int) Tag, cap_table[i].flags);
-#endif DEBUG
+#endif /* DEBUG */
 
 	    return 0; 
 	}
