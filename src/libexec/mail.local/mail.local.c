@@ -86,7 +86,7 @@ main(argc, argv)
 	openlog("mail.local", LOG_PERROR, LOG_MAIL);
 
 	from = NULL;
-	while ((ch = getopt(argc, argv, "lLdf:r:")) != -1)
+	while ((ch = getopt(argc, argv, "lLdf:r:H")) != -1)
 		switch(ch) {
 		case 'd':		/* backward compatible */
 			break;
@@ -485,7 +485,7 @@ notifybiff(msg)
 void
 usage()
 {
-	err(FATAL, "usage: mail.local [-f from] user ...");
+	err(FATAL, "usage: mail.local [-lLH] [-f from] user ...");
 }
 
 #if __STDC__
