@@ -1,4 +1,4 @@
-/*	$OpenBSD$ */
+/*	$OpenBSD: yppoll.c,v 1.2 1996/05/22 12:13:00 deraadt Exp $ */
 /*	$NetBSD: yppoll.c,v 1.5 1996/05/13 02:46:36 thorpej Exp $	*/
 
 /*
@@ -93,7 +93,7 @@ get_remote_info(indomain, inmap, server, outorder, outname)
 			exit(1);
 		}
 	} else {
-		rsrv_sin.sin_addr.s_addr = *(u_long *)h->h_addr;
+		rsrv_sin.sin_addr.s_addr = *(u_int32_t *)h->h_addr;
 	}
 
 	tv.tv_sec = 10;
