@@ -20,7 +20,7 @@ scp \- secure copy (remote file copy program)
 .LP
 .B scp
 [\c
-.B \-prvC\c
+.B \-pqrvC\c
 ]
 [\c
 .BI \-P "\ port\c
@@ -94,6 +94,9 @@ debugging connection, authentication, and configuration problems.
 .TP
 .B \-B
 Selects batch mode (prevents asking for passwords or passphrases).
+.TP
+.B \-q
+Disables the progress meter.
 .TP
 .B \-C
 Compression enable.  Passes the -C flag to
