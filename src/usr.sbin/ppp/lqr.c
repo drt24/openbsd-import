@@ -214,7 +214,7 @@ StartLqm()
   memset(&HisLqrData, '\0', sizeof HisLqrData);
 
   lqmmethod = LQM_ECHO;
-  if (Enabled(ConfLqr))
+  if (Enabled(ConfLqr) && !REJECTED(lcp, TY_QUALPROTO))
     lqmmethod |= LQM_LQR;
   StopTimer(&LqrTimer);
 
