@@ -39,4 +39,4 @@ rcsinfo		-i /usr/local/bin/mkmodules CVSROOT rcsinfo
 
 # Add more modules here 
 #
-sys		-a src/sys
+sys		src/sys
