@@ -45,7 +45,7 @@ ftime(tbp)
 
         if (gettimeofday(&t, &tz) < 0)
                 return (-1);
-        tbp->millitm = t.tv_usec / 1000;
+        tbp->millitm = (unsigned short)(t.tv_usec / 1000);
         tbp->time = t.tv_sec;
         tbp->timezone = tz.tz_minuteswest;
         tbp->dstflag = tz.tz_dsttime;
