@@ -75,6 +75,15 @@ throughput_uptime(struct pppThroughput *t)
   time_t downat;
 
   downat = t->downtime ? t->downtime : time(NULL);
+  if (t->uptime && downat < t->uptime) {
+    /* Euch !  The clock's gone back ! */
+    int i; 
+ 
+    for (i = 0; i < t->SamplePeriod; i++)
+      t->SampleOctets[i] = 0;
+    t->nSample = 0;
+    t->uptime = downat;
+  }
   return t->uptime ? downat - t->uptime : 0;
 }
 
