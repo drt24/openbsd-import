@@ -689,7 +689,7 @@ do_krb_login(dest)
 			authopts, 0,
 			ticket, "rcmd",
 			instance, dest, (struct sockaddr_in *) 0,
-			kdata, "", (bit_64 *) 0, version);
+			kdata, "", (struct des_ks_struct *) 0, version);
 
 	if (rc != KSUCCESS)
 		return (rc);
