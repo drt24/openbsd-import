@@ -1,4 +1,4 @@
-/*	$OpenBSD: talkd.c,v 1.11 2002/05/16 12:16:16 deraadt Exp $	*/
+/*	$OpenBSD: talkd.c,v 1.12 2002/06/21 02:28:32 millert Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -79,8 +79,8 @@ main(argc, argv)
 	int argc;
 	char *argv[];
 {
-	if (getuid()) {
-		fprintf(stderr, "%s: getuid: not super-user", argv[0]);
+	if (getuid() != 0) {
+		fprintf(stderr, "%s: getuid: not super-user\n", argv[0]);
 		exit(1);
 	}
 	openlog("talkd", LOG_PID, LOG_DAEMON);
