@@ -193,9 +193,7 @@ main(int argc, char *argv[])
 		name = argv[0];
 	else
 		name++;
-	s = getdtablesize();
-	for (fd = 3 ; fd < s ; fd++)
-		(void) close(fd);
+	closefrom(3);
 	if (argc > 1 && strlen(argv[1]) > MAXLOGNAME)
 		errx(1, "login %s too long", argv[1]);
 	openlog(name, LOG_PID, LOG_DAEMON);
