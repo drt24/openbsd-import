@@ -372,7 +372,7 @@ ahc_queue_scb(struct ahc_softc *ahc, struct scb *scb)
 
 	if (scb->hscb->tag == SCB_LIST_NULL
 	 || scb->hscb->next == SCB_LIST_NULL)
-		panic("Attempt to queue invalid SCB tag %x:%x\n",
+		panic("Attempt to queue invalid SCB tag %x:%x",
 		      scb->hscb->tag, scb->hscb->next);
 
 	/*
