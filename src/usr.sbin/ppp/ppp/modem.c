@@ -591,6 +591,8 @@ modem_Open(struct physical *modem, struct bundle *bundle)
               close(fids[1]);
               modem->fd = fids[0];
               waitpid(pid, &stat, 0);
+              log_Printf(LogDEBUG, "Using descriptor %d for child\n",
+                         modem->fd);
               break;
           }
         }

@@ -276,11 +276,10 @@ main(int argc, char **argv)
 #endif
   label = ProcessArgs(argc, argv, &mode, &alias);
 
-#ifdef __FreeBSD__
   /*
-   * A FreeBSD hack to dodge a bug in the tty driver that drops output
-   * occasionally.... I must find the real reason some time.  To display
-   * the dodgy behaviour, comment out this bit, make yourself a large
+   * A FreeBSD & OpenBSD hack to dodge a bug in the tty driver that drops
+   * output occasionally.... I must find the real reason some time.  To
+   * display the dodgy behaviour, comment out this bit, make yourself a large
    * routing table and then run ppp in interactive mode.  The `show route'
    * command will drop chunks of data !!!
    */
@@ -291,7 +290,6 @@ main(int argc, char **argv)
       return 2;
     }
   }
-#endif
 
   /* Allow output for the moment (except in direct mode) */
   if (mode == PHYS_DIRECT)
