@@ -85,7 +85,7 @@ struct gettyflags {
 #define FL	gettystrs[21].value
 #define WE	gettystrs[22].value
 #define LN	gettystrs[23].value
-#define PP	gettystrs[25].value
+#define PP	gettystrs[24].value
 
 /*
  * Numeric definitions.
