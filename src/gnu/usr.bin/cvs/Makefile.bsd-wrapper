@@ -17,7 +17,7 @@ install: maninstall
 	${MAKE} prefix=${DESTDIR}/usr infodir=${DESTDIR}/usr/share/info install
 
 clean cleandir:
-	${MAKE} clean
+	-@if [ -e Makefile ]; then ${MAKE} realclean; fi
 
 depend:
 	# Nothing here so far...
