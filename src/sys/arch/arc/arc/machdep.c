@@ -1,4 +1,4 @@
-/*	$OpenBSD: machdep.c,v 1.27 1997/05/18 13:45:21 pefo Exp $	*/
+/*	$OpenBSD: machdep.c,v 1.28 1997/05/19 16:01:09 pefo Exp $	*/
 /*
  * Copyright (c) 1988 University of Utah.
  * Copyright (c) 1992, 1993
@@ -1143,6 +1143,7 @@ boot(howto)
 		printf("System restart.\n");
 		delay(2000000);
 		(void)kbc_8042sysreset();	/* Try this first */
+		delay(100000);			/* Give it a chance */
 		__asm__(" li $2, 0xbfc00000; jr $2; nop\n");
 		while(1); /* Forever */
 	}
