@@ -38,6 +38,7 @@ typedef struct
   int rhosts_authentication;	/* Try rhosts authentication. */
   int rhosts_rsa_authentication;/* Try rhosts with RSA authentication. */
   int rsa_authentication;	/* Try RSA authentication. */
+  int skey_authentication;	/* Try S/Key or TIS authentication. */
 #ifdef KRB4
   int kerberos_authentication;	/* Try Kerberos authentication. */
 #endif
