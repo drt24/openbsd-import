@@ -13,7 +13,7 @@
 #include <netinet/in.h>
 #include <netdb.h>
 
-#include <kerberosIV/des.h>
+#include <des.h>
 #include <kerberosIV/krb.h>
 #include "krb_err.h"
 #include <kerberosIV/krb_db.h>
