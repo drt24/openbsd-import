@@ -102,8 +102,7 @@ char	loginfile[MAXPATHLEN];
 char	loginname[BUFSIZ];
 
 void
-findid(name)
-	char *name;
+findid(char *name)
 {
 	FILE *fp;
 	static char slopt[5][16];
@@ -160,8 +159,7 @@ findid(name)
 }
 
 const char *
-sigstr(s)
-	int s;
+sigstr(int s)
 {
 	if (s > 0 && s < NSIG)
 		return(sys_signame[s]);
@@ -175,16 +173,13 @@ sigstr(s)
 volatile sig_atomic_t die;
 
 void
-hup_handler(s)
-	int s;
+hup_handler(int s)
 {
 	die = 1;
 }
 
 int
-main(argc, argv)
-	int argc;
-	char *argv[];
+main(int argc, char *argv[])
 {
 	int fd, s, ldisc, odisc;
 	char *name;

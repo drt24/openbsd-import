@@ -1,4 +1,4 @@
-/*	$OpenBSD: cmds.c,v 1.16 2003/06/02 23:36:55 millert Exp $	*/
+/*	$OpenBSD: cmds.c,v 1.17 2003/06/12 21:09:48 deraadt Exp $	*/
 
 /*-
  * Copyright (c) 1985, 1993 The Regents of the University of California.
@@ -396,7 +396,7 @@ bail:
  * quits timedc
  */
 void
-quit(void)
+quit(int ignored, char *unused[])
 {
 	exit(0);
 }
