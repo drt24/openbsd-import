@@ -98,7 +98,7 @@ char *s;
 
 	return sp;
 }
-l#endif /* !(defined(__NetBSD__) || defined(__OpenBSD)) */
+#endif /* !(defined(__NetBSD__) || defined(__OpenBSD)) */
 
 /*
  * Debug log
