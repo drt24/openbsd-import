@@ -279,7 +279,7 @@ getlock(name, pw)
 			 * or directories or symbolic links that
 			 * should not be here.
 			 */
-			if (readlink(lpath, buf, sizeof buf) != -1) {
+			if (readlink(lpath, buf, sizeof buf-1) != -1) {
 				if (lstat(lpath, &sb) != -1 &&
 				    S_ISLNK(fsb.st_mode)) {
 					seteuid(sb.st_uid);
