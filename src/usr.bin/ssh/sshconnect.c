@@ -1458,6 +1458,8 @@ void ssh_login(int host_key_valid,
       if (options->cipher == SSH_CIPHER_NONE)
 	log("WARNING: Encryption is disabled! Password will be transmitted in clear text.");
       for (i = 0; i < options->number_of_password_prompts; i++) {
+        if (i != 0)
+	  error("Permission denied, please try again.");
 	password = read_passphrase(prompt, 0);
 	packet_start(SSH_CMSG_AUTH_PASSWORD);
 	packet_put_string(password, strlen(password));
