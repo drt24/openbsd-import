@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-pfsync.c,v 1.25 2004/02/20 20:03:05 mcbride Exp $	*/
+/*	$OpenBSD: print-pfsync.c,v 1.26 2004/03/22 08:13:10 mcbride Exp $	*/
 
 /*
  * Copyright (c) 2002 Michael Shalayeff
@@ -120,7 +120,7 @@ pfsync_print(struct pfsync_header *hdr, int len)
 	u_int64_t id;
 
 	if (eflag)
-		printf("version %d count %d: ",
+		printf("PFSYNCv%d count %d: ",
 		    hdr->version, hdr->count);
 
 	if (hdr->action < PFSYNC_ACT_MAX)
