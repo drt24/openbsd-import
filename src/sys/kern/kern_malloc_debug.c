@@ -1,4 +1,4 @@
-/*	$OpenBSD: kern_malloc_debug.c,v 1.4 2000/06/07 09:38:46 art Exp $	*/
+/*	$OpenBSD: kern_malloc_debug.c,v 1.5 2000/06/07 11:21:40 art Exp $	*/
 
 /*
  * Copyright (c) 1999, 2000 Artur Grabowski <art@openbsd.org>

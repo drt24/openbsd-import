@@ -1,4 +1,4 @@
-/*	$OpenBSD: tcfs_keytab.h,v 1.4 2000/06/18 16:23:10 provos Exp $	*/
+/*	$OpenBSD: tcfs_keytab.h,v 1.5 2000/11/16 20:02:21 provos Exp $	*/
 /*
  * Copyright 2000 The TCFS Project at http://tcfs.dia.unisa.it/
  * All rights reserved.

@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: memcmp.S,v 1.1 2000/06/16 19:56:55 millert Exp $	*/
 
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
@@ -41,7 +41,7 @@
 
 #if defined(LIBC_SCCS)
 	.text
-	.asciz "$OpenBSD: memcmp.S,v 1.3 1996/08/19 08:15:12 tholo Exp $"
+	.asciz "$OpenBSD: memcmp.S,v 1.1 2000/06/16 19:56:55 millert Exp $"
 #endif /* LIBC_SCCS */
 
 /* memcmp(s1, s2, n) */

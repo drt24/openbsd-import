@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: memset.S,v 1.1 2000/06/16 19:56:55 millert Exp $	*/
 
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
@@ -41,7 +41,7 @@
 
 #if defined(LIBC_SCCS)
 	.text
-	.asciz "$OpenBSD: memset.S,v 1.3 1996/08/19 08:15:17 tholo Exp $"
+	.asciz "$OpenBSD: memset.S,v 1.1 2000/06/16 19:56:55 millert Exp $"
 #endif /* LIBC_SCCS */
 
 /*

@@ -1,4 +1,4 @@
-/*	$OpenBSD: tcfs_vfsops.c,v 1.3 2000/06/17 20:25:55 provos Exp $	*/
+/*	$OpenBSD: tcfs_vfsops.c,v 1.4 2001/02/20 01:50:10 assar Exp $	*/
 /*
  * Copyright 2000 The TCFS Project at http://tcfs.dia.unisa.it/
  * All rights reserved.
