@@ -1,4 +1,4 @@
-/*	$OpenBSD: conf.c,v 1.26 1998/10/14 18:28:06 imp Exp $ */
+/*	$OpenBSD: conf.c,v 1.27 1999/08/12 13:06:33 niklas Exp $ */
 
 /*
  * Copyright (c) 1992, 1993
@@ -279,6 +279,12 @@ iszerodev(dev)
 #else
 	return (major(dev) == 3 && minor(dev) == 12);
 #endif
+}
+
+dev_t
+getnulldev()
+{
+	return makedev(3, 2);
 }
 
 
