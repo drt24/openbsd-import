@@ -1,6 +1,5 @@
-#  $OpenBSD$
+#	$OpenBSD$
 #
-#       $Id$
+#	$Id$
 
-LIBEXECDIR?=    /usr/libexec
-
+LIBEXECDIR?=	/usr/libexec
