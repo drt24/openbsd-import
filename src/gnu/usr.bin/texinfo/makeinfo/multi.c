@@ -263,7 +263,7 @@ setup_multitable_parameters ()
       params++;
 
     if (*params == '@') {
-      sscanf (params, "%200s", command);
+      sscanf (params, "%199s", command);
       nchars = strlen (command);
       params += nchars;
       if (strcmp (command, "@hsep") == 0)
