@@ -332,9 +332,6 @@ struct tm *k_localtime __P((u_int32_t *));
 /* --- Random prototypes */
 #include <sys/types.h> /* to get u_char */
 
-/* Host address comparison */
-int krb_equiv __P((u_int32_t, u_int32_t));
-
 /* Password conversion */
 void mit_string_to_key __P((char *str, char *cell, des_cblock *key));
 void afs_string_to_key __P((char *str, char *cell, des_cblock *key));
