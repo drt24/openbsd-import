@@ -614,6 +614,12 @@ handle_request()
 	char *homedir, *bootfile;
 	int n;
 
+	/*
+	 * Force C strings in packet to be NUL-terminated.
+	 */
+	bp->bp_sname[BP_SNAME_LEN-1] = '\0';
+	bp->bp_file[BP_FILE_LEN-1] = '\0';
+
 	/* XXX - SLIP init: Set bp_ciaddr = recv_addr here? */
 
 	/*
