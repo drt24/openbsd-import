@@ -1,4 +1,4 @@
-/*	$OpenBSD: machdep.c,v 1.13 1996/09/19 00:30:36 imp Exp $	*/
+/*	$OpenBSD: machdep.c,v 1.14 1996/09/19 22:30:07 pefo Exp $	*/
 /*
  * Copyright (c) 1988 University of Utah.
  * Copyright (c) 1992, 1993
@@ -243,7 +243,7 @@ mips_init(argc, argv, code)
 #endif
 	if (argc > 1) {
 		for (i = 1; i < argc; i++) {
-			if(strncmp("OSLOADOPTIONS=",argv[i],14) == 0) {
+			if(strncasecmp("osloadoptions=",argv[i],14) == 0) {
 				for (cp = argv[i]+14; *cp; cp++) {
 					switch (*cp) {
 					case 'a': /* autoboot */
