@@ -319,6 +319,11 @@ sbin
 # ./usr/local/sbin
 ..
 
+# ./usr/local/info
+info
+# ./usr/local/info
+..
+
 # ./usr/local
 ..
 
