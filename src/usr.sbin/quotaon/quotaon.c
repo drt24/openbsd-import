@@ -113,7 +113,7 @@ main(argc, argv)
 	}
 	setfsent();
 	while ((fs = getfsent()) != NULL) {
-		if (strcmp(fs->fs_vfstype, "ufs") ||
+		if (strcmp(fs->fs_vfstype, "ffs") ||
 		    strcmp(fs->fs_type, FSTAB_RW))
 			continue;
 		if (aflag) {

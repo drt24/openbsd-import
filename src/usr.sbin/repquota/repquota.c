@@ -131,7 +131,7 @@ main(argc, argv)
 	}
 	setfsent();
 	while ((fs = getfsent()) != NULL) {
-		if (strcmp(fs->fs_vfstype, "ufs"))
+		if (strcmp(fs->fs_vfstype, "ffs"))
 			continue;
 		if (aflag) {
 			if (gflag && hasquota(fs, GRPQUOTA, &qfnp))
