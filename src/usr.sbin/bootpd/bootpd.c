@@ -114,8 +114,6 @@ static char rcsid[] = "$Id$";
 #define P(args) ()
 #endif
 
-extern void dumptab P((char *));
-
 PRIVATE void catcher P((int));
 PRIVATE int chk_access P((char *, int32 *));
 #ifdef VEND_CMU
@@ -186,9 +184,7 @@ char *bootpd_dump = DUMPTAB_FILE;
  */
 
 int
-main(argc, argv)
-	int argc;
-	char **argv;
+main(int argc, char *argv[])
 {
 	struct timeval *timeout;
 	struct bootp *bp;
