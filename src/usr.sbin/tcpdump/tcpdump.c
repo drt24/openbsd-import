@@ -151,7 +151,7 @@ main(int argc, char **argv)
 	else
 		program_name = argv[0];
 
-	if (abort_on_misalignment(ebuf) < 0)
+	if (abort_on_misalignment(ebuf, sizeof(ebuf)) < 0)
 		error("%s", ebuf);
 
 	opterr = 0;
