@@ -25,7 +25,7 @@ tags:
 		>> tags
 	sort -o tags tags
 
-SUBDIR+=stand
+SUBDIR+=stand ../m68k
 
 obj:	_SUBDIRUSE
 
