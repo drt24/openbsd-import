@@ -183,6 +183,7 @@ CleanInterface(const char *name)
         LogPrintf(LogERROR, "tun_configure: Can't get dst for %s on %s !\n",
                   inet_ntoa(((struct sockaddr_in *)&ifra.ifra_addr)->sin_addr),
                   name);
+      close(s);
       return 0;
     }
     ifra.ifra_broadaddr = ifrq.ifr_dstaddr;
@@ -191,9 +192,11 @@ CleanInterface(const char *name)
         LogPrintf(LogERROR, "tun_configure: Can't delete %s address on %s !\n",
                   inet_ntoa(((struct sockaddr_in *)&ifra.ifra_addr)->sin_addr),
                   name);
+      close(s);
       return 0;
     }
   }
+  close(s);
 
   return 1;
 }
