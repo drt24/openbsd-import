@@ -13,7 +13,7 @@ SUBDIR=	apply apropos asa at banner basename bdes biff cal calendar cap_mkdb \
 	rdist renice rev rlogin rpcgen rpcinfo rs \
 	rsh rup ruptime rusers rwall rwho \
 	script sed shar showmount skey skeyinit soelim split strings \
-	su systat tail talk tcopy tee telnet tftp time \
+	su sup systat tail talk tcopy tee telnet tftp time \
 	tip tn3270 touch tput tr true tset tsort tty ul uname unexpand \
 	unifdef uniq units unvis users uudecode uuencode \
 	vacation vgrind vi vis vmstat w wall wc what whatis whereis \
