@@ -128,8 +128,10 @@ char *av[];
 	if (!fgets(buf, sizeof buf, cmdf)) {
 	    if (interrupted)
 		continue;
-	    else
+	    else {
+		putchar('\n');
 		break;
+	    }
 	}
 	if (cmdf != stdin)
 	    printf("sectok> %s", buf);
