@@ -65,11 +65,15 @@ and
 functions compute
 the non-negative square root of x.
 .Sh RETURN VALUES
-Exceptional conditions are handled by 
-.Xr matherr 3 .
+If x is negative,
+.Fn sqrt "x"
+and
+.Fn sqrtf "x"
+sets the global variable
+.Va errno
+to EDOM.
 .Sh SEE ALSO
-.Xr math 3 ,
-.Xr matherr 3
+.Xr math 3 
 .Sh HISTORY
 The
 .Fn cbrt
