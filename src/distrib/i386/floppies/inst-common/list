@@ -5,6 +5,7 @@ COPY	${OBJDIR}/instbin	instbin
 LINK	instbin			bin/cat
 LINK	instbin			bin/chmod
 LINK	instbin			bin/cp
+LINK	instbin			bin/cpio
 LINK	instbin			bin/dd
 LINK	instbin			bin/df
 LINK	instbin			bin/ed
