@@ -90,7 +90,7 @@ int main (argc, argv, envp)
 	/* XXX for now... */
 	memset(&name, 0, sizeof(name));
 	name.sun_family = PF_UNIX;
-	strcpy (name.sun_path, "/var/run/sysconf");
+	strlcpy (name.sun_path, "/var/run/sysconf", sizeof (name.sun_path));
 	name.sun_len = ((sizeof name) - (sizeof name.sun_path) +
 			strlen (name.sun_path));
 
