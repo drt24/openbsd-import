@@ -11,7 +11,7 @@
  */
 
 #ifndef lint
-static char id[] = "@(#)$Id$";
+static char id[] = "@(#)$Sendmail: shmticklib.c,v 8.6 2000/02/26 01:32:27 gshapiro Exp $";
 #endif /* ! lint */
 
 #if _FFR_SHM_STATUS
