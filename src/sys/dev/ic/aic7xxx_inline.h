@@ -378,7 +378,11 @@ ahc_queue_scb(struct ahc_softc *ahc, struct scb *scb)
 	/*
 	 * Keep a history of SCBs we've downloaded in the qinfifo.
 	 */
-	ahc->qinfifo[ahc->qinfifonext++] = scb->hscb->tag;
+	ahc->qinfifo[ahc->qinfifonext] = scb->hscb->tag;
+	ahc_dmamap_sync(ahc, ahc->shared_data_dmat, ahc->shared_data_dmamap,
+			/*offset*/ahc->qinfifonext+256, /*len*/1,
+			BUS_DMASYNC_PREWRITE);
+	ahc->qinfifonext++;
 
 	/*
 	 * Make sure our data is consistant from the
@@ -419,6 +423,7 @@ ahc_get_sense_bufaddr(struct ahc_softc *ahc, struct scb *scb)
 
 /************************** Interrupt Processing ******************************/
 static __inline void	ahc_sync_qoutfifo(struct ahc_softc *ahc, int op);
+static __inline void	ahc_sync_qinfifo(struct ahc_softc *ahc, int op);
 static __inline void	ahc_sync_tqinfifo(struct ahc_softc *ahc, int op);
 static __inline u_int	ahc_check_cmdcmpltqueues(struct ahc_softc *ahc);
 static __inline void	ahc_intr(struct ahc_softc *ahc);
@@ -428,6 +433,13 @@ ahc_sync_qoutfifo(struct ahc_softc *ahc, int op)
 {
 	ahc_dmamap_sync(ahc, ahc->shared_data_dmat, ahc->shared_data_dmamap,
 			/*offset*/0, /*len*/256, op);
+}
+
+static __inline void
+ahc_sync_qinfifo(struct ahc_softc *ahc, int op)
+{
+	ahc_dmamap_sync(ahc, ahc->shared_data_dmat, ahc->shared_data_dmamap,
+			/*offset*/256, /*len*/256, op);
 }
 
 static __inline void
