@@ -381,6 +381,19 @@ tcp_print(register const u_char *bp, register u_int length,
 		}
 		putchar('>');
 	}
+
+	if (length <= 0)
+		return;
+
+	/*
+	 * Decode payload if necessary.
+	*/
+#ifndef BGP_PORT
+#define BGP_PORT	179
+#endif
+	bp += (tp->th_off * 4);
+	if (sport == BGP_PORT || dport == BGP_PORT)
+		bgp_print(bp, length);
 	return;
 bad:
 	fputs("[bad opt]", stdout);
