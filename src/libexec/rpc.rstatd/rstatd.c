@@ -112,7 +112,7 @@ main(argc, argv)
 		exit(1);
 	}
 
-        svc_run();
+	svc_run();
 	syslog(LOG_ERR, "svc_run returned");
 	exit(1);
 }
