@@ -18,9 +18,6 @@ bsd:
 	cp ${.CURDIR}/../sys/arch/alpha/compile/GENERIC/bsd \
 	    ${DESTDIR}/snapshot/bsd
 
-boot:
-	cp ${DESTDIR}/usr/mdec/boot ${DESTDIR}/snapshot/boot
-
 floppy:
 	cd ${.CURDIR}/../distrib/alpha/ramdisk && \
 	    make cleandir && make && make install
