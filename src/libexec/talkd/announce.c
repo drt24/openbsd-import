@@ -1,4 +1,4 @@
-/*	$OpenBSD: announce.c,v 1.9 2000/07/06 00:01:45 deraadt Exp $	*/
+/*	$OpenBSD: announce.c,v 1.10 2000/10/10 12:44:37 itojun Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -66,7 +66,6 @@ announce(request, remote_machine)
 	CTL_MSG *request;
 	char *remote_machine;
 {
-	int pid, status;
 	char full_tty[MAXPATHLEN];
 	FILE *tf;
 	struct stat stbuf;

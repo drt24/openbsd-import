@@ -1,4 +1,4 @@
-/*	$OpenBSD: talkd.c,v 1.8 2001/01/11 19:14:43 deraadt Exp $	*/
+/*	$OpenBSD: talkd.c,v 1.8 2001/01/11 22:07:44 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -75,6 +75,7 @@ char	hostname[MAXHOSTNAMELEN];
 #define TIMEOUT 30
 #define MAXIDLE 120
 
+int
 main(argc, argv)
 	int argc;
 	char *argv[];
