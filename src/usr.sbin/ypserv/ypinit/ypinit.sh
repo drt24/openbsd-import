@@ -250,7 +250,7 @@ then
 
 	for MAP in `${YPWHICH} -d ${DOMAIN} -h ${MASTER} -m | cut -d\  -f1`
 	do
-		echo "Transfering ${MAP}..."
+		echo "Transferring ${MAP}..."
 		if ! ${YPXFR} -h ${MASTER} -c -d ${DOMAIN} ${MAP}; then
 			echo "Can't transfer map ${MAP}." 1>&2
 			ERROR_EXISTS="YES"
