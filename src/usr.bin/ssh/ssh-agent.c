@@ -308,7 +308,7 @@ process_message(SocketEntry *e)
   msg_len = GET_32BIT(cp);
   if (msg_len > 256 * 1024)
     {
-      shutdown(e->fd, 2);
+      shutdown(e->fd, SHUT_RDWR);
       close(e->fd);
       e->type = AUTH_UNUSED;
       return;
@@ -465,7 +465,7 @@ void after_select(fd_set *readset, fd_set *writeset)
 	    len = recv(sockets[i].fd, buf, sizeof(buf), 0);
 	    if (len <= 0)
 	      { /* The other side has closed the socket. */
-		shutdown(sockets[i].fd, 2);
+		shutdown(sockets[i].fd, SHUT_RDWR);
 		close(sockets[i].fd);
 		sockets[i].type = AUTH_UNUSED;
 		break;
@@ -481,7 +481,7 @@ void after_select(fd_set *readset, fd_set *writeset)
 			buffer_len(&sockets[i].output));
 	    if (len <= 0)
 	      {
-		shutdown(sockets[i].fd, 2);
+		shutdown(sockets[i].fd, SHUT_RDWR);
 		close(sockets[i].fd);
 		sockets[i].type = AUTH_UNUSED;
 		break;
@@ -493,7 +493,7 @@ void after_select(fd_set *readset, fd_set *writeset)
 	    len = read(sockets[i].fd, buf, sizeof(buf));
 	    if (len <= 0)
 	      {
-		shutdown(sockets[i].fd, 2);
+		shutdown(sockets[i].fd, SHUT_RDWR);
 		close(sockets[i].fd);
 		sockets[i].type = AUTH_UNUSED;
 		break;

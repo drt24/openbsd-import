@@ -137,7 +137,7 @@ packet_close()
   initialized = 0;
   if (connection_in == connection_out)
     {
-      shutdown(connection_out, 2);
+      shutdown(connection_out, SHUT_RDWR);
       close(connection_out);
     }
   else
