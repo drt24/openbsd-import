@@ -580,7 +580,10 @@ cleanup(signo)
 	(void)chmod(line, 0666);
 	(void)chown(line, 0, 0);
 	shutdown(netf, 2);
-	exit(1);
+	if (signo)
+		_exit(1);
+	else
+		exit(1);
 }
 
 void
