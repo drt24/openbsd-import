@@ -164,6 +164,10 @@ llc_print(const u_char *p, u_int length, u_int caplen,
 
 		printf("%s/%c", m, f);
 
+		if (caplen < 6) {
+			default_print_unaligned(p, caplen);
+			return (0);
+		}
 		p += 3;
 		length -= 3;
 		caplen -= 3;
