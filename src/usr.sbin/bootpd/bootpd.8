@@ -221,7 +221,7 @@ If
 .I bootpd
 is compiled with the -DDEBUG option, receipt of a SIGUSR1 signal causes
 it to dump its internal database to the file
-.I /etc/bootpd.dump
+.I /var/run/bootpd.dump
 or the dumpfile specified as a command line parameter.
 .PP
 During initialization, both programs
@@ -245,7 +245,7 @@ then the values default to boopts=67 and bootpc=68.
 Database file read by
 .IR bootpd .
 .TP
-/etc/bootpd.dump
+/var/run/bootpd.dump
 Debugging dump file created by
 .IR bootpd .
 .TP

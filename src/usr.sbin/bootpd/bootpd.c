@@ -99,7 +99,7 @@ static char rcsid[] = "$Id$";
 #define CONFIG_FILE		"/etc/bootptab"
 #endif
 #ifndef DUMPTAB_FILE
-#define DUMPTAB_FILE		"/tmp/bootpd.dump"
+#define DUMPTAB_FILE		"/var/run/bootpd.dump"
 #endif
 
 
