@@ -43,8 +43,7 @@ static char *rcsid = "$Id$";
  *	Error checked malloc
  */
 void *
-emalloc(s)
-    size_t s;
+emalloc(size_t s)
 {
     void *ptr = malloc(s);
     if (ptr == NULL)
@@ -58,9 +57,7 @@ emalloc(s)
  *	Error checked realloc
  */
 void *
-erealloc(p, s)
-    void *p;
-    size_t s;
+erealloc(void *p, size_t s)
 {
     void *ptr = realloc(p, s);
     if (ptr == NULL)
@@ -75,9 +72,7 @@ erealloc(p, s)
  *	and eliminating trailing newlines.
  */
 char *
-getline(fp, size)
-    FILE *fp;
-    size_t *size;
+getline(FILE *fp, size_t *size)
 {
     size_t s, len = 0;
     char *buf = NULL;
