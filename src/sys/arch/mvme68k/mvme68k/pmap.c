@@ -474,7 +474,17 @@ bogons:
 	 * map where we want it.
 	 */
 	addr = M68K_PTBASE;
-	s = min(M68K_PTMAXSIZE, maxproc*M68K_MAX_PTSIZE);
+	if ((M68K_PTMAXSIZE / M68K_MAX_PTSIZE) < maxproc) {
+		s = M68K_PTMAXSIZE;
+		/*
+		 * XXX We don't want to hang when we run out of
+		 * page tables, so we lower maxproc so that fork()
+		 * will fail instead.  Note that root could still raise
+		 * this value via sysctl(2).
+		 */
+		maxproc = (M68K_PTMAXSIZE / M68K_MAX_PTSIZE);
+	} else
+		s = (maxproc * M68K_MAX_PTSIZE);
 	addr2 = addr + s;
 	rv = vm_map_find(kernel_map, NULL, 0, &addr, s, TRUE);
 	if (rv != KERN_SUCCESS)
