@@ -1,4 +1,4 @@
-/*    $OpenBSD: ipnat.c,v 1.28 1999/06/06 20:34:56 deraadt Exp $    */
+/*    $OpenBSD: ipnat.c,v 1.29 1999/07/08 01:38:36 deraadt Exp $    */
 /*
  * Copyright (C) 1993-1998 by Darren Reed.
  *
@@ -941,14 +941,15 @@ int opts;
 			if (*line)
 				fprintf(stderr, "%d: syntax error in \"%s\"\n",
 					linenum, line);
-		} else if (!(opts & OPT_NODO)) {
-			if ((opts & OPT_VERBOSE) && np)
-				printnat(np, opts &  OPT_VERBOSE, NULL);
-			if (opts & OPT_REM) {
-				if (ioctl(fd, SIOCADNAT, np) == -1)
-					perror("ioctl(SIOCADNAT)");
-			} else if (ioctl(fd, SIOCRMNAT, np) == -1)
-				perror("ioctl(SIOCRMNAT)");
+		} else if ((opts & OPT_VERBOSE) && np) {
+			printnat(np, opts &  OPT_VERBOSE, NULL);
+			if (!(opts & OPT_NODO)) {
+				if (opts & OPT_REM) {
+					if (ioctl(fd, SIOCADNAT, np) == -1)
+						perror("ioctl(SIOCADNAT)");
+				} else if (ioctl(fd, SIOCRMNAT, np) == -1)
+					perror("ioctl(SIOCRMNAT)");
+			}
 		}
 		linenum++;
 	}
