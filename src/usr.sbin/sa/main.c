@@ -80,7 +80,7 @@ main(argc, argv)
 	char **argv;
 {
 	int ch;
-	int error;
+	int error = 0;
 
 	while ((ch = getopt(argc, argv, "abcdDfijkKlmnqrstuv:")) != -1)
 		switch (ch) {
