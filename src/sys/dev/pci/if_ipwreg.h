@@ -113,10 +113,10 @@
 #define IPW_RATE_DS11	8
 
 /* firmware binary image header */
-struct ipw_fw_hdr {
+struct ipw_firmware_hdr {
 	u_int32_t	version;
-	u_int32_t	fw_size;	/* firmware size */
-	u_int32_t	uc_size;	/* microcode size */
+	u_int32_t	main_size;	/* firmware size */
+	u_int32_t	ucode_size;	/* microcode size */
 } __attribute__((__packed__));
 
 /* buffer descriptor */
