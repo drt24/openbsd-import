@@ -23,7 +23,7 @@ FEATURE(nouucp, `reject')
 MAILER(local)
 MAILER(smtp)
 DAEMON_OPTIONS(`Family=inet, address=0.0.0.0, Name=MTA')dnl
-DAEMON_OPTIONS(`Family=inet6, address=::, Name=MTA6')dnl
+DAEMON_OPTIONS(`Family=inet6, address=::, Name=MTA6, M=O')dnl
 dnl
 dnl Enforce valid Message-Id to help stop spammers
 dnl
