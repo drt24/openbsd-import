@@ -55,7 +55,8 @@ static char *rcsid = "$Id$";
  * This module relies on internal details of other components.  If
  * you change something else make *sure* restart() still works.
  */
-void restart()
+void
+restart()
 {
 	/*
 	 * Read the existing mount table

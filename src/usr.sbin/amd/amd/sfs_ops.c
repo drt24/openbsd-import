@@ -58,8 +58,8 @@
 /*
  * SFS needs a link.
  */
-static char *sfs_match(fo)
-am_opts *fo;
+static char *
+sfs_match(am_opts *fo)
 {
 	if (!fo->opt_fs) {
 		plog(XLOG_USER, "link: no fs specified");
@@ -105,9 +105,8 @@ am_opts *fo;
 
 #ifdef HAS_SFSX
 /*ARGUSED*/
-static int sfsx_mount P((am_node *mp));
-static int sfsx_mount(mp)
-am_node *mp;
+static int
+sfsx_mount(am_node *mp)
 {
 	/*
 	 * Check for existence of target.
@@ -134,8 +133,8 @@ am_node *mp;
 
 #ifdef HAS_SFS
 /*ARGUSED*/
-static int sfs_fmount(mf)
-mntfs *mf;
+static int
+sfs_fmount(mntfs *mf)
 {
 	/*
 	 * Wow - this is hard to implement!
@@ -147,8 +146,8 @@ mntfs *mf;
 
 #ifdef NEED_SFS_UMOUNT
 /*ARGUSED*/
-static int sfs_fumount(mf)
-mntfs *mf;
+static int
+sfs_fumount(mntfs *mf)
 {
 	return 0;
 }

@@ -87,8 +87,8 @@ struct opt_tab mnt_flags[] = {
 	{ 0, 0 }
 };
 
-int compute_mount_flags(mnt)
-struct mntent *mnt;
+int
+compute_mount_flags(struct mntent *mnt)
 {
 	struct opt_tab *opt;
 	int flags;
@@ -107,13 +107,9 @@ struct mntent *mnt;
 	return flags;
 }
 
-int mount_fs P((struct mntent *mnt, int flags, caddr_t mnt_data, int retry, MTYPE_TYPE type));
-int mount_fs(mnt, flags, mnt_data, retry, type)
-struct mntent *mnt;
-int flags;
-caddr_t mnt_data;
-int retry;
-MTYPE_TYPE type;
+int
+mount_fs(struct mntent *mnt, int flags, caddr_t mnt_data, int retry,
+    MTYPE_TYPE type)
 {
 	int error = 0;
 #ifdef MNTINFO_DEV
@@ -217,8 +213,8 @@ again:
 
 #include <ctype.h>
 
-static char *nextmntopt(p)
-char **p;
+static char *
+nextmntopt(char **p)
 {
 	char *cp = *p;
 	char *rp;
@@ -250,14 +246,14 @@ char **p;
 	return rp;
 }
 
-char *hasmntopt(mnt, opt)
-struct mntent *mnt;
-char *opt;
+char *
+hasmntopt(struct mntent *mnt, char *opt)
 {
 	char t[MNTMAXSTR];
 	char *f;
 	char *o = t;
 	int l = strlen(opt);
+
 	strlcpy(t, mnt->mnt_opts, sizeof(t));
 
 	while (*(f = nextmntopt(&o)))

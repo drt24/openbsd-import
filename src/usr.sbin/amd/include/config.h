@@ -43,11 +43,9 @@
  * Get this in now so that OS_HDR can use it
  */
 #ifdef __STDC__
-#define	P(x) x
 #define	P_void void
 #define	Const const
 #else
-#define P(x) ()
 #define P_void /* as nothing */
 #define Const /* as nothing */
 #endif /* __STDC__ */
@@ -77,10 +75,9 @@ extern int errno;
 #include <sys/time.h>
 
 #define clocktime() (clock_valid ? clock_valid : time(&clock_valid))
-extern time_t time P((time_t *));
 extern time_t clock_valid;	/* Clock needs recalculating */
 
-extern char *progname;		/* "amd"|"mmd" */
+extern char *__progname;
 extern char hostname[];		/* "kiska" */
 extern pid_t mypid;		/* Current process id */
 
@@ -126,15 +123,12 @@ struct opt_tab {
 
 extern struct opt_tab xlog_opt[];
 
-extern int cmdoption P((char*, struct opt_tab*, int*));
-extern void going_down P((int));
+extern int cmdoption(char *, struct opt_tab *, int *);
+extern void going_down(int);
 #ifdef DEBUG
-extern void dplog ();
-/*extern void dplog P((char*, ...));*/
+#define dplog(fmt, args...) plog(XLOG_DEBUG, fmt, ## args)
 #endif /* DEBUG */
-extern void plog ();
-/*extern void plog P((int, char*, ...));*/
-extern void show_opts P((int ch, struct opt_tab*));
-extern char* strchr P((const char*, int)); /* C */
-extern voidp xmalloc P((int));
-extern voidp xrealloc P((voidp, int));
+extern void plog(int, char *, ...);
+extern void show_opts(int ch, struct opt_tab *);
+extern voidp xmalloc(int);
+extern voidp xrealloc(voidp, int);

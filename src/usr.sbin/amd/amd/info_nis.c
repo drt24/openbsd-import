@@ -153,8 +153,8 @@ nis_reload(mnt_map *m, char *map, void (*fn)())
 	data.ncd_m = m;
 	data.ncd_map = map;
 	data.ncd_fn = fn;
-	cbinfo.data = (voidp) &data;
-	cbinfo.foreach = callback;
+	cbinfo.data = (voidp)&data;
+	cbinfo.foreach = (voidp)&callback;
 
 	error = yp_all(domain, map, &cbinfo);
 

@@ -45,9 +45,7 @@
 extern bool_t xdr_amq_mount_info_qelem();
 
 void
-amq_program_1(rqstp, transp)
-	struct svc_req *rqstp;
-	SVCXPRT *transp;
+amq_program_1(struct svc_req *rqstp, SVCXPRT *transp)
 {
 	union {
 		amq_string amqproc_mnttree_1_arg;
@@ -132,4 +130,3 @@ amq_program_1(rqstp, transp)
 		going_down(1);
 	}
 }
-

@@ -43,9 +43,8 @@
 
 #ifdef NEED_UMOUNT_BSD
 
-int umount_fs P((char *fs_name));
-int umount_fs(fs_name)
-char *fs_name;
+int
+umount_fs(char *fs_name)
 {
 	int error;
 
@@ -85,8 +84,8 @@ eintr:
 
 #include <sys/mount.h>		/* For MNT_NOFORCE */
 
-int umount_fs(fs_name)
-char *fs_name;
+int
+umount_fs(char *fs_name)
 {
 	int error;
 
@@ -127,8 +126,8 @@ eintr:
 
 #ifdef NEED_UMOUNT_FS
 
-int umount_fs(fs_name)
-char *fs_name;
+int
+umount_fs(char *fs_name)
 {
 	mntlist *mlist, *mp, *mp_save = 0;
 	int error = 0;
