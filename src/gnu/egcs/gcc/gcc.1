@@ -160,6 +160,7 @@ in the following sections.
 \-fexternal\-templates
 \-fno\-asm
 \-fno\-builtin
+\-fno\-builtin\-\fI<function>\fB
 \-fhosted
 \-fno\-hosted
 \-ffreestanding
@@ -806,6 +807,9 @@ The `\|\c
 .B _exit\c
 \& from
 being builtin functions.
+.TP
+.B \-fno\-builtin\-\fI<function>
+Don't recognize built-in \fIfunction\fR.
 .TP
 .B \-fhosted
 Compile for a hosted environment; this implies the `\|\c
