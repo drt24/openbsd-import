@@ -216,7 +216,7 @@ maxmatch:
 #  define TEXT			.text
 #  define FILE(filename)	.even
 #  define invert_maybe(src,dst)	src,dst
-#  if defined(sun) || defined(mc68k) || defined(__NetBSD__)
+#  if defined(sun) || defined(mc68k) || defined(__NetBSD__) || defined(__OpenBSD__)
 #    define imm(data)		#data
 #  else
 #    define imm(data)		\#data
@@ -224,7 +224,7 @@ maxmatch:
 #  define reg(register)		register
 
 #  define blos			bcss
-#  if defined(sun) || defined(mc68k) || defined(__NetBSD__)
+#  if defined(sun) || defined(mc68k) || defined(__NetBSD__) || defined(__OpenBSD__)
 #    define movel		movl
 #    define movew		movw
 #    define moveb		movb
