@@ -1,5 +1,5 @@
 #
-# $OpenBSD: modules,v 1.15 1997/12/06 20:19:43 gene Exp $
+# $OpenBSD: modules,v 1.16 1998/04/01 21:33:44 deraadt Exp $
 # The CVS Modules File
 #
 # $CVSid: @(#)modules 1.5 92/03/31 $
@@ -46,8 +46,10 @@ www		-i /var/www/conf/cvswww www
 alpha		src/sys/arch/alpha
 amiga		src/sys/arch/amiga
 arc		src/sys/arch/arc
+arm32		src/sys/arch/arm32
 atari		src/sys/arch/atari
 hp300		src/sys/arch/hp300
+hppa		src/sys/arch/hppa
 i386		src/sys/arch/i386
 mac68k		src/sys/arch/mac68k
 mvme68k		src/sys/arch/mvme68k
@@ -66,6 +68,7 @@ ksrc-amiga      -a src/sys/arch/amiga ksrc-m68k
 ksrc-arc        -a src/sys/arch/arc
 ksrc-atari      -a src/sys/arch/atari ksrc-m68k
 ksrc-hp300      -a src/sys/arch/hp300 ksrc-m68k
+ksrc-hppa	-a src/sys/arch/hppa
 ksrc-i386       -a src/sys/arch/i386
 ksrc-m68k       -a src/sys/arch/m68k
 ksrc-mac68k     -a src/sys/arch/mac68k ksrc-m68k
