@@ -315,7 +315,7 @@ static serv_state run_rpc(P_void)
 #ifdef FD_SET
 			if (FD_ISSET(fwd_sock, fdsp)) {
 				FD_CLR(fwd_sock, fdsp);
-				--nsel;	
+				--nsel;
 				do {
 					fwd_reply();
 				} while (rpc_pending_now() > 0);
@@ -323,7 +323,7 @@ static serv_state run_rpc(P_void)
 #else
 			if (readfds & (1 << fwd_sock)) {
 				readfds &= ~(1 << fwd_sock);
-				--nsel;	
+				--nsel;
 				do {
 					fwd_reply();
 				} while (rpc_pending_now() > 0);
@@ -390,7 +390,7 @@ int mount_automounter(pid_t ppid)
 		return 1;
 	}
 
-	if ((nfsxprt = svcudp_create(so)) == NULL || 
+	if ((nfsxprt = svcudp_create(so)) == NULL ||
 			(amqp = svcudp_create(so)) == NULL) {
 		plog(XLOG_FATAL, "cannot create rpc/udp service");
 		return 2;

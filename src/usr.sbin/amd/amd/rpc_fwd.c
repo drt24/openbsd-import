@@ -134,7 +134,7 @@ static rpc_forward *fwd_alloc()
 
 	/*
 	 * Set the time to live field
-	 * Timeout in 43 seconds 
+	 * Timeout in 43 seconds
 	 */
 	p->rf_ttl = now + 43;
 
@@ -291,8 +291,11 @@ fwd_fun cb;
 	 * rest of "p" otherwise nasty things happen later...
 	 */
 #ifdef DEBUG
-	{ char dq[20]; 
-	dlog("Sending packet id %#x to %s.%d", p->rf_xid, inet_dquad(dq, sizeof(dq), fwdto->sin_addr.s_addr), ntohs(fwdto->sin_port));
+	{ char dq[20];
+
+	dlog("Sending packet id %#x to %s.%d", p->rf_xid,
+	    inet_dquad(dq, sizeof(dq), fwdto->sin_addr.s_addr),
+	    ntohs(fwdto->sin_port));
 	}
 #endif /* DEBUG */
 	if (sendto(fwd_sock, (char *) pkt, len, 0,

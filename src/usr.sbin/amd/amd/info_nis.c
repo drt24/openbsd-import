@@ -207,7 +207,7 @@ int nis_search(mnt_map *m, char *map, char *key, char **val, time_t *tp)
 	} else {
 		/*
 		 * NIS+ server without yp_order
-		 * Check if timeout has expired to invalidate the cache 
+		 * Check if timeout has expired to invalidate the cache
 		 */
 		order = time(NULL);
 		if ((time_t)order - *tp > am_timeo) {

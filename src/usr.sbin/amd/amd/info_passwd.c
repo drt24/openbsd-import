@@ -102,7 +102,7 @@ int passwd_search(mnt_map *m, char *map, char *key, char **pval, time_t *tp)
 		*user++ = '\0';
 		/*
 		 * Find start of host "path".  If no / then Invalid...
-		 */ 
+		 */
 		p = strchr(dir+1, '/');
 		if (!p)
 			goto enoent;

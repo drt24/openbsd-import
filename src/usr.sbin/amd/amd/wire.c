@@ -186,9 +186,9 @@ char *getwire()
 			 * Figure out the subnet's network address
 			 */
 			subnet = address & netmask;
-		  
+
 #ifdef IN_CLASSA
-			subnet = ntohl(subnet); 
+			subnet = ntohl(subnet);
 
 			if (IN_CLASSA(subnet)) {
 				mask = IN_CLASSA_NET;
@@ -244,7 +244,7 @@ char *getwire()
 
 out:
 	if (sk >= 0)
-		(void) close(sk); 
+		(void) close(sk);
 	if (netname)
 		return netname;
 	return strdup(NO_SUBNET);

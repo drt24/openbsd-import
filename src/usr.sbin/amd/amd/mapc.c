@@ -163,7 +163,7 @@ qelem map_list_head = { &map_list_head, &map_list_head };
 /*
  * Configuration
  */
- 
+
 /* ROOT MAP */
 static int root_init P((char*, time_t*));
 

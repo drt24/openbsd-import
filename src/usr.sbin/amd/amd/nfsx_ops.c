@@ -200,9 +200,9 @@ mntfs *mf;
 		  char *fs = mf->mf_fo->opt_fs;
 		  char *rfs = 0;
 		  for (i = 0; i < nx->nx_c; i++) {
-		  	char *path = ivec[i+1];
+			char *path = ivec[i+1];
 			rfs = str3cat(rfs, pref, "/", path);
-		  	/*
+			/*
 			 * Determine the mount point.
 			 * If this is the root, then don't remove
 			 * the trailing slash to avoid mntfs name clashes.

@@ -251,9 +251,9 @@ struct svc_req *rqstp;
 {
 	static int rc;
 	char *s = *(amq_string *) argp;
-  
+
 	plog(XLOG_ERROR, "amq requested mount of %s, but code is disabled", s);
-   
+
 	rc = EACCES;
 	return &rc;
 }

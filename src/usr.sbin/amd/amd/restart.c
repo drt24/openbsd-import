@@ -120,7 +120,7 @@ void restart()
 				mo.opt_rfs = strdup(cp+1);
 				*cp = ':';
 			} else if (fs_ops->ffserver == find_nfs_srvr) {
-				/* 
+				/*
 				 * Prototype 4.4 BSD used to end up here -
 				 * might as well keep the workaround for now
 				 */

@@ -144,7 +144,7 @@ int qc;
 				 */
 				s++;
 				while (*s && *s != qc)
-				 	s++;
+					s++;
 				if (*s == qc)
 					s++;
 			}

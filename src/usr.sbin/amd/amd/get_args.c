@@ -174,7 +174,7 @@ char *v[];
 			afs_timeo = atoi(optarg);
 		  }
 		  if (dot) {
-		  	afs_retrans = atoi(dot+1);
+			afs_retrans = atoi(dot+1);
 			*dot = '.';
 		  }
 		}

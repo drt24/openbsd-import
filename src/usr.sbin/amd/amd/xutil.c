@@ -240,7 +240,7 @@ extern char **gargv;
 
 	switch (lvl) {
 	case XLOG_FATAL:	sev = "fatal:"; break;
-	case XLOG_ERROR: 	sev = "error:"; break;
+	case XLOG_ERROR:	sev = "error:"; break;
 	case XLOG_USER:		sev = "user: "; break;
 	case XLOG_WARNING:	sev = "warn: "; break;
 	case XLOG_INFO:		sev = "info: "; break;
@@ -301,7 +301,7 @@ char *j, *s, *_, *p, *e, *n, *d, *r, *y;
 	if (syslogging) {
 		switch(lvl) {	/* from mike <mcooper@usc.edu> */
 		case XLOG_FATAL:	lvl = LOG_CRIT; break;
-		case XLOG_ERROR: 	lvl = LOG_ERR; break;
+		case XLOG_ERROR:	lvl = LOG_ERR; break;
 		case XLOG_USER:		lvl = LOG_WARNING; break;
 		case XLOG_WARNING:	lvl = LOG_WARNING; break;
 		case XLOG_INFO:		lvl = LOG_INFO; break;

@@ -106,7 +106,7 @@ char *info;
 		char **cp = xivec;
 		plog(XLOG_DEBUG, "executing (un)mount command...");
 		while (*cp) {
-	  		plog(XLOG_DEBUG, "arg[%d] = '%s'", cp-xivec, *cp);
+			plog(XLOG_DEBUG, "arg[%d] = '%s'", cp-xivec, *cp);
 			cp++;
 		}
 	}

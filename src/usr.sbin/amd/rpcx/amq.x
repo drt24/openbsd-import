@@ -62,8 +62,8 @@ typedef int time_type;
  */
 struct amq_mount_tree {
 	amq_string	mt_mountinfo;	/* Mounted filesystem */
-	amq_string 	mt_directory;	/* Virtual mount */
-	amq_string 	mt_mountpoint;	/* Mount point */
+	amq_string	mt_directory;	/* Virtual mount */
+	amq_string	mt_mountpoint;	/* Mount point */
 	amq_string	mt_type;	/* Filesystem type */
 	time_type	mt_mounttime;	/* Mount time */
 	u_short		mt_mountuid;	/* Mounter */

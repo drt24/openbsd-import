@@ -187,7 +187,7 @@ char *fs_name;
 		if (!error) {
 		        free_mntlist(mlist);
 			mp = mlist = read_mtab(fs_name);
-			
+
 			/*
 			 * Search the mount table looking for
 			 * the correct (ie last) matching entry
@@ -199,7 +199,7 @@ char *fs_name;
 					mp_save = mp;
 				mp = mp->mnext;
 			}
-			
+
 			if (mp_save) {
 				mnt_free(mp_save->mnt);
 				mp_save->mnt = 0;
