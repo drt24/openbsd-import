@@ -29,6 +29,9 @@ Report problems and direct all questions to:
 
 /*
  * $Log$
+ * Revision 1.1  1996/08/12 04:08:22  millert
+ * rcs 5.7 + OpenBSD changes
+ *
  * Revision 5.4  1995/06/16 06:19:24  eggert
  * Update FSF address.
  *
@@ -87,7 +90,8 @@ trymatch(string)
 	register char const *p, *s;
 	for (j = sizeof(Keyword)/sizeof(*Keyword);  (--j);  ) {
 		/* try next keyword */
-		p = Keyword[j];
+		if ((p = Keyword[j]) == NULL)
+			continue;
 		s = string;
 		while (*p++ == *s++) {
 			if (!*p)
