@@ -49,3 +49,5 @@ struct mdproc {
 #define	MDP_HPUXMMAP	0x0008	/* VA space is multiply mapped */
 #define	MDP_CCBDATA	0x0010	/* copyback caching of data (68040) */
 #define	MDP_CCBSTACK	0x0020	/* copyback caching of stack (68040) */
+#define MDP_UNCACHE_WX	0x0040	/* The process might modify code, so
+				   don't cache writeable executable pages.  */
