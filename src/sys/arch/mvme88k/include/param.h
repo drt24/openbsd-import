@@ -1,4 +1,4 @@
-/*	$OpenBSD: param.h,v 1.13 2001/02/01 03:38:18 smurph Exp $ */
+/*	$OpenBSD: param.h,v 1.14 2001/03/07 23:50:35 miod Exp $ */
 /*
  * Copyright (c) 1999 Steve Murphree, Jr.
  * Copyright (c) 1988 University of Utah.
@@ -172,6 +172,13 @@
  */
 #define mvme88k_btop(x)		((unsigned)(x) >> PGSHIFT)
 #define mvme88k_ptob(x)		((unsigned)(x) << PGSHIFT)
+
+#include <machine/psl.h>
+
+/*
+ * Get interrupt glue.
+ */
+#include <machine/intr.h>
 
 #ifdef   _KERNEL
 extern int delay __P((int));
