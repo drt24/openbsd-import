@@ -292,9 +292,9 @@ struct iwi_txpower {
 struct iwi_associate {
 	u_int8_t	chan;
 	u_int8_t	auth;
-#define IWI_AUTH_OPEN	(0 << 4)
-#define IWI_AUTH_SHARED	(1 << 4)
-#define IWI_AUTH_NONE	(3 << 4)
+#define IWI_AUTH_OPEN	0
+#define IWI_AUTH_SHARED	1
+#define IWI_AUTH_NONE	3
 	u_int8_t	type;
 	u_int8_t	reserved1;
 	u_int16_t	reserved2;
