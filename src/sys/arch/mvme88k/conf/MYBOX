@@ -5,7 +5,7 @@ include "std.m88k"
 maxusers	8
 options		TIMEZONE=300, DST=1
 options		BYTE_MSF
-options		SWAPPAGER, VNODEPAGER, DEVPAGER
+options		SWAPPAGER, DEVPAGER
 #options		INET
 options		FFS, MFS, FDESC
 #options		"COMPAT_42", "COMPAT_43"

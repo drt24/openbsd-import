@@ -17,7 +17,6 @@ options		TIMEZONE=300, DST=1
 options		"M88000"	# support for 88K
 
 options		SWAPPAGER	# Pager for processes (Required)
-options		VNODEPAGER	# Pager for vnodes (Required)
 options		DEVPAGER	# Pager for devices (Required)
 
 #
