@@ -185,7 +185,7 @@ _initialize_kernel_u_addr ()
 
   names[0].n_un.n_name = "_u";
   names[1].n_un.n_name = NULL;
-  if (nlist ("/netbsd", names) == 0)
+  if (nlist (_PATH_UNIX, names) == 0)
     kernel_u_addr = names[0].n_value;
   else
     fatal ("Unable to get kernel u area address.");
