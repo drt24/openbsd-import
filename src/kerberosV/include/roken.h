@@ -136,6 +136,12 @@ const char *get_default_username (void);
 
 
 
+void pidfile (const char*);
+
+unsigned int bswap32(unsigned int);
+
+unsigned short bswap16(unsigned short);
+
 
 time_t tm2time (struct tm tm, int local);
 
