@@ -1,4 +1,4 @@
-/*	$OpenBSD: process_machdep.c,v 1.3 2004/08/10 20:15:47 deraadt Exp $	*/
+/*	$OpenBSD: process_machdep.c,v 1.4 2004/08/10 20:28:13 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1994 Adam Glass
@@ -79,7 +79,7 @@
 
 #define	REGSIZE sizeof(struct trap_frame)
 
-extern void cpu_singlestep __P((struct proc *));
+extern void cpu_singlestep(struct proc *);
 int
 process_read_regs(p, regs)
 	struct proc *p;
