@@ -14,7 +14,7 @@ cat ./usr.sbin.tar.gz | gzip -d | (cd /mnt; tar xvpf -)
 cat ./usr.share.tar.gz | gzip -d | (cd /mnt; tar xvpf -)
 cat ./var.tar.gz | gzip -d | (cd /mnt; tar xvpf -)
 cat ./dev.tar.gz | gzip -d | (cd /mnt; tar xvpf -)
-cp ./netbsd.scsi3 /mnt/netbsd
-chmod 640 /mnt/netbsd; chown root.kmem /mnt/netbsd
+cp ./bsd.scsi3 /mnt/bsd
+chmod 640 /mnt/bsd; chown root.kmem /mnt/bsd
 cd /mnt/dev; ./MAKEDEV all
 mv /mnt/etc/fstab.sd /mnt/etc/fstab
