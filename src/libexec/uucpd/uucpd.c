@@ -221,11 +221,12 @@ register int n;
 		if (read(0, &c, 1) <= 0)
 			return(-1);
 		c &= 0177;
-		if (c == '\n' || c == '\r') {
+		if (c == '\r') {
 			*p = '\0';
 			return(0);
 		}
-		*p++ = c;
+		if (c != '\n')
+			*p++ = c;
 	}
 	return(-1);
 }
