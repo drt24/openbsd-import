@@ -4,7 +4,7 @@
 #	$Id$
 
 .ifdef DESTDIR
-snap_md: bsd bsd.scsi3 inst
+snap_md: bsd bsd.scsi3 floppies miniroot docs
 	cp ${.CURDIR}/../sys/arch/sparc/compile/GENERIC/bsd \
 	    ${DESTDIR}/snapshot/bsd
 	cp ${.CURDIR}/../sys/arch/sparc/compile/GENERIC_SCSI3/bsd \
@@ -20,7 +20,15 @@ bsd.scsi3:
 	cd ${.CURDIR}/../sys/arch/sparc/compile/GENERIC_SCSI3 && \
 	    make clean && make depend && make
 
-inst:
+floppies:
+	cd ${.CURDIR}/../distrib/sparc/floppies && make cleandir && \
+	    make && make install
+
+miniroot:
+	cd ${.CURDIR}/../distrib/miniroot && make cleandir && \
+	    make && make install
+
+docs:
 	cp ${.CURDIR}/etc.sparc/README ${DESTDIR}/snapshot/README
 	cp ${.CURDIR}/etc.sparc/install.sh ${DESTDIR}/snapshot/install.sh
 
