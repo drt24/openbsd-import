@@ -1660,7 +1660,7 @@ bundle_setsid(struct bundle *bundle, int holdsession)
           log_Printf(LogPHASE, "%d -> %d: %s session control\n",
                      (int)orig, (int)getpid(),
                      holdsession ? "Passed" : "Dropped");
-          timer_InitService();
+          timer_InitService(0);		/* Start the Timer Service */
           break;
         default:
           close(fds[1]);

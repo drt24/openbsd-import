@@ -42,6 +42,6 @@ struct prompt;
 
 extern void timer_Start(struct pppTimer *);
 extern void timer_Stop(struct pppTimer *);
-extern void timer_InitService(void);
+extern void timer_InitService(int);
 extern void timer_TermService(void);
 extern void timer_Show(int LogLevel, struct prompt *);
