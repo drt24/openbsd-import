@@ -42,8 +42,13 @@ With an argument naming an existing
 causes system accounting information for every process executed
 to be placed at the end of the file.  If no argument is given,
 accounting is turned off.
+.Sh FILES
+.Bl -tag -width /var/account/acct
+.It Pa /var/account/acct
+default accounting file
 .Sh SEE ALSO
 .Xr lastcomm 1 ,
+.Xr acct 2 ,
 .Xr acct 5
 .Sh HISTORY
 The
