@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: print-netbios.c,v 1.4 2000/10/03 14:31:57 ho Exp $	*/
 
 /*
  * Copyright (c) 1994, 1995, 1996
@@ -40,10 +40,8 @@ static const char rcsid[] =
 #include <netinet/udp_var.h>
 #include <netinet/tcp.h>
 
-#ifdef __STDC__
-#include <stdlib.h>
-#endif
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "interface.h"

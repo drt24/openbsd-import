@@ -1,4 +1,4 @@
-/*	$OpenBSD: addrtoname.c,v 1.17 2000/11/23 18:32:20 jakob Exp $	*/
+/*	$OpenBSD: addrtoname.c,v 1.18 2001/11/03 12:09:12 ho Exp $	*/
 
 /*
  * Copyright (c) 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -32,10 +32,8 @@ static const char rcsid[] =
 #include <sys/socket.h>
 #include <sys/time.h>
 
-#ifdef __STDC__
 struct mbuf;
 struct rtentry;
-#endif
 #include <net/if.h>
 
 #include <netinet/in.h>

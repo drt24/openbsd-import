@@ -30,11 +30,7 @@
 #if !defined(__ELF__) && !defined(sun3)
 #define reg(x) x
 #else /* __ELF__ || sun3 */
-#ifdef __STDC__
 #define reg(x) %##x
-#else
-#define reg(x) %/**/x
-#endif /* __STDC__ */
 #endif /* __ELF__ || sun3 */
 
 /*

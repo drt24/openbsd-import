@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-sunrpc.c,v 1.11 2001/11/06 03:11:40 deraadt Exp $	*/
+/*	$OpenBSD: print-sunrpc.c,v 1.12 2001/11/07 18:48:16 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1992, 1993, 1994, 1995, 1996
@@ -30,10 +30,8 @@ static const char rcsid[] =
 #include <sys/time.h>
 #include <sys/socket.h>
 
-#ifdef __STDC__
 struct mbuf;
 struct rtentry;
-#endif
 #include <net/if.h>
 
 #include <netinet/in.h>

@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-ike.c,v 1.8 2001/10/26 14:14:49 ho Exp $	*/
+/*	$OpenBSD: print-ike.c,v 1.9 2001/11/12 18:04:08 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999
@@ -36,11 +36,8 @@ static const char rcsid[] =
 #include <sys/time.h>
 #include <sys/socket.h>
 
-#ifdef __STDC__
 struct mbuf;
 struct rtentry;
-#endif
-
 #include <net/if.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>

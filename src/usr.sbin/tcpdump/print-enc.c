@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: print-enc.c,v 1.6 2000/10/03 14:31:57 ho Exp $	*/
 
 /*
  * Copyright (c) 1990, 1991, 1993, 1994, 1995, 1996
@@ -33,9 +33,7 @@ static const char rcsid[] =
 #include <sys/ioctl.h>
 #include <sys/mbuf.h>
 
-#ifdef __STDC__
 struct rtentry;
-#endif
 #include <net/if.h>
 #include <netinet/ip_ipsp.h>
 #include <net/if_enc.h>

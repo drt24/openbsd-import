@@ -1,5 +1,5 @@
 %{
-/*	$OpenBSD: grammar.y,v 1.7 2000/04/26 21:25:53 jakob Exp $	*/
+/*	$OpenBSD: grammar.y,v 1.8 2000/06/29 06:56:13 dugsong Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996
@@ -31,10 +31,8 @@ static const char rcsid[] =
 #include <sys/time.h>
 #include <sys/socket.h>
 
-#ifdef __STDC__
 struct mbuf;
 struct rtentry;
-#endif
 
 #include <net/if.h>
 

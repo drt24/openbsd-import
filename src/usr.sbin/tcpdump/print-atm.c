@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: print-atm.c,v 1.6 2000/10/03 14:31:56 ho Exp $	*/
 
 /*
  * Copyright (c) 1994, 1995, 1996, 1997
@@ -29,10 +29,8 @@ static const char rcsid[] =
 #include <sys/time.h>
 #include <sys/socket.h>
 
-#ifdef __STDC__
 struct mbuf;
 struct rtentry;
-#endif
 #include <net/if.h>
 
 #include <netinet/in.h>

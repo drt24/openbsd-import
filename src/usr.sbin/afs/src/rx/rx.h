@@ -296,13 +296,8 @@ struct rx_securityClass {
     int refCount;
 };
 
-#if defined(__STDC__) && !defined(__HIGHC__)
 #define RXS_OP(obj,op,args) ((obj->ops->op_ ## op) ? \
 			     (*(obj)->ops->op_ ## op)args : 0)
-#else
-#define RXS_OP(obj,op,args) ((obj->ops->op_/**/op) ? \
-			     (*(obj)->ops->op_/**/op)args : 0)
-#endif
 
 #define RXS_Close(obj) RXS_OP(obj,Close,(obj))
 #define RXS_NewConnection(obj,conn) RXS_OP(obj,NewConnection,(obj,conn))
