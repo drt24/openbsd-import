@@ -56,8 +56,8 @@
 
 #define	PCI_CBIO	0x10
 
-int	bha_pci_match __P((struct device *, void *, void *));
-void	bha_pci_attach __P((struct device *, struct device *, void *));
+int	bha_pci_match(struct device *, void *, void *);
+void	bha_pci_attach(struct device *, struct device *, void *);
 
 struct cfattach bha_pci_ca = {
 	sizeof(struct bha_softc), bha_pci_match, bha_pci_attach

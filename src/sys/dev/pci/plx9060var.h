@@ -49,9 +49,9 @@ struct plx9060_config {
 };
 
 #ifdef notyet
-void	plx9060_read_eeprom __P((struct plx9060_config *, int, int, void *));
-void	plx9060_write_eeprom __P((struct plx9060_config *, int, int,
-	    const void *));
+void	plx9060_read_eeprom(struct plx9060_config *, int, int, void *);
+void	plx9060_write_eeprom(struct plx9060_config *, int, int,
+	    const void *);
 #endif
 
 #endif /* _DEV_PCI_PLX9060VAR_H_ */
