@@ -1,6 +1,6 @@
 #	$Id$
 
-.if ${MACHINE} == "powerpc"
+.if ${MACHINE} == "macppc"
 PROG=	pdisk
 
 SRCS=	pdisk.c dump.c partition_map.c convert.c io.c errors.c bitfield.c \
@@ -10,6 +10,6 @@ NOPROG=yes
 .endif
 
 MAN=	pdisk.8
-MANSUBDIR=powerpc
+MANSUBDIR=macppc
 
 .include <bsd.prog.mk>
