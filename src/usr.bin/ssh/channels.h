@@ -56,7 +56,7 @@ typedef struct Channel {
 
 	char   *ctype;		/* type */
 
-	// callback
+	/* callback */
 	channel_callback_fn	*cb_fn;
 	void	*cb_arg;
 	int	cb_event;
