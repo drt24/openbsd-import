@@ -5,6 +5,7 @@
 
 .include "../../kern/Make.tags.inc"
 
+SUBDIR=	stand
 
 NOPROG=	noprog
 NOOBJ=	noman
