@@ -149,8 +149,8 @@ usage:
 		exit(1);
 	}
 	if (argv[0][0] != '/')
-		(void)sprintf(name, "%sr%s%c", _PATH_DEV, argv[0],
-		    'a' + RAW_PART);
+		(void)snprintf(name, sizeof(name), "%sr%s%c", _PATH_DEV,
+		    argv[0], 'a' + RAW_PART);
 	else
 		strlcpy(name, argv[0], MAXPATHLEN);
 	f = open(name, argc == 1? O_RDONLY : O_RDWR);
