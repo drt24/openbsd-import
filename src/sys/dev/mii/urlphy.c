@@ -1,4 +1,4 @@
-/*	$OpenBSD: urlphy.c,v 1.1 2002/05/07 19:31:16 nate Exp $ */
+/*	$OpenBSD$ */
 /*	$NetBSD: urlphy.c,v 1.1 2002/03/28 21:07:53 ichiro Exp $	*/
 /*
  * Copyright (c) 2001, 2002

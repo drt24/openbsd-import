@@ -1,4 +1,4 @@
-/*	$OpenBSD: nofn.c,v 1.3 2002/05/15 21:33:22 jason Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002 Jason L. Wright (jason@thought.net)

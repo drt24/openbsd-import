@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_wi_hostap.h,v 1.5 2002/04/26 22:19:07 millert Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002

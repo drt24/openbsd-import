@@ -1,4 +1,4 @@
-/*	$OpenBSD: schizo.c,v 1.1 2002/06/08 21:56:02 jason Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002 Jason L. Wright (jason@thought.net)

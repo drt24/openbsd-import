@@ -1,4 +1,4 @@
-/*	$OpenBSD: fmsreg.h,v 1.1 2002/05/06 16:37:43 mickey Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: fms.c,v 1.5.4.1 2000/06/30 16:27:50 simonb Exp $	*/
 
 /*-

@@ -1,4 +1,4 @@
-/*	$OpenBSD: creator.c,v 1.10 2002/05/22 22:02:08 fgsch Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002 Jason L. Wright (jason@thought.net)

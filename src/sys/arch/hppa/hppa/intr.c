@@ -1,4 +1,4 @@
-/*	$OpenBSD: intr.c,v 1.1 2002/03/16 01:13:42 mickey Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002 Michael Shalayeff

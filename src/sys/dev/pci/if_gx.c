@@ -1,4 +1,4 @@
-/* $OpenBSD: if_gx.c,v 1.5 2002/04/28 20:46:38 nate Exp $ */
+/* $OpenBSD$ */
 /*-
  * Copyright (c) 1999,2000,2001 Jonathan Lemon
  * All rights reserved.

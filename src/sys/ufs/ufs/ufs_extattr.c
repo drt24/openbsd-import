@@ -1,4 +1,4 @@
-/*	$OpenBSD: ufs_extattr.c,v 1.2 2002/03/31 22:00:11 drahn Exp $ */
+/*	$OpenBSD$ */
 /*-
  * Copyright (c) 1999, 2000, 2001, 2002 Robert N. M. Watson
  * Copyright (c) 2002 Networks Associates Technology, Inc.

@@ -1,4 +1,4 @@
-/*	$OpenBSD: asio.c,v 1.4 2002/03/14 15:42:44 jason Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002 Jason L. Wright (jason@thought.net)

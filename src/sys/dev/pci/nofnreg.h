@@ -1,4 +1,4 @@
-/*	$OpenBSD: nofnreg.h,v 1.4 2002/05/16 15:10:30 jason Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002 Jason L. Wright (jason@thought.net)

@@ -1,4 +1,4 @@
-/*	$OpenBSD: asioreg.h,v 1.1 2002/03/06 16:09:46 jason Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002 Jason L. Wright (jason@thought.net)

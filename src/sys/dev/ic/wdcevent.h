@@ -1,4 +1,4 @@
-/* $OpenBSD: wdcevent.h,v 1.1 2002/03/16 17:12:09 csapuntz Exp $ */
+/* $OpenBSD$ */
 
 /*
  * Copyright (c) 2001 Constantine Sapuntzakis

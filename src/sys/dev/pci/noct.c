@@ -1,4 +1,4 @@
-/*	$OpenBSD: noct.c,v 1.1 2002/06/02 18:15:03 jason Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002 Jason L. Wright (jason@thought.net)

@@ -1,4 +1,4 @@
-/*	$OpenBSD: uperf_ebus.c,v 1.1 2002/04/04 23:16:22 jason Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2002 Jason L. Wright (jason@thought.net)

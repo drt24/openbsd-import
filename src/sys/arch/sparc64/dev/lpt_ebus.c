@@ -1,4 +1,4 @@
-/*	$OpenBSD: lpt_ebus.c,v 1.4 2002/04/16 19:49:06 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: lpt_ebus.c,v 1.8 2002/03/01 11:51:00 martin Exp $	*/
 
 /*
