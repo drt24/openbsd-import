@@ -35,7 +35,11 @@
  * This file is shared between user and kernel space, so be careful with the
  * coding conventions.
  */
+#ifdef _KERNEL
+#include <sys/errno.h>
+#else
 #include <errno.h>
+#endif
 #include <sys/types.h>
 #include <sys/file.h>
 #include <sys/ioctl.h>
