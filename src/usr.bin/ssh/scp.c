@@ -1130,12 +1130,15 @@ progressmeter(int flag)
 		lastsize = 0;
 	}   
 	(void)gettimeofday(&now, (struct timezone *)0);
-	if (totalbytes <= 0)
-		return;
 	cursize = statbytes;
-	ratio = cursize * 100 / totalbytes;
-	ratio = MAX(ratio, 0);
-	ratio = MIN(ratio, 100);
+	if (totalbytes != 0) {
+		ratio = cursize * 100 / totalbytes;
+		ratio = MAX(ratio, 0);
+		ratio = MIN(ratio, 100);
+	}
+	else
+		ratio = 100;
+
 	snprintf(buf, sizeof(buf), "\r%-20.20s %3d%% ", curfile, ratio); 
 
 	barlength = getttywidth() - 51;
