@@ -9,6 +9,7 @@ all:	config.status
 .FORCE:	.IGNORE
 
 config: .FORCE
+	-rm -f config.cache
 	/bin/sh ${.CURDIR}/configure --with-gnu-as --with-gnu-ld \
 		--prefix=/usr
 
