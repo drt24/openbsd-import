@@ -2231,7 +2231,7 @@ which would return a symbolic link pointing to @file{/home/charm/jsp}.
 
 @node     Symbolic Link Filesystem II, Automount Filesystem, Program Filesystem, Filesystem Types
 @comment  node-name,  next,  previous,  up
-@section Symbolic Link Filesystem II (@samp{type:=link})
+@section Symbolic Link Filesystem II (@samp{type:=linkx})
 @cindex Symbolic link filesystem II
 @cindex Referencing an existing part of the local name space
 @cindex Mounting an existing part of the local name space
