@@ -112,8 +112,8 @@ rsa_public_encrypt(BIGNUM *out, BIGNUM *in, RSA* key)
   char *inbuf, *outbuf;
   int len;
 
-  if (BN_num_bits(key->e) < 2)
-    fatal("rsa_public_encrypt() exponent too small");
+  if (BN_num_bits(key->e) < 2 || !BN_is_odd(key->e))
+    fatal("rsa_public_encrypt() exponent too small or not odd");
 
   len = BN_num_bytes(key->n);
   outbuf = xmalloc(len);
