@@ -3261,7 +3261,8 @@ ncr_attach(parent, self, aux)
 	if (retval)
 		return;
 
-	np->sc_ih = pci_map_int(pa->pa_tag, IPL_BIO, ncr_intr, np);
+	np->sc_ih = pci_map_int(pa->pa_tag, IPL_BIO, ncr_intr, np,
+				np->sc_dev.dv_xname);
 	if (np->sc_ih == NULL)
 		return;
 
