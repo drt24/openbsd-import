@@ -97,8 +97,12 @@ typedef struct pmap {
 extern	char *pmap_attributes;		/* reference and modify bits */
 extern	struct pmap kernel_pmap_store;
 
-#define	pmap_wired_count(pmap) 	((pmap)->pm_stats.wired_count)
+#define pmap_resident_count(pmap)       ((pmap)->pm_stats.resident_count)
+#define	pmap_wired_count(pmap)		((pmap)->pm_stats.wired_count)
 #define pmap_kernel() (&kernel_pmap_store)
+
+#define PMAP_PREFER(pa, va)             pmap_prefer((pa), (va))
+
 #endif	/* _KERNEL */
 
 #endif	/* _PMAP_MACHINE_ */

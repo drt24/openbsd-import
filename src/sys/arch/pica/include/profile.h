@@ -37,7 +37,7 @@
  *      $Id$
  */
 
-#define	_MCOUNT_DECL static void __mcount
+#define	_MCOUNT_DECL static void ___mcount
 
 #define	MCOUNT \
 	__asm(".globl _mcount;" \

@@ -7,11 +7,7 @@
 #ifndef _PCCONS_H_
 #define _PCCONS_H_
 
-#ifndef _KERNEL
 #include <sys/ioctl.h>
-#else
-#include "ioctl.h"
-#endif
 
 #define CONSOLE_X_MODE_ON		_IO('t',121)
 #define CONSOLE_X_MODE_OFF		_IO('t',122)

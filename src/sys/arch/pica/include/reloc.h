@@ -36,6 +36,7 @@
  * from: Header: reloc.h,v 1.6 92/06/20 09:59:37 torek Exp
  */
 
+#if 0
 /*
  * MIPS relocation types.
  */
@@ -71,3 +72,4 @@ struct reloc_info_pica {
 };
 
 #define relocation_info reloc_info_pica
+#endif
