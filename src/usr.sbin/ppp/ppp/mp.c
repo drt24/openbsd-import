@@ -696,6 +696,7 @@ mp_ShowStatus(struct cmdargs const *arg)
     struct mbuf *m, *lm;
     int bufs = 0;
 
+    lm = NULL;
     prompt_Printf(arg->prompt, "Socket:         %s\n",
                   mp->server.socket.sun_path);
     for (m = mp->inbufs; m; m = m->pnext) {
