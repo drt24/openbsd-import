@@ -248,8 +248,10 @@ extern vm_map_t phys_map;
  *
  * All requests are (re)mapped into kernel VA space via the phys_map
  */
-vmapbuf(bp)
-	register struct buf *bp;
+void
+vmapbuf(bp, len)
+	struct buf *bp;
+	vm_size_t len;
 {
 	register caddr_t addr;
 	register vm_size_t sz;
@@ -263,7 +265,7 @@ vmapbuf(bp)
 	addr = bp->b_saveaddr = bp->b_un.b_addr;
 	off = (int)addr & PGOFSET;
 	p = bp->b_proc;
-	sz = round_page(bp->b_bcount + off);
+	sz = round_page(off + len);
 	kva = kmem_alloc_wait_align(phys_map, sz, (vm_size_t)addr & machCacheAliasMask);
 	bp->b_un.b_addr = (caddr_t) (kva + off);
 	sz = atop(sz);
@@ -283,8 +285,10 @@ vmapbuf(bp)
  * Free the io map PTEs associated with this IO operation.
  * We also invalidate the TLB entries and restore the original b_addr.
  */
-vunmapbuf(bp)
-	register struct buf *bp;
+void
+vunmapbuf(bp, len)
+	struct buf *bp;
+	vm_size_t len;
 {
 	register caddr_t addr = bp->b_un.b_addr;
 	register vm_size_t sz;
@@ -292,7 +296,7 @@ vunmapbuf(bp)
 
 	if ((bp->b_flags & B_PHYS) == 0)
 		panic("vunmapbuf");
-	sz = round_page(bp->b_bcount + ((int)addr & PGOFSET));
+	sz = round_page(len + ((int)addr & PGOFSET));
 	kva = (vm_offset_t)((int)addr & ~PGOFSET);
 	kmem_free_wakeup(phys_map, kva, sz);
 	bp->b_un.b_addr = bp->b_saveaddr;
