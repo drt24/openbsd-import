@@ -8,8 +8,10 @@ SUBDIR=	pppstats chat
 BINMODE=4555
 BINOWN=	root
 
-LDADD=	-lcrypt -lutil
-DPADD=	${LIBCRYPT} ${LIBUTIL}
+#LDADD=	-lcrypt -lutil
+LDADD=	-lutil
+#DPADD=	${LIBCRYPT} ${LIBUTIL}
+DPADD=	${LIBUTIL}
 CFLAGS+= -DHAVE_PATHS_H
 
 .include <bsd.prog.mk>
