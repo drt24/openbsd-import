@@ -264,10 +264,11 @@ setflags(n)
 		}
 	} /* else, leave as is */
 
-#if 0
-	if (UC)
-		f |= LCASE;
-#endif
+	if (UC) {
+		SET(iflag, IUCLC);
+		SET(oflag, OLCUC);
+		SET(lflag, XCASE);
+	}
 
 	if (HC)
 		SET(cflag, HUPCL);
@@ -388,7 +389,7 @@ register long flags;
 		SET(oflag, OXTABS);
 	else
 		CLR(oflag, OXTABS);
-	if (ISSET(flags, LCASE))
+	if (ISSET(flags, LCASE)) {
 		SET(iflag, IUCLC);
 		SET(oflag, OLCUC);
 		SET(lflag, XCASE);

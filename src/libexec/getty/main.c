@@ -316,12 +316,16 @@ main(argc, argv)
 				tmode.c_iflag |= ICRNL;
 				tmode.c_oflag |= ONLCR;
 			}
-#if XXX
-			if (upper || UC)
-				tmode.sg_flags |= LCASE;
-			if (lower || LC)
-				tmode.sg_flags &= ~LCASE;
-#endif
+			if (upper || UC) {
+				tmode.c_iflag |= IUCLC;
+				tmode.c_oflag |= OLCUC;
+				tmode.c_lflag |= XCASE;
+			}
+			if (lower || LC) {
+				tmode.c_iflag &= ~IUCLC;
+				tmode.c_oflag &= ~OLCUC;
+				tmode.c_lflag &= ~XCASE;
+			}
 			if (tcsetattr(0, TCSANOW, &tmode) < 0) {
 				syslog(LOG_ERR, "%s: %m", ttyn);
 				exit(1);
