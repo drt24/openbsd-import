@@ -141,7 +141,7 @@ addfile(path, opts, flags, rule)
 	if ((fi = ht_lookup(basetab, base)) != NULL) {
 		if (fi->fi_srcfile != yyfile) {
 			showprev("note: ", fi);
-			error("is overriden by %s", path);
+			error("is overridden by %s", path);
 			errors--;	/* take it away */
 			fi->fi_flags |= FI_HIDDEN;
 		} else {
