@@ -407,7 +407,7 @@ doit(fromp)
 			if (getsockname(0, (struct sockaddr *)&local_addr,
 			    &rc) < 0) {
 				syslog(LOG_ERR, "getsockname: %m");
-				error("rlogind: getsockname: %m");
+				error("rshd: getsockname: %m");
 				exit(1);
 			}
 			authopts = KOPT_DO_MUTUAL;
