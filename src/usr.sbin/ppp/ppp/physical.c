@@ -54,11 +54,6 @@ physical_GetFD(struct physical *phys) {
 }
 
 int
-physical_IsATTY(struct physical *phys) {
-   return isatty(phys->fd);
-}
-
-int
 physical_IsSync(struct physical *phys) {
    return phys->cfg.speed == 0;
 }
@@ -185,7 +180,7 @@ physical_IsSet(struct descriptor *d, const fd_set *fdset)
 void
 physical_Login(struct physical *phys, const char *name)
 {
-  if (phys->type == PHYS_DIRECT && physical_IsATTY(phys)) {
+  if (phys->type == PHYS_DIRECT && phys->isatty) {
     if (phys->Utmp)
       log_Printf(LogERROR, "Oops, already logged in on %s\n", phys->name.base);
     else {

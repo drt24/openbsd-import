@@ -30,11 +30,7 @@ struct physical {
   struct hdlc hdlc;            /* Our hdlc state */
   int fd;                      /* File descriptor for this device */
   int mbits;                   /* Current DCD status */
-  unsigned dev_is_modem : 1;   /* Is the device an actual modem?
-                                  Faked for sync devices, though...
-                                  (Possibly this should be
-                                  dev_is_not_tcp?) XXX-ML */
-
+  unsigned isatty : 1;
   struct mbuf *out;            /* mbuf that suffered a short write */
   int connect_count;
   struct datalink *dl;         /* my owner */
@@ -72,7 +68,6 @@ struct physical {
   ((d)->type == PHYSICAL_DESCRIPTOR ? field2phys(d, desc) : NULL)
 
 extern int physical_GetFD(struct physical *);
-extern int physical_IsATTY(struct physical *);
 extern int physical_IsSync(struct physical *);
 extern const char *physical_GetDevice(struct physical *);
 extern void physical_SetDeviceList(struct physical *, int, const char *const *);
