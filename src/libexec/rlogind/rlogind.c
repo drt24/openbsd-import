@@ -80,7 +80,7 @@ static char *rcsid = "$Id$";
 #endif
 
 #ifdef	KERBEROS
-#include <kerberosIV/des.h>
+#include <des.h>
 #include <kerberosIV/krb.h>
 #define	SECURE_MESSAGE "This rlogin session is using DES encryption for all transmissions.\r\n"
 
