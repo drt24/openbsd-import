@@ -64,4 +64,6 @@
 				    } \
 				}
 #define	memcmp(s1,s2,n)		bcmp(s1,s2,n)
-#endif	/* defined(unix) && !defined(__NetBSD__) */
+#else /* !(defined(unix) && !defined(__NetBSD__)) */
+#include <string.h>
+#endif	/* !(defined(unix) && !defined(__NetBSD__)) */
