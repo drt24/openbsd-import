@@ -28,6 +28,9 @@ Report problems and direct all questions to:
 
 /*
  * $Log$
+ * Revision 1.1.1.1  1995/10/18 08:41:02  deraadt
+ * initial import of NetBSD tree
+ *
  * Revision 1.5  1995/02/24 02:25:07  mycroft
  * RCS 5.6.7.4
  *
@@ -188,9 +191,7 @@ getoldkeys(fp)
                 break;
             case Header:
             case Id:
-#ifdef LOCALID
 	    case LocalId:
-#endif
 		if (!(
 		      getval(fp, (struct buf*)0, false) &&
 		      keeprev(fp) &&

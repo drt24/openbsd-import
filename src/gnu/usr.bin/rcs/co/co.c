@@ -28,6 +28,9 @@ Report problems and direct all questions to:
 
 /*
  * $Log$
+ * Revision 1.1.1.1  1995/10/18 08:41:00  deraadt
+ * initial import of NetBSD tree
+ *
  * Revision 1.3  1995/02/24 02:07:49  mycroft
  * RCS 5.6.7.4
  *
@@ -305,6 +308,10 @@ mainProg(coId, "co", "$Id$")
 		case 'z':
 			zonearg = *argv;
 			zone_set(a);
+			break;
+
+		case 'L':    /*  add local $Id$ keyword string */
+			setRCSlocalId(*argv+2);
 			break;
 
 		case 'k':    /*  set keyword expand mode  */
