@@ -1285,8 +1285,8 @@ SetInterfaceAddr(struct cmdargs const *arg)
     return -1;
 
   hisaddr = NULL;
-  ipcp->cfg.my_range.ipaddr.s_addr = INADDR_ANY;
-  ipcp->cfg.peer_range.ipaddr.s_addr = INADDR_ANY;
+  memset(&ipcp->cfg.my_range, '\0', sizeof ipcp->cfg.my_range);
+  memset(&ipcp->cfg.peer_range, '\0', sizeof ipcp->cfg.peer_range);
   ipcp->cfg.HaveTriggerAddress = 0;
   ipcp->cfg.netmask.s_addr = INADDR_ANY;
   iplist_reset(&ipcp->cfg.peer_list);
