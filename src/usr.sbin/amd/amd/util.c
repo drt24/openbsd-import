@@ -301,21 +301,13 @@ u_short *pp;
 {
 	struct sockaddr_in sin;
 	int rc;
-	unsigned short port;
 
 	bzero((voidp) &sin, sizeof(sin));
 	sin.sin_family = AF_INET;
 
-	port = IPPORT_RESERVED;
-
-	do {
-		--port;
-		sin.sin_port = htons(port);
-		rc = bind(so, (struct sockaddr *) &sin, sizeof(sin));
-	} while (rc < 0 && port > IPPORT_RESERVED/2);
-
+	rc = bindresvport(so, &sin);
 	if (pp && rc == 0)
-		*pp = port;
+		*pp = ntohs(sin.sin_port);
 	return rc;
 }
 
