@@ -63,7 +63,7 @@
 %	char	*ut_line;		/* tty name */
 %	char	*ut_name;		/* user id */
 %	char	*ut_host;		/* host name, if remote */
-%	long	ut_time;		/* time on */
+%	int	ut_time;		/* time on */
 %};
 %typedef struct ru_utmp rutmp;
 %
@@ -123,7 +123,7 @@
 %	if (!xdr_bytes(xdrs, &objp->ut_host, &size, RNUSERS_MAXHOSTLEN)) {
 %		return (FALSE);
 %	}
-%	if (!xdr_long(xdrs, &objp->ut_time)) {
+%	if (!xdr_int(xdrs, &objp->ut_time)) {
 %		return (FALSE);
 %	}
 %	return (TRUE);
