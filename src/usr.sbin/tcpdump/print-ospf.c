@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: print-ospf.c,v 1.8 2000/10/03 14:31:58 ho Exp $	*/
 
 /*
  * Copyright (c) 1992, 1993, 1994, 1995, 1996, 1997
@@ -509,11 +509,9 @@ ospf_print(register const u_char *bp, register u_int length,
 	op = (struct ospfhdr *)bp;
 	ip = (struct ip *)bp2;
 	/* Print the source and destination address  */
-#if 0
 	(void) printf("%s > %s:",
 	    ipaddr_string(&ip->ip_src),
 	    ipaddr_string(&ip->ip_dst));
-#endif
 
         /* XXX Before we do anything else, strip off the MD5 trailer */
         TCHECK(op->ospf_authtype);
