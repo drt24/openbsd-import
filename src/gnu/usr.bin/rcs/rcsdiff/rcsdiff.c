@@ -28,6 +28,10 @@ Report problems and direct all questions to:
 
 /*
  * $Log$
+ * Revision 1.3  1996/05/07 12:03:33  mickey
+ * change -L option name to -Z, note that in
+ * co(1) manual, add -Z where were missed.
+ *
  * Revision 1.2  1996/01/15 21:40:37  niklas
  * Fix typo so two -L options can be fed to rcsdiff.
  *
@@ -259,9 +263,6 @@ mainProg(rcsdiffId, "rcsdiff", "$Id$")
 	    case 'V':
 		    versionarg = *argv;
 		    setRCSversion(versionarg);
-		    goto option_handled;
-	    case 'Z':
-		    setRCSlocalId(*argv + 2);
 		    goto option_handled;
 	    case 'k':
 		    expandarg = *argv;

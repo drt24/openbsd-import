@@ -28,6 +28,9 @@ Report problems and direct all questions to:
 
 /*
  * $Log$
+ * Revision 1.5  1996/05/12 03:26:55  mickey
+ * fix usage string.
+ *
  * Revision 1.4  1996/05/10 15:25:04  deraadt
  * Z not L
  *
@@ -318,10 +321,6 @@ mainProg(coId, "co", "$Id$")
 		case 'z':
 			zonearg = *argv;
 			zone_set(a);
-			break;
-
-		case 'Z':    /*  add local 'Id' keyword string */
-			setRCSlocalId(*argv+2);
 			break;
 
 		case 'k':    /*  set keyword expand mode  */

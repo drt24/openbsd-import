@@ -28,6 +28,10 @@ Report problems and direct all questions to:
 
 /*
  * $Log$
+ * Revision 1.2  1996/05/07 12:03:10  mickey
+ * change -L option name to -Z, note that in
+ * co(1) manual, add -Z where were missed.
+ *
  * Revision 1.1.1.1  1995/10/18 08:41:00  deraadt
  * initial import of NetBSD tree
  *
@@ -116,11 +120,6 @@ mainProg(identId, "ident", "$Id$")
 	    switch (*a) {
 		case 'q':
 		    quiet = 1;
-		    break;
-
-		case 'Z':
-		    setRCSlocalId(a+1);
-		    a += strlen(a) - 1;
 		    break;
 
 		case 'V':

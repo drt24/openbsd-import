@@ -28,6 +28,10 @@ Report problems and direct all questions to:
 
 /*
  * $Log$
+ * Revision 1.2  1996/05/07 12:03:44  mickey
+ * change -L option name to -Z, note that in
+ * co(1) manual, add -Z where were missed.
+ *
  * Revision 1.1.1.1  1995/10/18 08:41:04  deraadt
  * initial import of NetBSD tree
  *
@@ -312,11 +316,6 @@ mainProg(rlogId, "rlog", "$Id$")
 
 		case 'V':
 			setRCSversion(*argv);
-			break;
-
-		case 'Z':
-			/* add local Id keyword */
-			setRCSlocalId(a);
 			break;
 
                 default:

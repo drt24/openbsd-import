@@ -122,10 +122,6 @@ mainProg(rcscleanId, "rcsclean", "$Id$")
 				zone_set(a);
 				break;
 
-			case 'Z':
-				setRCSlocalId(a);
-				break;
-
 			default:
 			unknown:
 				error("unknown option: %s%s", *argv, usage);

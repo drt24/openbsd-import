@@ -28,6 +28,10 @@ Report problems and direct all questions to:
 
 /*
  * $Log$
+ * Revision 1.2  1996/05/07 12:03:21  mickey
+ * change -L option name to -Z, note that in
+ * co(1) manual, add -Z where were missed.
+ *
  * Revision 1.1.1.1  1995/10/18 08:41:03  deraadt
  * initial import of NetBSD tree
  *
@@ -463,10 +467,6 @@ mainProg(rcsId, "rcs", "$Id$")
 
 		case 'z':
 			zone_set(a);
-			break;
-
-		case 'Z':
-			setRCSlocalId(a);
 			break;
 
 		case 'k':    /*  set keyword expand mode  */
