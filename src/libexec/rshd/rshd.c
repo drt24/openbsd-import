@@ -377,6 +377,7 @@ doit(fromp)
 		 * address corresponds to the name.
 		 */
 		hostname = saddr;
+		res0 = NULL;
 #ifdef	KERBEROS
 		if (!use_kerberos)
 #endif
@@ -423,11 +424,12 @@ doit(fromp)
 					    "Host address mismatch for %s\n";
 					hostname = naddr;
 				}
-				freeaddrinfo(res);
 			}
 		}
 		hostname = strncpy(hostnamebuf, hostname,
 		    sizeof(hostnamebuf) - 1);
+		if (res0)
+			freeaddrinfo(res0);
 	} else
 		errorhost = hostname = strncpy(hostnamebuf,
 		    naddr, sizeof(hostnamebuf) - 1);
