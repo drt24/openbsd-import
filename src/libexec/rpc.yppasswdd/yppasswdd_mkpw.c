@@ -143,7 +143,10 @@ do_mkdb()
 	(void)fflush(stdout);
 	if (!(pid = vfork())) {
 		execl(_PATH_PWD_MKDB, "pwd_mkdb", "-p", tempname, NULL);
-		pw_error(_PATH_PWD_MKDB, 1, 1);
+		warn(_PATH_PWD_MKDB);
+		warnx("%s: unchanged", _PATH_MASTERPASSWD);
+		pw_abort();
+		_exit(1);
 	}
 	pid = waitpid(pid, &pstat, 0);
 	if (pid == -1 || !WIFEXITED(pstat) || WEXITSTATUS(pstat) != 0)
