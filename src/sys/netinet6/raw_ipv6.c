@@ -1,4 +1,4 @@
-/*	$OpenBSD: raw_ipv6.c,v 1.16 2000/04/30 14:55:26 itojun Exp $	*/
+/*	$OpenBSD: raw_ipv6.c,v 1.17 2000/05/13 21:31:18 deraadt Exp $	*/
 
 /*
 %%% copyright-nrl-95
@@ -224,6 +224,9 @@ rip6_input(mp, offp, proto)
   bzero(&srcsa, sizeof(struct sockaddr_in6));
   srcsa.sin6_family = AF_INET6;
   srcsa.sin6_len = sizeof(struct sockaddr_in6);
+#if 0 /*XXX inbound flowinfo */
+  srcsa.sin6_flowinfo = ip6->ip6_flow & IPV6_FLOWINFO_MASK;
+#endif
   srcsa.sin6_addr = ip6->ip6_src;
 
 	if (IN6_IS_SCOPE_LINKLOCAL(&srcsa.sin6_addr))
