@@ -15,6 +15,7 @@
 #include <sys/sysctl.h>
 
 #include <stdio.h>
+#include <string.h>
 #include <errno.h>
 
 #include <netinet/in.h>
@@ -45,7 +46,7 @@ k_getuid(faddr, fport, laddr, lport, uid)
 	struct sockaddr_in *fin, *lin;
 	int mib[] = { CTL_NET, PF_INET, IPPROTO_TCP, TCPCTL_IDENT };
 	int error = 0;
-	int i;
+	size_t i;
 
 	memset(&tir, 0, sizeof (tir));
 	tir.faddr.sa_len = sizeof (struct sockaddr);
