@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-ip.c,v 1.26 2004/05/08 01:01:35 mcbride Exp $	*/
+/*	$OpenBSD: print-ip.c,v 1.27 2004/08/10 19:55:35 markus Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -634,6 +634,8 @@ ip_print(register const u_char *bp, register u_int length)
 			(void)printf("%sid %d", sep, (int)ntohs(ip->ip_id));
 			sep = ", ";
 		}
+		(void)printf("%slen %u", sep, ntohs(ip->ip_len));
+		sep = ", ";
 		if ((u_char *)ip + hlen <= snapend) {
 			sum = in_cksum((const u_short *)ip, hlen, 0);
 			if (sum != 0) {
