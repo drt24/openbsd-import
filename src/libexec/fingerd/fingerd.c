@@ -53,6 +53,7 @@ main()
 	int p[2];
 #define	ENTRIES	50
 	char **ap, *av[ENTRIES + 1], line[1024], *strtok();
+	int i;
 
 #ifdef LOGGING					/* unused for now */
 #include <netinet/in.h>
@@ -78,6 +79,15 @@ main()
 		if (++ap == av + ENTRIES)
 			break;
 		lp = NULL;
+	}
+
+	for (i = 1; av[i]; i++) {
+		int l = strlen(av[i]);
+
+		while (av[i][l-1] == '@')
+			av[i][--l] = '\0';
+		if (av[i][0] == '\0')
+			av[i] = NULL;
 	}
 
 	if (pipe(p) < 0)
