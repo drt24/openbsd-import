@@ -49,6 +49,11 @@ namedb
 # ./etc/namedb
 ..
 
+# ./etc/ppp
+ppp
+# ./etc/ppp
+..
+
 # ./etc/sliphome
 sliphome
 # ./etc/sliphome
