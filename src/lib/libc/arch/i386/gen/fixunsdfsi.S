@@ -37,13 +37,12 @@
  *	$Id$
  */
 
+#include <machine/asm.h>
+
 #if defined(LIBC_SCCS)
 	.text
 	.asciz "$Id$"
 #endif
-
-#include "DEFS.h"
-#include "SYS.h"
 
 ENTRY(__fixunsdfsi)
 	fldl	4(%esp)		/* argument double to accum stack */
