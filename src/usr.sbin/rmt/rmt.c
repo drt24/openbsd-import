@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /*
  * Copyright (c) 1983 Regents of the University of California.
  * All rights reserved.
@@ -62,9 +64,9 @@ int	tape = -1;
 char	*record;
 int	maxrecsize = -1;
 
-#define	SSIZE	64
-char	device[SSIZE];
-char	count[SSIZE], mode[SSIZE], pos[SSIZE], op[SSIZE];
+#define	STRSIZE	64
+char	device[STRSIZE];
+char	count[STRSIZE], mode[STRSIZE], pos[STRSIZE], op[STRSIZE];
 
 char	resp[BUFSIZ];
 
@@ -203,7 +205,7 @@ getstring(bp)
 	int i;
 	char *cp = bp;
 
-	for (i = 0; i < SSIZE; i++) {
+	for (i = 0; i < STRSIZE; i++) {
 		if (read(0, cp+i, 1) != 1)
 			exit(0);
 		if (cp[i] == '\n')
