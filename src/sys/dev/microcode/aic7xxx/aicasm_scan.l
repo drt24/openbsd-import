@@ -1,5 +1,5 @@
 %{
-/*	$OpenBSD: aicasm_scan.l,v 1.7 2003/12/24 23:27:55 krw Exp $	*/
+/*	$OpenBSD: aicasm_scan.l,v 1.8 2004/06/12 03:37:20 krw Exp $	*/
 /*
  * Lexical Analyzer for the Aic7xxx SCSI Host adapter sequencer assembler.
  *
@@ -60,7 +60,7 @@
 
 #include "aicasm.h"
 #include "aicasm_symbol.h"
-#include "y.tab.h"
+#include "aicasm_gram.h"
 
 /* This is used for macro body capture too, so err on the large size. */
 #define MAX_STR_CONST 4096
