@@ -129,7 +129,7 @@ RecvChapTalk(struct fsmheader *chp, struct mbuf *bp)
   name = cp + valsize;
   namelen = arglen - valsize - 1;
   name[namelen] = 0;
-  LogPrintf(LogPHASE, " Valsize = %d, Name = %s\n", valsize, name);
+  LogPrintf(LogLCP, " Valsize = %d, Name = \"%s\"\n", valsize, name);
 
   switch (chp->code) {
   case CHAP_CHALLENGE:
