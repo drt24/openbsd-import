@@ -289,7 +289,6 @@ ahc_pci_attach(parent, self, aux)
 #elif defined(__NetBSD__) || defined(__OpenBSD__)
 	struct pci_attach_args *pa = aux;
 	struct ahc_data *ahc = (void *)self;
-	int unit = ahc->sc_dev.dv_unit;
 	bus_io_addr_t iobase;
 	bus_io_size_t iosize;
 	bus_io_handle_t ioh;
