@@ -54,7 +54,6 @@
 #include "route.h"
 
 static int IfIndex;
-static const char *Index2Nam(int);
 
 struct rtmsg {
   struct rt_msghdr m_rtm;
@@ -308,7 +307,7 @@ p_flags(u_long f, int max)
   }
 }
 
-static const char *
+const char *
 Index2Nam(int idx)
 {
   static char **ifs;

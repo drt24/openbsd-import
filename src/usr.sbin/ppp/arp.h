@@ -21,5 +21,5 @@
  *
  */
 
-extern int cifproxyarp(int, u_long);
-extern int sifproxyarp(int, u_long);
+extern int cifproxyarp(int, struct in_addr);
+extern int sifproxyarp(int, struct in_addr);
