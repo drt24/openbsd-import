@@ -130,9 +130,9 @@ main(argc, argv)
 		if ((argnum = oneof(fs->fs_file, argv, argc)) >= 0 ||
 		    (argnum = oneof(fs->fs_spec, argv, argc)) >= 0) {
 			done |= 1 << argnum;
-			if (gflag && hasquota(fs, GRPQUOTA, &qfnp))
+			if (gflag)
 				errs += quotaonoff(fs, offmode, GRPQUOTA, qfnp);
-			if (uflag && hasquota(fs, USRQUOTA, &qfnp))
+			if (uflag)
 				errs += quotaonoff(fs, offmode, USRQUOTA, qfnp);
 		}
 	}
