@@ -23,12 +23,12 @@ all: ${CBIN}
 	dd if=/dev/zero of=${REALIMAGE} bs=10k count=120
 	disklabel -w -B -b /usr/mdec/fdboot -s /usr/mdec/bootfd ${REALIMAGE} floppy5
 	vnconfig -v -c ${VND_DEV} ${REALIMAGE}
-	newfs -O -m 0 -o space -i 5120 -c 80 ${VND_RDEV} floppy5
+	newfs -O -m 0 -o space -i 3000 -c 80 ${VND_RDEV} floppy5
 .else
 	dd if=/dev/zero of=${REALIMAGE} bs=10k count=144
 	disklabel -w -B -b /usr/mdec/fdboot -s /usr/mdec/bootfd ${REALIMAGE} floppy3
 	vnconfig -v -c ${VND_DEV} ${REALIMAGE}
-	newfs -O -m 0 -o space -i 5120 -c 80 ${VND_RDEV} floppy3
+	newfs -O -m 0 -o space -i 3000 -c 80 ${VND_RDEV} floppy3
 .endif
 	mount ${VND_DEV} ${MOUNT_POINT}
 	mtree -def ${MTREE} -p ${MOUNT_POINT}/ -u
