@@ -20,6 +20,8 @@
  *	TODO:
  */
 
+#define	REJECTED(p, x)	(p->his_reject & (1<<x))
+
 struct lcpstate {
   u_long his_mru;
   u_long his_accmap;
@@ -57,12 +59,13 @@ struct lcpstate {
 #define	TY_FCSALT	9	/* FCS-Alternatives */
 #define	TY_SDP		10	/* Self-Describing-Padding */
 
-struct lqrreq {
-  u_char type;
-  u_char length;
-  u_short proto;		/* Quality protocol */
-  u_long period;		/* Reporting interval */
+#define MAX_LCP_OPT_LEN 10
+struct lcp_opt {
+  u_char id;
+  u_char len;
+  u_char data[MAX_LCP_OPT_LEN-2];
 };
+
 
 extern struct lcpstate LcpInfo;
 extern struct fsm LcpFsm;
@@ -73,6 +76,7 @@ extern void LcpSendProtoRej(u_char *, int);
 extern void LcpOpen(int);
 extern void LcpClose(void);
 extern void LcpDown(void);
-extern void PutConfValue(int, u_char **, const char **, u_char, int, u_long);
+extern int LcpPutConf(int, u_char *, const struct lcp_opt *, const char *,
+                       const char *, ...);
 extern int ReportLcpStatus(struct cmdargs const *);
 extern void LcpInput(struct mbuf *);

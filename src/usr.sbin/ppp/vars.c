@@ -53,18 +53,20 @@ int reconnectCount = 0;
  * Order of conf option is important. See vars.h.
  */
 struct confdesc pppConfs[] = {
-  {"vjcomp", CONF_ENABLE, CONF_ACCEPT},
-  {"lqr", CONF_DISABLE, CONF_ACCEPT},
-  {"chap", CONF_DISABLE, CONF_ACCEPT},
-  {"pap", CONF_DISABLE, CONF_ACCEPT},
   {"acfcomp", CONF_ENABLE, CONF_ACCEPT},
-  {"protocomp", CONF_ENABLE, CONF_ACCEPT},
+  {"chap", CONF_DISABLE, CONF_ACCEPT},
+  {"deflate", CONF_ENABLE, CONF_ACCEPT},
+  {"lqr", CONF_DISABLE, CONF_ACCEPT},
+  {"pap", CONF_DISABLE, CONF_ACCEPT},
+  {"pppd-deflate", CONF_DISABLE, CONF_DENY},
   {"pred1", CONF_ENABLE, CONF_ACCEPT},
-  {"proxy", CONF_DISABLE, CONF_NONE},
+  {"protocomp", CONF_ENABLE, CONF_ACCEPT},
+  {"vjcomp", CONF_ENABLE, CONF_ACCEPT},
   {"msext", CONF_DISABLE, CONF_NONE},
   {"passwdauth", CONF_DISABLE, CONF_NONE},
-  {"utmp", CONF_ENABLE, CONF_NONE},
+  {"proxy", CONF_DISABLE, CONF_NONE},
   {"throughput", CONF_DISABLE, CONF_NONE},
+  {"utmp", CONF_ENABLE, CONF_NONE},
   {NULL},
 };
 

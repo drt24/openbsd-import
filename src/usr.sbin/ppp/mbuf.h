@@ -58,6 +58,5 @@ extern struct mbuf *mbfree(struct mbuf *);
 extern void pfree(struct mbuf *);
 extern void mbwrite(struct mbuf *, u_char *, int);
 extern struct mbuf *mbread(struct mbuf *, u_char *, int);
-extern void DumpBp(struct mbuf *);
 extern void LogMemory(void);
 extern int ShowMemMap(struct cmdargs const *);

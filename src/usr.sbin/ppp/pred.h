@@ -20,6 +20,4 @@
  *	TODO:
  */
 
-extern void Pred1Output(int, u_short, struct mbuf *);
-extern void Pred1Input(struct mbuf *);
-extern void Pred1Init(int);
+extern const struct ccp_algorithm Pred1Algorithm;

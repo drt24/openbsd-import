@@ -55,6 +55,7 @@
 #include "arp.h"
 #include "systems.h"
 #include "route.h"
+#include "lcp.h"
 #include "ccp.h"
 #include "modem.h"
 

@@ -69,7 +69,6 @@ ServerLocalOpen(const char *name, mode_t mask)
     if (errno == EADDRINUSE && VarTerm)
       fprintf(VarTerm, "Wait for a while, then try again.\n");
     close(s);
-    ID0unlink(name);
     return 4;
   }
   if (mask != (mode_t)-1)
