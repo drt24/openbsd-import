@@ -20,10 +20,10 @@ install_mm: install_m
 
 install_m:
 	-test -d $(tmacdir) || mkdir $(tmacdir)
-	-rm -f $(tmacdir)/tmac.$(tmac_m)
-	$(INSTALL_DATA) $(srcdir)/tmac.m $(tmacdir)/tmac.$(tmac_m)
-	@sed -e "s;^.mso tmac.m;.mso $(tmac_m);g" $(srcdir)/tmac.mse \
-		> $(tmacdir)/tmac.$(tmac_m)se
+	-rm -f $(tmacdir)/tmac.$(tmac_m_prefix)m
+	$(INSTALL_DATA) $(srcdir)/tmac.m $(tmacdir)/tmac.$(tmac_m_prefix)m
+	@sed -e "s;^.mso tmac.m;.mso $(tmac_m_prefix)m;g" $(srcdir)/tmac.mse \
+		> $(tmacdir)/tmac.$(tmac_m_prefix)mse
 
 
 
@@ -32,6 +32,6 @@ uninstall_sub:
 	-for f in $(LOCALE); do \
 	test -s $(tmacdir)/mm/$$f || rm -f $(tmacdir)/mm/$$f; \
 	done
-	-rm -f $(tmacdir)/tmac.$(tmac_m)
-	-rm -f $(tmacdir)/tmac.$(tmac_m)se
+	-rm -f $(tmacdir)/tmac.$(tmac_m_prefix)m
+	-rm -f $(tmacdir)/tmac.$(tmac_m_prefix)mse
 	-rmdir $(tmacdir)/mm
