@@ -1,5 +1,5 @@
 #	from: @(#)Makefile	5.2 (Berkeley) 9/27/90
-#	$Id$
+#	$OpenBSD: Makefile,v 1.1.1.1 1995/10/18 08:47:57 deraadt Exp $
 
 PROG=	portmap
 MAN=	portmap.8
