@@ -1,4 +1,4 @@
-/*     $OpenBSD$      */
+/*     $OpenBSD: parse.c,v 1.18 1998/01/26 04:13:38 dgregor Exp $      */
 /*
  * Copyright (C) 1993-1997 by Darren Reed.
  *
@@ -622,7 +622,7 @@ int	*resolved;
 			fprintf(stderr, "can't resolve hostname: %s\n", host);
 			return 0;
 		}
-		return np->n_net;
+		return htonl(np->n_net);
 	}
 	return *(u_32_t *)hp->h_addr;
 }
