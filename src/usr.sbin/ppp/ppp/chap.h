@@ -39,7 +39,10 @@ struct chap {
     } buf;
   } child;
   struct authinfo auth;
-  u_char challenge[CHAPCHALLENGELEN + AUTHLEN];
+  struct {
+    u_char local[CHAPCHALLENGELEN + AUTHLEN];	/* I invented this one */
+    u_char peer[CHAPCHALLENGELEN + AUTHLEN];	/* Peer gave us this one */
+  } challenge;
 #ifdef HAVE_DES
   unsigned NTRespSent : 1;		/* Our last response */
   int peertries;
