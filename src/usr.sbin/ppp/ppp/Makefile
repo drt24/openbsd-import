@@ -3,9 +3,10 @@
 PROG=	ppp
 SRCS=	arp.c async.c auth.c bundle.c cbcp.c ccp.c chap.c chap_ms.c chat.c \
 	command.c datalink.c deflate.c defs.c filter.c fsm.c hdlc.c id.c \
-	ip.c ipcp.c iplist.c lcp.c link.c log.c lqr.c main.c mbuf.c modem.c \
-	mp.c pap.c physical.c pred.c probe.c prompt.c route.c server.c \
-	sig.c slcompress.c systems.c throughput.c timer.c tun.c vjcomp.c
+	iface.c ip.c ipcp.c iplist.c lcp.c link.c log.c lqr.c main.c mbuf.c \
+	modem.c mp.c pap.c physical.c pred.c probe.c prompt.c route.c \
+	server.c sig.c slcompress.c systems.c throughput.c timer.c tun.c \
+	vjcomp.c
 CFLAGS+=-Wall -DHAVE_DES
 LDADD+= -ldes -lutil -lz
 DPADD+=	${LIBDES} ${LIBUTIL} ${LIBZ}

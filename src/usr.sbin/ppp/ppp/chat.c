@@ -429,6 +429,7 @@ chat_Read(struct descriptor *d, struct bundle *bundle, const fd_set *fdset)
       if (begin >= ebegin && begin < eend &&
           !strncmp(begin, c->argptr, c->arglen)) {
         /* Got it ! */
+        timer_Stop(&c->timeout);
         if (memchr(begin + c->arglen - 1, '\n',
             c->bufend - begin - c->arglen + 1) == NULL) { 
           /* force it into the log */
