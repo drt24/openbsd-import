@@ -149,7 +149,7 @@ exec pppctl /var/run/internet set timeout 300\\; close
 To check if the line is up:
 .Bd -literal -offset indent
 #! /bin/sh
-pppctl -p '' -v /var/run/internet '' | grep ^PPP >/dev/null
+pppctl -p '' -v /var/run/internet quit | grep ^PPP >/dev/null
 if [ $? -eq 0 ]; then
   echo Link is up
 else
