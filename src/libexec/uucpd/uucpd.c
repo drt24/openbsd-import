@@ -263,11 +263,12 @@ struct sockaddr_in *sin;
 		sizeof (struct in_addr), AF_INET);
 
 	if (hp) {
-		strncpy(remotehost, hp->h_name, sizeof (remotehost));
+		strncpy(remotehost, hp->h_name, sizeof(remotehost)-1);
 		endhostent();
 	} else
 		strncpy(remotehost, inet_ntoa(sin->sin_addr),
-		    sizeof (remotehost));
+		    sizeof(remotehost)-1);
+	remotehost[sizeof(remotehost)-1] = '\0';
 	wtmp = open(_PATH_WTMP, O_WRONLY|O_APPEND);
 	if (wtmp >= 0) {
 		/* hack, but must be unique and no tty line */

@@ -221,7 +221,7 @@ notify(utp, offset)
 	(void)tcgetattr(fileno(tp), &ttybuf);
 	cr = (ttybuf.c_oflag & ONLCR) && (ttybuf.c_oflag & OPOST) ?
 	    "\n" : "\n\r";
-	(void)strncpy(name, utp->ut_name, sizeof(utp->ut_name));
+	(void)strncpy(name, utp->ut_name, sizeof(name) - 1);
 	name[sizeof(name) - 1] = '\0';
 	(void)fprintf(tp, "%s\007New mail for %s@%.*s\007 has arrived:%s----%s",
 	    cr, name, (int)sizeof(hostname), hostname, cr, cr);

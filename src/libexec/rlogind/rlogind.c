@@ -216,7 +216,7 @@ doit(f, fromp)
 	hp = gethostbyaddr((char *)&fromp->sin_addr, sizeof(struct in_addr),
 	    fromp->sin_family);
 	if (hp) {
-		strncpy(hostname, hp->h_name, sizeof hostname);
+		strncpy(hostname, hp->h_name, sizeof(hostname)-1);
 		if (check_all) {
 			hp = gethostbyname(hostname);
 			if (hp) {
@@ -233,7 +233,8 @@ doit(f, fromp)
 	}
 	/* aha, the DNS looks spoofed */
 	if (hp == NULL || good == 0)
-		strncpy(hostname, inet_ntoa(fromp->sin_addr), sizeof hostname);
+		strncpy(hostname, inet_ntoa(fromp->sin_addr), sizeof(hostname)-1);
+	hostname[sizeof(hostname)-1] = '\0';
 
 
 #ifdef	KERBEROS
