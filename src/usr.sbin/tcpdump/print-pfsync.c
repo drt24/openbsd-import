@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-pfsync.c,v 1.3 2002/11/30 13:56:23 mickey Exp $	*/
+/*	$OpenBSD: print-pfsync.c,v 1.4 2002/12/20 22:25:59 mickey Exp $	*/
 
 /*
  * Copyright (c) 2002 Michael Shalayeff
@@ -105,9 +105,9 @@ pfsync_if_print(u_char *user, const struct pcap_pkthdr *h,
 	    i++, s++) {
 		struct pf_state st;
 
-		bcopy(&s->lan, &st.lan, sizeof(st.lan)); NTOHS(st.lan.port);
-		bcopy(&s->gwy, &st.gwy, sizeof(st.gwy)); NTOHS(st.gwy.port);
-		bcopy(&s->ext, &st.ext, sizeof(st.ext)); NTOHS(st.ext.port);
+		bcopy(&s->lan, &st.lan, sizeof(st.lan));
+		bcopy(&s->gwy, &st.gwy, sizeof(st.gwy));
+		bcopy(&s->ext, &st.ext, sizeof(st.ext));
 		pf_state_peer_ntoh(&s->src, &st.src);
 		pf_state_peer_ntoh(&s->dst, &st.dst);
 		st.rule.nr = ntohl(s->rule.nr);
