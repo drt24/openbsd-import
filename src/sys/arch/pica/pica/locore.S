@@ -2735,7 +2735,7 @@ FPReturn:
 	mtc0	t0, MACH_COP_0_STATUS_REG
 	j	ra
 	addu	sp, sp, STAND_FRAME_SIZE
-END(MachFPInterrupt)
+END(MachFPTrap)
 
 /*----------------------------------------------------------------------------
  *
