@@ -36,6 +36,9 @@ Report problems and direct all questions to:
 
 /*
  * $Log$
+ * Revision 1.1  1996/08/12 04:08:16  millert
+ * rcs 5.7 + OpenBSD changes
+ *
  * Revision 5.19  1995/06/16 06:19:24  eggert
  * Update FSF address.
  *
@@ -1053,7 +1056,7 @@ keyreplace(marker, delta, delimstuffed, infile, out, dolog)
 	    case LocalId:
 	    case Header:
 		escape_string(out,
-			marker==Id || RCSv<VERSION(4)
+			marker!=Header || RCSv<VERSION(4)
 			? basefilename(RCSname)
 			: getfullRCSname()
 		);
