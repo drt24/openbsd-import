@@ -945,7 +945,7 @@ void
 usage()
 {
 	(void) fprintf(stderr,
-		       "usage: scp [-pqrvC] [-P port] [-c cipher] [-i identity] f1 f2; or:\n       scp [options] f1 ... fn directory\n");
+		       "usage: scp [-pqrvC46] [-P port] [-c cipher] [-i identity] f1 f2; or:\n       scp [options] f1 ... fn directory\n");
 	exit(1);
 }
 
