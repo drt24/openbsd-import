@@ -685,6 +685,7 @@ struct envstring {
 int     auth_krb4(const char *server_user, KTEXT auth, char **client);
 int     krb4_init(uid_t uid);
 void    krb4_cleanup_proc(void *ignore);
+int	auth_krb4_password(struct passwd * pw, const char *password);
 
 #ifdef AFS
 #include <kafs.h>
@@ -702,6 +703,7 @@ int     radix_to_creds(const char *buf, CREDENTIALS * creds);
 #ifdef SKEY
 #include <skey.h>
 char   *skey_fake_keyinfo(char *username);
+int	auth_skey_password(struct passwd * pw, const char *password);
 #endif				/* SKEY */
 
 #endif				/* SSH_H */
