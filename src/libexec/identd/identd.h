@@ -37,7 +37,11 @@ extern int lport;
 extern int fport;
 
 int	parse __P((int, struct in_addr *, struct in_addr *));
+int	parse6 __P((int, struct sockaddr_in6 *, struct sockaddr_in6 *));
 char	*gethost __P((struct in_addr *));
+char	*gethost6 __P((struct sockaddr_in6 *));
 int	k_getuid __P((struct in_addr *, int, struct in_addr *, int, uid_t *));
+int	k_getuid6 __P((struct sockaddr_in6 *, int, struct sockaddr_in6 *,
+	int, uid_t *));
 
 #endif
