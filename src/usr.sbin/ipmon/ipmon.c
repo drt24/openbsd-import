@@ -151,7 +151,8 @@ int	opts;
 			tm->tm_mday, tm->tm_mon + 1, tm->tm_year + 1900);
 		t += strlen(t);
 	}
-#if (defined(NetBSD) && (NetBSD <= 1991011) && (NetBSD >= 199606))
+#if (defined(NetBSD) && (NetBSD <= 1991011) && (NetBSD >= 199606)) || \
+    (defined(OpenBSD) && (OpenBSD >= 199606))
 	(void) sprintf(t, "%02d:%02d:%02d.%-.6ld %s @%hd ",
 		tm->tm_hour, tm->tm_min, tm->tm_sec, lp->usec,
 		lp->ifname, lp->rule);
