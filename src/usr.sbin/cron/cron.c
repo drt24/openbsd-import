@@ -373,7 +373,10 @@ sigchld_handler(x) {
 
 static void
 sighup_handler(x) {
+	int save_errno = errno;
+
 	log_close();
+	errno = save_errno;
 }
 
 
