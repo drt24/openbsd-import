@@ -195,8 +195,8 @@ struct sockaddr_in *sinp;
 	dologin(pw, sinp);
 	setgid(pw->pw_gid);
 	initgroups(pw->pw_name, pw->pw_gid);
-	chdir(pw->pw_dir);
 	setuid(pw->pw_uid);
+	chdir(pw->pw_dir);
 	execl(_PATH_UUCICO, "uucico", (char *)0);
 	perror("uucico server: execl");
 }
