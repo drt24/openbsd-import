@@ -1,4 +1,4 @@
-/*	$OpenBSD: ecs.c,v 1.3 1996/07/13 22:21:57 millert Exp $	*/
+/*	$OpenBSD: ecs.c,v 1.4 2001/06/17 07:30:42 deraadt Exp $	*/
 
 /* ecs - equivalence class routines */
 
@@ -144,7 +144,7 @@ int lenccl, fwd[], bck[], llsiz, NUL_mapping;
 			{ /* look for the symbol in the character class */
 			for ( ; j < lenccl; ++j )
 				{
-				register int ccl_char;
+				int ccl_char;
 
 				if ( NUL_mapping && ccls[j] == 0 )
 					ccl_char = NUL_mapping;

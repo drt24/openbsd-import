@@ -1,4 +1,4 @@
-/*	$OpenBSD: nfa.c,v 1.3 1996/07/13 22:22:10 millert Exp $	*/
+/*	$OpenBSD: nfa.c,v 1.4 2001/06/17 07:30:42 deraadt Exp $	*/
 
 /* nfa - NFA construction routines */
 
@@ -321,7 +321,7 @@ int first, last;
  */
 
 void mark_beginning_as_normal( mach )
-register int mach;
+int mach;
 	{
 	switch ( state_type[mach] )
 		{
