@@ -1066,7 +1066,10 @@ alarmtimer(int wait)
 void
 updateprogressmeter(void)
 {
+	int save_errno = errno;
+
 	progressmeter(0);
+	errno = save_errno;
 }
 
 void
