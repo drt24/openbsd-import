@@ -62,7 +62,7 @@ A connection to the agent is inherited by child programs:
 A unix-domain socket is created
 .Pq Pa /tmp/ssh-XXXX/agent.<pid> ,
 and the name of this socket is stored in the
-.Ev SSH_AUTH_SOCKET
+.Ev SSH_AUTH_SOCK
 environment
 variable.  The socket is made accessible only to the current user.
 This method is easily abused by root or another instance of the same
