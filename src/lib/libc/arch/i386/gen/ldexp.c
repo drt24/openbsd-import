@@ -48,11 +48,11 @@ ldexp (double value, int exp)
 {
 	double temp;
 #if __GNUC__ >= 2
-	asm ("fscale"
+	__asm ("fscale"
 		: "=t" (temp)
 		: "0" (value), "u" ((double)exp));
 #else
-	asm ("fscale; fstp %%st(1)"
+	__asm ("fscale; fstp %%st(1)"
 		: "=f" (temp)
 		: "f" (value), "0" ((double)exp));
 #endif
