@@ -47,6 +47,7 @@ parser generator
 .Nm yacc
 .Op Fl dlrtv
 .Op Fl b Ar prefix
+.Op Fl p Ar symbol_prefix
 .Ar filename
 .Sh DESCRIPTION
 .Nm Yacc
@@ -93,6 +94,14 @@ option is specified,
 .Nm yacc
 will not insert the #line directives.
 #line directives specified by the user will be retained.
+.It Fl p Ar symbol_prefix
+The
+.Fl p
+option changes the prefix prepended to yacc-generated symbols to
+the string denoted by
+.Ar symbol_prefix .
+The default prefix is the string
+.Ar yy .
 .It Fl r
 The
 .Fl r
