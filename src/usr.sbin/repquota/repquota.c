@@ -388,13 +388,14 @@ timeprt(seconds)
 	minutes = (seconds + 30) / 60;
 	hours = (minutes + 30) / 60;
 	if (hours >= 36) {
-		sprintf(buf, "%ddays", (hours + 12) / 24);
+		snprintf(buf, sizeof buf, "%ddays", (hours + 12) / 24);
 		return (buf);
 	}
 	if (minutes >= 60) {
-		sprintf(buf, "%2d:%d", minutes / 60, minutes % 60);
+		snprintf(buf, sizeof buf, "%2d:%d", minutes / 60,
+		    minutes % 60);
 		return (buf);
 	}
-	sprintf(buf, "%2d", minutes);
+	snprintf(buf, sizeof buf, "%2d", minutes);
 	return (buf);
 }
