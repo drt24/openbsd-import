@@ -1,4 +1,4 @@
-/*	$OpenBSD: process.c,v 1.11 2002/05/22 00:32:27 deraadt Exp $	*/
+/*	$OpenBSD: process.c,v 1.12 2002/05/22 20:01:28 millert Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -227,8 +227,8 @@ find_user(name, tty, ttyl)
 
 				memcpy(line, ubuf.ut_line, UT_LINESIZE);
 				line[sizeof(line)-1] = '\0';
-				strlcat(ftty+sizeof(_PATH_DEV)-1, line,
-				    sizeof(ftty));
+				ftty[sizeof(_PATH_DEV)-1] = '\0';
+				strlcat(ftty, line, sizeof(ftty));
 				if (stat(ftty, &statb) == 0) {
 					if (!(statb.st_mode & S_IWGRP)) {
 						if (status == NOT_HERE)
