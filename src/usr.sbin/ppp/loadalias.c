@@ -49,7 +49,11 @@
 #define _PATH_ALIAS_PREFIX "/usr/lib/libalias.so.2."
 
 #define off(item) ((int)&(((struct aliasHandlers *)0)->item))
+#if !(defined(__mips) || defined(__powerpc)) /* Any arch that is elf */
+#define entry(a) { off(a), #a }
+#else
 #define entry(a) { off(a), "_" #a }
+#endif
 
 #ifndef RTLD_NOW
 #define RTLD_NOW 1		/* really RTLD_LAZY */
