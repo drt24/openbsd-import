@@ -321,6 +321,7 @@ extern char *hfs_volume_id;	/* HFS volume ID */
 #define ASSOC_FLAG	4       /* ISO flag for "associated" file */
 #define MAP_LAST	1	/* process magic then map file */
 #define MAG_LAST	2	/* process map then magic file */
+extern char *hfs_bless;		/* name of folder to 'bless' (System Folder) */
 #endif /* APPLE_HYB */
 
 /* tree.c */
