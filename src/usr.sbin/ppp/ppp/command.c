@@ -119,6 +119,7 @@
 #define	VAR_SENDPIPE	27
 #define	VAR_RECVPIPE	28
 #define	VAR_RADIUS	29
+#define	VAR_CD		30
 
 /* ``accept|deny|disable|enable'' masks */
 #define NEG_HISMASK (1)
@@ -137,7 +138,7 @@
 #define NEG_VJCOMP	49
 #define NEG_DNS		50
 
-const char Version[] = "2.1";
+const char Version[] = "2.11";
 const char VersionDate[] = "$Date$";
 
 static int ShowCommand(struct cmdargs const *);
@@ -1711,6 +1712,19 @@ SetVariable(struct cmdargs const *arg)
     }
     break;
 #endif
+
+  case VAR_CD:
+    if (*argp) {
+      long_val = atol(argp);
+      if (long_val < 0)
+        long_val = 0;
+      cx->physical->cfg.cd.delay = long_val;
+      cx->physical->cfg.cd.required = argp[strlen(argp)-1] == '!';
+    } else {
+      cx->physical->cfg.cd.delay = DEF_CDDELAY;
+      cx->physical->cfg.cd.required = 0;
+    }
+    break;
   }
 
   return err ? 1 : 0;
@@ -1749,6 +1763,8 @@ static struct cmdtab const SetCommands[] = {
   (const void *)VAR_CBCP},
   {"ccpretry", NULL, SetVariable, LOCAL_AUTH | LOCAL_CX_OPT,
   "FSM retry period", "set ccpretry value", (const void *)VAR_CCPRETRY},
+  {"cd", NULL, SetVariable, LOCAL_AUTH | LOCAL_CX, "Carrier delay requirement",
+   "set cd value[!]", (const void *)VAR_CD},
   {"chapretry", NULL, SetVariable, LOCAL_AUTH | LOCAL_CX,
   "CHAP retry period", "set chapretry value", (const void *)VAR_CHAPRETRY},
   {"choked", NULL, SetVariable, LOCAL_AUTH,

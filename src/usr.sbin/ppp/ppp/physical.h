@@ -51,6 +51,10 @@ struct physical {
     unsigned parity;           /* What parity is enabled? (TTY flags) */
     unsigned speed;            /* Modem speed */
     char devlist[LINE_LEN];    /* Comma-separated list of devices */
+    struct {
+      unsigned required : 1;   /* Is cd *REQUIRED* on this device */
+      int delay;               /* Wait this many seconds after login script */
+    } cd;
   } cfg;
 
   struct termios ios;          /* To be able to reset from raw mode */
