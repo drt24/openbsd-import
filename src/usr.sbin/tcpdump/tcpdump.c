@@ -1,4 +1,4 @@
-/*	$OpenBSD: tcpdump.c,v 1.20 2000/12/10 19:05:21 provos Exp $	*/
+/*	$OpenBSD: tcpdump.c,v 1.21 2001/01/19 17:53:19 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -110,6 +110,7 @@ static struct printer printers[] = {
 	{ atm_if_print,		DLT_ATM_RFC1483 },
 	{ null_if_print, 	DLT_LOOP },
 	{ enc_if_print, 	DLT_ENC },
+	{ pflog_if_print, 	DLT_PFLOG },
 	{ NULL,			0 },
 };
 
