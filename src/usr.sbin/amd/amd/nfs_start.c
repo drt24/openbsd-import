@@ -289,7 +289,7 @@ static serv_state run_rpc(P_void)
 			dlog("Select waits for Godot");
 #endif /* DEBUG */
 
-		nsel = do_select(mask, omask, fdsn + 1, fdsp, &tvv);
+		nsel = do_select(&mask, &omask, fdsn + 1, fdsp, &tvv);
 
 
 		switch (nsel) {
