@@ -61,7 +61,7 @@ main(argc, argv)
 	extern int optind;
 	int ch;
 
-	while ((ch = getopt(argc, argv, "it")) != EOF)
+	while ((ch = getopt(argc, argv, "it")) != -1)
 		switch(ch) {
 		case 'i':
 			intro = 1;

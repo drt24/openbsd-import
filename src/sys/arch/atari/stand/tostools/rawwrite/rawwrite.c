@@ -71,7 +71,7 @@ char	*argv[];
 	progname = argv[0];
 	init_toslib(argv[0]);
 
-	while ((ch = getopt(argc, argv, "hvVwo:")) != EOF) {
+	while ((ch = getopt(argc, argv, "hvVwo:")) != -1) {
 		switch (ch) {
 			case 'h':
 				h_flag = 1;

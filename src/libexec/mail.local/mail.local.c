@@ -86,7 +86,7 @@ main(argc, argv)
 	openlog("mail.local", LOG_PERROR, LOG_MAIL);
 
 	from = NULL;
-	while ((ch = getopt(argc, argv, "lLdf:r:")) != EOF)
+	while ((ch = getopt(argc, argv, "lLdf:r:")) != -1)
 		switch(ch) {
 		case 'd':		/* backward compatible */
 			break;

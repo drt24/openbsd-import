@@ -627,7 +627,7 @@ main(int argc, char **argv)
 
     progname = argv[0];
 
-    while ((c = getopt(argc, argv, "snmp:a:l:r:")) != EOF) {
+    while ((c = getopt(argc, argv, "snmp:a:l:r:")) != -1) {
 	switch(c) {
 	case 's':
 	    /*

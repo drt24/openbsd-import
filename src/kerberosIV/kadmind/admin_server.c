@@ -380,7 +380,7 @@ main(int argc, char **argv)		/* admin_server main routine */
 
     bzero(krbrlm, sizeof(krbrlm));
 
-    while ((c = getopt(argc, argv, "f:hnd:a:r:")) != EOF)
+    while ((c = getopt(argc, argv, "f:hnd:a:r:")) != -1)
 	switch(c) {
 	case 'f':			/* Syslog file name change */
 	    prm.sysfile = optarg;

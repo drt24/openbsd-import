@@ -104,7 +104,7 @@ char *v[];
 	if (!progname)
 		progname = "fsinfo";
 
-	while ((ch = getopt(c, v, "a:b:d:e:f:h:m:D:U:I:qv")) != EOF)
+	while ((ch = getopt(c, v, "a:b:d:e:f:h:m:D:U:I:qv")) != -1)
 	switch (ch) {
 	case 'a':
 		autodir = optarg;

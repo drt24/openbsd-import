@@ -104,7 +104,7 @@ main(argc, argv)
 	char		 *fname = _PATH_NETGROUP;
 
 
-	while ((ch = getopt(argc, argv, "do:")) != EOF)
+	while ((ch = getopt(argc, argv, "do:")) != -1)
 		switch (ch) {
 #ifdef DEBUG_NG
 		case 'd':

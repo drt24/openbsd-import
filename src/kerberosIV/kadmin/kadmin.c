@@ -318,7 +318,7 @@ do_init(int argc, char **argv)
 	else
 	    strcpy(krbrlm, default_realm);
 
-	while ((c = getopt(argc, argv, OPTION_STRING)) != EOF) 
+	while ((c = getopt(argc, argv, OPTION_STRING)) != -1) 
 	    switch (c) {
 	      case 'u':
 		strncpy(myname, optarg, sizeof(myname) - 1);

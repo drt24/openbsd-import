@@ -248,7 +248,7 @@ char *argv[];
 	int ch;
 	extern int optind;
 
-	while ((ch = getopt(argc, argv, "p")) != EOF)
+	while ((ch = getopt(argc, argv, "p")) != -1)
 	switch (ch) {
 	case 'p':
 		printit = 1;

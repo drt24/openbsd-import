@@ -86,7 +86,7 @@ char	**argv;
 
 	kparam.boothowto = RB_SINGLE;
 
-	while ((ch = getopt(argc, argv, "abdhstVwDo:S:T:")) != EOF) {
+	while ((ch = getopt(argc, argv, "abdhstVwDo:S:T:")) != -1) {
 		switch (ch) {
 		case 'a':
 			kparam.boothowto &= ~(RB_SINGLE);

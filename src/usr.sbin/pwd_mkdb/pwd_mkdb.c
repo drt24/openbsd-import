@@ -1,4 +1,4 @@
-/*	$OpenBSD: pwd_mkdb.c,v 1.7 1996/09/28 05:44:33 downsj Exp $	*/
+/*	$OpenBSD: pwd_mkdb.c,v 1.8 1996/10/16 09:16:14 downsj Exp $	*/
 /*-
  * Copyright (c) 1991, 1993, 1994
  *	The Regents of the University of California.  All rights reserved.
@@ -103,7 +103,7 @@ main(argc, argv)
 	DBT ypdata, ypkey;
 
 	makeold = 0;
-	while ((ch = getopt(argc, argv, "cpvd:")) != EOF)
+	while ((ch = getopt(argc, argv, "cpvd:")) != -1)
 		switch(ch) {
 		case 'c':			/* verify only */
 			cflag = 1;

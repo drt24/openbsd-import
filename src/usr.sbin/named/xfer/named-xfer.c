@@ -111,7 +111,7 @@ main(argc, argv)
 #else
 	openlog("named-xfer", LOG_PID);
 #endif
-	while ((c = getopt(argc, argv, "d:l:s:t:z:f:p:P:q")) != EOF)
+	while ((c = getopt(argc, argv, "d:l:s:t:z:f:p:P:q")) != -1)
 	    switch (c) {
 		case 'd':
 			debug = atoi(optarg);

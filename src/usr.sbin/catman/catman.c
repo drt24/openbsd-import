@@ -70,7 +70,7 @@ main(argc, argv)
 {
 	int c;
 
-	while ((c = getopt(argc, argv, "knpswM:")) != EOF) {
+	while ((c = getopt(argc, argv, "knpswM:")) != -1) {
 		switch (c) {
 		case 'k':
 			f_ignerr = 1;

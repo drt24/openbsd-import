@@ -308,7 +308,7 @@ char *argv[];
 	/*
 	 * Parse arguments
 	 */
-	while ((opt_ch = getopt(argc, argv, "fh:l:msuvx:D:M:")) != EOF)
+	while ((opt_ch = getopt(argc, argv, "fh:l:msuvx:D:M:")) != -1)
 	switch (opt_ch) {
 	case 'f':
 		flush_flag = 1;

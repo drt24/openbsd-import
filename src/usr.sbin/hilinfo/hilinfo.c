@@ -57,7 +57,7 @@ main(argc, argv)
 	int multi;
 
 	pname = argv[0];
-	while ((c = getopt(argc, argv, "at")) != EOF)
+	while ((c = getopt(argc, argv, "at")) != -1)
 		switch (c) {
 		/* everything */
 		case 'a':
