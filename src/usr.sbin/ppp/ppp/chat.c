@@ -181,7 +181,11 @@ chat_UpdateSet(struct descriptor *d, fd_set *r, fd_set *w, fd_set *e, int *n)
       } else {
         int minus;
 
-        c->argptr = c->argv[++c->arg];
+        if ((c->argptr = c->argv[++c->arg]) == NULL) {
+          /* End of script - all ok */
+          c->state = CHAT_DONE;
+          return 0;
+        }
 
         if (c->state == CHAT_EXPECT) {
           /* Look for expect-send-expect sequence */
