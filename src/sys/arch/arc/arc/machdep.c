@@ -302,7 +302,7 @@ mips_init(argc, argv, code)
 		break;
 
 	case DESKSTATION_RPC44:
-        break;
+		break;
 	}
 
 	/*
