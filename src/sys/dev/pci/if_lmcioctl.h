@@ -1,3 +1,4 @@
+/*	$OpenBSD$ */
 /*	$Id$	*/
 
 /*
@@ -308,6 +309,7 @@ struct lmc___media {
 	void	(* set_link_status)(lmc_softc_t * const, int);
 	void	(* set_crc_length)(lmc_softc_t * const, int);
 	void    (* set_circuit_type)(lmc_softc_t * const, int);
+	void	(* watchdog)(lmc_softc_t * const);
 };
 
 u_int32_t lmc_mii_readreg(lmc_softc_t * const sc, u_int32_t devaddr,
