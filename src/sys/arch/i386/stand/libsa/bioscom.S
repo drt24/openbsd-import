@@ -1,4 +1,4 @@
-/*	$OpenBSD: bioscom.S,v 1.1.2.2 1996/10/29 10:27:39 mickey Exp $	*/
+/*	$OpenBSD: bioscom.S,v 1.3 1997/03/31 23:06:26 mickey Exp $	*/
 
 /*
  * Mach Operating System
@@ -70,6 +70,9 @@ WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 	.file	"serial.s"
 
 #include <machine/asm.h>
+#define	_LOCORE
+#include "biosdev.h"
+#undef	_LOCORE
 
 	.data
 port:
