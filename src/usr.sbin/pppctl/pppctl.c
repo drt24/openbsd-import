@@ -364,7 +364,7 @@ main(int argc, char **argv)
                         write(1, Buffer, strlen(Buffer));
                     write(fd, Buffer, strlen(Buffer));
                     if (Receive(fd, verbose | REC_SHOW) != 0) {
-                        fprintf(stderr, "No reply from ppp\n");
+                        fprintf(stderr, "Connection closed\n");
                         break;
                     }
                     if (next)
