@@ -341,8 +341,16 @@ is
 .It Cm PermitRootLogin
 Specifies whether the root can log in using
 .Xr ssh 1 .
+The argument must be
+.Dq yes ,
+.Dq without-password
+or
+.Dq no .
 The default is
 .Dq yes .
+If this options is set to
+.Dq without-password
+only password authentication is disabled for root.
 .Pp
 Root login with RSA authentication when the
 .Ar command

@@ -34,6 +34,12 @@ int auth_password(struct passwd *pw, const char *password)
   extern ServerOptions options;
   char *encrypted_password;
 
+  if (pw->pw_uid == 0 && options.permit_root_login == 2)
+  {
+      packet_send_debug("Server does not permit root login with password.");
+      return 0;
+  }
+
   if (*password == '\0' && options.permit_empty_passwd == 0)
   {
       packet_send_debug("Server does not permit empty password login.");
