@@ -21,6 +21,11 @@ config: .FORCE
 config.status:
 	/bin/sh ${.CURDIR}/configure --prefix=/usr
 
+.ifdef NOMAN
+maninstall:
+        @echo NOMAN is set
+.endif
+
 install:	maninstall
 	${FSFMAKE} prefix=${DESTDIR}/usr bindir=${DESTDIR}/usr/bin \
 	    mandir= INSTALL_MAN= install
