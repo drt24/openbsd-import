@@ -200,7 +200,7 @@ static command_rec ssl_config_cmds[] = {
                "(no arguments)")
     AP_DIR_CMD(Require, AUTHCFG, RAW_ARGS,
                "Require a boolean expresion to evaluate to true for granting access"
-               "(arbitraty complex boolean expression - see manual)")
+               "(arbitrary complex boolean expression - see manual)")
 
     AP_END_CMD
 };
