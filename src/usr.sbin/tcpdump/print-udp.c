@@ -35,9 +35,16 @@ static const char rcsid[] =
 #include <netinet/udp.h>
 #include <netinet/udp_var.h>
 
+#ifdef NOERROR
 #undef NOERROR					/* Solaris sucks */
+#endif
+#ifdef T_UNSPEC
 #undef T_UNSPEC					/* SINIX does too */
+#endif
 #include <arpa/nameser.h>
+#ifdef SEGSIZE
+#undef SEGSIZE
+#endif
 #include <arpa/tftp.h>
 
 #include <rpc/rpc.h>

@@ -50,18 +50,18 @@ struct rtentry;
 #include <stdio.h>
 #include <string.h>
 
-#include "addrtoname.h"
 #include "interface.h"
+#include "addrtoname.h"
+
+#ifndef AF_NS
+#define AF_NS		6		/* XEROX NS protocols */
+#endif
 
 /*
  * The DLT_NULL packet header is 4 bytes long. It contains a network
  * order 32 bit integer that specifies the family, e.g. AF_INET
  */
 #define	NULL_HDRLEN 4
-
-#ifndef AF_NS
-#define AF_NS		6		/* XEROX NS protocols */
-#endif
 
 static void
 null_print(const u_char *p, u_int length, u_int family)

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1996
+ * Copyright (c) 1996, 1997
  *	The Regents of the University of California.  All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,8 +29,6 @@ static const char rcsid[] =
 #include <sys/sysinfo.h>
 #include <sys/proc.h>
 #endif
-
-#include <pcap.h>
 
 #include "machdep.h"
 

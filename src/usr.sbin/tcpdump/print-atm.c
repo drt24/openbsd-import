@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1994, 1995, 1996
+ * Copyright (c) 1994, 1995, 1996, 1997
  *	The Regents of the University of California.  All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -46,9 +46,9 @@ struct rtentry;
 #include <stdio.h>
 #include <pcap.h>
 
+#include "interface.h"
 #include "addrtoname.h"
 #include "ethertype.h"
-#include "interface.h"
 
 /*
  * This is the top level routine of the printer.  'p' is the points
