@@ -383,9 +383,10 @@ Specifies whether Kerberos authentication is allowed.
 This can be in the form of a Kerberos ticket, or if
 .Cm PasswordAuthentication
 is yes, the password provided by the user will be validated through
-the Kerberos KDC.
+the Kerberos KDC.  To use this option, the server needs a 
+Kerberos servtab which allows the verification of the KDC's identity.
 Default is
-.Dq yes .
+.Dq no .
 .It Cm KerberosOrLocalPasswd
 If set then if password authentication through Kerberos fails then
 the password will be validated via any additional local mechanism
