@@ -41,7 +41,7 @@ such damages.
 #include <string.h>
 #include <string.h>
 
-#include "sc7816.h"
+#include "sectok.h"
 #include "todos_scrw.h"
 #include "ifdhandler.h"
 
