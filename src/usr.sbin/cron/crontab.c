@@ -321,7 +321,7 @@ edit_cmd() {
 	}
 
 	um = umask(077);
-	(void) sprintf(Filename, "/tmp/crontab.XXXXXXXX");
+	(void) sprintf(Filename, "/tmp/crontab.XXXXXXXXXX");
 	if ((t = mkstemp(Filename)) == -1) {
 		perror(Filename);
 		(void) umask(um);
@@ -504,6 +504,11 @@ replace_cmd() {
 	entry	*e;
 	time_t	now = time(NULL);
 	char	**envp = env_init();
+
+	if (envp == NULL) {
+		fprintf(stderr, "%s: Cannot allocate memory.\n", ProgramName);
+		return (-2);
+	}
 
 	(void) sprintf(n, "tmp.%d", Pid);
 	(void) sprintf(tn, CRON_TAB(n));

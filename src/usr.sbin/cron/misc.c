@@ -622,7 +622,8 @@ mkprints(src, len)
 {
 	register char *dst = malloc(len*4 + 1);
 
-	mkprint(dst, src, len);
+	if (dst)
+		mkprint(dst, src, len);
 
 	return dst;
 }

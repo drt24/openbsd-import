@@ -28,7 +28,8 @@ env_init()
 {
 	register char	**p = (char **) malloc(sizeof(char **));
 
-	p[0] = NULL;
+	if (p)
+		p[0] = NULL;
 	return (p);
 }
 
@@ -55,8 +56,18 @@ env_copy(envp)
 	for (count = 0;  envp[count] != NULL;  count++)
 		;
 	p = (char **) malloc((count+1) * sizeof(char *));  /* 1 for the NULL */
+	if (p == NULL) {
+		errno = ENOMEM;
+		return NULL;
+	}
 	for (i = 0;  i < count;  i++)
-		p[i] = strdup(envp[i]);
+		if ((p[i] = strdup(envp[i])) == NULL) {
+			while (--i >= 0)
+				(void) free(p[i]);
+			free(p);
+			errno = ENOMEM;
+			return NULL;
+		}
 	p[count] = NULL;
 	return (p);
 }
@@ -87,7 +98,11 @@ env_set(envp, envstr)
 		 * save our new one there, and return the existing array.
 		 */
 		free(envp[found]);
-		envp[found] = strdup(envstr);
+		if ((envp[found] = strdup(envstr)) == NULL) {
+			envp[found] = "";
+			errno = ENOMEM;
+			return NULL;
+		}
 		return (envp);
 	}
 
@@ -98,8 +113,15 @@ env_set(envp, envstr)
 	 */
 	p = (char **) realloc((void *) envp,
 			      (unsigned) ((count+1) * sizeof(char **)));
+	if (p == NULL) 	{
+		errno = ENOMEM;
+		return NULL;
+	}
 	p[count] = p[count-1];
-	p[count-1] = strdup(envstr);
+	if ((p[count-1] = strdup(envstr)) == NULL) {
+		errno = ENOMEM;
+		return NULL;
+	}
 	return (p);
 }
 
