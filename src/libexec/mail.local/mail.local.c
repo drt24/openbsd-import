@@ -112,7 +112,7 @@ main(argc, argv)
 	argc -= optind;
 	argv += optind;
 
-	if (!*argv)
+	if (!*argv && !holdme)
 		usage();
 
 	if (holdme)
