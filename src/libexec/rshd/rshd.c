@@ -299,7 +299,8 @@ doit(fromp)
 #ifdef	KERBEROS
 		if (!use_kerberos)
 #endif
-			if (port >= IPPORT_RESERVED) {
+			if (port >= IPPORT_RESERVED ||
+			    port < IPPORT_RESERVED/2) {
 				syslog(LOG_ERR, "2nd port not reserved\n");
 				exit(1);
 			}
