@@ -1,6 +1,10 @@
 #	$Id$
 
+.include <bsd.own.mk>
+
+.if defined(YP)
 CFLAGS+=-DYP
+.endif
 
 PROG=	rpc.bootparamd
 SRCS=	bootparamd.c bootparam_prot_svc.c
