@@ -50,6 +50,7 @@ extern int packettype;		/* as specified by -T */
 #define PT_RPC		3	/* Remote Procedure Call */
 #define PT_RTP		4	/* Real-Time Applications protocol */
 #define PT_RTCP		5	/* Real-Time Applications control protocol */
+#define	PT_CNFP		6	/* Cisco NetFlow protocol */
 
 #ifndef min
 #define min(a,b) ((a)>(b)?(b):(a))

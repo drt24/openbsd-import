@@ -233,6 +233,8 @@ main(int argc, char **argv)
 				packettype = PT_RTP;
 			else if (strcasecmp(optarg, "rtcp") == 0)
 				packettype = PT_RTCP;
+			else if (strcasecmp(optarg, "cnfp") == 0)
+				packettype = PT_CNFP;
 			else
 				error("unknown packet type `%s'", optarg);
 			break;

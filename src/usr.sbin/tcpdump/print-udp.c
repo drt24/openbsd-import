@@ -372,6 +372,9 @@ udp_print(register const u_char *bp, u_int length, register const u_char *bp2)
 			while (cp < ep)
 				cp = rtcp_print(cp, ep);
 			break;
+		case PT_CNFP:
+			cnfp_print(cp, length, ip);
+			break;
 		}
 		return;
 	}
