@@ -2020,7 +2020,7 @@ main(int argc, char **argv)
 {
   int opt;
   long smtp_port = 25;
-  char *optstring = "l:p:q:d:u:s:g:m:i:cHPDL";
+  char *optstring = "l:p:q:d:u:s:g:m:i:c:HPDL";
   int i, k;
   smtp_state_set last_state_s, current_state_s;	 /* The real state vector. */
   smtp_state last_state, current_state; /* Pointers to the state vector. */
