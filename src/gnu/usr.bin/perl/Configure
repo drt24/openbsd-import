@@ -4730,7 +4730,12 @@ default|recommended)
 		else
 			echo "Nope, it doesn't, but that's ok." 2>&1
 		fi
-		echo " "
+		;;
+	esac
+	case "$gccversion" in
+	1*) ;;
+	2*) ;;
+	?*) 	echo " "
 		echo "Checking if your compiler accepts -fno-delete-null-pointer-checks" 2>&1
 		echo 'int main(void) { return 0; }' > gcctest.c
 		if $cc -O2 -fno-delete-null-pointer-checks -o gcctest gcctest.c; then
