@@ -1069,7 +1069,7 @@ do_authentication(char *user, int privileged_port)
   /* If the user has no password, accept authentication immediately. */
   if (options.password_authentication &&
 #ifdef KRB4
-      options.kerberos_or_local_passwd &&
+      (!options.kerberos_authentication || options.kerberos_or_local_passwd) &&
 #endif /* KRB4 */
       auth_password(pw, ""))
     {
