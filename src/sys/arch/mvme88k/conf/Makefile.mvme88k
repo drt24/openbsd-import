@@ -127,8 +127,7 @@ clean::
 
 lint: /tmp param.c
 	@lint -hbxn -DGENERIC -Dvolatile= ${CFLAGS} ${CPPFLAGS} ${PARAM} -UKGDB \
-	    ${MVME88K}/mvme88k/Locore.c ${CFILES} ${MVME88K}/mvme88k/swapgeneric.c \
-	    ioconf.c param.c| \
+	    ${CFILES} ${MVME88K}/mvme88k/swapgeneric.c ioconf.c param.c| \
 	    grep -v 'struct/union .* never defined' | \
 	    grep -v 'possible pointer alignment problem'
 
