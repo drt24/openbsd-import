@@ -40,10 +40,8 @@ typedef struct
 #ifdef KRB4
   int kerberos_authentication;	/* Try Kerberos authentication. */
 #endif
-#ifdef KERBEROS_TGT_PASSING
-  int kerberos_tgt_passing;	/* Try Kerberos tgt passing. */
-#endif
 #ifdef AFS
+  int kerberos_tgt_passing;	/* Try Kerberos tgt passing. */
   int afs_token_passing;	/* Try AFS token passing. */
 #endif
   int password_authentication;	/* Try password authentication. */

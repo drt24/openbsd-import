@@ -1347,7 +1347,7 @@ void x11_request_forwarding_with_spoofing(const char *proto, const char *data)
   char *new_data;
   int screen_number;
   const char *cp;
-  u_int32_t rand;
+  u_int32_t rand = 0;
 
   cp = getenv("DISPLAY");
   if (cp)

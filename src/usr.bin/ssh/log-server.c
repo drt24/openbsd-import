@@ -228,8 +228,7 @@ void fatal(const char *fmt, ...)
   if (ticket)
     {
       if (strcmp(ticket,"none"))
-	/* ticket -> FILE:path */
-	unlink(ticket + 5);
+	unlink(ticket);
       else
 	ticket = NULL;
     }

@@ -78,11 +78,6 @@ struct utimbuf
 #define STDERR_FILENO 2
 #endif
 
-#if defined(KERBEROS_TGT_PASSING) || defined(AFS)
-/* This is set to non-zero to disable authentication forwarding. */
-int nofwd = 0;
-#endif
- 
 /* This is set to non-zero to enable verbose mode. */
 int verbose = 0;
 
@@ -153,10 +148,6 @@ int do_cmd(char *host, char *remuser, char *cmd, int *fdin, int *fdout)
 	args[i++] = "-C";
       if (batchmode)
 	args[i++] = "-oBatchMode yes";
-#if defined(KERBEROS_TGT_PASSING) || defined(AFS)
-      if (nofwd)
-	args[i++] = "-k";
-#endif
       if (cipher != NULL)
 	{
 	  args[i++] = "-c";
@@ -251,11 +242,7 @@ main(argc, argv)
 	extern int optind;
 
 	fflag = tflag = 0;
-#if defined(KERBEROS_TGT_PASSING) || defined(AFS)
-	while ((ch = getopt(argc, argv, "kdfprtvBCc:i:P:")) != EOF)
-#else
 	while ((ch = getopt(argc, argv,  "dfprtvBCc:i:P:")) != EOF)
-#endif
 		switch(ch) {			/* User-visible flags. */
 		case 'p':
 			pflag = 1;
@@ -267,11 +254,6 @@ main(argc, argv)
 			iamrecursive = 1;
 			break;
 						/* Server options. */
-#if defined(KERBEROS_TGT_PASSING) || defined(AFS)
- 	        case 'k':
-			nofwd = 1;
-			break;
-#endif
 		case 'd':
 			targetshouldbedirectory = 1;
 			break;

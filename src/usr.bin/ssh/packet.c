@@ -313,7 +313,7 @@ packet_send()
   char buf[8], *cp;
   int i, padding, len;
   unsigned long checksum;
-  u_int32_t rand;
+  u_int32_t rand = 0;
 
 #ifdef WITH_ZLIB
   /* If using packet compression, compress the payload of the outgoing

@@ -56,6 +56,7 @@ YOU_LOSE
 #if defined(bsd_44) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__PARAGON__)
 #include <sys/param.h>
 #include <machine/endian.h>
+#include <netgroup.h>
 #endif
 #if defined(linux)
 #include <endian.h>
@@ -68,10 +69,6 @@ YOU_LOSE
 #include <fcntl.h>
 #include <assert.h>
 #include <signal.h>
-
-#ifdef sparc
-#undef HAVE_SYS_IOCTL_H
-#endif
 
 #ifdef HAVE_SYS_IOCTL_H
 #include <sys/ioctl.h>

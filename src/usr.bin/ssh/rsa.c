@@ -47,7 +47,6 @@ int
 rsa_alive()
 {
   RSA *key;
-  extern char *__progname;
 
   key = RSA_generate_key(32, 3, NULL, NULL);
   if (key == NULL)

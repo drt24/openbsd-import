@@ -20,6 +20,9 @@ on a tty.
 #include "includes.h"
 RCSID("$Id$");
 
+#ifdef HAVE_LIBUTIL_LOGIN
+#include <util.h>
+#endif /* HAVE_LIBUTIL_LOGIN */
 #ifdef HAVE_UTMP_H
 #include <utmp.h>
 #ifdef HAVE_LASTLOG_H
@@ -174,8 +177,7 @@ void record_login(int pid, const char *ttyname, const char *user, uid_t uid,
 #endif /* HAVE_LASTLOG_H || HAVE_LASTLOG */
 
 #if defined(HAVE_UTMP_H) && !defined(HAVE_UTMPX_H)
-  struct utmp u, u2;
-  off_t offset;
+  struct utmp u;
   const char *utmp, *wtmp;
 
   /* Construct an utmp/wtmp entry. */
