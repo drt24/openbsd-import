@@ -1,4 +1,4 @@
-/*	$OpenBSD: talkd.c,v 1.5 1996/07/18 00:18:54 deraadt Exp $	*/
+/*	$OpenBSD: talkd.c,v 1.6 1996/07/19 03:09:41 millert Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -110,6 +110,11 @@ main(argc, argv)
 				syslog(LOG_WARNING, "recvfrom: %m");
 			continue;
 		}
+		/* Force NUL termination */
+		request.l_name[NAME_SIZE-1] = '\0';
+		request.r_name[NAME_SIZE-1] = '\0';
+		request.r_tty[TTY_SIZE-1] = '\0';
+
 		lastmsgtime = time(0);
 		process_request(&request, &response);
 		/* can block here, is this what I want? */
