@@ -1061,6 +1061,6 @@ pcicmaster_print(aux, name)
 	const char *name;
 {
 	if (name != NULL)       
-		printf("%s: master controller ", name);
+		printf("%s: master controller", name);
 	return UNCONF;
 }
