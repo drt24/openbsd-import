@@ -58,6 +58,8 @@ int syslogging;
 int xlog_level = XLOG_ALL & ~XLOG_MAP & ~XLOG_STATS;
 int xlog_level_init = ~0;
 
+extern char *__progname;
+
 /*
  * List of log options
  */
@@ -156,7 +158,7 @@ extern struct mallinfo __mallinfo;
 		if (orig_mem_bytes == 0)
 			mem_bytes = orig_mem_bytes = __mallinfo.uordbytes;
 		else {
-			fprintf(logfp, "%s[%d]: ", progname, mypid);
+			fprintf(logfp, "%s[%d]: ", __progname, mypid);
 			if (mem_bytes < __mallinfo.uordbytes) {
 				fprintf(logfp, "ALLOC: %d bytes",
 					__mallinfo.uordbytes - mem_bytes);
@@ -252,7 +254,7 @@ extern char **gargv;
 #if defined(DEBUG) && defined(PARANOID)
 		gargv[0],
 #else
-		progname,
+		__progname,
 #endif /* defined(DEBUG) && defined(PARANOID) */
 		mypid,
 		sev);
@@ -451,11 +453,11 @@ char *logfile;
 			syslogging = 1;
 			new_logfp = stderr;
 #if defined(LOG_CONS) && defined(LOG_NOWAIT)
-			openlog(progname, LOG_PID|LOG_CONS|LOG_NOWAIT,
+			openlog(__progname, LOG_PID|LOG_CONS|LOG_NOWAIT,
 				LOG_DAEMON);
 #else
 			/* 4.2 compat mode - XXX */
-			openlog(progname, LOG_PID);
+			openlog(__progname, LOG_PID);
 #endif /* LOG_CONS && LOG_NOWAIT */
 #else
 			plog(XLOG_WARNING, "syslog option not supported, logging unchanged");
