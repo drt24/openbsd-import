@@ -409,9 +409,7 @@ main(int ac, char **av)
 	  close(fd);
 	}
 #endif /* TIOCNOTTY */
-#ifdef HAVE_SETSID
       (void)setsid();
-#endif /* HAVE_SETSID */
     }
 
   /* Reinitialize the log (because of the fork above). */

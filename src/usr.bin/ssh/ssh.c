@@ -628,9 +628,7 @@ main(int ac, char **av)
 	fatal("fork failed: %.100s", strerror(errno));
       if (ret != 0)
 	exit(0);
-#ifdef HAVE_SETSID
       setsid();
-#endif /* HAVE_SETSID */
     }
 
 #ifdef WITH_ZLIB
