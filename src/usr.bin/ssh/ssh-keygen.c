@@ -79,7 +79,7 @@ do_fingerprint(struct passwd *pw)
 	FILE *f;
 	BIGNUM *e, *n;
 	RSA *public_key;
-	char *comment = NULL, char *cp, *ep, line[16*1024];
+	char *comment = NULL, *cp, *ep, line[16*1024];
 	int i, skip = 0, num = 1, invalid = 1;
 	struct stat st;
 
