@@ -45,6 +45,7 @@ such damages.
 #include "field.h"
 typedef long int32_t;
 #else
+#include <sys/types.h>
 #include <stdio.h>
 #include <string.h>
 #endif
