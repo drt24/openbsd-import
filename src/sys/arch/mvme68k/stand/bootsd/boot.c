@@ -274,7 +274,7 @@ parse_args()
 	int i, howto = 0;
 	char c;
 
-	if (bugargs.arg_start == bugargs.arg_end) {
+	if (bugargs.arg_start != bugargs.arg_end) {
 		ptr = bugargs.arg_start;
 		while (c = *ptr) {
 			while (c == ' ')
@@ -291,8 +291,9 @@ parse_args()
 			}
 			while ((c = *++ptr) && c != ' ') {
 				for (i = 0; i < sizeof(bf)/sizeof(bf[0]); i++)
-					if (bf[i].c == c)
+					if (bf[i].c == c) {
 						howto |= bf[i].bit;
+					}
 			}
 		}
 	}
