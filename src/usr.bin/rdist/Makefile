@@ -3,10 +3,9 @@
 
 PROG=	rdist
 CFLAGS+=-I. -DOS_H=\"os-openbsd.h\"
-SRCS=	child.c client.c common.c distopt.c docmd.c expand.c isexec.c \
-		lookup.c message.c rdist.c rshrcmd.c setargs.c signal.c
-OBJS+=	gram.o
-CLEANFILES=y.tab.h
+SRCS=	child.c client.c common.c distopt.c docmd.c expand.c gram.y \
+	isexec.c lookup.c message.c rdist.c rshrcmd.c setargs.c signal.c
+CLEANFILES+=gram.c y.tab.h
 
 LDADD=	-lcompat
 DPADD=	${LIBCOMPAT}
