@@ -402,7 +402,7 @@ extern void			debugmsg(int, char *, ...);
 extern void			error(char *, ...);
 extern void			fatalerr(char *, ...);
 extern void			message(int, char *, ...);
-extern void			setproctitle(char *fmt, ...);
+/*extern void			setproctitle(char *fmt, ...); /* Not for OpenBSD*/
 #else
 extern void			debugmsg();
 extern void			error();
