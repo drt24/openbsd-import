@@ -38,8 +38,9 @@ static char rcsid[] = "$Id$";
 
 #include <stdio.h>
 
+int
 yyerror(msg)
-char *msg;
+	char *msg;
 {
 	(void)fprintf(stderr, "%s\n", msg);
 	return(0);

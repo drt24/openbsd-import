@@ -36,6 +36,11 @@
 static char rcsid[] = "$Id$";
 #endif /* not lint */
 
+#include <stdlib.h>
+
+extern int yyparse();
+
+int
 main()
 {
 	exit(yyparse());
