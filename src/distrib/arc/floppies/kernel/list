@@ -1,4 +1,0 @@
-#	$Id$
-
-# copy the kernel
-COPY	${OBJDIR}/bsd	bsd
