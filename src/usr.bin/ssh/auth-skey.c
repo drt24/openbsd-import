@@ -116,7 +116,7 @@ skey_fake_keyinfo(char *username)
 		memset(up, 0, 20); /* SHA1 specific */
 		free(up);
 
-		(void)sprintf(skeyprompt,
+		(void)snprintf(skeyprompt, sizeof skeyprompt,
 			      "otp-%.*s %d %.*s",
 			      SKEY_MAX_HASHNAME_LEN,
 			      skey_get_algorithm(),
@@ -139,7 +139,8 @@ skey_fake_keyinfo(char *username)
 		} while (--i != 0);
 		pbuf[12] = '\0';
 
-		(void)sprintf(skeyprompt, "otp-%.*s %d %.*s",
+		(void)snprintf(skeyprompt, sizeof skeyprompt,
+			      "otp-%.*s %d %.*s",
 			      SKEY_MAX_HASHNAME_LEN,
 			      skey_get_algorithm(),
 			      99, SKEY_MAX_SEED_LEN, pbuf);
