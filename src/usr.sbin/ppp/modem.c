@@ -738,18 +738,11 @@ CloseLogicalModem(void)
 {
   LogPrintf(LogDEBUG, "CloseLogicalModem\n");
   if (modem >= 0) {
-    ClosePhysicalModem();
     if (Utmp) {
-      struct utmp ut;
-      strncpy(ut.ut_line, VarBaseDevice, sizeof ut.ut_line - 1);
-      ut.ut_line[sizeof ut.ut_line - 1] = '\0';
-      if (logout(ut.ut_line))
-        logwtmp(ut.ut_line, "", ""); 
-      else
-        LogPrintf(LogERROR, "CloseLogicalModem: No longer logged in on %s\n",
-		  ut.ut_line);
+      ID0logout(VarBaseDevice);
       Utmp = 0;
     }
+    ClosePhysicalModem();
     UnlockModem();
   }
 }
