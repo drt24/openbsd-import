@@ -1,4 +1,4 @@
-/*	$OpenBSD: boot.c,v 1.4 2000/10/04 04:09:01 bjc Exp $ */
+/*	$OpenBSD: boot.c,v 1.5 2000/11/25 21:51:39 hugh Exp $ */
 /*	$NetBSD: boot.c,v 1.4 1999/10/23 14:42:22 ragge Exp $ */
 /*-
  * Copyright (c) 1982, 1986 The Regents of the University of California.
