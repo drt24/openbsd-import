@@ -623,7 +623,8 @@ struct mbuf *m;
 	iplci.hlen = (u_char)hlen;
 	iplci.plen = (flags & FR_LOGBODY) ? (u_char)mlen : 0 ;
 	iplci.rule = fin->fin_rule;
-# if (defined(NetBSD) && (NetBSD <= 1991011) && (NetBSD >= 199606))
+# if (defined(NetBSD) && (NetBSD <= 1991011) && (NetBSD >= 199606)) || \
+    (defined(OpenBSD) && (OpenBSD >= 199606))
 	strcpy(iplci.ifname, ifp->if_xname);
 # else
 	iplci.unit = (u_char)ifp->if_unit;
@@ -783,7 +784,7 @@ frdest_t *fdp;
 	dst = (struct sockaddr_in *)&ro->ro_dst;
 	dst->sin_family = AF_INET;
 	dst->sin_addr = fdp->fd_ip.s_addr ? fdp->fd_ip : ip->ip_dst;
-#if	BSD >= 199306 && !(defined(__NetBSD__))
+#if	BSD >= 199306 && !(defined(__NetBSD__) || defined(__OpenBSD__))
 # ifdef	RTF_CLONING
 	rtalloc_ign(ro, RTF_CLONING);
 # else

@@ -259,7 +259,8 @@ typedef	struct ipl_ci	{
 	u_char	plen;
 	u_short	rule;
 	u_long	flags:24;			/* XXX FIXME do we care about the extra bytes? */
-#if (defined(NetBSD) && (NetBSD <= 1991011) && (NetBSD >= 199606))
+#if (defined(NetBSD) && (NetBSD <= 1991011) && (NetBSD >= 199606)) || \
+    (defined(OpenBSD) && (OpenBSD >= 199606))
 	u_long	filler:8;			/* XXX FIXME do we care? */
 	u_char	ifname[IFNAMSIZ];
 #else
