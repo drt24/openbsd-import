@@ -174,11 +174,7 @@ main(argc,argv)
 	*ip++ = head.a_syms;
 	memcpy((char*)ip, symbols, head.a_syms + strtab_len);
 
-	msync(dataseg - data_pgoff, file_len - data_off
-#ifdef	sun
-		  ,0
-#endif
-		  );
+	msync(dataseg - data_pgoff, file_len - data_off ,0);
 
 #ifdef	DEBUG
 	printf("...done\n");
