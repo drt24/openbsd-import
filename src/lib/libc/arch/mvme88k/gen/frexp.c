@@ -56,7 +56,7 @@ frexp(value, eptr)
 	int *eptr;
 {
 	union {
-                double v;
+		double v;
 		struct ieee_double s;
 	} u;
 
