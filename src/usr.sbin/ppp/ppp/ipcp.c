@@ -385,7 +385,7 @@ ipcp_Init(struct ipcp *ipcp, struct bundle *bundle, struct link *l,
 
   memset(&ipcp->vj, '\0', sizeof ipcp->vj);
 
-  throughput_init(&ipcp->throughput);
+  throughput_init(&ipcp->throughput, SAMPLE_PERIOD);
   memset(ipcp->Queue, '\0', sizeof ipcp->Queue);
   ipcp_Setup(ipcp, INADDR_NONE);
 }

@@ -53,7 +53,6 @@
 #define NCP_IDLE_TIMEOUT 180	/* Drop all links */
 #define CHOKED_TIMEOUT 120	/* Delete queued packets w/ blocked tun */
 
-#define LINK_MINWEIGHT 20
 #define MIN_LQRPERIOD 2		/* Minimum LQR frequency */
 #define DEF_LQRPERIOD 30	/* Default LQR frequency */
 #define MIN_FSMRETRY 3		/* Minimum FSM retry frequency */
