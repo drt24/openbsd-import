@@ -175,7 +175,7 @@ extern qelem mfhead;
 
 #if 0
 /*
- * amd does not allocate a seperate socket to distinguish local
+ * amd does not allocate a separate socket to distinguish local
  * connects so this "security" check is useless.
  */
 static int ok_security(rqstp)

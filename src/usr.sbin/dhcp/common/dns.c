@@ -123,7 +123,7 @@ static int skipname (label)
 }
 
 /* copy_out_name copies out the name appearing at the specified location
-   into a string, stored as fields seperated by dots rather than lengths
+   into a string, stored as fields separated by dots rather than lengths
    and labels.   The length of the label-formatted name is returned. */
 
 static int copy_out_name (base, name, buf)
