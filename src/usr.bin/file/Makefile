@@ -16,7 +16,7 @@ all:		file magic
 
 MAGFILES=	$(.CURDIR)/magdir/Header\
 		$(.CURDIR)/magdir/Localstuff\
-		$(.CURDIR)/magdir/NetBSD\
+		$(.CURDIR)/magdir/OpenBSD\
 		$(.CURDIR)/magdir/[a-z]*
 magic:		$(MAGFILES)
 	cat $(MAGFILES) > $(.TARGET)
