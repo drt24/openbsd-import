@@ -129,6 +129,11 @@ main(argc, argv)
 	/*NOTREACHED*/
 }
 	
+#if DEBUGGING
+char *getoptarg = "u:lerx:"
+#else
+char *getoptarg = "u:ler";
+#endif
 
 static void
 parse_args(argc, argv)
@@ -148,12 +153,16 @@ parse_args(argc, argv)
 	strcpy(RealUser, User);
 	Filename[0] = '\0';
 	Option = opt_unknown;
-	while (EOF != (argch = getopt(argc, argv, "u:lerx:"))) {
+
+	while (EOF != (argch = getopt(argc, argv, getoptarg))) {
 		switch (argch) {
+#if DEBUGGING
 		case 'x':
 			if (!set_debug_flags(optarg))
 				usage("bad debug option");
+			usage("unrecognized option");
 			break;
+#endif
 		case 'u':
 			if (getuid() != ROOT_UID)
 			{
