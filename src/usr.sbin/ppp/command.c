@@ -177,6 +177,11 @@ DialCommand(struct cmdargs const *arg)
 
   tries = 0;
   do {
+    if (tries) {
+      LogPrintf(LogPHASE, "Enter pause (%d) for redialing.\n",
+                VarRedialNextTimeout);
+      nointr_sleep(VarRedialNextTimeout);
+    }
     if (VarTerm)
       fprintf(VarTerm, "Dial attempt %u of %d\n", ++tries, VarDialTries);
     if (OpenModem() < 0) {
