@@ -227,6 +227,8 @@ main(int ac, char **av)
 			if (host)
 				break;
 			if ((cp = strchr(av[optind], '@'))) {
+			        if(cp == av[optind])
+				        usage();
 				options.user = av[optind];
 				*cp = '\0';
 				host = ++cp;
