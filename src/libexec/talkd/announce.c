@@ -1,4 +1,4 @@
-/*	$OpenBSD: announce.c,v 1.14 2002/07/07 08:54:50 jufi Exp $	*/
+/*	$OpenBSD: announce.c,v 1.15 2002/09/24 17:36:53 millert Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -70,7 +70,7 @@ announce(request, remote_machine)
 	FILE *tf;
 	struct stat stbuf;
 
-	(void)snprintf(full_tty, sizeof full_tty, "%s/%s", _PATH_DEV,
+	(void)snprintf(full_tty, sizeof(full_tty), "%s/%s", _PATH_DEV,
 	    request->r_tty);
 	if (access(full_tty, 0) != 0)
 		return (FAILED);
