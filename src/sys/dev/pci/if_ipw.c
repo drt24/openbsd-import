@@ -742,6 +742,11 @@ ipw_intr(void *arg)
 			wakeup(sc);
 	}
 
+	if (r & (IPW_INTR_FATAL_ERROR | IPW_INTR_PARITY_ERROR)) {
+		printf("%s: fatal error\n", sc->sc_dev.dv_xname);
+		ipw_stop(&sc->sc_ic.ic_if, 1);
+	}
+
 	/* Acknowledge interrupts */
 	CSR_WRITE_4(sc, IPW_CSR_INTR, r);
 
