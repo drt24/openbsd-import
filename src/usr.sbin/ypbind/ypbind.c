@@ -832,6 +832,10 @@ int force;
 		ypbindlist = ypdb;
 	}
 
+	/* we do not support sunos 3.0 insecure servers */
+	if (ntohs(raddrp->sin_port) < IPPORT_RESERVED)
+		return;
+
 	/* soft update, alive */
 	if (ypdb->dom_alive == 1 && force == 0) {
 		if (!memcmp(&ypdb->dom_server_addr, raddrp,
