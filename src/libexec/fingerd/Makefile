@@ -1,4 +1,4 @@
-#	from: @(#)Makefile	5.3 (Berkeley) 5/11/90
+#	from: @(#)Makefile	8.1 (Berkeley) 6/4/93
 #	$Id$
 
 PROG=	fingerd
