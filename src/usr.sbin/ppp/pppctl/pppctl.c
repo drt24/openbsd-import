@@ -380,7 +380,7 @@ main(int argc, char **argv)
     Command[sizeof(Command)-1] = '\0';
     for (arg++; arg < argc; arg++) {
         if (len && len < sizeof(Command)-1) {
-            strcpy(Command+len, " ");
+            strlcpy(Command+len, " ", sizeof Command - len);
 	    len++;
 	}
         strncpy(Command+len, argv[arg], sizeof(Command)-len-1);
