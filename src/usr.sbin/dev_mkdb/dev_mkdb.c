@@ -112,7 +112,7 @@ main(argc, argv)
 	key.data = &bkey;
 	key.size = sizeof(bkey);
 	data.data = buf;
-	while (dp = readdir(dirp)) {
+	while ((dp = readdir(dirp))) {
 		if (lstat(dp->d_name, &sb)) {
 			warn("%s", dp->d_name);
 			continue;
