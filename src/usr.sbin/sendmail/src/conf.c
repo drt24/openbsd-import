@@ -1711,7 +1711,7 @@ refuseconnections()
 #  else
 #   ifndef NKPDE			/* FreeBSD 2.0 */
 #    define NKPDE 63
-typedef unsigned int	*pt_entry_t;
+/*typedef unsigned int	*pt_entry_t; */
 #   endif
 #  endif
 # endif
