@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 CFLAGS += -I${.CURDIR}/../mkhits -I${.CURDIR}/.. -I.
 

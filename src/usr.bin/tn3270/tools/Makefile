@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD$
 
 SUBDIR = mkhits mkastosc mkastods mkdstoas mkdctype
 
