@@ -1619,7 +1619,7 @@ do_authenticated(struct passwd * pw)
 				screen = packet_get_int();
 			else
 				screen = 0;
-			display = x11_create_display_inet(screen);
+			display = x11_create_display_inet(screen, options.x11_display_offset);
 			if (!display)
 				goto fail;
 
