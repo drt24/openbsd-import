@@ -62,7 +62,7 @@
 .\"------------
 .de cov@print-date
 .SP 2
-\f[\\*[@sdf_font]]\\*[cov*new-date]\fP
+\\*[cov*new-date]
 ..
 .\"-----------------
 .de COVEND
