@@ -1,4 +1,4 @@
-/*	$OpenBSD: autoconf.c,v 1.3 1996/09/02 11:33:22 pefo Exp $	*/
+/*	$OpenBSD: autoconf.c,v 1.1.1.1 1997/02/06 16:02:46 pefo Exp $	*/
 /*
  * Copyright (c) 1996 Per Fogelstrom
  * Copyright (c) 1995 Theo de Raadt
@@ -123,6 +123,7 @@ static	struct nam2blk {
 } nam2blk[] = {
 	{ "sd",	0 },	/* 0 = sd */
 	{ "fd", 7 },	/* 7 = floppy  (ick!)*/
+	{ "flash", 10 }	/* 10 = Flash memory disk */
 };
 
 static int
