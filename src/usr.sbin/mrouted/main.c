@@ -26,6 +26,7 @@
 #include <varargs.h>
 #endif
 #include <fcntl.h>
+#include <util.h>
 
 #ifdef SNMP
 #include "snmp.h"
@@ -39,7 +40,6 @@ static char rcsid[] =
 extern char *configfilename;
 char versionstring[100];
 
-static char pidfilename[]  = _PATH_MROUTED_PID;
 static char dumpfilename[] = _PATH_MROUTED_DUMP;
 static char cachefilename[] = _PATH_MROUTED_CACHE;
 static char genidfilename[] = _PATH_MROUTED_GENID;
@@ -271,11 +271,7 @@ usage:	fprintf(stderr,
     if (debug)
 	fprintf(stderr, "pruning %s\n", pruning ? "on" : "off");
 
-    fp = fopen(pidfilename, "w");		
-    if (fp != NULL) {
-	fprintf(fp, "%d\n", (int)getpid());
-	(void) fclose(fp);
-    }
+    pidfile(NULL);
 
     (void)signal(SIGALRM, fasttimer);
 
