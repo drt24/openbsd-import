@@ -48,7 +48,7 @@ static char rcsid[] = "$Id$";
 #include "buffer.h"
 #include "packet.h"
 #include "schedule.h"
-#include "errlog.h"
+#include "log.h"
 
 int
 handle_verification_failure(u_char *packet, int size, char *address)
@@ -63,12 +63,12 @@ handle_verification_failure(u_char *packet, int size, char *address)
 
 	if ((st = state_find_cookies(address, header->icookie, 
 				     header->rcookie)) == NULL) {
-	     log_error(0, "No state for VERIFICATION_FAILURE message from %s", 
+	     log_print("No state for VERIFICATION_FAILURE message from %s", 
 		       address);
 	     return -1;
 	}
 	
-	log_error(0, "Received VERIFICATION_FAILURE from %s", address);
+	log_print("Received VERIFICATION_FAILURE from %s", address);
 
 	return 0;
 }

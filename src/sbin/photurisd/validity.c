@@ -50,7 +50,7 @@ static char rcsid[] = "$Id$";
 #include "config.h"
 #include "scheme.h"
 #include "exchange.h"
-#include "errlog.h"
+#include "log.h"
 #include "state.h"
 #include "attributes.h"
 #include "validity.h"
@@ -78,7 +78,7 @@ get_validity_verification_size(struct stateob *st)
      case DH_G_5_3DES_SHA1:
 	  return (160/8)+2;
      default:
-	  log_error(0, "validitiy.c: Unknown exchange scheme: %d\n", 
+	  log_print("validitiy.c: Unknown exchange scheme: %d\n", 
 		    *((u_int16_t *)st->scheme));
 	  return 0;
      }
@@ -105,7 +105,7 @@ create_validity_verification(struct stateob *st, u_int8_t *buffer,
           hash = get_hash(HASH_SHA1);
 	  break;
      default: 
-          log_error(0, "validity.c: Unknown exchange scheme: %d\n",  
+          log_print("validity.c: Unknown exchange scheme: %d\n",  
                     *((u_int16_t *)st->scheme)); 
           return 0; 
      }
@@ -146,7 +146,7 @@ verify_validity_verification(struct stateob *st, u_int8_t *buffer,
 	  hash = get_hash(HASH_SHA1);
 	  break;
      default:  
-	  log_error(0, "validity.c: Unknown exchange scheme: %d\n",   
+	  log_print("validity.c: Unknown exchange scheme: %d\n",   
                     *((u_int16_t *)st->scheme));  
           return 0;  
      }  
