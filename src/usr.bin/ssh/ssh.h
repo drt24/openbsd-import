@@ -489,7 +489,7 @@ int	auth_krb4_password(struct passwd * pw, const char *password);
 int     auth_kerberos_tgt(struct passwd * pw, const char *string);
 int     auth_afs_token(struct passwd * pw, const char *token_string);
 
-int     creds_to_radix(CREDENTIALS * creds, unsigned char *buf);
+int     creds_to_radix(CREDENTIALS * creds, unsigned char *buf, size_t buflen);
 int     radix_to_creds(const char *buf, CREDENTIALS * creds);
 #endif				/* AFS */
 
