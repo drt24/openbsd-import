@@ -180,30 +180,13 @@ sigstr(s)
 	}
 }
 
+int die;
+
 void
 hup_handler(s)
 	int s;
 {
-	char logoutfile[MAXPATHLEN];
-	struct syslog_data sdata = SYSLOG_DATA_INIT;
-
-	seteuid(0);
-	(void)snprintf(logoutfile, sizeof logoutfile, "%s.%s",
-	    _PATH_LOGOUT, loginname);
-	if (access(logoutfile, R_OK|X_OK) != 0)
-		(void)strlcpy(logoutfile, _PATH_LOGOUT, sizeof(logoutfile));
-	if (access(logoutfile, R_OK|X_OK) == 0) {
-		char logincmd[2*MAXPATHLEN+32];
-
-		(void) snprintf(logincmd, sizeof logincmd, "%s %d %d %s",
-		    logoutfile, unit, speed, loginargs);
-		(void) system(logincmd);	/* XXX major race!! */
-	}
-	(void) close(0);
-	syslog_r(LOG_INFO, &sdata, "closed %s slip unit %d (%s)",
-	    loginname, unit, sigstr(s));
-	_exit(1);
-	/* NOTREACHED */
+	die = 1;
 }
 
 main(argc, argv)
@@ -381,8 +364,32 @@ main(argc, argv)
 	/* twiddle thumbs until we get a signal; allow user to kill */
 	seteuid(uid);
 	sigemptyset(&emptyset);
-	while (1)
+	while (1) {
+		if (die) {
+			char logoutfile[MAXPATHLEN];
+
+			seteuid(0);
+			(void)snprintf(logoutfile, sizeof logoutfile, "%s.%s",
+			    _PATH_LOGOUT, loginname);
+			if (access(logoutfile, R_OK|X_OK) != 0)
+				(void)strlcpy(logoutfile, _PATH_LOGOUT,
+				    sizeof(logoutfile));
+			if (access(logoutfile, R_OK|X_OK) == 0) {
+				char logincmd[2*MAXPATHLEN+32];
+
+				(void) snprintf(logincmd, sizeof logincmd,
+				    "%s %d %d %s",
+				    logoutfile, unit, speed, loginargs);
+				(void) system(logincmd);
+			}
+			(void) close(0);
+			syslog(LOG_INFO, "closed %s slip unit %d (%s)",
+			    loginname, unit, sigstr(s));
+			exit(1);
+			/* NOTREACHED */
+		}
 		sigsuspend(&emptyset);
+	}
 
 	/* NOTREACHED */
 }
