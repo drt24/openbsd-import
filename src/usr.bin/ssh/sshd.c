@@ -1233,7 +1233,7 @@ do_authentication(char *user, int privileged_port)
 
 	    packet_integrity_check(plen, nlen, type);
 	    
-	    if (auth_rsa(pw, n))
+	    if (auth_rsa(pw, n, options.strict_modes))
 	      { 
 		/* Successful authentication. */
 		BN_clear_free(n);

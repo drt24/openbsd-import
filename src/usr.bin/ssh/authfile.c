@@ -211,11 +211,25 @@ load_private_key(const char *filename, const char *passphrase,
   CipherContext cipher;
   BN_CTX *ctx;
   BIGNUM *aux;
+  struct stat st;
 
   /* Read the file into the buffer. */
   f = open(filename, O_RDONLY);
   if (f < 0)
     return 0;
+
+  /* We assume we are called under uid of the owner of the file */
+  if (fstat(f, &st) < 0 ||
+      (st.st_uid != 0 && st.st_uid != getuid()) ||
+      (st.st_mode & 077) != 0) {
+    error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+    error("@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @");
+    error("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+    error("Bad ownership or mode(0%3.3o) for '%s'.",
+	   st.st_mode & 0777, filename);
+    error("It is recommended that your private key files are NOT accessible by others.");
+    return 0;
+  }
 
   len = lseek(f, (off_t)0, SEEK_END);
   lseek(f, (off_t)0, SEEK_SET);

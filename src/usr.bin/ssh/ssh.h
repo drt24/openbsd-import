@@ -265,7 +265,7 @@ int auth_password(struct passwd *pw, const char *password);
 /* Performs the RSA authentication dialog with the client.  This returns
    0 if the client could not be authenticated, and 1 if authentication was
    successful.  This may exit if there is a serious protocol violation. */
-int auth_rsa(struct passwd *pw, BIGNUM *client_n);
+int auth_rsa(struct passwd *pw, BIGNUM *client_n, int strict_modes);
 
 /* Parses an RSA key (number of bits, e, n) from a string.  Moves the pointer
    over the key.  Skips any whitespace at the beginning and at end. */
