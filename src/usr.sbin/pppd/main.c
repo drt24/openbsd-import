@@ -582,10 +582,13 @@ void
 close_fd()
 {
     disestablish_ppp();
+    sleep(1);
 
     /* drop dtr to hang up */
-    if (modem)
+    if (modem) {
 	setdtr(fd, FALSE);
+	sleep(1);
+    }
 
     if (initfdflags != -1 && fcntl(fd, F_SETFL, initfdflags) < 0)
 	syslog(LOG_WARNING, "Couldn't restore device fd flags: %m");
