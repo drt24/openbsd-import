@@ -36,6 +36,9 @@
 .Fl X
 .Op Fl f Ar keyfile
 .Nm ssh-keygen
+.Fl y
+.Op Fl f Ar keyfile
+.Nm ssh-keygen
 .Fl c
 .Op Fl P Ar passphrase
 .Op Fl C Ar comment
@@ -138,11 +141,14 @@ If RSA support is functional, immediately exits with code 0.  If RSA
 support is not functional, exits with code 1.  This flag will be
 removed once the RSA patent expires.
 .It Fl x
-This option will read a
-OpenSSH DSA format file and prints to stdout a SSH2-compatible key.
+This option will read a private
+OpenSSH DSA format file and prints to stdout a SSH2-compatible public key.
 .It Fl X
 This option will read a
-SSH2-compatible key file and print to stdout an OpenSSH DSA compatible key.
+SSH2-compatible public key file and print to stdout an OpenSSH DSA compatible public key.
+.It Fl y
+This option will read a private
+OpenSSH DSA format file and prints to stdout an OpenSSH DSA public key.
 .El
 .Sh FILES
 .Bl -tag -width Ds
