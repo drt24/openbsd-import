@@ -227,6 +227,8 @@ main(argc, argv)
 	s = getdtablesize();
 	for (fd = 3 ; fd < s ; fd++)
 		(void) close(fd);
+	if (strlen(argv[0]) > MAXLOGNAME)
+		errx(1, "login %s too long", argv[0]);
 	openlog(name, LOG_PID, LOG_DAEMON);
 	uid = getuid();
 	if (argc > 1) {
