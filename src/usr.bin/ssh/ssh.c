@@ -243,7 +243,13 @@ main(int ac, char **av)
 	{
 	  if (host)
 	    break;
-	  host = av[optind];
+          if ((cp = strchr(av[optind], '@'))) {
+            options.user = av[optind];
+            *cp = '\0';
+            host = ++cp;
+          }
+          else
+	    host = av[optind];
 	  continue;
 	}
       opt = av[optind][1];
