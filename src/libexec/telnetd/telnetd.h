@@ -1,3 +1,6 @@
+/*	$OpenBSD$	*/
+/*	$NetBSD: telnetd.h,v 1.5 1996/02/28 20:38:25 thorpej Exp $	*/
+
 /*
  * Copyright (c) 1989, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -31,12 +34,11 @@
  * SUCH DAMAGE.
  *
  *	from: @(#)telnetd.h	8.1 (Berkeley) 6/4/93
- *	$Id$
  */
 
 
-#include "defs.h"
-#include "ext.h"
+#include <defs.h>
+#include <ext.h>
 
 #ifdef	DIAGNOSTICS
 #define	DIAG(a,b)	if (diagnostic & (a)) b
