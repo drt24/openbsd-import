@@ -299,11 +299,11 @@ doit(f, fromp)
 				    hostname);
 #endif
 
-			execl(_PATH_LOGIN, "login", "-p",
-			    "-h", hostname, "-f", lusername, (char *)NULL);
+			execl(_PATH_LOGIN, "login", "-p", "-h", hostname, "-f",
+			    "--", lusername, (char *)NULL);
 		} else
-			execl(_PATH_LOGIN, "login", "-p",
-			    "-h", hostname, lusername, (char *)NULL);
+			execl(_PATH_LOGIN, "login", "-p", "-h", hostname,
+			    "--", lusername, (char *)NULL);
 		fatal(STDERR_FILENO, _PATH_LOGIN, 1);
 		/*NOTREACHED*/
 	}

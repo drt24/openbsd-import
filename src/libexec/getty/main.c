@@ -318,7 +318,7 @@ main(argc, argv)
 			limit.rlim_max = RLIM_INFINITY;
 			limit.rlim_cur = RLIM_INFINITY;
 			(void)setrlimit(RLIMIT_CPU, &limit);
-			execle(LO, "login", "-p", name, (char *) 0, env);
+			execle(LO, "login", "-p", "--", name, (char *)0, env);
 			syslog(LOG_ERR, "%s: %m", LO);
 			exit(1);
 		}
