@@ -50,7 +50,7 @@ CFLAGS+= -D_KERNEL -I/sys -I.
 all:	$(MODOBJ)
 
 clean:
-	rm -f vnode_if.[ch] $(OBJS) $(KOBJS) $(MODOBJ) $(KMOD)
+	rm -f $(OBJS) $(KOBJS) $(MODOBJ) $(KMOD)
 
 load:
 	modload -o $(KMOD) -e$(KMOD) $(MODOBJ)
