@@ -113,6 +113,9 @@ char *av[];
     /* Interactive mode, or script file */
 
     signal(SIGINT, onintr);
+#ifdef __OpenBSD__
+    siginterrupt(SIGINT, 1);
+#endif
 
     /* The Main Loop */
     while (1) {
@@ -126,12 +129,11 @@ char *av[];
 	}
 
 	if (!fgets(buf, sizeof buf, cmdf)) {
+	    putchar('\n');
 	    if (interrupted)
 		continue;
-	    else {
-		putchar('\n');
+	    else
 		break;
-	    }
 	}
 	if (cmdf != stdin)
 	    printf("sectok> %s", buf);
