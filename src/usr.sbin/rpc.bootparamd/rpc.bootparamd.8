@@ -54,6 +54,9 @@ default configuration file
 .El
 .Sh "SEE ALSO"
 .Xr bootparams 5
+.Sh WARNINGS
+If rpc.bootparams is run on a system which is also running YP, your YP
+domainname will be made public information.
 .Sh BUGS
 You may find the syslog loggings too verbose.
 .Pp
