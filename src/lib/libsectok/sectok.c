@@ -180,6 +180,16 @@ int sectok_open(int rn, int flags, int *swp)
     return sectok_xopen(rn, flags, NULL, NULL, swp);
 }
 
+int sectok_friendly_open(const char *rn, int flags, int *swp)
+{
+    /* just convert the reader to a integer for now */
+    if (rn != NULL) {
+        return sectok_xopen(atoi(rn), flags, NULL, NULL, swp);
+    } else {
+        return -1;
+    }
+}
+
 static int
 openReader(int readerNum, int flags)
 {
