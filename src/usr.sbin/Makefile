@@ -20,7 +20,7 @@ SUBDIR+=amd
 .endif
 
 .if   make(clean) || make(cleandir)
-SUBDIR+=bad144 config.old dbsym eeprom grfinfo hilinfo iteconfig screenblank
+SUBDIR+=bad144 dbsym eeprom grfinfo hilinfo iteconfig screenblank
 .elif ${MACHINE} == "amiga" || ${MACHINE} == "atari"
 SUBDIR+=grfconfig iteconfig videomode
 .elif ${MACHINE} == "hp300"
