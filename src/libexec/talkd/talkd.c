@@ -1,4 +1,4 @@
-/*	$OpenBSD: talkd.c,v 1.3 1996/07/15 05:10:12 mickey Exp $	*/
+/*	$OpenBSD: talkd.c,v 1.4 1996/07/18 00:04:09 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -50,6 +50,7 @@ static char rcsid[] = "$Id$";
  * disconnect all descriptors and ttys, and then endless
  * loop on waiting for and processing requests
  */
+#include <sys/param.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <protocols/talkd.h>

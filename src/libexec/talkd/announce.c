@@ -1,4 +1,4 @@
-/*	$OpenBSD: announce.c,v 1.4 1996/07/17 23:41:10 deraadt Exp $	*/
+/*	$OpenBSD: announce.c,v 1.5 1996/07/18 00:05:33 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -38,6 +38,7 @@
 static char rcsid[] = "$Id$";
 #endif /* not lint */
 
+#include <sys/param.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/time.h>
