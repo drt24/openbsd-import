@@ -366,7 +366,7 @@ btoa8(out, in)
 /* Convert hex digit to binary integer */
 int
 htoi(c)
-	register char c;
+	register int c;
 {
 	if ('0' <= c && c <= '9')
 		return c - '0';
