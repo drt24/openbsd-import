@@ -377,3 +377,7 @@ and space, and may cause
 to run out of memory.
 .PP
 Backreferences are very slow, and may require exponential time.
+.PP
+Files which have extremely long sequences of characters without newlines
+may cause grep to run out of memory.  An example is sparse files, which
+can read as arbritarily long sequences of nul characters.
