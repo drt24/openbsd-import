@@ -126,7 +126,7 @@ main(int argc, char **argv)
 #undef IGNORE
 #undef HASNEXT
 
-	if (snprintf(filename, len, "%s/%s", queue_dir, ftsent->fts_name) > len)
+	if (snprintf(filename, len, "%s/%s", queue_dir, ftsent->fts_name) >= len)
 	    err("snprintf(filename) longer than buffer");
 
 	fp = open(filename, O_RDONLY, 0);
