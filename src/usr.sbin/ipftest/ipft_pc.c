@@ -25,13 +25,11 @@
 #include <netinet/tcp.h>
 #include <netinet/tcpip.h>
 #include <net/if.h>
-#include "ip_fil_compat.h"
-#include "ip_fil.h"
 #include "ipf.h"
 #include "ipt.h"
 #include "pcap.h"
 
-#ifndef	lint
+#if !defined(lint) && defined(LIBC_SCCS)
 static	char	rcsid[] = "$Id$";
 #endif
 

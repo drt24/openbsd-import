@@ -9,6 +9,9 @@
  * $Id$
  */
 
+#ifndef	SOLARIS
+#define	SOLARIS	(defined(sun) && (defined(__svr4__) || defined(__SVR4)))
+#endif
 #define	OPT_REMOVE	0x00001
 #define	OPT_DEBUG	0x00002
 #define	OPT_OUTQUE	FR_OUTQUE	/* 0x0004 */
@@ -47,11 +50,18 @@ struct	ipopt_names	{
 
 extern	u_long	hostnum(), optname();
 extern	void	printpacket();
+#if SOLARIS
+extern	int	inet_aton();
+#endif
 
 #ifdef	sun
 #define	STRERROR(x)	sys_errlist[x]
 extern	char	*sys_errlist[];
 #else
 #define	STRERROR(x)	strerror(x)
+#endif
+
+#ifndef	MIN
+#define	MIN(a,b)	((a) > (b) ? (b) : (a))
 #endif
 

@@ -19,7 +19,7 @@
 
 #define KMEM "/dev/kmem"
 
-#ifndef lint
+#if !defined(lint) && defined(LIBC_SCCS)
 static  char    sccsid[] = "@(#)kmem.c	1.4 1/12/96 (C) 1992 Darren Reed";
 static	char	rcsid[] = "$Id$";
 #endif
@@ -38,7 +38,7 @@ int	openkmem()
 
 int	kmemcpy(buf, pos, n)
 register char	*buf;
-u_long	pos;
+long	pos;
 register int	n;
 {
 	register int	r;

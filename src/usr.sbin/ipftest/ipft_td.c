@@ -41,6 +41,7 @@ tcpdump -nqte
 #include <sys/socket.h>
 #include <sys/ioctl.h>
 #include <netinet/in.h>
+#include <arpa/inet.h>
 #include <netinet/in_systm.h>
 #include <netinet/ip_var.h>
 #include <netinet/ip.h>
@@ -50,22 +51,15 @@ tcpdump -nqte
 #include <netinet/tcpip.h>
 #include <net/if.h>
 #include <netdb.h>
-#include "ip_fil_compat.h"
-#include "ip_fil.h"
 #include "ipf.h"
 #include "ipt.h"
 
-#ifndef lint
+#if !defined(lint) && defined(LIBC_SCCS)
 static char sccsid[] = "@(#)ipft_td.c	1.8 2/4/96 (C)1995 Darren Reed";
 static	char	rcsid[] = "$Id$";
 #endif
 
 static	int	tcpd_open(), tcpd_close(), tcpd_readip();
-#ifdef	NEED_INET_ATON
-extern	u_long	inet_aton();
-#else
-#include <arpa/inet.h>
-#endif
 
 struct	ipread	tcpd = { tcpd_open, tcpd_close, tcpd_readip };
 
