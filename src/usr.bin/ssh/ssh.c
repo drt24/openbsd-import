@@ -95,6 +95,7 @@ usage()
   fprintf(stderr, "  -i file     Identity for RSA authentication (default: ~/.ssh/identity).\n");
   fprintf(stderr, "  -t          Tty; allocate a tty even if command is given.\n");
   fprintf(stderr, "  -v          Verbose; display verbose debugging messages.\n");
+  fprintf(stderr, "  -V          Display version number only.\n");
   fprintf(stderr, "  -q          Quiet; don't display any warning messages.\n");
   fprintf(stderr, "  -f          Fork into background after authentication.\n");
   fprintf(stderr, "  -e char     Set escape character; ``none'' = disable (default: ~).\n");
