@@ -10,19 +10,18 @@ divert(-1)
 #
 #  Definitions for Makefile construction for sendmail
 #
-#	$Id$
+#	$Sendmail: smlib.m4,v 8.3 2000/07/07 18:52:23 dmoen Exp $
 #
 divert(0)dnl
 
 define(`confLIBEXT', `a')dnl
 
 define(`bldPUSH_SMLIB',
-	`bldPUSH_TARGET(`../lib$1/lib$1.a')
-bldPUSH_SMDEPLIB(`../lib$1/lib$1.a')
-PREPENDDEF(`confLIBS', `../lib$1/lib$1.a')
+	`bldPUSH_TARGET(bldABS_OBJ_DIR`/lib$1/lib$1.a')
+bldPUSH_SMDEPLIB(bldABS_OBJ_DIR`/lib$1/lib$1.a')
+PREPENDDEF(`confLIBS', bldABS_OBJ_DIR`/lib$1/lib$1.a')
 divert(bldTARGETS_SECTION)
-../lib$1/lib$1.a:
+bldABS_OBJ_DIR/lib$1/lib$1.a:
 	(cd ${SRCDIR}/lib$1; sh Build ${SENDMAIL_BUILD_FLAGS})
 divert
 ')dnl
-

@@ -3,7 +3,7 @@
 ## Copyright (c) 2000 Sendmail, Inc. and its suppliers.
 ##       All rights reserved.
 ##
-## $Id$
+## $Sendmail: link_hash.sh,v 1.2 2000/04/25 00:12:28 ca Exp $
 ##
 #
 # ln a certificate to its hash

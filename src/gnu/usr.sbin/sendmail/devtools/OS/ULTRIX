@@ -1,6 +1,7 @@
-#	$Id$
+#	$Sendmail: ULTRIX,v 8.14 2001/01/29 21:07:27 gshapiro Exp $
 define(`confCC', `cc -Olimit 1350')
 define(`confMAPDEF', `-DNDBM -DNIS')
+define(`confSM_OS_HEADER', `sm_os_ultrix')
 define(`confMBINDIR', `/usr/lib')
 define(`confSBINDIR', `/usr/etc')
 define(`confUBINDIR', `/usr/ucb')
