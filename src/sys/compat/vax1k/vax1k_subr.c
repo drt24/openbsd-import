@@ -1,4 +1,4 @@
-/*	$OpenBSD: vax1k_subr.c,v 1.1 2001/11/14 14:37:22 hugh Exp $	*/
+/*	$OpenBSD: vax1k_subr.c,v 1.2 2001/11/28 13:47:39 art Exp $	*/
 /*	$NetBSD: vax1k_subr.c,v 1.2 1999/03/24 05:51:20 mrg Exp $	*/
 
 /*
