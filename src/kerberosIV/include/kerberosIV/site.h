@@ -31,6 +31,7 @@
 #define	ADD_ACL_FILE		"admin_acl.add"
 #define	GET_ACL_FILE		"admin_acl.get"
 #define	MOD_ACL_FILE		"admin_acl.mod"
+#define DEL_ACL_FILE		"admin_acl.del"
 
 /*
  * Set ORGANIZATION to be the desired organization string printed
