@@ -1,3 +1,0 @@
-#	$Id$
-
-REV=	${OSrev}
