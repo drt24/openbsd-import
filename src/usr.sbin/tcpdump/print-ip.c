@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-ip.c,v 1.14 2001/02/05 15:18:47 jason Exp $	*/
+/*	$OpenBSD: print-ip.c,v 1.15 2001/02/15 16:16:48 niklas Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -394,6 +394,10 @@ ip_print(register const u_char *bp, register u_int length)
 		return;
 	}
 	hlen = ip->ip_hl * 4;
+	if (hlen < sizeof(struct ip)) {
+		(void)printf("bad-hlen %d", hlen);
+		return;
+	}
 
 	len = ntohs(ip->ip_len);
 	if (length < len)
