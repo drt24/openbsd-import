@@ -3918,14 +3918,6 @@ sppp_params(struct sppp *sp, u_long cmd, void *data)
 	struct ifreq *ifr = (struct ifreq *)data;
 	struct spppreq spr;
 
-	/*
-	 * ifr->ifr_data is supposed to point to a struct spppreq.
-	 * Check the cmd word first before attempting to fetch all the
-	 * data.
-	 */
-	if ((subcmd = fuword(ifr->ifr_data)) == -1)
-		return EFAULT;
-
 	if (copyin((caddr_t)ifr->ifr_data, &spr, sizeof spr) != 0)
 		return EFAULT;
 
