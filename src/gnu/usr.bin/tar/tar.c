@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* Tar -- a tape archiver.
    Copyright (C) 1988, 1992, 1993 Free Software Foundation
 
@@ -18,7 +20,7 @@ along with GNU Tar; see the file COPYING.  If not, write to
 the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.  */
 
 #ifndef lint
-static char rcsid[] = "$Id$";
+static char rcsid[] = "$OpenBSD$";
 #endif /* not lint */
 
 /*
@@ -194,7 +196,7 @@ struct option long_options[] =
 /*
  * Main routine for tar.
  */
-void
+int
 main (argc, argv)
      int argc;
      char **argv;
