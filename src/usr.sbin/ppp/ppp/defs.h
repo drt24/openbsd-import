@@ -22,14 +22,15 @@
 
 /* Check the following definitions for your machine environment */
 #ifdef __FreeBSD__
-# define  MODEM_LIST	"/dev/cuaa1, /dev/cuaa0"	/* name of tty device */
+# define  MODEM_LIST	"/dev/cuaa1\0/dev/cuaa0"	/* name of tty device */
 #else
 # ifdef __OpenBSD__
-#  define MODEM_LIST	"/dev/cua01, /dev/cua00"	/* name of tty device */
+#  define MODEM_LIST	"/dev/cua01\0/dev/cua00"	/* name of tty device */
 # else
-#  define MODEM_LIST	"/dev/tty01, /dev/tty00"	/* name of tty device */
+#  define MODEM_LIST	"/dev/tty01\0/dev/tty00"	/* name of tty device */
 # endif
 #endif
+#define NMODEMS		2
 
 #define _PATH_PPP	"/etc/ppp"
 

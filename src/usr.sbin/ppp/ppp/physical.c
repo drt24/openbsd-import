@@ -71,10 +71,11 @@ physical_SetDeviceList(struct physical *p, int argc, const char *const *argv)
   p->cfg.devlist[sizeof p->cfg.devlist - 1] = '\0';
   for (f = 0, pos = 0; f < argc && pos < sizeof p->cfg.devlist - 1; f++) {
     if (pos)
-      p->cfg.devlist[pos++] = ' ';
+      p->cfg.devlist[pos++] = '\0';
     strncpy(p->cfg.devlist + pos, argv[f], sizeof p->cfg.devlist - pos - 1);
     pos += strlen(p->cfg.devlist + pos);
   }
+  p->cfg.ndev = f;
 }
 
 
