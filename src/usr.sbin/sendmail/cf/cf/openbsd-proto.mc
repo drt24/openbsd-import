@@ -23,3 +23,12 @@ OSTYPE(openbsd)
 FEATURE(nouucp)
 MAILER(local)
 MAILER(smtp)
+dnl
+dnl Enforce valid Message-Id to help stop spammers
+dnl
+LOCAL_RULESETS
+HMessage-Id: $>CheckMessageId
+
+SCheckMessageId
+R< $+ @ $+ >		$@ OK
+R$*			$#error $: 553 Header Error
