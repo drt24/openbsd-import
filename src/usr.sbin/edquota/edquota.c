@@ -75,7 +75,7 @@ struct quotause {
 	struct	quotause *next;
 	long	flags;
 	struct	dqblk dqblk;
-	char	fsname[MAXPATHLEN + 1];
+	char	fsname[MAXPATHLEN];
 	char	qfname[1];	/* actually longer */
 } *getprivs __P((u_int, int));
 #define	FOUND	0x01
