@@ -45,7 +45,7 @@ KOBJS=kernfs_vfsops.o kernfs_vnops.o
 MODOBJ=combined.o
 
 KMOD=kernfsmod
-CFLAGS= -O6 -D_KERNEL -I/sys -I.
+CFLAGS+= -D_KERNEL -I/sys -I.
 
 all:	$(MODOBJ)
 

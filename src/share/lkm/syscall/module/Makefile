@@ -45,7 +45,7 @@ KOBJS=mycall.o
 MODOBJ=combined.o
 
 KMOD=newsyscall
-CFLAGS= -D_KERNEL -I/sys
+CFLAGS+= -D_KERNEL -I/sys
 
 all:	$(MODOBJ)
 

@@ -45,7 +45,7 @@ KOBJS=misccall.o
 MODOBJ=combined.o
 
 KMOD=miscmod
-CFLAGS= -D_KERNEL -I/sys
+CFLAGS+= -D_KERNEL -I/sys
 
 all:	$(MODOBJ)
 
