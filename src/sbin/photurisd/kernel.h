@@ -94,6 +94,7 @@ int kernel_delete_spi(char *address, u_int32_t spi, int proto);
 
 struct sadb_msg;
 int kernel_request_sa(struct sadb_msg *);
+int kernel_handle_expire(struct sadb_msg *);
 #else
 #define EXTERN extern
 #endif
