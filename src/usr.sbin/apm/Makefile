@@ -1,7 +1,6 @@
 # $Id$
 
 SRCS=	apm.c apmsubr.c
-#LDADD+=	-lutil
 
 .PATH:	${.CURDIR}/../apmd
 

@@ -3,7 +3,5 @@
 
 PROG=	rexecd
 MAN=	rexecd.8
-#LDADD+= -lcrypt
-#DPADD+= ${LIBCRYPT}
 
 .include <bsd.prog.mk>
