@@ -23,7 +23,9 @@ config.status:
 
 install:	maninstall
 	${FSFMAKE} prefix=${DESTDIR}/usr bindir=${DESTDIR}/usr/bin \
-	mandir= INSTALL_MAN= install
+	    mandir= INSTALL_MAN= install
+	sh ${.CURDIR}/util/gen-dir-node ${DESTDIR}/usr/share/info > \
+	    ${DESTDIR}/usr/share/info/dir
 
 clean cleandir:
 	rm -f $(CLEANFILES)
