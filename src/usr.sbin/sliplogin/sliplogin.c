@@ -121,7 +121,7 @@ findid(name)
 	char user[16], *p;
 	int i, j, n;
 
-	(void)strcpy(loginname, name);
+	(void)strncpy(loginname, sizeof loginname, name);
 	if ((fp = fopen(_PATH_ACCESS, "r")) == NULL) {
 		syslog(LOG_ERR, "%s: %m\n", _PATH_ACCESS);
 		err(1, "%s", _PATH_ACCESS);
