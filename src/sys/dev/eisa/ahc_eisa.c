@@ -46,7 +46,7 @@
 
 #if defined(__NetBSD__) || defined(__OpenBSD__)
 #include <sys/device.h>
-#include <machine/bus.h>
+#include <machine/bus.old.h>
 #include <machine/intr.h>
 #endif /* defined(__NetBSD__) */
 

@@ -37,7 +37,7 @@
 #include <sys/queue.h>
 #include <sys/select.h>
 #include <machine/cpu.h>
-#include <machine/bus.h>
+#include <machine/bus.old.h>
 
 /*
  * The following documentation tries to describe the relationship between the
