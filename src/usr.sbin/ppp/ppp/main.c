@@ -515,8 +515,12 @@ DoLoop(struct bundle *bundle)
 
     for (i = 0; i <= nfds; i++)
       if (FD_ISSET(i, &efds)) {
-        log_Printf(LogERROR, "Exception detected on descriptor %d\n", i);
-        break;
+        log_Printf(LogPHASE, "Exception detected on descriptor %d\n", i);
+        /* We deal gracefully with link descriptor exceptions */
+        if (!bundle_Exception(bundle, i)) {
+          log_Printf(LogERROR, "Exception cannot be handled !\n");
+          break;
+        }
       }
 
     if (i <= nfds)

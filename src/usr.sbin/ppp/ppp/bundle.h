@@ -184,3 +184,4 @@ extern int bundle_RenameDatalink(struct bundle *, struct datalink *,
 extern void bundle_setsid(struct bundle *, int);
 extern void bundle_LockTun(struct bundle *);
 extern int bundle_HighestState(struct bundle *);
+extern int bundle_Exception(struct bundle *, int);

@@ -1729,3 +1729,17 @@ bundle_HighestState(struct bundle *bundle)
 
   return result;
 }
+
+int
+bundle_Exception(struct bundle *bundle, int fd)
+{
+  struct datalink *dl;
+
+  for (dl = bundle->links; dl; dl = dl->next)
+    if (dl->physical->fd == fd) {
+      datalink_Down(dl, CLOSE_NORMAL);
+      return 1;
+    }
+
+  return 0;
+}
