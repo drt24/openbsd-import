@@ -99,7 +99,7 @@ dnl define(`confCLIENT_KEY', `CERT_DIR/mykey.pem')dnl
 dnl
 dnl Masquerading -- rewriting the From address to a specific domain.
 dnl Please see the "MASQUERADING AND RELAYING" section of
-dnl /usr/share/sendmail/cf/cf/README for details.
+dnl /usr/share/sendmail/README for details.
 dnl
 dnl MASQUERADE_AS(`mycompany.com')dnl
 dnl
