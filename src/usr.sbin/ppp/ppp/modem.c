@@ -554,7 +554,7 @@ modem_Open(struct physical *modem, struct bundle *bundle)
         int fids[2];
 
         modem->name.base = modem->name.full + 1;
-        if (pipe(fids) < 0)
+        if (socketpair(AF_UNIX, SOCK_STREAM, PF_UNSPEC, fids) < 0)
           log_Printf(LogPHASE, "Unable to create pipe for line exec: %s\n",
 	             strerror(errno));
         else {
