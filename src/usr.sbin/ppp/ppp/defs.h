@@ -93,3 +93,4 @@ extern void randinit(void);
 extern ssize_t fullread(int, void *, size_t);
 extern const char *mode2Nam(int);
 extern int Nam2mode(const char *);
+extern struct in_addr GetIpAddr(const char *);
