@@ -23,7 +23,7 @@
 .\" SUCH DAMAGE.
 .\"
 .\"	$Id$
-.\"	$OpenBSD$
+.\"	$OpenBSD: pthread_rwlockattr_getpshared.3,v 1.1 1998/11/09 03:13:16 d Exp $
 .\"
 .Dd August 4, 1998
 .Dt PTHREAD_RWLOCKATTR_GETPSHARED 3
@@ -34,7 +34,7 @@
 .Sh SYNOPSIS
 .Fd #include <pthread.h>
 .Ft int
-.Fn pthread_rwlockattr_getpshared "pthread_rwlockattr_t *attr" "int *pshared"
+.Fn pthread_rwlockattr_getpshared "const pthread_rwlockattr_t *attr" "int *pshared"
 .Sh DESCRIPTION
 The
 .Fn pthread_rwlockattr_getpshared
