@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: if_xl.c,v 1.1 1998/09/02 03:01:05 jason Exp $	*/
 
 /*
  * Copyright (c) 1997, 1998
@@ -2812,12 +2812,12 @@ xl_probe(parent, match, aux)
 		return (0);
 
 	switch (PCI_PRODUCT(pa->pa_id)) {
-	    case PCI_PRODUCT_3COM_3C900TPO:
-	    case PCI_PRODUCT_3COM_3C900COMBO:
-	    case PCI_PRODUCT_3COM_3C905TX:
-	    case PCI_PRODUCT_3COM_3C905T4:
-	    case PCI_PRODUCT_3COM_3C905BTX:
-	    case PCI_PRODUCT_3COM_3C905BT4:
+	case PCI_PRODUCT_3COM_3C900TPO:
+	case PCI_PRODUCT_3COM_3C900COMBO:
+	case PCI_PRODUCT_3COM_3C905TX:
+	case PCI_PRODUCT_3COM_3C905T4:
+	case PCI_PRODUCT_3COM_3C905BTX:
+	case PCI_PRODUCT_3COM_3C905BT4:
 		return (1);
 	}
 					
@@ -2908,7 +2908,6 @@ xl_attach(parent, self, aux)
 		printf(": couldn't establish interrupt");
 		if (intrstr != NULL)
 			printf(" at %s", intrstr);
-		printf("\n");
 		return;
 	}
 
@@ -2938,7 +2937,7 @@ xl_attach(parent, self, aux)
 	}
 	bcopy(enaddr, (char *)&sc->arpcom.ac_enaddr, ETHER_ADDR_LEN);
 
-	printf("%s: address %s\n", sc->sc_dev.dv_xname,
+	printf(" address %s\n", sc->sc_dev.dv_xname,
 	    ether_sprintf(sc->arpcom.ac_enaddr));
 
 	sc->xl_ldata_ptr = malloc(sizeof(struct xl_list_data) + 8,
