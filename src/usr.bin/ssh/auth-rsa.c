@@ -26,7 +26,7 @@ RCSID("$Id$");
 #include "uidswap.h"
 
 #include <ssl/rsa.h>
-#include <md5.h>
+#include <ssl/md5.h>
 
 /* Flags that may be set in authorized_keys options. */
 extern int no_port_forwarding_flag;
@@ -94,10 +94,10 @@ auth_rsa_challenge_dialog(unsigned int bits, BIGNUM *e, BIGNUM *n)
   assert(len <= 32 && len);
   memset(buf, 0, 32);
   BN_bn2bin(challenge, buf + 32 - len);
-  MD5Init(&md);
-  MD5Update(&md, buf, 32);
-  MD5Update(&md, session_id, 16);
-  MD5Final(mdbuf, &md);
+  MD5_Init(&md);
+  MD5_Update(&md, buf, 32);
+  MD5_Update(&md, session_id, 16);
+  MD5_Final(mdbuf, &md);
 
   /* We will no longer need these. */
   BN_clear_free(encrypted_challenge);

@@ -21,7 +21,7 @@ RCSID("$Id$");
 #include "getput.h"
 #include "xmalloc.h"
 
-#include <md5.h>
+#include <ssl/md5.h>
 
 void
 compute_session_id(unsigned char session_id[16],
@@ -39,8 +39,8 @@ compute_session_id(unsigned char session_id[16],
   BN_bn2bin(session_key_n, buf + (host_key_bits + 7 ) / 8);
   memcpy(buf + (host_key_bits + 7) / 8 + (session_key_bits + 7) / 8,
 	 cookie, 8);
-  MD5Init(&md);
-  MD5Update(&md, buf, bytes);
-  MD5Final(session_id, &md);
+  MD5_Init(&md);
+  MD5_Update(&md, buf, bytes);
+  MD5_Final(session_id, &md);
   xfree(buf);
 }

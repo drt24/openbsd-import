@@ -26,7 +26,7 @@ RCSID("$Id$");
 #include "getput.h"
 #include "mpaux.h"
 
-#include <md5.h>
+#include <ssl/md5.h>
 
 typedef struct
 {
@@ -132,10 +132,10 @@ process_authentication_challenge(SocketEntry *e)
 	    assert(len <= 32 && len);
 	    memset(buf, 0, 32);
 	    BN_bn2bin(challenge, buf + 32 - len);
-	    MD5Init(&md);
-	    MD5Update(&md, buf, 32);
-	    MD5Update(&md, session_id, 16);
-	    MD5Final(mdbuf, &md);
+	    MD5_Init(&md);
+	    MD5_Update(&md, buf, 32);
+	    MD5_Update(&md, session_id, 16);
+	    MD5_Final(mdbuf, &md);
 	    break;
 
 	  default:
