@@ -301,6 +301,20 @@ direct-server:
  accept lqr
 
 
+# Example to connect via compuserve (who insist on 7 bits even parity
+#  during the chat phase).  
+#
+compuserve:
+ set phone 1234567
+ set parity even
+ set login "TIMEOUT 10 \"\" \"\" Name: CIS ID: 99999,9999/go:pppconnect \
+            word: XXXXXXXX"
+ set timeout 300
+ set ifaddr 10.0.0.1/0 10.0.0.2/0 255.255.255.0 0.0.0.0
+ delete ALL
+ add default HISADDR
+
+
 # Example for PPP over TCP.
 #  We assume that inetd on tcpsrv.mynet has been
 #  configured to run "ppp -direct tcp-server" when it gets a connection on
