@@ -8,15 +8,16 @@
  * 	$Id$
  */
 
+#include <inttypes.h>
 #include "fnmatch.h"
 
 int matches	__PR((char *fn));
 
 int i_matches	__PR((char *fn));
-int i_ishidden	__PR((void));
+intptr_t i_ishidden	__PR((void));
 
 int j_matches	__PR((char *fn));
-int j_ishidden	__PR((void));
+intptr_t j_ishidden	__PR((void));
 
 #ifdef APPLE_HYB
 int add_match	__PR((char *fn));
@@ -25,7 +26,7 @@ int j_add_match __PR((char *fn));
 
 int hfs_add_match __PR((char *fn));
 int hfs_matches __PR((char *fn));
-int hfs_ishidden __PR((void));
+intptr_t hfs_ishidden __PR((void));
 
 void add_list __PR((char *fn));
 void i_add_list __PR((char *fn));
