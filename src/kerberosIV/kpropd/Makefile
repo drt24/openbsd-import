@@ -3,7 +3,7 @@
 PROG=	kpropd
 LDADD+=	-lkrb -ldes
 DPADD+=	${LIBKRB} ${LIBDES}
-NOMAN=	noman
+MAN=	kpropd.8
 BINDIR=/usr/libexec
 
 .include <bsd.prog.mk>

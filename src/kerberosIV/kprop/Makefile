@@ -3,6 +3,6 @@
 PROG=	kprop
 LDADD+=	-lkrb -ldes
 DPADD+=	${LIBKRB} ${LIBDES}
-NOMAN=	noman
+MAN=	kprop.8
 
 .include <bsd.prog.mk>
