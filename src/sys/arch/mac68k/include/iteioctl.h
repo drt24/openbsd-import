@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: iteioctl.h,v 1.2 1996/05/26 18:35:53 briggs Exp $	*/
 /*	$NetBSD: iteioctl.h,v 1.1 1994/12/03 23:34:31 briggs Exp $	*/
 
 /*-
@@ -36,9 +36,6 @@
  * $Id$
  *
  */
-
-
-#include <sys/ioctl.h>
 
 
 struct bellparams{
