@@ -686,9 +686,6 @@ struct ahc_tmode_tstate {
 	uint16_t	 ultraenb;	/* Using ultra sync rate  */
 	uint16_t	 discenable;	/* Disconnection allowed  */
 	uint16_t	 tagenable;	/* Tagged Queuing allowed */
-#ifdef __OpenBSD__
-	uint16_t	 tagdisable;	/* Tagged Queuing NOT allowed */
-#endif 
 };
 
 /*
