@@ -515,7 +515,9 @@ ipw_newstate_intr(struct ipw_softc *sc, struct ipw_soft_buf *sbuf)
 		break;
 
 	case IPW_STATE_SCANNING:
-		ieee80211_new_state(ic, IEEE80211_S_SCAN, -1);
+		/* don't leave run state on background scan */
+		if (ic->ic_state != IEEE80211_S_RUN)
+			ieee80211_new_state(ic, IEEE80211_S_SCAN, -1);
 		break;
 
 	case IPW_STATE_ASSOCIATION_LOST:
