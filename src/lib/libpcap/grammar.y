@@ -1,5 +1,5 @@
 %{
-/*	$OpenBSD: grammar.y,v 1.10 2002/03/23 01:33:16 frantzen Exp $	*/
+/*	$OpenBSD: grammar.y,v 1.11 2003/05/14 08:50:37 canacar Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996
@@ -42,6 +42,7 @@ struct rtentry;
 #include <net/pfvar.h>
 
 #include <stdio.h>
+#include <string.h>
 
 #include "pcap-int.h"
 
