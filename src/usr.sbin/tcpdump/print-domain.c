@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-domain.c,v 1.11 2000/10/03 14:31:56 ho Exp $	*/
+/*	$OpenBSD: print-domain.c,v 1.12 2001/03/05 22:40:11 jakob Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -590,6 +590,8 @@ ns_print(register const u_char *bp, u_int length)
 
 		/* Print remaining sections on -vv */
 		if (vflag > 1) {
+			if (!cp)
+				goto trunc;
 			if (ancount--) {
 				if ((cp = ns_rprint(cp, bp)) == NULL)
 					goto trunc;
