@@ -1377,8 +1377,7 @@ void ssh_login(int host_key_valid,
   debug("Sent encrypted session key.");
   
   /* Set the encryption key. */
-  packet_set_encryption_key(session_key, SSH_SESSION_KEY_LENGTH, 
-			    options.cipher, 1);
+  packet_set_encryption_key(session_key, SSH_SESSION_KEY_LENGTH, options.cipher);
 
   /* We will no longer need the session key here.  Destroy any extra copies. */
   memset(session_key, 0, sizeof(session_key));

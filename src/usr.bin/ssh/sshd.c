@@ -892,8 +892,7 @@ do_connection()
   
   /* Set the session key.  From this on all communications will be
      encrypted. */
-  packet_set_encryption_key(session_key, SSH_SESSION_KEY_LENGTH, 
-			    cipher_type, 0);
+  packet_set_encryption_key(session_key, SSH_SESSION_KEY_LENGTH, cipher_type);
   
   /* Destroy our copy of the session key.  It is no longer needed. */
   memset(session_key, 0, sizeof(session_key));
