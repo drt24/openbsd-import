@@ -567,7 +567,9 @@ int main(argc,argv)
 	if (all) {
 		cnt = getmntinfo(&mp,MNT_NOWAIT);
 		for (; --cnt >= 0; mp++) {
-			if (!strncmp(mp->f_fstypename, MOUNT_FFS, MFSNAMELEN)) {
+			if (!strncmp(mp->f_fstypename, MOUNT_FFS, MFSNAMELEN) ||
+			    !strncmp(mp->f_fstypename, MOUNT_MFS, MFSNAMELEN) ||
+			    !strncmp(mp->f_fstypename, "ufs", MFSNAMELEN)) {
 				if (nm = strrchr(mp->f_mntfromname,'/')) {
 					sprintf(dev,"/dev/r%s",nm + 1);
 					nm = dev;

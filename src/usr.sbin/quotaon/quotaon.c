@@ -117,7 +117,8 @@ main(argc, argv)
 		if (strcmp(fs->fs_type, FSTAB_RW))
 			continue;
 		if (strcmp(fs->fs_vfstype, "ffs") &&
-		    strcmp(fs->fs_vfstype, "ufs"))
+		    strcmp(fs->fs_vfstype, "ufs") &&
+		    strcmp(fs->fs_vfstype, "mfs"))
 			continue;
 		if (aflag) {
 			if (gflag && hasquota(fs, GRPQUOTA, &qfnp))
@@ -236,6 +237,7 @@ hasquota(fs, type, qfnamep)
 
 /*
  * Verify file system is mounted and not readonly.
+ * MFS is special -- it puts "mfs:" in the kernel's mount table
  */
 readonly(fs)
 	register struct fstab *fs;
@@ -245,8 +247,13 @@ readonly(fs)
 	if (statfs(fs->fs_file, &fsbuf) < 0 ||
 	    strcmp(fsbuf.f_mntonname, fs->fs_file) ||
 	    strcmp(fsbuf.f_mntfromname, fs->fs_spec)) {
-		printf("%s: not mounted\n", fs->fs_file);
-		return (1);
+		if (strcmp(fs->fs_file, "mfs") ||
+		    memcmp(fsbuf.f_mntfromname, "mfs:", sizeof("mfs:")-1))
+			;
+		else {
+			printf("%s: not mounted\n", fs->fs_file);
+			return (1);
+		}
 	}
 	if (fsbuf.f_flags & MNT_RDONLY) {
 		printf("%s: mounted read-only\n", fs->fs_file);

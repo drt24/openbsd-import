@@ -223,7 +223,8 @@ getprivs(id, quotatype)
 	qcmd = QCMD(Q_GETQUOTA, quotatype);
 	while (fs = getfsent()) {
 		if (strcmp(fs->fs_vfstype, "ffs") &&
-		    strcmp(fs->fs_vfstype, "ufs"))
+		    strcmp(fs->fs_vfstype, "ufs") &&
+		    strcmp(fs->fs_vfstype, "mfs"))
 			continue;
 		if (!hasquota(fs, quotatype, &qfpathname))
 			continue;
