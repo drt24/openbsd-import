@@ -245,7 +245,8 @@ dynroot_update_entry (FCacheEntry *entry, int32_t filetype)
 static int
 dynroot_get_node (FCacheEntry *entry)
 {
-    int ret, fd, len, rootnode;
+    int ret, fd, rootnode;
+    size_t len;
     fbuf dir;
 
     rootnode = entry->fid.fid.Vnode == DYNROOT_ROOTDIR ? 1 : 0;
