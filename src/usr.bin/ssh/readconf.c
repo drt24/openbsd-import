@@ -738,7 +738,7 @@ fill_default_options(Options * options)
 	if (options->cipher == -1)
 		options->cipher = SSH_CIPHER_NOT_SET;
 	if (options->protocol == SSH_PROTO_UNKNOWN)
-		options->protocol = SSH_PROTO_1;
+		options->protocol = SSH_PROTO_1|SSH_PROTO_2|SSH_PROTO_1_PREFERRED;
 	if (options->num_identity_files == 0) {
 		options->identity_files[0] =
 			xmalloc(2 + strlen(SSH_CLIENT_IDENTITY) + 1);
