@@ -1,6 +1,6 @@
 #	$Id$
 
-FILES=	acl.h kadm.h kafs.h kparse.h krb.h krb_db.h site.h krb-protos.h
+FILES=	acl.h kadm.h kafs.h kparse.h krb.h krb_db.h krb-protos.h site.h prot.h
 NOOBJ=	noobj
 
 all include clean cleandir depend lint tags:
