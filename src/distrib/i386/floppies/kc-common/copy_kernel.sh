@@ -4,7 +4,7 @@
 
 DEFAULT_PARTITON=sd0a
 MOUNT_POINT=/mnt
-KERNEL_NAME=/netbsd
+KERNEL_NAME=/bsd
 #TEST=testfn
 
 testfn() {

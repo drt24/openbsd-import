@@ -1,4 +1,4 @@
 #	$Id$
 
 # copy the kernel
-COPY	${CURDIR}/../../../../sys/arch/i386/compile/INSTOTHER/netbsd	netbsd
+COPY	${CURDIR}/../../../../sys/arch/i386/compile/INSTOTHER/bsd	bsd

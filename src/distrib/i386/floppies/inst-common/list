@@ -45,7 +45,7 @@ SYMLINK	/bin/cat		usr/bin/ftp
 SYMLINK	/bin/cat		usr/bin/gunzip
 SYMLINK	/bin/cat		usr/bin/gzcat
 SYMLINK	/bin/cat		usr/bin/gzip
-SYMLINK	/bin/cat		usr/bin/more
+SYMLINK	/bin/cat		usr/bin/less
 SYMLINK	/bin/cat		usr/bin/sed
 SYMLINK	/bin/cat		usr/bin/strings
 SYMLINK	/bin/cat		usr/bin/tar

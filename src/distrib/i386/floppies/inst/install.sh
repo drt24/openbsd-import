@@ -168,7 +168,7 @@ echo -n "View the boot messages again? [n] "
 getresp "n"
 case "$resp" in
 	y*|Y*)
-		more /kern/msgbuf
+		less /kern/msgbuf
 		;;
 	*)
 		echo	""
