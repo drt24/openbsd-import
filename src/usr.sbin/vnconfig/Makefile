@@ -1,6 +1,8 @@
 #	$Id$
 
-PROG=		vnconfig
-MAN=		vnconfig.8
+PROG=	vnconfig
+MAN=	vnconfig.8
+DPADD=	${LIBUTIL}
+LDADD=	-lutil
 
 .include <bsd.prog.mk>
