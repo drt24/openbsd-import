@@ -58,9 +58,9 @@ from
 by including one of the following lines in the file
 .IR /etc/inetd.conf :
 .IP
-bootps dgram udp wait root /etc/bootpd bootpd bootptab
+bootps dgram udp wait root /usr/sbin/bootpd bootpd bootptab
 .br
-bootps dgram udp wait root /etc/bootpgw bootpgw server
+bootps dgram udp wait root /usr/sbin/bootpgw bootpgw server
 .PP
 This mode of operation is referred to as "inetd mode" and causes
 .I bootpd
