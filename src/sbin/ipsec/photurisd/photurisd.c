@@ -107,7 +107,8 @@ init_vars(void)
      return 1;
 }
 
-void main(int argc, char **argv)
+int
+main(int argc, char **argv)
 {
      int ch;
      int primes = 0, ignore = 0;
