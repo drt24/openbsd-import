@@ -11,3 +11,5 @@ extern int alias_RedirectPort(struct cmdargs const *);
 extern int alias_RedirectAddr(struct cmdargs const *);
 extern int alias_ProxyRule(struct cmdargs const *);
 extern int alias_Pptp(struct cmdargs const *);
+
+extern struct layer aliaslayer;

@@ -39,11 +39,13 @@
 #include <errno.h>
 #include <string.h>
 #include <sys/ioctl.h>
+#include <termios.h>
 #ifdef __NetBSD__
 #include <stdio.h>
 #include <unistd.h>
 #endif
 
+#include "layer.h"
 #include "mbuf.h"
 #include "log.h"
 #include "timer.h"

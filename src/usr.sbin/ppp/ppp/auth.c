@@ -34,6 +34,7 @@
 #include <termios.h>
 #include <unistd.h>
 
+#include "layer.h"
 #include "mbuf.h"
 #include "defs.h"
 #include "log.h"
@@ -52,7 +53,7 @@
 #include "link.h"
 #include "descriptor.h"
 #include "chat.h"
-#include "lcpproto.h"
+#include "proto.h"
 #include "filter.h"
 #include "mp.h"
 #ifndef NORADIUS

@@ -46,6 +46,7 @@
 #include <termios.h>
 #include <unistd.h>
 
+#include "layer.h"
 #include "defs.h"
 #include "command.h"
 #include "mbuf.h"

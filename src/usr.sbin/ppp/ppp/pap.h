@@ -29,4 +29,4 @@ struct physical;
 struct authinfo;
 
 extern void pap_Init(struct authinfo *, struct physical *);
-extern void pap_Input(struct physical *, struct mbuf *);
+extern struct mbuf *pap_Input(struct bundle *, struct link *, struct mbuf *);

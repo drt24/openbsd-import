@@ -42,6 +42,7 @@
 #include <sys/time.h>
 #include <termios.h>
 
+#include "layer.h"
 #include "defs.h"
 #include "log.h"
 #include "descriptor.h"

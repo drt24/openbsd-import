@@ -42,8 +42,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/sysctl.h>
+#include <termios.h>
 #include <unistd.h>
 
+#include "layer.h"
 #include "mbuf.h"
 #include "log.h"
 #include "id.h"

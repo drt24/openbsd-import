@@ -26,9 +26,9 @@ struct filter;
 struct link;
 struct bundle;
 
-extern int ip_FlushPacket(struct link *, struct bundle *);
+extern int ip_PushPacket(struct link *, struct bundle *);
 extern int  PacketCheck(struct bundle *, char *, int, struct filter *);
 extern void ip_Enqueue(struct ipcp *, int, char *, int);
-extern void ip_Input(struct bundle *, struct mbuf *);
+extern struct mbuf *ip_Input(struct bundle *, struct link *, struct mbuf *);
 extern void ip_DeleteQueue(struct ipcp *);
 extern int  ip_QueueLen(struct ipcp *);

@@ -55,4 +55,4 @@ struct chap {
 
 extern void chap_Init(struct chap *, struct physical *);
 extern void chap_ReInit(struct chap *);
-extern void chap_Input(struct physical *, struct mbuf *);
+extern struct mbuf *chap_Input(struct bundle *, struct link *, struct mbuf *);

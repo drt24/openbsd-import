@@ -108,7 +108,7 @@ extern void ipcp_Setup(struct ipcp *, u_int32_t);
 extern void ipcp_SetLink(struct ipcp *, struct link *);
 
 extern int  ipcp_Show(struct cmdargs const *);
-extern void ipcp_Input(struct ipcp *, struct bundle *, struct mbuf *);
+extern struct mbuf *ipcp_Input(struct bundle *, struct link *, struct mbuf *);
 extern void ipcp_AddInOctets(struct ipcp *, int);
 extern void ipcp_AddOutOctets(struct ipcp *, int);
 extern int  ipcp_UseHisIPaddr(struct bundle *, struct in_addr);

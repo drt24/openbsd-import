@@ -48,5 +48,5 @@ struct bundle;
 
 extern void async_Init(struct async *);
 extern void async_SetLinkParams(struct async *, struct lcp *);
-extern void async_Output(int, struct mbuf *, int, struct physical *);
-extern void async_Input(struct bundle *, u_char *, int, struct physical *);
+
+extern struct layer asynclayer;

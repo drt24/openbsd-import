@@ -96,3 +96,6 @@ extern ssize_t fullread(int, void *, size_t);
 extern const char *mode2Nam(int);
 extern int Nam2mode(const char *);
 extern struct in_addr GetIpAddr(const char *);
+extern int SpeedToInt(speed_t);
+extern speed_t IntToSpeed(int);
+extern int MakeArgs(char *, char **, int);

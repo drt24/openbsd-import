@@ -40,6 +40,7 @@
 #include <sys/sysctl.h>
 #include <termios.h>
 
+#include "layer.h"
 #include "defs.h"
 #include "command.h"
 #include "mbuf.h"

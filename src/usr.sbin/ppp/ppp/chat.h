@@ -79,4 +79,3 @@ struct chat {
 extern void chat_Init(struct chat *, struct physical *, const char *, int,
                       const char *);
 extern void chat_Destroy(struct chat *);
-extern int MakeArgs(char *, char **, int);  /* Mangles the first arg ! */

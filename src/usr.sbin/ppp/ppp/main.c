@@ -45,6 +45,7 @@
 #include "alias.h"
 #endif
 #endif
+#include "layer.h"
 #include "probe.h"
 #include "mbuf.h"
 #include "log.h"
@@ -571,7 +572,6 @@ DoLoop(struct bundle *bundle)
         t.tv_usec = 100000;
         select(0, NULL, NULL, NULL, &t);
       }
-
   } while (bundle_CleanDatalinks(bundle), !bundle_IsDead(bundle));
 
   log_Printf(LogDEBUG, "DoLoop done.\n");
