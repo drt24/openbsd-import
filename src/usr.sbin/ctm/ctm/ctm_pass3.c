@@ -139,10 +139,11 @@ Pass3(FILE *fd)
 		case CTM_F_Gid:  GETFIELDCOPY(gid,sep); break;
 		case CTM_F_Mode: GETFIELDCOPY(mode,sep); break;
 		case CTM_F_MD5:
-		    if(j & CTM_Q_MD5_Before)
+		    if(j & CTM_Q_MD5_Before) {
 			GETFIELDCOPY(md5before,sep);
-		    else
+		    } else {
 			GETFIELDCOPY(md5,sep);
+		    }
 		    break;
 		case CTM_F_Count: GETBYTECNT(cnt,sep); break;
 		case CTM_F_Bytes: GETDATA(trash,cnt); break;
