@@ -1,4 +1,4 @@
-/*    $OpenBSD$     */
+/*    $OpenBSD: ipft_sn.c,v 1.7 1998/01/26 04:16:36 dgregor Exp $     */
 /*
  * Copyright (C) 1993-1997 by Darren Reed.
  *
@@ -31,7 +31,11 @@
 #include <netinet/ip.h>
 #include <netinet/tcp.h>
 #include <net/if.h>
-#include "ip_fil_compat.h"
+#if defined(__OpenBSD__)
+# include <netinet/ip_fil_compat.h>
+#else
+# include <netinet/ip_compat.h>
+#endif
 #include <netinet/tcpip.h>
 #include "ipf.h"
 #include "ipt.h"

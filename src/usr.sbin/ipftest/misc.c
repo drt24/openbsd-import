@@ -1,4 +1,4 @@
-/*    $OpenBSD$     */
+/*    $OpenBSD: misc.c,v 1.6 1998/01/26 04:16:42 dgregor Exp $     */
 /*
  * Copyright (C) 1993-1997 by Darren Reed.
  *
@@ -28,9 +28,6 @@
 #ifndef	linux
 #include <netinet/ip_var.h>
 #endif
-#ifdef __OpenBSD__
-#include <machine/stdarg.h>
-#endif
 #include <netinet/ip.h>
 #include <netinet/udp.h>
 #include <netinet/tcp.h>
@@ -39,9 +36,13 @@
 #include <netdb.h>
 #include <arpa/nameser.h>
 #include <resolv.h>
-#include "ip_fil_compat.h"
+#if defined(__OpenBSD__)
+# include <netinet/ip_fil_compat.h>
+#else
+# include <netinet/ip_compat.h>
+#endif
 #include <netinet/tcpip.h>
-#include "ip_fil.h"
+#include <netinet/ip_fil.h>
 #include "ipf.h"
 #include "ipt.h"
 
