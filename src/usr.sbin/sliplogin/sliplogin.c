@@ -121,8 +121,7 @@ findid(name)
 	char user[MAXLOGNAME], *p;
 	int i, j, n;
 
-	(void)strncpy(loginname, name, sizeof loginname-1);
-	loginname[sizeof loginname -1] = '\0';
+	strlcpy(loginname, name, sizeof loginname);
 	if ((fp = fopen(_PATH_ACCESS, "r")) == NULL) {
 		syslog(LOG_ERR, "%s: %m", _PATH_ACCESS);
 		err(1, "%s", _PATH_ACCESS);
@@ -224,6 +223,8 @@ main(argc, argv)
 
 	if ((name = strrchr(argv[0], '/')) == NULL)
 		name = argv[0];
+	else
+		name++;
 	s = getdtablesize();
 	for (fd = 3 ; fd < s ; fd++)
 		(void) close(fd);
