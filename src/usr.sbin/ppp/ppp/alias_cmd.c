@@ -14,12 +14,16 @@
 #include <netinet/ip.h>
 #include <sys/un.h>
 
-#include <alias.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <termios.h>
 
+#ifdef __OpenBSD__
+#include "alias.h"
+#else
+#include <alias.h>
+#endif
 #include "defs.h"
 #include "command.h"
 #include "log.h"

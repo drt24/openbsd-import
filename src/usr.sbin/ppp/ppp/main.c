@@ -28,9 +28,6 @@
 #include <netinet/ip.h>
 #include <sys/un.h>
 
-#ifndef NOALIAS
-#include <alias.h>
-#endif
 #include <errno.h>
 #include <fcntl.h>
 #include <paths.h>
@@ -41,6 +38,13 @@
 #include <termios.h>
 #include <unistd.h>
 
+#ifndef NOALIAS
+#ifdef __OpenBSD__
+#include "alias.h"
+#else
+#include <alias.h>
+#endif
+#endif
 #include "probe.h"
 #include "mbuf.h"
 #include "log.h"

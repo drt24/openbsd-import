@@ -36,15 +36,19 @@
 #include <arpa/inet.h>
 #include <sys/un.h>
 
-#ifndef NOALIAS
-#include <alias.h>
-#endif
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 
+#ifndef NOALIAS
+#ifdef __OpenBSD__
+#include "alias.h"
+#else
+#include <alias.h>
+#endif
+#endif
 #include "mbuf.h"
 #include "log.h"
 #include "defs.h"
