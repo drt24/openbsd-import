@@ -1477,6 +1477,11 @@ esac
 AC_CHECK_HEADERS(sys/prctl.h)
 
 #
+# Time Zone Stuff
+#
+AC_CHECK_FUNC(tzset, AC_DEFINE(HAVE_TZSET))
+
+#
 # BSD/OS, and perhaps some others, don't define rlim_t.
 #
 AC_MSG_CHECKING(for type rlim_t)
