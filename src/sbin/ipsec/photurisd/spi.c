@@ -60,21 +60,6 @@ static char rcsid[] = "$Id$";
 
 static struct spiob *spiob = NULL;
 
-int
-isinattrib(u_int8_t *attributes, u_int16_t attribsize, u_int8_t attribute)
-{
-     while(attribsize>0) {
-	  if(*attributes==attribute)
-	       return 1;
-	  if(attribsize - (*(attributes+1)+2) > attribsize) 
-	       return 0;
-
-	  attribsize -= *(attributes+1)+2;
-	  attributes += *(attributes+1)+2;
-     }
-     return 0;
-}
-
 time_t
 getspilifetime(struct stateob *st)
 {

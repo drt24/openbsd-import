@@ -50,6 +50,36 @@ static char rcsid[] = "$Id$";
 static struct attribute_list *attribob = NULL;
 
 int
+isinattrib(u_int8_t *attributes, u_int16_t attribsize, u_int8_t attribute)
+{
+     while(attribsize>0) {
+	  if(*attributes==attribute)
+	       return 1;
+	  if(attribsize - (*(attributes+1)+2) > attribsize) 
+	       return 0;
+
+	  attribsize -= *(attributes+1)+2;
+	  attributes += *(attributes+1)+2;
+     }
+     return 0;
+}
+
+int 
+isattribsubset(u_int8_t *set, u_int16_t setsize, 
+	       u_int8_t *subset, u_int16_t subsetsize)
+{
+     while(subsetsize>0) {
+	  if (!isinattrib(set, setsize, *subset))
+	       return 0;
+	  if (subsetsize - (*(subset+1)+2) > subsetsize)
+	       return 0;
+	  subsetsize -= *(subset+1)+2;
+	  subset += *(subset+1)+2;
+     }
+     return 1;
+}
+
+int
 attrib_insert(struct attribute_list *ob)
 {
      struct attribute_list *tmp;

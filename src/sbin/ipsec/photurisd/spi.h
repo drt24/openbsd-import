@@ -63,8 +63,6 @@ struct spiob {
      time_t lifetime;                  /* Lifetime for the SPI */
 };
 
-EXTERN int isinattrib(u_int8_t *attributes, u_int16_t attribsize, 
-		      u_int8_t attribute);
 EXTERN time_t getspilifetime(struct stateob *st);
 EXTERN int make_spi(struct stateob *st, char *local_address,
 		    u_int8_t *SPI, time_t *lifetime, 
