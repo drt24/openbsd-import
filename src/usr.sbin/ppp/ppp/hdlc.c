@@ -21,7 +21,7 @@
  *
  *	TODO:
  */
-#include <sys/types.h>
+#include <sys/param.h>
 #include <netinet/in.h>
 #include <netinet/in_systm.h>
 #include <netinet/ip.h>
@@ -61,6 +61,9 @@
 #include "cbcp.h"
 #include "datalink.h"
 #include "filter.h"
+#ifndef NORADIUS
+#include "radius.h"
+#endif
 #include "bundle.h"
 
 static u_int16_t const fcstab[256] = {
@@ -390,7 +393,7 @@ hdlc_DecodePacket(struct bundle *bundle, u_short proto, struct mbuf * bp,
     break;
   case PROTO_PAP:
     if (p)
-      pap_Input(bundle, bp, p);
+      pap_Input(p, bp);
     else {
       log_Printf(LogERROR, "DecodePacket: PAP: Not a physical link !\n");
       mbuf_Free(bp);
@@ -415,7 +418,7 @@ hdlc_DecodePacket(struct bundle *bundle, u_short proto, struct mbuf * bp,
     break;
   case PROTO_CHAP:
     if (p)
-      chap_Input(bundle, bp, p);
+      chap_Input(p, bp);
     else {
       log_Printf(LogERROR, "DecodePacket: CHAP: Not a physical link !\n");
       mbuf_Free(bp);

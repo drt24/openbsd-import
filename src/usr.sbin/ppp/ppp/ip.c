@@ -23,7 +23,7 @@
  *		o Return ICMP message for filterd packet
  *		  and optionaly record it into log.
  */
-#include <sys/types.h>
+#include <sys/param.h>
 #ifdef __OpenBSD__
 #include <sys/socket.h>
 #endif
@@ -66,6 +66,9 @@
 #include "ccp.h"
 #include "link.h"
 #include "mp.h"
+#ifndef NORADIUS
+#include "radius.h"
+#endif
 #include "bundle.h"
 #include "vjcomp.h"
 #include "tun.h"

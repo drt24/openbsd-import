@@ -27,7 +27,6 @@
 struct mbuf;
 struct physical;
 struct authinfo;
-struct bundle;
 
-extern void pap_Input(struct bundle *, struct mbuf *, struct physical *);
-extern void pap_SendChallenge(struct authinfo *, int, struct physical *);
+extern void pap_Init(struct authinfo *, struct physical *);
+extern void pap_Input(struct physical *, struct mbuf *);

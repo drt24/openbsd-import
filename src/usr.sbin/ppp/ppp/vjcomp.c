@@ -21,14 +21,13 @@
  *
  *  TODO:
  */
-#include <sys/types.h>
+#include <sys/param.h>
 #include <netinet/in.h>
 #include <netinet/in_systm.h>
 #include <netinet/ip.h>
 #include <sys/un.h>
 
 #include <stdio.h>
-#include <string.h>
 
 #include "mbuf.h"
 #include "log.h"
@@ -48,6 +47,9 @@
 #include "filter.h"
 #include "descriptor.h"
 #include "mp.h"
+#ifndef NORADIUS
+#include "radius.h"
+#endif
 #include "bundle.h"
 #include "vjcomp.h"
 

@@ -22,7 +22,7 @@
  *	TODO:
  */
 
-#include <sys/types.h>
+#include <sys/param.h>
 #include <netinet/in.h>
 #include <netinet/in_systm.h>
 #include <netinet/ip.h>
@@ -64,6 +64,9 @@
 #include "descriptor.h"
 #include "link.h"
 #include "mp.h"
+#ifndef NORADIUS
+#include "radius.h"
+#endif
 #include "bundle.h"
 #include "auth.h"
 #include "systems.h"
@@ -512,6 +515,8 @@ DoLoop(struct bundle *bundle)
       }
       break;
     }
+
+    log_Printf(LogTIMER, "Select returns %d\n", i);
 
     sig_Handle();
 

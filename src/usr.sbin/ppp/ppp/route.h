@@ -50,4 +50,5 @@ extern void route_Add(struct sticky_route **, int, struct in_addr,
 extern void route_Delete(struct sticky_route **, int, struct in_addr);
 extern void route_DeleteAll(struct sticky_route **);
 extern void route_Clean(struct bundle *, struct sticky_route *);
-extern void route_ShowSticky(struct prompt *, struct sticky_route *);
+extern void route_ShowSticky(struct prompt *, struct sticky_route *,
+                             const char *, int);

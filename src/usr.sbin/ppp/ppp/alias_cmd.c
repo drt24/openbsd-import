@@ -5,7 +5,7 @@
  *	$Id$
  */
 
-#include <sys/types.h>
+#include <sys/param.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
@@ -44,6 +44,9 @@
 #include "link.h"
 #include "mp.h"
 #include "filter.h"
+#ifndef NORADIUS
+#include "radius.h"
+#endif
 #include "bundle.h"
 
 

@@ -26,7 +26,7 @@
  *	o Allow user to configure LQM method and interval.
  */
 
-#include <sys/types.h>
+#include <sys/param.h>
 #include <sys/un.h>
 
 #include <string.h>

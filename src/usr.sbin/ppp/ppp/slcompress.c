@@ -23,7 +23,7 @@
  *	- Initial distribution.
  */
 
-#include <sys/types.h>
+#include <sys/param.h>
 #include <netinet/in_systm.h>
 #include <netinet/in.h>
 #include <netinet/tcp.h>
@@ -53,6 +53,9 @@
 #include "ccp.h"
 #include "link.h"
 #include "mp.h"
+#ifndef NORADIUS
+#include "radius.h"
+#endif
 #include "bundle.h"
 
 void
