@@ -1,7 +1,8 @@
-/*	$OpenBSD: memconf.h,v 1.2 1996/09/14 15:58:26 pefo Exp $	*/
+/*	$OpenBSD: rd_root.c,v 1.1 2000/10/31 02:30:57 hugh Exp $	*/
+/*	$NetBSD: rd_root.c,v 1.2 1996/03/27 16:38:33 perry Exp $	*/
 
 /*
- * Copyright (c) 1996 Per Fogelstrom
+ * Copyright (c) 1995 Gordon W. Ross
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -12,11 +13,8 @@
  * 2. Redistributions in binary form must reproduce the above copyright
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
- * 3. All advertising materials mentioning features or use of this software
- *    must display the following acknowledgement:
- *      This product includes software developed by Per Fogelstrom.
- * 4. The name of the author may not be used to endorse or promote products
- *    derived from this software without specific prior written permission
+ * 3. The name of the author may not be used to endorse or promote products
+ *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
  * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
@@ -30,21 +28,50 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <sys/param.h>
+#include <sys/systm.h>
+#include <sys/reboot.h>
+
+#include <dev/ramdisk.h>
+
+extern int boothowto;
+
+#ifndef MINIROOTSIZE
+#define MINIROOTSIZE 4096
+#endif
+
+#define ROOTBYTES (MINIROOTSIZE << DEV_BSHIFT)
+
 /*
- * Memory config list used by pmap_bootstrap.
+ * This array will be patched to contain a file-system image.
+ * See the program:  src/distrib/sun3/common/rdsetroot.c
  */
+int rd_root_size = ROOTBYTES;
+char rd_root_image[ROOTBYTES] = "|This is the root ramdisk!\n";
 
-#ifndef _MEMCONF_H_
-#define _MEMCONF_H_
+/*
+ * This is called during autoconfig.
+ */
+void
+rd_attach_hook(unit, rd)
+	int unit;
+	struct rd_conf *rd;
+{
+	if (unit == 0) {
+		/* Setup root ramdisk */
+		rd->rd_addr = (caddr_t) rd_root_image;
+		rd->rd_size = (size_t)  rd_root_size;
+		rd->rd_type = RD_KMEM_FIXED;
+		printf("rd%d: fixed, %d blocks\n", unit, MINIROOTSIZE);
+	}
+}
 
-struct mem_descriptor {
-	vm_offset_t	mem_start;
-	u_int		mem_size;
-};
-
-#ifdef _KERNEL
-#define	MAXMEMSEGS	16
-extern struct mem_descriptor mem_layout[];
-#endif
-
-#endif
+/*
+ * This is called during open (i.e. mountroot)
+ */
+void
+rd_open_hook(unit, rd)
+	int unit;
+	struct rd_conf *rd;
+{
+}

@@ -1,4 +1,4 @@
-/*	$OpenBSD: ka680.c,v 1.3 2001/03/16 22:46:26 hugh Exp $	*/
+/*	$OpenBSD: ka680.c,v 1.4 2001/04/01 16:51:40 hugh Exp $	*/
 /*	$NetBSD: ka680.c,v 1.3 2001/01/28 21:01:53 ragge Exp $	*/
 /*
  * Copyright (c) 2000 Ludd, University of Lule}, Sweden.

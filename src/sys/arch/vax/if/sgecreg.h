@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: sgecreg.h,v 1.1 2000/04/27 03:14:44 bjc Exp $	*/
 /*	$NetBSD: sgecreg.h,v 1.1 1999/08/08 11:41:29 ragge Exp $	*/
 /*
  * Copyright (c) 1988 Regents of the University of California.

@@ -1,4 +1,4 @@
-#	$OpenBSD: RAMDISK,v 1.4 2001/02/24 10:31:59 hugh Exp $
+#	$OpenBSD: RAMDISK,v 1.5 2001/04/09 00:53:53 hugh Exp $
 
 machine 	vax			# machine type
 

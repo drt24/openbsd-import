@@ -1,4 +1,4 @@
-/*	$OpenBSD: dz.c,v 1.1 2000/04/27 03:14:47 bjc Exp $	*/
+/*	$OpenBSD: dz.c,v 1.2 2001/01/28 01:19:59 hugh Exp $	*/
 /*	$NetBSD: dz.c,v 1.19 2000/01/24 02:40:29 matt Exp $	*/
 /*
  * Copyright (c) 1996  Ken C. Wellsch.  All rights reserved.

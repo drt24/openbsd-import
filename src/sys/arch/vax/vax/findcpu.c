@@ -1,4 +1,4 @@
-/*	$OpenBSD: findcpu.c,v 1.6 2001/02/24 10:31:58 hugh Exp $	*/
+/*	$OpenBSD: findcpu.c,v 1.7 2001/03/12 11:45:38 hugh Exp $	*/
 /*	$NetBSD: findcpu.c,v 1.5 1999/08/23 19:10:43 ragge Exp $	*/
 /*
  * Copyright (c) 1994, 1998 Ludd, University of Lule}, Sweden.

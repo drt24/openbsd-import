@@ -1,4 +1,4 @@
-/*	$OpenBSD: ka48.c,v 1.2 2001/02/25 15:55:27 hugh Exp $	*/
+/*	$OpenBSD: ka48.c,v 1.3 2001/04/01 19:17:38 hugh Exp $	*/
 /*
  * Copyright (c) 1998 Ludd, University of Lule}, Sweden.
  * All rights reserved.

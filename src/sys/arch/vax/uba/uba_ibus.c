@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: uba_ibus.c,v 1.1 2000/04/27 03:14:51 bjc Exp $	*/
 /*	$NetBSD: uba_ibus.c,v 1.1 1999/08/07 10:36:47 ragge Exp $	   */
 /*
  * Copyright (c) 1996 Jonathan Stone.

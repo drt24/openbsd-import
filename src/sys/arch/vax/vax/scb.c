@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: scb.c,v 1.1 2000/04/27 01:10:10 bjc Exp $	*/
 /*	$NetBSD: scb.c,v 1.9 2000/01/24 02:40:34 matt Exp $ */
 /*
  * Copyright (c) 1999 Ludd, University of Lule}, Sweden.

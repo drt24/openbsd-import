@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_le_vsbus.c,v 1.2 2000/10/11 06:19:19 bjc Exp $	*/
+/*	$OpenBSD: if_le_vsbus.c,v 1.3 2001/02/11 06:34:38 hugh Exp $	*/
 /*	$NetBSD: if_le_vsbus.c,v 1.10 2000/06/29 07:14:18 mrg Exp $	*/
 
 /*-

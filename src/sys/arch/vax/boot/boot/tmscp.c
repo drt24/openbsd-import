@@ -1,4 +1,4 @@
-/*	$OpenBSD: tmscp.c,v 1.5 1998/02/03 11:48:30 maja Exp $ */
+/*	$OpenBSD: tmscp.c,v 1.1 2000/04/27 02:26:25 bjc Exp $ */
 /*	$NetBSD: tmscp.c,v 1.3 1999/06/30 18:19:26 ragge Exp $ */
 /*
  * Copyright (c) 1995 Ludd, University of Lule}, Sweden.

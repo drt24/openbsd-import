@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: qdioctl.h,v 1.1 2000/04/27 03:14:48 bjc Exp $	*/
 /*	$NetBSD: qdioctl.h,v 1.1 1998/03/21 10:02:39 ragge Exp $	*/
 /*-
  * Copyright (c) 1982, 1986

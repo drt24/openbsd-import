@@ -1,4 +1,4 @@
-/*	$OpenBSD: dz_ibus.c,v 1.3 2001/01/30 17:05:02 hugh Exp $	*/
+/*	$OpenBSD: dz_ibus.c,v 1.4 2001/02/11 06:34:38 hugh Exp $	*/
 /*	$NetBSD: dz_ibus.c,v 1.15 1999/08/27 17:50:42 ragge Exp $ */
 /*
  * Copyright (c) 1998 Ludd, University of Lule}, Sweden.

@@ -1,4 +1,4 @@
-/*	$OpenBSD: asc_vsbus.c,v 1.2 2001/02/06 04:27:45 hugh Exp $	*/
+/*	$OpenBSD: asc_vsbus.c,v 1.3 2001/02/11 06:34:37 hugh Exp $	*/
 /*	$NetBSD: asc_vsbus.c,v 1.20 2000/07/26 21:50:48 matt Exp $	*/
 
 /*-
