@@ -46,8 +46,10 @@ static char rcsid[] = "$Id$";
 #include <stdlib.h>
 #include <string.h>
 #include <paths.h>
+#include <unistd.h>
 #include <err.h>
 
+int
 main(argc, argv)
 	int argc;
 	char **argv;
