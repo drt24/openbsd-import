@@ -413,7 +413,7 @@ main(int argc, char **argv)
     fprintf(VarTerm, "Warning: No default entry is given in config file.\n");
 
   if (OpenTunnel(&tunno) < 0) {
-    LogPrintf(LogWARN, "open_tun: %s\n", strerror(errno));
+    LogPrintf(LogWARN, "OpenTunnel: %s\n", strerror(errno));
     return EX_START;
   }
   if (mode & MODE_INTER) {

@@ -22,7 +22,8 @@
 
 extern char *IfDevName;
 
-extern int OsSetIpaddress(struct in_addr, struct in_addr, struct in_addr);
+extern int  OsSetIpaddress(struct in_addr, struct in_addr);
+extern int  OsTrySetIpaddress(struct in_addr, struct in_addr);
 extern int  OsInterfaceDown(int);
 extern int  OpenTunnel(int *);
 extern void OsLinkup(void);

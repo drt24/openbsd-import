@@ -75,9 +75,11 @@ ParseAddr(int argc,
     LogPrintf(LogWARN, "ParseAddr: address/mask is expected.\n");
     return (0);
   }
-  pmask->s_addr = 0xffffffff;	/* Assume 255.255.255.255 as default */
 
-  cp = strchr(*argv, '/');
+  if (pmask)
+    pmask->s_addr = 0xffffffff;	/* Assume 255.255.255.255 as default */
+
+  cp = pmask || pwidth ? strchr(*argv, '/') : NULL;
   len = cp ? cp - *argv : strlen(*argv);
 
   if (strncasecmp(*argv, "HISADDR", len) == 0)
@@ -106,8 +108,11 @@ ParseAddr(int argc,
     bits = 32;
   }
 
-  *pwidth = bits;
-  pmask->s_addr = htonl(netmasks[bits]);
+  if (pwidth)
+    *pwidth = bits;
+
+  if (pmask)
+    pmask->s_addr = htonl(netmasks[bits]);
 
   return (1);
 }

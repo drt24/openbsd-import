@@ -372,7 +372,7 @@ CcpInput(struct mbuf *bp)
     FsmInput(&CcpFsm, bp);
   else {
     if (phase > PHASE_NETWORK)
-      LogPrintf(LogERROR, "Unexpected CCP in phase %d\n", phase);
+      LogPrintf(LogCCP, "Error: Unexpected CCP in phase %d\n", phase);
     pfree(bp);
   }
 }

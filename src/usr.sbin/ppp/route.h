@@ -25,3 +25,4 @@ extern int GetIfIndex(char *);
 extern int ShowRoute(struct cmdargs const *);
 extern void OsSetRoute(int, struct in_addr, struct in_addr, struct in_addr);
 extern void DeleteIfRoutes(int);
+extern struct in_addr ChooseHisAddr(const struct in_addr);

@@ -367,7 +367,8 @@ FsmRecvConfigReq(struct fsm * fp, struct fsmheader * lhp, struct mbuf * bp)
     pfree(bp);
     return;
   case ST_CLOSING:
-    LogPrintf(LogERROR, "Got ConfigReq while state = %d\n", fp->state);
+    LogPrintf(fp->LogLevel, "Error: Got ConfigReq while state = %d\n",
+              fp->state);
   case ST_STOPPING:
     pfree(bp);
     return;
