@@ -625,12 +625,6 @@ bundle_DescriptorRead(struct descriptor *d, struct bundle *bundle,
         if (pri >= 0) {
           struct mbuf *bp;
 
-#ifndef NOALIAS
-          if (bundle->AliasEnabled) {
-            PacketAliasIn(tun.data, sizeof tun.data);
-            n = ntohs(((struct ip *)tun.data)->ip_len);
-          }
-#endif
           bp = mbuf_Alloc(n, MB_IPIN);
           memcpy(MBUF_CTOP(bp), tun.data, n);
           ip_Input(bundle, bp);
