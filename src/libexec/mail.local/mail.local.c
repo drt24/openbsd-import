@@ -207,7 +207,7 @@ retry:
 			err(NOTFATAL, "%s: %s", path, strerror(errno));
 			goto bad;
 		}
-		if ((mbfd = open(path, O_APPEND|O_CREAT|O_WRONLY|O_EXLOCK,
+		if ((mbfd = open(path, O_APPEND|O_CREAT|O_EXCL|O_WRONLY|O_EXLOCK,
 		     S_IRUSR|S_IWUSR)) < 0) {
 			if (errno == EEXIST) {
 				/* file appeared since lstat */
