@@ -71,11 +71,13 @@ dostat(devfd, modnum, modname)
 	char *modname;
 {
 	struct lmc_stat	sbuf;
+	char name[MAXLKMNAME] = "";
+
+	sbuf.id = modnum;
+	sbuf.name = name;
 
 	if (modname != NULL)
 		strcpy(sbuf.name, modname);
-
-	sbuf.id = modnum;
 
 	if (ioctl(devfd, LMSTAT, &sbuf) == -1) {
 		switch (errno) {
@@ -92,7 +94,7 @@ dostat(devfd, modnum, modname)
 	/*
 	 * Decode this stat buffer...
 	 */
-	printf("%-7s %3d %3d %08x %04x %8x %3d %s\n",
+	printf("%-7s %3d %3d %08x %04x %8x %3d s\n",
 	    type_names[sbuf.type],
 	    sbuf.id,		/* module id */
 	    sbuf.offset,	/* offset into modtype struct */
