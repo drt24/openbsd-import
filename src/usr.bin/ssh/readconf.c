@@ -708,7 +708,7 @@ fill_default_options(Options * options)
 		options->forward_x11 = 0;
 #ifdef XAUTH_PATH
 	if (options->xauth_location == NULL)
-		options->xauth_location == XAUTH_PATH;
+		options->xauth_location = XAUTH_PATH;
 #endif /* XAUTH_PATH */
 	if (options->gateway_ports == -1)
 		options->gateway_ports = 0;
