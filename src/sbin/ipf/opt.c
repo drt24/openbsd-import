@@ -17,6 +17,7 @@
 #include <netinet/tcp.h>
 #include <netinet/tcpip.h>
 #include <net/if.h>
+#include "ip_fil_compat.h"
 #include "ip_fil.h"
 #include "ipf.h"
 

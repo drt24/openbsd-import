@@ -41,6 +41,7 @@ etherfind -n -t
 #include <netinet/tcpip.h>
 #include <net/if.h>
 #include <netdb.h>
+#include "ip_fil_compat.h"
 #include "ip_fil.h"
 #include "ipf.h"
 #include "ipt.h"

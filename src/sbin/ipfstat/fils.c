@@ -26,8 +26,8 @@
 #include <netinet/in_systm.h>
 #include <netinet/ip.h>
 #include <net/if.h>
-#include "ip_fil.h"
 #include "ip_fil_compat.h"
+#include "ip_fil.h"
 #include "ip_nat.h"
 #include "ip_frag.h"
 #include "ip_state.h"

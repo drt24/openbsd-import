@@ -43,6 +43,7 @@ static	char	sccsid[] = "@(#)ipmon.c	1.21 6/5/96 (C)1993-1996 Darren Reed";
 static	char	rcsid[] = "$Id$";
 #endif
 
+#include "ip_fil_compat.h"
 #include "ip_fil.h"
 
 struct	flags {

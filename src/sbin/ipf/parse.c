@@ -23,6 +23,7 @@
 #include <netinet/ip.h>
 #include <netinet/tcp.h>
 #include <net/if.h>
+#include "ip_fil_compat.h"
 #include "ip_fil.h"
 #include <netdb.h>
 #include <arpa/nameser.h>

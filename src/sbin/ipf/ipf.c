@@ -28,6 +28,7 @@ extern	char	*index();
 #include <netinet/in_systm.h>
 #include <net/if.h>
 #include <netinet/ip.h>
+#include "ip_fil_compat.h"
 #include "ip_fil.h"
 #include <netdb.h>
 #include <arpa/nameser.h>
