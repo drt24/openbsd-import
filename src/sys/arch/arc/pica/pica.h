@@ -155,10 +155,10 @@
 /*
  *  Addresses used by various display drivers.
  */
-#define MONO_BASE	(PICA_V_LOCAL_VIDEO_CTRL + 0x3B4)
-#define MONO_BUF	(PICA_V_LOCAL_VIDEO + 0xB0000)
-#define CGA_BASE	(PICA_V_LOCAL_VIDEO_CTRL + 0x3D4)
-#define CGA_BUF		(PICA_V_LOCAL_VIDEO + 0xB8000)
+#define PICA_MONO_BASE	(PICA_V_LOCAL_VIDEO_CTRL + 0x3B4)
+#define PICA_MONO_BUF	(PICA_V_LOCAL_VIDEO + 0xB0000)
+#define PICA_CGA_BASE	(PICA_V_LOCAL_VIDEO_CTRL + 0x3D4)
+#define PICA_CGA_BUF	(PICA_V_LOCAL_VIDEO + 0xB8000)
 
 /*
  *  Interrupt vector descriptor for device on pica bus.
