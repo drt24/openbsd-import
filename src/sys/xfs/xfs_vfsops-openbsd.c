@@ -44,6 +44,8 @@ RCSID("$Id$");
 #include <xfs/xfs_vfsops-bsd.h>
 #include <xfs/xfs_vnodeops.h>
 
+#include <miscfs/genfs/genfs.h>
+
 static vop_t **xfs_dead_vnodeop_p;
 
 int
@@ -59,9 +61,9 @@ static struct vnodeopv_entry_desc xfs_dead_vnodeop_entries[] = {
     {&vop_default_desc, (vop_t *) xfs_eopnotsupp},
     {&vop_lookup_desc,	(vop_t *) xfs_dead_lookup},
     {&vop_reclaim_desc, (vop_t *) xfs_returnzero},
-    {&vop_lock_desc,	(vop_t *) vop_generic_lock},
-    {&vop_unlock_desc,	(vop_t *) vop_generic_unlock},
-    {&vop_islocked_desc,(vop_t *) vop_generic_islocked},
+    {&vop_lock_desc,	(vop_t *) genfs_nolock},
+    {&vop_unlock_desc,	(vop_t *) genfs_nounlock},
+    {&vop_islocked_desc,(vop_t *) genfs_noislocked},
     {NULL, NULL}};
 
 static struct vnodeopv_desc xfs_dead_vnodeop_opv_desc =
