@@ -98,7 +98,7 @@ In actual practice, simple scripts are rare. At the vary least, you
 should include sub-expect sequences should the original string not be
 received. For example, consider the following script:
 .IP
-ogin:--ogin: ppp ssowrd: hello2u2
+ogin:--ogin: ppp ssword: hello2u2
 .LP
 This would be a better script than the simple one used earlier. This would look
 for the same login: prompt, however, if one was not received, a single
@@ -161,7 +161,7 @@ parameter.
 To change the timeout value for the next expect string, the following
 example may be used:
 .IP
-ATZ OK ATDT5551212 CONNECT TIMEOUT 10 ogin:--ogin: TIMEOUT 5 assowrd: hello2u2
+ATZ OK ATDT5551212 CONNECT TIMEOUT 10 ogin:--ogin: TIMEOUT 5 assword: hello2u2
 .LP
 This will change the timeout to 10 seconds when it expects the login:
 prompt. The timeout is then changed to 5 seconds when it looks for the
