@@ -23,7 +23,7 @@ LIBS=	${LIBSA} ${LIBBUG}
 
 OBJS= ${SRCS:N*.h:R:S/$/.o/g}
 
-BOOTS=	bootst sdboot
+BOOTS=	bootst stboot
 ALL=	${BOOTS} 
 
 all: ${ALL}
@@ -32,7 +32,7 @@ bootst.bug:	${OBJS} ${BUGCRT} ${LIBS}
 	${LD} -s -N -T ${RELOC} ${BUGCRT} ${OBJS} ${LIBS} -o $@
 	@size bootst.bug
 
-bootst sdboot: bootst.bug ${WRTVID}
+bootst stboot: bootst.bug ${WRTVID}
 	${WRTVID} bootst.bug
 
 install:
