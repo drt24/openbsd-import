@@ -9,6 +9,9 @@ all:
 	@echo "make links or tags only"
 
 DIRS=	arc conf dev include isa pica
+NOPROG=	noprog
+NOOBJ=	noobj
+NOOBJ=	noman
 
 links::
 	-for i in ${DIRS}; do \
