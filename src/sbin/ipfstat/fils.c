@@ -36,7 +36,7 @@
 #include <resolv.h>
 #include "ipf.h"
 #include "kmem.h"
-#ifdef	__NetBSD__
+#if defined(__NetBSD__) || defined(__OpenBSD__)
 #include <paths.h>
 #endif
 

@@ -83,7 +83,7 @@ char *s, *s1, *s2, *s3, *s4;
 	exit(1);
 }
 
-#ifndef __NetBSD__
+#if !(defined(__NetBSD__) || defined(__OpenBSD__))
 /*
  * Dup a string
  */
@@ -98,7 +98,7 @@ char *s;
 
 	return sp;
 }
-#endif /* __NetBSD__ */
+l#endif /* !(defined(__NetBSD__) || defined(__OpenBSD)) */
 
 /*
  * Debug log
