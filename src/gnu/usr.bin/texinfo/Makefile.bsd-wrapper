@@ -10,6 +10,7 @@ all:	config.status
 .FORCE:	.IGNORE
 
 config: .FORCE
+	-rm -f config.cache
 	/bin/sh ${.CURDIR}/configure --prefix=/usr
 
 config.status:
