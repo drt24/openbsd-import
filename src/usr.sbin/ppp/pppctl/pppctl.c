@@ -166,7 +166,7 @@ check_fd(int sig)
     int len;
 
     pfd[0].fd = data;
-    pfd[1].events = POLLIN;
+    pfd[0].events = POLLIN;
     if (poll(pfd, 1, 0) > 0) {
       len = read(data, buf, sizeof buf);
       if (len > 0)
