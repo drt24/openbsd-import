@@ -117,6 +117,11 @@ bpf*)
 	mk bpf$unit c 36 $unit 600
 	;;
 
+ipl)
+	mknod ipl c 72 0
+	chown root.wheel ipl
+	;;
+
 tun*)
 	mk tun$unit c 24 $unit 600
 	;;
