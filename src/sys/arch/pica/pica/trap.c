@@ -70,8 +70,6 @@
 
 #include <pica/pica/pica.h>
 
-#include <le.h>
-
 #include <sys/cdefs.h>
 #include <sys/syslog.h>
 
