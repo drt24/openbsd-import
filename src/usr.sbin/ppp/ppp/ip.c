@@ -393,6 +393,7 @@ ip_Input(struct bundle *bundle, struct link *l, struct mbuf *bp)
     return NULL;
   }
 
+  mbuf_SetType(bp, MB_IPIN);
   tun_fill_header(tun, AF_INET);
   nb = mbuf_Length(bp);
   if (nb > sizeof tun.data) {
@@ -439,7 +440,7 @@ ip_Enqueue(struct ipcp *ipcp, int pri, char *ptr, int count)
      * mbuf_Prepend() in acf_LayerPush() and proto_LayerPush() and
      * appending in hdlc_LayerPush().
      */
-    bp = mbuf_Alloc(count + 6, MB_IPQ);
+    bp = mbuf_Alloc(count + 6, MB_IPOUT);
     bp->offset += 4;
     bp->cnt -= 6;
     memcpy(MBUF_CTOP(bp), ptr, count);

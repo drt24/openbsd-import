@@ -245,7 +245,7 @@ link_PullPacket(struct link *l, char *buf, size_t len, struct bundle *b)
   link_AddInOctets(l, len);
 
   memset(lbp, '\0', sizeof lbp);
-  lbp[0] = mbuf_Alloc(len, MB_ASYNC);
+  lbp[0] = mbuf_Alloc(len, MB_UNKNOWN);
   memcpy(MBUF_CTOP(lbp[0]), buf, len);
   lproto[0] = 0;
   layer = 0;
