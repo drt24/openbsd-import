@@ -238,7 +238,7 @@ void read_server_config(ServerOptions *options, const char *filename)
   FILE *f;
   char line[1024];
   char *cp, **charptr;
-  int linenum, *intptr, i, value;
+  int linenum, *intptr, value;
   int bad_options = 0;
   ServerOpCodes opcode;
 
