@@ -23,7 +23,7 @@
  */
 
 #ifndef LINT
-static char rcsid[] = "$Id$";
+static const char rcsid[] = "$Id$";
 #endif
 
 #include <stdlib.h>
