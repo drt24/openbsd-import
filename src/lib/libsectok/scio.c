@@ -52,6 +52,7 @@ such damages.
 #include <fcntl.h>
 #include <errno.h>
 
+#include "sectok.h"
 #include "sc7816.h"
 #include "todos_scrw.h"
 

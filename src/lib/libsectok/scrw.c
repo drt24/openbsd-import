@@ -51,6 +51,7 @@ such damages.
 #ifdef SCPERF
 #define SCPERF_FIRST_APPEARANCE
 #endif /* SCPERF */
+#include "sectok.h"
 #include "sc7816.h"
 #include "todos_scrw.h"
 
