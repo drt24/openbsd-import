@@ -612,17 +612,11 @@ Usage: %s [-h host] [[-f] [-m] [-v] [-s]] | [[-u] directory ...]] |\n\
 static int inetresport(ty)
 int ty;
 {
-	struct sockaddr_in addr;
+	int port = IPPORT_RESERVED - 1;
 	int sock;
 
-	/* Use internet address family */
-	bzero(&addr, sizeof addr);
-	addr.sin_family = AF_INET;
-	addr.sin_addr.s_addr = INADDR_ANY;
-	if ((sock = socket(AF_INET, ty, 0)) < 0)
-		return -1;
-	if (bindresvport(sock, &addr) < 0) {
-		close(sock);
+	sock = rresvport(&port);
+	if (sock == -1) {
 		errno = EAGAIN;
 		return -1;
 	}
