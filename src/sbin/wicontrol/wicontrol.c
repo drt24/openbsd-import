@@ -1,4 +1,4 @@
-/*	$OpenBSD: wicontrol.c,v 1.11 2000/08/17 21:57:40 deraadt Exp $	*/
+/*	$OpenBSD: wicontrol.c,v 1.12 2000/10/13 18:58:10 chris Exp $	*/
 
 /*
  * Copyright (c) 1997, 1998, 1999
@@ -51,7 +51,7 @@
 #include <netinet/in.h>
 #include <netinet/if_ether.h>
 
-#include <dev/pcmcia/if_wavelan_ieee.h>
+#include <dev/ic/if_wi_ieee.h>
 #endif
 
 #include <stdio.h>
