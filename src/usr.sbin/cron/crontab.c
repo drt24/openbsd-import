@@ -534,7 +534,7 @@ replace_cmd() {
 		return (-2);
 	}
 
-	TempFilename = strdup(__CONCAT(SPOOL_DIR,"tmp.XXXXXXXXXX"));
+	TempFilename = strdup(__CONCAT(SPOOL_DIR,"/tmp.XXXXXXXXXX"));
 	if (TempFilename == NULL) {
 		fprintf(stderr, "%s: Cannot allocate memory.\n", ProgramName);
 		return (-2);
