@@ -4,8 +4,8 @@
 PROG=	su
 BINOWN=	root
 BINMODE=4555
-LDADD+= -lcrypt
-DPADD+= ${LIBCRYPT}
+#LDADD+= -lcrypt
+#DPADD+= ${LIBCRYPT}
 
 .include <bsd.own.mk>
 

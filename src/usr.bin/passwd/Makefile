@@ -5,8 +5,10 @@ PROG=	passwd
 SRCS=	local_passwd.c yp_passwd.c passwd.c pw_copy.c pw_util.c getpwent.c
 .PATH:  ${.CURDIR}/../../usr.bin/chpass ${.CURDIR}/../../usr.sbin/vipw \
 	${.CURDIR}/../rlogin ${.CURDIR}/../../lib/libc/gen
-DPADD+= ${LIBRPCSVC} ${LIBCRYPT}
-LDADD+= -lrpcsvc -lcrypt
+#DPADD+= ${LIBRPCSVC} ${LIBCRYPT}
+DPADD+= ${LIBRPCSVC}
+#LDADD+= -lrpcsvc -lcrypt
+LDADD+= -lrpcsvc
 CFLAGS+=-I${.CURDIR} -I${.CURDIR}/../../usr.sbin/vipw -DYP
 
 .if defined(KERBEROS5)
