@@ -92,6 +92,8 @@ struct ipw_softc {
 	pci_chipset_tag_t		sc_pct;
 	bus_size_t			sc_sz;
 
+	int				authmode;
+
 	int				sc_tx_timer;
 
 	bus_dma_tag_t			sc_dmat;
