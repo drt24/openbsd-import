@@ -41,6 +41,7 @@
 .Sh SYNOPSIS
 .Nm pwd_mkdb
 .Op Fl p
+.Op Fl d Ar directory
 .Ar file
 .Sh DESCRIPTION
 .Nm Pwd_mkdb
@@ -64,6 +65,9 @@ The options are as follows:
 .It Fl p
 Create a Version 7 style password file and install it into
 .Dq Pa /etc/passwd .
+.It Fl d
+Operate in a base directory other than the default of
+.Dq Pa /etc .
 .El
 .Pp
 The two databases differ in that the secure version contains the user's 
