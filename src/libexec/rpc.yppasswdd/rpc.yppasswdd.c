@@ -33,15 +33,19 @@
 static char rcsid[] = "$Id$";
 #endif
 
-#include <stdio.h>
-#include <rpc/rpc.h>
-#include <rpc/pmap_clnt.h>
-#include <signal.h>
-#include <sys/wait.h>
 #include <sys/types.h>
+#include <sys/wait.h>
+
+#include <signal.h>
+#include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include <string.h>
 #include <pwd.h>
+#include <util.h>
+
+#include <rpc/rpc.h>
+#include <rpc/pmap_clnt.h>
 
 #include "yppasswd.h"
 
