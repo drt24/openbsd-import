@@ -387,6 +387,7 @@ tty_SetupDevice(struct physical *p)
     return NULL;
 
   memcpy(&dev->dev, &basettydevice, sizeof dev->dev);
+  memset(&dev->Timer, '\0', sizeof dev->Timer);
   tcgetattr(p->fd, &ios);
   dev->ios = ios;
 
