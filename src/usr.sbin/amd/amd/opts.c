@@ -590,7 +590,7 @@ static char expand_error[] = "No space to expand \"%s\"";
 				}
 			}
 			/*
-			 * Check that the search was succesful
+			 * Check that the search was successful
 			 */
 			if (!op->name) {
 				/*
