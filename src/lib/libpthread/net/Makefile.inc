@@ -1,8 +1,7 @@
 #	from: @(#)Makefile.inc	5.21 (Berkeley) 5/24/91
 #	$Id$
 
-# gen sources
-.PATH: ${srcdir}/net
+.PATH: ${.CURDIR}/net
 
 SRCS+=	gethostbyaddr.c gethostbyname.c gethostent.c getnetbyaddr.c \
 	getnetbyname.c getnetent.c getproto.c getprotoent.c getprotoname.c \

@@ -2,7 +2,7 @@
 #	$Id$
 
 # string sources
-.PATH: ${srcdir}/string
+.PATH: ${.CURDIR}/string
 
 SRCS+= strtok.c
 
