@@ -1,4 +1,4 @@
-/*	$OpenBSD: clock.c,v 1.1.1.1 1996/06/24 09:07:20 pefo Exp $	*/
+/*	$OpenBSD: clock.c,v 1.2 1996/09/14 15:58:13 pefo Exp $	*/
 /*
  * Copyright (c) 1988 University of Utah.
  * Copyright (c) 1992, 1993
@@ -103,6 +103,7 @@ clockmatch(parent, cfdata, aux)
 
 		break;
 
+	case DESKSTATION_RPC44:
 	case DESKSTATION_TYNE:
 		break;
 
@@ -142,6 +143,7 @@ clockattach(parent, self, aux)
 			(intr_handler_t)hardclock, self);
 		break;
 
+	case DESKSTATION_RPC44:
 	case DESKSTATION_TYNE:
 		(void)isa_intr_establish(ia->ia_ic,
 				0, 1, 3, clockintr, 0, "clock");
