@@ -712,12 +712,10 @@ packet_set_interactive(int interactive, int keepalives)
     {
       /* Set IP options for an interactive connection.  Use IPTOS_LOWDELAY
 	 and TCP_NODELAY. */
-#ifdef IPTOS_LOWDELAY
       int lowdelay = IPTOS_LOWDELAY;
       if (setsockopt(connection_in, IPPROTO_IP, IP_TOS, (void *)&lowdelay, 
 		     sizeof(lowdelay)) < 0)
 	error("setsockopt IPTOS_LOWDELAY: %.100s", strerror(errno));
-#endif /* IPTOS_LOWDELAY */
       if (setsockopt(connection_in, IPPROTO_TCP, TCP_NODELAY, (void *)&on, 
 		     sizeof(on)) < 0)
 	error("setsockopt TCP_NODELAY: %.100s", strerror(errno));
@@ -726,12 +724,10 @@ packet_set_interactive(int interactive, int keepalives)
     {
       /* Set IP options for a non-interactive connection.  Use 
 	 IPTOS_THROUGHPUT. */
-#ifdef IPTOS_THROUGHPUT
       int throughput = IPTOS_THROUGHPUT;
       if (setsockopt(connection_in, IPPROTO_IP, IP_TOS, (void *)&throughput, 
 		     sizeof(throughput)) < 0)
 	error("setsockopt IPTOS_THROUGHPUT: %.100s", strerror(errno));
-#endif /* IPTOS_THROUGHPUT */
     }
 }
 

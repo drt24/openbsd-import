@@ -49,6 +49,7 @@ This file includes most of the needed system headers.
 #include <netinet/in.h>
 #include <netinet/in_systm.h>
 #include <netinet/tcp.h>
+#include <netinet/ip.h>
 #include <arpa/inet.h>
 #include <netdb.h>
 
