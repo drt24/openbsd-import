@@ -1,4 +1,4 @@
-/*	$OpenBSD: autri.c,v 1.2 2001/11/26 18:10:52 mickey Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2001 SOMEYA Yoshihiko and KUROSAWA Takahiro.
