@@ -1,4 +1,4 @@
-/*	$OpenBSD: vm_machdep.c,v 1.2 1996/08/26 11:11:57 pefo Exp $	*/
+/*	$OpenBSD: vm_machdep.c,v 1.3 1996/12/09 00:13:49 imp Exp $	*/
 /*
  * Copyright (c) 1988 University of Utah.
  * Copyright (c) 1992, 1993
@@ -55,9 +55,6 @@
 #include <vm/vm.h>
 #include <vm/vm_kern.h>
 #include <vm/vm_page.h>
-#if 0
-#include <vm/vm_object.h>
-#endif
 
 #include <machine/pte.h>
 #include <machine/cpu.h>
