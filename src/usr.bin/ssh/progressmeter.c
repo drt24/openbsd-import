@@ -60,7 +60,7 @@
  */
 
 #include "includes.h"
-RCSID("$OpenBSD: progressmeter.c,v 1.4 2003/04/03 07:25:27 itojun Exp $");
+RCSID("$OpenBSD: progressmeter.c,v 1.3 2003/03/17 10:38:38 markus Exp $");
 
 #include <libgen.h>
 
