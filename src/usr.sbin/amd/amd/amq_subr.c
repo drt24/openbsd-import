@@ -173,6 +173,11 @@ extern qelem mfhead;
 	return (amq_mount_info_list *) &mfhead;	/* XXX */
 }
 
+#if 0
+/*
+ * amd does not allocate a seperate socket to distinguish local
+ * connects so this "security" check is useless.
+ */
 static int ok_security(rqstp)
 struct svc_req *rqstp;
 {
@@ -201,24 +206,14 @@ struct svc_req *rqstp;
 	char *cp;
 
 	plog(XLOG_INFO, "amq requested mount of %s", s);
-#if 0
+
 	/*
-	 * Minimalist security check.
+	 * Minimalist (read useless) security check.
 	 */
 	if (!ok_security(rqstp)) {
 		rc = EACCES;
 		return &rc;
 	}
-#else
-	/*
-	 * Better security check. amd does not allocate a seperate
-	 * socket to distinguish local connects; so the above security
-	 * check is useless
-	 */
-	rc = EACCES;
-	return &rc;
-#endif
-
 
 	/*
 	 * Find end of key
@@ -245,6 +240,24 @@ struct svc_req *rqstp;
 		return 0;
 	return &rc;
 }
+#else
+/*
+ * Disable "amq -M" functionality since it is inherently insecure.
+ */
+int *
+amqproc_mount_1(argp, rqstp)
+voidp argp;
+struct svc_req *rqstp;
+{
+	static int rc;
+	char *s = *(amq_string *) argp;
+  
+	plog(XLOG_ERROR, "amq requested mount of %s, but code is disabled", s);
+   
+	rc = EACCES;
+	return &rc;
+}
+#endif
 
 amq_string *
 amqproc_getvers_1(argp, rqstp)
