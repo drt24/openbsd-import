@@ -279,6 +279,7 @@ Pred1Input(u_short *proto, struct mbuf *bp)
       wp->cnt -= 2;
       *proto = (*proto << 8) | *pp++;
     }
+    pfree(bp);
     return wp;
   } else {
     LogDumpBp(LogHDLC, "Bad FCS", wp);
