@@ -747,6 +747,14 @@ reconfig(int sig)
      init_identities(NULL, NULL);
 }
 
+sig_atomic_t wantconfig;
+
+void
+sigconfig(int sig)
+{
+	wantconfig = 1;
+}
+
 int
 init_signals(void)
 {
@@ -755,7 +763,7 @@ init_signals(void)
      bzero(&sa, sizeof(sa));
      sigemptyset(&sa.sa_mask);
      sigaddset(&sa.sa_mask, SIGHUP);
-     sa.sa_handler = reconfig;
+     sa.sa_handler = sigconfig;
      sigaction(SIGHUP, &sa, &osa);
 
      return 1;

@@ -273,6 +273,13 @@ server(void)
 	  FD_SET(sockets[i], normfds);
 
      while (1) {
+	  extern sig_atomic_t wantconfig;
+
+	  if (wantconfig) {
+		reconfig(0);
+		wantconfig = 0;
+	  }
+
 	  bcopy(normfds, readfds, size);
 
 	  /* Timeout till next job */
