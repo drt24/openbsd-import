@@ -521,7 +521,7 @@ int main (argc, argv)
             if (*optarg == '.') optarg++;
 #endif
             z_len = strlen(optarg);
-	    if (z_len > z_suffix-1) {
+	    if (z_len > sizeof(z_suffix)-1) {
 		fprintf(stderr, "%s: -S suffix too long\n", progname);
 		usage();
 		do_exit(ERROR);
