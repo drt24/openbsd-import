@@ -7,7 +7,11 @@ CLEANFILES= termcap.db
 all: termcap.db
 
 termcap.db: termcap.src
-	cap_mkdb -f termcap ${.ALLSRC}
+	cat ${.ALLSRC} | sed \
+	    -e 's,/usr/share/lib/tabset,/usr/share/tabset,g' \
+	    -e 's,/usr/lib/tabset,/usr/share/tabset,g' \
+	    > ${.OBJDIR}/fixed
+	cap_mkdb -f termcap ${.OBJDIR}/fixed
 
 realinstall:
 	install ${COPY} -o ${BINOWN} -g ${BINGRP} -m 444 termcap.db \
@@ -17,5 +21,6 @@ realinstall:
 	install -c -o ${BINOWN} -g ${BINGRP} -m 444 ${.CURDIR}/map3270 \
 	     ${DESTDIR}${BINDIR}/misc/map3270
 
+CLEANFILES+= fixed
 
 .include <bsd.prog.mk>
