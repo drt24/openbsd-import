@@ -1,4 +1,4 @@
-/*	$OpenBSD: strlcat.c,v 1.3 2000/11/24 11:10:02 itojun Exp $	*/
+/*	$OpenBSD: strlcat.c,v 1.1 2000/12/18 18:40:44 provos Exp $	*/
 
 /*
  * Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
@@ -28,7 +28,7 @@
  */
 
 #if defined(LIBC_SCCS) && !defined(lint)
-static char *rcsid = "$OpenBSD: strlcat.c,v 1.3 2000/11/24 11:10:02 itojun Exp $";
+static char *rcsid = "$OpenBSD: strlcat.c,v 1.1 2000/12/18 18:40:44 provos Exp $";
 #endif /* LIBC_SCCS and not lint */
 
 #if !defined(_KERNEL) && !defined(_STANDALONE)
