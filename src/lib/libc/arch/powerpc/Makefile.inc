@@ -1,4 +1,4 @@
 #	$Id$
 
-KMINCLUDES= arch/ppc/SYS.h
+KMINCLUDES= arch/powerpc/SYS.h
 KMSRCS=
