@@ -150,6 +150,13 @@
  * For now though just use DEV_BSIZE.
  */
 #define	bdbtofsb(bn)	((bn) / (BLKDEV_IOSIZE/DEV_BSIZE))
+
+/*
+ * Mach derived conversion macros
+ */
+#define mvme88k_btop(x)	((unsigned)(x) >> PGSHIFT)
+#define mvme88k_ptob(x)	((unsigned)(x) << PGSHIFT)
+
 #include <machine/psl.h>
 
 #ifdef _KERNEL
