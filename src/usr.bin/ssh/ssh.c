@@ -81,8 +81,6 @@ uid_t original_real_uid;
 void
 usage()
 {
-  int i;
-  
   fprintf(stderr, "Usage: %s [options] host [command]\n", av0);
   fprintf(stderr, "Options:\n");
   fprintf(stderr, "  -l user     Log in using this user name.\n");
