@@ -1,4 +1,4 @@
-/*	$OpenBSD: trap.c,v 1.6 1996/09/14 15:58:18 pefo Exp $	*/
+/*	$OpenBSD: trap.c,v 1.1.1.1 1997/02/06 16:02:46 pefo Exp $	*/
 /*
  * Copyright (c) 1988 University of Utah.
  * Copyright (c) 1992, 1993
@@ -1008,6 +1008,12 @@ interrupt(statusReg, causeReg, pc, what, args)
 		if (netisr & (1 << NETISR_IP)) {
 			netisr &= ~(1 << NETISR_IP);
 			ipintr();
+		}
+#endif
+#ifdef NETATALK
+		if (netisr & (1 << NETISR_ATALK)) {
+			netisr &= ~(1 << NETISR_ATALK);
+			atintr();
 		}
 #endif
 #ifdef NS
