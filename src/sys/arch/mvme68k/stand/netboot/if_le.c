@@ -350,7 +350,7 @@ le_put(desc, pkt, len)
 	while (tmd->tmd1_bits & LE_T1_OWN) {
 		printf("le%d: output buffer busy\n", desc->io_netif->nif_unit);
 	}
-	bcopy(pkt, ler2->ler2_tbuf[le_softc.next_tmd], len);
+	bcopy(pkt, (void *)ler2->ler2_tbuf[le_softc.next_tmd], len);
 	if (len < 64)
 		tmd->tmd2 = -64;
 	else
