@@ -55,3 +55,5 @@ pmax		src/sys/arch/pmax
 sparc		src/sys/arch/sparc
 sun3		src/sys/arch/sun3
 vax		src/sys/arch/vax
+
+gcc		src/gnu/usr.bin/gcc
