@@ -37,6 +37,7 @@ fi
 
 # The directory containing locate subprograms
 : ${LIBEXECDIR=/usr/libexec}; export LIBEXECDIR
+: ${TMPDIR=/tmp}; export TMPDIR
 
 PATH=$LIBEXECDIR:/bin:/usr/bin:$PATH; export PATH
 
