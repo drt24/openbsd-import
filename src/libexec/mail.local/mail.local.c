@@ -258,7 +258,7 @@ getlock(name, pw)
 	    _PATH_MAILDIR, name);
 
 	if (stat(_PATH_MAILDIR, &sb) != -1 &&
-	    (sb.st_mode & 7) == 7) {
+	    (sb.st_mode & S_IWOTH) == S_IWOTH) {
 		/*
 		 * We have a writeable spool, deal with it as
 		 * securely as possible.
