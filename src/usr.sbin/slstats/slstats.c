@@ -104,6 +104,13 @@ main(argc, argv)
 			kflag++;
 		}
 	}
+        /*
+	 * Discard setgid privileges if not the running kernel so that bad
+	 * guys can't print interesting stuff from kernel memory.
+	 */
+	if (system != _PATH_UNIX || kmemf != _PATH_KMEM)
+		setgid(getgid());
+
 	if (kopen(system, kmemf, "slstats") < 0)
 		exit(1);
 	if (knlist(system, nl, "slstats") < 0)
