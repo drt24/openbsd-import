@@ -48,6 +48,7 @@
 #include <alias.h>
 #endif
 #endif
+#include "ua.h"
 #include "defs.h"
 #include "command.h"
 #include "mbuf.h"
