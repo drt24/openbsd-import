@@ -172,6 +172,12 @@ DialCommand(struct cmdargs const *arg)
     return 0;
   }
 
+  if ((mode & MODE_DAEMON) && !(mode & MODE_AUTO)) {
+    LogPrintf(LogWARN,
+              "Manual dial is only available in auto and interactive mode\n");
+    return 1;
+  }
+
   if (arg->argc > 0 && (res = LoadCommand(arg)) != 0)
     return res;
 
