@@ -125,6 +125,10 @@ examples:
 #
     set server 6670
 #
+# If you don't like ppp's builtin chat, use an external one:
+#
+    set login "\"!chat \\\\-f /etc/ppp/ppp.dev.chat\""
+#
 # If we have a ``strange'' modem that must be re-initialized when we
 # hangup:
 #
