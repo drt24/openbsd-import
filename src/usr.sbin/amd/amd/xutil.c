@@ -173,7 +173,7 @@ checkup_mem(void)
 #endif /* DEBUG_MEM */
 
 /*
- * Take a log format string and expand occurences of %m
+ * Take a log format string and expand occurrences of %m
  * with the current error code taken from errno.  Make sure
  * 'e' never gets longer than maxlen characters.
  */
