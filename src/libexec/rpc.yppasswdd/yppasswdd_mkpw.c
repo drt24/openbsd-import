@@ -36,6 +36,7 @@ static char rcsid[] = "$Id$";
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <stdio.h>
+#include <fcntl.h>
 #include <rpc/rpc.h>
 #include <rpcsvc/yppasswd.h>
 #include <pwd.h>
@@ -116,6 +117,10 @@ make_passwd(argp)
 	    strlen(pw->pw_shell) >= 1023) {
 		return (1);
 	}
+
+	pfd = open(_PATH_MASTERPASSWD, O_RDONLY, 0);
+	if (pfd < 0)
+		pw_error(_PATH_MASTERPASSWD, 1, 1);
 
 	pw_init();
 	tfd = pw_lock(0);
