@@ -22,11 +22,13 @@
 
 # DEBUG is set to -g by config if debugging is requested (config -g).
 # PROF is set to -pg by config if profiling is requested (config -p).
-AS=     as ${DEBUG}
+DESTDIR=/usr/cross/mvme88k
+DESTBIN=${DESTDIR}/usr/m88k-unknown-openbsd2.2/bin
+AS=     ${DESTBIN}/as ${DEBUG}
 AWK=	awk
-CC=     cc ${DEBUG}
+CC=     ${DESTBIN}/gcc ${DEBUG}
 CPP=    cpp
-LD=     ld
+LD=     ${DESTBIN}/ld
 TOUCH=	touch -f -c
 
 .ifndef HOSTCC
