@@ -488,8 +488,7 @@ do_change_comment(struct passwd *pw)
 void
 usage(void)
 {
-	printf("ssh-keygen version %s\n", SSH_VERSION);
-	printf("Usage: %s [-b bits] [-c] [-d] [-f file] [-l] [-p] [-q] [-x] [-y] [-C comment] [-N new-pass] [-P pass] [-X]\n", __progname);
+	printf("Usage: %s [-lpqxXydc] [-b bits] [-f file] [-C comment] [-N new-pass] [-P pass]\n", __progname);
 	exit(1);
 }
 
