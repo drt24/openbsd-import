@@ -449,7 +449,7 @@ struct sockaddr_in *addr;
 	char tm[26];
 	time_t msgtime;
 	
-	if (msg->tsp_type > TSPTYPENUMBER) {
+	if (msg->tsp_type >= TSPTYPENUMBER) {
 		fprintf(fd, "bad type (%u) on packet from %s\n",
 		    msg->tsp_type, inet_ntoa(addr->sin_addr));
 		return;
