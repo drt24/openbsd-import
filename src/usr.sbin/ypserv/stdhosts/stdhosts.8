@@ -29,12 +29,12 @@
 .\"
 .Dd August 25, 1994
 .Dt STDHOSTS 8
-.Os NetBSD 1.0
+.Os
 .Sh NAME
 .Nm stdhosts
 .Nd a YP filter program
 .Sh SYNOPSIS
-.Nm /usr/sbin/stdhosts
+.Nm stdhosts
 .Op Ar file
 .Sh DESCRIPTION
 .Nm Stdhosts
@@ -48,6 +48,7 @@ The options are as follows:
 Use this file as input instead of stdin.
 .El
 .Sh SEE ALSO
+.Xr yp 8 ,
 .Xr ypserv 8 
 .Sh AUTHOR
 Mats O Jansson <moj@stacken.kth.se>

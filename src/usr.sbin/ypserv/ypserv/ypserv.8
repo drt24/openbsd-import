@@ -29,12 +29,12 @@
 .\"
 .Dd June 27, 1994
 .Dt YPSERV 8
-.Os NetBSD 1.0
+.Os
 .Sh NAME
 .Nm ypserv
 .Nd YP server daemon
 .Sh SYNOPSIS
-.Nm /usr/sbin/ypserv
+.Nm ypserv
 .Op Fl a Ar aclfile
 .Op Fl d
 .Op Fl x
@@ -103,6 +103,7 @@ or
 .It Pa /var/yp/ypserv.acl
 .El
 .Sh SEE ALSO
+.Xr yp 8 ,
 .Xr ypserv.acl 5 ,
 .Xr securenet 5 ,
 .Xr ypbind 1 
