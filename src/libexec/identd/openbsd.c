@@ -1,7 +1,7 @@
 /*
 **	$Id$
 **
-** netbsd.c		Low level kernel access functions for NetBSD
+** openbsd.c		Low level kernel access functions for OpenBSD
 **
 ** This program is in the public domain and may be used freely by anyone
 ** who wants to. 
