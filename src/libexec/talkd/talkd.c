@@ -1,4 +1,4 @@
-/*	$OpenBSD: talkd.c,v 1.8 2001/01/11 22:07:44 deraadt Exp $	*/
+/*	$OpenBSD: talkd.c,v 1.9 2001/07/08 21:18:12 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -85,7 +85,7 @@ main(argc, argv)
 		exit(1);
 	}
 	openlog("talkd", LOG_PID, LOG_DAEMON);
-	if (gethostname(hostname, sizeof (hostname) - 1) < 0) {
+	if (gethostname(hostname, sizeof (hostname)) < 0) {
 		syslog(LOG_ERR, "gethostname: %m");
 		_exit(1);
 	}
