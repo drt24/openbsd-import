@@ -54,7 +54,7 @@ void
 bootp_print(bp, length, sport, dport)
 	struct bootp *bp;
 	int length;
-	u_short sport, dport;
+	in_port_t sport, dport;
 {
 	static char tstr[] = " [|bootp]";
 	static unsigned char vm_cmu[4] = VM_CMU;

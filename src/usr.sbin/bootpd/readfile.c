@@ -344,7 +344,7 @@ readtab(force)
 #ifdef DEBUG
 	if (debug > 3) {
 		char timestr[28];
-		strcpy(timestr, ctime(&(st.st_mtime)));
+		strlcpy(timestr, ctime(&(st.st_mtime)), sizeof(timestr));
 		/* zap the newline */
 		timestr[24] = '\0';
 		report(LOG_INFO, "bootptab mtime: %s",
