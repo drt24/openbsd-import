@@ -193,12 +193,13 @@ main(argc, argv)
 			continue;
 		if (wd.wd_type != WHODTYPE_STATUS)
 			continue;
+		wd.wd_hostname[sizeof(wd.wd_hostname)-1] = '\0';
 		if (!verify(wd.wd_hostname)) {
 			syslog(LOG_WARNING, "malformed host name from %x",
 				from.sin_addr);
 			continue;
 		}
-		(void) sprintf(path, "whod.%s", wd.wd_hostname);
+		(void) snprintf(path, sizeof path, "whod.%s", wd.wd_hostname);
 		/*
 		 * Rather than truncating and growing the file each time,
 		 * use ftruncate if size is less than previous size.
