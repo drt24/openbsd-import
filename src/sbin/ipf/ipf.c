@@ -1,4 +1,4 @@
-/*     $OpenBSD: ipf.c,v 1.14 1999/02/07 00:55:16 deraadt Exp $      */
+/*     $OpenBSD: ipf.c,v 1.15 1999/02/08 06:23:26 millert Exp $      */
 /*
  * Copyright (C) 1993-1998 by Darren Reed.
  *
@@ -57,6 +57,8 @@ extern	char	*index __P((const char *, int));
 #endif
 
 extern	char	*optarg;
+extern	int	optind;
+extern	int	optreset;
 
 void	zerostats __P((void));
 int	main __P((int, char *[]));
@@ -88,6 +90,12 @@ char *argv[];
 {
 	int c;
 
+	while ((c = getopt(argc, argv, OPTS)) != -1)
+		if (c == '?')
+			usage();
+
+	optreset = 1;
+	optind = 1;
 	while ((c = getopt(argc, argv, OPTS)) != -1) {
 		switch (c)
 		{
@@ -146,9 +154,6 @@ char *argv[];
 			break;
 		case 'Z' :
 			zerostats();
-			break;
-		default :
-			usage();
 			break;
 		}
 	}
