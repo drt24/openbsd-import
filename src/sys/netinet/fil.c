@@ -1,4 +1,4 @@
-/*       $OpenBSD: fil.c,v 1.13 1998/09/15 09:51:17 pattonme Exp $       */
+/*       $OpenBSD: fil.c,v 1.14 1999/02/05 05:58:49 deraadt Exp $       */
 /*
  * Copyright (C) 1993-1998 by Darren Reed.
  *
@@ -611,9 +611,9 @@ int out;
 			case IPPROTO_UDP:
 				plen = sizeof(udphdr_t);
 				break;
-			/* 96 - enough for complete ICMP error IP header */
 			case IPPROTO_ICMP:
-				plen = 76 + sizeof(struct icmp);
+			/* need enough for complete ICMP error IP header */
+				plen = ICMPERR_MAXPKTLEN - sizeof(ip_t);
 				break;
 			}
 		up = MIN(hlen + plen, ip->ip_len);
