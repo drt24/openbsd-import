@@ -69,11 +69,6 @@ static char *rcsid = "$Id$";
 #include <paths.h>
 
 #define RETRIES	10		/* number of retries on reading old sectors */
-#ifdef i386 /* XXX */
-#define	RAWPART	"d"		/* disk partition containing badsector tables */
-#else
-#define	RAWPART	"c"		/* disk partition containing badsector tables */
-#endif
 
 int	fflag, add, copy, verbose, nflag;
 int	dups;
@@ -154,7 +149,8 @@ usage:
 		exit(1);
 	}
 	if (argv[0][0] != '/')
-		(void)sprintf(name, "%sr%s%s", _PATH_DEV, argv[0], RAWPART);
+		(void)sprintf(name, "%sr%s%c", _PATH_DEV, argv[0],
+		    'a' + RAW_PART);
 	else
 		strcpy(name, argv[0]);
 	f = open(name, argc == 1? O_RDONLY : O_RDWR);
