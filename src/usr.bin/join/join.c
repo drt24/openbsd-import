@@ -356,9 +356,9 @@ cmp(lp1, fieldno1, lp2, fieldno2)
 	LINE *lp1, *lp2;
 	u_long fieldno1, fieldno2;
 {
-	if (lp1->fieldcnt < fieldno1)
+	if (fieldno1 >= lp1->fieldcnt)
 		return (lp2->fieldcnt < fieldno2 ? 0 : 1);
-	if (lp2->fieldcnt < fieldno2)
+	if (fieldno2 >= lp2->fieldcnt)
 		return (-1);
 	return (strcmp(lp1->fields[fieldno1], lp2->fields[fieldno2]));
 }
