@@ -66,7 +66,7 @@ struct physical {
   } input;
 
   struct {
-    char full[40];             /* Our current device name */
+    char full[DEVICE_LEN];     /* Our current device name */
     char *base;
   } name;
 

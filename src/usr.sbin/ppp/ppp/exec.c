@@ -151,6 +151,7 @@ exec_Create(struct physical *p)
           dup2(fids[1], STDOUT_FILENO);
           dup2(fids[1], STDERR_FILENO);
 
+          log_Printf(LogDEBUG, "Exec'ing ``%s''\n", p->name.base);
           argc = MakeArgs(p->name.base, argv, VECSIZE(argv));
           command_Expand(argv, argc, (char const *const *)argv,
                          p->dl->bundle, 0);
