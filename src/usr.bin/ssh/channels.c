@@ -910,7 +910,7 @@ void channel_input_port_forward_request(int is_root)
 
   /* Check that an unprivileged user is not trying to forward a privileged
      port. */
-  if (port < 1024 && !is_root)
+  if (port < IPPORT_RESERVED && !is_root)
     packet_disconnect("Requested forwarding of port %d but user is not root.",
 		      port);
 
