@@ -869,8 +869,11 @@ do_connection()
 	/* Read clients reply (cipher type and session key). */
 	packet_read_expect(&plen, SSH_CMSG_SESSION_KEY);
 
-	/* Get cipher type. */
+	/* Get cipher type and check whether we accept this. */
 	cipher_type = packet_get_char();
+
+        if (!(cipher_mask() & (1 << cipher_type)))
+		packet_disconnect("Warning: client selects unsupported cipher.");
 
 	/* Get check bytes from the packet.  These must match those we
 	   sent earlier with the public key packet. */
