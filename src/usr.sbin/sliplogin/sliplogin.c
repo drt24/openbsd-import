@@ -180,7 +180,7 @@ sigstr(s)
 	}
 }
 
-int die;
+volatile sig_atomic_t die;
 
 void
 hup_handler(s)
