@@ -41,3 +41,7 @@ static char *rcsidpreempt = "$Header$";
 #define PRE_EndCritical()	lwp_cpptr->level--
 
 #define DEFAULTSLICE	10
+
+int PRE_InitPreempt(struct timeval *);
+int PRE_EndPreempt(void);
+

@@ -1,6 +1,6 @@
 /*	$OpenBSD$	*/
 /*
- * Copyright (c) 1998 Kungliga Tekniska Högskolan
+ * Copyright (c) 1995, 1996, 1997, 1998, 1999 Kungliga Tekniska Högskolan
  * (Royal Institute of Technology, Stockholm, Sweden).
  * All rights reserved.
  * 
@@ -37,78 +37,97 @@
  * SUCH DAMAGE.
  */
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-RCSID("$KTH: timeprio.c,v 1.1 1998/07/07 15:57:11 lha Exp $");
-#endif
+#include "appl_locl.h"
+#include <sl.h>
+#include "vos_local.h"
 
-#include <stdlib.h>
-#include "bool.h"
-#include "timeprio.h"
+RCSID("$KTH: vos_listvol.c,v 1.2 1999/03/04 09:17:32 lha Exp $");
 
+/*
+ * list volume on a afs-server
+ */
 
-static int 
-timeprio_cmp(void *a1, void *b1)
+char *server;
+char *partition;
+int  listvol_machine;
+char *cell;
+int noauth;
+int localauth;
+int helpflag;
+int fast;
+
+static struct getargs args[] = {
+    {"server",	0, arg_string,  &server,  
+     "server", NULL, arg_mandatory},
+    {"partition", 0, arg_string, &partition,
+     "partition", NULL},
+    {"machine", 'm', arg_flag, &listvol_machine,
+     "machineparseableform", NULL},
+    {"cell",	0, arg_string,  &cell, 
+     "cell", NULL},
+    {"noauth",	0, arg_flag,    &noauth, 
+     "do not authenticate", NULL},
+    {"localauth",	0, arg_flag,    &localauth, 
+     "use local authentication", NULL},
+    {"fast",		0, arg_flag,	&fast,
+     "only list IDs", NULL},
+    {"help",	0, arg_flag,    &helpflag,
+     NULL, NULL},
+    {NULL,      0, arg_end, NULL}
+};
+
+static void
+usage(void)
 {
-    Tpel *a = a1, *b = b1;
-
-    return a->time > b->time;
-}
-
-
-Timeprio *
-timeprionew(unsigned size)
-{
-    return (Timeprio *) prionew(size, timeprio_cmp);
-}
-
-void
-timepriofree(Timeprio *prio)
-{
-    priofree(prio);
+    arg_printusage (args, "vos listvol", "", ARG_AFSSTYLE);
 }
 
 int
-timeprioinsert(Timeprio *prio, time_t time, void *data)
+vos_listvol(int argc, char **argv)
 {
-    Tpel *el = malloc(sizeof(Tpel));
-    if (!el)
-	return -1;
+    int optind = 0;
+    int flags = 0;
+    int part;
 
-    el->time = time;
-    el->data = data;
-    if (prioinsert(prio, el)) {
-	free(el);
-	el = NULL;
+    server = partition = cell = NULL;
+    listvol_machine = noauth = localauth = helpflag = fast = 0;
+
+    if (getarg (args, argc, argv, &optind, ARG_AFSSTYLE)) {
+	usage();
+	return 0;
     }
-    return el ? 0 : -1;
-}
 
-void *
-timepriohead(Timeprio *prio)
-{
-    Tpel *el = priohead(prio);
+    if(helpflag) {
+	usage();
+	return 0;
+    }
     
-    return el->data;
+    argc -= optind;
+    argv += optind;
+
+    if (server == NULL) {
+	usage();
+	return 0;
+    }
+
+    if (partition == NULL) {
+	part = -1;
+    } else {
+	part = partition_name2num(partition);
+	if (part == -1) {
+	    usage();
+	    return 0;
+	}
+    }
+
+    if (listvol_machine)
+	flags |= LISTVOL_PART;
+    if (localauth)
+	flags |= LISTVOL_LOCALAUTH;
+    if (fast)
+	flags |= LISTVOL_FAST;
+
+    printlistvol(cell, server, part, flags, 
+		 arlalib_getauthflag (noauth, 0, 0, 0));
+    return 0;
 }
-
-void
-timeprioremove(Timeprio *prio)
-{
-    void *el;
-
-    if (timeprioemptyp((Prio *)prio))
-	return;
-
-    el = priohead(prio);
-    if (el) free (el);
-    
-    prioremove((Prio *)prio);
-}
-    
-Bool 
-timeprioemptyp(Timeprio *prio)
-{
-    return prioemptyp(prio); 
-}
-
