@@ -685,7 +685,7 @@ mapc_meta_search(mnt_map *m, char *key, char **pval, int recurse)
 			 */
 			strlcpy(wildname, key, sizeof wildname);
 			while (error && (subp = strrchr(wildname, '/'))) {
-				strncpy(subp, "/*", 2);
+				strlcpy(subp, "/*", 3);
 #ifdef DEBUG
 				dlog("mapc recurses on %s", wildname);
 #endif
