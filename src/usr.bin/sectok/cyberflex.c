@@ -125,7 +125,7 @@ get_AUT0(int ac, char *av[], char *prompt, unsigned char *digest)
     return 0;
 }
 
-int jaut(int ac, char *av[])
+int jlogin(int ac, char *av[])
 {
     int i, vflag = 0, sw;
     unsigned char AUT0[20];
@@ -164,6 +164,13 @@ int jaut(int ac, char *av[])
     }
     aut0_vfyd = 1;
     return 0;
+}
+
+int jaut(int ac, char *av[])
+{
+    static char *jlav[] = {"login", "-d", NULL};
+
+    return jlogin(2, jlav);
 }
 
 int jdefault(int ac, char *av[])

@@ -55,6 +55,7 @@ int jdelete(int ac, char *av[]);
 int jdefault(int ac, char *av[]);
 int jatr(int ac, char *av[]);
 int jdata(int ac, char *av[]);
+int jlogin(int ac, char *av[]);
 int jaut(int ac, char *av[]);
 int jload(int ac, char *av[]);
 int junload(int ac, char *av[]);
