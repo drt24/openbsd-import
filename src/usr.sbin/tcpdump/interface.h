@@ -165,7 +165,7 @@ extern __dead void error(const char *, ...)
 extern void warning(const char *, ...) __attribute__ ((format (printf, 1, 2)));
 
 extern char *read_infile(char *);
-extern char *copy_argv(char **);
+extern char *copy_argv(char * const *);
 
 extern char *isonsap_string(const u_char *);
 extern char *llcsap_string(u_char);

@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: gmt2local.c,v 1.2 2000/10/03 14:31:55 ho Exp $	*/
 
 /*
  * Copyright (c) 1997
@@ -40,6 +40,7 @@ static const char rcsid[] =
 #endif
 
 #include "gmt2local.h"
+#include "privsep.h"
 
 /*
  * Returns the difference between gmt and local time in seconds.
@@ -56,7 +57,7 @@ gmt2local(time_t t)
 		t = time(NULL);
 	gmt = &sgmt;
 	*gmt = *gmtime(&t);
-	loc = localtime(&t);
+	loc = priv_localtime(&t);
 	dt = (loc->tm_hour - gmt->tm_hour) * 60 * 60 +
 	    (loc->tm_min - gmt->tm_min) * 60;
 
