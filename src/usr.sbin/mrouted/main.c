@@ -112,12 +112,11 @@ main(argc, argv)
     int index, block;
 #endif
 
-    setlinebuf(stderr);
-
     if (geteuid() != 0) {
 	fprintf(stderr, "must be root\n");
 	exit(1);
     }
+    setlinebuf(stderr);
 
     argv++, argc--;
     while (argc > 0 && *argv[0] == '-') {

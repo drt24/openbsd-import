@@ -1165,10 +1165,8 @@ char *argv[];
     int waittime;
     int seed;
 
-    if (geteuid() != 0) {
-	fprintf(stderr, "mtrace: must be root\n");
-	exit(1);
-    }
+    init_igmp();
+    setuid(getuid());
 
     argv++, argc--;
     if (argc == 0) goto usage;
@@ -1305,8 +1303,6 @@ Usage: mtrace [-Mlnps] [-w wait] [-m max_hops] [-q nqueries] [-g gateway]\n\
               [-S statint] [-t ttl] [-r resp_dest] [-i if_addr] source [receiver] [group]\n");
 	exit(1);
     }
-
-    init_igmp();
 
     /*
      * Set useful defaults for as many parameters as possible.
