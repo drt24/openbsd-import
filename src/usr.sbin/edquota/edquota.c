@@ -361,10 +361,11 @@ int
 editit(tmpfile)
 	char *tmpfile;
 {
-	int pid, stat, xpid;
+	pid_t pid, xpid;
 	char *argp[] = {"sh", "-c", NULL, NULL};
 	char *ed, *p;
 	sigset_t mask, omask;
+	int stat;
 
 	if ((ed = getenv("EDITOR")) == (char *)0)
 		ed = _PATH_VI;
