@@ -2417,7 +2417,8 @@ IfaceClearCommand(struct cmdargs const *arg)
   if (arg->argc != arg->argn)
     return -1;
 
-  how = arg->bundle->ncp.ipcp.fsm.state == ST_OPENED ?
+  how = arg->bundle->ncp.ipcp.fsm.state == ST_OPENED ||
+        arg->bundle->phys_type.all & PHYS_AUTO ?
         IFACE_CLEAR_ALIASES : IFACE_CLEAR_ALL;
   iface_Clear(arg->bundle->iface, how);
 
