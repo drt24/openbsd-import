@@ -3,6 +3,7 @@
 
 SUBDIR=		libunix libuucp libuuconf \
 		cu uuchk uucico uuconv uucp uulog uuname uupick uusched \
-		uustat uuto uux uuxqt
+		uustat uuto uux uuxqt \
+		sample
 
 .include <bsd.subdir.mk>
