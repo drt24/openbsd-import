@@ -3,7 +3,7 @@
 
 PROG=	afslog
 DPADD=	${LIBKRB} ${LIBDES} ${LIBKAFS}
-LDADD=	-lkrb -ldes -lkafs
+LDADD=	-lkafs -lkrb -ldes
 BINDIR=	/usr/bin
 
 .include <bsd.prog.mk>
