@@ -43,7 +43,7 @@ static char rcsid[] = "$Id$";
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <curses.h>
+#include <ocurses.h>
 #if	defined(ultrix)
 /* Some version of this OS has a bad definition for nonl() */
 #undef	nl
