@@ -46,9 +46,10 @@
 			/* -Fx	 = set full-name of sender
 			 * -odi	 = Option Deliverymode Interactive
 			 * -oem	 = Option Errors Mailedtosender
-			 * -or0s = Option Readtimeout -- don't time out
-			 *	   XXX - causes sendmail to drop privs.
 			 * -t    = read recipient from header of message
+			 * NOTE: since this runs as the user, not root you must
+			 *       not specify any args that will cause sendmail
+			 *       to drop its suidness (see op.me for a list).
 			 */
 
 /* #define MAILCMD "/bin/mail"			-*/
