@@ -185,7 +185,7 @@ iwi_attach(struct device *parent, struct device *self, void *aux)
 	sc->sc_pct = pa->pa_pc;
 
 	data = pci_conf_read(sc->sc_pct, pa->pa_tag, 0x40);
-	data &= ~0x00ff0000;
+	data &= ~0x0000ff00;
 	pci_conf_write(sc->sc_pct, pa->pa_tag, 0x40, data);
 
 	/* enable bus-mastering */
