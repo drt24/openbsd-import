@@ -30,15 +30,15 @@
  * SUCH DAMAGE.
  *
  * $Id$
- * $OpenBSD$
+ * $OpenBSD: uthread_spinlock.c,v 1.1 1998/08/27 09:01:25 d Exp $
  *
  */
 
 #include <stdio.h>
 #include <sched.h>
 #include <unistd.h>
-#include <string.h>
 #include <pthread.h>
+#include <string.h>
 #include "pthread_private.h"
 
 extern char *__progname;
@@ -80,7 +80,7 @@ _spinlock(spinlock_t *lck)
  * returning.
  */
 void
-_spinlock_debug(spinlock_t *lck, char *fname, int lineno)
+_spinlock_debug(spinlock_t *lck, const char *fname, int lineno)
 {
 	/*
 	 * Try to grab the lock and loop if another thread grabs
