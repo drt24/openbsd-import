@@ -14,7 +14,7 @@ BINMODE=4550
 BINOWN=	root
 BINGRP=	network
 
-.if exists(/usr/include/alias.h)
+.if defined(HAVE_LIBALIAS)
 SRCS+=	alias_cmd.c loadalias.c
 .else
 CFLAGS+=-DNOALIAS
