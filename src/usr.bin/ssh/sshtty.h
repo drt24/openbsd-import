@@ -1,4 +1,4 @@
-/* $OpenBSD$ */
+/* $OpenBSD: sshtty.h,v 1.1 2001/04/14 16:33:20 stevesk Exp $ */
 /*
  * Author: Tatu Ylonen <ylo@cs.hut.fi>
  * Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
