@@ -31,11 +31,11 @@
 world		-a .
 
 # CVSROOT support
-CVSROOT		-i /usr/local/bin/mkmodules CVSROOT
-modules		-i /usr/local/bin/mkmodules CVSROOT modules
-loginfo		-i /usr/local/bin/mkmodules CVSROOT loginfo
-commitinfo	-i /usr/local/bin/mkmodules CVSROOT commitinfo
-rcsinfo		-i /usr/local/bin/mkmodules CVSROOT rcsinfo
+CVSROOT		CVSROOT
+modules		CVSROOT modules
+loginfo		CVSROOT loginfo
+commitinfo	CVSROOT commitinfo
+rcsinfo		CVSROOT rcsinfo
 
 www		-i /usr/local/etc/httpd/conf/cvswww www
 
