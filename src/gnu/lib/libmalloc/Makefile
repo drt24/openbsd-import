@@ -1,6 +1,6 @@
 #	$Id$
 
-CFLAGS+= -I${.CURDIR} -I/usr/include
+CFLAGS+= -I${.CURDIR}
 
 LIB=	gnumalloc
 SRCS+=	combined.c
