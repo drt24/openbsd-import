@@ -576,6 +576,8 @@ ahc_scsirate(ahc, scsirate, period, offset, channel, target )
 }
 
 #if defined(__NetBSD__) || defined(__OpenBSD__)
+int	ahcprint __P((void *, char *));
+
 int
 ahcprint(aux, name)
 	void *aux;
@@ -595,7 +597,9 @@ int
 ahc_attach(ahc)
 	struct ahc_data *ahc;
 {
+#if defined(__FreeBSD__)
 	struct scsibus_data *scbus;
+#endif
 
 #ifdef AHC_BROKEN_CACHE
 	if (cpu_class == CPUCLASS_386)	/* doesn't have "wbinvd" instruction */
