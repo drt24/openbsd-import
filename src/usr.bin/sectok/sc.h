@@ -38,6 +38,11 @@ such damages.
 extern int port, fd, cla, aut0_vfyd;
 extern FILE *cmdf;
 
+extern struct dispatchtable {
+    char *cmd, *help;
+    int (*action) (int ac, char *av[]);
+} dispatch_table[];
+
 int dispatch(int ac, char *av[]);
 int help(int ac, char *av[]);
 int reset(int ac, char *av[]);
