@@ -41,7 +41,7 @@ abort_on_misalignment(char *ebuf)
 	static int buf[2] = { SSIN_UACPROC, UAC_SIGBUS };
 
 	if (setsysinfo(SSI_NVPAIRS, (caddr_t)buf, 1, 0, 0) < 0) {
-		(void)sprintf(ebuf, "setsysinfo: %s", pcap_strerror(errno));
+		(void)sprintf(ebuf, "setsysinfo: errno %d", errno);
 		return (-1);
 	}
 #endif

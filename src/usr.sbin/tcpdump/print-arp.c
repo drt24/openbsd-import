@@ -37,6 +37,7 @@ struct rtentry;
 #include <netinet/in.h>
 #include <netinet/if_ether.h>
 
+#include <memory.h>
 #include <stdio.h>
 #include <string.h>
 

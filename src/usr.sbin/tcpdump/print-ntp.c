@@ -47,7 +47,9 @@ struct rtentry;
 
 #include "interface.h"
 #include "addrtoname.h"
+#ifdef MODEMASK
 #undef MODEMASK					/* Solaris sucks */
+#endif
 #include "ntp.h"
 
 static void p_sfix(const struct s_fixedpt *);

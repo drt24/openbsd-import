@@ -29,6 +29,6 @@ typedef	struct {
 } my_fsid;
 
 #define	fsid_eq(a,b)	((a.fsid_code == b.fsid_code) &&\
-			 dev_eq(a.fsid_dev, b.fsid_dev))
+			 dev_eq(a.Fsid_dev, b.Fsid_dev))
 
 extern void Parse_fh(caddr_t *, my_fsid *, ino_t *, char **, char **, int);

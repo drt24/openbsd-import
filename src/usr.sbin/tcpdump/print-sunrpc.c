@@ -119,7 +119,7 @@ progstr(prog)
 {
 	register struct rpcent *rp;
 	static char buf[32];
-	static lastprog = 0;
+	static int lastprog = 0;
 
 	if (lastprog != 0 && prog == lastprog)
 		return (buf);

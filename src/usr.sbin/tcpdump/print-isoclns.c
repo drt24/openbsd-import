@@ -293,7 +293,7 @@ osi_cksum(register const u_char *p, register u_int len,
 		return 0;
 
 	off[0] = off[1] = 0;
-	while (--len >= 0) {
+	while ((int)--len >= 0) {
 		c0 += *p++;
 		c1 += c0;
 		c0 %= 255;

@@ -160,7 +160,7 @@ krb4_print_hdr(const u_char *cp)
 {
 	cp+=2;
 
-#define PRINT		if ((cp=c_print(cp, snapend))==NULL) goto trunc
+#define PRINT		if ((cp = c_print(cp, snapend)) == NULL) goto trunc
 
 	TCHECK2(cp, 0);
 	PRINT;
@@ -184,7 +184,7 @@ krb4_print(const u_char *cp)
 	u_char type;
 	u_short len;
 
-#define PRINT		if ((cp=c_print(cp, snapend))==NULL) goto trunc
+#define PRINT		if ((cp = c_print(cp, snapend)) == NULL) goto trunc
 /*  True if struct krb is little endian */
 #define IS_LENDIAN(kp)	(((kp)->type & 0x01) != 0)
 #define KTOHSP(kp, cp)	(IS_LENDIAN(kp) ? vtohsp(cp) : ntohsp(cp))

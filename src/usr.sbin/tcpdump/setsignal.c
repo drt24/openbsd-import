@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1990, 1992, 1993, 1994, 1995, 1996, 1997
+ * Copyright (c) 1997
  *	The Regents of the University of California.  All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -17,20 +17,62 @@
  * THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR IMPLIED
  * WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
- *
- * @(#) $Header$ (LBL)
  */
 
-/* Name to address translation routines. */
+#ifndef lint
+static const char rcsid[] =
+    "@(#) $Header$ (LBL)";
+#endif
 
-extern char *etheraddr_string(const u_char *);
-extern char *etherproto_string(u_short);
-extern char *tcpport_string(u_short);
-extern char *udpport_string(u_short);
-extern char *getname(const u_char *);
-extern char *intoa(u_int32_t);
+#include <sys/types.h>
 
-extern void init_addrtoname(u_int32_t, u_int32_t);
-extern struct hnamemem *newhnamemem(void);
+#ifdef HAVE_MEMORY_H
+#include <memory.h>
+#endif
+#include <signal.h>
+#ifdef HAVE_SIGACTION
+#include <string.h>
+#endif
 
-#define ipaddr_string(p) getname((const u_char *)(p))
+#include "gnuc.h"
+#ifdef HAVE_OS_PROTO_H
+#include "os-proto.h"
+#endif
+
+#include "setsignal.h"
+
+/*
+ * An os independent signal() with BSD semantics, e.g. the signal
+ * catcher is restored following service of the signal.
+ *
+ * When sigset() is available, signal() has SYSV semantics and sigset()
+ * has BSD semantics and call interface. Unfortunately, Linux does not
+ * have sigset() so we use the more complicated sigaction() interface
+ * there.
+ *
+ * Did I mention that signals suck?
+ */
+RETSIGTYPE
+(*setsignal (int sig, RETSIGTYPE (*func)(int)))(int)
+{
+#ifdef HAVE_SIGACTION
+	struct sigaction old, new;
+
+	memset(&new, 0, sizeof(new));
+	new.sa_handler = func;
+#ifdef SA_RESTART
+	new.sa_flags |= SA_RESTART;
+#endif
+	if (sigaction(sig, &new, &old) < 0)
+		return (SIG_ERR);
+	return (old.sa_handler);
+
+#else
+#ifdef HAVE_SIGSET
+	return (sigset(sig, func));
+#else
+	return (signal(sig, func));
+#endif
+#endif
+}
+
