@@ -3,7 +3,7 @@
 
 PROG=	klist
 DPADD=	${LIBKRB} ${LIBDES}
-LDADD=	-lkrb -ldes
+LDADD=	-lkrb -ldes -lkafs
 BINDIR=	/usr/bin
 
 .include <bsd.prog.mk>
