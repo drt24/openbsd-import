@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-sunrpc.c,v 1.12 2001/11/07 18:48:16 deraadt Exp $	*/
+/*	$OpenBSD: print-sunrpc.c,v 1.13 2002/02/19 19:39:40 millert Exp $	*/
 
 /*
  * Copyright (c) 1992, 1993, 1994, 1995, 1996
@@ -111,6 +111,7 @@ progstr(prog)
 
 	if (lastprog != 0 && prog == lastprog)
 		return (buf);
+	lastprog = prog;
 	rp = getrpcbynumber(prog);
 	if (rp == NULL)
 		snprintf(buf, sizeof(buf), "#%u", prog);
