@@ -171,7 +171,7 @@ sigstr(s)
 		return(sys_signame[s]);
 	else {
 		static char buf[32];
-		(void)sprintf(buf, "sig %d", s);
+		(void)snprintf(buf, sizeof buf, "sig %d", s);
 		return(buf);
 	}
 }

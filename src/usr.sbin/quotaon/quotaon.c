@@ -219,7 +219,7 @@ hasquota(fs, type, qfnamep, force)
 		sprintf(grpname, "%s%s", qfextension[GRPQUOTA], qfname);
 		initname = 1;
 	}
-	strcpy(buf, fs->fs_mntops);
+	strlcpy(buf, fs->fs_mntops, sizeof buf);
 	for (opt = strtok(buf, ","); opt; opt = strtok(NULL, ",")) {
 		if (cp = strchr(opt, '='))
 			*cp++ = '\0';
