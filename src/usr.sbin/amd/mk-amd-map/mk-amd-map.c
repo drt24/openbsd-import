@@ -234,7 +234,7 @@ char *argv[];
 	char *map;
 	int rc = 0;
 	DBM *mapd;
-	static char maptmp[] = "dbmXXXXXX";
+	static char maptmp[] = "dbmXXXXXXXXXX";
 	char maptpag[16];
 	char *mappag;
 #ifndef USING_DB

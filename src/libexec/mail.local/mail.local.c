@@ -231,7 +231,7 @@ baditem(path)
 
 	if (unlink(path) == 0)
 		return;
-	snprintf(npath, sizeof npath, "%s/XXXXXXXXX", _PATH_MAILDIR);
+	snprintf(npath, sizeof npath, "%s/mailXXXXXXXXXX", _PATH_MAILDIR);
 	if (mktemp(npath) == NULL)
 		return;
 	if (rename(path, npath) != -1)
