@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_xl.c,v 1.1 1998/09/02 03:01:05 jason Exp $	*/
+/*	$OpenBSD: if_xl.c,v 1.2 1998/09/02 04:49:12 jason Exp $	*/
 
 /*
  * Copyright (c) 1997, 1998
@@ -31,7 +31,7 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
  * THE POSSIBILITY OF SUCH DAMAGE.
  *
- *	$Id$
+ *	$FreeBSD: if_xl.c,v 1.6 1998/08/30 22:24:18 wpaul Exp $
  */
 
 /*
