@@ -124,6 +124,7 @@ kerb_err_reply(struct sockaddr_in *client, KTEXT pkt, long int err, char *string
     KTEXT   e_pkt = &e_pkt_st;
     static char e_msg[128];
 
+    bzero(e_msg, sizeof e_msg);
     strcpy(e_msg, "\nKerberos error -- ");
     strcat(e_msg, string);
     cr_err_reply(e_pkt, req_name_ptr, req_inst_ptr, req_realm_ptr,
