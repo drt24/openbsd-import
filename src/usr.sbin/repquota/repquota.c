@@ -342,8 +342,7 @@ addid(id, type, name)
 	char *name;
 {
 	struct fileusage *fup, **fhp;
-	int len;
-	extern char *calloc();
+	size_t len;
 
 	if ((fup = lookup(id, type)))
 		return (fup);
