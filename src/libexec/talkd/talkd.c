@@ -1,4 +1,4 @@
-/*	$OpenBSD: talkd.c,v 1.4 1996/07/18 00:04:09 deraadt Exp $	*/
+/*	$OpenBSD: talkd.c,v 1.5 1996/07/18 00:18:54 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -107,7 +107,7 @@ main(argc, argv)
 			(struct sockaddr *)&response.addr, &len);
 		if (cc != sizeof (request)) {
 			if (cc < 0 && errno != EINTR)
-				syslog(LOG_WARNING, "recv: %m");
+				syslog(LOG_WARNING, "recvfrom: %m");
 			continue;
 		}
 		lastmsgtime = time(0);
