@@ -825,10 +825,13 @@ _returnto:
 #endif
 
 #ifdef mips
-#ifdef	sgi
+#if defined(sgi) || defined(__OpenBSD__)
 	.option	pic2
-
+#if defined(sgi)
 #include <regdef.h> /* Allow use of symbolic names for registers. */
+#else
+#include <machine/regdef.h> /* Allow use of symbolic names for registers. */
+#endif
 /* 9 sregs, ra, 6 fp regs, gp, pad to 8 byte boundary */
 #define regspace 9 * 4 + 4 + 6 * 8 + 4 + 4
 #define floats 0
