@@ -196,6 +196,7 @@ extern void ns_print(const u_char *, u_int);
 extern void ntp_print(const u_char *, u_int);
 extern void null_if_print(u_char *, const struct pcap_pkthdr *, const u_char *);
 extern void ospf_print(const u_char *, u_int, const u_char *);
+extern void mobile_print(const u_char *, u_int);
 extern void pim_print(const u_char *, u_int);
 extern void ppp_if_print(u_char *, const struct pcap_pkthdr *, const u_char *);
 extern void raw_if_print(u_char *, const struct pcap_pkthdr *, const u_char *);
