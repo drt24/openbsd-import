@@ -6,6 +6,7 @@ CFLAGS+=-I. -I${.CURDIR} -I${.CURDIR}/../com_err
 DPADD=	${LIBL}
 LDADD=	-ll
 CLEANFILES=error_table.c y.tab.h et_lex.lex.c
+CC=${HOSTCC}
 
 beforedepend:	et_lex.lex.c
 error_table.o:	et_lex.lex.c
