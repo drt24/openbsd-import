@@ -1,4 +1,6 @@
 #include "includes.h"
+RCSID("$Id$");
+
 #include "ssh.h"
 
 int compat13=0;

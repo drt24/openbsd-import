@@ -1,3 +1,5 @@
+/* RCSID("$Id$"); */
+
 #ifndef COMPAT_H
 #define COMPAT_H
 void enable_compat13(void);
