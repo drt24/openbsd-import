@@ -115,7 +115,7 @@ static struct
   { "forwardagent", oForwardAgent },
   { "forwardx11", oForwardX11 },
   { "gatewayports", oGatewayPorts },
-  { "useprivilegedports", oUsePrivilegedPort },
+  { "useprivilegedport", oUsePrivilegedPort },
   { "rhostsauthentication", oRhostsAuthentication },
   { "passwordauthentication", oPasswordAuthentication },
   { "rsaauthentication", oRSAAuthentication },
