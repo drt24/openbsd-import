@@ -139,8 +139,7 @@ main(argc, argv)
 	(void) signal(SIGHUP, getboottime);
 	openlog("rwhod", LOG_PID, LOG_DAEMON);
 	/*
-	 * Establish host name as returned by system.  The -1 plus myname
-	 * being global ensure that myname is NUL terminated.
+	 * Establish host name as returned by system.
 	 */
 	if (gethostname(myname, sizeof(myname) - 1) < 0) {
 		syslog(LOG_ERR, "gethostname: %m");
