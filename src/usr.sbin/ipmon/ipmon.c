@@ -1,4 +1,4 @@
-/*	$OpenBSD: ipmon.c,v 1.15 1998/10/29 02:15:21 deraadt Exp $
+/*	$OpenBSD: ipmon.c,v 1.16 1998/11/10 22:04:11 deraadt Exp $
  * Copyright (C) 1993-1997 by Darren Reed.
  *
  * Redistribution and use in source and binary forms are permitted
@@ -748,7 +748,7 @@ char *argv[];
 	iplfile[1] = IPNAT_NAME;
 	iplfile[2] = IPSTATE_NAME;
 
-	while ((c = getopt(argc, argv, "?aDf:FhI:nN:o:O:sS:tvxX")) != -1)
+	while ((c = getopt(argc, argv, "?aDf:FhI:nN:o:O:psS:tvxX")) != -1)
 		switch (c)
 		{
 		case 'a' :
