@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* scan.l - scanner for flex input */
 
 %{

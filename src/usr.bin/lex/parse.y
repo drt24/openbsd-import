@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* parse.y - parser for flex input */
 
 %token CHAR NUMBER SECTEND SCDECL XSCDECL NAME PREVCCL EOF_OP

@@ -1,6 +1,6 @@
+#	$OpenBSD: math.sed,v 1.1.1.1 1995/10/18 08:46:06 deraadt Exp $
 #
 #	from: @(#)math.sed	8.1 (Berkeley) 6/6/93
-#	$Id$
 #
 # Addition and multiplication in sed.
 # ++ for a limited time only do (expr) too!!!

@@ -1,3 +1,4 @@
+/* *	$OpenBSD: hexdump.h,v 1.1.1.1 1995/10/18 08:45:23 deraadt Exp $*/
 /*
  * Copyright (c) 1989 The Regents of the University of California.
  * All rights reserved.
@@ -31,7 +32,6 @@
  * SUCH DAMAGE.
  *
  *	from: @(#)hexdump.h	5.4 (Berkeley) 6/1/90
- *	$Id$
  */
 
 typedef struct _pr {

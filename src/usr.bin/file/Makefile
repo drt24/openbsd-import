@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD: Makefile,v 1.2 1996/01/02 11:50:57 deraadt Exp $
 
 MAGIC=		/etc/magic
 MAGICOWN=	bin

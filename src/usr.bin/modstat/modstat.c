@@ -1,3 +1,4 @@
+/* *	$OpenBSD: modstat.c,v 1.2 1996/06/21 11:40:09 mickey Exp $*/
 /*
  * Copyright (c) 1993 Terrence R. Lambert.
  * All rights reserved.
@@ -29,7 +30,6 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- *	$Id$
  */
 
 #include <stdio.h>

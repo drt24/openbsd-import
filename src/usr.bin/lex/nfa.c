@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* nfa - NFA construction routines */
 
 /*-

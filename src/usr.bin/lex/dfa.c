@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* dfa - DFA construction routines */
 
 /*-

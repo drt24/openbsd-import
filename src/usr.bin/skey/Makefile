@@ -1,4 +1,4 @@
-# $Id$
+# $OpenBSD: Makefile,v 1.1.1.1 1995/10/18 08:46:07 deraadt Exp $
 
 PROG= skey
 CFLAGS+= -I${.CURDIR}/../../lib/libskey

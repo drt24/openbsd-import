@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* gen - actual generation (writing) of flex scanners */
 
 /*-

@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* sym - symbol table routines */
 
 /*-

@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* flexdef - definitions file for flex */
 
 /*-

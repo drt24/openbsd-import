@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* libyywrap - flex run-time support library "yywrap" function */
 
 /* $Header$ */

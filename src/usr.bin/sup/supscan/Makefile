@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD: Makefile,v 1.3 1996/02/03 10:05:06 deraadt Exp $
 
 PROG=	supscan
 NOMAN=

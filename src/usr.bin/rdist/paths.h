@@ -1,3 +1,4 @@
+/* * $OpenBSD: paths.h,v 1.1 1996/03/05 03:20:21 dm Exp $*/
 /*
  * Copyright (c) 1983 Regents of the University of California.
  * All rights reserved.
@@ -32,7 +33,6 @@
  */
 
 /*
- * $Id$
  * @(#)paths.h
  */
 

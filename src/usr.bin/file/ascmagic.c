@@ -1,3 +1,4 @@
+/*	$OpenBSD: ascmagic.c,v 1.1.1.1 1995/10/18 08:45:08 deraadt Exp $	*/
 /*
  * ASCII magic -- file types that we know based on keywords
  * that can appear anywhere in the file.
@@ -35,8 +36,7 @@
 #include "names.h"
 
 #ifndef	lint
-static char *moduleid = 
-	"@(#)$Id$";
+static char *moduleid = "$OpenBSD$";
 #endif	/* lint */
 
 			/* an optimisation over plain strcmp() */

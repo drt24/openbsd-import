@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* misc - miscellaneous flex routines */
 
 /*-

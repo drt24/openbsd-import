@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* ecs - equivalence class routines */
 
 /*-

@@ -1,5 +1,4 @@
-#	from: @(#)Makefile	5.6 (Berkeley) 9/27/90
-#	$Id$
+#	$OpenBSD: Makefile,v 1.2 1995/12/16 22:20:35 tholo Exp $
 
 PROG=	rsh
 SRCS=	rsh.c

@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* config.h.  Generated automatically by configure.  */
 /* $Header$ */
 

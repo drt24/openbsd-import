@@ -1,3 +1,4 @@
+/*	$OpenBSD: file.c,v 1.2 1995/12/14 03:30:03 deraadt Exp $	*/
 /*
  * file - find type of a file or files - main program.
  *
@@ -25,8 +26,7 @@
  * 4. This notice may not be removed or altered.
  */
 #ifndef	lint
-static char *moduleid = 
-	"@(#)$Id$";
+static char *moduleid = "$OpenBSD$";
 #endif	/* lint */
 
 #include <stdio.h>

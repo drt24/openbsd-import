@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* flex - tool to generate fast lexical analyzers */
 
 /*-

@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 // $Header$
 
 // FlexLexer.h -- define interfaces for lexical analyzer classes generated

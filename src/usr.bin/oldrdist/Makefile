@@ -1,5 +1,4 @@
-#	from: @(#)Makefile	5.11 (Berkeley) 3/12/91
-#	$Id$
+#	$OpenBSD: Makefile,v 1.1 1996/02/03 12:11:51 dm Exp $
 
 PROG=	rdist
 CFLAGS+=-I${.CURDIR}

@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* ccl - routines for character classes */
 
 /*-

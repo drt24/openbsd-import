@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* tblcmp - table compression routines */
 
 /*-

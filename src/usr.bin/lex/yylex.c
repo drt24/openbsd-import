@@ -1,3 +1,5 @@
+/*	$OpenBSD$	*/
+
 /* yylex - scanner front-end for flex */
 
 /*-
