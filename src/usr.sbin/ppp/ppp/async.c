@@ -118,8 +118,8 @@ async_LayerPush(struct bundle *bundle, struct link *l, struct mbuf *bp,
   mbuf_Free(bp);
   bp = mbuf_Alloc(cnt, MB_ASYNC);
   memcpy(MBUF_CTOP(bp), p->async.xbuff, cnt);
+  log_DumpBp(LogASYNC, "Write", bp);
 
-  log_DumpBp(LogASYNC, "WriteModem", bp);
   return bp;
 }
 
@@ -182,6 +182,7 @@ async_LayerPull(struct bundle *b, struct link *l, struct mbuf *bp,
 
   last = &nbp;
 
+  log_DumpBp(LogASYNC, "Read", bp);
   while (bp) {
     ch = MBUF_CTOP(bp);
     for (cnt = bp->cnt; cnt; cnt--) {

@@ -142,7 +142,7 @@
 #define NEG_VJCOMP	51
 #define NEG_DNS		52
 
-const char Version[] = "2.2";
+const char Version[] = "2.21";
 const char VersionDate[] = "$Date$";
 
 static int ShowCommand(struct cmdargs const *);

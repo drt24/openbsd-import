@@ -55,6 +55,8 @@ static const char *LogNames[] = {
   "LCP",
   "LQM",
   "Phase",
+  "Physical",
+  "Sync",
   "TCP/IP",
   "Timer",
   "Tun",

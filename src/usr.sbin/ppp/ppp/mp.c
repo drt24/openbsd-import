@@ -490,20 +490,9 @@ mp_Assemble(struct mp *mp, struct mbuf *m, struct physical *p)
       } while (!h.end);
 
       if (q) {
-        u_short proto;
-        u_char ch;
-
-        q = mbuf_Read(q, &ch, 1);
-        proto = ch;
-        if (!(proto & 1)) {
-          q = mbuf_Read(q, &ch, 1);
-          proto <<= 8;
-          proto += ch;
-        }
-        if (log_IsKept(LogDEBUG))
-          log_Printf(LogDEBUG, "MP: Reassembled frags %ld-%lu, length %d\n",
-                    first, (u_long)h.seq, mbuf_Length(q));
         q = mbuf_Contiguous(q);
+        log_Printf(LogDEBUG, "MP: Reassembled frags %ld-%lu, length %d\n",
+                   first, (u_long)h.seq, mbuf_Length(q));
         link_PullPacket(&mp->link, MBUF_CTOP(q), q->cnt, mp->bundle);
       }
 

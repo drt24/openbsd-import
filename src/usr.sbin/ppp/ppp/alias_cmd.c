@@ -328,7 +328,8 @@ alias_LayerPush(struct bundle *bundle, struct link *l, struct mbuf *bp,
 {
   if (!bundle->AliasEnabled || *proto != PROTO_IP)
     return bp;
-  
+
+  log_Printf(LogDEBUG, "alias_LayerPush: PROTO_IP -> PROTO_IP\n");
   bp = mbuf_Contiguous(alias_PadMbuf(bp, MB_IPQ));
   PacketAliasOut(MBUF_CTOP(bp), bp->cnt);
   bp->cnt = ntohs(((struct ip *)MBUF_CTOP(bp))->ip_len);
@@ -348,6 +349,7 @@ alias_LayerPull(struct bundle *bundle, struct link *l, struct mbuf *bp,
   if (!bundle->AliasEnabled || *proto != PROTO_IP)
     return bp;
 
+  log_Printf(LogDEBUG, "alias_LayerPull: PROTO_IP -> PROTO_IP\n");
   bp = mbuf_Contiguous(alias_PadMbuf(bp, MB_IPIN));
   pip = (struct ip *)MBUF_CTOP(bp);
   piip = (struct ip *)((char *)pip + (pip->ip_hl << 2));

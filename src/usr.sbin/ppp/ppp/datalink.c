@@ -210,7 +210,7 @@ datalink_LoginDone(struct datalink *dl)
       physical_Offline(dl->physical);
       chat_Init(&dl->chat, dl->physical, dl->cfg.script.hangup, 1, NULL);
     } else {
-      timer_Stop(&dl->physical->Timer);
+      physical_StopDeviceTimer(dl->physical);
       if (dl->physical->type == PHYS_DEDICATED)
         /* force a redial timeout */
         physical_Close(dl->physical);
@@ -463,7 +463,7 @@ datalink_ComeDown(struct datalink *dl, int how)
 
   if (dl->state >= DATALINK_READY && dl->stayonline) {
     dl->stayonline = 0;
-    timer_Stop(&dl->physical->Timer);
+    physical_StopDeviceTimer(dl->physical);
     datalink_NewState(dl, DATALINK_READY);
   } else if (dl->state != DATALINK_CLOSED && dl->state != DATALINK_HANGUP) {
     physical_Offline(dl->physical);

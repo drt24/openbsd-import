@@ -87,7 +87,7 @@
 #include "ip.h"
 #include "iface.h"
 
-#define SCATTER_SEGMENTS 4	/* version, datalink, name, physical */
+#define SCATTER_SEGMENTS 5	/* version, datalink, name, physical, device */
 #define SOCKET_OVERHEAD	100	/* additional buffer space for large */
                                 /* {recv,send}msg() calls            */
 

@@ -27,7 +27,8 @@
  */
 
 struct physical;
+struct device;
 
-extern int tty_OpenStdin(struct physical *);
-
-extern const struct device ttydevice;
+extern struct device *tty_Create(struct physical *);
+extern struct device *tty_iov2device(int, struct physical *,
+                                     struct iovec *, int *, int);

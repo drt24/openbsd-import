@@ -26,4 +26,9 @@
  *	$Id$
  */
 
-extern const struct device execdevice;
+struct physical;
+struct device;
+
+extern struct device *exec_Create(struct physical *);
+extern struct device *exec_iov2device(int, struct physical *,
+                                      struct iovec *, int *, int);
