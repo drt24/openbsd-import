@@ -42,10 +42,10 @@
 #include <unistd.h>
 
 #ifndef NOALIAS
-#ifdef __OpenBSD__
-#include "alias.h"
-#else
+#ifdef __FreeBSD__
 #include <alias.h>
+#else
+#include "alias.h"
 #endif
 #endif
 #include "defs.h"

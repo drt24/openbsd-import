@@ -40,7 +40,7 @@
 #include <sys/uio.h>
 #include <sys/wait.h>
 #include <unistd.h>
-#ifdef __OpenBSD__
+#if defined(__OpenBSD__) || defined(__NetBSD__)
 #include <sys/ioctl.h>
 #include <util.h>
 #else

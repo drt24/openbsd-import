@@ -19,10 +19,10 @@
 #include <string.h>
 #include <termios.h>
 
-#ifdef __OpenBSD__
-#include "alias.h"
-#else
+#ifdef __FreeBSD__
 #include <alias.h>
+#else
+#include "alias.h"
 #endif
 #include "defs.h"
 #include "command.h"
