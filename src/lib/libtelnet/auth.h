@@ -31,7 +31,8 @@
  * SUCH DAMAGE.
  *
  *	from: @(#)auth.h	8.1 (Berkeley) 6/4/93
- *	$Id$
+ *	$OpenBSD$
+ *	$NetBSD: auth.h,v 1.5 1996/02/24 01:15:18 jtk Exp $
  */
 
 /*
