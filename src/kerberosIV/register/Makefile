@@ -5,8 +5,10 @@ PROG=	register
 SRCS=	register.c des_rw.c
 .PATH:	${.CURDIR}/../../usr.bin/rlogin
 CFLAGS+=-DKERBEROS
-DPADD+=	${LIBKRB} ${LIBCRYPT} ${LIBDES}
-LDADD+=	-lkrb -lcrypt -ldes
+#DPADD+=	${LIBKRB} ${LIBCRYPT} ${LIBDES}
+DPADD+=	${LIBKRB} ${LIBDES}
+#LDADD+=	-lkrb -lcrypt -ldes
+LDADD+=	-lkrb -ldes
 BINDIR=	/usr/bin
 BINOWN=	root
 BINMODE=4555
