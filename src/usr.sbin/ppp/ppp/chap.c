@@ -543,8 +543,9 @@ chap_Input(struct physical *p, struct mbuf *bp)
   int lanman;
 #endif
 
-  if ((bp = auth_ReadHeader(&chap->auth, bp)) == NULL)
-    log_Printf(LogERROR, "Chap Input: Truncated header !\n");
+  if ((bp = auth_ReadHeader(&chap->auth, bp)) == NULL &&
+      ntohs(chap->auth.in.hdr.length) == 0)
+    log_Printf(LogWARN, "Chap Input: Truncated header !\n");
   else if (chap->auth.in.hdr.code == 0 || chap->auth.in.hdr.code > MAXCHAPCODE)
     log_Printf(LogPHASE, "Chap Input: %d: Bad CHAP code !\n",
                chap->auth.in.hdr.code);

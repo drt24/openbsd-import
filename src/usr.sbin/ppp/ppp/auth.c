@@ -327,11 +327,14 @@ auth_ReadHeader(struct authinfo *authp, struct mbuf *bp)
     bp = mbuf_Read(bp, (u_char *)&authp->in.hdr, sizeof authp->in.hdr);
     if (len >= ntohs(authp->in.hdr.length))
       return bp;
+    authp->in.hdr.length = htons(0);
     log_Printf(LogWARN, "auth_ReadHeader: Short packet (%d > %d) !\n",
                ntohs(authp->in.hdr.length), len);
-  } else
+  } else {
+    authp->in.hdr.length = htons(0);
     log_Printf(LogWARN, "auth_ReadHeader: Short packet header (%d > %d) !\n",
                sizeof authp->in.hdr, len);
+  }
 
   mbuf_Free(bp);
   return NULL;
