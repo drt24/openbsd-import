@@ -59,6 +59,7 @@ typedef struct
   int skey_authentication;      /* If true, permit s/key authentication. */
 #endif
   int permit_empty_passwd;      /* If false, do not permit empty passwords. */
+  int use_login;                /* If true, login(1) is used */
   unsigned int num_allow_hosts;
   char *allow_hosts[MAX_ALLOW_HOSTS];
   unsigned int num_deny_hosts;
