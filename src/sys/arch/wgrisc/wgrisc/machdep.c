@@ -1,4 +1,4 @@
-/*	$OpenBSD: machdep.c,v 1.1.1.1 1997/02/06 16:02:46 pefo Exp $	*/
+/*	$OpenBSD: machdep.c,v 1.2 1997/02/16 22:31:26 pefo Exp $	*/
 /*
  * Copyright (c) 1988 University of Utah.
  * Copyright (c) 1992, 1993
@@ -460,7 +460,6 @@ consinit()
 		return;
 	initted = 1;
 	cninit();
-mdbpanic();
 }
 
 /*
