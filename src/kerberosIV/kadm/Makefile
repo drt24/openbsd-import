@@ -1,10 +1,10 @@
-#	$Id$
+#	$OpenBSD$
 
 LIB=	kadm
 SRCS=	kadm_err.c kadm_cli_wrap.c kadm_stream.c kadm_supp.c
 CFLAGS+=-I. -I${.CURDIR}
-.if exists(${.CURDIR}/../krb/obj)
-CFLAGS+=-I${.CURDIR}/../krb/obj
+.if exists(${.CURDIR}/../krb/${__objdir})
+CFLAGS+=-I${.CURDIR}/../krb/${__objdir}
 .else
 CFLAGS+=-I${.CURDIR}/../krb
 .endif
