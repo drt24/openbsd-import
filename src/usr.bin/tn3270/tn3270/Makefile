@@ -5,8 +5,8 @@
 CFLAGS += -I${.CURDIR} -I.
 #LDADD += -locurses -ltermcap -ltelnet -lcrypt
 LDADD += -locurses -ltermcap -ltelnet
-#DPADD += ${LIBCURSES} ${LIBTERMCAP} /usr/lib/libtelnet.a ${LIBCRYPT}
-DPADD += ${LIBCURSES} ${LIBTERMCAP} /usr/lib/libtelnet.a
+#DPADD += ${LIBOLDCURSES} ${LIBTERMCAP} /usr/lib/libtelnet.a ${LIBCRYPT}
+DPADD += ${LIBOLDCURSES} ${LIBTERMCAP} /usr/lib/libtelnet.a
 
 SRCS += apilib.c api_bsd.c api_exch.c asc_ebc.c astosc.c dctype.c
 SRCS += disp_asc.c ebc_disp.c
