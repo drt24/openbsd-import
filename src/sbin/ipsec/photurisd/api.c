@@ -49,6 +49,7 @@ static char rcsid[] = "$Id$";
 #include <sys/time.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include <string.h>
 #include "state.h"
 #include "photuris.h"

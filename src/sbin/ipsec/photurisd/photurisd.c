@@ -172,5 +172,5 @@ main(int argc, char **argv)
 #endif
 
      server();
-
+     exit(0);
 }

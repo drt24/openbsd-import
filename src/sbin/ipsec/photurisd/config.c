@@ -588,7 +588,7 @@ startup_end(struct stateob *st)
 int
 init_startup(void)
 {
-     char *p, *p2;
+     char *p2;
      struct stateob *st = NULL;
 
 #ifdef DEBUG

@@ -115,7 +115,7 @@ kernel_reserve_spi(char *srcaddress, int options)
      u_int32_t spi;
      int proto;
 
-     if (options & (IPSEC_OPT_ENC|IPSEC_OPT_AUTH) != 
+     if ((options & (IPSEC_OPT_ENC|IPSEC_OPT_AUTH)) != 
 	 (IPSEC_OPT_ENC|IPSEC_OPT_AUTH)) {
 	  switch(options & (IPSEC_OPT_ENC|IPSEC_OPT_AUTH)) {
 	  case IPSEC_OPT_ENC:
