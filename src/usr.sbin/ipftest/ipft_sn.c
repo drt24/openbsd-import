@@ -33,6 +33,10 @@
 #include "ipt.h"
 #include "snoop.h"
 
+#ifndef	lint
+static	char	rcsid[] = "$Id$";
+#endif
+
 struct	llc	{
 	int	lc_sz;	/* LLC header length */
 	int	lc_to;	/* LLC Type offset */

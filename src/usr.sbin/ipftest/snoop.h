@@ -8,6 +8,7 @@
 
 /*
  * written to comply with the RFC (1761) from Sun.
+ * $Id$
  */
 struct	snoophdr	{
 	char	s_id[8];
