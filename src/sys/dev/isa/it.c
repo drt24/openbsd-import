@@ -1,4 +1,4 @@
-/*	$OpenBSD: it.c,v 1.1 2003/05/20 20:26:27 grange Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2003 Julien Bordet <zejames@greygats.org>

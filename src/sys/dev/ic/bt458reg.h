@@ -1,4 +1,4 @@
-/*	$OpenBSD: bt458reg.h,v 1.1 2003/05/31 21:01:59 jason Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2003 Jason L. Wright (jason@thought.net)

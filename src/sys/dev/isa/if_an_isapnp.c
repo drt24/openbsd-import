@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_an_isapnp.c,v 1.2 2003/05/20 04:42:59 mickey Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2003 Michael Shalayeff
