@@ -6,10 +6,6 @@
 #
 console	"/usr/libexec/getty Pc"		pc3	off secure
 ttyC0	"/usr/libexec/getty Pc"		pc3	on  secure
-#
-# if you want to start xdm via init - comment out
-# the line above and uncomment the following line
-#
 #ttyC0	"/usr/X11R6/bin/xdm -nodaemon"	xterm	on  secure
 ttyC1	"/usr/libexec/getty Pc"		vt220	off secure
 ttyC2	"/usr/libexec/getty Pc"		vt220	off secure
