@@ -268,7 +268,7 @@ struct xfs_setgroups_args{
 #define xfs_vfs_object_create(vp,proc,ucred) vfs_object_create(vp,proc,ucred)
 #endif
 
-#ifdef UVM
+#ifdef __OpenBSD__
 #define xfs_set_vp_size(vp, sz) uvm_vnp_setsize(vp, sz)
 #elif HAVE_KERNEL_VNODE_PAGER_SETSIZE
 #define xfs_set_vp_size(vp, sz) vnode_pager_setsize(vp, sz)
