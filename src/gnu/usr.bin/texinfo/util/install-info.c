@@ -412,7 +412,7 @@ main (argc, argv)
 
   while (1)
     {
-      int opt = getopt_long (argc, argv, "i:d:e:s:hHr", longopts, 0);
+      int opt = getopt_long (argc, argv, "i:d:e:s:hHrD", longopts, 0);
 
       if (opt == EOF)
         break;
