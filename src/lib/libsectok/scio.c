@@ -77,7 +77,8 @@ static char ttynametmpl[] = "/dev/tty%02d";
 #endif
 
 static struct {
-    int fd, flags, pid;
+    int fd, flags;
+    pid_t pid;
     struct termios tio0, tio1;
 } sc[4];
 
@@ -90,7 +91,8 @@ int
 todos_scopen(int ttyn, int flags, int *ep)
 {
     char ttyname[32];
-    int fd, i, pid, oflags;
+    int fd, i, oflags;
+    pid_t pid;
 
 #ifdef BYTECOUNT
     num_getc = 0;
