@@ -106,6 +106,7 @@ u_int16_t remote_port;
 int log_priority;
 int no_daemon;
 int onetry;
+int unknown_ok = 1;
 
 static void usage PROTO ((void));
 
@@ -132,6 +133,8 @@ int main (argc, argv, envp)
 			       ntohs (local_port));
 		} else if (!strcmp (argv [i], "-d")) {
 			no_daemon = 1;
+		} else if (!strcmp (argv [i], "-u")) {
+			unknown_ok = 0;
 		} else if (!strcmp (argv [i], "-1")) {
 			onetry = 1;
  		} else if (argv [i][0] == '-') {
@@ -2201,7 +2204,7 @@ int check_option (struct client_lease *l, int option) {
 	return(1);
   default:
 	warn("unknown dhcp option value 0x%x", option);
-	return(0);
+	return(unknown_ok);
   }
 }
 
