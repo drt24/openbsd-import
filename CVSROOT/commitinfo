@@ -23,5 +23,6 @@
 #
 #^apc			$CVSROOT/CVSROOT/commit_prep -r -c
 #^misc			$CVSROOT/CVSROOT/commit_prep -r
-#CVSROOT			$CVSROOT/CVSROOT/commit_prep -r -c
-#DEFAULT			$CVSROOT/CVSROOT/commit_prep
+#CVSROOT		$CVSROOT/CVSROOT/commit_prep -r -c
+#DEFAULT		$CVSROOT/CVSROOT/commit_prep2
+ALL			$CVSROOT/CVSROOT/commit_prep2 -r
