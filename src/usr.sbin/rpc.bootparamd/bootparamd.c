@@ -67,7 +67,7 @@ main(argc, argv)
 	struct hostent *he;
 	struct stat buf;
 	char   *optstring;
-	char    c;
+	int    c;
 
 	progname = rindex(argv[0], '/');
 	if (progname)
@@ -75,7 +75,7 @@ main(argc, argv)
 	else
 		progname = argv[0];
 
-	while ((c = getopt(argc, argv, "dsr:f:")) != EOF)
+	while ((c = getopt(argc, argv, "dsr:f:")) != -1)
 		switch (c) {
 		case 'd':
 			debug = 1;

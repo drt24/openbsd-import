@@ -185,7 +185,7 @@ char *bootpd_dump = DUMPTAB_FILE;
  * main server loop is started.
  */
 
-void
+int
 main(argc, argv)
 	int argc;
 	char **argv;

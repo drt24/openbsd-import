@@ -79,7 +79,7 @@ main(argc, argv)
 	int argc;
 	char **argv;
 {
-	char ch;
+	int ch;
 	int error;
 
 	while ((ch = getopt(argc, argv, "abcdDfijkKlmnqrstuv:")) != -1)

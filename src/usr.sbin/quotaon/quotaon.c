@@ -69,11 +69,12 @@ main(argc, argv)
 	char **argv;
 {
 	register struct fstab *fs;
-	char ch, *qfnp, *whoami, *rindex();
+	char *qfnp, *whoami, *rindex();
 	long argnum, done = 0;
 	int i, offmode = 0, errs = 0;
 	extern char *optarg;
 	extern int optind;
+	int ch;
 
 	whoami = rindex(*argv, '/') + 1;
 	if (whoami == (char *)1)
@@ -85,7 +86,7 @@ main(argc, argv)
 			whoami);
 		exit(1);
 	}
-	while ((ch = getopt(argc, argv, "avug")) != EOF) {
+	while ((ch = getopt(argc, argv, "avug")) != -1) {
 		switch(ch) {
 		case 'a':
 			aflag++;

@@ -224,13 +224,15 @@ allhosts(void)
 	}
 }
 
-void usage(void)
+void
+usage(void)
 {
 	fprintf(stderr, "Usage: %s [-la] [hosts ...]\n", argv0);
 	exit(1);
 }
 
-void main(int argc, char *argv[])
+int
+main(int argc, char *argv[])
 {
 	int ch;
 	extern int optind;

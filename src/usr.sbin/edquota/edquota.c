@@ -87,7 +87,8 @@ main(argc, argv)
 	extern int optind;
 	register long id, protoid;
 	register int quotatype, tmpfd;
-	char *protoname, ch;
+	char *protoname;
+	int ch;
 	int tflag = 0, pflag = 0;
 
 	if (argc < 2)
@@ -97,7 +98,7 @@ main(argc, argv)
 		exit(1);
 	}
 	quotatype = USRQUOTA;
-	while ((ch = getopt(argc, argv, "ugtp:")) != EOF) {
+	while ((ch = getopt(argc, argv, "ugtp:")) != -1) {
 		switch(ch) {
 		case 'p':
 			protoname = optarg;

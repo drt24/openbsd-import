@@ -92,11 +92,11 @@ main(argc, argv)
 	int ngroups; 
 	gid_t mygid, gidset[NGROUPS];
 	int i, gflag = 0, uflag = 0;
-	char ch;
+	int ch;
 	extern char *optarg;
 	extern int optind, errno;
 
-	while ((ch = getopt(argc, argv, "ugvq")) != EOF) {
+	while ((ch = getopt(argc, argv, "ugvq")) != -1) {
 		switch(ch) {
 		case 'g':
 			gflag++;
