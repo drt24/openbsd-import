@@ -36,7 +36,7 @@ static const char rcsid[] =
 #endif
 #include <pcap.h>
 #include <stdio.h>
-#if __STDC__
+#ifdef __STDC__
 #include <stdarg.h>
 #else
 #include <varargs.h>
@@ -158,7 +158,7 @@ tok2str(register const struct tok *lp, register const char *fmt,
 
 /* VARARGS */
 __dead void
-#if __STDC__
+#ifdef __STDC__
 error(const char *fmt, ...)
 #else
 error(fmt, va_alist)
@@ -169,7 +169,7 @@ error(fmt, va_alist)
 	va_list ap;
 
 	(void)fprintf(stderr, "%s: ", program_name);
-#if __STDC__
+#ifdef __STDC__
 	va_start(ap, fmt);
 #else
 	va_start(ap);
@@ -187,7 +187,7 @@ error(fmt, va_alist)
 
 /* VARARGS */
 void
-#if __STDC__
+#ifdef __STDC__
 warning(const char *fmt, ...)
 #else
 warning(fmt, va_alist)
@@ -198,7 +198,7 @@ warning(fmt, va_alist)
 	va_list ap;
 
 	(void)fprintf(stderr, "%s: WARNING: ", program_name);
-#if __STDC__
+#ifdef __STDC__
 	va_start(ap, fmt);
 #else
 	va_start(ap);

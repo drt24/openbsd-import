@@ -33,7 +33,7 @@ static const char rcsid[] =
 #include <sys/mbuf.h>
 #include <sys/socket.h>
 
-#if __STDC__
+#ifdef __STDC__
 struct rtentry;
 #endif
 #include <net/if.h>

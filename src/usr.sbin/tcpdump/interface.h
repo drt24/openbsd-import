@@ -140,7 +140,7 @@ extern char *savestr(const char *);
 
 extern void wrapup(int);
 
-#if __STDC__
+#ifdef __STDC__
 extern __dead void error(const char *, ...)
     __attribute__((volatile, format (printf, 1, 2)));
 extern void warning(const char *, ...) __attribute__ ((format (printf, 1, 2)));

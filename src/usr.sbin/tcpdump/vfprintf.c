@@ -27,7 +27,7 @@ static const char rcsid[] =
 #include <sys/types.h>
 
 #include <stdio.h>
-#if __STDC__
+#ifdef __STDC__
 #include <stdarg.h>
 #else
 #include <varargs.h>
