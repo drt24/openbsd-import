@@ -272,7 +272,7 @@ void read_server_config(ServerOptions *options, const char *filename)
   if (!f)
     {
       perror(filename);
-      return;
+      exit(1);
     }
 
   linenum = 0;
