@@ -34,11 +34,7 @@
  * SUCH DAMAGE.
  */
 
-#if MACHINE==pica
 #include <machine/asm.h>
-#else
-#include <machine/machAsmDefs.h>
-#endif
 
 #if defined(LIBC_SCCS) && !defined(lint)
 	ASMSTR("from: @(#)modf.s	8.1 (Berkeley) 6/4/93")
@@ -55,6 +51,9 @@
  * returns: xxx and n (in *iptr) where val == n.xxx
  */
 LEAF(modf)
+        .set    noreorder
+        .cpload t9
+        .set    reorder
 	cfc1	t0, $31			# get the control register
 	li.d	$f2, 4503599627370496e0 # f2 <- 2^52
 
