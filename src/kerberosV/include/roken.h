@@ -228,6 +228,6 @@ void set_progname(char *argv0);
 const char *get_progname(void);
 
 ROKEN_CPP_END
-#define ROKEN_VERSION 0.6RC1
+#define ROKEN_VERSION 0.6.3
 
 #endif /* __ROKEN_H__ */

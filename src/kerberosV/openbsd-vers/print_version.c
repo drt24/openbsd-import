@@ -38,7 +38,7 @@ RCSID("$Id$");
 #include <stdio.h>
 
 
-#define VERSIONLIST 		{ "heimdal-0.6RC1/OpenBSD", }
+#define VERSIONLIST 		{ "heimdal-0.6.3/OpenBSD", }
 #define PACKAGE_BUGREPORT	"bugs@openbsd.org"
 
 char *__progname;
@@ -54,6 +54,6 @@ print_version(const char *progname)
     if(*package_list == '\0')
 	package_list = "no version information";
     fprintf(stderr, "%s (%s)\n", progname, package_list);
-    fprintf(stderr, "Copyright 1999-2003 Kungliga Tekniska Högskolan\n");
+    fprintf(stderr, "Copyright 1999-2004 Kungliga Tekniska Högskolan\n");
     fprintf(stderr, "Send bug-reports to %s\n", PACKAGE_BUGREPORT);
 }
