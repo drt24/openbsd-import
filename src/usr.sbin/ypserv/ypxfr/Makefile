@@ -1,5 +1,4 @@
-#	from: @(#)Makefile	5.8 (Berkeley) 7/28/90
-#	$Id$
+#	$OpenBSD$
 
 PROG=	ypxfr
 SRCS=	ypxfr.c ypdb.c yplog.c yplib_host.c ypxfr_xdr.c

@@ -1,7 +1,6 @@
-/* $Id$ */
+/*	$OpenBSD$ */
 
 /*
- *
  * Copyright (c) 1996 Charles D. Cranor
  * All rights reserved.
  *

@@ -1,5 +1,4 @@
-#	from: @(#)Makefile	5.3 (Berkeley) 6/22/90
-#	$Id$
+#	$OpenBSD$
 
 NOOBJ=	noobj
 
