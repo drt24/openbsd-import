@@ -7,7 +7,9 @@
 
 #include "zlib.h"
 
+#ifndef local
 #define local static
+#endif
 
 #ifdef DYNAMIC_CRC_TABLE
 
