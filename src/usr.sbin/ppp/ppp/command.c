@@ -1814,7 +1814,7 @@ static struct cmdtab const SetCommands[] = {
   "escape characters", "set escape hex-digit ..."},
   {"filter", NULL, filter_Set, LOCAL_AUTH,
   "packet filters", "set filter alive|dial|in|out rule-no permit|deny "
-  "[src_addr[/width]] [dst_addr[/width]] [tcp|udp|icmp|igmp "
+  "[src_addr[/width]] [dst_addr[/width]] [tcp|udp|icmp|ospf|igmp "
   "[src [lt|eq|gt port]] [dst [lt|eq|gt port]] [estab] [syn] [finrst]]"},
   {"hangup", NULL, SetVariable, LOCAL_AUTH | LOCAL_CX,
   "hangup script", "set hangup chat-script", (const void *) VAR_HANGUP},
