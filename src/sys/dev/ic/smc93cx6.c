@@ -58,7 +58,7 @@
 #if defined(__FreeBSD__)
 #include <machine/clock.h>
 #include <i386/scsi/93cx6.h>
-#elif defined(__NetBSD__)
+#elif defined(__NetBSD__) || defined(__OpenBSD__)
 #include <machine/bus.h>
 #include <dev/ic/smc93cx6var.h>
 #endif
@@ -91,7 +91,7 @@ read_seeprom(sd, buf, start_addr, count)
 #if defined(__FreeBSD__)
 	u_int start_addr;
 	int count;
-#elif defined(__NetBSD__)
+#elif defined(__NetBSD__) || defined(__OpenBSD__)
 	bus_io_size_t start_addr;
 	bus_io_size_t count;
 #endif
