@@ -1,4 +1,4 @@
-/* $OpenBSD: dec_6600.c,v 1.1 2000/11/16 04:50:17 ericj Exp $ */
+/* $OpenBSD: dec_6600.c,v 1.2 2000/11/16 23:32:20 ericj Exp $ */
 /* $NetBSD: dec_6600.c,v 1.7 2000/06/20 03:48:54 matt Exp $ */
 
 /*

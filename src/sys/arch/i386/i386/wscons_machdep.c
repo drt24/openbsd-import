@@ -1,4 +1,4 @@
-/*	$OpenBSD: wscons_machdep.c,v 1.4 2001/03/14 06:18:47 millert Exp $ */
+/*	$OpenBSD: wscons_machdep.c,v 1.5 2001/03/14 18:24:10 todd Exp $ */
 
 /*
  * Copyright (c) 2001 Aaron Campbell

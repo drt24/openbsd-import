@@ -1,4 +1,4 @@
-/*	$OpenBSD: siopdma.c,v 1.7 2000/01/06 03:21:42 smurph Exp $ */
+/*	$OpenBSD: sshdma.c,v 1.1 2001/02/18 17:41:09 deraadt Exp $ */
 
 /*
  * Copyright (c) 1995 Theo de Raadt

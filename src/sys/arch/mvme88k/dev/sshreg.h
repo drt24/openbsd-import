@@ -1,4 +1,4 @@
-/*	$OpenBSD: sshreg.h,v 1.1 2001/03/07 01:57:56 miod Exp $	*/
+/*	$OpenBSD: sshreg.h,v 1.2 2001/03/07 23:57:47 miod Exp $	*/
 
 /*
  * Copyright (c) 1990 The Regents of the University of California.

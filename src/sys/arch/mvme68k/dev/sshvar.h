@@ -1,4 +1,4 @@
-/*	$OpenBSD: siopvar.h,v 1.4 1996/04/28 11:03:33 deraadt Exp $ */
+/*	$OpenBSD: sshvar.h,v 1.1 2001/02/18 17:41:09 deraadt Exp $ */
 
 /*
  * Copyright (c) 1995 Theo de Raadt

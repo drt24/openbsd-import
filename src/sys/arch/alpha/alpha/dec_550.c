@@ -1,4 +1,4 @@
-/* $OpenBSD: dec_550.c,v 1.3 2000/11/08 21:48:43 art Exp $ */
+/* $OpenBSD: dec_550.c,v 1.4 2000/11/16 23:32:20 ericj Exp $ */
 /* $NetBSD: dec_550.c,v 1.10 2000/06/20 03:48:53 matt Exp $ */
 
 /*

@@ -1,4 +1,4 @@
-/*	$OpenBSD: sis85c503.c,v 1.4 2000/08/02 02:42:50 mickey Exp $	*/
+/*	$OpenBSD: sis85c503.c,v 1.5 2001/01/25 00:07:41 mickey Exp $	*/
 /*	$NetBSD: sis85c503.c,v 1.2 2000/07/18 11:24:09 soda Exp $	*/
 
 /*-

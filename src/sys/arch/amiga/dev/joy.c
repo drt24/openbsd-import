@@ -1,4 +1,4 @@
-/*	$OpenBSD$ */
+/*	$OpenBSD: joy.c,v 1.1 2000/09/02 13:45:40 espie Exp $ */
 
 /*
  * Copyright (c) 2000 Marc Espie.

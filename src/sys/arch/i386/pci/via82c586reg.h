@@ -1,4 +1,4 @@
-/*	$OpenBSD: via82c586reg.h,v 1.3 2000/03/28 03:38:00 mickey Exp $	*/
+/*	$OpenBSD: via82c586reg.h,v 1.4 2000/04/29 03:49:11 mickey Exp $	*/
 /*	$NetBSD: via82c586reg.h,v 1.2 2000/04/22 15:00:41 uch Exp $	*/
 
 /*

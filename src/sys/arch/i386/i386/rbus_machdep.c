@@ -1,4 +1,4 @@
-/*	$OpenBSD: rbus_machdep.c,v 1.6 2001/01/24 23:40:25 mickey Exp $ */
+/*	$OpenBSD: rbus_machdep.c,v 1.7 2001/01/25 01:00:52 mickey Exp $ */
 /*	$NetBSD: rbus_machdep.c,v 1.2 1999/10/15 06:43:06 haya Exp $	*/
 
 /*

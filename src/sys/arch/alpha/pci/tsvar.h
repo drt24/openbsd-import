@@ -1,4 +1,4 @@
-/* $OpenBSD: tsvar.h,v 1.1 2000/11/16 04:50:18 ericj Exp $ */
+/* $OpenBSD: tsvar.h,v 1.2 2001/04/15 01:33:00 mjacob Exp $ */
 /* $NetBSD: tsvar.h,v 1.1 1999/06/29 06:46:47 ross Exp $ */
 
 /*-

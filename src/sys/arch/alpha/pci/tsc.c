@@ -1,4 +1,4 @@
-/* $OpenBSD: tsc.c,v 1.1 2000/11/16 04:50:18 ericj Exp $ */
+/* $OpenBSD: tsc.c,v 1.2 2001/04/14 22:19:11 mjacob Exp $ */
 /* $NetBSD: tsc.c,v 1.3 2000/06/25 19:17:40 thorpej Exp $ */
 
 /*-
