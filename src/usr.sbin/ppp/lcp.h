@@ -20,7 +20,7 @@
  *	TODO:
  */
 
-#define	REJECTED(p, x)	(p->his_reject & (1<<x))
+#define	REJECTED(p, x)	((p)->his_reject & (1<<(x)))
 
 struct lcpstate {
   u_long his_mru;
