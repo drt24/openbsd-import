@@ -1,7 +1,7 @@
 /* ====================================================================
  * The Apache Software License, Version 1.1
  *
- * Copyright (c) 2000-2002 The Apache Software Foundation.  All rights
+ * Copyright (c) 2000-2003 The Apache Software Foundation.  All rights
  * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -1098,8 +1098,14 @@ static void read_connection(struct connection * c)
 
 	    /* check response code */
 	    part = strstr(c->cbuff, "HTTP");	/* really HTTP/1.x_ */
-	    strncpy(respcode, (part + strlen("HTTP/1.x_")), 3);
-	    respcode[3] = '\0';
+            if (part && strlen(part) > strlen("HTTP/1.x_")) {
+                strncpy(respcode, (part + strlen("HTTP/1.x_")), 3);
+                respcode[3] = '\0';
+            }
+            else {
+                strcpy(respcode, "500");
+            }
+
 	    if (respcode[0] != '2') {
 		err_response++;
 		if (verbosity >= 2)
