@@ -23,9 +23,10 @@ RCSID("$Id$");
 #include "bufaux.h"
 #include "xmalloc.h"
 #include "packet.h"
-#include "ssh_md5.h"
 #include "getput.h"
 #include "mpaux.h"
+
+#include <md5.h>
 
 typedef struct
 {
@@ -78,7 +79,7 @@ process_authentication_challenge(SocketEntry *e)
   int i, pub_bits, len;
   BIGNUM *pub_e, *pub_n, *challenge;
   Buffer msg;
-  struct MD5Context md;
+  MD5_CTX md;
   unsigned char buf[32], mdbuf[16], session_id[16];
   unsigned int response_type;
 

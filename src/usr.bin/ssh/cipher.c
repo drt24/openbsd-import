@@ -16,7 +16,8 @@ RCSID("$Id$");
 
 #include "ssh.h"
 #include "cipher.h"
-#include "ssh_md5.h"
+
+#include <md5.h>
 
 /*
  * What kind of tripple DES are these 2 routines?
@@ -172,7 +173,7 @@ cipher_number(const char *name)
 void cipher_set_key_string(CipherContext *context, int cipher,
 			   const char *passphrase, int for_encryption)
 {
-  struct MD5Context md;
+  MD5_CTX md;
   unsigned char digest[16];
   
   MD5Init(&md);
