@@ -10,8 +10,8 @@ SUBDIR=	apply apropos asa at banner basename bdes biff cal calendar cap_mkdb \
 	lex locate \
 	lock logger login logname look lorder m4 machine mail make man mesg \
 	mkdep mkfifo mkstr modstat msgs netstat newsyslog nfsstat nice \
-	nohup pagesize passwd paste patch pr printenv printf quota \
-	rdist renice rev rlogin rpcgen rpcinfo rs \
+	nohup oldrdist pagesize passwd paste patch pr printenv printf quota \
+	rdist rdistd renice rev rlogin rpcgen rpcinfo rs \
 	rsh rup ruptime rusers rwall rwho \
 	script sed shar showmount skey skeyinit soelim split strings \
 	su sup systat tail talk tcopy tee telnet tftp time \

@@ -2,11 +2,10 @@
 #	$Id$
 
 PROG=	rdist
-CFLAGS+=-I${.CURDIR}
-SRCS=	docmd.c expand.c lookup.c main.c server.c
+CFLAGS+=-I. -DOS_H=\"os-openbsd.h\"
+SRCS=	child.c client.c common.c distopt.c docmd.c expand.c isexec.c \
+		lookup.c message.c rdist.c rshrcmd.c setargs.c signal.c
 OBJS+=	gram.o
-BINOWN=	root
-BINMODE=4555
 CLEANFILES=y.tab.h
 
 LDADD=	-lcompat
