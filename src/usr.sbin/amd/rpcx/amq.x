@@ -98,7 +98,7 @@ typedef amq_mount_tree_p amq_mount_tree_list<>;
 struct amq_mount_stats {
 	int	as_drops;	/* Dropped requests */
 	int	as_stale;	/* Stale NFS handles */
-	int	as_mok;		/* Succesful mounts */
+	int	as_mok;		/* Successful mounts */
 	int	as_merr;	/* Failed mounts */
 	int	as_uerr;	/* Failed unmounts */
 };
