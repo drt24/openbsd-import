@@ -217,6 +217,7 @@ main(argc, argv)
 	struct sgttyb tty, otty;
 #endif
 	char logincmd[2*BUFSIZ+32];
+	sigset_t emptyset;
 	extern uid_t getuid();
 
 	environ = restricted_environ; /* minimal protection for system() */
@@ -378,8 +379,9 @@ main(argc, argv)
 
 	/* twiddle thumbs until we get a signal; allow user to kill */
 	seteuid(uid);
+	sigemptyset(&emptyset);
 	while (1)
-		sigpause(0);
+		sigsuspend(&emptyset);
 
 	/* NOTREACHED */
 }
