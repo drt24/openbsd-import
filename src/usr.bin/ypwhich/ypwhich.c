@@ -1,4 +1,4 @@
-/*	$OpenBSD$
+/*	$OpenBSD: ypwhich.c,v 1.3 1996/05/21 21:32:44 deraadt Exp $
 /*	$NetBSD: ypwhich.c,v 1.6 1996/05/13 02:43:48 thorpej Exp $	*/
 
 /*
@@ -48,8 +48,6 @@ static char rcsid[] = "$Id$";
 #include <rpc/xdr.h>
 #include <rpcsvc/yp.h>
 #include <rpcsvc/ypclnt.h>
-
-extern bool_t xdr_domainname();
 
 struct ypalias {
 	char *alias, *name;
