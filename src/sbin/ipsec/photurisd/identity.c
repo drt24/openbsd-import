@@ -1,5 +1,5 @@
 /*
- * Copyright 1997 Niels Provos <provos@physnet.uni-hamburg.de>
+ * Copyright 1997,1998 Niels Provos <provos@physnet.uni-hamburg.de>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -350,9 +350,14 @@ get_secrets(struct stateob *st, int mode)
 	  }
      }
 	  
-     if((strlen(remote_secret) == 0 && (mode & ID_REMOTE)) ||
-	(strlen(local_ident) == 0 && (mode & (ID_LOCAL|ID_LOCALPAIR))) ) {
-	  log_error(0, "Can't find identities or secrets in get_secrets()");
+     if(strlen(remote_secret) == 0 && (mode & ID_REMOTE)) {
+	  log_error(0, "Can't find remote secret for %s in get_secrets()",
+		st->uSPIident+2);
+	  return -1;
+     }
+
+     if (strlen(local_ident) == 0 && (mode & (ID_LOCAL|ID_LOCALPAIR)) ) {
+	  log_error(0, "Can't find local identity in get_secrets()");
 	  return -1;
      }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 1997 Niels Provos <provos@physnet.uni-hamburg.de>
+ * Copyright 1997,1998 Niels Provos <provos@physnet.uni-hamburg.de>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -190,7 +190,7 @@ handle_spi_needed(u_char *packet, int size, char *address,
 	spi_insert(spi);
 	schedule_insert(UPDATE, st->olifetime/2, spi->SPI, SPI_SIZE);
 #ifdef IPSEC
-	kernel_insert_spi(spi);
+	kernel_insert_spi(st, spi);
 #endif
 	return 0;
 }

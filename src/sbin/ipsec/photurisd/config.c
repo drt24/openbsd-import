@@ -1,5 +1,5 @@
 /*
- * Copyright 1997 Niels Provos <provos@physnet.uni-hamburg.de>
+ * Copyright 1997,1998 Niels Provos <provos@physnet.uni-hamburg.de>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -925,6 +925,11 @@ pick_attrib(struct stateob *st, u_int8_t **attrib, u_int16_t *attribsize)
 		    count += ob->attributes[i+1]+2;
 	       }
 	  }
+     }
+     if (count == 0) {
+          log_error(0, "no attributes in attribute list for %s in pick_attrib()",
+		    st->address);
+	  return -1;
      }
 
      if ((*attrib = calloc(count, sizeof(u_int8_t))) == NULL) {

@@ -47,5 +47,6 @@ EXTERN int init_server(void);
 EXTERN int server(void);
 EXTERN int global_port;
 EXTERN int global_socket;
+EXTERN fd_set *readfds, *normfds;
 
 #endif /* _SERVER_H */
