@@ -552,7 +552,7 @@ adelay(ms, dp)
 }
 #endif
 
-char	editedhost[32];
+char	editedhost[48];
 
 void
 edithost(pat)
