@@ -702,7 +702,7 @@ process_entry(host, src)
 		case E_BAD_VALUE:
 			msg = "bad value";
 		default:
-			msg = "unkown error";
+			msg = "unknown error";
 			break;
 		}						/* switch */
 		report(LOG_ERR, "in entry named \"%s\", symbol \"%s\": %s",
