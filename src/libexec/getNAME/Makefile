@@ -1,7 +1,7 @@
-#	from: @(#)Makefile	5.3 (Berkeley) 5/11/90
-#	$Id$
+#	$OpenBSD$
+#	from: @(#)Makefile	8.1 (Berkeley) 6/4/93
 
 PROG=	getNAME
-NOMAN=	noman
+MAN=	getNAME.8
 
 .include <bsd.prog.mk>
