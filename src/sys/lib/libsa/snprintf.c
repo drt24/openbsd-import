@@ -1,4 +1,4 @@
-/*	$OpenBSD: snprintf.c,v 1.1 2003/06/01 17:00:33 deraadt Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: printf.c,v 1.10 1996/11/30 04:19:21 gwr Exp $	*/
 
 /*-
