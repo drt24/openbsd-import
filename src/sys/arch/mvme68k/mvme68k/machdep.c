@@ -1192,18 +1192,6 @@ dumpsys()
 
 initcpu()
 {
-#ifdef MAPPEDCOPY
-	extern u_int mappedcopysize;
-
-	/*
-	 * Initialize lower bound for doing copyin/copyout using
-	 * page mapping (if not already set).  We don't do this on
-	 * VAC machines as it loses big time.
-	 */
-	if (mappedcopysize == 0) {
-		mappedcopysize = NBPG;
-	}
-#endif
 }
 
 straytrap(pc, evec)
