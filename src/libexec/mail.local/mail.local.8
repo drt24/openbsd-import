@@ -77,6 +77,15 @@ A blank line is appended to each message.
 A greater-than character (``>'') is prepended to any line in the message
 which could be mistaken for a ``From '' delimiter line.
 .Pp
+Efforts have been made so that
+.Nm mail.local
+act as securely as possible if the spool directory modes are 1777 or 755.
+The default of 755 is more secure, but prevents mail clients from using all
+styles of locking.  The use of 1777 is more flexible in an NFS shared-spool
+environment, thus many sites use it. However it does carry some risks.
+The use of any mode besides 1777 and 755 for the spool directory is
+recommended against, but may work properly.
+.Pp
 By default, mailbox locking is done with
 .Nm username.lock
 files. However, if the
