@@ -427,7 +427,7 @@ main(int ac, char **av)
 	if (!host)
 		usage();
 
-	OpenSSL_add_all_algorithms();
+	SSLeay_add_all_algorithms();
 
 	/* Initialize the command to execute on remote host. */
 	buffer_init(&command);
