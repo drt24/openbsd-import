@@ -1,4 +1,4 @@
-/*       $OpenBSD: ip_nat.c,v 1.19 1999/02/01 07:45:53 d Exp $       */
+/*       $OpenBSD: ip_nat.c,v 1.20 1999/02/05 05:58:52 deraadt Exp $       */
 /*
  * Copyright (C) 1995-1998 by Darren Reed.
  *
@@ -161,11 +161,7 @@ u_32_t n;
 
 	if (!n)
 		return;
-#ifdef sparc
-	sum1 = (~(*sp)) & 0xffff;
-#else
 	sum1 = (~ntohs(*sp)) & 0xffff;
-#endif
 	sum1 += ~(n) & 0xffff;
 	sum1 = (sum1 >> 16) + (sum1 & 0xffff);
 	/* Again */
