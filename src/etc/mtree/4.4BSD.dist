@@ -1309,7 +1309,7 @@ yp.no		mode=775
 ..
 
 # ./var/crash
-crash		mode=775
+crash		mode=770
 # ./var/crash
 ..
 
