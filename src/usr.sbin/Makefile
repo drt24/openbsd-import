@@ -28,7 +28,7 @@ SUBDIR+=grfconfig iteconfig videomode
 .elif ${MACHINE} == "atari"
 SUBDIR+=iteconfig
 .elif ${MACHINE} == "hp300"
-SUBDIR+=grfinfo hilinfo
+SUBDIR+=grfinfo hilinfo config.old
 .elif ${MACHINE} == "i386"
 SUBDIR+=bad144 
 .elif ${MACHINE} == "pmax"
