@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: chown.c,v 1.4 1997/01/26 05:54:28 downsj Exp $	*/
 
 /*
  * Copyright (c) 1988, 1993, 1994
@@ -223,7 +223,7 @@ id(name, type)
 	if (errno)
 		err(1, "%s", name);
 	if (*ep != '\0')
-		errx(1, "%s: illegal %s name", name, type);
+		errx(1, "%s: invalid %s name", name, type);
 	return (val);
 }
 
