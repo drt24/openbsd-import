@@ -155,7 +155,7 @@ getidle(tty, display)
 	idle = 0;
 	if (*tty == 'X') {
 		u_long kbd_idle, mouse_idle;
-#if !defined(i386)
+#if !defined(__i386__)
 		kbd_idle = getidle("kbd", NULL);
 #else
 		/*
