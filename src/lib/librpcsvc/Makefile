@@ -15,7 +15,7 @@ NOPIC=
 all:		${HDRS}
 beforedepend:	${HDRS}
 
-beforeinstall:
+includes:
 	install -d -o ${BINOWN} -g ${BINGRP} -m 755 \
 		${DESTDIR}/usr/include/rpcsvc
 	@for i in $(HDRS); do \
