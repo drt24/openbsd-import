@@ -295,6 +295,9 @@ main(argc, argv)
 			alarm(TO);
 		}
 		if ((rval = getname()) == 2) {
+			oflush();
+			alarm(0);
+			signal(SIGALRM, SIG_DFL);
 			execle(PP, "ppplogin", ttyn, (char *) 0, env);
 			syslog(LOG_ERR, "%s: %m", PP);
 			exit(1);
