@@ -4,7 +4,7 @@
 #	$Id$
 
 .ifdef DESTDIR
-snap_md: bsd bsd.scsi3 floppies miniroot
+snap_md: bsd bsd.scsi3 floppies miniroot bootblocks
 	cp ${.CURDIR}/../sys/arch/sparc/compile/GENERIC/bsd \
 	    ${DESTDIR}/snapshot/bsd
 	cp ${.CURDIR}/../sys/arch/sparc/compile/GENERIC_SCSI3/bsd \
@@ -27,5 +27,8 @@ floppies:
 miniroot:
 	cd ${.CURDIR}/../distrib/miniroot && make cleandir && \
 	    make && make install
+
+bootblocks:
+	cp ${DESTDIR}/usr/mdec/*boot* ${DESTDIR}/snapshot
 
 .endif	# DESTDIR check
