@@ -77,6 +77,7 @@
 #define HOST_KEY_FILE		ETCDIR "/ssh_host_key"
 #define SERVER_CONFIG_FILE	ETCDIR "/sshd_config"
 #define HOST_CONFIG_FILE	ETCDIR "/ssh_config"
+#define DSA_KEY_FILE		ETCDIR "/ssh_dsa_key"
 
 #define SSH_PROGRAM		"/usr/bin/ssh"
 
@@ -461,6 +462,8 @@ void    fatal_add_cleanup(void (*proc) (void *context), void *context);
 /* Removes a cleanup function to be called at fatal(). */
 void    fatal_remove_cleanup(void (*proc) (void *context), void *context);
 
+/* ---- misc */
+
 /*
  * Expands tildes in the file name.  Returns data allocated by xmalloc.
  * Warning: this calls getpw*.
@@ -475,6 +478,7 @@ char   *tilde_expand_filename(const char *filename, uid_t my_uid);
  * program).
  */
 void    server_loop(int pid, int fdin, int fdout, int fderr);
+void    server_loop2(void);
 
 /* Client side main loop for the interactive session. */
 int     client_loop(int have_pty, int escape_char);
