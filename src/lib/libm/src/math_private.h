@@ -17,7 +17,6 @@
 #ifndef _MATH_PRIVATE_H_
 #define _MATH_PRIVATE_H_
 
-#include <machine/endian.h>
 #include <sys/types.h>
 
 /* The original fdlibm code used statements like:
