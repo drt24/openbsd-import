@@ -4,35 +4,21 @@
 #	$Id$
 
 .ifdef DESTDIR
-snap_md: bsd.adp bsd.other
-#snap_md: kcadp.fs kcother.fs
+snap_md: bsd
+#snap_md: kc.fs		# too big?
 
-bsd.adp:
-	cd ${.CURDIR}/../sys/arch/i386/conf && config GENERICADP
-	cd ${.CURDIR}/../sys/arch/i386/compile/GENERICADP && \
+bsd:
+	cd ${.CURDIR}/../sys/arch/i386/conf && config GENERIC
+	cd ${.CURDIR}/../sys/arch/i386/compile/GENERIC && \
 	    make clean && make depend && make
-	cp ${.CURDIR}/../sys/arch/i386/compile/GENERICADP/bsd \
-	    ${DESTDIR}/snapshot/bsd.adp
+	cp ${.CURDIR}/../sys/arch/i386/compile/GENERIC/bsd \
+	    ${DESTDIR}/snapshot/bsd
 
-bsd.other:
-	cd ${.CURDIR}/../sys/arch/i386/conf && config GENERICOTHER
-	cd ${.CURDIR}/../sys/arch/i386/compile/GENERICOTHER && \
-	    make clean && make depend && make
-	cp ${.CURDIR}/../sys/arch/i386/compile/GENERICOTHER/bsd \
-	    ${DESTDIR}/snapshot/bsd.other
-
-kcadp.fs:
+kc.fs:
 	make -f ${.CURDIR}/etc.i386/Makefile.kc \
-	    IMAGE=${DESTDIR}/snapshot/kcadp.fs \
-	    KERNEL=${DESTDIR}/snapshot/bsd.adp || \
+	    IMAGE=${DESTDIR}/snapshot/kc.fs \
+	    KERNEL=${DESTDIR}/snapshot/bsd || \
 	make -f ${.CURDIR}/etc.i386/Makefile.kc \
-	    IMAGE=${DESTDIR}/snapshot/kcadp.fs unconfig
-
-kcother.fs:
-	make -f ${.CURDIR}/etc.i386/Makefile.kc \
-	    IMAGE=${DESTDIR}/snapshot/kcother.fs \
-	    KERNEL=${DESTDIR}/snapshot/bsd.other || \
-	make -f ${.CURDIR}/etc.i386/Makefile.kc \
-	    IMAGE=${DESTDIR}/snapshot/kcother.fs unconfig
+	    IMAGE=${DESTDIR}/snapshot/kc.fs unconfig
 
 .endif	# DESTDIR check
