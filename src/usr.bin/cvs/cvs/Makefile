@@ -17,6 +17,8 @@ BINMODE=555
 CFLAGS= -g -ggdb
 CFLAGS+= -Wall
 CFLAGS+= -Wstrict-prototypes -Wmissing-prototypes
+CFLAGS+= -Wmissing-declarations
+CFLAGS+= -Wshadow -Wpointer-arith -Wcast-qual
 CFLAGS+= -Wsign-compare
 CFLAGS+= -DCVS
 
