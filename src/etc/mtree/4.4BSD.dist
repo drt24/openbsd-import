@@ -1353,9 +1353,9 @@ backups
 # ./var/backups
 ..
 
-# ./var/yp.no
-yp.no		mode=775
-# ./var/yp.no
+# ./var/yp
+yp		mode=775
+# ./var/yp
 ..
 
 # ./var/crash
