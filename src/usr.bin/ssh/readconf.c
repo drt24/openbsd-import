@@ -80,7 +80,6 @@ RCSID("$Id$");
      KeepAlives no
      IdentityFile ~/.ssh/identity
      Port 22
-     Cipher idea
      EscapeChar ~
 
 */
