@@ -28,6 +28,7 @@ RCSID("$Id$");
 #include "uidswap.h"
 #include "compat.h"
 #include "readconf.h"
+#include "fingerprint.h"
 
 #include <ssl/md5.h>
 
