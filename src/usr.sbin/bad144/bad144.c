@@ -67,6 +67,7 @@ static char *rcsid = "$Id$";
 #include <stdlib.h>
 #include <stdio.h>
 #include <paths.h>
+#include <string.h>
 
 #define RETRIES	10		/* number of retries on reading old sectors */
 
@@ -468,7 +469,7 @@ int
 blkcopy(f, s1, s2)
 daddr_t s1, s2;
 {
-	register tries, n;
+	register int tries, n;
 
 	if (buf == (char *)NULL) {
 		buf = malloc((unsigned)dp->d_secsize);
