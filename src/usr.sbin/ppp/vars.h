@@ -73,7 +73,7 @@ struct pppvars {
   char modem_devlist[LINE_LEN];	/* Comma-separated list of devices */
   char modem_dev[40];		/* Name of device / host:port */
   const char *base_modem_dev;	/* Pointer to base of modem_dev */
-  int open_mode;		/* LCP open mode */
+  int open_mode;		/* Delay before first LCP REQ (-1 = passive) */
 #define LOCAL_AUTH	0x01
 #define LOCAL_NO_AUTH	0x02
 #define LOCAL_DENY	0x03

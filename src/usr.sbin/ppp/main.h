@@ -26,6 +26,6 @@ extern int tunno;
 
 extern void Cleanup(int);
 extern void TtyTermMode(void);
-extern void PacketMode(void);
+extern void PacketMode(int);
 extern void TtyOldMode(void);
 extern void TtyCommandMode(int);

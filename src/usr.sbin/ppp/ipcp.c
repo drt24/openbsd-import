@@ -84,13 +84,14 @@ struct fsm IpcpFsm = {
   "IPCP",
   PROTO_IPCP,
   IPCP_MAXCODE,
-  OPEN_ACTIVE,
+  0,
   ST_INITIAL,
   0, 0, 0,
 
   0,
-  {0, 0, 0, NULL, NULL, NULL},
-  {0, 0, 0, NULL, NULL, NULL},
+  {0, 0, 0, NULL, NULL, NULL},	/* FSM timer */
+  {0, 0, 0, NULL, NULL, NULL},	/* Open timer */
+  {0, 0, 0, NULL, NULL, NULL},	/* Stopped timer */
   LogIPCP,
 
   IpcpLayerUp,

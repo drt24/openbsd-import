@@ -43,8 +43,7 @@
 #define	MODE_NOP	3
 #define	MODE_ACK	4	/* pseudo mode for ccp negotiations */
 
-#define	OPEN_ACTIVE	0
-#define	OPEN_PASSIVE	1
+#define	OPEN_PASSIVE	-1
 
 struct fsm {
   const char *name;		/* Name of protocol */
@@ -58,6 +57,7 @@ struct fsm {
 
   int reqcode;			/* Request code sent */
   struct pppTimer FsmTimer;	/* Restart Timer */
+  struct pppTimer OpenTimer;	/* Delay before opening */
 
   /*
    * This timer times the ST_STOPPED state out after the given value

@@ -190,9 +190,8 @@ DialCommand(struct cmdargs const *arg)
       break;
     }
     if ((res = DialModem()) == EX_DONE) {
-      nointr_sleep(1);
       ModemTimeout(NULL);
-      PacketMode();
+      PacketMode(VarOpenMode);
       break;
     } else if (res == EX_SIG)
       return 1;
@@ -1400,9 +1399,9 @@ static int
 SetOpenMode(struct cmdargs const *arg)
 {
   if (arg->argc > 0) {
-    if (strcmp(*arg->argv, "active") == 0)
-      VarOpenMode = OPEN_ACTIVE;
-    else if (strcmp(*arg->argv, "passive") == 0)
+    if (strcasecmp(*arg->argv, "active") == 0)
+      VarOpenMode = arg->argc > 1 ? atoi(arg->argv[1]) : 1;
+    else if (strcasecmp(*arg->argv, "passive") == 0)
       VarOpenMode = OPEN_PASSIVE;
     else
       return -1;

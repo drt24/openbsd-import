@@ -266,7 +266,7 @@ ModemTimeout(void *data)
 	 * carrier.
 	 */
 	if (mode & MODE_DEDICATED)
-	  PacketMode();
+	  PacketMode(VarOpenMode);
       } else {
         LogPrintf(LogDEBUG, "ModemTimeout: online -> offline\n");
 	reconnect(RECON_TRUE);
