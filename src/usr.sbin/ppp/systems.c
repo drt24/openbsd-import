@@ -217,7 +217,7 @@ AllowModes(struct cmdargs const *arg)
         break;
       }
     if (modes[m].mode == 0)
-      LogPrintf(LogWARN, "%s: Invalid mode\n", arg->argv[f]);
+      LogPrintf(LogWARN, "allow modes: %s: Invalid mode\n", arg->argv[f]);
   }
 
   modeok = (mode | allowed) == allowed ? 1 : 0;
@@ -353,7 +353,7 @@ LoadCommand(struct cmdargs const *arg)
     LogPrintf(LogERROR, "%s: Label not allowed\n", name);
     return 1;
   } else if (SelectSystem(name, CONFFILE) < 0) {
-    LogPrintf(LogWARN, "%s: not found.\n", name);
+    LogPrintf(LogWARN, "%s: label not found.\n", name);
     return -1;
   } else
     SetLabel(arg->argc ? name : NULL);
