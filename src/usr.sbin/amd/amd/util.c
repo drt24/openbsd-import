@@ -45,6 +45,7 @@
 
 #include "am.h"
 #include <ctype.h>
+#include <unistd.h>
 #include <sys/stat.h>
 #include <netdb.h>
 
@@ -551,7 +552,7 @@ int mode;
 	 * This assumes we are root so that we can do mkdir in a
 	 * mode 555 directory...
 	 */
-	while (sp = strchr(sp+1, '/')) {
+	while ((sp = strchr(sp+1, '/'))) {
 		*sp = '\0';
 		if (mkdir(p2, mode) < 0) {
 			error_so_far = errno;

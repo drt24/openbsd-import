@@ -44,6 +44,7 @@
 typedef nfs_fh fhandle_t;
 #endif /* NFS_3 */
 
+#include <unistd.h>
 #include <sys/stat.h>
 
 /*

@@ -265,7 +265,7 @@ char *key;
 {
 	unsigned int i, j;
 
-	for (i = 0; j = *key++; i += j)
+	for (i = 0; (j = *key++); i += j)
 		;
 
 	return i % NKVHASH;

@@ -120,7 +120,7 @@ void (*fn)();
 #ifdef DEBUG
 		dlog("Reading directory %s...", *dir);
 #endif
-		while (dp = readdir(dirp)) {
+		while ((dp = readdir(dirp))) {
 			char *val;
 			if (dp->d_name[0] == '.' &&
 					(dp->d_name[1] == '\0' ||

@@ -45,6 +45,8 @@
 
 #include "am.h"
 
+#include <unistd.h>
+
 #ifdef HAS_NIS_MAPS
 #include <rpcsvc/yp_prot.h>
 #include <rpcsvc/ypclnt.h>

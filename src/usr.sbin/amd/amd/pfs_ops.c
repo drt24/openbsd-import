@@ -41,6 +41,8 @@
 
 #include "am.h"
 
+#include <unistd.h>
+
 #ifdef HAS_PFS
 
 /*

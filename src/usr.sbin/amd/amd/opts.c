@@ -408,7 +408,7 @@ static char expand_error[] = "No space to expand \"%s\"";
 #endif /* DEBUG */
 	struct opt *op;
 
-	while (dp = strchr(cp, '$')) {
+	while ((dp = strchr(cp, '$'))) {
 		char ch;
 		/*
 		 * First copy up to the $

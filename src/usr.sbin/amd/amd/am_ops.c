@@ -143,7 +143,7 @@ char *map;
 		/*
 		 * Next find the correct filesystem type
 		 */
-		for (vp = vops; rop = *vp; vp++)
+		for (vp = vops; (rop = *vp); vp++)
 			if (strcmp(rop->fs_type, fo->opt_type) == 0)
 				break;
 
@@ -168,7 +168,7 @@ char *map;
 	if (fo->fs_mtab)
 		free((voidp) fo->fs_mtab);
 
-	if (fo->fs_mtab = (*rop->fs_match)(fo))
+	if ((fo->fs_mtab = (*rop->fs_match)(fo)))
 		return rop;
 
 	/*

@@ -53,6 +53,7 @@
 
 #include "am.h"
 
+#include <unistd.h>
 #include <sys/ioctl.h>
 
 #define NO_SUBNET "notknown"

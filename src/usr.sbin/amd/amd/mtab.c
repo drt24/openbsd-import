@@ -64,7 +64,7 @@ mntlist *mp;
 {
 	mntlist *mp2;
 
-	while (mp2 = mp) {
+	while ((mp2 = mp)) {
 		mp = mp->mnext;
 		if (mp2->mnt)
 			mnt_free(mp2->mnt);

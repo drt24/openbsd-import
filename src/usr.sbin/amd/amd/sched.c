@@ -44,7 +44,7 @@
  */
 
 #include "am.h"
-#include <sys/signal.h>
+#include <signal.h>
 #include WAIT
 #include <setjmp.h>
 extern jmp_buf select_intr;
@@ -116,7 +116,7 @@ voidp ca;
 
 	mask = sigblock(sigmask(SIGCHLD));
 
-	if (p->pid = background()) {
+	if ((p->pid = background())) {
 		sigsetmask(mask);
 		return;
 	}

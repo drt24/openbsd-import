@@ -103,7 +103,7 @@ am_opts *fo;
 	 * After deslashifying, overwrite the end of ${fs} with "/"
 	 * to make sure it is unique.
 	 */
-	if (ptr = strchr(fo->opt_fs, ','))
+	if ((ptr = strchr(fo->opt_fs, ',')))
 		*ptr = '\0';
 	deslashify(fo->opt_fs);
 	/*

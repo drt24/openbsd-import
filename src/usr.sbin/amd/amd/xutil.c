@@ -47,7 +47,9 @@
 #include <string.h>
 #endif
 
+#include <unistd.h>
 #include <stdlib.h>
+#include <sys/stat.h>
 
 FILE *logfp = stderr;		/* Log errors to stderr initially */
 #ifdef HAS_SYSLOG
