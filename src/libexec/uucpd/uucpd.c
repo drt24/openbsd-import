@@ -272,7 +272,7 @@ struct passwd *pw;
 struct sockaddr_in *sin;
 {
 	char line[32];
-	char remotehost[32];
+	char remotehost[MAXHOSTNAMELEN];
 	int wtmp, f;
 	struct hostent *hp = gethostbyaddr((char *)&sin->sin_addr,
 		sizeof (struct in_addr), AF_INET);
