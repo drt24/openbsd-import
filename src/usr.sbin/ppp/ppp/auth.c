@@ -31,10 +31,12 @@
 #include <pwd.h>
 #include <stdio.h>
 #include <string.h>
+#include <termios.h>
 #include <unistd.h>
 
 #include "mbuf.h"
 #include "defs.h"
+#include "log.h"
 #include "timer.h"
 #include "fsm.h"
 #include "iplist.h"
@@ -53,6 +55,11 @@
 #include "lcpproto.h"
 #include "filter.h"
 #include "mp.h"
+#include "cbcp.h"
+#include "chap.h"
+#include "async.h"
+#include "physical.h"
+#include "datalink.h"
 #include "bundle.h"
 
 const char *
@@ -244,8 +251,10 @@ AuthTimeout(void *vauthp)
   if (--authp->retry > 0) {
     timer_Start(&authp->authtimer);
     (*authp->ChallengeFunc)(authp, ++authp->id, authp->physical);
-  } else if (authp->FailedFunc)
-    (*authp->FailedFunc)(authp->physical);
+  } else {
+    log_Printf(LogPHASE, "Auth: No response from server\n");
+    datalink_AuthNotOk(authp->physical->dl);
+  }
 }
 
 void
@@ -257,11 +266,9 @@ auth_Init(struct authinfo *authinfo)
 
 void
 auth_StartChallenge(struct authinfo *authp, struct physical *physical,
-                   void (*chal)(struct authinfo *, int, struct physical *),
-                   void (*fail)(struct physical *))
+                   void (*chal)(struct authinfo *, int, struct physical *))
 {
   authp->ChallengeFunc = chal;
-  authp->FailedFunc = fail;
   authp->physical = physical;
   timer_Stop(&authp->authtimer);
   authp->authtimer.func = AuthTimeout;
