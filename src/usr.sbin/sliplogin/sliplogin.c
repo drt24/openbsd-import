@@ -119,7 +119,7 @@ findid(name)
 	static char raddr[16];
 	static char mask[16];
 	char user[MAXLOGNAME], *p;
-	int i, j, n;
+	int n;
 
 	strlcpy(loginname, name, sizeof loginname);
 	if ((fp = fopen(_PATH_ACCESS, "r")) == NULL) {

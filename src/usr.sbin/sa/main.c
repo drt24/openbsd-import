@@ -350,7 +350,7 @@ acct_load(pn, wr)
 			if (sflag || (mflag && !qflag))
 				usracct_add(&ci);
 		} else if (!qflag)
-			printf("%6u %12.2lf cpu %12quk mem %12qu io %s\n",
+			printf("%6u %12.2f cpu %12lluk mem %12llu io %s\n",
 			    ci.ci_uid,
 			    (ci.ci_utime + ci.ci_stime) / (double) AHZ,
 			    ci.ci_mem, ci.ci_io, ci.ci_comm);

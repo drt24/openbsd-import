@@ -72,7 +72,6 @@ main(argc, argv)
 	char *qfnp, *whoami;
 	long argnum, done = 0;
 	int i, offmode = 0, errs = 0;
-	extern char *optarg;
 	extern int optind;
 	int ch;
 
