@@ -75,7 +75,7 @@ static char rcsid[] = "$Id$";
 #  include <prot.h>
 #endif /* SPW_SECUREWARE */
 #ifdef HAVE_KERB4
-#  include <krb.h>
+#  include <kerberosIV/krb.h>
 #endif /* HAVE_KERB4 */
 #ifdef HAVE_AFS
 #  include <afs/stds.h>
