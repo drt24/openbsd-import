@@ -21,11 +21,8 @@ SUBDIR=	apply apropos asa at banner basename bdes biff cal calendar cap_mkdb \
 	xargs xinstall xlint xstr yacc yes ypcat ypmatch ypwhich
 
 # Don't use the standard tool chain on the alpha.
-.if (${MACHINE_ARCH} != "alpha")
+.if (${MACHINE_ARCH} != "alpha" && ${MACHINE_ARCH} != "mips")
 SUBDIR+= ar gprof nm ranlib size strip
-.endif
-.if (${MACHINE_ARCH} == "sparc")
-SUBDIR+= fdeject
 .endif
 
 .include <bsd.subdir.mk>
