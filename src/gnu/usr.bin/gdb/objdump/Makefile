@@ -3,10 +3,12 @@
 # Paths to libraries
 #
 LIBBFD!=cd $(.CURDIR)/../bfd; \
-	printf "xxx:\n\techo \$${.OBJDIR}/libbfd.a\n" | make -r -s -f - xxx
+	printf "xxx:\n\techo \$${.OBJDIR}/libbfd.a\n" | \
+	${MAKE} -r -s -f - xxx | grep libbfd
 
 LIBIBERTY!=cd $(.CURDIR)/../libiberty; \
-	printf "xxx:\n\techo \$${.OBJDIR}/libiberty.a\n" | make -r -s -f - xxx
+	printf "xxx:\n\techo \$${.OBJDIR}/libiberty.a\n" | \
+	${MAKE} -r -s -f - xxx | grep libiberty
 
 
 PROG=		objdump

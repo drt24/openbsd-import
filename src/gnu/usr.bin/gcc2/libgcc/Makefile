@@ -34,14 +34,16 @@ OBJS= ${LIB1OBJS} ${LIB2OBJS}
 LIB2SOBJS=${LIB2OBJS:.o=.so}
 
 #${LIB1OBJS}: libgcc1.c
-#	${COMPILE.c} -DL${.PREFIX} -o ${.TARGET} ${.CURDIR}/libgcc1.c
-#	@${LD} -x -r ${.TARGET}
-#	@mv a.out ${.TARGET}
+#	@echo "${COMPILE.c} -DL${.PREFIX} -o ${.TARGET} ${.CURDIR}/libgcc1.c"
+#	@${COMPILE.c} -DL${.PREFIX} -o ${.TARGET}.o ${.CURDIR}/libgcc1.c
+#	@${LD} -x -r ${.TARGET}.o -o ${.TARGET}
+#	@rm -f ${.TARGET}.o
 
 ${LIB2OBJS}: libgcc2.c
-	${COMPILE.c} -DL${.PREFIX} -o ${.TARGET} ${.CURDIR}/libgcc2.c
-	@${LD} -x -r ${.TARGET}
-	@mv a.out ${.TARGET}
+	@echo "${COMPILE.c} -DL${.PREFIX} -o ${.TARGET} ${.CURDIR}/libgcc2.c"
+	@${COMPILE.c} -DL${.PREFIX} -o ${.TARGET}.o ${.CURDIR}/libgcc2.c
+	@${LD} -x -r ${.TARGET}.o -o ${.TARGET}
+	@rm -f ${.TARGET}.o
 
 #${LIB1SOBJS}: libgcc1.c
 #	${COMPILE.c} -fpic -DL${.PREFIX} -o ${.TARGET} ${.CURDIR}/libgcc1.c

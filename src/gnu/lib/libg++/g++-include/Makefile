@@ -26,6 +26,6 @@ DPADD=		${DESTDIR}/usr/lib/c++rt0.o ${LIBCURSES}
 NOMAN=		noman
 .PATH:		$(.CURDIR)/../iostream 
 LIBCURSES!=	printf "xxx:\n\techo \$${LIBCURSES}\n.include <bsd.prog.mk>" |\
-			$(MAKE) -r -s -f - xxx
+			$(MAKE) -r -s -f - xxx | grep curses
 
 .include <bsd.lib.mk>
