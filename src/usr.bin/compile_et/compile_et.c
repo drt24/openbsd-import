@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: compile_et.c,v 1.1 1996/11/11 05:06:34 downsj Exp $	*/
 
 /*
  * Copyright 1986, 1987, 1988
@@ -114,8 +114,8 @@ char c_file[MAXPATHLEN];	/* output file */
 char h_file[MAXPATHLEN];	/* output */
 
 static void usage () {
-    fprintf (stderr, "%s: usage: %s ERROR_TABLE\n",
-	     whoami, whoami);
+    fprintf (stderr, "usage: %s ERROR_TABLE\n",
+	     whoami);
     exit (1);
 }
 
