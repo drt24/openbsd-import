@@ -606,6 +606,7 @@ pcmcia_bestvalue(card, dentries, nentries, rmatch)
 {
 	int bestmatch, thismatch;
 	register int i;
+
 	for (i = 0, bestmatch = 0; i < nentries; i++) {
 		if ((thismatch = pcmcia_matchvalue(card, &dentries[i])) >
 		    bestmatch) {

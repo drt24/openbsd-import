@@ -103,7 +103,7 @@ pcmcia_isa_init(parent, cf, aux, pca, flag)
 		       pa, pa->pba_maddr, pa->pba_msize);
 		printf("PCA %p mem %p size %d chip %x memh %x\n",
 		       pca, pca->scratch_mem, pca->scratch_memsiz,
-		       pca->scratch_chipset, pca->scratch_memh);
+		       pca->pa_bc, pca->scratch_memh);
 #endif
 	}
 	return 1;

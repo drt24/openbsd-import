@@ -356,7 +356,7 @@ pcmcia_probedev(link, cardinfo)
 
 	PPRINTF(("- pcmcia_probe_dev\n"));
 
-	printf("%s: slot %d ", ((struct device *) link->bus)->dv_xname, slot);
+	printf("%s slot %d: ", ((struct device *) link->bus)->dv_xname, slot);
 
 	/* turn off power in case it's on, to get a fresh start on things: */
 	PCMCIA_SERVICE(pca, link, PCMCIA_OP_POWER, 0, 0);
@@ -367,7 +367,7 @@ pcmcia_probedev(link, cardinfo)
 	}
 
 	if (ISSET(card_stat, PCMCIA_CARD_PRESENT) == 0) {
-		printf("is empty\n");
+		printf("empty\n");
 		return NULL;
 	}
 
@@ -406,7 +406,7 @@ pcmcia_probedev(link, cardinfo)
 		goto bad;
 	}
 
-	printf("contains <%s, %s", cardinfo->manufacturer, cardinfo->model);
+	printf("<%s, %s", cardinfo->manufacturer, cardinfo->model);
 	if (cardinfo->add_info1[0])
 		printf(", %s", cardinfo->add_info1);
 	if (cardinfo->add_info2[0])
