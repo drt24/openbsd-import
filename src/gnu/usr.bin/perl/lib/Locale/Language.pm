@@ -104,10 +104,10 @@ sub all_language_names
 # initialisation code - stuff the DATA into the CODES hash
 #=======================================================================
 {
-    my $code;
-    my $language;
-
+    my    $code;
+    my    $language;
     local $_;
+
 
     while (<DATA>)
     {

@@ -146,6 +146,9 @@ Little Endian (aka VAX byte order).  For anything not marked either
 BE or LE, a character called Byte Order Mark (BOM) indicating the
 endianness is prepended to the string.
 
+CAVEAT: Though BOM in utf8 (\xEF\xBB\xBF) is valid, it is meaningless
+and as of this writing Encode suite just leave it as is (\x{FeFF}).
+
 =over 4
 
 =item BOM as integer when fetched in network byte order
