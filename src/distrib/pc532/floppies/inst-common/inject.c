@@ -117,7 +117,7 @@ main(int argc, char **argv)
 	memcpy(ramdisk, filesys, filesyslen);
 
 	/* Sync vm/fs and unmap the images */
-	msync(kern, kernlen);
+	msync(kern, kernlen, 0);
 	munmap(kern, kernlen);
 	munmap(filesys, filesyslen);
 	exit(0);
