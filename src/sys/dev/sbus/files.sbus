@@ -1,4 +1,4 @@
-#	$OpenBSD: files.sbus,v 1.6 2001/09/30 00:45:17 jason Exp $
+#	$OpenBSD$
 #	$NetBSD: files.sbus,v 1.16 2000/12/08 17:29:12 martin Exp $
 #
 # Config file and device description for machine-independent SBUS code.

@@ -1,4 +1,4 @@
-/* $OpenBSD: ip_ipcomp.h,v 1.2 2001/07/05 08:40:59 angelos Exp $ */
+/* $OpenBSD$ */
 
 /*
  * Copyright (c) 2001 Jean-Jacques Bernard-Gundol (jj@wabbitt.org)

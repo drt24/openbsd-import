@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_le_ledma.c,v 1.4 2001/08/20 19:48:33 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: if_le_ledma.c,v 1.14 2001/05/30 11:46:35 mrg Exp $	*/
 
 /*-

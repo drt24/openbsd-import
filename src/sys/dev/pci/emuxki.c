@@ -1,4 +1,4 @@
-/*	$OpenBSD: emuxki.c,v 1.2 2001/10/24 15:09:28 brad Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: emuxki.c,v 1.1 2001/10/17 18:39:41 jdolecek Exp $	*/
 
 /*-

@@ -1,4 +1,4 @@
-/*	$OpenBSD: addcom_isa.c,v 1.4 2001/07/21 04:24:13 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: addcom_isa.c,v 1.2 2000/04/21 20:13:41 explorer Exp $	*/
 
 /*

@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_bge.c,v 1.2 2001/10/09 20:34:54 nate Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * Copyright (c) 2001 Wind River Systems
  * Copyright (c) 1997, 1998, 1999, 2001

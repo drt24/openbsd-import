@@ -1,4 +1,4 @@
-/*      $OpenBSD: lemacreg.h,v 1.2 2001/06/13 10:46:03 wiz Exp $ */
+/*      $OpenBSD$ */
 /*      $NetBSD: lemacreg.h,v 1.2 2001/06/13 10:46:03 wiz Exp $ */
 
 /*

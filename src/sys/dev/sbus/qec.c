@@ -1,4 +1,4 @@
-/*	$OpenBSD: qec.c,v 1.1 2001/08/20 22:09:27 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: qec.c,v 1.12 2000/12/04 20:12:55 fvdl Exp $ */
 
 /*-

@@ -1,4 +1,4 @@
-/*	$OpenBSD: hmereg.h,v 1.3 2001/09/20 18:36:43 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: hmereg.h,v 1.8 2001/04/30 12:22:42 bouyer Exp $	*/
 
 /*-

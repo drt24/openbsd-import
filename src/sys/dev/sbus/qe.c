@@ -1,4 +1,4 @@
-/*	$OpenBSD: qe.c,v 1.2 2001/08/31 15:12:05 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: qe.c,v 1.16 2001/03/30 17:30:18 christos Exp $	*/
 
 /*-

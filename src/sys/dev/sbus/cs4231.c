@@ -1,4 +1,4 @@
-/*	$OpenBSD: cs4231.c,v 1.6 2001/10/01 03:31:03 jason Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 1999 Jason L. Wright (jason@thought.net)

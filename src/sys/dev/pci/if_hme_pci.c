@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_hme_pci.c,v 1.2 2001/08/23 03:44:46 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: if_hme_pci.c,v 1.3 2000/12/28 22:59:13 sommerfeld Exp $	*/
 
 /*

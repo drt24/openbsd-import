@@ -1,4 +1,4 @@
-/*      $OpenBSD: lemacvar.h,v 1.6 2001/06/13 10:46:03 wiz Exp $ */
+/*      $OpenBSD$ */
 /*      $NetBSD: lemacvar.h,v 1.6 2001/06/13 10:46:03 wiz Exp $ */
 
 /*

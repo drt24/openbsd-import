@@ -1,4 +1,4 @@
-/*	$OpenBSD: esp_sbus.c,v 1.4 2001/09/26 00:03:34 jason Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: esp_sbus.c,v 1.14 2001/04/25 17:53:37 bouyer Exp $	*/
 
 /*-

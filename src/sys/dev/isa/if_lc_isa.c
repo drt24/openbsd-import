@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_lc_isa.c,v 1.10 2001/06/13 10:46:03 wiz Exp $ */
+/*	$OpenBSD$ */
 /*	$NetBSD: if_lc_isa.c,v 1.10 2001/06/13 10:46:03 wiz Exp $ */
 
 /*-
