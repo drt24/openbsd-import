@@ -126,7 +126,15 @@ unconditionally enables power status messages.
 causes power status messages to be displayed only when the
 battery life expectancy changes.  This minimized message output
 for those devices that are constantly updating the estimated time
-remaining based upon current processor load.
+remaining based upon current processor load.  However, in no case
+will power status messages be displayed until the battery life
+goes below the percentage in the
+.Xr sysctl 8
+state variable
+.Dv machdep.apmwarn .
+Setting
+.Dv machdep.apmwarn
+to zero disables all warnings.
 .Pp
 When a client requests a suspend or stand-by mode,
 .Nm
