@@ -705,7 +705,7 @@ int recurse;
 			 * For example:
 			 * "src/gnu/gcc" -> "src / gnu / *" -> "src / *"
 			 */
-			strcpy(wildname, key);
+			strlcpy(wildname, key, sizeof wildname);
 			while (error && (subp = strrchr(wildname, '/'))) {
 				strcpy(subp, "/*");
 #ifdef DEBUG

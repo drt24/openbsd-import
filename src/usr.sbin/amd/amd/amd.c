@@ -245,7 +245,7 @@ char *argv[];
 		*domdot++ = '\0';
 		hostdomain = domdot;
 	}
-	strcpy(hostd, hostname);
+	strlcpy(hostd, hostname, sizeof hostd);
 
 	/*
 	 * Trap interrupts for shutdowns.
