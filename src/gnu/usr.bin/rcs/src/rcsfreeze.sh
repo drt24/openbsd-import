@@ -25,9 +25,6 @@
 #       {RCS/}.rcsfreeze.ver	version number
 #       {RCS/}.rscfreeze.log	log messages, most recent first
 
-PATH=/usr/local/bin:/bin:/usr/bin:/usr/ucb:$PATH
-export PATH
-
 DATE=`date` || exit
 # Check whether we have an RCS subdirectory, so we can have the right
 # prefix for our paths.
