@@ -180,7 +180,7 @@ PRS(argc,argv)
         progname = argv[0];
         timenow = time((time_t *) 0);
         daytime = ctime(&timenow) + 4;
-        daytime[16] = '\0';
+        daytime[15] = '\0';
 
         /* Let's find the pid of syslogd */
         syslog_pid = 0;
