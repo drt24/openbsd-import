@@ -188,8 +188,8 @@ clockdiff(argc, argv)
 	char *argv[];
 {
 	struct servent *sp;
-	register long avg;
-	register int avg_cnt;
+	long avg;
+	int avg_cnt;
 	extern int measure(u_long, u_long, char *, struct sockaddr_in *, int);
 	int measure_status;
 

@@ -1,4 +1,4 @@
-/*	$OpenBSD: readmsg.c,v 1.7 2001/04/07 20:00:16 ho Exp $	*/
+/*	$OpenBSD: readmsg.c,v 1.8 2001/05/05 05:10:04 mickey Exp $	*/
 
 /*-
  * Copyright (c) 1985, 1993 The Regents of the University of California.
@@ -85,8 +85,8 @@ readmsg(int type, char *machfrom, struct timeval *intvl,
 	static struct tsplist *tail = &msgslist;
 	static int msgcnt = 0;
 	struct tsplist *prev;
-	register struct netinfo *ntp;
-	register struct tsplist *ptr;
+	struct netinfo *ntp;
+	struct tsplist *ptr;
 	ssize_t n;
 
 	if (trace) {

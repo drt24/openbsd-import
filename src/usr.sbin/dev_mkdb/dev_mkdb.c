@@ -1,4 +1,4 @@
-/*	$OpenBSD: dev_mkdb.c,v 1.5 2000/10/03 18:07:51 mickey Exp $	*/
+/*	$OpenBSD: dev_mkdb.c,v 1.6 2002/02/16 21:28:01 millert Exp $	*/
 
 /*-
  * Copyright (c) 1990, 1993
@@ -67,8 +67,8 @@ main(argc, argv)
 	int argc;
 	char *argv[];
 {
-	register DIR *dirp;
-	register struct dirent *dp;
+	DIR *dirp;
+	struct dirent *dp;
 	struct stat sb;
 	struct {
 		mode_t type;

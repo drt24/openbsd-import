@@ -88,9 +88,9 @@ main(argc, argv)
 	int argc;
 	char **argv;
 {
-	register struct fstab *fs;
-	register struct passwd *pw;
-	register struct group *gr;
+	struct fstab *fs;
+	struct passwd *pw;
+	struct group *gr;
 	int gflag = 0, uflag = 0, errs = 0;
 	long i, argnum, done = 0;
 	extern char *optarg;
@@ -177,11 +177,11 @@ usage()
 
 int
 repquota(fs, type, qfpathname)
-	register struct fstab *fs;
+	struct fstab *fs;
 	int type;
 	char *qfpathname;
 {
-	register struct fileusage *fup;
+	struct fileusage *fup;
 	FILE *qf;
 	uid_t id;
 	struct dqblk dqbuf;
@@ -261,10 +261,10 @@ repquota(fs, type, qfpathname)
  */
 int
 oneof(target, list, cnt)
-	register char *target, *list[];
+	char *target, *list[];
 	int cnt;
 {
-	register int i;
+	int i;
 
 	for (i = 0; i < cnt; i++)
 		if (strcmp(target, list[i]) == 0)
@@ -277,11 +277,11 @@ oneof(target, list, cnt)
  */
 int
 hasquota(fs, type, qfnamep)
-	register struct fstab *fs;
+	struct fstab *fs;
 	int type;
 	char **qfnamep;
 {
-	register char *opt;
+	char *opt;
 	char *cp;
 	static char initname, usrname[100], grpname[100];
 	static char buf[BUFSIZ];
@@ -324,7 +324,7 @@ lookup(id, type)
 	uid_t id;
 	int type;
 {
-	register struct fileusage *fup;
+	struct fileusage *fup;
 
 	for (fup = fuhead[type][id & (FUHASH-1)]; fup != 0; fup = fup->fu_next)
 		if (fup->fu_id == id)
