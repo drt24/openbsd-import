@@ -685,7 +685,7 @@ mapc_meta_search(mnt_map *m, char *key, char **pval, int recurse)
 			 */
 			strlcpy(wildname, key, sizeof wildname);
 			while (error && (subp = strrchr(wildname, '/'))) {
-				strcpy(subp, "/*");
+				strcpy(subp, "/*");	/* ok */
 #ifdef DEBUG
 				dlog("mapc recurses on %s", wildname);
 #endif
@@ -789,7 +789,7 @@ root_newmap(char *dir, char *opts, char *map)
 		snprintf(str, sizeof(str), "cache:=mapdefault;type:=toplvl;fs:=\"%s\";%s",
 			map, opts ? opts : "");
 	else
-		strcpy(str, opts);
+		strlcpy(str, opts, sizeof str);
 	mapc_repl_kv(root_map, dir, strdup(str));
 }
 

@@ -85,7 +85,7 @@ strealloc(char *p, char *s)
 
 	p = (char *) xrealloc((void *)p, len);
 
-	strcpy(p, s);
+	strlcpy(p, s, len);
 #ifdef DEBUG_MEM
 	malloc_verify();
 #endif /* DEBUG_MEM */
