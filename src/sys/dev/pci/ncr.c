@@ -1,4 +1,4 @@
-/*	$NetBSD: ncr.c,v 1.18 1995/10/02 16:48:36 mycroft Exp $	*/
+/*	$NetBSD: ncr.c,v 1.18.2.1 1995/10/23 15:53:32 pk Exp $	*/
 
 /**************************************************************************
 **
@@ -1284,7 +1284,7 @@ int ncr_cache; /* to be aligned _NOT_ static */
 #ifdef __NetBSD__
 
 struct	cfdriver ncrcd = {
-	NULL, "ncr", ncr_probe, ncr_attach, DV_DISK, sizeof(struct ncb)
+	NULL, "ncr", ncr_probe, ncr_attach, DV_DULL, sizeof(struct ncb)
 };
 
 #else /* !__NetBSD__ */
