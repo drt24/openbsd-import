@@ -1,4 +1,4 @@
-/*	$OpenBSD: ofwreal.S,v 1.5 1999/07/05 20:56:26 rahnds Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: ofwreal.S,v 1.1 1996/09/30 16:34:51 ws Exp $	*/
 
 /*

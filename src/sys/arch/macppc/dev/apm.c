@@ -1,4 +1,4 @@
-/*	$OpenBSD: apm.c,v 1.49 2001/08/18 06:08:08 mickey Exp $	*/
+/*	$OpenBSD$	*/
 
 /*-
  * Copyright (c) 2001 Alexander Guy.  All rights reserved.

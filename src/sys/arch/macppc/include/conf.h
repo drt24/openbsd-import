@@ -1,4 +1,4 @@
-/*	$OpenBSD: conf.h,v 1.2 2001/09/28 03:14:21 mickey Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: conf.h,v 1.2 1996/05/05 19:28:34 christos Exp $	*/
 
 /*

@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*	$NetBSD: openpicreg.h,v 1.1 2000/02/14 12:45:53 tsubai Exp $	*/
 
 /*-

@@ -1,4 +1,4 @@
-/*	$OpenBSD: pm_direct.c,v 1.3 2001/09/20 17:02:30 mpech Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: pm_direct.c,v 1.9 2000/06/08 22:10:46 tsubai Exp $	*/
 
 /*

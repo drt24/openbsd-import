@@ -1,4 +1,4 @@
-/*	$OpenBSD: dma.c,v 1.2 2001/09/15 01:40:36 mickey Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: machdep.c,v 1.214 1996/11/10 03:16:17 thorpej Exp $	*/
 
 /*-

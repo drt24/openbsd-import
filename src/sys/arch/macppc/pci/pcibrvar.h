@@ -1,4 +1,4 @@
-/*	$OpenBSD: pcibrvar.h,v 1.8 2001/06/25 23:30:00 drahn Exp $ */
+/*	$OpenBSD$ */
 
 /*
  * Copyright (c) 1997 Per Fogelstrom

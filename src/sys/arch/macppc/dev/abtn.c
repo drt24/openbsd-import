@@ -1,4 +1,4 @@
-/*	$OpenBSD: abtn.c,v 1.1 2001/09/01 15:50:00 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: abtn.c,v 1.1 1999/07/12 17:48:26 tsubai Exp $	*/
 
 /*-

@@ -1,4 +1,4 @@
-/*	$OpenBSD: adbvar.h,v 1.1 2001/09/01 15:50:00 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: adbvar.h,v 1.3 2000/06/08 22:10:46 tsubai Exp $	*/
 
 /*-

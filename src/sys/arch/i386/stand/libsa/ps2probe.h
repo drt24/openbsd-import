@@ -1,4 +1,4 @@
-/*	$OpenBSD: ps2probe.h,v 1.1 2001/08/18 15:34:17 mickey Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2001 Michael Shalayeff

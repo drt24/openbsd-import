@@ -1,4 +1,4 @@
-/*	$OpenBSD: macintr.c,v 1.4 2001/09/28 04:13:12 drahn Exp $	*/
+/*	$OpenBSD$	*/
 
 /*-
  * Copyright (c) 1995 Per Fogelstrom

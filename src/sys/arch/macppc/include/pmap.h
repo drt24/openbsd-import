@@ -1,4 +1,4 @@
-/*	$OpenBSD: pmap.h,v 1.2 2001/09/10 16:44:52 mickey Exp $	*/
+/*	$OpenBSD$	*/
 
 #include <powerpc/pmap.h>
 

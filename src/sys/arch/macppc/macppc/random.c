@@ -1,4 +1,4 @@
-/*	$OpenBSD: random.c,v 1.2 1997/10/13 13:43:00 pefo Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 1990,1993 The Regents of the University of California.

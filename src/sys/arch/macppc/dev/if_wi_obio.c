@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_wi_obio.c,v 1.2 2001/09/10 12:55:59 drahn Exp $	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 1997, 1998, 1999

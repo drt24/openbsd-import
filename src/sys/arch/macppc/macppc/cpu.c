@@ -1,4 +1,4 @@
-/*	$OpenBSD: cpu.c,v 1.12 2001/07/09 04:41:28 mickey Exp $ */
+/*	$OpenBSD$ */
 
 /*
  * Copyright (c) 1997 Per Fogelstrom

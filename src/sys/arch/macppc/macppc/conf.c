@@ -1,4 +1,4 @@
-/*	$OpenBSD: conf.c,v 1.4 2001/09/28 03:14:20 mickey Exp $ */
+/*	$OpenBSD$ */
 
 /*
  * Copyright (c) 1997 Per Fogelstrom

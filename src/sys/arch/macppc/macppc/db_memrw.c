@@ -1,5 +1,5 @@
 /*	$NetBSD: db_memrw.c,v 1.4 2001/05/18 20:38:27 matt Exp $	*/
-/*	$OpenBSD: db_memrw.c,v 1.1 2001/09/01 15:44:20 drahn Exp $	*/
+/*	$OpenBSD$	*/
 
 /* 
  * Mach Operating System

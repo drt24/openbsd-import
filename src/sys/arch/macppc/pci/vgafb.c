@@ -1,4 +1,4 @@
-/*	$OpenBSD: vgafb.c,v 1.2 2001/09/13 13:38:45 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: vga.c,v 1.3 1996/12/02 22:24:54 cgd Exp $	*/
 
 /*

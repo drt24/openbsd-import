@@ -1,4 +1,4 @@
-/*	$OpenBSD: wdc_obio.c,v 1.11 2001/09/01 15:50:00 drahn dead $	*/
+/*	$OpenBSD$	*/
 /*	$NetBSD: wdc_obio.c,v 1.15 2001/07/25 20:26:33 bouyer Exp $	*/
 
 /*-

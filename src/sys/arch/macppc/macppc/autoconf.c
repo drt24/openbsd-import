@@ -1,4 +1,4 @@
-/*	$OpenBSD: autoconf.c,v 1.12 2001/06/24 04:49:27 drahn Exp $	*/
+/*	$OpenBSD$	*/
 /*
  * Copyright (c) 1996, 1997 Per Fogelstrom
  * Copyright (c) 1995 Theo de Raadt
