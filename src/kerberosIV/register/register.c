@@ -279,9 +279,8 @@ setup_key(local)
 	char	namebuf[MAXPATHLEN];
 	extern int errno;
 
-	(void) sprintf(namebuf, "%s%s",
-		CLIENT_KEYFILE,
-		inet_ntoa(local.sin_addr));
+	(void) snprintf(namebuf, sizeof(namebuf), "%s%s", CLIENT_KEYFILE,
+			inet_ntoa(local.sin_addr));
 
 	fd = open(namebuf, O_RDONLY);
 	if (fd < 0) {

@@ -325,7 +325,8 @@ main(int argc, char **argv)
     (void) bzero((char *)backup_keyfile, sizeof(backup_keyfile));
     (void) bzero((char *)local_realm, sizeof(local_realm));
     
-    (void) sprintf(change_tkt, "/tmp/tkt_ksrvutil.%d", (int)getpid());
+    (void) snprintf(change_tkt, sizeof(change_tkt), "/tmp/tkt_ksrvutil.%d",
+		    (int)getpid());
     krb_set_tkt_string(change_tkt);
 
     /* This is used only as a default for adding keys */

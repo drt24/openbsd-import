@@ -109,8 +109,7 @@ make_key(addr)
 	char		namebuf[255];
 	int		fd;
 
-	(void)sprintf(namebuf, "%s",
-		inet_ntoa(addr));
+	(void)snprintf(namebuf, sizeof(namebuf), "%s", inet_ntoa(addr));
 	fd = open(namebuf, O_WRONLY|O_CREAT, 0600);
 	if (fd < 0) {
 		perror("open");

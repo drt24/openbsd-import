@@ -140,7 +140,9 @@ hang(void)
 	    pause();
     } else {
 	char buf[256];
-	sprintf(buf,  "Kerberos will wait %d seconds before dying so as not to loop init", pause_int);
+	(void) snprintf(buf, sizeof(buf),
+	    "Kerberos will wait %d seconds before dying so as not to loop init",
+	    pause_int);
 	klog(L_KRB_PERR, buf);
 	sleep(pause_int);
 	klog(L_KRB_PERR, "Do svedania....\n");
@@ -165,9 +167,9 @@ strtime(time_t *t)
     char *month_sname(int n);
 
     tm = localtime(t);
-    (void) sprintf(st,"%2d-%s-%02d %02d:%02d:%02d",tm->tm_mday,
-                   month_sname(tm->tm_mon + 1),tm->tm_year,
-                   tm->tm_hour, tm->tm_min, tm->tm_sec);
+    (void) snprintf(st, sizeof(st_data), "%2d-%s-%02d %02d:%02d:%02d",
+		    tm->tm_mday, month_sname(tm->tm_mon + 1), tm->tm_year,
+                    tm->tm_hour, tm->tm_min, tm->tm_sec);
     return st;
 }
 

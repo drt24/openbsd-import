@@ -71,7 +71,7 @@ char * generate_rqte(func_name, info_string, cmds, options)
     size += strlen(var_name)+7; /* "quux, " */
     size += strlen(func_name)+7; /* "foo, " */
     size += strlen(info_string)+9; /* "\"Info!\", " */
-    sprintf(numbuf, "%d", options);
+    snprintf(numbuf, sizeof(numbuf), "%d", options);
     size += strlen(numbuf);
     size += 4;		/* " }," + NL */
     string = malloc(size * sizeof(char *));

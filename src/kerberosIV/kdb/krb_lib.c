@@ -143,9 +143,10 @@ kerb_put_principal(principal, n)
     /* and mod date string */
 
     tp = k_localtime(&principal->mod_date);
-    (void) sprintf(principal->mod_date_txt, "%4d-%2d-%2d",
-		   tp->tm_year > 1900 ? tp->tm_year : tp->tm_year + 1900,
-		   tp->tm_mon + 1, tp->tm_mday); /* January is 0, not 1 */
+    (void) snprintf(principal->mod_date_txt, sizeof(principal->mod_date_txt),
+		    "%4d-%2d-%2d",
+		    tp->tm_year > 1900 ? tp->tm_year : tp->tm_year + 1900,
+		    tp->tm_mon + 1, tp->tm_mday); /* January is 0, not 1 */
 #ifdef DEBUG
     if (kerb_debug & 1) {
 	int i;
