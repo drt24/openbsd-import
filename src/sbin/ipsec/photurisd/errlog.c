@@ -36,6 +36,9 @@
  * $Author$
  *
  * $Log$
+ * Revision 1.3  1997/07/25 19:13:20  mickey
+ * #if __STDC__ --> #ifdef __STDC__
+ *
  * Revision 1.2  1997/07/23 12:28:47  provos
  * tunnel,lifetimes,hostname via startkey/startup
  * errors to stderr before daemon, to syslog afterwards
@@ -61,7 +64,7 @@ static char rcsid[] = "$Id$";
 #else
 #include <varargs.h>
 #endif
-#include <stdio.h>
+#include <string.h>
 #include <syslog.h>
 #include <sys/types.h>
 #include <errno.h>
