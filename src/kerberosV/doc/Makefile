@@ -12,7 +12,7 @@ infodir = ${DESTDIR}/usr/share/info
 
 INSTALL = /usr/bin/install
 
-info = heimdal.info heimdal.info-1 heimdal.info-2
+info = heimdal.info
 
 SRCS = 	heimdal.texi intro.texi install.texi setup.texi kerberos4.texi
 
