@@ -123,7 +123,12 @@ cron_popen(program, type, e)
 		}
 		if (e) {
 			setgid(e->gid);
+#if defined(BSD)
+			initgroups(env_get("LOGNAME", e->envp), e->gid);
+#endif
+			setlogin(env_get("LOGNAME", e->envp));
 			setuid(e->uid);
+			chdir(env_get("HOME", e->envp));
 		}
 #if WANT_GLOBBING
 		execvp(gargv[0], gargv);
