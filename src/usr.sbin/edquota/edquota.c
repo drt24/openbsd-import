@@ -631,7 +631,7 @@ readtimes(quplist, infd)
 			return(0);
 		}
 		cnt = sscanf(cp,
-		    " block grace period: %d %s file grace period: %d %s",
+		    " block grace period: %d %9s file grace period: %d %9s",
 		    (int *)&btime, bunits, (int *)&itime, iunits);
 		if (cnt != 4) {
 			warnx("%s:%s: bad format", fsp, cp);
