@@ -118,7 +118,7 @@
 /*#define XSTATS	/* extended statistics, syslogged periodically (bg) */
 /*#define BIND_NOTIFY	/* experimental - do not enable in customer products */
 #define LOC_RR		/* support for LOC record parsing (ckd/vix) */
-#define SORT_RESPONSE	/* should we try to sort responses optimally? (vix) */
+/*#define SORT_RESPONSE	/* should we try to sort responses optimally? (vix) */
 
 /*--------------------------------------------*
  * no user-servicable parts beyond this point *
