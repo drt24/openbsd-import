@@ -2,7 +2,7 @@
 
 INFODIR=	infodir=${DESTDIR}/usr/share/info
 INFOPATH=	DEFAULT_INFOPATH=/usr/local/info:/usr/share/info:.
-CLEANFILES=	makeinfo/makeinfo.info info/info info/info-stnd.info
+CLEANFILES=	makeinfo/makeinfo.info info/info.info info/info-stnd.info emacs/Makefile
 
 MAN=		info/info.1
 SUBDIRS=	libtxi makeinfo info util
