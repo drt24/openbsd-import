@@ -28,6 +28,9 @@ Report problems and direct all questions to:
 
 /*
  * $Log$
+ * Revision 1.1.1.1  1995/10/18 08:41:00  deraadt
+ * initial import of NetBSD tree
+ *
  * Revision 1.3  1995/02/24 02:07:55  mycroft
  * RCS 5.6.7.4
  *
@@ -115,13 +118,18 @@ mainProg(identId, "ident", "$Id$")
 		    quiet = 1;
 		    break;
 
+		case 'Z':
+		    setRCSlocalId(a+1);
+		    a += strlen(a) - 1;
+		    break;
+
 		case 'V':
 		    VOID printf("RCS version %s\n", RCS_version_string);
 		    exitmain(0);
 
 		default:
 		    VOID fprintf(stderr,
-			"ident: usage: ident -{qV} [file...]\n"
+			"ident: usage: ident -{qV} [-ZlocalId] [file...]\n"
 		    );
 		    exitmain(1);
 		    break;
@@ -148,8 +156,13 @@ mainProg(identId, "ident", "$Id$")
 }
 
 #if RCS_lint
-	void identExit() { _exit(EXIT_FAILURE); }
+#define	exiterr	identExit
 #endif
+	void
+exiterr()
+{
+	_exit(EXIT_FAILURE);
+}
 
 
 	static void

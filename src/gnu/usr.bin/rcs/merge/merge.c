@@ -70,6 +70,9 @@ mainProg(mergeId, "merge", "$Id$")
 				--argc;
 				break;
 
+			case 'Z':
+				break;
+
 			case 'V':
 				printf("RCS version %s\n", RCS_version_string);
 				exitmain(0);

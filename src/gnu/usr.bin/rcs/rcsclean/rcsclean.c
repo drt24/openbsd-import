@@ -40,7 +40,7 @@ static int exitstatus;
 mainProg(rcscleanId, "rcsclean", "$Id$")
 {
 	static char const usage[] =
-		"\nrcsclean: usage: rcsclean -ksubst -{nqru}[rev] -T -Vn -xsuff -zzone file ...";
+		"\nrcsclean: usage: rcsclean -ksubst -{nqru}[rev] -T -Vn -xsuff -zzone -ZlocalId file ...";
 
 	static struct buf revision;
 
@@ -120,6 +120,10 @@ mainProg(rcscleanId, "rcsclean", "$Id$")
 
 			case 'z':
 				zone_set(a);
+				break;
+
+			case 'Z':
+				setRCSlocalId(a);
 				break;
 
 			default:

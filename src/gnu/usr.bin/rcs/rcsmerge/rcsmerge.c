@@ -28,6 +28,9 @@ Report problems and direct all questions to:
 
 /*
  * $Log$
+ * Revision 1.1.1.1  1995/10/18 08:41:04  deraadt
+ * initial import of NetBSD tree
+ *
  * Revision 1.3  1995/02/24 02:25:40  mycroft
  * RCS 5.6.7.4
  *
@@ -116,7 +119,7 @@ static char const co[] = CO;
 mainProg(rcsmergeId, "rcsmerge", "$Id$")
 {
 	static char const cmdusage[] =
-		"\nrcsmerge usage: rcsmerge -rrev1 [-rrev2] -ksubst -{pq}[rev] -Vn -xsuff -zzone file";
+		"\nrcsmerge usage: rcsmerge -rrev1 [-rrev2] -ksubst -{pq}[rev] -Vn -xsuff -zzone -ZlocalId file";
 	static char const quietarg[] = "-q";
 
 	register int i;
@@ -186,7 +189,9 @@ mainProg(rcsmergeId, "rcsmerge", "$Id$")
 			versionarg = *argv;
 			setRCSversion(versionarg);
 			break;
-
+		case 'Z':
+			setRCSlocalId(a);
+			break;
 		case 'k':
 			expandarg = *argv;
 			if (0 <= str2expmode(expandarg+2))
