@@ -1,7 +1,5 @@
-#
+#	$OpenBSD$
 #	etc.pmax/Makefile.inc -- pmax-specific etc Makefile targets
-#
-#	$Id$
 
 .ifdef DESTDIR
 

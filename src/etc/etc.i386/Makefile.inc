@@ -1,7 +1,5 @@
-#
+#	$OpenBSD$
 #	etc.i386/Makefile.inc -- i386-specific etc Makefile targets
-#
-#	$Id$
 
 .ifdef DESTDIR
 snap_md: bsd distrib

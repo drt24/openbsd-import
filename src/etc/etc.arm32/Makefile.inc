@@ -1,7 +1,5 @@
-#
+#	$OpenBSD$
 #	etc.arm32/Makefile.inc -- arm32-specific etc Makefile targets
-#
-#	$Id$
 
 .ifdef DESTDIR
 snap_md: netbsd-gen

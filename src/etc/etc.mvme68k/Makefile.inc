@@ -1,7 +1,5 @@
-#
+#	$OpenBSD$
 #	etc.mvme68k/Makefile.inc -- mvme68k-specific etc Makefile targets
-#
-#	$Id$
 
 .ifdef DESTDIR
 snap_md: bsd-generic bootblocks distrib

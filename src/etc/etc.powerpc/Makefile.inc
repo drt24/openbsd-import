@@ -1,7 +1,5 @@
-#
+#	$OpenBSD$
 #	etc.powerpc/Makefile.inc -- powerpc-specific etc Makefile targets
-#
-#	$Id$
 
 .ifdef DESTDIR
 snap_md: binutils bsd bootblocks
