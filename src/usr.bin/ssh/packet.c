@@ -101,23 +101,13 @@ void
 packet_set_nonblocking()
 {
   /* Set the socket into non-blocking mode. */
-#if defined(O_NONBLOCK) && !defined(O_NONBLOCK_BROKEN)
   if (fcntl(connection_in, F_SETFL, O_NONBLOCK) < 0)
     error("fcntl O_NONBLOCK: %.100s", strerror(errno));
-#else /* O_NONBLOCK && !O_NONBLOCK_BROKEN */
-  if (fcntl(connection_in, F_SETFL, O_NDELAY) < 0)
-    error("fcntl O_NDELAY: %.100s", strerror(errno));
-#endif /* O_NONBLOCK && !O_NONBLOCK_BROKEN */
 
   if (connection_out != connection_in)
     {
-#if defined(O_NONBLOCK) && !defined(O_NONBLOCK_BROKEN)
       if (fcntl(connection_out, F_SETFL, O_NONBLOCK) < 0)
 	error("fcntl O_NONBLOCK: %.100s", strerror(errno));
-#else /* O_NONBLOCK && !O_NONBLOCK_BROKEN */  
-      if (fcntl(connection_out, F_SETFL, O_NDELAY) < 0)
-	error("fcntl O_NDELAY: %.100s", strerror(errno));
-#endif /* O_NONBLOCK && !O_NONBLOCK_BROKEN */
     }
 }
 

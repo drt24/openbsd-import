@@ -205,13 +205,11 @@ main(int ac, char **av)
      we may need to create the port several times). */
   temporarily_use_uid(original_real_uid);
 
-#ifdef HAVE_UMASK
   /* Set our umask to something reasonable, as some files are created with 
      the default umask.  This will make them world-readable but writable 
      only by the owner, which is ok for all files for which we don't set
      the modes explicitly. */
   umask(022);
-#endif /* HAVE_UMASK */
   
   /* Save our own name. */
   av0 = av[0];

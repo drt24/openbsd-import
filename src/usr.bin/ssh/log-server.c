@@ -89,12 +89,7 @@ void log_init(char *av0, int on_stderr, int debug, int quiet,
 
 #define MSGBUFSIZE 1024
 
-#ifdef HAVE_VSNPRINTF
 #define DECL_MSGBUF char msgbuf[MSGBUFSIZE]
-#else
-static char msgbuf[MSGBUFSIZE];
-#define DECL_MSGBUF
-#endif
 
 /* Log this message (information that usually should go to the log). */
 

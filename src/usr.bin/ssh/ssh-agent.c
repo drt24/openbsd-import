@@ -347,13 +347,8 @@ void
 new_socket(int type, int fd)
 {
   unsigned int i, old_alloc;
-#if defined(O_NONBLOCK) && !defined(O_NONBLOCK_BROKEN)
   if (fcntl(fd, F_SETFL, O_NONBLOCK) < 0)
     error("fcntl O_NONBLOCK: %s", strerror(errno));
-#else /* O_NONBLOCK && !O_NONBLOCK_BROKEN */
-  if (fcntl(fd, F_SETFL, O_NDELAY) < 0)
-    error("fcntl O_NDELAY: %s", strerror(errno));
-#endif /* O_NONBLOCK && !O_NONBLOCK_BROKEN */
 
   if (fd > max_fd)
     max_fd = fd;

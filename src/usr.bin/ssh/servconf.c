@@ -296,11 +296,7 @@ void read_server_config(ServerOptions *options, const char *filename)
 		      filename, linenum);
 	      exit(1);
 	    }
-#ifdef BROKEN_INET_ADDR
-	  options->listen_addr.s_addr = inet_network(cp);
-#else /* BROKEN_INET_ADDR */
 	  options->listen_addr.s_addr = inet_addr(cp);
-#endif /* BROKEN_INET_ADDR */
 	  break;
 
 	case sHostKeyFile:
