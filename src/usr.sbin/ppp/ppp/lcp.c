@@ -645,7 +645,23 @@ LcpDecodeConfig(struct fsm *fp, u_char *cp, int plen, int mode_type,
       switch (mode_type) {
       case MODE_REQ:
 	lcp->his_accmap = accmap;
-        lcp->want_accmap |= accmap;	/* restrict our requested map */
+        if ((lcp->want_accmap | accmap) != lcp->want_accmap) {
+          lcp->want_accmap |= accmap;	/* restrict our requested map */
+          lcp->fsm.reqid++;		/* Invalidate the current REQ */
+          /*
+           * If we've already sent a REQ, we want to make sure that
+           * we don't end up sending out a new REQ that doesn't contain
+           * the data that the last one with the same id contained.
+           * This also means that we ignore the peers response to our
+           * last REQ due to an invalid fsm id (even though it's really
+           * correct), probably resulting in a REQ timeout and a resend
+           * with the new accmap and the new id.
+           * If we're already in ST_ACKRCVD at this point, we simply end
+           * up thinking that we negotiated the new accmap - which is ok
+           * as we just end up escaping stuff that the peer probably
+           * can't receive anyway.
+           */
+        }
         if (lcp->want_accmap == accmap) {
 	  memcpy(dec->ackend, cp, 6);
 	  dec->ackend += 6;
