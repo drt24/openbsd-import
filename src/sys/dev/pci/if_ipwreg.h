@@ -27,10 +27,10 @@
  * SUCH DAMAGE.
  */
 
-#define IPW_NTBD	256
+#define IPW_NTBD	128
 #define IPW_TBD_SZ	(IPW_NTBD * sizeof (struct ipw_bd))
 #define IPW_NDATA	(IPW_NTBD / 2)
-#define IPW_NRBD	256
+#define IPW_NRBD	128
 #define IPW_RBD_SZ	(IPW_NRBD * sizeof (struct ipw_bd))
 #define IPW_STATUS_SZ	(IPW_NRBD * sizeof (struct ipw_status))
 
