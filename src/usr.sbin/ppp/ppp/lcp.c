@@ -233,7 +233,9 @@ lcp_Setup(struct lcp *lcp, int openmode)
   lcp->fsm.open_mode = openmode;
   lcp->fsm.maxconfig = 10;
 
-  lcp->his_mru = DEF_MRU;
+  lcp->his_mru = lcp->fsm.bundle->cfg.mtu;
+  if (!lcp->his_mru || lcp->his_mru > DEF_MRU)
+    lcp->his_mru = DEF_MRU;
   lcp->his_mrru = 0;
   lcp->his_magic = 0;
   lcp->his_lqrperiod = 0;
