@@ -74,10 +74,7 @@ xfs_vget(struct mount * mp,
 int
 xfs_fhtovp(struct mount * mp,
 	   struct fid * fhp,
-	   struct mbuf * nam,
-	   struct vnode ** vpp,
-	   int *exflagsp,
-	   struct ucred ** credanonp);
+	   struct vnode ** vpp);
 
 int
 xfs_vptofh(struct vnode * vp,

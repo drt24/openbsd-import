@@ -126,10 +126,7 @@ xfs_vget(struct mount * mp,
 int
 xfs_fhtovp(struct mount * mp,
 	   struct fid * fhp,
-	   struct mbuf * nam,
-	   struct vnode ** vpp,
-	   int *exflagsp,
-	   struct ucred ** credanonp)
+	   struct vnode ** vpp)
 {
 #ifdef ARLA_KNFS
     static struct ucred fhtovpcred;
@@ -187,12 +184,6 @@ xfs_fhtovp(struct mount * mp,
 	fhtovpcred.cr_ngroups = 0;
       
 	*vpp = vp;
-#ifdef MNT_EXPUBLIC
-	*exflagsp = MNT_EXPUBLIC;
-#else
-	*exflagsp = 0;
-#endif
-	*credanonp = &fhtovpcred;
 
 	XFSDEB(XDEBVFOPS, ("xfs_fhtovp done\n"));
 
