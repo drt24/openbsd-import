@@ -46,9 +46,9 @@
 #include "am.h"
 
 void	rpc_msg_init(struct rpc_msg *, u_long, u_long, u_long);
-int	pickup_rpc_reply(voidp, int, voidp, xdrproc_t);
+int	pickup_rpc_reply(void *, int, void *, xdrproc_t);
 int	make_rpc_packet(char *, int, unsigned long, struct rpc_msg *,
-    voidp, xdrproc_t, AUTH *);
+    void *, xdrproc_t, AUTH *);
 
 void
 rpc_msg_init(struct rpc_msg *mp, unsigned long prog,
@@ -57,7 +57,7 @@ rpc_msg_init(struct rpc_msg *mp, unsigned long prog,
 	/*
 	 * Initialise the message
 	 */
-	bzero((voidp) mp, sizeof(*mp));
+	bzero((void *)mp, sizeof(*mp));
 	mp->rm_xid = 0;
 	mp->rm_direction = CALL;
 	mp->rm_call.cb_rpcvers = RPC_MSG_VERSION;
@@ -70,7 +70,7 @@ rpc_msg_init(struct rpc_msg *mp, unsigned long prog,
  * Field reply to call to mountd
  */
 int
-pickup_rpc_reply(voidp pkt, int len, voidp where, xdrproc_t where_xdr)
+pickup_rpc_reply(void *pkt, int len, void *where, xdrproc_t where_xdr)
 {
 	XDR reply_xdr;
 	int ok;
@@ -78,8 +78,8 @@ pickup_rpc_reply(voidp pkt, int len, voidp where, xdrproc_t where_xdr)
 	struct rpc_msg reply_msg;
 	int error = 0;
 
-	/*bzero((voidp) &err, sizeof(err));*/
-	bzero((voidp) &reply_msg, sizeof(reply_msg));
+	/*bzero((void *)&err, sizeof(err));*/
+	bzero((void *)&reply_msg, sizeof(reply_msg));
 
 	reply_msg.acpted_rply.ar_results.where = (caddr_t) where;
 	reply_msg.acpted_rply.ar_results.proc = where_xdr;
@@ -111,7 +111,7 @@ drop:
 
 int
 make_rpc_packet(char *buf, int buflen, unsigned long proc,
-    struct rpc_msg *mp, voidp arg, xdrproc_t arg_xdr, AUTH *auth)
+    struct rpc_msg *mp, void *arg, xdrproc_t arg_xdr, AUTH *auth)
 {
 	XDR msg_xdr;
 	int len;

@@ -51,7 +51,7 @@ mnt_free(struct mntent *mp)
 	free(mp->mnt_dir);
 	free(mp->mnt_type);
 	free(mp->mnt_opts);
-	free((voidp) mp);
+	free((void *)mp);
 }
 
 /*
@@ -66,7 +66,7 @@ discard_mntlist(mntlist *mp)
 		mp = mp->mnext;
 		if (mp2->mnt)
 			mnt_free(mp2->mnt);
-		free((voidp) mp2);
+		free((void *)mp2);
 	}
 }
 

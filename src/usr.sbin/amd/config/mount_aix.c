@@ -58,7 +58,7 @@ int info_size;
 char *args;
 {
 	struct vmount *vp = (struct vmount *) p;
-	bzero((voidp) vp, sizeof(*vp));
+	bzero((void *)vp, sizeof(*vp));
 	/*
 	 * Fill in standard fields
 	 */
@@ -131,7 +131,7 @@ char *args;
 
 		size = aix3_mkvp(buf, type, flags, rfs, dir, host, data, sizeof(struct nfs_args), args);
 		if (free_rfs)
-			free((voidp) rfs);
+			free((void *)rfs);
 		free(host);
 
 		} break;

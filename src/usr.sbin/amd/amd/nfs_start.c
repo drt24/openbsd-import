@@ -70,7 +70,7 @@ int max_fds = -1;
  * Check that we are not burning resources
  */
 static void
-checkup(P_void)
+checkup(void)
 {
 	static int max_fd = 0;
 	static char *max_mem = 0;
@@ -198,7 +198,7 @@ rpc_pending_now()
 }
 
 static serv_state
-run_rpc(P_void)
+run_rpc(void)
 {
 	sigset_t mask, omask;
 
@@ -374,7 +374,7 @@ bindnfs_port(int so)
 }
 
 void
-unregister_amq(P_void)
+unregister_amq(void)
 {
 #ifdef DEBUG
 	Debug(D_AMQ)

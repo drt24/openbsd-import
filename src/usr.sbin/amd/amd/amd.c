@@ -146,7 +146,7 @@ parent_exit(int sig)
 }
 
 static pid_t
-daemon_mode(P_void)
+daemon_mode(void)
 {
 	pid_t bgpid;
 

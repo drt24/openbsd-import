@@ -39,17 +39,6 @@
  *	$Id$
  */
 
-/*
- * Get this in now so that OS_HDR can use it
- */
-#ifdef __STDC__
-#define	P_void void
-#define	Const const
-#else
-#define P_void /* as nothing */
-#define Const /* as nothing */
-#endif /* __STDC__ */
-
 #ifdef __GNUC__
 #define INLINE /* __inline */
 #else
@@ -61,12 +50,6 @@
  */
 #include "os-defaults.h"
 #include OS_HDR
-
-#ifdef VOIDP
-typedef void *voidp;
-#else
-typedef char *voidp;
-#endif /* VOIDP */
 
 #include <stdio.h>
 #include <sys/types.h>
@@ -130,5 +113,5 @@ extern void going_down(int);
 #endif /* DEBUG */
 extern void plog(int, char *, ...);
 extern void show_opts(int ch, struct opt_tab *);
-extern voidp xmalloc(int);
-extern voidp xrealloc(voidp, int);
+extern void *xmalloc(int);
+extern void *xrealloc(void *, int);

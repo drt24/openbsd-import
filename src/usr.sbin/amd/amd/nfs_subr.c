@@ -83,12 +83,12 @@ do_readlink(am_node *mp, int *error_return, struct attrstat **attrpp)
 }
 
 /*ARGSUSED*/
-voidp
-nfsproc_null_2(voidp argp, struct svc_req *rqstp)
+void *
+nfsproc_null_2(void *argp, struct svc_req *rqstp)
 {
 	static char res;
 
-	return (voidp) &res;
+	return (void *)&res;
 }
 
 
@@ -155,12 +155,12 @@ nfsproc_setattr_2(struct sattrargs *argp, struct svc_req *rqstp)
 
 
 /*ARGSUSED*/
-voidp
-nfsproc_root_2(voidp argp, struct svc_req *rqstp)
+void *
+nfsproc_root_2(void *argp, struct svc_req *rqstp)
 {
 	static char res;
 
-	return (voidp)&res;
+	return (void *)&res;
 }
 
 
@@ -264,12 +264,12 @@ nfsproc_read_2(struct readargs *argp, struct svc_req *rqstp)
 
 
 /*ARGSUSED*/
-voidp
-nfsproc_writecache_2(voidp argp, struct svc_req *rqstp)
+void *
+nfsproc_writecache_2(void *argp, struct svc_req *rqstp)
 {
 	static char res;
 
-	return (voidp) &res;
+	return (void *)&res;
 }
 
 

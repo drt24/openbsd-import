@@ -88,7 +88,7 @@ read_line(char *buf, int size, FILE *fp)
  */
 static int
 search_or_reload_file(FILE *fp, char *map, char *key, char **val, mnt_map *m,
-    void (*fn)(mnt_map *m, char*, char*))
+    void (*fn)(mnt_map *m, char *, char *))
 {
 	char key_val[MAX_LINE_LEN];
 	int chuck = 0;

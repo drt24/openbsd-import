@@ -229,7 +229,7 @@ eacces:
 			tv.tv_sec = 0;
 			tv.tv_usec = (mypid & 0x07) << 17;
 			if (tv.tv_usec)
-				if (select(0, (voidp) 0, (voidp) 0, (voidp) 0, &tv) < 0)
+				if (select(0, (void *)0, (void *)0, (void *)0, &tv) < 0)
 					plog(XLOG_WARNING, "mtab nap failed: %m");
 
 			goto again;

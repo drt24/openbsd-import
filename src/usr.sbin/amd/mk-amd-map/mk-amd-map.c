@@ -74,7 +74,7 @@ static char sccsid[] = "@(#)mk-amd-map.c	8.1 (Berkeley) 6/28/93";
 #define create_database(name) dbm_open(name, O_RDWR|O_CREAT, 0644)
 
 static int
-store_data(voidp db, char *k, char *v)
+store_data(void *db, char *k, char *v)
 {
 	datum key, val;
 
@@ -125,7 +125,7 @@ read_line(char *buf, int size, FILE *fp)
  * Read through a map
  */
 static int
-read_file(FILE *fp, char *map, voidp db)
+read_file(FILE *fp, char *map, void *db)
 {
 	char key_val[2048];
 	int chuck = 0;
