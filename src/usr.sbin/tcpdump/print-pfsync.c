@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-pfsync.c,v 1.5 2002/12/23 18:55:53 mickey Exp $	*/
+/*	$OpenBSD: print-pfsync.c,v 1.6 2003/01/04 01:13:21 deraadt Exp $	*/
 
 /*
  * Copyright (c) 2002 Michael Shalayeff
@@ -128,11 +128,4 @@ pfsync_if_print(u_char *user, const struct pcap_pkthdr *h,
 	}
 out:
 	putchar('\n');
-}
-
-int
-pfr_unwrap_table(struct pfr_table *tbl, struct pf_addr_wrap *wrap,
-    int flags)
-{
-	return -1;
 }
