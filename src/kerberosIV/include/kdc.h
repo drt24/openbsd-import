@@ -14,9 +14,6 @@
 
 #define S_AD_SZ		sizeof(struct sockaddr_in)
 
-#define max(a,b)	(a>b ? a : b)
-#define min(a,b)	(a<b ? a : b)
-
 #define TRUE		1
 #define FALSE		0
 
