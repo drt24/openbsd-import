@@ -13,9 +13,6 @@
  * $State$
  *
  * $Log$
- * Revision 1.7  2003/12/03 03:02:28  millert
- * Resolve conflicts for perl 5.8.2, remove old files, and add OpenBSD-specific scaffolding
- *
  * Removed implicit link against libc.  1994/09/14 William Setzer.
  *
  * Integrated other DynaLoader changes. 1994/06/08 Tim Bunce.

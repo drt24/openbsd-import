@@ -7,9 +7,6 @@
  *    License or the Artistic License, as specified in the README file.
  *
  * $Log$
- * Revision 1.7  2003/12/03 03:02:53  millert
- * Resolve conflicts for perl 5.8.2, remove old files, and add OpenBSD-specific scaffolding
- *
  */
 
 #define FILLPCT 60		/* don't make greater than 99 */

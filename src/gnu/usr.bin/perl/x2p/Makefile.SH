@@ -30,9 +30,6 @@ cat >Makefile <<!GROK!THIS!
 # $RCSfile$$Revision$$Date$
 #
 # $Log$
-# Revision 1.9  2003/12/03 03:02:53  millert
-# Resolve conflicts for perl 5.8.2, remove old files, and add OpenBSD-specific scaffolding
-#
 
 CC = $cc
 BYACC = $byacc

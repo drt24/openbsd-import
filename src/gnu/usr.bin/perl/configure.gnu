@@ -16,9 +16,6 @@
 # include this script in your own package.
 #
 # $Log$
-# Revision 1.6  2003/12/03 03:02:19  millert
-# Resolve conflicts for perl 5.8.2, remove old files, and add OpenBSD-specific scaffolding
-#
 # Revision 3.0.1.1  1995/07/25  14:16:21  ram
 # patch56: created
 #
