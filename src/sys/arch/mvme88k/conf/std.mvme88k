@@ -1,7 +1,0 @@
-# standard amiga information
-#	$Id$
-machine mvme88k
-
-mainbus0	at root
-#pcc0		at mainbus0
-#scsi0		at pcc0
