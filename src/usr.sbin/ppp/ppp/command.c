@@ -1818,7 +1818,7 @@ static struct cmdtab const SetCommands[] = {
    "set lcpretry value [attempts]", (const void *)VAR_LCPRETRY},
   {"log", NULL, log_SetLevel, LOCAL_AUTH, "log level",
   "set log [local] [+|-]async|cbcp|ccp|chat|command|connect|debug|hdlc|id0|"
-  "ipcp|lcp|lqm|phase|tcp/ip|timer|tun..."},
+  "ipcp|lcp|lqm|phase|physical|sync|tcp/ip|timer|tun..."},
   {"login", NULL, SetVariable, LOCAL_AUTH | LOCAL_CX,
   "login script", "set login chat-script", (const void *) VAR_LOGIN},
   {"lqrperiod", NULL, SetVariable, LOCAL_AUTH | LOCAL_CX_OPT,
