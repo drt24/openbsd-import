@@ -240,18 +240,6 @@ cachectl(req, addr, len)
 	return(error);
 }
 
-int
-sysarch(p, uap, retval)
-	struct proc *p;
-	struct sysarch_args /* {
-		syscallarg(int) op;
-		syscallarg(char *) parms;
-	} */ *uap;
-	register_t *retval;
-{
-	return ENOSYS;
-}
-
 /*
  * DMA cache control
  */
