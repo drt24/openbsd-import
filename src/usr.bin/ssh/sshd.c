@@ -369,16 +369,9 @@ main(int ac, char **av)
 #ifdef TIOCNOTTY
       int fd;
 #endif /* TIOCNOTTY */
-
-      /* Fork, and have the parent exit.  The child becomes the server. */
-      if (fork())
-	exit(0);
-
-      /* Redirect stdin, stdout, and stderr to /dev/null. */
-      freopen("/dev/null", "r", stdin);
-      freopen("/dev/null", "w", stdout);
-      freopen("/dev/null", "w", stderr);
-
+      if (daemon(0, 0) < 0)
+	  fatal("daemon() failed: %.200s", strerror(errno));
+     
       /* Disconnect from the controlling tty. */
 #ifdef TIOCNOTTY
       fd = open("/dev/tty", O_RDWR|O_NOCTTY);
@@ -388,7 +381,6 @@ main(int ac, char **av)
 	  close(fd);
 	}
 #endif /* TIOCNOTTY */
-      (void)setsid();
     }
 
   /* Reinitialize the log (because of the fork above). */
