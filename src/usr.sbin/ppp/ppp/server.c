@@ -191,6 +191,7 @@ server_LocalOpen(struct bundle *bundle, const char *name, mode_t mask)
     return 0;
   }
 
+  server_Close(bundle);
   memset(&server.ifsun, '\0', sizeof server.ifsun);
   server.ifsun.sun_len = strlen(name);
   if (server.ifsun.sun_len > sizeof server.ifsun.sun_path - 1) {
@@ -223,7 +224,6 @@ server_LocalOpen(struct bundle *bundle, const char *name, mode_t mask)
     ID0unlink(name);
     return 5;
   }
-  server_Close(bundle);
   server.fd = s;
   server.rm = server.ifsun.sun_path;
   log_Printf(LogPHASE, "Listening at local socket %s.\n", name);

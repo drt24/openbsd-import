@@ -132,15 +132,21 @@ log_UnRegisterPrompt(struct prompt *prompt)
 void
 log_DestroyPrompts(struct server *s)
 {
-  struct prompt *p, *pn;
+  struct prompt *p, *pn, *pl;
 
   p = promptlist;
+  pl = NULL;
   while (p) {
     pn = p->next;
-    if (s && p->owner != s) {
+    if (s && p->owner == s) {
+      if (pl)
+        pl->next = p->next;
+      else
+        promptlist = p->next;
       p->next = NULL;
       prompt_Destroy(p, 1);
-    }
+    } else
+      pl = p;
     p = pn;
   }
 }
