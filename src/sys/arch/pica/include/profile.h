@@ -40,7 +40,7 @@
 #define	_MCOUNT_DECL static void __mcount
 
 #define	MCOUNT \
-	asm(".globl _mcount;" \
+	__asm(".globl _mcount;" \
 	"_mcount:;" \
 	".set noreorder;" \
 	".set noat;" \
