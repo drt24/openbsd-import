@@ -885,6 +885,11 @@ DoLoop(void)
       IpStartOutput();
       qlen = ModemQlen();
     }
+
+#ifdef SIGALRM
+    handle_signals();
+#endif
+
     if (modem >= 0) {
       if (modem + 1 > nfds)
 	nfds = modem + 1;
@@ -910,8 +915,6 @@ DoLoop(void)
      */
     usleep(TICKUNIT);
     TimerService();
-#else
-    handle_signals();
 #endif
 
     /* If there are aren't many packets queued, look for some more. */
