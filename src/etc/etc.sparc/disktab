@@ -26,8 +26,8 @@ miniroot:\
 
 rdroot:\
 	:ty=ramdisk:se#512:nt#2:rm#300:ns#8:nc#1024:\
-	:pa#4096:oa#0:ta=4.2BSD:ba#8192:fa#1024: \
-	:pc#4096:oc#0:
+	:pa#5120:oa#0:ta=4.2BSD:ba#8192:fa#1024: \
+	:pc#5120:oc#0:
 
 floppy|floppy3|3in|3.5in High Density Floppy:\
 	:ty=floppy:se#512:nt#2:rm#300:ns#18:nc#80:\
