@@ -540,9 +540,12 @@ main(int argc, char **argv)
   if (lockfile != NULL) {
     fprintf(lockfile, "%d\n", (int) getpid());
     fclose(lockfile);
-  } else
+  }
+#ifndef RELEASE_CRUNCH
+  else
     LogPrintf(LogALERT, "Warning: Can't create %s: %s\n",
               pid_filename, strerror(errno));
+#endif
 
   LogPrintf(LogPHASE, "PPP Started.\n");
 
