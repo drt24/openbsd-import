@@ -76,7 +76,7 @@ main(argc, argv)
 	logging = secure = user_required = short_list = 0;
 	openlog("fingerd", LOG_PID | LOG_CONS, LOG_DAEMON);
 	opterr = 0;
-	while ((ch = getopt(argc, argv, "sluSmpP:")) != EOF)
+	while ((ch = getopt(argc, argv, "sluSmMpP:")) != EOF)
 		switch (ch) {
 		case 'l':
 			logging = 1;
@@ -96,6 +96,9 @@ main(argc, argv)
 			break;
 		case 'm':
 			av[ac++] = "-m";
+			break;
+		case 'M':
+			av[ac++] = "-M";
 			break;
 		case 'p':
 			av[ac++] = "-p";
