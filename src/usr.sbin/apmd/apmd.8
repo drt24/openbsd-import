@@ -154,15 +154,19 @@ flushing the buffer cache.
 .Pp
 Actions can be configured for the three transitions:
 .Cm suspend ,
-.Cm standby
+.Cm standby ,
+.Cm resume ,
+.Cm powerup
 and
-.Cm resume .
+.Cm powerdown .
 The suspend and standby actions are run prior to
 .Nm
 performing any other actions (such as disk syncs) and entering the new
 mode.
 The resume program is run after resuming from a stand-by or
 suspended state.
+The powerup and powerdown programs are run after the power status (AC
+connected or not) changes.
 .Sh FILES
 .Pa /etc/apm/suspend ,
 .Pa /etc/apm/standby
