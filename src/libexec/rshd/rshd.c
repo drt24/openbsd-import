@@ -177,7 +177,7 @@ main(argc, argv)
 
 	fromlen = sizeof (from);
 	if (getpeername(0, (struct sockaddr *)&from, &fromlen) < 0) {
-		syslog(LOG_ERR, "getpeername: %m");
+		/* syslog(LOG_ERR, "getpeername: %m"); */
 		exit(1);
 	}
 	if (keepalive &&

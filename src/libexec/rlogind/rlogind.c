@@ -169,7 +169,7 @@ main(argc, argv)
 #endif
 	fromlen = sizeof (from);
 	if (getpeername(0, (struct sockaddr *)&from, &fromlen) < 0) {
-		syslog(LOG_ERR,"Can't get peer name of remote host: %m");
+		/* syslog(LOG_ERR,"Can't get peer name of remote host: %m"); */
 		fatal(STDERR_FILENO, "Can't get peer name of remote host", 1);
 	}
 	on = 1;
