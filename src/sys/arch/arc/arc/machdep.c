@@ -1,4 +1,4 @@
-/*	$OpenBSD: machdep.c,v 1.8 1996/09/02 21:33:29 imp Exp $	*/
+/*	$OpenBSD: machdep.c,v 1.9 1996/09/04 21:18:19 pefo Exp $	*/
 /*
  * Copyright (c) 1988 University of Utah.
  * Copyright (c) 1992, 1993
@@ -91,7 +91,7 @@
 
 #include <arc/arc/arctype.h>
 #include <arc/pica/pica.h>
-#include <arc/desktech/desktech.h>
+#include <arc/dti/desktech.h>
 
 #include <asc.h>
 
