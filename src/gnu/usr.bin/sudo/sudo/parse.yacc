@@ -509,7 +509,7 @@ useraliases	:	useralias
 		;
 
 useralias	:	ALIAS { push; }	'=' userlist {
-			    if (!add_alias($1, USER))
+			    if (user_matches == TRUE && !add_alias($1, USER))
 				YYERROR;
 			    pop;
 			    (void) free($1);
