@@ -347,7 +347,7 @@ char *argv[];
 	 */
 	error = mount_automounter(ppid);
 	if (error && ppid)
-		kill(SIGALRM, ppid);
+		kill(ppid, SIGALRM);
 	going_down(error);
 
 	abort();
