@@ -973,7 +973,7 @@ ahc_handle_seqint(struct ahc_softc *ahc, u_int intstat)
 		       scbptr, ahc_inb(ahc, ARG_1),
 		       ahc->scb_data->hscbs[scbptr].tag);
 		ahc_dump_card_state(ahc);
-		panic("for saftey");
+		panic("for safety");
 		break;
 	}
 	case OUT_OF_RANGE:
