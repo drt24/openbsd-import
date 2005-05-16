@@ -64,8 +64,8 @@ str_append(struct string *buf, const char *str, int del)
 	if (buf->s_str == NULL)
 		buf->s_str = emalloc(len);
 	else {
-		buf->s_str = erealloc(buf->s_str, buf->s_len + len +
-						  (del ? 2 : 1));
+		buf->s_str = erealloc(buf->s_str, buf->s_len +
+		    len + (del ? 2 : 1));
 		if (del)
 			buf->s_str[buf->s_len++] = del;
 	}
