@@ -4,6 +4,10 @@ PROG=	sasyncd
 SRCS=	sasyncd.c carp.c conf.y log.c net.c net_ctl.c pfkey.c timer.c
 MAN=	sasyncd.8 sasyncd.conf.5
 
+.ifdef DEBUG
+CFLAGS=		-O0 $(PIPE) $(DEBUG)
+.endif
+
 CFLAGS+=	-I${.CURDIR}
 CLEANFILES=	y.tab.h
 
