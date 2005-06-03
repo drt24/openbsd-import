@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: aml_obj.c,v 1.1 2005/06/02 20:09:39 tholo Exp $	*/
 /*-
  * Copyright (c) 1999 Takanori Watanabe
  * Copyright (c) 1999, 2000 Mitsuru IWASAKI <iwasaki@FreeBSD.org>
@@ -102,7 +102,9 @@ aml_copy_object(struct aml_environ *env, union aml_object *orig)
                         ret->num.constant = 0;
                 }
 	} else {
+#if 0
 		printf("%s:%d\n", __FILE__, __LINE__);
+#endif
 		env->tempobject.type = aml_t_null;
 	}
 out:
