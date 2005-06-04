@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: acpidump.h,v 1.1 2005/06/02 20:09:39 tholo Exp $	*/
 /*-
  * Copyright (c) 1999 Doug Rabson
  * Copyright (c) 2000 Mitsuru IWASAKI <iwasaki@FreeBSD.org>
@@ -162,7 +162,8 @@ struct FACS {
 
 void		*acpi_map_physical(vm_offset_t, size_t);
 struct ACPIrsdp	*acpi_find_rsd_ptr(void);
-int		 acpi_checksum(void *, size_t);
+int		 acpi_checksum(void *, size_t)
+		     __attribute__ ((__bounded__(__buffer__,1,2)));
 struct ACPIsdt	*acpi_map_sdt(vm_offset_t);
 void		 acpi_print_rsd_ptr(struct ACPIrsdp *);
 void		 acpi_print_sdt(struct ACPIsdt *);

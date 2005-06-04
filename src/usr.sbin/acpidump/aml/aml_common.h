@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: aml_common.h,v 1.1 2005/06/02 20:09:39 tholo Exp $	*/
 /*-
  * Copyright (c) 2000 Mitsuru IWASAKI <iwasaki@FreeBSD.org>
  * All rights reserved.
@@ -46,6 +46,7 @@
 		AML_SYSABORT();						\
 	}								\
 } while(0)
+/* XXX: named variadic macros are a gcc-ism, and __VA_ARGS__ is C99-only */
 #define AML_SYSERRX(eval, fmt, args...) do {				\
 	printf(fmt, args);						\
 } while(0)
@@ -55,6 +56,7 @@
 #else /* !_KERNEL */
 #define AML_SYSASSERT(x)	assert(x)
 #define AML_SYSABORT()  	abort()
+/* XXX: named variadic macros are a gcc-ism, and __VA_ARGS__ is C99-only */
 #define AML_SYSERRX(eval, fmt, args...)	errx(eval, fmt, args)
 #define AML_DEBUGGER(x, y)	aml_dbgr(x, y)
 #define AML_STALL(micro)	/* not required in userland */
@@ -66,6 +68,7 @@ struct	aml_name;
 
 extern int	aml_debug;
 
+/* XXX: named variadic macros are a gcc-ism, and __VA_ARGS__ is C99-only */
 #define AML_DEBUGPRINT(args...) do {					\
 	if (aml_debug) {						\
 		printf(args);						\
