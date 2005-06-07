@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: aml_store.c,v 1.1 2005/06/02 20:09:39 tholo Exp $	*/
 /*-
  * Copyright (c) 1999 Takanori Watanabe
  * Copyright (c) 1999, 2000 Mitsuru IWASAKI <iwasaki@FreeBSD.org>
@@ -158,7 +158,8 @@ aml_store_to_buffer(struct aml_environ *env, union aml_object *obj,
 		if (buf->buffer.size - offset < size) {
 			aml_realloc_object(buf, offset + size + 1);
 		}
-		strcpy(&buf->buffer.data[offset], obj->str.string);
+		strlcpy(&buf->buffer.data[offset], obj->str.string,
+		    offset + size + 1);
 		AML_DEBUGPRINT("[Store string to buffer]");
 		break;
 	case aml_t_buffer:
