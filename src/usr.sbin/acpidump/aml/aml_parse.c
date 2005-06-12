@@ -1,4 +1,4 @@
-/*	$OpenBSD: aml_parse.c,v 1.1 2005/06/02 20:09:39 tholo Exp $	*/
+/*	$OpenBSD: aml_parse.c,v 1.2 2005/06/04 02:25:53 cloder Exp $	*/
 /*-
  * Copyright (c) 1999 Doug Rabson
  * Copyright (c) 1999, 2000 Mitsuru IWASAKI <iwasaki@FreeBSD.org>
@@ -488,7 +488,7 @@ aml_parse_concat_string(struct aml_environ *env, union aml_object *obj,
 			return (NULL);
 		}
 		strncpy(resobj->str.string, obj->str.string, len);
-		strcat(resobj->str.string, tmpobj->str.string);
+		strlcat(resobj->str.string, tmpobj->str.string, len);
 	} else {
 		resobj->str.string = NULL;
 	}
