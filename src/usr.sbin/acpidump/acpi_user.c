@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: acpi_user.c,v 1.1 2005/06/02 20:09:39 tholo Exp $	*/
 /*-
  * Copyright (c) 1999 Doug Rabson
  * Copyright (c) 2000 Mitsuru IWASAKI <iwasaki@FreeBSD.org>
@@ -143,18 +143,18 @@ acpi_load_dsdt(char *dumpfile, u_int8_t **dpp, u_int8_t **endp)
 	struct	stat sb;
 
 	if ((acpi_mem_fd = open(dumpfile, O_RDONLY)) == -1) {
-		errx(1, "opening %s\n", dumpfile);
+		errx(1, "opening %s", dumpfile);
 	}
 
 	LIST_INIT(&maplist);
 
 	if (fstat(acpi_mem_fd, &sb) == -1) {
-		errx(1, "fstat %s\n", dumpfile);
+		errx(1, "fstat %s", dumpfile);
 	}
 
 	dp = mmap(0, sb.st_size, PROT_READ, MAP_PRIVATE, acpi_mem_fd, 0);
 	if (dp == NULL) {
-		errx(1, "mmap %s\n", dumpfile);
+		errx(1, "mmap %s", dumpfile);
 	}
 
 	if (strncmp(dp, "DSDT", 4) == 0) {

@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: acpidump.c,v 1.1 2005/06/02 20:09:39 tholo Exp $	*/
 /*-
  * Copyright (c) 2000 Mitsuru IWASAKI <iwasaki@FreeBSD.org>
  * All rights reserved.
@@ -56,13 +56,13 @@ asl_dump_from_devmem()
 
 	rp = acpi_find_rsd_ptr();
 	if (!rp)
-		errx(1, "Can't find ACPI information\n");
+		errx(1, "Can't find ACPI information");
 
 	acpi_print_rsd_ptr(rp);
 	rsdp = (struct ACPIsdt *) acpi_map_sdt(rp->addr);
 	if (memcmp(rsdp->signature, "RSDT", 4) ||
 	    acpi_checksum(rsdp, rsdp->len))
-		errx(1, "RSDT is corrupted\n");
+		errx(1, "RSDT is corrupted");
 
 	acpi_handle_rsdt(rsdp);
 }

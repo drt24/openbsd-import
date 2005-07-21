@@ -1,4 +1,4 @@
-/*	$OpenBSD: asl_dump.c,v 1.1 2005/06/02 20:09:39 tholo Exp $	*/
+/*	$OpenBSD: asl_dump.c,v 1.2 2005/06/04 02:25:53 cloder Exp $	*/
 /*-
  * Copyright (c) 1999 Doug Rabson
  * Copyright (c) 2000 Mitsuru IWASAKI <iwasaki@FreeBSD.org>
@@ -990,7 +990,7 @@ asl_dump_termobj(u_int8_t **dpp, int indent)
 			asl_dump_defbankfield(&dp, indent);
 			break;
 		default:
-			errx(1, "strange opcode 0x5b, 0x%x\n", opcode);
+			errx(1, "strange opcode 0x5b, 0x%x", opcode);
 		}
 		break;
 	case 0x68 ... 0x6e:	/* ArgN */
@@ -1284,7 +1284,7 @@ asl_dump_termobj(u_int8_t **dpp, int indent)
 		printf("BreakPoint");
 		break;
 	default:
-		errx(1, "strange opcode 0x%x\n", opcode);
+		errx(1, "strange opcode 0x%x", opcode);
 	}
 
 	*dpp = dp;
