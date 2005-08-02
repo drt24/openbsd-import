@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_ubt.c,v 1.2 2005/06/24 20:06:11 martin Exp $	*/
+/*	$OpenBSD: if_ubt.c,v 1.3 2005/08/01 05:36:48 brad Exp $	*/
 
 /*
  * ng_ubt.c
@@ -162,7 +162,7 @@ USB_ATTACH(ubt)
 	/* Get USB device info */
 	sc->sc_udev = uaa->device;
 
-	devinfop = usbd_devinfo_alloc(dev, 0);
+	devinfop = usbd_devinfo_alloc(sc->sc_udev, 0);
 	USB_ATTACH_SETUP;
 	printf("%s: %s\n", USBDEVNAME(sc->sc_dev), devinfop);
 	usbd_devinfo_free(devinfop);
