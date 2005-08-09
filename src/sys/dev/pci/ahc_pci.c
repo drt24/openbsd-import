@@ -1,4 +1,4 @@
-/*	$OpenBSD: ahc_pci.c,v 1.47 2005/02/21 03:10:57 martin Exp $	*/
+/*	$OpenBSD: ahc_pci.c,v 1.48 2005/03/24 17:15:28 martin Exp $	*/
 /*
  * Product specific probe and attach routines for:
  *      3940, 2940, aic7895, aic7890, aic7880,
@@ -850,10 +850,6 @@ ahc_pci_attach(parent, self, aux)
 	devconfig |= PCIERRGENDIS;
 
 	pci_conf_write(pa->pa_pc, pa->pa_tag, DEVCONFIG, devconfig);
-
-	/* Ensure busmastering is enabled */
-	command |= PCI_COMMAND_MASTER_ENABLE;;
-	pci_conf_write(pa->pa_pc, pa->pa_tag, PCI_COMMAND_STATUS_REG, command);
 
 	/*
 	 * Disable PCI parity error reporting.  Users typically
