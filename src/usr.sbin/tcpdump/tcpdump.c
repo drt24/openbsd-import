@@ -1,4 +1,4 @@
-/*	$OpenBSD: tcpdump.c,v 1.45 2005/05/22 18:41:34 moritz Exp $	*/
+/*	$OpenBSD: tcpdump.c,v 1.46 2005/05/28 09:01:52 reyk Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -355,7 +355,7 @@ main(int argc, char **argv)
 			break;
 
 		case 'o':
-				oflag = 1;
+			oflag = 1;
 			break;
 
 		case 'p':
