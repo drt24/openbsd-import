@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-ip.c,v 1.27 2004/08/10 19:55:35 markus Exp $	*/
+/*	$OpenBSD: print-ip.c,v 1.28 2004/10/15 11:10:29 markus Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -391,6 +391,10 @@ ip_print(register const u_char *bp, register u_int length)
 	}
 	if (length < sizeof (struct ip)) {
 		(void)printf("truncated-ip %d", length);
+		return;
+	}
+	if (ip->ip_v != IPVERSION) {
+		(void)printf("bad-ip-version %u", ip->ip_v);
 		return;
 	}
 	hlen = ip->ip_hl * 4;
