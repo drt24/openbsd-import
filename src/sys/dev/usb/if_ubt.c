@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_ubt.c,v 1.3 2005/08/01 05:36:48 brad Exp $	*/
+/*	$OpenBSD: if_ubt.c,v 1.4 2005/08/02 12:32:07 reyk Exp $	*/
 
 /*
  * ng_ubt.c
@@ -1713,7 +1713,7 @@ ubt_if_ioctl(struct ifnet *ifp, u_long command, caddr_t data)
 	int s;
 	int error = 0;
 
-	s = splimp();
+	s = splnet();
 	switch(command) {
 	case SIOCSIFADDR:
 		ifp->if_flags |= IFF_UP;
