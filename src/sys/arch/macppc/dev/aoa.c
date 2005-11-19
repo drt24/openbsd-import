@@ -1,4 +1,4 @@
-/*	$OpenBSD: aoa.c,v 1.1 2005/10/31 00:04:54 joris Exp $	*/
+/*	$OpenBSD: aoa.c,v 1.2 2005/11/05 04:26:22 brad Exp $	*/
 /*	$Id$	*/
 
 /*-
@@ -121,8 +121,6 @@ aoa_match(struct device *parent, void *match, void *aux)
 	if (strcmp(compat, "AOAKeylargo") == 0)
 		return (1);
 	if (strcmp(compat, "AOAK2") == 0)
-		return (1);
-	if (strcmp(compat, "AOAbase") == 0)
 		return (1);
 
 	return (0);
