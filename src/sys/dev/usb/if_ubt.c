@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_ubt.c,v 1.4 2005/08/02 12:32:07 reyk Exp $	*/
+/*	$OpenBSD: if_ubt.c,v 1.5 2005/11/09 05:57:23 brad Exp $	*/
 
 /*
  * ng_ubt.c
@@ -64,7 +64,7 @@
 
 #include <dev/usb/if_ubtreg.h>
 
-USB_DECLARE_DRIVER(ubt);
+USB_DECLARE_DRIVER_CLASS(ubt, DV_IFNET);
 
 Static usbd_status	ubt_request_start(struct ubt_softc *);
 Static void		ubt_request_complete(usbd_xfer_handle,
