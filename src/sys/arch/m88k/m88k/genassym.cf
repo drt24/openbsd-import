@@ -1,4 +1,4 @@
-#	$OpenBSD$
+#	$OpenBSD: genassym.cf,v 1.2 2004/06/13 21:49:17 niklas Exp $
 #
 # Copyright (c) 1982, 1990 The Regents of the University of California.
 # All rights reserved.
@@ -51,6 +51,7 @@ member	p_back
 member	p_addr
 member	p_stat
 member	p_wchan
+member	P_ASTPENDING	p_md.md_astpending
 
 export	SRUN
 export	SONPROC
