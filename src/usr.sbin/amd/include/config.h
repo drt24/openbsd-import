@@ -47,9 +47,9 @@
 #include "os-defaults.h"
 #include OS_HDR
 
+#include <errno.h>
 #include <stdio.h>
 #include <sys/types.h>
-#include <sys/errno.h>
 #include <sys/time.h>
 
 #define clocktime() (clock_valid ? clock_valid : time(&clock_valid))

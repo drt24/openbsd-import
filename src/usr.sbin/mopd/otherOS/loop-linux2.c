@@ -26,6 +26,7 @@
 static const char rcsid[] = "$Id$";
 #endif
 
+#include <errno.h>
 #include <stdlib.h>
 #include <strings.h>
 #include <unistd.h>
@@ -33,7 +34,6 @@ static const char rcsid[] = "$Id$";
 #include <sys/time.h>
 #endif
 #include <sys/ioctl.h>
-#include <sys/errno.h>
 
 #include "os.h"
 #include "common/common.h"
