@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic7xxx.c,v 1.69 2005/12/01 02:21:13 krw Exp $	*/
+/*	$OpenBSD: aic7xxx.c,v 1.70 2005/12/04 03:56:17 krw Exp $	*/
 /*	$NetBSD: aic7xxx.c,v 1.108 2003/11/02 11:07:44 wiz Exp $	*/
 
 /*
@@ -953,8 +953,7 @@ ahc_handle_seqint(struct ahc_softc *ahc, u_int intstat)
 		       devinfo.lun);
 		scbindex = ahc_inb(ahc, SCB_TAG);
 		scb = ahc_lookup_scb(ahc, scbindex);
-		if (scb != NULL
-		 && (scb->flags & SCB_RECOVERY_SCB) != 0)
+		if (scb != NULL)
 			/*
 			 * Ensure that we didn't put a second instance of this
 			 * SCB into the QINFIFO.
