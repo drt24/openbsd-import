@@ -1,4 +1,4 @@
-/*	$OpenBSD: addrtoname.c,v 1.25 2004/12/13 05:37:25 itojun Exp $	*/
+/*	$OpenBSD: addrtoname.c,v 1.26 2005/05/22 18:41:33 moritz Exp $	*/
 
 /*
  * Copyright (c) 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -28,7 +28,7 @@ static const char rcsid[] =
     "@(#) $Header$ (LBL)";
 #endif
 
-#include <sys/types.h>
+#include <sys/param.h>
 #include <sys/socket.h>
 #include <sys/time.h>
 
