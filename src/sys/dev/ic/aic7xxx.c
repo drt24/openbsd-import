@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic7xxx.c,v 1.70 2005/12/04 03:56:17 krw Exp $	*/
+/*	$OpenBSD: aic7xxx.c,v 1.71 2005/12/28 03:00:07 krw Exp $	*/
 /*	$NetBSD: aic7xxx.c,v 1.108 2003/11/02 11:07:44 wiz Exp $	*/
 
 /*
@@ -4654,7 +4654,7 @@ ahc_chip_init(struct ahc_softc *ahc)
 
 	/*
 	 * Setup the allowed SCSI Sequences based on operational mode.
-	 * If we are a target, we'll enalbe select in operations once
+	 * If we are a target, we'll enable select in operations once
 	 * we've had a lun enabled.
 	 */
 	scsiseq_template = ENSELO|ENAUTOATNO|ENAUTOATNP;
