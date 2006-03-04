@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic7xxxvar.h,v 1.20 2004/08/01 01:36:23 krw Exp $	*/
+/*	$OpenBSD: aic7xxxvar.h,v 1.21 2005/12/28 03:00:07 krw Exp $	*/
 /*
  * Core definitions and data structures shareable across OS platforms.
  *
@@ -1022,7 +1022,7 @@ struct ahc_softc {
 
 	/*
 	 * Device instance currently on the bus awaiting a continue TIO
-	 * for a command that was not given the disconnect priviledge.
+	 * for a command that was not given the disconnect privilege.
 	 */
 	struct ahc_tmode_lstate  *pending_device;
 
