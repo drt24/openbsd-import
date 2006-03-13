@@ -1,4 +1,4 @@
-/*	$OpenBSD: util.c,v 1.18 2004/07/28 09:37:26 markus Exp $	*/
+/*	$OpenBSD: util.c,v 1.19 2005/03/07 16:13:38 reyk Exp $	*/
 
 /*
  * Copyright (c) 1990, 1991, 1993, 1994, 1995, 1996, 1997
@@ -217,11 +217,7 @@ error(const char *fmt, ...)
 	va_start(ap, fmt);
 	(void)vfprintf(stderr, fmt, ap);
 	va_end(ap);
-	if (*fmt) {
-		fmt += strlen(fmt);
-		if (fmt[-1] != '\n')
-			(void)fputc('\n', stderr);
-	}
+	(void)fputc('\n', stderr);
 	exit(1);
 	/* NOTREACHED */
 }
@@ -236,11 +232,7 @@ warning(const char *fmt, ...)
 	va_start(ap, fmt);
 	(void)vfprintf(stderr, fmt, ap);
 	va_end(ap);
-	if (*fmt) {
-		fmt += strlen(fmt);
-		if (fmt[-1] != '\n')
-			(void)fputc('\n', stderr);
-	}
+	(void)fputc('\n', stderr);
 }
 
 

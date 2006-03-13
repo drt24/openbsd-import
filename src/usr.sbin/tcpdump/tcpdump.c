@@ -1,4 +1,4 @@
-/*	$OpenBSD: tcpdump.c,v 1.48 2005/11/18 11:06:51 djm Exp $	*/
+/*	$OpenBSD: tcpdump.c,v 1.49 2006/02/15 20:34:23 otto Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -195,7 +195,7 @@ pcap_list_linktypes(pcap_t *p)
 		err(1, "BIOCGDLTLIST");
 
 	if (dl.bfl_len > MAXDLT)
-		error("Invalid number of linktypes: %u\n", dl.bfl_len);
+		error("Invalid number of linktypes: %u", dl.bfl_len);
 
 	fprintf(stderr, "%d link type%s supported:\n", dl.bfl_len,
 	    dl.bfl_len == 1 ? "" : "s");
