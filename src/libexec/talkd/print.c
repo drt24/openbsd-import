@@ -1,4 +1,4 @@
-/*	$OpenBSD: print.c,v 1.8 2003/07/29 18:39:23 deraadt Exp $	*/
+/*	$OpenBSD: print.c,v 1.9 2004/03/10 04:32:45 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1983 Regents of the University of California.
@@ -59,7 +59,7 @@ print_request(char *cp, CTL_MSG *mp)
 {
 	char tbuf[80], *tp;
 
-	if (mp->type > NTYPES) {
+	if (mp->type >= NTYPES) {
 		(void)snprintf(tbuf, sizeof(tbuf), "type %d", mp->type);
 		tp = tbuf;
 	} else
@@ -73,12 +73,12 @@ print_response(char *cp, CTL_RESPONSE *rp)
 {
 	char tbuf[80], *tp, abuf[80], *ap;
 
-	if (rp->type > NTYPES) {
+	if (rp->type >= NTYPES) {
 		(void)snprintf(tbuf, sizeof(tbuf), "type %d", rp->type);
 		tp = tbuf;
 	} else
 		tp = types[rp->type];
-	if (rp->answer > NANSWERS) {
+	if (rp->answer >= NANSWERS) {
 		(void)snprintf(abuf, sizeof(abuf), "answer %d", rp->answer);
 		ap = abuf;
 	} else
