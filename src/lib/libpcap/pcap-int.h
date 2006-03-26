@@ -1,4 +1,4 @@
-/*	$OpenBSD: pcap-int.h,v 1.9 2001/10/02 18:04:35 deraadt Exp $	*/
+/*	$OpenBSD: pcap-int.h,v 1.10 2005/11/18 11:05:39 djm Exp $	*/
 
 /*
  * Copyright (c) 1994, 1995, 1996
@@ -104,6 +104,8 @@ struct pcap {
 	u_int *dlt_list;
 
 	char errbuf[PCAP_ERRBUF_SIZE];
+
+	struct pcap_pkthdr pcap_header;	/* This is needed for the pcap_next_ex() to work */
 };
 
 /*
