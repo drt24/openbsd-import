@@ -333,7 +333,7 @@ putprivs(long id, int quotatype, struct quotause *quplist)
 		if ((fd = open(qup->qfname, O_WRONLY)) < 0) {
 			perror(qup->qfname);
 		} else {
-			lseek(fd, (off_t)(id * sizeof (struct dqblk)), 0);
+			lseek(fd, (off_t)(id * sizeof (struct dqblk)), SEEK_SET);
 			if (write(fd, &qup->dqblk, sizeof (struct dqblk)) !=
 			    sizeof (struct dqblk))
 				warn("%s", qup->qfname);
