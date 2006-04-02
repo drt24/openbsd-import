@@ -1,4 +1,4 @@
-/*	$OpenBSD: ypwhich.c,v 1.15 2003/06/02 04:00:17 deraadt Exp $	*/
+/*	$OpenBSD: ypwhich.c,v 1.16 2003/07/06 23:26:18 deraadt Exp $	*/
 /*	$NetBSD: ypwhich.c,v 1.6 1996/05/13 02:43:48 thorpej Exp $	*/
 
 /*
@@ -27,7 +27,7 @@
  * SUCH DAMAGE.
  */
 
-#ifndef LINT
+#ifndef lint
 static char rcsid[] = "$Id$";
 #endif
 
