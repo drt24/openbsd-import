@@ -1,4 +1,4 @@
-/*	$OpenBSD: apprentice.c,v 1.19 2004/05/19 02:32:35 tedu Exp $ */
+/*	$OpenBSD: apprentice.c,v 1.20 2004/09/25 09:19:35 otto Exp $ */
 /*
  * Copyright (c) Ian F. Darwin 1986-1995.
  * Software written by Ian F. Darwin and others;
@@ -698,8 +698,8 @@ GetDesc:
 		m->nospflag = 1;
 	} else
 		m->nospflag = 0;
-	while ((m->desc[i++] = *l++) != '\0' && i < MAXDESC)
-		/* NULLBODY */;
+
+	strlcpy(m->desc, l, sizeof(m->desc));
 
 #ifndef COMPILE_ONLY
 	if (action == FILE_CHECK) {
