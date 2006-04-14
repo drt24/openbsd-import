@@ -38,7 +38,7 @@ RCSID("$Id$");
 #include <stdio.h>
 
 
-#define VERSIONLIST 		{ "heimdal-0.6.3/OpenBSD", }
+#define VERSIONLIST 		{ "heimdal-0.7.2/OpenBSD", }
 #define PACKAGE_BUGREPORT	"bugs@openbsd.org"
 
 char *__progname;
