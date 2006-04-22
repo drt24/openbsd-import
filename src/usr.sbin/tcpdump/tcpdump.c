@@ -1,4 +1,4 @@
-/*	$OpenBSD: tcpdump.c,v 1.52 2006/04/21 23:09:34 cloder Exp $	*/
+/*	$OpenBSD: tcpdump.c,v 1.53 2006/04/22 17:24:33 moritz Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -219,7 +219,6 @@ main(int argc, char **argv)
 	char ebuf[PCAP_ERRBUF_SIZE], *WFileName = NULL;
 	pcap_handler printer;
 	struct bpf_program *fcode;
-	RETSIGTYPE (*oldhandler)(int);
 	u_char *pcap_userdata;
 	u_int dlt = (u_int) -1;
 
@@ -450,13 +449,6 @@ main(int argc, char **argv)
 	}
 	init_addrtoname(localnet, netmask);
 
-	setsignal(SIGTERM, cleanup);
-	setsignal(SIGINT, cleanup);
-	setsignal(SIGCHLD, gotchld);
-	/* Cooperate with nohup(1) XXX is this still necessary/working? */
-	if ((oldhandler = setsignal(SIGHUP, cleanup)) != SIG_DFL)
-		(void)setsignal(SIGHUP, oldhandler);
-
 	if (WFileName) {
 		pcap_dumper_t *p;
 
@@ -652,6 +644,19 @@ default_print(register const u_char *bp, register u_int length)
 			(void)printf(" %02x", *(u_char *)sp);
 		}
 	}
+}
+
+void
+set_slave_signals(void)
+{
+	RETSIGTYPE (*oldhandler)(int);
+
+	setsignal(SIGTERM, cleanup);
+	setsignal(SIGINT, cleanup);
+	setsignal(SIGCHLD, gotchld);
+	/* Cooperate with nohup(1) XXX is this still necessary/working? */
+	if ((oldhandler = setsignal(SIGHUP, cleanup)) != SIG_DFL)
+		(void)setsignal(SIGHUP, oldhandler);
 }
 
 __dead void
