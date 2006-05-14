@@ -213,7 +213,7 @@ hasquota(struct fstab *fs, int type, char **qfnamep, int force)
 	}
 	strlcpy(buf, fs->fs_mntops, sizeof buf);
 	for (opt = strtok(buf, ","); opt; opt = strtok(NULL, ",")) {
-		if (cp = strchr(opt, '='))
+		if ((cp = strchr(opt, '=')) != NULL)
 			*cp++ = '\0';
 		if (type == USRQUOTA && strcmp(opt, usrname) == 0)
 			break;
