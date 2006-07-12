@@ -5,7 +5,7 @@ KRBDEPTH=..
 
 .PATH:	${KRB5SRC}/doc
 
-MAKEINFO = /usr/bin/makeinfo
+MAKEINFO = /usr/bin/makeinfo --no-split
 INSTALL-INFO = /usr/bin/install-info
 
 infodir = ${DESTDIR}/usr/share/info
