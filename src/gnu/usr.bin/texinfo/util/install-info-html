@@ -109,13 +109,13 @@ shift `expr $OPTIND - 1`
 #
 # Input file name
 #
-if [ -z "$all" -a -z "$1" ]; then
+if [ -z "$all" ] && [ -z "$1" ]; then
 	help
 	echo "$name: No HTML documents given"
 	exit 2
 fi
 
-if [ -n "$all" -a -n "$1" ]; then
+if [ -n "$all" ] && [ -n "$1" ]; then
 	echo "$name: --all specified, ignoring DIRECTORY-DIRs"
 fi
 
