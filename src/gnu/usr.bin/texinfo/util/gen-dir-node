@@ -107,8 +107,7 @@ while [ $lines -ge $line ] ; do
 
     fname=
 
-    if [ -z "$echoline" -a ! -z "$file" ] ; then
-
+    if [ -z "$echoline" ] && [ ! -z "$file" ] ; then
       # Find the file to operate upon.  Check both possible names.
       infoname=`echo $file | sed 's/\.info$//'`
       noext=
@@ -121,10 +120,10 @@ while [ $lines -ge $line ] ; do
       fi
 
       # If it exists with both names take what was said in the file.
-      if [ ! -z "$ext" -a ! -z "$noext" ]; then
+      if [ ! -z "$ext" ] && [ ! -z "$noext" ]; then
         fname=$file
         warn="### Warning: $ext and $noext both exist!  Using ${file}. ###"
-      elif [ ! \( -z "$ext" -a -z "$noext" \) ]; then
+      elif [ ! -z "${noext}${ext}" ]; then
         # just take the name if it exists only once
         fname=${noext}${ext}
       fi

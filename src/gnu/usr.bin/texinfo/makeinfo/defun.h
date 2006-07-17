@@ -24,8 +24,8 @@
 
 #include "insertion.h"
 
-extern enum insertion_type get_base_type ();
-extern void cm_defun ();
+extern enum insertion_type get_base_type (int type);
+extern void cm_defun (void);
 
 #endif /* !DEFUN_H */
 
