@@ -1,4 +1,4 @@
-/* $Id$ */
+/*	$OpenBSD$ */
 
 /*
  * Copyright (c) 2006 The DragonFly Project.  All rights reserved.
