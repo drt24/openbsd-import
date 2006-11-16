@@ -257,6 +257,7 @@ $PREAMBLE = <<'----END OF PREAMBLE----';
 
     'nbsp'      =>    '\\ ',    # non-breaking space
     'shy'       =>    '',       # soft (discretionary) hyphen
+    'copy'	=>    '\(co',	# copyright
 );
 
 
