@@ -1,4 +1,4 @@
-/*	$OpenBSD: scan.l,v 1.7 2002/05/31 22:49:29 deraadt Exp $	*/
+/*	$OpenBSD: scan.l,v 1.8 2003/06/04 17:34:44 millert Exp $	*/
 
 /* scan.l - scanner for flex input */
 
@@ -285,7 +285,8 @@ LEXOPT		[aceknopr]
 
 	\"[^"\n]*\"	{
 			strlcpy( nmstr, yytext + 1, sizeof nmstr);
-			nmstr[strlen( nmstr ) - 1] = '\0';
+			if (nmstr[strlen(nmstr) - 1] == '"')
+				nmstr[strlen(nmstr) - 1] = '\0';
 			return NAME;
 			}
 
