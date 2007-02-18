@@ -306,7 +306,7 @@ get_args(int c, char *v[])
 
 show_usage:
 	fprintf(stderr,
-	    "usage: %s [-nprv] [-a mount_point] [-C cluster-name] "
+	    "usage: %s [-nprv] [-a mount_point] [-C cluster] "
 	    "[-c duration] [-D option]\n"
 	    "\t[-d domain] [-k kernel-arch] [-l logfile] "
 	    "[-t interval.interval]\n"
