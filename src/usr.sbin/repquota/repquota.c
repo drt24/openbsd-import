@@ -164,9 +164,9 @@ main(int argc, char *argv[])
 void
 usage(void)
 {
-	fprintf(stderr, "Usage:\n\t%s\n\t%s\n",
-		"repquota [-v] [-g] [-u] -a",
-		"repquota [-v] [-g] [-u] filesys ...");
+	extern char *__progname;
+	fprintf(stderr, "usage: repquota [-aguv] filesystem ...\n",
+		__progname);
 	exit(1);
 }
 
