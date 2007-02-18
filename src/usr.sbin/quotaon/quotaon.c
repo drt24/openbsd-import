@@ -147,8 +147,7 @@ main(int argc, char *argv[])
 usage(char *whoami)
 {
 
-	fprintf(stderr, "Usage:\n\t%s [-g] [-u] [-v] -a\n", whoami);
-	fprintf(stderr, "\t%s [-g] [-u] [-v] filesys ...\n", whoami);
+	fprintf(stderr, "usage: %s [-aguv] filesystem ...\n", whoami);
 	exit(1);
 }
 
