@@ -313,10 +313,8 @@ main(int argc, char *argv[])
 	
 	if (errs) {
 show_usage:
-		fprintf(stderr, "usage: %s [-h host] [[-f] [-m] [-v] [-s]]"
-		    " | [[-u] directory ...]] |\n"
-		    "\t[-l logfile|\"syslog\"] [-x log_flags] "
-		    "[-D dbg_opts] [-M mapent]\n", __progname);
+		fprintf(stderr, "usage: %s [-fmsuv] [-h hostname] "
+		    "[directory ...]\n", __progname);
 		exit(1);
 	}
 
