@@ -117,7 +117,7 @@ findid(char *name)
 		syslog(LOG_ERR, "%s: %m", _PATH_ACCESS);
 		err(1, "%s", _PATH_ACCESS);
 	}
-	while (fgets(loginargs, sizeof(loginargs) - 1, fp)) {
+	while (fgets(loginargs, sizeof(loginargs), fp)) {
 		if (ferror(fp))
 			break;
 		if ((p = strchr(loginargs, '#')))
