@@ -217,7 +217,7 @@ nextmntopt(char **p)
 	/*
 	 * Skip past white space
 	 */
-	while (*cp && isspace(*cp))
+	while (isspace(*cp))
 		cp++;
 	/*
 	 * Word starts here

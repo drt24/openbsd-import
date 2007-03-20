@@ -155,7 +155,7 @@ read_file(FILE *fp, char *map, void *db)
 		/*
 		 * Find start of key
 		 */
-		for (kp = key_val; *kp && isascii(*kp) && isspace(*kp); kp++)
+		for (kp = key_val; isascii(*kp) && isspace(*kp); kp++)
 			;
 
 		/*
@@ -176,7 +176,7 @@ read_file(FILE *fp, char *map, void *db)
 		 */
 		if (*cp)
 			*cp++ = '\0';
-		while (*cp && isascii(*cp) && isspace(*cp))
+		while (isascii(*cp) && isspace(*cp))
 			cp++;
 		if (*kp == '+') {
 			fprintf(stderr, "Can't interpolate %s\n", kp);

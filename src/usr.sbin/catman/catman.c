@@ -1,4 +1,4 @@
-/*	$OpenBSD: catman.c,v 1.6 2003/04/15 08:32:38 deraadt Exp $	*/
+/*	$OpenBSD: catman.c,v 1.7 2003/06/28 20:37:29 deraadt Exp $	*/
 /*
  * Copyright (c) 1993 Winning Strategies, Inc.
  * All rights reserved.
@@ -138,7 +138,7 @@ catman(const char *path, char *section)
 		if (isdigit(*tmp)) {
 			sectlen++;
 			tmp++;
-			while (*tmp && isdigit(*tmp) == 0) {
+			while (isdigit(*tmp) == 0) {
 				sectlen++;
 				tmp++;
 			}

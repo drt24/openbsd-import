@@ -119,7 +119,7 @@ search_or_reload_file(FILE *fp, char *map, char *key, char **val, mnt_map *m,
 		/*
 		 * Find start of key
 		 */
-		for (kp = key_val; *kp && isascii(*kp) && isspace(*kp); kp++)
+		for (kp = key_val; isascii(*kp) && isspace(*kp); kp++)
 			;
 
 		/*
@@ -141,7 +141,7 @@ search_or_reload_file(FILE *fp, char *map, char *key, char **val, mnt_map *m,
 			*cp++ = '\0';
 
 		if (fn || (*key == *kp && strcmp(key, kp) == 0)) {
-			while (*cp && isascii(*cp) && isspace(*cp))
+			while (isascii(*cp) && isspace(*cp))
 				cp++;
 			if (*cp) {
 				/*

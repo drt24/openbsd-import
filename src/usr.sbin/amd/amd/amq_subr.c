@@ -215,7 +215,7 @@ struct svc_req *rqstp;
 	/*
 	 * Find start of value
 	 */
-	while (*cp && isascii(*cp) && isspace(*cp))
+	while (isascii(*cp) && isspace(*cp))
 		cp++;
 
 	root_newmap(s, cp, (char *) 0);
