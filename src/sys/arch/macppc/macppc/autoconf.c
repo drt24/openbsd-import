@@ -592,13 +592,19 @@ makebootdev(char *bp)
 int
 getpno(char **cp)
 {
-	int val = 0;
+	int val = 0, digit;
 	char *cx = *cp;
 
-	while(*cx && *cx >= '0' && *cx <= '9') {
-		val = val * 10 + *cx - '0';
+	while (*cx) {
+		if (*cx >= '0' && *cx <= '9')
+			digit = *cx - '0';
+		else if (*cx >= 'a' && *cx <= 'f')
+			digit = *cx - 'a' + 0x0a;
+		else
+			break;
+		val = val * 16 + digit;
 		cx++;
 	}
 	*cp = cx;
-	return val;
+	return (val);
 }
