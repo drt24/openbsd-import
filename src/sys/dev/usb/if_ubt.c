@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_ubt.c,v 1.6 2005/11/24 14:31:40 grange Exp $	*/
+/*	$OpenBSD: if_ubt.c,v 1.7 2007/04/26 17:00:28 miod Exp $	*/
 
 /*
  * ng_ubt.c
@@ -1131,7 +1131,7 @@ ubt_bulk_in_complete(usbd_xfer_handle h, usbd_private_handle p, usbd_status s)
 		goto done;
 	}
 
-	len = le16toh(hdr->length);
+	len = letoh16(hdr->length);
 	if (len == m->m_pkthdr.len - sizeof(*hdr)) {
 		NG_UBT_INFO(
 "%s: %s - Got complete ACL data frame, pktlen=%d, length=%d\n",
