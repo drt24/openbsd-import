@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_ubt.c,v 1.7 2007/04/26 17:00:28 miod Exp $	*/
+/*	$OpenBSD: if_ubt.c,v 1.8 2007/05/21 06:10:43 jsg Exp $	*/
 
 /*
  * ng_ubt.c
@@ -125,7 +125,8 @@ USB_MATCH(ubt)
 
 	Static struct usb_devno const	ubt_broken_devices[] = {
 		{ USB_VENDOR_CSR, USB_PRODUCT_CSR_BLUECORE },
-		{ USB_VENDOR_MSI, USB_PRODUCT_MSI_BLUETOOTH }
+		{ USB_VENDOR_MSI, USB_PRODUCT_MSI_BLUETOOTH },
+		{ USB_VENDOR_MSI, USB_PRODUCT_MSI_BLUETOOTH_2 }
 	};
 
 	USB_MATCH_START(ubt, uaa);
