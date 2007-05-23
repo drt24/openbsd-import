@@ -1,4 +1,4 @@
-/*	$OpenBSD: if_ubt.c,v 1.8 2007/05/21 06:10:43 jsg Exp $	*/
+/*	$OpenBSD: if_ubt.c,v 1.9 2007/05/22 07:01:19 matthieu Exp $	*/
 
 /*
  * ng_ubt.c
@@ -769,9 +769,9 @@ ubt_request_start(struct ubt_softc * sc)
 
 	if (m->m_pkthdr.len > UBT_CTRL_BUFFER_SIZE)
 		panic(
-"%s: %s - HCI command frame too big, size=%zd, len=%d\n",
-			__func__, USBDEVNAME(sc->sc_dev), UBT_CTRL_BUFFER_SIZE,
-			m->m_pkthdr.len);
+"%s: %s - HCI command frame too big, size=%lu, len=%d\n",
+			__func__, USBDEVNAME(sc->sc_dev),
+			(ulong)UBT_CTRL_BUFFER_SIZE, m->m_pkthdr.len);
 
 	m_copydata(m, 0, m->m_pkthdr.len, sc->sc_ctrl_buffer);
 
