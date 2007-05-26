@@ -1,4 +1,4 @@
-/*	$OpenBSD: autoconf.c,v 1.29 2007/05/08 02:17:35 deraadt Exp $	*/
+/*	$OpenBSD: autoconf.c,v 1.30 2007/05/15 01:56:47 deraadt Exp $	*/
 /*
  * Copyright (c) 1996, 1997 Per Fogelstrom
  * Copyright (c) 1995 Theo de Raadt
@@ -141,6 +141,7 @@ findtype(char **s)
 		{ "/disk@",		"sd", T_DISK },
 		{ "/disk",		"wd", T_DISK },
 		{ "/usb@",		"sd", T_SCSI },
+		{ "/ADPT,2940U2B@",	"sd", T_SCSI },
 		{ "/bcom5704@4",	"bge0", T_IFACE },
 		{ "/bcom5704@4,1",	"bge1", T_IFACE },
 		{ "/ethernet",		"gem0", T_IFACE },
