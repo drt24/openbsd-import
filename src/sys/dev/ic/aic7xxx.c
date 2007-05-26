@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic7xxx.c,v 1.74 2007/05/02 02:20:36 krw Exp $	*/
+/*	$OpenBSD: aic7xxx.c,v 1.75 2007/05/14 01:37:49 deraadt Exp $	*/
 /*	$NetBSD: aic7xxx.c,v 1.108 2003/11/02 11:07:44 wiz Exp $	*/
 
 /*
@@ -1169,7 +1169,7 @@ ahc_handle_scsiint(struct ahc_softc *ahc, u_int intstat)
 					printf("\tCRC Value Mismatch\n");
 				if ((sstat2 & CRCENDERR) != 0)
 					printf("\tNo terminal CRC packet "
-					       "recevied\n");
+					       "received\n");
 				if ((sstat2 & CRCREQERR) != 0)
 					printf("\tIllegal CRC packet "
 					       "request\n");
