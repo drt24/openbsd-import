@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic79xx.reg,v 1.5 2006/02/06 17:29:11 jmc Exp $	*/
+/*	$OpenBSD: aic79xx.reg,v 1.6 2007/05/25 21:27:15 krw Exp $	*/
 /*
  * Aic79xx register and scratch ram definitions.
  *
@@ -2425,7 +2425,7 @@ register IOPDNCTL {
 }
 
 /*
- * Shaddow Host Address.
+ * Shadow Host Address.
  */
 register SHADDR {
 	address			0x060
