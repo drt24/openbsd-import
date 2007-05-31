@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: hci.h,v 1.4 2007/05/30 03:42:53 uwe Exp $	*/
 /*	$NetBSD: hci.h,v 1.10 2007/04/21 06:15:23 plunky Exp $	*/
 
 /*-
@@ -2144,7 +2144,6 @@ struct hci_unit {
 	int hci_ipl;		/* to block queue operations */
 
 	/* input queues */
-	void			*hci_rxint;	/* receive interrupt cookie */
 	struct ifqueue		 hci_eventq;	/* Event queue */
 	struct ifqueue		 hci_aclrxq;	/* ACL rx queue */
 	struct ifqueue		 hci_scorxq;	/* SCO rx queue */
