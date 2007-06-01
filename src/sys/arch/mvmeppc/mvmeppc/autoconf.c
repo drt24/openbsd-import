@@ -1,4 +1,4 @@
-/*	$OpenBSD: autoconf.c,v 1.16 2007/05/04 19:30:55 deraadt Exp $	*/
+/*	$OpenBSD: autoconf.c,v 1.18 2007/06/01 19:20:46 deraadt Exp $	*/
 /*
  * Copyright (c) 1996, 1997 Per Fogelstrom
  * Copyright (c) 1995 Theo de Raadt
@@ -61,7 +61,6 @@
 
 extern void	dumpconf(void);
 struct device *getdevunit(char *, int);
-void diskconf(void);
 void calc_delayconst(void);	/* clock.c */
 
 /*
@@ -94,13 +93,11 @@ cpu_configure()
 	 * as the console for now, and it requires the clock to be ticking
 	 * for proper operation (think boot -a ...)
 	 */
-	md_diskconf = diskconf;
-
 	cold = 0;
 }
 
 void
-diskconf()
+diskconf(void)
 {
 	printf("boot device: %s\n",
 	    (bootdv != NULL) ? bootdv->dv_xname : "<unknown>");
