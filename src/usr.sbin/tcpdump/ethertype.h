@@ -1,4 +1,4 @@
-/*	$OpenBSD: ethertype.h,v 1.10 2005/04/24 21:17:18 brad Exp $	*/
+/*	$OpenBSD: ethertype.h,v 1.11 2006/03/28 15:48:33 reyk Exp $	*/
 
 /*
  * Copyright (c) 1993, 1994, 1996
@@ -126,8 +126,8 @@
 #ifndef ETHERTYPE_JUMBO
 #define ETHERTYPE_JUMBO		0x8870
 #endif
-#ifndef ETHERTYPE_EAPOL
-#define ETHERTYPE_EAPOL  	0x888e
+#ifndef ETHERTYPE_PAE
+#define ETHERTYPE_PAE	  	0x888e
 #endif
 #ifndef ETHERTYPE_LLDP
 #define ETHERTYPE_LLDP		0x88cc
