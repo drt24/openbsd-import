@@ -124,7 +124,7 @@ Receive(int fd, int display)
                  if (display & REC_PASSWD) {
                     /* password time */
                     if (!passwd)
-                        if ((passwd = getpass("Password: ")) == NULL)
+                        if ((passwd = getpass("Password:")) == NULL)
 				err(1, "getpass");
                     snprintf(Buffer, sizeof Buffer, "passwd %s\n", passwd);
                     memset(passwd, '\0', strlen(passwd));
