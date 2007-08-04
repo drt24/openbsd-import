@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic7xxxvar.h,v 1.22 2006/03/04 19:33:21 miod Exp $	*/
+/*	$OpenBSD: aic7xxxvar.h,v 1.23 2007/05/14 01:37:49 deraadt Exp $	*/
 /*
  * Core definitions and data structures shareable across OS platforms.
  *
@@ -1222,7 +1222,9 @@ int		ahc_match_scb(struct ahc_softc *ahc, struct scb *scb,
 
 /****************************** Initialization ********************************/
 int			 ahc_softc_init(struct ahc_softc *);
+#ifndef DEBUG
 void			 ahc_controller_info(struct ahc_softc *, char *, size_t);
+#endif
 int			 ahc_chip_init(struct ahc_softc *ahc);
 int			 ahc_init(struct ahc_softc *ahc);
 void			 ahc_intr_enable(struct ahc_softc *ahc, int enable);
