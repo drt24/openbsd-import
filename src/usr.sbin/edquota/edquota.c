@@ -96,9 +96,10 @@ void
 usage(void)
 {
 	(void)fprintf(stderr, "%s%s%s%s",
-		"Usage: edquota [-u] [-p username] username ...\n",
-		"\tedquota -g [-p groupname] groupname ...\n",
-		"\tedquota [-u] -t\n", "\tedquota -g -t\n");
+	    "usage: edquota [-u] [-p proto-username] username | uid ...\n",
+	    "       edquota -g [-p proto-groupname] groupname | gid ...\n",
+	    "       edquota -t [-u]\n",
+	    "       edquota -g -t\n");
 	exit(1);
 }
 
