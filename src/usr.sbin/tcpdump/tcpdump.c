@@ -1,4 +1,4 @@
-/*	$OpenBSD: tcpdump.c,v 1.55 2006/06/16 16:55:46 deraadt Exp $	*/
+/*	$OpenBSD: tcpdump.c,v 1.56 2007/06/01 18:19:40 todd Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -62,7 +62,6 @@ static const char rcsid[] =
 
 #include <sys/socket.h>
 #include <net/if.h>
-#include <netinet/in.h>
 #include <net/pfvar.h>
 #include "pfctl.h"
 #include "pfctl_parser.h"
