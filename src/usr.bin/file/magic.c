@@ -1,4 +1,4 @@
-/* $OpenBSD: magic.c,v 1.2 2004/05/19 02:36:26 tedu Exp $ */
+/* $OpenBSD: magic.c,v 1.3 2007/07/09 16:39:48 dim Exp $ */
 /*
  * Copyright (c) Christos Zoulas 2003.
  * All Rights Reserved.
@@ -104,7 +104,8 @@ magic_open(int flags)
 		free(ms);
 		return NULL;
 	}
-	ms->c.off = malloc((ms->c.len = 10) * sizeof(*ms->c.off));
+	ms->c.len = 10;
+	ms->c.off = calloc(ms->c.len, sizeof(*ms->c.off));
 	if (ms->c.off == NULL) {
 		free(ms->o.pbuf);
 		free(ms->o.buf);
