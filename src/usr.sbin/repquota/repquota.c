@@ -165,8 +165,7 @@ void
 usage(void)
 {
 	extern char *__progname;
-	fprintf(stderr, "usage: repquota [-aguv] filesystem ...\n",
-		__progname);
+	fprintf(stderr, "usage: %s [-aguv] filesystem ...\n", __progname);
 	exit(1);
 }
 
