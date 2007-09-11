@@ -120,10 +120,8 @@ findid(char *name)
 	while (fgets(loginargs, sizeof(loginargs), fp)) {
 		if (ferror(fp))
 			break;
-		if ((p = strchr(loginargs, '#')))
-			*p = '\0';
-		if ((p = strchr(loginargs, '\n')))
-			*p = '\0';
+		loginargs[strcspn(loginargs, "#")] = '\0';
+		loginargs[strcspn(loginargs, "\n")] = '\0';
 		n = sscanf(loginargs, "%15s%*[ \t]%15s%*[ \t]%15s%*[ \t]%15s%*[ \t]%15s%*[ \t]%15s%*[ \t]%15s%*[ \t]%15s%*[ \t]%15s\n",
 		    user, laddr, raddr, mask, slopt[0], slopt[1],
 		    slopt[2], slopt[3], slopt[4]);
