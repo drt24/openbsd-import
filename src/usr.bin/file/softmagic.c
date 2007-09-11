@@ -1,4 +1,4 @@
-/*	$OpenBSD$ */
+/*	$OpenBSD: softmagic.c,v 1.11 2004/05/19 02:32:36 tedu Exp $ */
 /*
  * Copyright (c) Ian F. Darwin 1986-1995.
  * Software written by Ian F. Darwin and others;
@@ -278,11 +278,8 @@ mprint(struct magic_set *ms, union VALUETYPE *p, struct magic *m)
 			t = m->offset + strlen(m->value.s);
 		}
 		else {
-			if (*m->value.s == '\0') {
-				char *cp = strchr(p->s,'\n');
-				if (cp)
-					*cp = '\0';
-			}
+			if (*m->value.s == '\0')
+				p->s[strcspn(p->s, "\n")] = '\0';
 			if (file_printf(ms, m->desc, p->s) == -1)
 				return -1;
 			t = m->offset + strlen(p->s);

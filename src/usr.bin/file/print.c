@@ -1,4 +1,4 @@
-/*	$OpenBSD$ */
+/*	$OpenBSD: print.c,v 1.11 2004/05/19 02:32:35 tedu Exp $ */
 /*
  * Copyright (c) Ian F. Darwin 1986-1995.
  * Software written by Ian F. Darwin and others;
@@ -181,7 +181,6 @@ file_fmttime(uint32_t v, int local)
 		pp = asctime(tm);
 	}
 
-	if ((rt = strchr(pp, '\n')) != NULL)
-		*rt = '\0';
+	pp[strcspn(pp, "\n")] = '\0';
 	return pp;
 }
