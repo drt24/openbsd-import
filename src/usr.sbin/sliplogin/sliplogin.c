@@ -109,7 +109,7 @@ findid(char *name)
 	static char laddr[16];
 	static char raddr[16];
 	static char mask[16];
-	char user[MAXLOGNAME], *p;
+	char user[MAXLOGNAME];
 	int n;
 
 	strlcpy(loginname, name, sizeof loginname);
