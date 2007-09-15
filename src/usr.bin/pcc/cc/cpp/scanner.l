@@ -1,5 +1,5 @@
 %{
-/*	$Id$	*/
+/*	$OpenBSD: scanner.l,v 1.1.1.1 2007/09/15 18:12:32 otto Exp $	*/
 
 /*
  * Copyright (c) 2004 Anders Magnusson. All rights reserved.
