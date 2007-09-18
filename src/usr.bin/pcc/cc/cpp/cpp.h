@@ -1,4 +1,4 @@
-/*	$Id$	*/
+/*	$OpenBSD: cpp.h,v 1.3 2007/09/17 18:29:20 otto Exp $	*/
 
 /*
  * Copyright (c) 2004 Anders Magnusson (ragge@ludd.luth.se).
