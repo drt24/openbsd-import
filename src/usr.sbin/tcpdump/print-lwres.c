@@ -29,7 +29,7 @@
 
 #ifndef lint
 static const char rcsid[] =
-    "@(#) $Header$ (LBL)";
+    "@(#) $Id$ (LBL)";
 #endif
 
 #ifdef HAVE_CONFIG_H

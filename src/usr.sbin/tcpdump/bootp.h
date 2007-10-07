@@ -1,6 +1,6 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: bootp.h,v 1.7 2000/10/03 14:31:54 ho Exp $	*/
 
-/* @(#) $Header$ (LBL) */
+/* @(#) $Id$ (LBL) */
 /*
  * Bootstrap Protocol (BOOTP).  RFC951 and RFC1048.
  *

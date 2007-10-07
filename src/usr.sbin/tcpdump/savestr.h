@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: savestr.h,v 1.2 2000/10/03 14:31:59 ho Exp $	*/
 
 /*
  * Copyright (c) 1997
@@ -20,7 +20,7 @@
  * WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @(#) $Header$ (LBL)
+ * @(#) $Id$ (LBL)
  */
 
 extern char *savestr(const char *);

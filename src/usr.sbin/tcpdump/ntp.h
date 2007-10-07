@@ -1,6 +1,6 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: ntp.h,v 1.6 2000/10/03 14:31:56 ho Exp $	*/
 
-/* $Header$ */
+/* $Id$ */
 
 /*
  * Based on ntp.h from the U of MD implementation

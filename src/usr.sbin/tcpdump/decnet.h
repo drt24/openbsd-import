@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: decnet.h,v 1.6 2000/10/03 14:31:54 ho Exp $	*/
 
 /*
  * Copyright (c) 1992, 1994, 1996
@@ -20,7 +20,7 @@
  * WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @(#) $Header$ (LBL)
+ * @(#) $Id$ (LBL)
  */
 
 typedef unsigned char byte[1];		/* single byte field */

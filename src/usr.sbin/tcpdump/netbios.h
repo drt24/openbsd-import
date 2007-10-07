@@ -1,9 +1,9 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: netbios.h,v 1.3 2000/10/03 14:31:55 ho Exp $	*/
 
 /*
  * NETBIOS protocol formats
  *
- * @(#) $Header$
+ * @(#) $Id$
  */
 
 struct p8022Hdr {

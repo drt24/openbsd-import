@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-null.c,v 1.15 2002/01/23 23:32:20 mickey Exp $	*/
+/*	$OpenBSD: print-null.c,v 1.16 2002/02/19 19:39:40 millert Exp $	*/
 
 /*
  * Copyright (c) 1991, 1993, 1994, 1995, 1996, 1997
@@ -23,7 +23,7 @@
 
 #ifndef lint
 static const char rcsid[] =
-    "@(#) $Header$ (LBL)";
+    "@(#) $Id$ (LBL)";
 #endif
 
 #include <sys/param.h>

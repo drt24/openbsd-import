@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: machdep.h,v 1.3 2000/10/03 14:31:55 ho Exp $	*/
 
 /*
  * Copyright (c) 1996
@@ -20,7 +20,7 @@
  * WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @(#) $Header$ (LBL)
+ * @(#) $Id$ (LBL)
  */
 #ifndef tcpdump_machdep_h
 #define tcpdump_machdep_h

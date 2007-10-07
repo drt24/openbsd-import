@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-domain.c,v 1.14 2001/03/28 19:46:11 jakob Exp $	*/
+/*	$OpenBSD: print-domain.c,v 1.15 2004/01/18 15:33:30 otto Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -23,7 +23,7 @@
 
 #ifndef lint
 static const char rcsid[] =
-    "@(#) $Header$ (LBL)";
+    "@(#) $Id$ (LBL)";
 #endif
 
 #include <sys/param.h>

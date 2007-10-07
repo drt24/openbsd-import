@@ -1,6 +1,6 @@
-/*	$OpenBSD: gnuc.h,v 1.3 2000/10/03 14:31:55 ho Exp $	*/
+/*	$OpenBSD: gnuc.h,v 1.4 2002/02/17 19:42:39 millert Exp $	*/
 
-/* @(#) $Header$ (LBL) */
+/* @(#) $Id$ (LBL) */
 
 /* inline foo */
 #ifdef __GNUC__
