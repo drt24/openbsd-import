@@ -1,4 +1,4 @@
-/*	$OpenBSD: acpidump.c,v 1.2 2005/07/21 16:38:55 fgsch Exp $	*/
+/*	$OpenBSD: acpidump.c,v 1.3 2007/10/17 18:58:24 deraadt Exp $	*/
 /*-
  * Copyright (c) 2000 Mitsuru IWASAKI <iwasaki@FreeBSD.org>
  * All rights reserved.
@@ -88,6 +88,7 @@ main(int argc, char *argv[])
 			return (0);
 		case 'o':
 			aml_dumpfile = optarg;
+			break;
 		default:
 			usage();
 		}
