@@ -1,4 +1,4 @@
-/*	$OpenBSD: autoconf.c,v 1.18 2007/06/01 19:25:10 deraadt Exp $	*/
+/*	$OpenBSD: autoconf.c,v 1.19 2007/06/01 23:14:07 deraadt Exp $	*/
 /*
  * Copyright (c) 1996, 1997 Per Fogelstrom
  * Copyright (c) 1995 Theo de Raadt
@@ -133,7 +133,7 @@ dumpconf(void)
 	if (nblks <= ctod(1))
 		return;
 
-	dumpsize = btoc(IOM_END + ctob(dumpmem_high));
+	dumpsize = atop(IOM_END + ptoa(dumpmem_high));
 
 	/* Always skip the first CLBYTES, in case there is a label there. */
 	if (dumplo < ctod(1))
