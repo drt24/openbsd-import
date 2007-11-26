@@ -1,4 +1,4 @@
-/*	$OpenBSD: asl_dump.c,v 1.3 2005/07/21 16:38:55 fgsch Exp $	*/
+/*	$OpenBSD: asl_dump.c,v 1.4 2007/09/22 19:42:19 otto Exp $	*/
 /*-
  * Copyright (c) 1999 Doug Rabson
  * Copyright (c) 2000 Mitsuru IWASAKI <iwasaki@FreeBSD.org>
@@ -1233,6 +1233,16 @@ asl_dump_termobj(u_int8_t **dpp, int indent)
 		break;
 	case 0x8e:		/* ObjectTypeOp */
 		printf("ObjectType(");
+		asl_dump_termobj(&dp, indent);
+		printf(")");
+		break;
+	case 0x8f:		/* CreateQWordFieldOp */
+		printf("CreateQWordField(");
+		asl_dump_termobj(&dp, indent);
+		printf(", ");
+		asl_dump_termobj(&dp, indent);
+		printf(", ");
+		ASL_CREATE_LOCALNAMEOBJ(dp);
 		asl_dump_termobj(&dp, indent);
 		printf(")");
 		break;
