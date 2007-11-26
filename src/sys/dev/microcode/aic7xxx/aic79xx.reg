@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic79xx.reg,v 1.7 2007/05/26 00:36:03 krw Exp $	*/
+/*	$OpenBSD: aic79xx.reg,v 1.8 2007/11/25 16:40:04 jmc Exp $	*/
 /*
  * Aic79xx register and scratch ram definitions.
  *
@@ -1193,7 +1193,7 @@ register TARGPCISTAT {
 
 /*
  * LQ Packet In
- * The last LQ Packet recieved
+ * The last LQ Packet received
  */
 register LQIN {
 	address			0x020

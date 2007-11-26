@@ -86,7 +86,7 @@ ifs_inherit(mntfs *mf)
 {
 	/*
 	 * Take the linked mount point and
-	 * propogate.
+	 * propagate.
 	 */
 	mntfs *mf_link = (mntfs *) mf->mf_private;
 	if (mf_link == 0) {
