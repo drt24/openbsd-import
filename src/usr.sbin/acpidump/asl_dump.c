@@ -1,4 +1,4 @@
-/*	$OpenBSD: asl_dump.c,v 1.4 2007/09/22 19:42:19 otto Exp $	*/
+/*	$OpenBSD: asl_dump.c,v 1.5 2007/11/26 19:57:05 kettenis Exp $	*/
 /*-
  * Copyright (c) 1999 Doug Rabson
  * Copyright (c) 2000 Mitsuru IWASAKI <iwasaki@FreeBSD.org>
@@ -300,10 +300,14 @@ asl_dump_defmethod(u_int8_t **dpp, int indent)
 	u_int8_t	flags;
 	u_int32_t	pkglength;
 	struct	aml_name *oname;
+	int		swi;
 
 	dp = *dpp;
 	start = dp;
 	pkglength = asl_dump_pkglength(&dp);
+
+	swi = scope_within_method;
+	scope_within_method = 0;
 
 	printf("Method(");
 	ASL_ENTER_SCOPE(dp, oname);
@@ -319,7 +323,7 @@ asl_dump_defmethod(u_int8_t **dpp, int indent)
 	end = start + pkglength;
 	scope_within_method = 1;
 	asl_dump_objectlist(&dp, end, indent + 1);
-	scope_within_method = 0;
+	scope_within_method = swi;
 	print_indent(indent);
 	printf("}");
 
