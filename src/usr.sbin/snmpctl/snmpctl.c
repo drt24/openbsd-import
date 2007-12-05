@@ -73,7 +73,7 @@ usage(void)
 	exit(1);
 }
 
-/* dummy function so that hoststatectl does not need libevent */
+/* dummy function so that snmpctl does not need libevent */
 void
 imsg_event_add(struct imsgbuf *i)
 {
