@@ -1,4 +1,4 @@
-/*	$OpenBSD: asl_dump.c,v 1.5 2007/11/26 19:57:05 kettenis Exp $	*/
+/*	$OpenBSD: asl_dump.c,v 1.6 2007/12/02 22:23:04 jordan Exp $	*/
 /*-
  * Copyright (c) 1999 Doug Rabson
  * Copyright (c) 2000 Mitsuru IWASAKI <iwasaki@FreeBSD.org>
@@ -772,10 +772,10 @@ asl_dump_termobj(u_int8_t **dpp, int indent)
 	};
 
 #define OPTARG() do {						\
-	printf(", ");						\
 	if (*dp == 0x00) {					\
 	    dp++;						\
 	} else { 						\
+	    printf(", ");					\
 	    asl_dump_termobj(&dp, indent);			\
 	}							\
 } while (0)
@@ -1288,6 +1288,26 @@ asl_dump_termobj(u_int8_t **dpp, int indent)
 		asl_dump_termobj(&dp, indent);
 		printf(", ");
 		asl_dump_termobj(&dp, indent);
+		printf(")");
+		break;
+	case 0x96:		/* ToBufferOp */
+		printf("ToBuffer(");
+		asl_dump_termobj(&dp, indent);
+		OPTARG();
+		printf(")");
+		break;
+	case 0x99:		/* ToIntegerOp */
+		printf("ToInteger(");
+		asl_dump_termobj(&dp, indent);
+		OPTARG();
+		printf(")");
+		break;
+	case 0x9c:		/* ToStringOp */
+		printf("ToString(");
+		asl_dump_termobj(&dp, indent);
+		printf(", ");
+		asl_dump_termobj(&dp, indent);
+		OPTARG();
 		printf(")");
 		break;
 	case 0xa0:		/* IfOp */
