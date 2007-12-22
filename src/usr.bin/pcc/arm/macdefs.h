@@ -1,4 +1,4 @@
-/*	$Id$	*/
+/*	$OpenBSD$	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
