@@ -3,7 +3,7 @@
 .PATH:		${.CURDIR}/../snmpd
 
 PROG=		snmpctl
-SRCS=		buffer.c imsg.c log.c snmpctl.c parser.c
+SRCS=		buffer.c imsg.c log.c smi.c snmpctl.c parser.c
 
 MAN=		snmpctl.8
 
