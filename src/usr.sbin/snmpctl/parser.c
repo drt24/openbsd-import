@@ -1,4 +1,4 @@
-/*	$Id$	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2004 Esben Norby <norby@openbsd.org>

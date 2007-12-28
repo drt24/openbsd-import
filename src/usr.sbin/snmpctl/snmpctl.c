@@ -1,4 +1,4 @@
-/*	$Id$	*/
+/*	$OpenBSD$	*/
 
 /*
  * Copyright (c) 2007 Reyk Floeter <reyk@vantronix.net>
