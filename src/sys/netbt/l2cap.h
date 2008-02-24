@@ -1,5 +1,5 @@
-/*	$OpenBSD: l2cap.h,v 1.3 2007/05/30 03:42:53 uwe Exp $	*/
-/*	$NetBSD: l2cap.h,v 1.5 2007/04/21 06:15:23 plunky Exp $	*/
+/*	$OpenBSD: l2cap.h,v 1.4 2007/06/01 02:46:11 uwe Exp $	*/
+/*	$NetBSD: l2cap.h,v 1.6 2007/11/03 17:20:17 plunky Exp $	*/
 
 /*-
  * Copyright (c) 2005 Iain Hibbert.
