@@ -260,7 +260,7 @@ static int FDECL1(sort_n_finish, struct directory *, this_dir)
 	    {
 	      for(d3 = 0; d3 < 36; d3++)
 		{
-		  sprintf(newname,"%s.%c%c%c%s", rootname,  
+		  snprintf(newname, sizeof newname, "%s.%c%c%c%s", rootname,  
 			  (d1 <= 9 ? '0' + d1 : 'A' + d1 - 10),
 			  (d2 <= 9 ? '0' + d2 : 'A' + d2 - 10),
 			  (d3 <= 9 ? '0' + d3 : 'A' + d3 - 10),
@@ -1526,7 +1526,7 @@ FDECL3(insert_file_entry,struct directory *, this_dir,
       switch(lstatbuf.st_mode & S_IFMT)
 	{
 	case S_IFDIR:
-	  sprintf(buffer,"D\t%s\n",
+	  snprintf(buffer, sizeof buffer, "D\t%s\n",
 		  s_entry->name);
 	  break;
 #ifdef S_IFBLK
@@ -1548,7 +1548,7 @@ FDECL3(insert_file_entry,struct directory *, this_dir,
 	(dev) & 0xffffffff))
 #endif
 	case S_IFBLK:
-	  sprintf(buffer,"B\t%s\t%lu %lu\n",
+	  snprintf(buffer, sizeof buffer, "B\t%s\t%lu %lu\n",
 		  s_entry->name,
 		  (unsigned long) major(statbuf.st_rdev),
 		  (unsigned long) minor(statbuf.st_rdev));
@@ -1556,13 +1556,13 @@ FDECL3(insert_file_entry,struct directory *, this_dir,
 #endif
 #ifdef S_IFIFO
 	case S_IFIFO:
-	  sprintf(buffer,"P\t%s\n",
+	  snprintf(buffer, sizeof buffer, "P\t%s\n",
 		  s_entry->name);
 	  break;
 #endif
 #ifdef S_IFCHR
 	case S_IFCHR:
-	  sprintf(buffer,"C\t%s\t%lu %lu\n",
+	  snprintf(buffer, sizeof buffer, "C\t%s\t%lu %lu\n",
 		  s_entry->name,
 		  (unsigned long) major(statbuf.st_rdev),
 		  (unsigned long) minor(statbuf.st_rdev));
@@ -1574,19 +1574,19 @@ FDECL3(insert_file_entry,struct directory *, this_dir,
 			   (char *)symlink_buff, 
 			   sizeof(symlink_buff)-1);
 	  symlink_buff[nchar < 0 ? 0 : nchar] = 0;
-	  sprintf(buffer,"L\t%s\t%s\n",
+	  snprintf(buffer, sizeof buffer, "L\t%s\t%s\n",
 		  s_entry->name, symlink_buff);
 	  break;
 #endif
 #ifdef S_IFSOCK
 	case S_IFSOCK:
-	  sprintf(buffer,"S\t%s\n",
+	  snprintf(buffer, sizeof buffer, "S\t%s\n",
 		  s_entry->name);
 	  break;
 #endif
 	case S_IFREG:
 	default:
-	  sprintf(buffer,"F\t%s\n",
+	  snprintf(buffer, sizeof buffer, "F\t%s\n",
 		  s_entry->name);
 	  break;
 	};

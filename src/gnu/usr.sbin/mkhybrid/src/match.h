@@ -25,6 +25,7 @@ int i_add_match __PR((char *fn));
 int j_add_match __PR((char *fn));
 
 int hfs_add_match __PR((char *fn));
+void hfs_add_list __PR((char *fn));
 int hfs_matches __PR((char *fn));
 intptr_t hfs_ishidden __PR((void));
 

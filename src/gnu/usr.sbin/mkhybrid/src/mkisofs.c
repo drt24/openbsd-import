@@ -1140,7 +1140,6 @@ parse_input_files:
 
 #if defined(__NetBSD__) || defined(__OpenBSD__) 
     {
-	int resource;
     struct rlimit rlp;
 	if (getrlimit(RLIMIT_DATA,&rlp) == -1) 
 		perror("Warning: getrlimit");
