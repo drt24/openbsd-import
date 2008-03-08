@@ -55,11 +55,6 @@
  *
  * 4. This notice may not be removed or altered.
  */
-#ifndef	lint
-static char *moduleid = 
-	"@(#)$Id$";
-#endif	/* lint */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -82,6 +77,7 @@ static char *moduleid =
 
 #include "patchlevel.h"
 #include "file.h"
+#include "proto.h"
 
 int 			/* Global command-line options 		*/
 #ifdef DEBUG

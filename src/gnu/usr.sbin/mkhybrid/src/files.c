@@ -21,7 +21,6 @@
 
 /* ADD_FILES changes made by Ross Biro biro@yggdrasil.com 2/23/95 */
 
-static char rcsid[] ="$Id$";
 
 #include "config.h"
 #include <errno.h>

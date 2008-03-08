@@ -19,8 +19,6 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  
  */
 
-static char rcsid[] ="$Id$";
-
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>

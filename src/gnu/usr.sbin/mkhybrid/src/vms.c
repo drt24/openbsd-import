@@ -4,8 +4,6 @@
    Written by Eric Youngdale (1993).
  */
 
-static char rcsid[] ="$Id$";
-
 #ifdef VMS
 #include <rms.h>
 #include <descrip.h>

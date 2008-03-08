@@ -41,11 +41,6 @@
 
 #include "file.h"
 
-#ifndef	lint
-static char *moduleid = 
-	"@(#)$Id$";
-#endif	/* lint */
-
 /* static int match	__P((unsigned char *, int)); */
 static char *match	__P((unsigned char *, int));
 static int mget		__P((union VALUETYPE *,

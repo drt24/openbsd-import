@@ -88,7 +88,6 @@ struct magic {
 # endif
 #endif
 
-extern int   init_magic		__P((char *));
 extern int   ascmagic		__P((unsigned char *, int));
 extern void  error		__P((const char *, ...));
 extern void  ckfputs		__P((const char *, FILE *));

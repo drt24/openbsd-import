@@ -9,7 +9,6 @@
  */
 
 #include <inttypes.h>
-#include "fnmatch.h"
 
 int matches	__PR((char *fn));
 
