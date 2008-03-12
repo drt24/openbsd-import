@@ -1,4 +1,4 @@
-dnl	$OpenBSD: hardware,v 1.24 2008/01/16 22:10:54 mbalmer Exp $
+dnl	$OpenBSD: hardware,v 1.26 2008/03/09 15:32:30 jmc Exp $
 dnl When more than one model is supported, turn this into a list...
 OpenBSD/MACHINE runs on the Sharp Zaurus SL-C3000, SL-C3100 and
 SL-C3200 models at the moment.
@@ -205,6 +205,7 @@ Supported devices {:-include-:}:
 		    Abocom WUG2700
 		    Airlink101 AWLL5025
 		    ASUS WL-167g ver 2
+		    Atlantis Land A02-UP1-W54
 		    Belkin F5D7050 ver 3
 		    Belkin F5D9050 ver 3
 		    Buffalo WLI-U2-SG54HP
@@ -357,7 +358,7 @@ dnl C3000 specific. Mention it when C860 is supported but not its keyboard.
 		USB keyboards
 	Pointing Devices
 		USB mice
-dnl C3000 specific. Mention it when C860 is supported but not its keyboard.
+dnl C3000 specific. Mention it when C860 is supported but not its display.
 	On-board Display (pxalcd)
 
 	Miscellaneous Devices
