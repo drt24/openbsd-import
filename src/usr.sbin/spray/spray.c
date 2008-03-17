@@ -1,4 +1,4 @@
-/*	$OpenBSD: spray.c,v 1.6 2004/10/01 04:08:46 jsg Exp $	*/
+/*	$OpenBSD: spray.c,v 1.7 2005/09/28 16:24:43 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1993 Winning Strategies, Inc.
@@ -227,6 +227,7 @@ print_xferstats(int packets, int packetlen, double xfertime)
 void
 usage(void)
 {
-	fprintf(stderr, "usage: spray [-c count] [-l length] [-d delay] host\n");
+	fprintf(stderr,
+	    "usage: spray [-c count] [-d delay] [-l length] host ...\n");
 	exit(1);
 }
