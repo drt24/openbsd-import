@@ -1,4 +1,4 @@
-/*	$OpenBSD: autoconf.c,v 1.19 2007/06/01 23:14:07 deraadt Exp $	*/
+/*	$OpenBSD: autoconf.c,v 1.20 2007/11/04 13:43:39 martin Exp $	*/
 /*
  * Copyright (c) 1996, 1997 Per Fogelstrom
  * Copyright (c) 1995 Theo de Raadt
@@ -178,6 +178,7 @@ getdevunit(name, unit)
 struct nam2blk nam2blk[] = {
 	{ "wd",		0 },
 	{ "sd",		2 },
+	{ "rd",		17 },
 	{ "raid",	19 },
 	{ NULL,		-1 }
 };
