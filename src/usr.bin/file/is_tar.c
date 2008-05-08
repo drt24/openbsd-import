@@ -1,4 +1,4 @@
-/*	$OpenBSD$ */
+/*	$OpenBSD: is_tar.c,v 1.7 2004/05/19 02:32:35 tedu Exp $ */
 /*
  * Copyright (c) Ian F. Darwin 1986-1995.
  * Software written by Ian F. Darwin and others;
@@ -72,6 +72,12 @@ file_is_tar(struct magic_set *ms, const unsigned char *buf, size_t nbytes)
 		    "application/x-tar, POSIX" : "POSIX tar archive") == -1)
 			return -1;
 		return 1;
+	case 3:
+		if (file_printf(ms, (ms->flags & MAGIC_MIME) ?
+		    "application/x-tar, POSIX (GNU)" :
+		    "POSIX tar archive (GNU)") == -1)
+			return -1;
+		return 1;
 	default:
 		return 0;
 	}
@@ -114,7 +120,9 @@ is_tar(const unsigned char *buf, size_t nbytes)
 	if (sum != recsum)
 		return 0;	/* Not a tar archive */
 	
-	if (0==strcmp(header->header.magic, TMAGIC)) 
+	if (strcmp(header->header.magic, GNUTMAGIC) == 0) 
+		return 3;		/* GNU Unix Standard tar archive */
+	if (strcmp(header->header.magic, TMAGIC) == 0) 
 		return 2;		/* Unix Standard tar archive */
 
 	return 1;			/* Old fashioned tar archive */
