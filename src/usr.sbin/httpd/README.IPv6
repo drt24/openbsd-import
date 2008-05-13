@@ -1,5 +1,4 @@
-$OpenBSD$
-$Id$
+$OpenBSD: README.v6,v 1.1 2008/05/09 08:06:27 mbalmer Exp $
 
 IPv6 support for the OpenBSD httpd(8)
 
