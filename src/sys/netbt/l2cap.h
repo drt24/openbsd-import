@@ -1,4 +1,4 @@
-/*	$OpenBSD: l2cap.h,v 1.4 2007/06/01 02:46:11 uwe Exp $	*/
+/*	$OpenBSD: l2cap.h,v 1.5 2008/02/24 21:34:48 uwe Exp $	*/
 /*	$NetBSD: l2cap.h,v 1.6 2007/11/03 17:20:17 plunky Exp $	*/
 
 /*-
@@ -467,7 +467,8 @@ int l2cap_send_disconnect_req(struct l2cap_channel *);
 int l2cap_send_connect_rsp(struct hci_link *, uint8_t, uint16_t, uint16_t, uint16_t);
 
 /* l2cap_socket.c */
-int l2cap_usrreq(struct socket *, int, struct mbuf *, struct mbuf *, struct mbuf *);
+int l2cap_usrreq(struct socket *, int, struct mbuf *, struct mbuf *,
+    struct mbuf *, struct proc *);
 int l2cap_ctloutput(int, struct socket *, int, int, struct mbuf **);
 
 /* l2cap_upper.c */
