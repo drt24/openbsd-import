@@ -1,4 +1,4 @@
-/*	$OpenBSD: acpi.c,v 1.4 2007/02/22 19:09:26 jordan Exp $	*/
+/*	$OpenBSD: acpi.c,v 1.5 2007/10/17 20:10:44 chl Exp $	*/
 /*-
  * Copyright (c) 1998 Doug Rabson
  * Copyright (c) 2000 Mitsuru IWASAKI <iwasaki@FreeBSD.org>
@@ -108,7 +108,8 @@ acpi_handle_dsdt(struct ACPIsdt *dsdp)
 	dp = (u_int8_t *)dsdp->body;
 	end = (u_int8_t *)dsdp + dsdp->len;
 
-	acpi_dump_dsdt(dp, end);
+	if (aml_dumpfile == NULL)
+		acpi_dump_dsdt(dp, end);
 }
 
 static void
@@ -171,6 +172,7 @@ acpi_dump_dsdt(u_int8_t *dp, u_int8_t *end)
 	printf("\n}\n");
 	assert(dp == end);
 }
+
 void
 acpi_print_sdt(struct ACPIsdt *sdp)
 {
