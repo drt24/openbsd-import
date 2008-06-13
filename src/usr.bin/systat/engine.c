@@ -625,21 +625,25 @@ print_fld_age(field_def *fld, unsigned int age)
 	if (tbprintf("%02u:%02u:%02u", h, m, s) <= len)
 		goto ok;
 	
+	tb_start();
 	if (tbprintf("%u", age) <= len)
 		goto ok;
 
+	tb_start();
 	age /= 60;
 	if (tbprintf("%um", age) <= len)
 		goto ok;
 	if (age == 0)
 		goto err;
 	
+	tb_start();
 	age /= 60;
 	if (tbprintf("%uh", age) <= len)
 		goto ok;
 	if (age == 0)
 		goto err;
 	
+	tb_start();
 	age /= 24;
 	if (tbprintf("%ud", age) <= len)
 		goto ok;
@@ -669,18 +673,21 @@ print_fld_sdiv(field_def *fld, u_int64_t size, int div)
 	if (tbprintf("%llu", size) <= len)
 		goto ok;
 
+	tb_start();
 	size /= div;
 	if (tbprintf("%lluK", size) <= len)
 		goto ok;
 	if (size == 0)
 		goto err;
 
+	tb_start();
 	size /= div;
 	if (tbprintf("%lluM", size) <= len)
 		goto ok;
 	if (size == 0)
 		goto err;
 
+	tb_start();
 	size /= div;
 	if (tbprintf("%lluG", size) <= len)
 		goto ok;
