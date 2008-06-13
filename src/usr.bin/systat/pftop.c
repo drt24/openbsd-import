@@ -2135,7 +2135,6 @@ initpftop(void)
 	pf_dev = open("/dev/pf", O_RDONLY);
 	if (pf_dev == -1) {
 		alloc_buf(0);
-		warn("open(\"/dev/pf\")");
 	} else if (ioctl(pf_dev, DIOCGETSTATUS, &status)) {
 		warn("DIOCGETSTATUS");
 		alloc_buf(0);
