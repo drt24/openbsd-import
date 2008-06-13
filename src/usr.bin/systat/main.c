@@ -86,11 +86,11 @@ int
 print_header(void)
 {
 	struct tm *tp;
-	time_t t;
+	time_t t, now;
 	order_type *ordering;
-
-	int start = dispstart + 1;
-	int end = dispstart + maxprint;
+	int start = dispstart + 1, end = dispstart + maxprint;
+	extern int ucount();
+	char tbuf[26];
 
 	if (end > num_disp)
 		end = num_disp;
@@ -109,9 +109,6 @@ print_header(void)
 #endif
 
 	getloadavg(avenrun, sizeof(avenrun) / sizeof(avenrun[0]));
-	extern int ucount();
-	char tbuf[26];
-	time_t now;
 
 	time(&now);
 	strlcpy(tbuf, ctime(&now), sizeof tbuf);
