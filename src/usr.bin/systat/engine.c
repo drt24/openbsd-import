@@ -802,6 +802,9 @@ next_order(void)
 {
 	order_type *o, *oc;
 
+	if (curr_view->mgr->order_list == NULL)
+		return;
+
 	oc = curr_view->mgr->order_curr;
 
 	for (o = curr_view->mgr->order_list; o->name != NULL; o++) {
