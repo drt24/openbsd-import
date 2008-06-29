@@ -72,7 +72,7 @@
 typedef struct pfsync_state pf_state_t;
 typedef struct pfsync_state_host pf_state_host_t;
 typedef struct pfsync_state_peer pf_state_peer_t;
-#define COUNTER(c) ((((u_int64_t) c[0])<<32) + c[1])
+#define COUNTER(c) ((((u_int64_t) ntohl(c[0]))<<32) + ntohl(c[1]))
 #define pfs_ifname ifname
 #else
 typedef struct pf_state pf_state_t;
