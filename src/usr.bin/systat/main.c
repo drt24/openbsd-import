@@ -289,7 +289,7 @@ cmd_compat(void)
 		need_update = 1;
 		return;
 	}
-	if (strcasecmp(cmdbuf, "quit") == 0) {
+	if (strcasecmp(cmdbuf, "quit") == 0 || strcasecmp(cmdbuf, "q") == 0) {
 		gotsig_close = 1;
 		return;
 	}
