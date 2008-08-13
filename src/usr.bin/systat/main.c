@@ -208,7 +208,7 @@ void
 usage()
 {
 	extern char *__progname;
-	fprintf(stderr, "usage: %s [-abin] [-d count] [-S start] "
+	fprintf(stderr, "usage: %s [-abin] [-d count] "
 	    "[-s delay] [-w width] [view] [delay]\n", __progname);
 	exit(1);
 }
