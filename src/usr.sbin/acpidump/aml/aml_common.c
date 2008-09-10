@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: aml_common.c,v 1.1 2005/06/02 20:09:39 tholo Exp $	*/
 /*-
  * Copyright (c) 1999 Takanori Watanabe
  * Copyright (c) 1999, 2000 Mitsuru IWASAKI <iwasaki@FreeBSD.org>
@@ -659,8 +659,8 @@ aml_region_io_simple(struct aml_environ *env, int io, int regtype,
 			}
 			readval |= (value << (i * 8));
 		}
-		AML_DEBUGPRINT("\t[%d:0x%x@0x%x:%d,%d]",
-		    regtype, readval, handle.addr, offset, bitlen);
+		AML_DEBUGPRINT("\t[%d:0x%x@%p:%d,%d]",
+		    regtype, readval, (void *)handle.addr, offset, bitlen);
 	}
 
 	switch (io) {
@@ -681,8 +681,8 @@ aml_region_io_simple(struct aml_environ *env, int io, int regtype,
 		value = aml_adjust_updatevalue(flags, offset,
 		    bitlen, readval, value);
 		value = aml_region_prompt_write(&handle, value);
-		AML_DEBUGPRINT("\t->[%d:0x%x@0x%x:%d,%d]\n", regtype, value,
-		    handle.addr, offset, bitlen);
+		AML_DEBUGPRINT("\t->[%d:0x%x@%p:%d,%d]\n", regtype, value,
+		    (void *)handle.addr, offset, bitlen);
 		for (i = 0; i < bytelen; i += handle.unit) {
 			state = aml_region_write_simple(&handle, i, value);
 			if (state == -1) {
