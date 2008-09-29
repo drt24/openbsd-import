@@ -1,7 +1,5 @@
 #!./perl
 
-# $RCSfile$$Revision$$Date$
-
 print "1..4\n";
 
 print 1 ? "ok 1\n" : "not ok 1\n";	# compile time

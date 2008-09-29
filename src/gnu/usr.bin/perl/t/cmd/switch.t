@@ -1,7 +1,5 @@
 #!./perl
 
-# $RCSfile$$Revision$$Date$
-
 print "1..18\n";
 
 sub foo1 {

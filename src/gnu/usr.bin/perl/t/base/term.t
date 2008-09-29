@@ -1,7 +1,5 @@
 #!./perl
 
-# $RCSfile$$Revision$$Date$
-
 BEGIN {
     chdir 't' if -d 't';
 }

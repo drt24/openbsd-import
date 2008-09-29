@@ -19,12 +19,6 @@ extern int yyparse(void);
  *    License or the Artistic License, as specified in the README file.
  *
  * $Log$
- * Revision 1.9  2008/07/09 13:54:44  millert
- * Incorporate Otto's yacc skeleton fix.
- *
- * Revision 1.8  2006/03/28 19:23:15  millert
- * merge in perl 5.8.8
- *
  */
 
 #include "INTERN.h"
@@ -2185,13 +2179,21 @@ int yyparse (void);
 #define YYREJECT goto yyabort
 #define YYACCEPT goto yyaccept
 #define YYERROR goto yyerrlab
+
+#if YYDEBUG
+#  if defined(WIN32) && !defined(__BORLANDC__)
+EXTERN_C _CRTIMP char *getenv(const char *);
+#  else
+EXTERN_C char *getenv(const char *);
+#  endif
+#endif
+
 int
 yyparse(void)
 {
     register int yym, yyn, yystate;
 #if YYDEBUG
     register char *yys;
-    extern char *getenv();
 
     if ((yys = getenv("YYDEBUG")))
     {
@@ -2318,10 +2320,7 @@ yyreduce:
                 YYPREFIX, yystate, yyn, yyrule[yyn]);
 #endif
     yym = yylen[yyn];
-    if (yym)
-	yyval = yyvsp[1-yym];
-    else
-	memset(&yyval, 0, sizeof(yyval));
+    yyval = yyvsp[1-yym];
     switch (yyn)
     {
 case 1:

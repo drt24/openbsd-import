@@ -1,7 +1,5 @@
 #!./perl
 
-# $RCSfile$$Revision$$Date$
-
 sub foo {
     if ($_[0] == 1) {
 	1;

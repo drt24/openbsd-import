@@ -1,7 +1,5 @@
 #!./perl
 
-# $RCSfile$$Revision$$Date$
-
 print "1..13\n";
 
 $a = 'ab' . 'c';	# compile time

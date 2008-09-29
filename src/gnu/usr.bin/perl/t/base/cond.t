@@ -1,7 +1,5 @@
 #!./perl
 
-# $RCSfile$$Revision$$Date$
-
 # make sure conditional operators work
 
 print "1..4\n";

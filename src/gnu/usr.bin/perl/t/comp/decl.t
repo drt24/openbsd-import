@@ -1,7 +1,5 @@
 #!./perl
 
-# $RCSfile$$Revision$$Date$
-
 # check to see if subroutine declarations work everwhere
 
 sub one {
