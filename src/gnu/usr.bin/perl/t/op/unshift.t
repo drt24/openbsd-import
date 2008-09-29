@@ -1,7 +1,5 @@
 #!./perl
 
-# $RCSfile$$Revision$$Date$
-
 print "1..2\n";
 
 @a = (1,2,3);

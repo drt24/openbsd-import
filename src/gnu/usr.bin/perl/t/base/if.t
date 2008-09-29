@@ -1,7 +1,5 @@
 #!./perl
 
-# $RCSfile$$Revision$$Date$
-
 print "1..2\n";
 
 # first test to see if we can run the tests.
