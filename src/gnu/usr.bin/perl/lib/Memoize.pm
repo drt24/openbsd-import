@@ -11,7 +11,7 @@
 # Version 1.01 $Revision$ $Date$
 
 package Memoize;
-$VERSION = '1.01';
+$VERSION = '1.01_02';
 
 # Compile-time constants
 sub SCALAR () { 0 } 
@@ -266,8 +266,9 @@ sub _memoizer {
       # Otherwise, we cached an array containing the returned list:
       return @$val;
     } else {
-      my $q = $cache->{$argstr} = [&{$info->{U}}(@_)];
-      @$q;
+        my @q = &{$info->{U}}(@_);
+        $cache->{$argstr} = $info->{O}{LIST_CACHE} eq 'MERGE' ? $q [0] : \@q;
+        @q;
     }
   } else {
     croak "Internal error \#42; context was neither LIST nor SCALAR\n";
