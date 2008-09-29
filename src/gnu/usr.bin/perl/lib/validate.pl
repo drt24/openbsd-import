@@ -1,5 +1,3 @@
-;# $RCSfile$$Revision$$Date$
-
 ;# The validate routine takes a single multiline string consisting of
 ;# lines containing a filename plus a file test to try on it.  (The
 ;# file test may also be a 'cd', causing subsequent relative filenames

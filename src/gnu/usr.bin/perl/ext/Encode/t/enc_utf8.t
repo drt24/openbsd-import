@@ -8,12 +8,12 @@ BEGIN {
       exit 0;
     }
     unless (find PerlIO::Layer 'perlio') {
-	print "1..0 # Skip: PerlIO was not built\n";
-	exit 0;
+    print "1..0 # Skip: PerlIO was not built\n";
+    exit 0;
     }
     if (ord("A") == 193) {
-	print "1..0 # encoding pragma does not support EBCDIC platforms\n";
-	exit(0);
+    print "1..0 # encoding pragma does not support EBCDIC platforms\n";
+    exit(0);
     }
 }
 
@@ -56,9 +56,9 @@ close F;
 open(F, $f) or die "$0: failed to open '$f' for reading: $!";
 binmode(F, ":encoding(utf-8)");
 {
-	local $^W = 1;
-	local $SIG{__WARN__} = sub { $a = shift };
-	eval { <F> }; # This should get caught.
+    local $^W = 1;
+    local $SIG{__WARN__} = sub { $a = shift };
+    eval { <F> }; # This should get caught.
 }
 close F;
 print $a =~ qr{^utf8 "\\x80" does not map to Unicode} ?

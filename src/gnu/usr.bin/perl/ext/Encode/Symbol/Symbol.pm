@@ -1,9 +1,11 @@
 package Encode::Symbol;
+use strict;
+use warnings;
 use Encode;
-our $VERSION = do { my @r = (q$Revision$ =~ /\d+/g); sprintf "%d."."%02d" x $#r, @r };
+our $VERSION = do { my @r = ( q$Revision$ =~ /\d+/g ); sprintf "%d." . "%02d" x $#r, @r };
 
 use XSLoader;
-XSLoader::load(__PACKAGE__,$VERSION);
+XSLoader::load( __PACKAGE__, $VERSION );
 
 1;
 __END__

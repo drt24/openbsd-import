@@ -1,5 +1,3 @@
-;# $RCSfile$$Revision$$Date$
-
 ;# Usage:
 ;#	require 'stat.pl';
 ;#	@ary = stat(foo);
