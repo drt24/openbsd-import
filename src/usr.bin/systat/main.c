@@ -213,6 +213,17 @@ usage()
 	exit(1);
 }
 
+void
+show_view(void)
+{
+	if (rawmode)
+		return;
+
+	tb_start();
+	tbprintf("%s %g", curr_view->name, naptime);
+	tb_end();
+	message_set(tmp_buf);
+}
 
 void
 add_view_tb(field_view *v)
@@ -337,6 +348,10 @@ keyboard_callback(int ch)
 		/* FALLTHROUGH */
 	case 'h':
 		show_help();
+		need_update = 1;
+		break;
+	case CTRL_G:
+		show_view();
 		need_update = 1;
 		break;
 	case 'l':
