@@ -354,6 +354,7 @@ initialize(void)
 	initswap();
 	initpftop();
 	initpf();
+	initpool();
 }
 
 void
