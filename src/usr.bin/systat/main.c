@@ -278,7 +278,7 @@ cmd_compat(const char *buf)
 		;
 	if (*s) {
 		if (set_view(buf))
-			error("Invalid/ambigious view: %s", buf);
+			error("Invalid/ambiguous view: %s", buf);
 	} else
 		cmd_delay(buf);
 }
@@ -469,7 +469,7 @@ main(int argc, char *argv[])
 
 	set_order(NULL);
 	if (viewstr && set_view(viewstr)) {
-		fprintf(stderr, "Unknown/ambigious view name: %s\n", viewstr);
+		fprintf(stderr, "Unknown/ambiguous view name: %s\n", viewstr);
 		return 1;
 	}
 
