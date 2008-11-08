@@ -342,6 +342,7 @@ initialize(void)
 	initpftop();
 	initpf();
 	initpool();
+	initmalloc();
 }
 
 void
