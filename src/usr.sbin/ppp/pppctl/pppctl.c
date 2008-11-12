@@ -56,13 +56,9 @@ static char Buffer[LINELEN], Command[LINELEN];
 static int
 usage()
 {
-    fprintf(stderr, "usage: pppctl [-v] [-p passwd] [-t n] "
-            "Port|LocalSock [command[;command]...]\n");
-    fprintf(stderr, "              -p passwd specifies your password\n");
-    fprintf(stderr, "              -t n specifies a timeout of n"
-            " seconds when connecting (default 2)\n");
-    fprintf(stderr, "              -v tells pppctl to output all"
-            " conversation\n");
+    fprintf(stderr,
+        "usage: pppctl [-v] [-p passwd] [-t n] [host:]port | LocalSocket\n"
+        "              [command [;command ...]]\n");
     exit(1);
 }
 
