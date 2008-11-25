@@ -1,4 +1,4 @@
-/*	$OpenBSD: hci.h,v 1.11 2008/05/27 19:41:14 thib Exp $	*/
+/*	$OpenBSD: hci.h,v 1.12 2008/11/22 04:42:58 uwe Exp $	*/
 /*	$NetBSD: hci.h,v 1.28 2008/09/08 23:36:55 gmcgarry Exp $	*/
 
 /*-
@@ -2363,6 +2363,7 @@ struct btreq {
 
 #ifdef _KERNEL
 
+#include <sys/device.h>
 #include <net/if.h>		/* for struct ifqueue */
 
 struct l2cap_channel;
