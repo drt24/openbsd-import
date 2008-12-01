@@ -114,6 +114,7 @@ void print_fld_ssize(field_def *fld, int64_t size);
 void print_fld_bw(field_def *fld, double bw);
 void print_fld_rate(field_def *fld, double rate);
 void print_fld_uint(field_def *fld, unsigned int size);
+void print_fld_float(field_def *fld, double f, int prec);
 void print_fld_bar(field_def *fld, int value);
 void print_fld_tb(field_def *fld);
 

@@ -811,6 +811,26 @@ print_fld_uint(field_def *fld, unsigned int size)
 	tb_end();
 }
 
+void
+print_fld_float(field_def *fld, double f, int prec)
+{
+	int len;
+
+	if (fld == NULL)
+		return;
+
+	len = fld->width;
+	if (len < 1)
+		return;
+
+	tb_start();
+	if (tbprintf("%*.*f", len, prec, f) > len)
+		print_fld_str(fld, "*");
+	else
+		print_fld_tb(fld);
+	tb_end();
+}
+
 
 /* ordering */
 
