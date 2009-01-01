@@ -36,6 +36,7 @@
 
 #include <net/if.h>
 #include <netinet/in.h>
+#include <netinet/tcp.h>
 #include <netinet/tcp_fsm.h>
 #include <net/pfvar.h>
 #include <arpa/inet.h>
@@ -1374,11 +1375,16 @@ print_rule(struct pf_rule *pr)
 		tb_print_ugid(pr->gid.op, pr->gid.gid[0], pr->gid.gid[1],
 		        "group", GID_MAX);
 
-	if (pr->flags || pr->flagset) {
-		tbprintf(" flags ");
-		tb_print_flags(pr->flags);
-		tbprintf("/");
-		tb_print_flags(pr->flagset);
+	if (pr->action == PF_PASS &&
+	    (pr->proto == 0 || pr->proto == IPPROTO_TCP) &&
+	    (pr->flags != TH_SYN || pr->flagset != (TH_SYN | TH_ACK) )) {
+		tbprintf("flags ");
+		if (pr->flags || pr->flagset) {
+			tb_print_flags(pr->flags);
+			tbprintf("/");
+			tb_print_flags(pr->flagset);
+		} else
+			tbprintf("any ");
 	}
 
 	tbprintf(" ");
