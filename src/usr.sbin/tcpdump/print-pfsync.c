@@ -149,8 +149,10 @@ pfsync_print(struct pfsync_header *hdr, const u_char *bp, int len)
 
 	plen = ntohs(hdr->len);
 
-	if (eflag)
-		printf("PFSYNCv%d len %d", hdr->version, plen);
+	printf("PFSYNCv%d len %d", hdr->version, plen);
+
+	if (hdr->version != PFSYNC_VERSION)
+		return;
 
 	plen -= sizeof(*hdr);
 
@@ -185,8 +187,10 @@ pfsync_print(struct pfsync_header *hdr, const u_char *bp, int len)
 		}
 
 		for (i = 0; i < count; i++) {
-			if (alen > len)
+			if (len < alen) {
+				len = 0;
 				break;
+			}
 
 			if (actions[subh->action].print(flags, bp) != 0)
 				return;
