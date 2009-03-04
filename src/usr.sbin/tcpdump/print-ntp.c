@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-ntp.c,v 1.12 2005/12/07 19:53:31 otto Exp $	*/
+/*	$OpenBSD: print-ntp.c,v 1.13 2007/10/07 16:41:05 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -79,6 +79,10 @@ ntp_print(register const u_char *cp, u_int length)
 	switch (leapind) {
 
 	case NO_WARNING:
+		break;
+
+	case ALARM:
+		fputs(" alarm", stdout);
 		break;
 
 	case PLUS_SEC:
