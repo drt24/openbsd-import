@@ -6002,9 +6002,9 @@ This is the recommended idiom.
 
 For robust code, consider reseting the file handle position to beginning of the
 file. Inside of larger frameworks, other code may have already used the query
-object and changed the filehandle postion:
+object and changed the filehandle position:
 
-  seek($fh,0,0); # reset postion to beginning of file.
+  seek($fh,0,0); # reset position to beginning of file.
 
 When a file is uploaded the browser usually sends along some
 information along with it in the format of headers.  The information
