@@ -137,7 +137,7 @@ struct pfsync_actions actions[] = {
 	{ 0,					NULL },
 	{ sizeof(struct pfsync_bus),		pfsync_print_bus },
 	{ sizeof(struct pfsync_tdb),		pfsync_print_tdb },
-	{ sizeof(struct pfsync_eof),		pfsync_print_eof }
+	{ 0,					pfsync_print_eof }
 };
 
 void
@@ -181,7 +181,7 @@ pfsync_print(struct pfsync_header *hdr, const u_char *bp, int len)
 		printf("\n    act %s count %d", actnames[subh->action], count);
 		alen = actions[subh->action].len;
 
-		if (alen == 0) {
+		if (actions[subh->action].print == NULL) {
 			printf("\n    unimplemented action");
 			return;
 		}
@@ -324,12 +324,5 @@ pfsync_print_tdb(int flags, const void *bp)
 int
 pfsync_print_eof(int flags, const void *bp)
 {
-	const struct pfsync_eof *eof = bp;
-	int i;
-
-	printf("\n\thmac: ");
-	for (i = 0; i < sizeof(eof->hmac); i++)
-		printf("%02x", eof->hmac[i]);
-
-	return (0);
+	return (1);
 }
