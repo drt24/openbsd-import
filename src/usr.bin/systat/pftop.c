@@ -861,7 +861,7 @@ print_state(struct pfsync_state * s, struct sc_ent * ent)
 	print_fld_rate(FLD_SA, (s->creation) ?
 		       ((double)sz/ntohl((double)s->creation)) : -1);
 
-	print_fld_uint(FLD_RULE, s->rule);
+	print_fld_uint(FLD_RULE, ntohl(s->rule));
 	if (cachestates && ent != NULL) {
 		print_fld_rate(FLD_SI, ent->rate);
 		print_fld_rate(FLD_SP, ent->peak);
