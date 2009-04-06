@@ -1410,23 +1410,7 @@ print_rule(struct pf_rule *pr)
 	if (pr->allow_opts)
 		tbprintf("allow-opts ");
 
-	if (pr->action == PF_SCRUB) {
-#ifdef PFRULE_REASSEMBLE_TCP
-		if (pr->rule_flag & PFRULE_REASSEMBLE_TCP)
-			tbprintf("reassemble tcp ");
-#endif
-#ifdef PFRULE_FRAGDROP
-		if (pr->rule_flag & PFRULE_FRAGDROP)
-			tbprintf("fragment drop-ovl ");
-		else
-#endif
-#ifdef PFRULE_FRAGCROP
-		if (pr->rule_flag & PFRULE_FRAGCROP)
-			tbprintf("fragment crop ");
-		else
-#endif
-			tbprintf("fragment reassemble ");
-	}
+	/* XXX more missing */
 
 	if (pr->qname[0] && pr->pqname[0])
 		tbprintf("queue(%s, %s) ", pr->qname, pr->pqname);
