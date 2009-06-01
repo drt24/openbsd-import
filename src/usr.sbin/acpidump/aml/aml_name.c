@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: aml_name.c,v 1.1 2005/06/02 20:09:39 tholo Exp $	*/
 /*-
  * Copyright (c) 1999 Takanori Watanabe
  * Copyright (c) 1999, 2000 Yasuo Yokoyama
@@ -392,6 +392,8 @@ aml_nameman(struct aml_environ *env, u_int8_t *dp, int flag)
 	} else {
 		curname = newname;
 		for (;;) {
+			if (curname == NULL)
+				break;
 			newname = aml_find_name(curname, dp);
 			if (newname != NULL)
 				break;
