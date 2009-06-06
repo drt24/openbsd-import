@@ -658,12 +658,12 @@ print_fld_age(field_def *fld, unsigned int age)
 	if (tbprintf("%ud", age) <= len)
 		goto ok;
 	
- err:
+err:
 	print_fld_str(fld, "*");
 	tb_end();
 	return;
 	
- ok:
+ok:
 	print_fld_tb(fld);
 }
 
