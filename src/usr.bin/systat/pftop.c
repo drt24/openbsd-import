@@ -1309,11 +1309,10 @@ print_rule(struct pf_rule *pr)
 	else if (pr->log == 2)
 		print_fld_str(FLD_LOG, "All");
 
-		printf("%u ", pr->action);
-/*	if (pr->action >= numact)
+	if (pr->action >= numact)
 		print_fld_uint(FLD_ACTION, pr->action);
 	else print_fld_str(FLD_ACTION, actiontypes[pr->action]);
-*/
+
 	if (pr->proto) {
 		struct protoent *p = getprotobynumber(pr->proto);
 
