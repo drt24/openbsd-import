@@ -210,9 +210,9 @@ mdoc_atotime(const char *p)
 
 	(void)memset(&tm, 0, sizeof(struct tm));
 
-	if (0 == strcmp(p, "$Mdocdate: June 14 2009 $"))
+	if (0 == strcmp(p, "$" "Mdocdate$"))
 		return(time(NULL));
-	if ((pp = strptime(p, "$Mdocdate: June 14 2009 $", &tm)) && 0 == *pp)
+	if ((pp = strptime(p, "$" "Mdocdate: %b %d %Y $", &tm)) && 0 == *pp)
 		return(mktime(&tm));
 	/* XXX - this matches "June 1999", which is wrong. */
 	if ((pp = strptime(p, "%b %d %Y", &tm)) && 0 == *pp)
