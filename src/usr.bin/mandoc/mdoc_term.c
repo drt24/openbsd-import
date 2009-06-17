@@ -402,7 +402,7 @@ print_foot(struct termp *p, const struct mdoc_meta *meta)
 
 	tm = localtime(&meta->date);
 
-	if (NULL == strftime(buf, p->rmargin, "%B %d, %Y", tm))
+	if (0 == strftime(buf, p->rmargin, "%B %d, %Y", tm))
 		err(1, "strftime");
 
 	(void)strlcpy(os, meta->os, p->rmargin);
