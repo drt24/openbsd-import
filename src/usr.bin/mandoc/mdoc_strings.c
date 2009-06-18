@@ -143,6 +143,8 @@ mdoc_iscdelim(char p)
 {
 
 	switch (p) {
+	case('|'):
+		/* FALLTHROUGH */
 	case('.'):
 		/* FALLTHROUGH */
 	case(','):

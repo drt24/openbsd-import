@@ -297,7 +297,7 @@ const	struct valids mdoc_valids[MDOC_MAX] = {
 	{ pres_lb, posts_lb },			/* Lb */
 	{ NULL, NULL },				/* Ap */
 	{ NULL, posts_pp },			/* Lp */ 
-	{ NULL, posts_text },			/* Lk */ 
+	{ NULL, NULL },				/* Lk */ 
 	{ NULL, posts_text },			/* Mt */ 
 	{ NULL, posts_wline },			/* Brq */ 
 	{ NULL, NULL },				/* Bro */ 
