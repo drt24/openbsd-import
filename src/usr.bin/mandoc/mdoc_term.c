@@ -395,6 +395,14 @@ print_foot(struct termp *p, const struct mdoc_meta *meta)
 	struct tm	*tm;
 	char		*buf, *os;
 
+	/* 
+	 * Output the footer in new-groff style, that is, three columns
+	 * with the middle being the manual date and flanking columns
+	 * being the operating system:
+	 *
+	 * SYSTEM                  DATE                    SYSTEM
+	 */
+
 	if (NULL == (buf = malloc(p->rmargin)))
 		err(1, "malloc");
 	if (NULL == (os = malloc(p->rmargin)))
@@ -407,29 +415,33 @@ print_foot(struct termp *p, const struct mdoc_meta *meta)
 
 	(void)strlcpy(os, meta->os, p->rmargin);
 
-	/*
-	 * This is /slightly/ different from regular groff output
-	 * because we don't have page numbers.  Print the following:
-	 *
-	 * OS                                            MDOCDATE
-	 */
-
 	term_vspace(p);
 
-	p->flags |= TERMP_NOSPACE | TERMP_NOBREAK;
-	p->rmargin = p->maxrmargin - strlen(buf);
 	p->offset = 0;
+	p->rmargin = (p->maxrmargin - strlen(buf) + 1) / 2;
+	p->flags |= TERMP_NOSPACE | TERMP_NOBREAK;
 
 	term_word(p, os);
 	term_flushln(p);
 
-	p->flags |= TERMP_NOLPAD | TERMP_NOSPACE;
 	p->offset = p->rmargin;
-	p->rmargin = p->maxrmargin;
-	p->flags &= ~TERMP_NOBREAK;
+	p->rmargin = p->maxrmargin - strlen(os);
+	p->flags |= TERMP_NOLPAD | TERMP_NOSPACE;
 
 	term_word(p, buf);
 	term_flushln(p);
+
+	p->offset = p->rmargin;
+	p->rmargin = p->maxrmargin;
+	p->flags &= ~TERMP_NOBREAK;
+	p->flags |= TERMP_NOLPAD | TERMP_NOSPACE;
+
+	term_word(p, os);
+	term_flushln(p);
+
+	p->offset = 0;
+	p->rmargin = p->maxrmargin;
+	p->flags = 0;
 
 	free(buf);
 	free(os);
