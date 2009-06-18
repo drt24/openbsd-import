@@ -289,9 +289,12 @@ pre_IP(DECL_ARGS)
 	} else
 		offs = strlen(nn->string);
 
-	p->offset += offs;
-#endif
 	p->flags |= TERMP_NOSPACE;
+	/* FIXME */
+	if ((p->offset += offs) > p->rmargin)
+		errx(1, "line too long");
+#endif
+
 	return(0);
 }
 
