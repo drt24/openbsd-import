@@ -24,12 +24,12 @@
 #include "libman.h"
 
 const	char *const __man_macronames[MAN_MAX] = {		 
-	"\\\"",		"TH",		"SH",		"SS",
+	"br",		"TH",		"SH",		"SS",
 	"TP", 		"LP",		"PP",		"P",
 	"IP",		"HP",		"SM",		"SB",
 	"BI",		"IB",		"BR",		"RB",
 	"R",		"B",		"I",		"IR",
-	"RI",		"br",		"na",		"i"
+	"RI",		"na",		"i"
 	};
 
 const	char * const *man_macronames = __man_macronames;
@@ -323,10 +323,6 @@ man_pmacro(struct man *m, int ln, char *buf)
 	}
 
 	ppos = i;
-
-	if (buf[i] && '\\' == buf[i])
-		if (buf[i + 1] && '\"' == buf[i + 1])
-			goto out;
 
 	/* Copy the first word into a nil-terminated buffer. */
 
