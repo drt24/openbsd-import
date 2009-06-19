@@ -343,6 +343,7 @@ initialize(void)
 	initpf();
 	initpool();
 	initmalloc();
+	initnfs();
 }
 
 void
