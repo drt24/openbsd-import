@@ -91,7 +91,10 @@ man_run(struct termp *p, const struct man *m)
 
 	print_head(p, man_meta(m));
 	p->flags |= TERMP_NOSPACE;
-	print_body(p, man_node(m), man_meta(m));
+	assert(man_node(m));
+	assert(MAN_ROOT == man_node(m)->type);
+	if (man_node(m)->child)
+		print_body(p, man_node(m)->child, man_meta(m));
 	print_foot(p, man_meta(m));
 
 	return(1);
