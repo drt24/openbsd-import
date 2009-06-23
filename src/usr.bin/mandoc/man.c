@@ -182,6 +182,8 @@ man_node_append(struct man *man, struct man_node *p)
 		abort();
 		/* NOTREACHED */
 	}
+	
+	p->parent->nchild++;
 
 	man->last = p;
 
@@ -250,6 +252,8 @@ man_node_free(struct man_node *p)
 
 	if (p->string)
 		free(p->string);
+	if (p->parent)
+		p->parent->nchild--;
 	free(p);
 }
 
@@ -263,6 +267,7 @@ man_node_freelist(struct man_node *p)
 	if (p->next)
 		man_node_freelist(p->next);
 
+	assert(0 == p->nchild);
 	man_node_free(p);
 }
 
