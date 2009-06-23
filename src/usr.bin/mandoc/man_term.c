@@ -35,6 +35,7 @@ struct	termact {
 static	int		  pre_B(DECL_ARGS);
 static	int		  pre_BI(DECL_ARGS);
 static	int		  pre_BR(DECL_ARGS);
+static	int		  pre_br(DECL_ARGS);
 static	int		  pre_I(DECL_ARGS);
 static	int		  pre_IB(DECL_ARGS);
 static	int		  pre_IP(DECL_ARGS);
@@ -52,7 +53,7 @@ static	void		  post_SH(DECL_ARGS);
 static	void		  post_SS(DECL_ARGS);
 
 static const struct termact termacts[MAN_MAX] = {
-	{ pre_PP, NULL }, /* br */
+	{ pre_br, NULL }, /* br */
 	{ NULL, NULL }, /* TH */
 	{ pre_SH, post_SH }, /* SH */
 	{ pre_SS, post_SS }, /* SS */
@@ -257,6 +258,16 @@ post_B(DECL_ARGS)
 
 /* ARGSUSED */
 static int
+pre_br(DECL_ARGS)
+{
+
+	term_newln(p);
+	return(0);
+}
+
+
+/* ARGSUSED */
+static int
 pre_PP(DECL_ARGS)
 {
 
@@ -309,6 +320,7 @@ pre_TP(DECL_ARGS)
 	size_t		 offs;
 
 	term_vspace(p);
+
 	p->offset = INDENT;
 
 	if (NULL == (nn = n->child))
