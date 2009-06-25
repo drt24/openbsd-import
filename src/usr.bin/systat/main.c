@@ -97,7 +97,7 @@ print_header(void)
 
 	tb_start();
 
-	getloadavg(avenrun, sizeof(avenrun) / sizeof(avenrun[0]));
+	getloadavg(avenrun, nitems(avenrun));
 
 	time(&now);
 	strlcpy(tbuf, ctime(&now), sizeof tbuf);
