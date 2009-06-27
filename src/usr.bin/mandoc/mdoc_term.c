@@ -601,7 +601,7 @@ arg_offset(const struct mdoc_argv *arg)
 	if (0 == strcmp(*arg->value, "left"))
 		return(0);
 	if (0 == strcmp(*arg->value, "indent"))
-		return(INDENT);
+		return(INDENT + 1);
 	if (0 == strcmp(*arg->value, "indent-two"))
 		return(INDENT * 2);
 
