@@ -771,11 +771,13 @@ termp_it_pre(DECL_ARGS)
 		/* FALLTHROUGH */
 	case (MDOC_Dash):
 		/* FALLTHROUGH */
-	case (MDOC_Enum):
-		/* FALLTHROUGH */
 	case (MDOC_Hyphen):
 		if (width < 4)
 			width = 4;
+		break;
+	case (MDOC_Enum):
+		if (width < 5)
+			width = 5;
 		break;
 	case (MDOC_Tag):
 		if (0 == width)
