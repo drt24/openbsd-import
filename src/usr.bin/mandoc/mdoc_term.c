@@ -1299,7 +1299,8 @@ termp_lb_pre(DECL_ARGS)
 	const char	*lb;
 
 	assert(node->child && MDOC_TEXT == node->child->type);
-	if ((lb = mdoc_a2lib(node->child->string))) {
+	lb = mdoc_a2lib(node->child->string);
+	if (lb) {
 		term_word(p, lb);
 		return(0);
 	}
@@ -1335,7 +1336,8 @@ termp_d1_pre(DECL_ARGS)
 	if (MDOC_BLOCK != node->type)
 		return(1);
 	term_newln(p);
-	p->offset += (pair->offset = INDENT);
+	pair->offset = INDENT + 1;
+	p->offset += pair->offset;
 	return(1);
 }
 
