@@ -543,11 +543,11 @@ arg_width(const struct mdoc_argv *arg, int pos)
 		if ('n' == arg->value[pos][len - 1] ||
 				'm' == arg->value[pos][len - 1]) {
 			v = (size_t)atoi(arg->value[pos]);
-			return(v);
+			return(v + 2);
 		}
 
 	}
-	return(strlen(arg->value[pos]) + 1);
+	return(strlen(arg->value[pos]) + 2);
 }
 
 
