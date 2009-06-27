@@ -786,11 +786,13 @@ termp_it_pre(DECL_ARGS)
 	}
 
 	/* 
-	 * Whitespace control.  Inset bodies need an initial space.
+	 * Whitespace control.  Inset bodies need an initial space,
+	 * while diagonal bodies need two.
 	 */
 
 	switch (type) {
 	case (MDOC_Diag):
+		term_word(p, "\\ ");
 		/* FALLTHROUGH */
 	case (MDOC_Inset):
 		if (MDOC_BODY == node->type) 
