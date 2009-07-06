@@ -756,7 +756,7 @@ termp_it_pre(DECL_ARGS)
 		if (vals[0] >= 0) 
 			width = arg_width(&bl->args->argv[vals[0]], 0);
 		if (vals[1] >= 0) 
-			offset = arg_offset(&bl->args->argv[vals[1]]);
+			offset += arg_offset(&bl->args->argv[vals[1]]);
 		break;
 	}
 
