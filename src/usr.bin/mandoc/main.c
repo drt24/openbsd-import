@@ -539,7 +539,7 @@ toptions(enum outt *tflags, char *arg)
 static int
 foptions(int *fflags, char *arg)
 {
-	char		*v;
+	char		*v, *o;
 	char		*toks[6];
 
 	toks[0] = "ign-scope";
@@ -549,7 +549,8 @@ foptions(int *fflags, char *arg)
 	toks[4] = "strict";
 	toks[5] = NULL;
 
-	while (*arg) 
+	while (*arg) {
+		o = arg;
 		switch (getsubopt(&arg, toks, &v)) {
 		case (0):
 			*fflags |= IGN_SCOPE;
@@ -568,9 +569,10 @@ foptions(int *fflags, char *arg)
 			 	   NO_IGN_MACRO | NO_IGN_CHARS;
 			break;
 		default:
-			warnx("bad argument: -f%s", suboptarg);
+			warnx("bad argument: -f%s", o);
 			return(0);
 		}
+	}
 
 	return(1);
 }
@@ -579,7 +581,7 @@ foptions(int *fflags, char *arg)
 static int
 woptions(int *wflags, char *arg)
 {
-	char		*v;
+	char		*v, *o;
 	char		*toks[5]; 
 
 	toks[0] = "all";
@@ -588,7 +590,8 @@ woptions(int *wflags, char *arg)
 	toks[3] = "error";
 	toks[4] = NULL;
 
-	while (*arg) 
+	while (*arg) {
+		o = arg;
 		switch (getsubopt(&arg, toks, &v)) {
 		case (0):
 			*wflags |= WARN_WALL;
@@ -603,9 +606,10 @@ woptions(int *wflags, char *arg)
 			*wflags |= WARN_WERR;
 			break;
 		default:
-			warnx("bad argument: -W%s", suboptarg);
+			warnx("bad argument: -W%s", o);
 			return(0);
 		}
+	}
 
 	return(1);
 }
