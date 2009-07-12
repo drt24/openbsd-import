@@ -54,12 +54,6 @@ enum 	mwarn {
 	WTAILWS	
 };
 
-enum	merr {
-	EQUOTTERM,
-	EMALLOC,
-	EARGVAL	
-};
-
 static	int		 argv_a2arg(int, const char *);
 static	int		 args(struct mdoc *, int, int *, 
 				char *, int, char **);

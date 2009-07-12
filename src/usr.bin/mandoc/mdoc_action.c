@@ -30,13 +30,6 @@ enum	mwarn {
 	WBADDATE
 };
 
-enum	merr {
-	ETOOLONG,
-	EMALLOC,
-	EUTSNAME,
-	ENUMFMT
-};
-
 #define	PRE_ARGS  struct mdoc *m, const struct mdoc_node *n
 #define	POST_ARGS struct mdoc *m
 

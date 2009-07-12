@@ -39,7 +39,7 @@ struct	man {
 };
 
 enum	merr {
-	WNPRINT,
+	WNPRINT = 0,
 	WNMEM,
 	WMSEC,
 	WDATE,
@@ -48,15 +48,16 @@ enum	merr {
 	WTQUOTE,
 	WNODATA,
 	WNOTITLE,
-	WESCAPE
+	WESCAPE,
+	WERRMAX
 };
 
 __BEGIN_DECLS
 
 #define		  man_perr(m, l, p, t) \
-		  man_err((m), l, p, 1, (t))
+		  man_err((m), (l), (p), 1, (t))
 #define		  man_pwarn(m, l, p, t) \
-		  man_err((m), l, p, 0, (t))
+		  man_err((m), (l), (p), 0, (t))
 #define		  man_nerr(m, n, t) \
 		  man_err((m), (n)->line, (n)->pos, 1, (t))
 #define		  man_nwarn(m, n, t) \
