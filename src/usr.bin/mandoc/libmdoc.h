@@ -121,7 +121,8 @@ __BEGIN_DECLS
 int		  mdoc_warn(struct mdoc *, enum mdoc_warn, const char *, ...);
 int		  mdoc_pwarn(struct mdoc *, int, int,
 			enum mdoc_warn,const char *, ...);
-int		  mdoc_perr(struct mdoc *, int, int, const char *, ...);
+#define		  mdoc_perr(m, l, p, t) \
+		  mdoc_err((m), (l), (p), 1, (t))
 #define		  mdoc_nerr(m, n, t) \
 		  mdoc_err((m), (n)->line, (n)->pos, 0, (t))
 
