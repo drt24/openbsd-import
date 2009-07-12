@@ -324,25 +324,8 @@ mdoc_vwarn(struct mdoc *mdoc, int ln, int pos, const char *fmt, ...)
 	va_start(ap, fmt);
 	(void)vsnprintf(buf, sizeof(buf) - 1, fmt, ap);
 	va_end(ap);
+
 	return((*mdoc->cb.mdoc_warn)(mdoc->data, ln, pos, buf));
-}
-
-
-int
-mdoc_warn(struct mdoc *mdoc, enum mdoc_warn type, 
-		const char *fmt, ...)
-{
-	char		 buf[256];
-	va_list		 ap;
-
-	if (NULL == mdoc->cb.mdoc_warn)
-		return(0);
-
-	va_start(ap, fmt);
-	(void)vsnprintf(buf, sizeof(buf) - 1, fmt, ap);
-	va_end(ap);
-	return((*mdoc->cb.mdoc_warn)(mdoc->data, mdoc->last->line,
-				mdoc->last->pos, buf));
 }
 
 
@@ -360,22 +343,6 @@ mdoc_err(struct mdoc *m, int line, int pos, int iserr, enum merr type)
 	return(mdoc_vwarn(m, line, pos, p));
 }
 
-
-int
-mdoc_pwarn(struct mdoc *mdoc, int line, int pos, enum mdoc_warn type,
-		const char *fmt, ...)
-{
-	char		 buf[256];
-	va_list		 ap;
-
-	if (NULL == mdoc->cb.mdoc_warn)
-		return(0);
-
-	va_start(ap, fmt);
-	(void)vsnprintf(buf, sizeof(buf) - 1, fmt, ap);
-	va_end(ap);
-	return((*mdoc->cb.mdoc_warn)(mdoc->data, line, pos, buf));
-}
 
 int
 mdoc_macro(struct mdoc *m, int tok, 

@@ -179,12 +179,6 @@
 #define	MDOC_Nested	 25
 #define	MDOC_ARG_MAX	 26
 
-/* Warnings are either syntax or groff-compatibility. */
-enum	mdoc_warn {
-	WARN_SYNTAX,
-	WARN_COMPAT
-};
-
 /* Type of a syntax node. */
 enum	mdoc_type {
 	MDOC_TEXT,
