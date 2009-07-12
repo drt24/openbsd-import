@@ -648,7 +648,7 @@ static int
 macrowarn(struct mdoc *m, int ln, const char *buf)
 {
 	if ( ! (MDOC_IGN_MACRO & m->pflags))
-		return(mdoc_perr(m, ln, 1, 
+		return(mdoc_verr(m, ln, 1, 
 				"unknown macro: %s%s", 
 				buf, strlen(buf) > 3 ? "..." : ""));
 	return(mdoc_vwarn(m, ln, 1, "unknown macro: %s%s",
