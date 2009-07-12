@@ -305,7 +305,7 @@ mdoc_macroend(struct mdoc *mdoc)
 			continue;
 		if ( ! (MDOC_EXPLICIT & mdoc_macros[n->tok].flags))
 			continue;
-		return(nerr(mdoc, n, EOPEN));
+		return(mdoc_nerr(mdoc, n, EOPEN));
 	}
 
 	return(rew_last(mdoc, mdoc->first));
