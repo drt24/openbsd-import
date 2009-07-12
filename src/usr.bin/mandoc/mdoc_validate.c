@@ -524,7 +524,7 @@ warn_count(struct mdoc *m, const char *k,
 		int want, const char *v, int has)
 {
 
-	return(mdoc_warn(m, WARN_SYNTAX, 
+	return(mdoc_vwarn(m, m->last->line, m->last->pos, 
 		"suggests %s %s %d (has %d)", v, k, want, has));
 }
 

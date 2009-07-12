@@ -286,7 +286,7 @@ swarn(struct mdoc *mdoc, enum mdoc_type type,
 		return(mdoc_perr(mdoc, line, pos, 
 				"%s scope breaks %s scope of %s", 
 				tt, t, n));
-	return(mdoc_pwarn(mdoc, line, pos, WARN_SYNTAX,
+	return(mdoc_vwarn(mdoc, line, pos, 
 				"%s scope breaks %s scope of %s", 
 				tt, t, n));
 }
