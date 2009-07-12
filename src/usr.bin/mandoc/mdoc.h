@@ -279,8 +279,7 @@ struct	mdoc_node {
 /* FIXME: unify somehow with man_cb. */
 struct	mdoc_cb {
 	int	(*mdoc_err)(void *, int, int, const char *);
-	int	(*mdoc_warn)(void *, int, int, 
-			enum mdoc_warn, const char *);
+	int	(*mdoc_warn)(void *, int, int, const char *);
 };
 
 /* See mdoc.3 for documentation. */
