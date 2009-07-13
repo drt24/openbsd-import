@@ -534,7 +534,7 @@ check_text(struct mdoc *mdoc, int line, int pos, const char *p)
 		}
 		if ( ! (MDOC_IGN_ESCAPE & mdoc->pflags))
 			return(mdoc_perr(mdoc, line, pos, EESCAPE));
-		if ( ! mdoc_perr(mdoc, line, pos, EESCAPE))
+		if ( ! mdoc_pwarn(mdoc, line, pos, EESCAPE))
 			return(0);
 	}
 
