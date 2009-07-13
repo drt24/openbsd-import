@@ -1129,8 +1129,16 @@ termp_ex_pre(DECL_ARGS)
 static int
 termp_nd_pre(DECL_ARGS)
 {
-
+	/* 
+	 * XXX: signed off by jmc@openbsd.org.  This technically
+	 * produces a minus sign after the Nd, which is wrong, but is
+	 * consistent with the historic OpenBSD tmac file.
+	 */
+#ifdef __OpenBSD__
 	term_word(p, "\\-");
+#else
+	term_word(p, "\\(em");
+#endif
 	return(1);
 }
 
