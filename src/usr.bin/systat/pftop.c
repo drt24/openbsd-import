@@ -449,7 +449,7 @@ compare_addr(int af, const struct pf_addr *a, const struct pf_addr *b)
 	return 0;
 }
 
-__inline int
+static __inline int
 sort_addr_callback(const struct pfsync_state *s1,
 		   const struct pfsync_state *s2, int dir)
 {
@@ -496,7 +496,7 @@ sort_addr_callback(const struct pfsync_state *s1,
 	return -sortdir;
 }
 
-__inline int
+static __inline int
 sort_port_callback(const struct pfsync_state *s1,
 		   const struct pfsync_state *s2, int dir)
 {
