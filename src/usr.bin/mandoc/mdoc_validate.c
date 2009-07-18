@@ -870,6 +870,16 @@ post_bf(POST_ARGS)
 
 
 static int
+post_lb(POST_ARGS)
+{
+
+	if (mdoc_a2lib(mdoc->last->child->string))
+		return(1);
+	return(mdoc_nwarn(mdoc, mdoc->last, ELIB));
+}
+
+
+static int
 post_nm(POST_ARGS)
 {
 
