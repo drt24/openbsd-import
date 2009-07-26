@@ -1564,7 +1564,6 @@ termp_bd_pre(DECL_ARGS)
 	 * Ew.
 	 */
 
-	p->flags |= TERMP_LITERAL;
 	ln = node->child ? node->child->line : 0;
 
 	for (node = node->child; node; node = node->next) {
@@ -1587,10 +1586,7 @@ termp_bd_post(DECL_ARGS)
 
 	if (MDOC_BODY != node->type) 
 		return;
-
 	term_flushln(p);
-	p->flags &= ~TERMP_LITERAL;
-	p->flags |= TERMP_NOSPACE;
 }
 
 
