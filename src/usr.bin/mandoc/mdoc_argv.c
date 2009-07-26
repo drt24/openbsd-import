@@ -268,8 +268,6 @@ mdoc_argv(struct mdoc *m, int line, int tok,
 		/* XXX - restore saved zeroed byte. */
 		if (sv)
 			buf[*pos - 1] = sv;
-		if ( ! mdoc_pwarn(m, line, i, EARGVPARM))
-			return(ARGV_ERROR);
 		return(ARGV_WORD);
 	}
 
@@ -392,8 +390,8 @@ mdoc_args(struct mdoc *m, int line,
 
 
 static int
-args(struct mdoc *m, int line, 
-		int *pos, char *buf, int fl, char **v)
+args(struct mdoc *m, int line, int *pos,
+		char *buf, int fl, char **v)
 {
 	int		  i;
 	char		 *p, *pp;
@@ -405,10 +403,6 @@ args(struct mdoc *m, int line,
 
 	if ('\"' == buf[*pos] && ! (fl & ARGS_QUOTED))
 		if ( ! mdoc_pwarn(m, line, *pos, EQUOTPARM))
-			return(ARGS_ERROR);
-
-	if ( ! (fl & ARGS_ARGVLIKE) && '-' == buf[*pos]) 
-		if ( ! mdoc_pwarn(m, line, *pos, EARGVPARM))
 			return(ARGS_ERROR);
 
 	/* 
