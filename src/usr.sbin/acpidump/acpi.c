@@ -1,4 +1,4 @@
-/*	$OpenBSD: acpi.c,v 1.5 2007/10/17 20:10:44 chl Exp $	*/
+/*	$OpenBSD: acpi.c,v 1.6 2008/06/04 17:23:24 kettenis Exp $	*/
 /*-
  * Copyright (c) 1998 Doug Rabson
  * Copyright (c) 2000 Mitsuru IWASAKI <iwasaki@FreeBSD.org>
@@ -42,6 +42,7 @@
 
 #include "aml/aml_env.h"
 #include "aml/aml_common.h"
+#include "aml/aml_parse.h"
 
 #define BEGIN_COMMENT	"/*\n"
 #define END_COMMENT	" */\n"
