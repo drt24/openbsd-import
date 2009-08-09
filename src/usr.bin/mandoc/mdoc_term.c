@@ -1009,10 +1009,9 @@ termp_it_post(DECL_ARGS)
 	assert(-1 != type);
 
 	switch (type) {
-	case (MDOC_Diag):
-		term_word(p, "\\ ");
-		/* FALLTHROUGH */
 	case (MDOC_Item):
+		/* FALLTHROUGH */
+	case (MDOC_Diag):
 		/* FALLTHROUGH */
 	case (MDOC_Inset):
 		if (MDOC_BODY == node->type)
