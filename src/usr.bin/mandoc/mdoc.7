@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: July 26 2009 $
+.Dd $Mdocdate: August 9 2009 $
 .Dt MDOC 7
 .Os
 .\" SECTION---------------------------------------------
@@ -454,6 +454,16 @@ file re-write
 .\" PARAGRAPH------------
 .Pp
 .Bl -dash -compact
+.\" LIST-ITEM
+.It
+The
+.Sq \-split
+or
+.Sq \-nosplit
+argument to 
+.Sq \&An
+applies to the whole document, not just to the current section as it
+does in groff.
 .\" LIST-ITEM
 .It
 In quoted literals, groff allowed pair-wise double-quotes to produce a
