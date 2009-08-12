@@ -103,7 +103,7 @@ get_args(int c, char *v[])
 {
 	int opt_ch;
 	int usage = 0;
-	char *logfile = 0;
+	char *logfile = "syslog";
 	char *sub_domain = 0;
 
 	while ((opt_ch = getopt(c, v, "mnprva:c:d:h:k:l:t:w:x:y:C:D:")) != -1)

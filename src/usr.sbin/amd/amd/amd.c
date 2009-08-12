@@ -63,7 +63,7 @@ char pid_fsname[16 + MAXHOSTNAMELEN];	/* "kiska.southseas.nz:(pid%d)" */
 char *host_helper;
 #endif /* HOST_EXEC */
 #endif /* HAS_HOST */
-char *auto_dir = "/a";
+char *auto_dir = "/tmp_mnt";
 char *hostdomain = "unknown.domain";
 char hostname[MAXHOSTNAMELEN] = "localhost"; /* Hostname */
 char hostd[2*MAXHOSTNAMELEN];		/* Host+domain */

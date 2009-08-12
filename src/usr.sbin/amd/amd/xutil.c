@@ -52,7 +52,7 @@ FILE *logfp = stderr;		/* Log errors to stderr initially */
 #ifdef HAS_SYSLOG
 int syslogging;
 #endif /* HAS_SYSLOG */
-int xlog_level = XLOG_ALL & ~XLOG_MAP & ~XLOG_STATS;
+int xlog_level = XLOG_ALL & ~XLOG_MAP & ~XLOG_STATS & ~XLOG_INFO;
 int xlog_level_init = ~0;
 
 /*
