@@ -1639,7 +1639,7 @@ termp_va_pre(DECL_ARGS)
 static int
 termp_bd_pre(DECL_ARGS)
 {
-	int	         i, type, ln;
+	int	         i, type;
 
 	/*
 	 * This is fairly tricky due primarily to crappy documentation.
