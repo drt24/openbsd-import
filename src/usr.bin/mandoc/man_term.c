@@ -102,11 +102,6 @@ static const struct termact termacts[MAN_MAX] = {
 	{ pre_r, NULL }, /* r */
 };
 
-#ifdef __linux__
-extern	size_t		  strlcpy(char *, const char *, size_t);
-extern	size_t		  strlcat(char *, const char *, size_t);
-#endif
-
 static	void		  print_head(struct termp *, 
 				const struct man_meta *);
 static	void		  print_body(DECL_ARGS);
