@@ -1395,10 +1395,18 @@ termp_fd_post(DECL_ARGS)
 static int
 termp_sh_pre(DECL_ARGS)
 {
-
+	/* 
+	 * XXX: undocumented: using two `Sh' macros in sequence has no
+	 * vspace between calls, only a newline.
+	 */
 	switch (node->type) {
-	case (MDOC_HEAD):
+	case (MDOC_BLOCK):
+		if (node->prev && MDOC_Sh == node->prev->tok)
+			if (NULL == node->prev->body->child)
+				break;
 		term_vspace(p);
+		break;
+	case (MDOC_HEAD):
 		pair->flag |= ttypes[TTYPE_SECTION];
 		break;
 	case (MDOC_BODY):
