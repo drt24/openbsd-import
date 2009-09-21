@@ -492,15 +492,15 @@ do_escaped(struct termp *p, const char **word)
 
 		switch (*wp) {
 		case ('B'):
-			p->flags |= TERMP_BOLD;
+			p->bold++;
 			break;
 		case ('I'):
-			p->flags |= TERMP_UNDER;
+			p->under++;
 			break;
 		case ('P'):
 			/* FALLTHROUGH */
 		case ('R'):
-			p->flags &= ~TERMP_STYLE;
+			p->bold = p->under = 0;
 			break;
 		default:
 			break;
@@ -590,12 +590,12 @@ static void
 encode(struct termp *p, char c)
 {
 	
-	if (' ' != c && TERMP_STYLE & p->flags) {
-		if (TERMP_BOLD & p->flags) {
+	if (' ' != c) {
+		if (p->bold) {
 			buffer(p, c);
 			buffer(p, 8);
 		}
-		if (TERMP_UNDER & p->flags) {
+		if (p->under) {
 			buffer(p, '_');
 			buffer(p, 8);
 		}
