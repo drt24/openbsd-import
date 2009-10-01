@@ -1,4 +1,4 @@
-/*	$OpenBSD: autoconf.c,v 1.36 2008/07/21 04:35:54 todd Exp $	*/
+/*	$OpenBSD: autoconf.c,v 1.37 2009/08/29 11:41:32 miod Exp $	*/
 /*
  * Copyright (c) 1996, 1997 Per Fogelstrom
  * Copyright (c) 1995 Theo de Raadt
@@ -92,6 +92,8 @@ cpu_configure()
 {
 	(void)splhigh();	/* To be really sure.. */
 	calc_delayconst();
+
+	softintr_init();
 
 	if (config_rootfound("mainbus", "mainbus") == 0)
 		panic("no mainbus found");
