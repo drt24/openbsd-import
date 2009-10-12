@@ -1351,17 +1351,17 @@ Encode/bin directory.
 =item *
 
 ICU Home Page 
-L<http://oss.software.ibm.com/icu/>
+L<http://www.icu-project.org/>
 
 =item *
 
 ICU Character Mapping Tables
-L<http://oss.software.ibm.com/icu/charset/>
+L<http://www.icu-project.org/charset/>
 
 =item *
 
 ICU:Conversion Data
-L<http://oss.software.ibm.com/icu/userguide/conversion-data.html>
+L<http://www.icu-project.org/userguide/conversion-data.html>
 
 =back
 

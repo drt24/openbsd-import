@@ -68,7 +68,7 @@ sub guess {
     my $octet = shift;
 
     # sanity check
-    return unless defined $octet and length $octet;
+    return "Empty string, empty guess" unless defined $octet and length $octet;
 
     # cheat 0: utf8 flag;
     if ( Encode::is_utf8($octet) ) {
