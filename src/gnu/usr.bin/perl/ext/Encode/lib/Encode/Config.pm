@@ -38,6 +38,7 @@ our %ExtModule = (
     'cp855'                 => 'Encode::Byte',
     'cp856'                 => 'Encode::Byte',
     'cp857'                 => 'Encode::Byte',
+    'cp858'                 => 'Encode::Byte',
     'cp860'                 => 'Encode::Byte',
     'cp861'                 => 'Encode::Byte',
     'cp862'                 => 'Encode::Byte',

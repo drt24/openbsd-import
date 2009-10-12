@@ -2,6 +2,7 @@ package Encode::CN::HZ;
 
 use strict;
 use warnings;
+use utf8 ();
 
 use vars qw($VERSION);
 $VERSION = do { my @r = ( q$Revision$ =~ /\d+/g ); sprintf "%d." . "%02d" x $#r, @r };
@@ -183,6 +184,7 @@ sub encode($$;$) {
         $ret .= "\x7E\x7D";    # '~}'
         $in_ascii = 1;
     }
+    utf8::encode($ret); # https://rt.cpan.org/Ticket/Display.html?id=35120
     return $ret;
 }
 

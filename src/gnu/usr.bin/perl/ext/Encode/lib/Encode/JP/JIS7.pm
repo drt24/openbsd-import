@@ -130,6 +130,7 @@ sub jis_euc {
 
 sub euc_jis {
     no warnings qw(uninitialized);
+    local ${^ENCODING};
     my $r_str   = shift;
     my $jis0212 = shift;
     $$r_str =~ s{

@@ -198,9 +198,11 @@ sub decode ($$;$) {
         }
         else {
             $u =
-              exists $GSM2UNI{$c} ? $GSM2UNI{$c}
-              : $chk
-              ? croak sprintf( "\\x%02X does not map to Unicode", ord($c) )
+              exists $GSM2UNI{$c}
+              ? $GSM2UNI{$c}
+              : $chk ? ref $chk eq 'CODE'
+                  ? $chk->( ord $c )
+                  : croak sprintf( "\\x%02X does not map to Unicode", ord($c) )
               : $FBCHAR;
         }
         $str .= $u;
@@ -218,10 +220,12 @@ sub encode($$;$) {
         my $u = substr( $str, 0, 1, '' );
         my $c;
         $bytes .=
-          exists $UNI2GSM{$u} ? $UNI2GSM{$u}
-          : $chk
-          ? croak sprintf( "\\x{%04x} does not map to %s", 
-			   ord($u), $obj->name )
+          exists $UNI2GSM{$u}
+          ? $UNI2GSM{$u}
+          : $chk ? ref $chk eq 'CODE'
+              ? $chk->( ord($u) )
+              : croak sprintf( "\\x{%04x} does not map to %s", 
+			       ord($u), $obj->name )
           : $FBCHAR;
     }
     $_[1] = $str if $chk;
