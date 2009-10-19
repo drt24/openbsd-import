@@ -1413,7 +1413,7 @@ termp_bt_pre(DECL_ARGS)
 {
 
 	term_word(p, "is currently in beta test.");
-	return(1);
+	return(0);
 }
 
 
@@ -1514,10 +1514,6 @@ static int
 termp_fn_pre(DECL_ARGS)
 {
 	const struct mdoc_node *n;
-
-	assert(node->child && MDOC_TEXT == node->child->type);
-
-	/* FIXME: can be "type funcname" "type varname"... */
 
 	p->bold++;
 	term_word(p, node->child->string);
@@ -1841,6 +1837,7 @@ termp_in_post(DECL_ARGS)
 {
 
 	p->bold++;
+	p->flags |= TERMP_NOSPACE;
 	term_word(p, ">");
 	p->bold--;
 
