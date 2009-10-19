@@ -1159,6 +1159,8 @@ static int
 termp_rs_pre(DECL_ARGS)
 {
 
+	if (SEC_SEE_ALSO != node->sec)
+		return(1);
 	if (MDOC_BLOCK == node->type && node->prev)
 		term_vspace(p);
 	return(1);
@@ -1419,7 +1421,8 @@ static void
 termp_lb_post(DECL_ARGS)
 {
 
-	term_newln(p);
+	if (SEC_LIBRARY == node->sec)
+		term_newln(p);
 }
 
 
