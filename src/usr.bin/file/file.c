@@ -1,4 +1,4 @@
-/*	$OpenBSD: file.c,v 1.19 2009/04/24 18:54:34 chl Exp $ */
+/*	$OpenBSD: file.c,v 1.20 2009/08/27 16:26:43 deraadt Exp $ */
 /*
  * Copyright (c) Ian F. Darwin 1986-1995.
  * Software written by Ian F. Darwin and others;
@@ -82,8 +82,8 @@ FILE_RCSID("@(#)$Id$")
 #define SYMLINKFLAG ""
 #endif
 
-# define USAGE  "Usage: %s [-bcik" SYMLINKFLAG "nNrsvz0] [-e test] [-f namefile] [-F separator] [-m magicfiles] file...\n" \
-		" 	%s [-m magicfiles] -C\n"
+# define USAGE  "Usage: %s [-bcik" SYMLINKFLAG "nNprsvz0] [-e test] [-f namefile] [-F separator] [-m magicfiles] file...\n" \
+		"       %s -C -m magicfiles\n"
 
 #ifndef MAXPATHLEN
 #define	MAXPATHLEN	512
