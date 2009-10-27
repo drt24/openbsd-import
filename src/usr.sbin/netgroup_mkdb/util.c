@@ -29,10 +29,6 @@
  * SUCH DAMAGE.
  */
 
-#ifndef lint
-static char *rcsid = "$Id$";
-#endif
-
 #include <err.h>
 #include <stdlib.h>
 #include <string.h>

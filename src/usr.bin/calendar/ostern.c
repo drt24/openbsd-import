@@ -1,4 +1,4 @@
-/*	$OpenBSD: ostern.c,v 1.5 2004/12/10 15:31:01 mickey Exp $	*/
+/*	$OpenBSD: ostern.c,v 1.6 2005/11/16 16:45:11 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1996 Wolfram Schneider <wosch@FreeBSD.org>. Berlin.
@@ -27,10 +27,6 @@
  *
  * 	$Id$
  */
-
-#ifndef lint
-static const char rcsid[] = "$OpenBSD: ostern.c,v 1.5 2004/12/10 15:31:01 mickey Exp $";
-#endif /* not lint */
 
 #include <stdio.h>
 #include <time.h>

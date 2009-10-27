@@ -24,11 +24,6 @@
 #include <fcntl.h>
 #include <util.h>
 
-#ifndef lint
-static char rcsid[] =
-	"@(#) $Id$";
-#endif
-
 extern char *configfilename;
 char versionstring[100];
 

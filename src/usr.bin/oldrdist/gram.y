@@ -28,11 +28,6 @@
  * SUCH DAMAGE.
  */
 
-#ifndef lint
-/* from: static char sccsid[] = "@(#)gram.y	8.1 (Berkeley) 6/9/93"; */
-static char *rcsid = "$Id$";
-#endif /* not lint */
-
 #include "defs.h"
 
 struct	cmd *cmds = NULL;

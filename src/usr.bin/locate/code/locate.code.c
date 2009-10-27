@@ -1,5 +1,5 @@
 /*
- *	$OpenBSD: locate.code.c,v 1.14 2007/02/19 20:01:12 ray Exp $
+ *	$OpenBSD: locate.code.c,v 1.15 2007/03/18 20:13:49 otto Exp $
  *
  * Copyright (c) 1989, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -33,20 +33,6 @@
  *
  * 	$Id$
  */
-
-#ifndef lint
-static char copyright[] =
-"@(#) Copyright (c) 1989, 1993\n\
-	The Regents of the University of California.  All rights reserved.\n";
-#endif /* not lint */
-
-#ifndef lint
-#if 0
-static char sccsid[] = "@(#)locate.code.c	8.1 (Berkeley) 6/6/93";
-#else
-static char rcsid[] = "$OpenBSD: locate.code.c,v 1.14 2007/02/19 20:01:12 ray Exp $";
-#endif
-#endif /* not lint */
 
 /*
  * PURPOSE:	sorted list compressor (works with a modified 'find'

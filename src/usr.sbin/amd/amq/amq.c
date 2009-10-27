@@ -39,19 +39,6 @@
  * Automounter query tool
  */
 
-#ifndef lint
-char copyright[] = "\
-@(#)Copyright (c) 1990 Jan-Simon Pendry\n\
-@(#)Copyright (c) 1990 Imperial College of Science, Technology & Medicine\n\
-@(#)Copyright (c) 1990, 1993\n\
-	The Regents of the University of California.  All rights reserved.\n";
-#endif /* not lint */
-
-#ifndef lint
-static char rcsid[] = "$Id$";
-static char sccsid[] = "@(#)amq.c	8.1 (Berkeley) 6/7/93";
-#endif /* not lint */
-
 #include "am.h"
 #include "amq.h"
 #include <stdio.h>
