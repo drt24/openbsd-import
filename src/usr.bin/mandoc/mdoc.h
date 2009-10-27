@@ -17,8 +17,6 @@
 #ifndef MDOC_H
 #define MDOC_H
 
-#include <time.h>
-
 /*
  * This library implements a validating scanner/parser for ``mdoc'' roff
  * macro documents, a.k.a. BSD manual page documents.  The mdoc.c file
@@ -149,7 +147,8 @@
 #define	MDOC__Q	 	 117
 #define MDOC_br		 118
 #define MDOC_sp		 119
-#define	MDOC_MAX	 120
+#define MDOC__U		 120
+#define	MDOC_MAX	 121
 
 /* What follows is a list of ALL possible macro arguments. */
 

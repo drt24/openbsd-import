@@ -116,7 +116,9 @@ const	char *const __mdoc_macronames[MDOC_MAX] = {
 	/* LINTED */
 	"Brc",		"\%C",		"Es",		"En",
 	/* LINTED */
-	"Dx",		"\%Q",		"br",		"sp"
+	"Dx",		"\%Q",		"br",		"sp",
+	/* LINTED */
+	"\%U"
 	};
 
 const	char *const __mdoc_argnames[MDOC_ARG_MAX] = {		 
@@ -656,7 +658,6 @@ parsetext(struct mdoc *m, int line, char *buf)
 	m->next = MDOC_NEXT_SIBLING;
 	return(1);
 }
-
 
 
 
