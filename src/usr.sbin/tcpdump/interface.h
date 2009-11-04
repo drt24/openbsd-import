@@ -273,6 +273,7 @@ extern void ipcomp_print(const u_char *, u_int, const u_char *);
 extern void mpls_print(const u_char *, u_int);
 extern void lldp_print(const u_char *, u_int);
 extern void slow_print(const u_char *, u_int);
+extern void gtp_print(const u_char *, u_int, u_short, u_short);
 
 #ifdef INET6
 extern void ip6_print(const u_char *, int);
