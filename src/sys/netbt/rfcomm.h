@@ -1,4 +1,4 @@
-/*	$OpenBSD: rfcomm.h,v 1.3 2008/05/27 19:41:14 thib Exp $	*/
+/*	$OpenBSD: rfcomm.h,v 1.4 2008/11/22 04:42:58 uwe Exp $	*/
 /*	$NetBSD: rfcomm.h,v 1.8 2008/09/08 23:36:55 gmcgarry Exp $	*/
 
 /*-
@@ -419,7 +419,7 @@ int rfcomm_detach(struct rfcomm_dlc **);
 int rfcomm_listen(struct rfcomm_dlc *);
 int rfcomm_send(struct rfcomm_dlc *, struct mbuf *);
 int rfcomm_rcvd(struct rfcomm_dlc *, size_t);
-int rfcomm_setopt(struct rfcomm_dlc *, int, void *);
+int rfcomm_setopt(struct rfcomm_dlc *, int, struct mbuf *);
 int rfcomm_getopt(struct rfcomm_dlc *, int, void *);
 
 #endif /* _KERNEL */
