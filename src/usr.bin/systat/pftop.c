@@ -1336,9 +1336,6 @@ print_rule(struct pf_rule *pr)
 
 	tb_start();
 
-	if (pr->natpass)
-		tbprintf("pass ");
-
 	if (pr->action == PF_DROP) {
 		if (pr->rule_flag & PFRULE_RETURNRST)
 			tbprintf("return-rst ");
