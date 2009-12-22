@@ -17,11 +17,11 @@
 #include <sys/utsname.h>
 
 #include <assert.h>
-#include <errno.h>
 #include <stdlib.h>
 #include <string.h>
 
 #include "libman.h"
+#include "libmandoc.h"
 
 struct	actions {
 	int	(*post)(struct man *);
@@ -138,16 +138,13 @@ post_TH(struct man *m)
 
 	n = m->last->child;
 	assert(n);
-
-	if (NULL == (m->meta.title = strdup(n->string)))
-		return(man_nerr(m, n, WNMEM));
+	m->meta.title = mandoc_strdup(n->string);
 
 	/* TITLE ->MSEC<- DATE SOURCE VOL */
 
 	n = n->next;
 	assert(n);
 
-	errno = 0;
 	lval = strtol(n->string, &ep, 10);
 	if (n->string[0] != '\0' && *ep == '\0')
 		m->meta.msec = (int)lval;
@@ -167,14 +164,12 @@ post_TH(struct man *m)
 	/* TITLE MSEC DATE ->SOURCE<- VOL */
 
 	if (n && (n = n->next))
-		if (NULL == (m->meta.source = strdup(n->string)))
-			return(man_nerr(m, n, WNMEM));
+		m->meta.source = mandoc_strdup(n->string);
 
 	/* TITLE MSEC DATE SOURCE ->VOL<- */
 
 	if (n && (n = n->next))
-		if (NULL == (m->meta.vol = strdup(n->string)))
-			return(man_nerr(m, n, WNMEM));
+		m->meta.vol = mandoc_strdup(n->string);
 
 	/* 
 	 * The end document shouldn't have the prologue macros as part
@@ -205,7 +200,7 @@ man_atotime(const char *p)
 	struct tm	 tm;
 	char		*pp;
 
-	bzero(&tm, sizeof(struct tm));
+	memset(&tm, 0, sizeof(struct tm));
 
 	if ((pp = strptime(p, "%b %d %Y", &tm)) && 0 == *pp)
 		return(mktime(&tm));
