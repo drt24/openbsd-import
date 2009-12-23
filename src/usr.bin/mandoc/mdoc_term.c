@@ -1629,7 +1629,7 @@ termp_xx_pre(DECL_ARGS)
 		pp = "BSDI BSD/OS";
 		break;
 	case (MDOC_Dx):
-		pp = "DragonFlyBSD";
+		pp = "DragonFly";
 		break;
 	case (MDOC_Fx):
 		pp = "FreeBSD";

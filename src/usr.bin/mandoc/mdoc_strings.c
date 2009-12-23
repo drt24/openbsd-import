@@ -121,28 +121,6 @@ mdoc_atosec(const char *p)
 }
 
 
-time_t
-mdoc_atotime(const char *p)
-{
-	struct tm	 tm;
-	char		*pp;
-
-	memset(&tm, 0, sizeof(struct tm));
-
-	if (0 == strcmp(p, "$" "Mdocdate$"))
-		return(time(NULL));
-	if ((pp = strptime(p, "$" "Mdocdate: %b %d %Y $", &tm)) && 0 == *pp)
-		return(mktime(&tm));
-	/* XXX - this matches "June 1999", which is wrong. */
-	if ((pp = strptime(p, "%b %d %Y", &tm)) && 0 == *pp)
-		return(mktime(&tm));
-	if ((pp = strptime(p, "%b %d, %Y", &tm)) && 0 == *pp)
-		return(mktime(&tm));
-
-	return(0);
-}
-
-
 /* FIXME: move this into an editable .in file. */
 size_t
 mdoc_macro2len(int macro)

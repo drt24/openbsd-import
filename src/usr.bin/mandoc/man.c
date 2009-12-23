@@ -450,8 +450,8 @@ man_pmacro(struct man *m, int ln, char *buf)
 
 	fl = m->flags;
 
-	if (0 == buf[1])
-		goto out;
+	if ('\0' == buf[1])
+		return(1);
 
 	i = 1;
 
@@ -480,7 +480,7 @@ man_pmacro(struct man *m, int ln, char *buf)
 		return(man_perr(m, ln, i, WNPRINT));
 	}
 
-	mac[j] = 0;
+	mac[j] = '\0';
 
 	if (j == 4 || j < 1) {
 		if ( ! (MAN_IGN_MACRO & m->pflags)) {
