@@ -21884,6 +21884,8 @@ esac
 nonxs_ext=''
 for xxx in $nonxs_extensions ; do
 	case "$xxx" in
+	CVS|RCS|SCCS|.svn)
+		;;
 	*)	nonxs_ext="$nonxs_ext $xxx"
 		;;
 	esac
