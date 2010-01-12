@@ -164,20 +164,6 @@ struct pipex_gre_header {
 	uint16_t call_id;			/* call_id */
 } __attribute__((__packed__));
 
-/* ppp/ccp header */
-struct pipex_ccp_header {
-	uint8_t code;
-	uint8_t id;
-	uint16_t len;
-} __attribute__((__packed__));
-
-/* ppp header */
-struct pipex_ppp_header {
-	uint8_t		c[0];			/* ppp proto */
-	uint16_t	code;			/* ppp proto (2 oct) */
-} __attribute__((__packed__));
-
-
 /* pppoe header */
 struct pipex_pppoe_header {
 	uint8_t vertype;			/* version and type */
