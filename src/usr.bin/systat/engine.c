@@ -1044,7 +1044,7 @@ setup_term(int dmax)
 }
 
 void
-resize_term(void)
+do_resize_term(void)
 {
 	struct winsize ws;
 
@@ -1315,7 +1315,7 @@ engine_loop(int countmax)
 		if (gotsig_close)
 			break;
 		if (gotsig_resize) {
-			resize_term();
+			do_resize_term();
 			gotsig_resize = 0;
 			need_update = 1;
 		}

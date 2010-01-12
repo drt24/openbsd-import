@@ -1,7 +1,7 @@
-/*	$OpenBSD$	*/
+/* $OpenBSD$ */
 
 /****************************************************************************
- * Copyright (c) 1998 Free Software Foundation, Inc.                        *
+ * Copyright (c) 2004 Free Software Foundation, Inc.                        *
  *                                                                          *
  * Permission is hereby granted, free of charge, to any person obtaining a  *
  * copy of this software and associated documentation files (the            *
@@ -29,55 +29,42 @@
  ****************************************************************************/
 
 /****************************************************************************
- *   Author: Juergen Pfeifer <Juergen.Pfeifer@T-Online.de> 1995,1997        *
+ *  Author: Thomas E. Dickey                                                *
  ****************************************************************************/
 
-/***************************************************************************
-* Module frm_adabind.c                                                     *
-* Helper routines to ease the implementation of an Ada95 binding to        *
-* ncurses. For details and copyright of the binding see the ../Ada95       *
-* subdirectory.                                                            *
-***************************************************************************/
-#include "form.priv.h"
-
-MODULE_ID("$From: frm_adabind.c,v 1.5 1998/02/11 12:13:43 tom Exp $")
-
-/* Prototypes for the functions in this module */
-void   _nc_ada_normalize_field_opts (int *opt);
-void   _nc_ada_normalize_form_opts (int *opt);
-void*  _nc_ada_getvarg(va_list *);
-FIELD* _nc_get_field(const FORM*, int);
-
-
-void _nc_ada_normalize_field_opts (int *opt)
-{
-  *opt = ALL_FIELD_OPTS & (*opt);
-}
-
-void _nc_ada_normalize_form_opts (int *opt)
-{
-  *opt = ALL_FORM_OPTS & (*opt);
-}
-
-
-/*  This tiny stub helps us to get a void pointer from an argument list.
-//  The mechanism for libform to handle arguments to field types uses
-//  unfortunately functions with variable argument lists. In the Ada95
-//  binding we replace this by a mechanism that only uses one argument
-//  that is a pointer to a record describing all the specifics of an
-//  user defined field type. So we need only this simple generic
-//  procedure to get the pointer from the arglist.
+/*
+**	lib_insnstr.c
+**
+**	The routine winsnstr().
+**
 */
-void *_nc_ada_getvarg(va_list *ap)
-{
-  return va_arg(*ap,void*);
-}
 
-FIELD* _nc_get_field(const FORM* frm, int idx) {
-  if (frm && frm->field && idx>=0 && (idx<frm->maxfield))
-    {
-      return frm->field[idx];
+#include <curses.priv.h>
+#include <ctype.h>
+
+MODULE_ID("$Id$")
+
+NCURSES_EXPORT(int)
+winsnstr(WINDOW *win, const char *s, int n)
+{
+    int code = ERR;
+    NCURSES_SIZE_T oy;
+    NCURSES_SIZE_T ox;
+    const unsigned char *str = (const unsigned char *) s;
+    const unsigned char *cp;
+
+    T((T_CALLED("winsnstr(%p,%s,%d)"), win, _nc_visbufn(s, n), n));
+
+    if (win != 0 && str != 0) {
+	oy = win->_cury;
+	ox = win->_curx;
+	for (cp = str; *cp && (n <= 0 || (cp - str) < n); cp++) {
+	    _nc_insert_ch(win, (chtype) UChar(*cp));
+	}
+	win->_curx = ox;
+	win->_cury = oy;
+	_nc_synchook(win);
+	code = OK;
     }
-  else
-    return (FIELD*)0;
+    returnCode(code);
 }
