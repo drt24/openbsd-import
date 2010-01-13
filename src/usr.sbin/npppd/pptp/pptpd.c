@@ -62,9 +62,6 @@
 #include "addr_range.h"
 #include "properties.h"
 #include "config_helper.h"
-#ifdef _SEIL_EXT_
-#include "rtev.h"
-#endif
 
 #include "pptp.h"
 #include "pptp_local.h"
@@ -1039,23 +1036,6 @@ pptp_ctrl_start_by_pptpd(pptpd *_this, int sock, int listener_index,
 			pptpd_log_access_deny(_this, msgbuf, peer);
 			goto reigai;
 		}
-#if defined(_SEIL_EXT_) && !defined(USE_LIBSOCKUTIL)
-		if (!rtev_ifa_is_primary(ifname,
-		    (struct sockaddr *)&ctrl->our)) {
-			char hostbuf[NI_MAXHOST];
-
-			getnameinfo((struct sockaddr *)&ctrl->our,
-			    ctrl->our.ss_len, hostbuf,
-			    sizeof(hostbuf), NULL, 0, NI_NUMERICHOST);
-			snprintf(msgbuf, sizeof(msgbuf),
-			    "connecting to %s (an alias address of %s)"
-			    " is not allowed by this version.",
-			    hostbuf, ifname);
-			pptpd_log_access_deny(_this, msgbuf, peer);
-
-			goto reigai;
-		}
-#endif
 	} else 
 		strlcpy(ctrl->phy_label, PPTP_CTRL_LISTENER_LABEL(ctrl),
 		    sizeof(ctrl->phy_label));

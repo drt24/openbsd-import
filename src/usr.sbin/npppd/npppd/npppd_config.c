@@ -184,9 +184,6 @@ npppd_modules_reload(npppd *_this)
 #ifdef USE_NPPPD_PPTP
 	rval |= pptpd_reload(&_this->pptpd, _this->properties, "pptpd",
 	    1);
-#ifdef IDGW_SSLDIP
-	rval |= pptpd_reload(&_this->ssldipd, _this->properties, "ssldipd", 0);
-#endif
 #endif
 #ifdef USE_NPPPD_PPPOE
 	rval |= pppoed_reload(&_this->pppoed, _this->properties, "pppoed", 0);

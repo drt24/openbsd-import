@@ -31,9 +31,6 @@
  * </dl>
  * $Id$
  */
-#ifdef	_SEIL_EXT_
-#include <seil/features.h>
-#endif
 #include <sys/types.h>
 #include <sys/param.h>
 #include <sys/endian.h>

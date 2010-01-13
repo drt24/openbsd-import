@@ -411,7 +411,9 @@ l2tpd_start(l2tpd *_this)
 		_this->state = L2TPD_STATE_RUNNING;
 
 	return rval;
+#if 0
 reigai:
+#endif
 	if (ipsec_policy_in != NULL)
 		free(ipsec_policy_in);
 	if (ipsec_policy_out != NULL)
