@@ -1,4 +1,4 @@
-/* $OpenBSD$ */
+/* $OpenBSD: lib_tgoto.c,v 1.5 2010/01/12 23:22:06 nicm Exp $ */
 
 /****************************************************************************
  * Copyright (c) 2000-2006,2008 Free Software Foundation, Inc.              *
@@ -176,11 +176,13 @@ tgoto_internal(const char *string, int x, int y)
 	string++;
     }
     if (result != 0) {
-	copied = strlcpy(result + used, BC, length - used);
-	if (copied < length - used)
-	    used += copied;
-	else
-	    used += length - used - 1;
+	if (need_BC) {
+	    copied = strlcpy(result + used, BC, length - used);
+	    if (copied < length - used)
+		used += copied;
+	    else
+		used += length - used - 1;
+	}
 	result[used] = '\0';
     }
     return result;
