@@ -142,7 +142,7 @@ npppd_ctl_start(npppd_ctl *_this)
 	}
 	unlink(_this->pathname);
 	memset(&sun, 0, sizeof(sun));
-	sun.sun_family = AF_INET;
+	sun.sun_family = AF_UNIX;
 	sun.sun_len = sizeof(sun);
 	strlcpy(sun.sun_path, _this->pathname, sizeof(sun.sun_path));
 
