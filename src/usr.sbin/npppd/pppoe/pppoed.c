@@ -970,7 +970,7 @@ pppoed_recv_PADI(pppoed_listener *_this, uint8_t shost[ETHER_ADDR_LEN],
 		if (tlv0->type == PPPOE_TAG_SERVICE_NAME) {
 
 			len = tlv0->length;
-			if (len > sizeof(sn))
+			if (len >= sizeof(sn))
 				goto reigai;
 
 			memcpy(sn, tlv0->value, len);
