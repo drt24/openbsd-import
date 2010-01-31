@@ -105,7 +105,7 @@ npppd_reload_config(npppd *_this)
 	FILE *conffp = NULL;
 	struct properties *proptmp = NULL;
 
-	if ((conffp = fopen(_this->config_file, "r")) == NULL) {
+	if ((conffp = priv_fopen(_this->config_file)) == NULL) {
 		log_printf(LOG_ERR, "Load configuration from='%s' failed: %m",
 		    _this->config_file);
 		retval = -1;

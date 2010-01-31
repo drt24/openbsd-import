@@ -57,6 +57,9 @@
 #include "npppd_ctl.h"
 
 #include "net_utils.h"
+#include "privsep.h"
+#define	sendto(_s, _msg, _len, _flags, _to, _tolen) \
+    priv_sendto((_s), (_msg), (_len), (_flags), (_to), (_tolen))
 
 #ifdef USE_NPPPD_PIPEX
 #if defined(__NetBSD__)
@@ -140,13 +143,14 @@ npppd_ctl_start(npppd_ctl *_this)
 
 		goto reigai;
 	}
-	unlink(_this->pathname);
+	priv_unlink(_this->pathname);
 	memset(&sun, 0, sizeof(sun));
 	sun.sun_family = AF_UNIX;
 	sun.sun_len = sizeof(sun);
 	strlcpy(sun.sun_path, _this->pathname, sizeof(sun.sun_path));
 
-	if (bind(_this->sock, (struct sockaddr *)&sun, sizeof(sun)) != 0) {
+	if (priv_bind(_this->sock, (struct sockaddr *)&sun, sizeof(sun))
+	    != 0) {
 		log_printf(LOG_ERR, "bind() failed in %s(): %m", __func__);
 		goto reigai;
 	}

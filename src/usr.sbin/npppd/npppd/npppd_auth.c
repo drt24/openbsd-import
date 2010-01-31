@@ -475,7 +475,7 @@ npppd_auth_reload_acctlist(npppd_auth_base *base)
 
 	slist_init(&users);
 	csv = NULL;
-	if ((file = fopen(base->acctlist_path, "r")) == NULL) {
+	if ((file = priv_fopen(base->acctlist_path)) == NULL) {
 		/* ファイルが存在しない場合は、空とする */
 		if (errno == ENOENT)
 			hash_delete_all(base->users_hash, 1);

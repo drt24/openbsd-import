@@ -65,6 +65,7 @@
 
 #include "pptp.h"
 #include "pptp_local.h"
+#include "privsep.h"
 
 static int pptpd_seqno = 0;
 
@@ -375,7 +376,7 @@ pptpd_listener_start(pptpd_listener *_this)
 
 	/* GRE */
 	bind_sin_gre.sin_port = 0;
-	if ((sock_gre = socket(AF_INET, SOCK_RAW, IPPROTO_GRE)) < 0) {
+	if ((sock_gre = priv_socket(AF_INET, SOCK_RAW, IPPROTO_GRE)) < 0) {
 		pptpd_log(_this->self, LOG_ERR, "socket() failed at %s(): %m",
 		    __func__);
 		goto reigai;
