@@ -264,6 +264,7 @@ struct	mdoc_node {
 	struct mdoc_node *head;		/* BLOCK */
 	struct mdoc_node *body;		/* BLOCK */
 	struct mdoc_node *tail;		/* BLOCK */
+	struct mdoc_node *pending;	/* BLOCK */
 	char		 *string;	/* TEXT */
 };
 
