@@ -564,7 +564,8 @@ man_pmacro(struct man *m, int ln, char *buf)
 		goto err;
 
 out:
-	if ( ! (MAN_BLINE & fl))
+	if ( ! (MAN_BLINE & fl) || (MAN_TEXT != m->last->type &&
+	    (NULL == m->last->child || MAN_TEXT != m->last->child->type)))
 		return(1);
 
 	/* 
