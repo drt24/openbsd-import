@@ -269,6 +269,7 @@ const	struct valids mdoc_valids[MDOC_MAX] = {
 	{ NULL, posts_notext },			/* br */
 	{ NULL, posts_sp },			/* sp */
 	{ NULL, posts_text1 },			/* %U */
+	{ NULL, NULL },				/* eos */
 };
 
 
@@ -904,7 +905,8 @@ post_vt(POST_ARGS)
 		return(1);
 	
 	for (n = mdoc->last->child; n; n = n->next)
-		if (MDOC_TEXT != n->type) 
+		if (MDOC_TEXT != n->type &&
+		    (MDOC_ELEM != n->type || MDOC_eos != n->tok)) 
 			if ( ! mdoc_nwarn(mdoc, n, EBADCHILD))
 				return(0);
 
