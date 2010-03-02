@@ -1155,7 +1155,7 @@ blk_part_exp(MACRO_PROT_ARGS)
 			break;
 		}
 
-		if ( ! flushed && mdoc_isdelim(p)) {
+		if ( ! flushed && mdoc_isdelim(p) > 1) {
 			if ( ! rew_sub(MDOC_HEAD, m, tok, line, ppos))
 				return(0);
 			flushed = 1;
