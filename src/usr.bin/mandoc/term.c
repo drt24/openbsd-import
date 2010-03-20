@@ -213,7 +213,7 @@ term_flushln(struct termp *p)
 		 * If so, break to the next line.  (TODO: hyphenate)
 		 * Otherwise, write the chosen number of blanks now.
 		 */
-		if (vend > bp && 0 == jhy) {
+		if (vend > bp && 0 == jhy && vis > vbl) {
 			vend -= vis;
 			putchar('\n');
 			if (TERMP_NOBREAK & p->flags) {
