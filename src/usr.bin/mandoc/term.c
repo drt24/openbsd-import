@@ -237,7 +237,7 @@ term_flushln(struct termp *p)
 		 * Finally, write out the word.
 		 */
 		for ( ; i < (int)p->col; i++) {
-			if (vend > bp && i > jhy)
+			if (vend > bp && jhy > 0 && i > jhy)
 				break;
 			if (' ' == p->buf[i]) {
 				i++;
