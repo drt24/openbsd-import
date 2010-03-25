@@ -756,7 +756,7 @@ parsemacro(struct mdoc *m, int ln, char *buf)
 		n = n->next;
 	if (MDOC_TEXT == n->type && m->last->parent->tok != MDOC_Rs) {
 		t = n->string;
-		while (t && t[1])
+		while (t[0] && t[1])
 			t++;
 		if ('.' == *t || '!' == *t || '?' == *t) {
 			if ( ! mdoc_elem_alloc(m, ln, i, MDOC_eos, NULL))
