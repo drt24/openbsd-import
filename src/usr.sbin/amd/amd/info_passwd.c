@@ -136,6 +136,7 @@ passwd_search(mnt_map *m, char *map, char *key, char **pval, time_t *tp)
 		snprintf(val, sizeof(val),
 		    "rfs:=%s/%s;rhost:=%s;sublink:=%s;fs:=${autodir}%s",
 		    dir, rhost, rhost, user, pw->pw_dir);
+		free(dir);
 		if (q)
 			*q = '.';
 		*pval = strdup(val);
