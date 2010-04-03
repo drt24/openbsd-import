@@ -163,8 +163,11 @@ check_root(CHKARGS)
 
 	if (NULL == m->first->child)
 		return(man_nerr(m, n, WNODATA));
-	if (NULL == m->meta.title)
-		return(man_nerr(m, n, WNOTITLE));
+	if (NULL == m->meta.title) {
+		if ( ! man_nwarn(m, n, WNOTITLE))
+			return(0);
+	        m->meta.title = mandoc_strdup("unknown");
+	}
 
 	return(1);
 }
