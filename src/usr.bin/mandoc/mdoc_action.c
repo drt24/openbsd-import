@@ -417,7 +417,7 @@ post_sh(POST_ARGS)
 	if ( ! concat(m, buf, n->child, BUFSIZ))
 		return(0);
 	sec = mdoc_atosec(buf);
-	if (SEC_CUSTOM != sec)
+	if (SEC_NONE == m->lastnamed || SEC_CUSTOM != sec)
 		m->lastnamed = sec;
 
 	/* Some sections only live in certain manual sections. */
