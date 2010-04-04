@@ -22,6 +22,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #include "libmdoc.h"
 #include "libmandoc.h"
@@ -350,8 +351,19 @@ mdoc_macro(struct mdoc *m, enum mdoct tok,
 			MDOC_PBODY & m->flags)
 		return(mdoc_perr(m, ln, pp, EPROLBODY));
 	if ( ! (MDOC_PROLOGUE & mdoc_macros[tok].flags) && 
-			! (MDOC_PBODY & m->flags))
-		return(mdoc_perr(m, ln, pp, EBODYPROL));
+			! (MDOC_PBODY & m->flags)) {
+		if ( ! mdoc_pwarn(m, ln, pp, EBODYPROL))
+			return(0);
+		if (NULL == m->meta.title)
+			m->meta.title = mandoc_strdup("unknown");
+		if (NULL == m->meta.vol)
+			m->meta.vol = mandoc_strdup("local");
+		if (NULL == m->meta.os)
+			m->meta.os = mandoc_strdup("local");
+		if (0 == m->meta.date)
+			m->meta.date = time(NULL);
+		m->flags |= MDOC_PBODY;
+	}
 
 	return((*mdoc_macros[tok].fp)(m, tok, ln, pp, pos, buf));
 }
