@@ -1803,7 +1803,7 @@ mdoc_mt_pre(MDOC_ARGS)
 		bufinit(h);
 		bufcat(h, "mailto:");
 		bufcat(h, nn->string);
-		PAIR_STYLE_INIT(&tag[1], h);
+		PAIR_HREF_INIT(&tag[1], h->buf);
 		t = print_otag(h, TAG_A, 2, tag);
 		print_text(h, nn->string);
 		print_tagq(h, t);
