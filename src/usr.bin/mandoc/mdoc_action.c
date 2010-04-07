@@ -417,6 +417,10 @@ post_sh(POST_ARGS)
 	if ( ! concat(m, buf, n->child, BUFSIZ))
 		return(0);
 	sec = mdoc_atosec(buf);
+	/*
+	 * The first section should always make us move into a non-new
+	 * state.
+	 */
 	if (SEC_NONE == m->lastnamed || SEC_CUSTOM != sec)
 		m->lastnamed = sec;
 
@@ -722,7 +726,7 @@ post_bl_head(POST_ARGS)
 		nn->string = NULL;
 		nnp = nn;
 		nn = nn->next;
-		mdoc_node_free(nnp);
+		mdoc_node_delete(NULL, nnp);
 	}
 
 	n->nchild = 0;
@@ -847,29 +851,10 @@ post_dd(POST_ARGS)
 static int
 post_prol(POST_ARGS)
 {
-	struct mdoc_node *np;
 
-	if (n->parent->child == n)
-		n->parent->child = n->prev;
-	if (n->prev)
-		n->prev->next = NULL;
-
-	np = n;
-	assert(NULL == n->next);
-
-	if (n->prev) {
-		m->last = n->prev;
-		m->next = MDOC_NEXT_SIBLING;
-	} else {
-		m->last = n->parent;
-		m->next = MDOC_NEXT_CHILD;
-	}
-
-	mdoc_node_freelist(np);
-
+	mdoc_node_delete(m, n);
 	if (m->meta.title && m->meta.date && m->meta.os)
 		m->flags |= MDOC_PBODY;
-
 	return(1);
 }
 

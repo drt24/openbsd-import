@@ -85,7 +85,6 @@ static	const char	*const htmlattrs[ATTR_MAX] = {
 	"summary",
 };
 
-
 static	void		  print_spec(struct html *, const char *, size_t);
 static	void		  print_res(struct html *, const char *, size_t);
 static	void		  print_ctag(struct html *, enum htmltag);
@@ -504,8 +503,6 @@ print_text(struct html *h, const char *p)
 		case(')'):
 			/* FALLTHROUGH */
 		case(']'):
-			/* FALLTHROUGH */
-		case('}'):
 			if ( ! (HTML_IGNDELIM & h->flags))
 				h->flags |= HTML_NOSPACE;
 			break;
@@ -525,8 +522,6 @@ print_text(struct html *h, const char *p)
 		case('('):
 			/* FALLTHROUGH */
 		case('['):
-			/* FALLTHROUGH */
-		case('{'):
 			h->flags |= HTML_NOSPACE;
 			break;
 		default:

@@ -166,7 +166,15 @@ check_root(CHKARGS)
 	if (NULL == m->meta.title) {
 		if ( ! man_nwarn(m, n, WNOTITLE))
 			return(0);
+		/*
+		 * If a title hasn't been set, do so now (by
+		 * implication, date and section also aren't set).
+		 * 
+		 * FIXME: this should be in man_action.c.
+		 */
 	        m->meta.title = mandoc_strdup("unknown");
+		m->meta.date = time(NULL);
+		m->meta.msec = 1;
 	}
 
 	return(1);
