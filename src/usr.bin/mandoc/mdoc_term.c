@@ -1020,14 +1020,14 @@ termp_it_post(DECL_ARGS)
 		/* FALLTHROUGH */
 	case (MDOC_Inset):
 		if (MDOC_BODY == n->type)
-			term_flushln(p);
+			term_newln(p);
 		break;
 	case (MDOC_Column):
 		if (MDOC_HEAD == n->type)
 			term_flushln(p);
 		break;
 	default:
-		term_flushln(p);
+		term_newln(p);
 		break;
 	}
 
