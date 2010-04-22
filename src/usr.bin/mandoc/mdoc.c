@@ -655,8 +655,7 @@ parsetext(struct mdoc *m, int line, char *buf)
 		 * allowed, but enough manuals assume this behaviour
 		 * that we want to work around it.
 		 */
-		if ( ! mdoc_elem_alloc(m, line, 0, MDOC_Pp, NULL))
-			return(0);
+		return(mdoc_elem_alloc(m, line, 0, MDOC_Pp, NULL));
 	}
 
 	/*
