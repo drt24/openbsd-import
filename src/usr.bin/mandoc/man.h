@@ -61,6 +61,9 @@ enum	mant {
 	MAN_ami,
 	MAN_ig,
 	MAN_dot,
+	MAN_if,
+	MAN_ie,
+	MAN_el,
 	MAN_MAX,
 };
 
@@ -93,6 +96,7 @@ struct	man_node {
 	int		 flags;
 #define	MAN_VALID	(1 << 0)
 #define	MAN_ACTED	(1 << 1)
+#define	MAN_USE 	(1 << 2)
 	enum man_type	 type;
 	char		*string;
 	struct man_node	*head;

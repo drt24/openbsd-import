@@ -99,6 +99,9 @@ static	const struct man_valid man_valids[MAN_MAX] = {
 	{ pres_roff, NULL }, /* ami */
 	{ pres_roff, NULL }, /* ig */
 	{ NULL, NULL }, /* . */
+	{ NULL, NULL }, /* if */
+	{ NULL, NULL }, /* ie */
+	{ NULL, NULL }, /* el */
 };
 
 

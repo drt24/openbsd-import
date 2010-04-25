@@ -24,7 +24,7 @@
 
 #include "libman.h"
 
-#define	HASH_DEPTH	 6
+#define	HASH_DEPTH	 8
 
 #define	HASH_ROW(x) do { \
 		if ('.' == (x)) \
