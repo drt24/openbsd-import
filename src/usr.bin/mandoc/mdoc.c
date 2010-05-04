@@ -810,14 +810,17 @@ parsemacro(struct mdoc *m, int ln, char *buf)
 
 	/*
 	 * Mark the end of a sentence, but be careful not to insert
-	 * markers into reference blocks.
+	 * markers into reference blocks and after ellipses in
+	 * function definitions.
 	 */
 	n = m->last;
 	if (n->child)
 		n = n->child;
 	while (n->next)
 		n = n->next;
-	if (MDOC_TEXT == n->type && m->last->parent->tok != MDOC_Rs) {
+	if (MDOC_TEXT == n->type &&
+	    MDOC_Fn != n->parent->tok &&
+	    MDOC_Rs != m->last->parent->tok) {
 		t = n->string;
 		while (t[0] && t[1])
 			t++;
