@@ -50,7 +50,7 @@ static	const struct htmldata htmltags[TAG_MAX] = {
 	{"h1",		0}, /* TAG_H1 */
 	{"h2",		0}, /* TAG_H2 */
 	{"span",	0}, /* TAG_SPAN */
-	{"link",	HTML_CLRLINE | HTML_NOSTACK}, /* TAG_LINK */
+	{"link",	HTML_CLRLINE | HTML_NOSTACK | HTML_AUTOCLOSE}, /* TAG_LINK */
 	{"br",		HTML_CLRLINE | HTML_NOSTACK | HTML_AUTOCLOSE}, /* TAG_BR */
 	{"a",		0}, /* TAG_A */
 	{"table",	HTML_CLRLINE}, /* TAG_TABLE */
@@ -517,6 +517,10 @@ print_text(struct html *h, const char *p)
 	if ( ! print_encode(h, p, 0))
 		h->flags &= ~HTML_NOSPACE;
 
+	/* 
+	 * Note that we don't process the pipe: the parser sees it as
+	 * punctuation, but we don't in terms of typography.
+	 */
 	if (*p && 0 == *(p + 1))
 		switch (*p) {
 		case('('):
