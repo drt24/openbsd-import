@@ -133,7 +133,6 @@ static	int	  termp_ud_pre(DECL_ARGS);
 static	int	  termp_vt_pre(DECL_ARGS);
 static	int	  termp_xr_pre(DECL_ARGS);
 static	int	  termp_xx_pre(DECL_ARGS);
-static	int	  termp_eos_pre(DECL_ARGS);
 
 static	const struct termact termacts[MDOC_MAX] = {
 	{ termp_ap_pre, NULL }, /* Ap */
@@ -257,7 +256,6 @@ static	const struct termact termacts[MDOC_MAX] = {
 	{ termp_sp_pre, NULL }, /* br */
 	{ termp_sp_pre, NULL }, /* sp */ 
 	{ termp_under_pre, termp____post }, /* %U */ 
-	{ termp_eos_pre, NULL }, /* eos */
 };
 
 
@@ -335,6 +333,9 @@ print_mdoc_node(DECL_ARGS)
 	if (MDOC_TEXT != n->type)
 		if (termacts[n->tok].post)
 			(*termacts[n->tok].post)(p, &npair, m, n);
+
+	if (MDOC_EOS & n->flags)
+		p->flags |= TERMP_SENTENCE;
 
 	p->offset = offset;
 	p->rmargin = rmargin;
@@ -2164,17 +2165,5 @@ termp_under_pre(DECL_ARGS)
 {
 
 	term_fontpush(p, TERMFONT_UNDER);
-	return(1);
-}
-
-
-/* ARGSUSED */
-static int
-termp_eos_pre(DECL_ARGS)
-{
-	const char ascii_eos[2] = { ASCII_EOS, 0 };
-
-	term_word(p, ascii_eos);
-	p->flags |= TERMP_NOSPACE;
 	return(1);
 }

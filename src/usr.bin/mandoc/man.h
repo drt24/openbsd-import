@@ -96,7 +96,8 @@ struct	man_node {
 	int		 flags;
 #define	MAN_VALID	(1 << 0)
 #define	MAN_ACTED	(1 << 1)
-#define	MAN_USE 	(1 << 2)
+#define	MAN_EOS		(1 << 2)
+#define	MAN_USE 	(1 << 3)
 	enum man_type	 type;
 	char		*string;
 	struct man_node	*head;

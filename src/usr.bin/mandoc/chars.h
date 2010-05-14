@@ -17,7 +17,6 @@
 #ifndef CHARS_H
 #define CHARS_H
 
-#define ASCII_EOS	 30  /* end of sentence marker */
 #define ASCII_NBRSP	 31  /* non-breaking space */
 
 __BEGIN_DECLS
