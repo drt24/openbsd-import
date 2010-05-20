@@ -91,9 +91,6 @@ static	const struct man_valid man_valids[MAN_MAX] = {
 	{ NULL, posts_le1 }, /* Sp */
 	{ pres_bline, posts_le1 }, /* Vb */
 	{ pres_bline, posts_eq0 }, /* Ve */
-	{ NULL, NULL }, /* if */
-	{ NULL, NULL }, /* ie */
-	{ NULL, NULL }, /* el */
 };
 
 
