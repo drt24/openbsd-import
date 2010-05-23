@@ -20,6 +20,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "mandoc.h"
 #include "libman.h"
 
 
@@ -53,7 +54,7 @@ man_args(struct man *m, int line, int *pos, char *buf, char **v)
 		}
 
 		if (0 == buf[*pos]) {
-			if ( ! man_pwarn(m, line, *pos, WTQUOTE))
+			if ( ! man_pmsg(m, line, *pos, MANDOCERR_BADQUOTE))
 				return(ARGS_ERROR);
 			return(ARGS_QWORD);
 		}
@@ -67,7 +68,7 @@ man_args(struct man *m, int line, int *pos, char *buf, char **v)
 			(*pos)++;
 
 		if (0 == buf[*pos])
-			if ( ! man_pwarn(m, line, *pos, WTSPACE))
+			if ( ! man_pmsg(m, line, *pos, MANDOCERR_EOLNSPACE))
 				return(ARGS_ERROR);
 
 		return(ARGS_QWORD);
@@ -91,7 +92,7 @@ man_args(struct man *m, int line, int *pos, char *buf, char **v)
 		(*pos)++;
 
 	if (0 == buf[*pos])
-		if ( ! man_pwarn(m, line, *pos, WTSPACE))
+		if ( ! man_pmsg(m, line, *pos, MANDOCERR_EOLNSPACE))
 			return(ARGS_ERROR);
 
 	return(ARGS_WORD);

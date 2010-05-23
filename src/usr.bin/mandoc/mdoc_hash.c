@@ -23,6 +23,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "mandoc.h"
 #include "libmdoc.h"
 
 static	u_char		 table[27 * 13];

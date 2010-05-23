@@ -23,6 +23,7 @@
 #include <string.h>
 #include <time.h>
 
+#include "mandoc.h"
 #include "chars.h"
 #include "out.h"
 #include "term.h"

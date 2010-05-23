@@ -23,6 +23,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "mandoc.h"
 #include "out.h"
 #include "term.h"
 #include "mdoc.h"
@@ -1082,6 +1083,8 @@ static int
 termp_nm_pre(DECL_ARGS)
 {
 
+	if (NULL == n->child && NULL == m->name)
+
 	if (SEC_SYNOPSIS == n->sec && MDOC_LINE & n->flags)
 		term_newln(p);
 
@@ -1089,6 +1092,7 @@ termp_nm_pre(DECL_ARGS)
 
 	if (NULL == n->child)
 		term_word(p, m->name);
+
 	return(1);
 }
 
@@ -1213,7 +1217,7 @@ termp_rv_pre(DECL_ARGS)
 			term_word(p, "()");
 	}
 
-	if (n->child->next)
+	if (n->child && n->child->next)
 		term_word(p, "functions return");
 	else
 		term_word(p, "function returns");
@@ -1252,7 +1256,7 @@ termp_ex_pre(DECL_ARGS)
 			p->flags &= ~TERMP_NOSPACE;
 	}
 
-	if (n->child->next)
+	if (n->child && n->child->next)
 		term_word(p, "utilities exit");
 	else
 		term_word(p, "utility exits");
