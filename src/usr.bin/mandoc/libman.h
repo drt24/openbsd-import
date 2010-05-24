@@ -35,7 +35,6 @@ struct	man {
 #define	MAN_ILINE	(1 << 3) /* Ignored in next-line scope. */
 #define	MAN_LITERAL	(1 << 4) /* Literal input. */
 #define	MAN_BPLINE	(1 << 5)
-#define	MAN_EL_USE	(1 << 6) /* Following .el will be used. */
 	enum man_next	 next;
 	struct man_node	*last;
 	struct man_node	*first;
