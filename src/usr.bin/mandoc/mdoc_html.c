@@ -1076,7 +1076,7 @@ mdoc_bl_pre(MDOC_ARGS)
 		return(0);
 	if (MDOC_BLOCK != n->type)
 		return(1);
-	if (MDOC_Enum != n->data.list)
+	if (LIST_enum != n->data.list)
 		return(1);
 
 	ord = malloc(sizeof(struct ord));
@@ -1100,7 +1100,7 @@ mdoc_bl_post(MDOC_ARGS)
 
 	if (MDOC_BLOCK != n->type)
 		return;
-	if (MDOC_Enum != n->data.list)
+	if (LIST_enum != n->data.list)
 		return;
 
 	ord = h->ords.head;
