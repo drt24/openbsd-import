@@ -259,6 +259,9 @@ post_UC(struct man *m)
 			p = bsd_versions[0];
 	}
 
+	if (m->meta.source)
+		free(m->meta.source);
+
 	m->meta.source = mandoc_strdup(p);
 
 	return(1);
