@@ -2,7 +2,8 @@
 
 .if ${MACHINE} == "macppc" || ${MACHINE} == "mac68k"
 PROG=	pdisk
-
+LDADD=  -lutil
+DPADD=  ${LIBUTIL}
 CFLAGS+=-Wall
 
 SRCS=	bitfield.c convert.c deblock_media.c dump.c errors.c \
