@@ -190,14 +190,13 @@ term_flushln(struct termp *p)
 		for (jhy = 0; j < (int)p->col; j++) {
 			if ((j && ' ' == p->buf[j]) || '\t' == p->buf[j])
 				break;
-			if (8 == p->buf[j])
-				vend--;
-			else {
+			if (8 != p->buf[j]) {
 				if (vend > vis && vend < bp &&
-				    '-' == p->buf[j])
+				    ASCII_HYPH == p->buf[j])
 					jhy = j;
 				vend++;
-			}
+			} else
+				vend--;
 		}
 
 		/*
@@ -259,7 +258,12 @@ term_flushln(struct termp *p)
 				p->viscol += vbl;
 				vbl = 0;
 			}
-			putchar(p->buf[i]);
+
+			if (ASCII_HYPH == p->buf[i])
+				putchar('-');
+			else
+				putchar(p->buf[i]);
+
 			p->viscol += 1;
 		}
 		vend += vbl;

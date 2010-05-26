@@ -19,6 +19,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "mandoc.h"
 #include "chars.h"
 
 #define	PRINT_HI	 126
