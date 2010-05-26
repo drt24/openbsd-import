@@ -3,10 +3,12 @@
 .PATH:		${.CURDIR}/../snmpd
 
 PROG=		snmpctl
-SRCS=		buffer.c imsg.c log.c smi.c snmpctl.c parser.c
+SRCS=		log.c smi.c snmpctl.c parser.c
 
 MAN=		snmpctl.8
 
+LDADD=		-lutil
+DPADD=		${LIBUTIL}
 CFLAGS+=	-Wall -I${.CURDIR} -I${.CURDIR}/../snmpd
 CFLAGS+=	-Wstrict-prototypes -Wmissing-prototypes
 CFLAGS+=	-Wmissing-declarations
