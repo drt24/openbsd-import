@@ -57,6 +57,8 @@ mandoc_special(const char *p)
 		/* FALLTHROUGH */
 	case (' '):
 		/* FALLTHROUGH */
+	case ('}'):
+		/* FALLTHROUGH */
 	case ('|'):
 		/* FALLTHROUGH */
 	case ('&'):
