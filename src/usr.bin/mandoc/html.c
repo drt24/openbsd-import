@@ -31,8 +31,6 @@
 #include "html.h"
 #include "main.h"
 
-#define	UNCONST(a)	((void *)(uintptr_t)(const void *)(a))
-
 struct	htmldata {
 	const char	 *name;
 	int		  flags;

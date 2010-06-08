@@ -384,7 +384,7 @@ read_whole_file(struct curparse *curp, struct buf *fb, int *with_mmap)
 		*with_mmap = 1;
 		fb->sz = (size_t)st.st_size;
 		fb->buf = mmap(NULL, fb->sz, PROT_READ, 
-				MAP_FILE, curp->fd, 0);
+				MAP_FILE|MAP_SHARED, curp->fd, 0);
 		if (fb->buf != MAP_FAILED)
 			return(1);
 	}
@@ -590,7 +590,7 @@ fdesc(struct curparse *curp)
 		case (OUTT_LINT):
 			break;
 		default:
-			curp->outdata = ascii_alloc(80);
+			curp->outdata = ascii_alloc(curp->outopts);
 			curp->outman = terminal_man;
 			curp->outmdoc = terminal_mdoc;
 			curp->outfree = terminal_free;
