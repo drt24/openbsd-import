@@ -8,7 +8,7 @@ MAN=	sasyncd.8 sasyncd.conf.5
 CFLAGS=		-O0 $(PIPE) $(DEBUG)
 .endif
 
-CFLAGS+=	-I${.CURDIR}
+CFLAGS+=	-I${.CURDIR} -I${.CURDIR}/../../sbin/iked
 CLEANFILES=	y.tab.h
 
 # ElectricFence
@@ -20,6 +20,6 @@ CLEANFILES=	y.tab.h
 
 CFLAGS+=	-Wall -Wstrict-prototypes -Wmissing-prototypes \
 		-Wmissing-declarations
-LDADD+=		-lcrypto
+LDADD+=		-lcrypto -lutil
 
 .include <bsd.prog.mk>
