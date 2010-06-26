@@ -1,4 +1,4 @@
-/*	$OpenBSD: process_machdep.c,v 1.12 2010/01/01 19:26:31 miod Exp $	*/
+/*	$OpenBSD: process_machdep.c,v 1.13 2010/01/08 01:35:52 syuu Exp $	*/
 
 /*
  * Copyright (c) 1994 Adam Glass
@@ -70,7 +70,6 @@
 #include <sys/time.h>
 #include <sys/kernel.h>
 #include <sys/proc.h>
-#include <sys/user.h>
 #include <sys/vnode.h>
 #include <sys/ptrace.h>
 #include <machine/frame.h>
