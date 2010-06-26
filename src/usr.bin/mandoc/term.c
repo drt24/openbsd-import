@@ -1,6 +1,6 @@
 /*	$Id$ */
 /*
- * Copyright (c) 2008, 2009 Kristaps Dzonsons <kristaps@kth.se>
+ * Copyright (c) 2008, 2009 Kristaps Dzonsons <kristaps@bsd.lv>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -599,10 +599,7 @@ encode(struct termp *p, const char *word, size_t sz)
 	 * character by character.
 	 */
 
-	if (TERMTYPE_PS == p->type) {
-		buffera(p, word, sz);
-		return;
-	} else if (TERMFONT_NONE == (f = term_fonttop(p))) {
+	if (TERMFONT_NONE == (f = term_fonttop(p))) {
 		buffera(p, word, sz);
 		return;
 	}

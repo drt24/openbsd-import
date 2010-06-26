@@ -1,6 +1,6 @@
 /*	$Id$ */
 /*
- * Copyright (c) 2009 Kristaps Dzonsons <kristaps@kth.se>
+ * Copyright (c) 2009 Kristaps Dzonsons <kristaps@bsd.lv>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -19,7 +19,7 @@
 
 __BEGIN_DECLS
 
-int		 mandoc_special(const char *);
+int		 mandoc_special(char *);
 void		*mandoc_calloc(size_t, size_t);
 char		*mandoc_strdup(const char *);
 void		*mandoc_malloc(size_t);
