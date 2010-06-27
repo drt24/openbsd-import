@@ -802,6 +802,8 @@ pre_sh(PRE_ARGS)
 
 	if (MDOC_BLOCK != n->type)
 		return(1);
+
+	mdoc->regs->regs[(int)REG_nS].set = 0;
 	return(check_parent(mdoc, n, MDOC_MAX, MDOC_ROOT));
 }
 
