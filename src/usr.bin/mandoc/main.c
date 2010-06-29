@@ -588,7 +588,7 @@ fdesc(struct curparse *curp)
 			curp->outfree = ascii_free;
 			break;
 		case (OUTT_PS):
-			curp->outdata = ps_alloc();
+			curp->outdata = ps_alloc(curp->outopts);
 			curp->outfree = ps_free;
 			break;
 		default:
