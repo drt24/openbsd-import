@@ -389,7 +389,7 @@ properties_load(struct properties *_this, FILE *fp)
 	char *line = NULL, *line0, *line1;
 
 	if ((line = (char *)malloc(linesz)) == NULL)
-		goto reigai;
+		goto fail;
 
 	linecont = 0;
 	while (fgets(buf0, sizeof(buf0), fp) != NULL) {
@@ -407,7 +407,7 @@ properties_load(struct properties *_this, FILE *fp)
 		while (lineoff + linelen + 128 > linesz) {
 			if ((line1 = realloc(line, linesz * 2))
 			    == NULL)
-				goto reigai;
+				goto fail;
 			line = line1;
 			linesz *= 2;
 		}
@@ -449,7 +449,7 @@ properties_load(struct properties *_this, FILE *fp)
 	if (line != NULL)
 		free(line);
 	return 0;
-reigai:
+fail:
 	if (line != NULL)
 		free(line);
 

@@ -1,3 +1,4 @@
+/* $OpenBSD$ */
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
  * All rights reserved.
@@ -102,7 +103,7 @@ bytebuffer_create(size_t capacity)
 
 	if (capacity > 0) {
 		if ((_this->data = malloc(capacity)) == NULL)
-			goto reigai;
+			goto fail;
 		memset(_this->data, 0, capacity);
 		_this->capacity = capacity;
 	} else
@@ -111,7 +112,7 @@ bytebuffer_create(size_t capacity)
 	_this->limit = _this->capacity;
 	_this->mark = -1;
 	return _this;
-reigai:
+fail:
 	if (_this != NULL)
 		free(_this);
 	return NULL;	

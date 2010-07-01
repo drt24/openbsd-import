@@ -23,9 +23,9 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 /**@file
- * RADIUS 関連共通関数。
- *
+ * This file provides functions commonly used for RADIUS request.
  * @author	Yasuoka Masahiko
  * $Id$
  */
@@ -46,7 +46,6 @@
 
 #include "radius_common.h"
 
-/** RADIUS パケットの Framed-IP-Address アートリビュートを処理します。 */
 void
 ppp_proccess_radius_framed_ip_address(npppd_ppp *_this, RADIUS_PACKET *pkt)
 {
@@ -66,7 +65,6 @@ ppp_proccess_radius_framed_ip_address(npppd_ppp *_this, RADIUS_PACKET *pkt)
 
 }
 
-/** npppd に設定された {@link ::radius_req_setting} を取り出します。 */
 radius_req_setting *
 npppd_get_radius_req_setting(npppd *_this)
 {

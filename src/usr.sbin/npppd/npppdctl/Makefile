@@ -1,12 +1,11 @@
 #
 # $Id$
 #
-NOMAN=		#defined
-
 .include <bsd.own.mk>
 
 PROG=		npppdctl
 SRCS=		npppdctl.c debugutil.c
+MAN=		npppdctl.8
 
 CPPFLAGS+=	-I${.CURDIR}/../npppd -I${.CURDIR}/../common
 

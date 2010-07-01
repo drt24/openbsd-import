@@ -1,3 +1,4 @@
+/* $OpenBSD$ */
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
  * All rights reserved.
@@ -149,7 +150,7 @@ test02(void)
 	column = csvreader_get_column(csv);
 	ASSERT(column != NULL);
 	ASSERT(strcmp(column[0], "hogehoge") == 0);
-	//printf("**%s**\n", column[1]);
+	/* printf("**%s**\n", column[1]); */
 	ASSERT(strcmp(column[1], "fuga\nfuga") == 0);
 	ASSERT(column[2] == NULL);
 
@@ -158,7 +159,7 @@ test02(void)
 	column = csvreader_get_column(csv);
 	ASSERT(column != NULL);
 	ASSERT(strcmp(column[0], "hogehoge") == 0);
-	//printf("**%s**\n", column[1]);
+	/* printf("**%s**\n", column[1]); */
 	ASSERT(strcmp(column[1], "fuga\rfuga") == 0);
 	ASSERT(column[2] == NULL);
 

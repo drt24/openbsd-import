@@ -154,10 +154,10 @@ rt_zebra_start(rt_zebra *_this)
 	}
 	if ((ival = fcntl(sock, F_GETFL, 0)) < 0) {
 		log_printf(LOG_ERR, "fcntl(,F_GETFL) failed: %m");
-		goto reigai;
+		goto fail;
 	} else if (fcntl(sock, F_SETFL, ival | O_NONBLOCK) < 0) {
 		log_printf(LOG_ERR, "fcntl(,F_SETFL, +O_NONBLOCK) failed: %m");
-		goto reigai;
+		goto fail;
 	}
 
 	_this->state = ZEBRA_STATUS_CONNECTING;
@@ -175,7 +175,7 @@ rt_zebra_start(rt_zebra *_this)
 		default:
 			log_printf(LOG_ERR,
 			    "Connection to the zserv failed: %m");		
-			goto reigai;
+			goto fail;
 		}
 	}
 	event_set(&_this->ev_sock, _this->sock, EV_READ|EV_WRITE,
@@ -183,7 +183,7 @@ rt_zebra_start(rt_zebra *_this)
 	event_add(&_this->ev_sock, NULL);
 
 	return 0;
-reigai:
+fail:
 	if (sock >= 0)
 		close(sock);
 	rt_zebra_stop(_this);

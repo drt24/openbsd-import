@@ -1,3 +1,4 @@
+/* $OpenBSD$ */
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
  * All rights reserved.
@@ -27,20 +28,21 @@
 #define CSVREADER_H 1
 /* $Id$ */
 
-/** cvsreader のステータスを表す */
+/** status of cvsreader */
 typedef enum _CSVREADER_STATUS {
-	/** 正常に処理が完了した */
+	/** complete without any error */
 	CSVREADER_NO_ERROR		= 0,
 	/**
-	 * 処理中の列が存在する
+	 * A processing column exists.
 	 * <p>
-	 * csvreader_get_columns で取り出す前に、次の行をパースすると
-	 * このエラーが発生します。</p>
+	 * This error occurs when parsing next line before getting a
+	 * new coloumn by csvreader_get_columns().
+	 * </p>
 	 */
 	CSVREADER_HAS_PENDING_COLUMN	= 10001,
-	/** メモリー割り当てに失敗した */
+	/** Failed in memory allocation */
 	CSVREADER_OUT_OF_MEMORY		= 10002,
-	/** パースエラー */
+	/** Parse Error */
 	CSVREADER_PARSE_ERROR		= 10003
 } CSVREADER_STATUS;
 

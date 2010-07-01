@@ -252,17 +252,17 @@ rtev_libevent_init0(rtev_libevent *_this, int rt_delay, int send_delay,
 	_this->impl.impl_on_write = rtev_libevent_on_write;
 
 	if (rtev_base_init(&_this->impl, flags) != 0)
-		goto reigai;
+		goto fail;
 
 	if ((sock = socket(PF_ROUTE, SOCK_RAW, AF_UNSPEC)) < 0)
-		goto reigai;
+		goto fail;
 
 	dummy = 0;
 	if ((fflags = fcntl(sock, F_GETFL, dummy)) < 0)
-		goto reigai;
+		goto fail;
 
 	if (fcntl(sock, F_SETFL, fflags | O_NONBLOCK) < 0)
-		goto reigai;
+		goto fail;
 
 	_this->sock = sock;
 
@@ -274,7 +274,7 @@ rtev_libevent_init0(rtev_libevent *_this, int rt_delay, int send_delay,
 	rtev_libevent_reset_event(_this);
 
 	return 0;
-reigai:
+fail:
 	if (sock >= 0)
 		close(sock);
 
