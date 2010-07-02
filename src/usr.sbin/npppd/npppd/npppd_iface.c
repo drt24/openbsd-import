@@ -1,3 +1,5 @@
+/* $OpenBSD$ */
+
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
  * All rights reserved.
@@ -80,7 +82,7 @@
 	    abort(); 						\
 	}
 #else
-#define	NPPPD_IFACE_ASSERT(cond)			
+#define	NPPPD_IFACE_ASSERT(cond)
 #define	NPPPD_IFACE_DBG(x)
 #endif
 
@@ -419,7 +421,7 @@ npppd_iface_io_event_handler(int fd, short evtype, void *data)
 				    "file is closed");
 			else if (errno == EAGAIN)
 				break;
-			else 
+			else
 				npppd_iface_log(_this, LOG_ERR,
 				    "read failed: %m");
 			npppd_iface_stop(_this);
@@ -440,13 +442,13 @@ struct npppd_iface_network_input_arg{
 };
 
 /** callback function which works for each PPP session */
-static int 
+static int
 npppd_iface_network_input_delegate(struct radish *radish, void *args0)
 {
 	npppd_ppp *ppp;
 	struct sockaddr_npppd *snp;
 	struct npppd_iface_network_input_arg *args;
-	
+
 	snp = radish->rd_rtent;
 
 	if (snp->snp_type == SNP_PPP) {

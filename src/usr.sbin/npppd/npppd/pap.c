@@ -1,3 +1,5 @@
+/* $OpenBSD$ */
+
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
  * All rights reserved.
@@ -77,8 +79,8 @@
 	    abort(); 						\
 	}
 #else
-#define	PAP_ASSERT(cond)			
-#define	PAP_DBG(x)	
+#define	PAP_ASSERT(cond)
+#define	PAP_DBG(x)
 #endif
 
 static void  pap_log (pap *, uint32_t, const char *, ...) __printflike(3,4);
@@ -394,7 +396,7 @@ pap_radius_authenticate(pap *_this, const char *username, const char *password)
 	    == NULL)
 		goto fail;
 
-	if (radius_prepare(rad_setting, _this, &radctx, 
+	if (radius_prepare(rad_setting, _this, &radctx,
 	    pap_radius_response, _this->ppp->auth_timeout) != 0) {
 		radius_delete_packet(radpkt);
 		goto fail;
@@ -405,7 +407,7 @@ pap_radius_authenticate(pap *_this, const char *username, const char *password)
 		goto fail;
 
 	if (radius_put_string_attr(radpkt, RADIUS_TYPE_USER_NAME,
-	    npppd_ppp_get_username_for_auth(_this->ppp->pppd, _this->ppp, 
+	    npppd_ppp_get_username_for_auth(_this->ppp->pppd, _this->ppp,
 	    username, buf0)) != 0)
 		goto fail;
 

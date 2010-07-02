@@ -1,4 +1,5 @@
-/*	$OpenBSD:$	*/
+/* $OpenBSD: pppoe_session.c,v 1.2 2010/07/01 03:38:17 yasuoka Exp $ */
+
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
  * All rights reserved.
@@ -66,7 +67,7 @@
 #define	PPPOE_SESSION_DBG(x)	pppoe_session_log x
 #else
 #define	PPPOE_SESSION_ASSERT(x)
-#define	PPPOE_SESSION_DBG(x)	
+#define	PPPOE_SESSION_DBG(x)
 #endif
 
 #define	pppoed_listener_this(sess)					\

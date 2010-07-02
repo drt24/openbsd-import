@@ -1,4 +1,5 @@
-/*	$OpenBSD:$	*/
+/* $OpenBSD: l2tp_subr.h,v 1.2 2010/07/01 03:38:17 yasuoka Exp $	*/
+
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
  * All rights reserved.
@@ -91,7 +92,7 @@ short_hash(const void *v, int sz)
 	return (int)v % sz;
 }
 
-/* 
+/*
  * macro to check AVP size.
  * Prepare 1) char emes[256] for error message, 2) size_check_failed label
  * before use this macro.

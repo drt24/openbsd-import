@@ -60,7 +60,7 @@ ipsec_util_purge_transport_sa(struct sockaddr *sock, struct sockaddr *peer,
 	tv = KEYSOCK_RCVTIMEO;
 	if (setsockopt(key_sock, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv)) != 0)
 		goto fail;
-	
+
 	del_in.is_valid = del_out.is_valid = 0;
 	if (delete_prepare(key_sock, sock, peer, proto, &del_in, &del_out) != 0)
 		goto fail;
