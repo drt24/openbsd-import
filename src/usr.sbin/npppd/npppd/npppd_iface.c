@@ -504,7 +504,6 @@ npppd_iface_network_input_ipv4(npppd_iface *_this, u_char *pktp, int lpktp)
 #ifdef NPPPD_DEBUG
 		log_printf(LOG_INFO, "%s received a packet to unknown "
 		    "%s.", _this->ifname, inet_ntoa(iphdr->ip_dst));
-		show_hd(debug_get_debugfp(), pktp, lpktp);
 #endif
 		return;
 	}

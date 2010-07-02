@@ -330,7 +330,7 @@ print_who(struct npppd_who *w)
 		    LLADDR((struct sockaddr_dl *)sa)[3] & 0xff,
 		    LLADDR((struct sockaddr_dl *)sa)[4] & 0xff,
 		    LLADDR((struct sockaddr_dl *)sa)[5] & 0xff);
-	} if (sa->sa_family < AF_MAX) {
+	} else if (sa->sa_family < AF_MAX) {
 		getnameinfo((const struct sockaddr *)&w->phy_info,
 		    sa->sa_len, hoststr, sizeof(hoststr), servstr,
 		    sizeof(servstr),
