@@ -1180,7 +1180,8 @@ pipex_pppoe_output(struct mbuf *m0, struct pipex_session *session)
 	}
 	padlen = ETHERMIN - m0->m_pkthdr.len;
 	if (padlen > 0)
-		m_copyback(m0, m0->m_pkthdr.len, padlen, pipex_pppoe_padding);
+		m_copyback(m0, m0->m_pkthdr.len, padlen, pipex_pppoe_padding,
+		    M_NOWAIT);
 
 	/* setup pppoe header information */
 	pppoe = mtod(m0, struct pipex_pppoe_header *);
