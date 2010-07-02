@@ -109,13 +109,12 @@ print_header(void)
 	if (paused)
 		tbprintf(" PAUSED");
 
-	if (rawmode)
-		printf("\n\n%s\n", tmp_buf);
-	else
+	if (rawmode) {
+		printf("\n\n%-55s%s\n", tmp_buf, tbuf);
+	} else {
 		mvprintw(0, 0, "%s", tmp_buf);
-
-	mvprintw(0, TIMEPOS, "%s", tbuf);
-
+		mvprintw(0, TIMEPOS, "%s", tbuf);
+	}
 
 	return (1);
 }
