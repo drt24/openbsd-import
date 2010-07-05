@@ -23,9 +23,6 @@ CFLAGS+=-DOS_REP=\"${OS}\"
 CFLAGS+=-DOS_HDR=\"os-${OS}.h\"
 CFLAGS+=${CONFIG}
 
-DPADD+=	${LIBCOMPAT}
-LDADD+=	-lcompat
-
 .PATH: ${.CURDIR}/../rpcx ${.CURDIR}/../config
 .include "../../Makefile.inc"
 .include <bsd.prog.mk>
