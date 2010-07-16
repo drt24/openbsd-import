@@ -465,7 +465,7 @@ main(int argc, char *argv[])
 		return 1;
 	}
 
-	if (!isatty(STDOUT_FILENO)) {
+	if (check_termcap()) {
 		rawmode = 1;
 		interactive = 0;
 	}

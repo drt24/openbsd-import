@@ -133,6 +133,7 @@ void set_order(const char *opt);
 void next_order(void);
 
 void setup_term(int maxpr);
+int check_termcap(void);
 
 void engine_initialize(void);
 void engine_loop(int countmax);
