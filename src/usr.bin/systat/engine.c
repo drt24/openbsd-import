@@ -200,15 +200,6 @@ end_page(void)
 	curr_line = 0;
 }
 
-void
-rawaddstr(char *s)
-{
-	if (rawmode)
-		printf("%s", s);
-	else
-		addstr(s);
-}
-
 /* field output functions */
 
 void
