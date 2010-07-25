@@ -204,7 +204,7 @@ static	const struct termact termacts[MDOC_MAX] = {
 	{ termp_under_pre, NULL }, /* Em */ 
 	{ NULL, NULL }, /* Eo */
 	{ termp_xx_pre, NULL }, /* Fx */
-	{ termp_bold_pre, NULL }, /* Ms */ /* FIXME: convert to symbol? */
+	{ termp_bold_pre, NULL }, /* Ms */
 	{ NULL, NULL }, /* No */
 	{ termp_ns_pre, NULL }, /* Ns */
 	{ termp_xx_pre, NULL }, /* Nx */
@@ -1902,6 +1902,11 @@ termp_sp_pre(DECL_ARGS)
 		len = 0;
 		break;
 	default:
+		assert(n->parent);
+		if ((NULL == n->next || NULL == n->prev) &&
+				(MDOC_Ss == n->parent->tok ||
+				 MDOC_Sh == n->parent->tok))
+			return(0);
 		len = 1;
 		break;
 	}
