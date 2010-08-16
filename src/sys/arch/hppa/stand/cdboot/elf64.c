@@ -1,5 +1,7 @@
+/*	$OpenBSD$	*/
+
 /*
- * Copyright (c) 2004 Marc Espie <espie@openbsd.org>
+ * Copyright (c) 2010 Mark Kettenis
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -13,11 +15,22 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
-struct ps_strings;
 
-extern void ___start(int argc, char **argv, char **envp, void (*cleanup)(void),
-    const void *obj, struct ps_strings *ps_strings);
-extern void __init(void);
-extern int main(int argc, char *argv[], char *envp[]);
+#include <lib/libkern/libkern.h>
+#include <lib/libsa/stand.h>
 
-typedef void (*init_f)(void);
+#include <sys/param.h>
+#include <sys/exec.h>
+
+#include "../../../../lib/libsa/loadfile.h"
+
+#undef ELFSIZE
+#define ELFSIZE  64
+
+#include <sys/exec_elf.h>
+
+int
+ELFNAME(exec)(int fd, Elf_Ehdr *elf, u_long *marks, int flags)
+{
+	return 1;
+}
