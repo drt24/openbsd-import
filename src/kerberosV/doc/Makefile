@@ -21,7 +21,7 @@ all: $(info)
 
 install: $(info)
 	$(INSTALL-INFO) ${.OBJDIR}/$(info) $(infodir)/dir
-	${INSTALL} ${INSTALL_COPY} -m 444 -o ${BINOWN} -g ${BINGRP} -p ${.OBJDIR}/$(info) $(infodir)
+	${INSTALL} ${INSTALL_COPY} -m 444 -o ${BINOWN} -g ${BINGRP} ${.OBJDIR}/$(info) $(infodir)
 
 $(info): $(SRCS)
 	${MAKEINFO} --no-split -I${KRB5SRC}/doc -o ${.OBJDIR}/$@ ${KRB5SRC}/doc/heimdal.texi
