@@ -1,4 +1,4 @@
-/*	$OpenBSD: process_machdep.c,v 1.13 2010/01/08 01:35:52 syuu Exp $	*/
+/*	$OpenBSD: process_machdep.c,v 1.14 2010/06/26 23:24:43 guenther Exp $	*/
 
 /*
  * Copyright (c) 1994 Adam Glass
@@ -72,6 +72,7 @@
 #include <sys/proc.h>
 #include <sys/vnode.h>
 #include <sys/ptrace.h>
+#include <machine/fpu.h>
 #include <machine/frame.h>
 #include <machine/reg.h>
 
@@ -111,6 +112,7 @@ process_write_regs(p, regs)
 	ic = p->p_md.md_regs->ic;
 	ipl = p->p_md.md_regs->ipl;
 	bcopy(&regs->r_regs[AST], &p->p_md.md_regs->ast, REGSIZE);
+	p->p_md.md_regs->fsr &= ~FPCSR_C_MASK;
 	p->p_md.md_regs->sr = sr;
 	p->p_md.md_regs->ic = ic;
 	p->p_md.md_regs->ipl = ipl;
