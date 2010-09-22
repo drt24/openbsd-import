@@ -1,4 +1,4 @@
-/* $OpenBSD: npppdctl.c,v 1.4 2010/07/02 21:20:57 yasuoka Exp $ */
+/* $OpenBSD: npppdctl.c,v 1.5 2010/07/31 09:33:09 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -105,7 +105,7 @@ usage(void)
 	    "\t-r: Receive buffer size (default %d).\n"
 	    "\t-s: Show statistics informations instead of who.\n"
 	    "\t-u: Show 'since' field as unix time.\n",
-	    progname, progname, progname, rcvbuf_sz);
+	    progname, progname, rcvbuf_sz);
 }
 
 static void
