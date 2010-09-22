@@ -1,4 +1,4 @@
-/* $OpenBSD: eap.c,v 1.3 2010/07/02 21:20:57 yasuoka Exp $ */
+/* $OpenBSD: eap.c,v 1.4 2010/08/02 09:29:53 jsg Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -894,10 +894,10 @@ get_mppe_keys(eap *_this, RADIUS_PACKET *pkt, const char *secret) {
 		eap_log(_this, LOG_ERR, "no mppe_recv_key");
 		return 1;
 	}
-	DecryptKeyFromRadius(_this->ppp->mppe.send.master_key,
+	mschap_radiuskey(_this->ppp->mppe.send.master_key,
 	    sendkey.salt, _this->authenticator, secret);
 
-	DecryptKeyFromRadius(_this->ppp->mppe.recv.master_key,
+	mschap_radiuskey(_this->ppp->mppe.recv.master_key,
 	    recvkey.salt, _this->authenticator, secret);
 
 	return 0;
