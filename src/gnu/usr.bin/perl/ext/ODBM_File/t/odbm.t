@@ -3,8 +3,6 @@
 # $RCSfile$$Revision$$Date$
 
 BEGIN {
-    chdir 't' if -d 't';
-    @INC = '../lib';
     require Config; import Config;
     if ($Config{'extensions'} !~ /\bODBM_File\b/ or $Config{'d_cplusplus'}) {
 	print "1..0 # Skip: ODBM_File was not built\n";
