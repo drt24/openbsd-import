@@ -1,4 +1,4 @@
-/* $OpenBSD: pptpd.c,v 1.4 2010/07/01 03:38:17 yasuoka Exp $	*/
+/* $OpenBSD: pptpd.c,v 1.5 2010/07/02 21:20:57 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -331,6 +331,12 @@ pptpd_listener_start(pptpd_listener *_this)
 	    != 0)
 		pptpd_log(_this->self, LOG_WARNING,
 		    "%s(): setsockopt(IP_STRICT_RCVIF) failed: %m", __func__);
+#endif
+#ifdef IP_PIPEX
+	ival = 1;
+	if (setsockopt(sock, IPPROTO_IP, IP_PIPEX, &ival, sizeof(ival)) != 0)
+		pptpd_log(_this->self, LOG_WARNING,
+		    "%s(): setsockopt(IP_PIPEX) failed: %m", __func__);
 #endif
 	if ((ival = fcntl(sock, F_GETFL, 0)) < 0) {
 		pptpd_log(_this->self, LOG_ERR,
