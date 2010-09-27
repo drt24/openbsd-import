@@ -687,11 +687,11 @@ mdoc_ptext(struct mdoc *m, int line, char *buf, int offs)
 			return(0);
 
 		/*
-		 * Insert a `Pp' in the case of a blank line.  Technically,
+		 * Insert a `sp' in the case of a blank line.  Technically,
 		 * blank lines aren't allowed, but enough manuals assume this
 		 * behaviour that we want to work around it.
 		 */
-		if ( ! mdoc_elem_alloc(m, line, offs, MDOC_Pp, NULL))
+		if ( ! mdoc_elem_alloc(m, line, offs, MDOC_sp, NULL))
 			return(0);
 
 		m->next = MDOC_NEXT_SIBLING;
