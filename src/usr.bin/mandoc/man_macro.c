@@ -80,6 +80,8 @@ const	struct man_macro __man_macros[MAN_MAX] = {
 	{ in_line_eoln, 0 }, /* Ve */
 	{ in_line_eoln, 0 }, /* AT */
 	{ in_line_eoln, 0 }, /* in */
+	{ blk_exp, MAN_EXPLICIT }, /* TS */
+	{ blk_close, 0 }, /* TE */
 };
 
 const	struct man_macro * const man_macros = __man_macros;
@@ -264,6 +266,9 @@ blk_close(MACRO_PROT_ARGS)
 	switch (tok) {
 	case (MAN_RE):
 		ntok = MAN_RS;
+		break;
+	case (MAN_TE):
+		ntok = MAN_TS;
 		break;
 	default:
 		abort();
