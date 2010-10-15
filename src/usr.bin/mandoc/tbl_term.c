@@ -353,6 +353,9 @@ calc_data(struct termp *p, struct tbl_data *data)
 	case (TBL_CELL_NUMBER):
 		calc_data_number(p, data);
 		break;
+	case (TBL_CELL_SPAN):
+		data->cell->head->width = 0;
+		break;
 	default:
 		abort();
 		/* NOTREACHED */
@@ -477,6 +480,8 @@ write_data(struct termp *p, const struct tbl_data *data, int width)
 		break;
 	case (TBL_CELL_NUMBER):
 		write_data_number(p, data, width);
+		break;
+	case (TBL_CELL_SPAN):
 		break;
 	default:
 		abort();
