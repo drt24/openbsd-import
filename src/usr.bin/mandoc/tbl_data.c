@@ -79,10 +79,10 @@ tbl_data(struct tbl *tbl, const char *f, int ln, const char *p)
 	struct tbl_span	*dp;
 	int		 i, j;
 
-	if (0 == p[0])
-		return(tbl_errx(tbl, ERR_SYNTAX, f, ln, 0));
-
 	if ('.' == p[0] && ! isdigit((u_char)p[1])) {
+		/* Comment lines end up here with just a dot. */
+		if ('\0' == p[1])
+			return(1);
 		/*
 		 * XXX: departs from tbl convention in that we disallow
 		 * macros in the data body.
