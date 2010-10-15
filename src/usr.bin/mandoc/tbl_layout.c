@@ -119,6 +119,11 @@ mods(struct tbl *tbl, struct tbl_cell *cp, const char *p,
 	case ('Z'):
 		cp->flags |= TBL_CELL_WIGN;
 		return(mods(tbl, cp, p, pp + 1, f, ln, pos));
+	case ('w'):
+		/* FALLTHROUGH */
+	case ('W'):  /* XXX for now, ignore minimal column width */
+		while (isdigit((u_char)p[++pp]));
+		return(mods(tbl, cp, p, pp, f, ln, pos));
 	case ('u'):
 		/* FALLTHROUGH */
 	case ('U'):
