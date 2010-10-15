@@ -23,6 +23,8 @@
 #include "libman.h"
 #include "libmandoc.h"
 
+#include "out.h"
+#include "term.h"
 #include "tbl.h"
 
 struct	actions {

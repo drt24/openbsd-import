@@ -841,7 +841,7 @@ pre_TS(DECL_ARGS)
 	if ( ! tbl_close(n->data.TS, "<man>", n->line))
 		return(0);
 
-	tbl_write(n->data.TS);
+	tbl_write(p, n->data.TS);
 
 	return(0);
 }
