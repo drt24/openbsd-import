@@ -838,7 +838,7 @@ pre_TS(DECL_ARGS)
 	if (MAN_BLOCK != n->type)
 		return(0);
 
-	if ( ! tbl_close(n->data.TS, "<man>", n->line))
+	if ( ! tbl_close(p, n->data.TS, "<man>", n->line))
 		return(0);
 
 	tbl_write(p, n->data.TS);

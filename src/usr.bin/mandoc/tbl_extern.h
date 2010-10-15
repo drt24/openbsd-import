@@ -174,7 +174,7 @@ struct tbl_span	*tbl_span_alloc(struct tbl *);
 struct tbl_data	*tbl_data_alloc(struct tbl_span *);
 
 int		 tbl_write_term(struct termp *, const struct tbl *);
-int		 tbl_calc_term(struct tbl *);
+int		 tbl_calc_term(struct termp *, struct tbl *);
 int		 tbl_write_tree(const struct tbl *);
 int		 tbl_calc_tree(struct tbl *);
 
