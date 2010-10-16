@@ -150,6 +150,8 @@ enum	mdoct {
 	MDOC_sp,
 	MDOC__U,
 	MDOC_Ta,
+	MDOC_TS,
+	MDOC_TE,
 	MDOC_MAX
 };
 
@@ -345,10 +347,11 @@ struct	mdoc_node {
 	enum mdoc_endbody end;		/* BODY */
 
 	union {
-		struct mdoc_an  An;
-		struct mdoc_bd *Bd;
-		struct mdoc_bf *Bf;
-		struct mdoc_bl *Bl;
+		struct mdoc_an	 An;
+		struct mdoc_bd	*Bd;
+		struct mdoc_bf	*Bf;
+		struct mdoc_bl	*Bl;
+		struct tbl	*TS;
 	} data;
 };
 
