@@ -241,8 +241,10 @@ mdoc_parseln(struct mdoc *m, int ln, char *buf, int offs)
 	if (n && MDOC_TS == n->tok && MDOC_BODY == n->type &&
 	    strncmp(buf+offs, ".TE", 3)) {
 		n = n->parent;
-		return(tbl_read(n->data.TS, "<mdoc>", ln, buf+offs,
-		    strlen(buf+offs)) ? 1 : 0);
+		if ( ! tbl_read(n->data.TS, "mdoc tbl parser",
+		    ln, buf+offs, strlen(buf+offs)))
+			mdoc_nmsg(m, n, MANDOCERR_TBL);
+		return(1);
 	}
 
 	/*

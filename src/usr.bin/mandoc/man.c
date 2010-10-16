@@ -135,8 +135,10 @@ man_parseln(struct man *m, int ln, char *buf, int offs)
 	if (n && MAN_TS == n->tok && MAN_BODY == n->type &&
 	    strncmp(buf+offs, ".TE", 3)) {
 		n = n->parent;
-		return(tbl_read(n->data.TS, "<man>", ln, buf+offs,
-		    strlen(buf+offs)) ? 1 : 0);
+		if ( ! tbl_read(n->data.TS, "man tbl parser",
+		    ln, buf+offs, strlen(buf+offs)))
+			man_nmsg(m, n, MANDOCERR_TBL);
+		return(1);
 	}
 
 	return(('.' == buf[offs] || '\'' == buf[offs]) ? 

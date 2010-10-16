@@ -160,6 +160,7 @@ static	const char * const	mandocerrs[MANDOCERR_MAX] = {
 	"line argument(s) will be lost",
 	"body argument(s) will be lost",
 	"paragraph macro ignored",
+	"tbl(1) error",
 
 	"generic fatal error",
 

@@ -100,6 +100,7 @@ enum	mandocerr {
 	MANDOCERR_ARGSLOST, /* line argument(s) will be lost */
 	MANDOCERR_BODYLOST, /* body argument(s) will be lost */
 	MANDOCERR_IGNPAR, /* paragraph macro ignored */
+	MANDOCERR_TBL, /* tbl(1) error */
 
 	MANDOCERR_FATAL, /* ===== end of fatal errors ===== */
 
