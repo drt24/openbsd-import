@@ -600,8 +600,7 @@ post_os(POST_ARGS)
 	struct utsname	  utsname;
 #endif
 
-	if (m->meta.os)
-		free(m->meta.os);
+	free(m->meta.os);
 
 	if ( ! concat(m, buf, n->child, BUFSIZ))
 		return(0);
@@ -617,14 +616,17 @@ post_os(POST_ARGS)
 			return(0);
 		}
 #else /*!OSNAME */
-		if (-1 == uname(&utsname))
-			return(mdoc_nmsg(m, n, MANDOCERR_UTSNAME));
+		if (uname(&utsname)) {
+			mdoc_nmsg(m, n, MANDOCERR_UNAME);
+			m->meta.os = mandoc_strdup("UNKNOWN");
+			return(post_prol(m, n));
+		}
 
 		if (strlcat(buf, utsname.sysname, BUFSIZ) >= BUFSIZ) {
 			mdoc_nmsg(m, n, MANDOCERR_MEM);
 			return(0);
 		}
-		if (strlcat(buf, " ", 64) >= BUFSIZ) {
+		if (strlcat(buf, " ", BUFSIZ) >= BUFSIZ) {
 			mdoc_nmsg(m, n, MANDOCERR_MEM);
 			return(0);
 		}
