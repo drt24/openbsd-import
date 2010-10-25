@@ -1,4 +1,4 @@
-/*	$OpenBSD: fastfind.c,v 1.9 2008/07/26 09:48:00 pyr Exp $	*/
+/*	$OpenBSD: fastfind.c,v 1.10 2009/06/04 07:19:45 espie Exp $	*/
 
 /*
  * Copyright (c) 1995 Wolfram Schneider <wosch@FreeBSD.org>. Berlin.
@@ -305,7 +305,12 @@ fastfind
 						shortpath = basename(path);
 
 					if ((!f_basename && (!globflag ||
+#ifdef FF_ICASE
+					    !fnmatch(pathpart, shortpath,
+						FNM_CASEFOLD)))
+#else
 					    !fnmatch(pathpart, shortpath, 0)))
+#endif /* FF_ICASE */
 					    || (strstr(shortpath, pathpart) !=
 					    NULL)) {
 						if (f_silent)
