@@ -57,6 +57,7 @@ enum	mandocerr {
 	MANDOCERR_BADBODY, /* macro not allowed in body */
 
 	/* related to document structure */
+	MANDOCERR_SO, /* .so is fragile, better use ln(1) */
 	MANDOCERR_NAMESECFIRST, /* NAME section must come first */
 	MANDOCERR_BADNAMESEC, /* bad NAME section contents */
 	MANDOCERR_NONAME, /* manual name not yet set */

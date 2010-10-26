@@ -1017,6 +1017,8 @@ roff_so(ROFF_ARGS)
 {
 	char *name;
 
+	(*r->msg)(MANDOCERR_SO, r->data, ln, ppos, NULL);
+
 	name = *bufp + pos;
 	if ('/' == *name || strstr(name, "../") || strstr(name, "/..")) {
 		(*r->msg)(MANDOCERR_SOPATH, r->data, ln, pos, NULL);

@@ -115,6 +115,7 @@ static	const char * const	mandocerrs[MANDOCERR_MAX] = {
 	"macro not allowed in body",
 
 	/* related to document structure */
+	".so is fragile, better use ln(1)",
 	"NAME section must come first",
 	"bad NAME section contents",
 	"manual name not yet set",
