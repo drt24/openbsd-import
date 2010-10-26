@@ -20,6 +20,7 @@
 enum	rofferr {
 	ROFF_CONT, /* continue processing line */
 	ROFF_RERUN, /* re-run roff interpreter with offset */
+	ROFF_SO, /* include another file */
 	ROFF_IGN, /* ignore current line */
 	ROFF_ERR /* badness: puke and stop */
 };

@@ -114,6 +114,7 @@ enum	mandocerr {
 	MANDOCERR_SYNTARGVCOUNT, /* argument count wrong, violates syntax */
 	MANDOCERR_SYNTCHILD, /* child violates parent syntax */
 	MANDOCERR_SYNTARGCOUNT, /* argument count wrong, violates syntax */
+	MANDOCERR_SOPATH, /* invalid path in include directive */
 	MANDOCERR_NODOCBODY, /* no document body */
 	MANDOCERR_NODOCPROLOG, /* no document prologue */
 	MANDOCERR_MEM, /* static buffer exhausted */
