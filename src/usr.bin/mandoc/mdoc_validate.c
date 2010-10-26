@@ -731,11 +731,9 @@ pre_bl(PRE_ARGS)
 	case (LIST_inset):
 		/* FALLTHROUGH */
 	case (LIST_item):
-		if (NULL == n->data.Bl->width)
-			break;
-		if (mdoc_nmsg(mdoc, n, MANDOCERR_WIDTHARG))
-			break;
-		return(0);
+		if (n->data.Bl->width)
+			mdoc_nmsg(mdoc, n, MANDOCERR_IGNARGV);
+		break;
 	default:
 		break;
 	}
