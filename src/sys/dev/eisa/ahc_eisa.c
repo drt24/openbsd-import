@@ -1,4 +1,4 @@
-/*	$OpenBSD: ahc_eisa.c,v 1.18 2007/04/10 17:47:55 miod Exp $	*/
+/*	$OpenBSD: ahc_eisa.c,v 1.19 2009/03/29 21:53:52 sthen Exp $	*/
 /*	$NetBSD: ahc_eisa.c,v 1.10 1996/10/21 22:30:58 thorpej Exp $	*/
 
 /*
@@ -34,9 +34,6 @@
  *
  *	$Id$
  */
-
-#include "eisa.h"
-#if NEISA > 0
 
 #include <sys/param.h>
 #include <sys/systm.h>
@@ -327,4 +324,3 @@ void *aux;
 	ahc_attach(ahc);
 
 }
-#endif /* NEISA > 0 */
