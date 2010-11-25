@@ -538,8 +538,6 @@ roff_cblock(ROFF_ARGS)
 		/* FALLTHROUGH */
 	case (ROFF_dei):
 		/* FALLTHROUGH */
-	case (ROFF_de1):
-		/* FALLTHROUGH */
 	case (ROFF_ig):
 		break;
 	default:
@@ -626,6 +624,8 @@ roff_block(ROFF_ARGS)
 			(*r->msg)(MANDOCERR_NOARGS, r->data, ln, ppos, NULL);
 			return(ROFF_IGN);
 		}
+		if (ROFF_de1 == tok)
+			tok = ROFF_de;
 		if (ROFF_de == tok)
 			name = *bufp + pos;
 		while ((*bufp)[pos] && ' ' != (*bufp)[pos])
