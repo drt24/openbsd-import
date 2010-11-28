@@ -490,9 +490,7 @@ man_pmacro(struct man *m, int ln, char *buf, int offs)
 
 	tok = (j > 0 && j < 4) ? man_hash_find(mac) : MAN_MAX;
 	if (MAN_MAX == tok) {
-		man_vmsg(m, MANDOCERR_MACRO, ln, ppos, 
-		    "unknown macro: %s%s",
-		    buf, strlen(buf) > 3 ? "..." : "");
+		man_vmsg(m, MANDOCERR_MACRO, ln, ppos, "%s", buf + ppos - 1);
 		return(1);
 	}
 
