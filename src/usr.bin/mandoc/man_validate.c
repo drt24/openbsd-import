@@ -93,9 +93,6 @@ static	const struct man_valid man_valids[MAN_MAX] = {
 	{ NULL, NULL }, /* DT */
 	{ NULL, NULL }, /* UC */
 	{ NULL, NULL }, /* PD */
-	{ NULL, posts_le1 }, /* Sp */ /* FIXME: should warn only. */
-	{ pres_bline, posts_le1 }, /* Vb */ /* FIXME: should warn only. */
-	{ pres_bline, posts_eq0 }, /* Ve */
 	{ NULL, NULL }, /* AT */
 	{ NULL, NULL }, /* in */
 	{ NULL, NULL }, /* TS */

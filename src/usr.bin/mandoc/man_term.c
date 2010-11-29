@@ -135,9 +135,6 @@ static	const struct termact termacts[MAN_MAX] = {
 	{ pre_ign, NULL, 0 }, /* DT */
 	{ pre_ign, NULL, 0 }, /* UC */
 	{ pre_ign, NULL, 0 }, /* PD */
- 	{ pre_sp, NULL, MAN_NOTEXT }, /* Sp */
- 	{ pre_literal, NULL, 0 }, /* Vb */
- 	{ pre_literal, NULL, 0 }, /* Ve */
 	{ pre_ign, NULL, 0 }, /* AT */
 	{ pre_in, NULL, MAN_NOTEXT }, /* in */
 	{ pre_TS, NULL, 0 }, /* TS */
@@ -254,16 +251,11 @@ pre_literal(DECL_ARGS)
 {
 
 	term_newln(p);
-	switch (n->tok) {
-	case (MAN_Vb):
-		/* FALLTHROUGH */
-	case (MAN_nf):
+
+	if (MAN_nf == n->tok)
 		mt->fl |= MANT_LITERAL;
-		return(MAN_Vb != n->tok);
-	default:
+	else
 		mt->fl &= ~MANT_LITERAL;
-		break;
-	}
 
 	return(1);
 }
