@@ -146,6 +146,7 @@ static	const char * const	mandocerrs[MANDOCERR_MAX] = {
 	"duplicate list type",
 	"unknown AT&T UNIX version",
 	"bad Boolean value",
+	"unknown font",
 	"unknown library specifier",
 	"unknown standard specifier",
 	"bad width argument",

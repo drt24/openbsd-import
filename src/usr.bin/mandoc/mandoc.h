@@ -87,6 +87,7 @@ enum	mandocerr {
 	MANDOCERR_LISTREP, /* duplicate list type */
 	MANDOCERR_BADATT, /* unknown AT&T UNIX version */
 	MANDOCERR_BADBOOL, /* bad Boolean value */
+	MANDOCERR_BADFONT, /* unknown font */
 	MANDOCERR_BADLIB, /* unknown library specifier */
 	MANDOCERR_BADSTANDARD, /* unknown standard specifier */
 	MANDOCERR_BADWIDTH, /* bad width argument */
