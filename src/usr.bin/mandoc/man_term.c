@@ -260,7 +260,6 @@ pre_literal(DECL_ARGS)
 	return(1);
 }
 
-
 /* ARGSUSED */
 static int
 pre_alternate(DECL_ARGS)
@@ -313,7 +312,6 @@ pre_alternate(DECL_ARGS)
 	return(0);
 }
 
-
 /* ARGSUSED */
 static int
 pre_B(DECL_ARGS)
@@ -322,7 +320,6 @@ pre_B(DECL_ARGS)
 	term_fontrepl(p, TERMFONT_BOLD);
 	return(1);
 }
-
 
 /* ARGSUSED */
 static int
@@ -364,7 +361,6 @@ pre_ft(DECL_ARGS)
 	}
 	return(0);
 }
-
 
 /* ARGSUSED */
 static int

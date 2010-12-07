@@ -100,6 +100,7 @@ enum	mandocerr {
 	MANDOCERR_BADQUOTE, /* unterminated quoted string */
 
 	MANDOCERR_ERROR, /* ===== start of errors ===== */
+
 	MANDOCERR_BADCHAR, /* skipping bad character */
 	MANDOCERR_NOTEXT, /* skipping text before the first section header */
 	MANDOCERR_MACRO, /* skipping unknown macro */
@@ -120,6 +121,7 @@ enum	mandocerr {
 	MANDOCERR_TBL, /* tbl(1) error */
 
 	MANDOCERR_FATAL, /* ===== start of fatal errors ===== */
+
 	MANDOCERR_COLUMNS, /* column syntax is inconsistent */
 	MANDOCERR_BADDISP, /* NOT IMPLEMENTED: .Bd -file */
 	MANDOCERR_SYNTLINESCOPE, /* line scope broken, syntax violated */

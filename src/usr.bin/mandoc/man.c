@@ -517,12 +517,13 @@ man_pmacro(struct man *m, int ln, char *buf, int offs)
 		n = m->last;
 		assert(MAN_TEXT != n->type);
 
-		/* .B .br .br .B: remove prior including children */
+		/* Remove repeated NSCOPED macros causing ELINE. */
+
 		if (MAN_NSCOPED & man_macros[n->tok].flags)
 			n = n->parent;
 
 		man_vmsg(m, MANDOCERR_LINESCOPE, n->line, n->pos,
-		    "%s", man_macronames[n->tok]);
+				"%s", man_macronames[n->tok]);
 
 		man_node_delete(m, n);
 		m->flags &= ~MAN_ELINE;
