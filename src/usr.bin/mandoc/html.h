@@ -33,12 +33,19 @@ enum	htmltag {
 	TAG_BR,
 	TAG_A,
 	TAG_TABLE,
+	TAG_TBODY,
 	TAG_COL,
 	TAG_TR,
 	TAG_TD,
 	TAG_LI,
 	TAG_UL,
 	TAG_OL,
+	TAG_DL,
+	TAG_DT,
+	TAG_DD,
+	TAG_BLOCKQUOTE,
+	TAG_P,
+	TAG_PRE,
 	TAG_MAX
 };
 
@@ -72,17 +79,8 @@ struct	tag {
 	enum htmltag	  tag;
 };
 
-struct	ord {
-	struct ord	 *next;
-	const void	 *cookie;
-	int		  pos;
-};
-
 struct tagq {
 	struct tag	 *head;
-};
-struct ordq {
-	struct ord	 *head;
 };
 
 struct	htmlpair {
@@ -115,7 +113,6 @@ struct	html {
 #define	HTML_PREKEEP	 (1 << 3)
 #define	HTML_NONOSPACE	 (1 << 4)
 	struct tagq	  tags;
-	struct ordq	  ords;
 	void		 *symtab;
 	char		 *base;
 	char		 *base_man;
