@@ -132,7 +132,7 @@ sighup(int sig)
 static void
 parent_exit(int sig)
 {
-	exit(0);
+	_exit(0);
 }
 
 static pid_t
