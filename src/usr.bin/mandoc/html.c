@@ -66,6 +66,9 @@ static	const struct htmldata htmltags[TAG_MAX] = {
 	{"blockquote",	HTML_CLRLINE}, /* TAG_BLOCKQUOTE */
 	{"p",		HTML_CLRLINE | HTML_NOSTACK | HTML_AUTOCLOSE}, /* TAG_P */
 	{"pre",		HTML_CLRLINE }, /* TAG_PRE */
+	{"b",		0 }, /* TAG_B */
+	{"i",		0 }, /* TAG_I */
+	{"u",		0 }, /* TAG_U */
 };
 
 static	const char	*const htmlfonts[HTMLFONT_MAX] = {
@@ -75,20 +78,19 @@ static	const char	*const htmlfonts[HTMLFONT_MAX] = {
 };
 
 static	const char	*const htmlattrs[ATTR_MAX] = {
-	"http-equiv",
-	"content",
-	"name",
-	"rel",
-	"href",
-	"type",
-	"media",
-	"class",
-	"style",
-	"width",
-	"valign",
-	"target",
-	"id",
-	"summary",
+	"http-equiv", /* ATTR_HTTPEQUIV */
+	"content", /* ATTR_CONTENT */
+	"name", /* ATTR_NAME */
+	"rel", /* ATTR_REL */
+	"href", /* ATTR_HREF */
+	"type", /* ATTR_TYPE */
+	"media", /* ATTR_MEDIA */
+	"class", /* ATTR_CLASS */
+	"style", /* ATTR_STYLE */
+	"width", /* ATTR_WIDTH */
+	"id", /* ATTR_ID */
+	"summary", /* ATTR_SUMMARY */
+	"align", /* ATTR_ALIGN */
 };
 
 static	void		  print_spec(struct html *, enum roffdeco,
