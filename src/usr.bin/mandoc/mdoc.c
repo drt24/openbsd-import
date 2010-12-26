@@ -541,6 +541,9 @@ mdoc_node_free(struct mdoc_node *p)
 	if (MDOC_An == p->tok)
 		if (p->data.An)
 			free(p->data.An);
+	if (MDOC_Rs == p->tok && MDOC_BLOCK == p->type)
+		if (p->data.Rs)
+			free(p->data.Rs);
 	if (MDOC_TS == p->tok && MDOC_BLOCK == p->type)
 		if (p->data.TS)
 			tbl_free(p->data.TS);
