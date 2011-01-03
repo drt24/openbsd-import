@@ -138,6 +138,7 @@ static	const char * const	mandocerrs[MANDOCERR_MAX] = {
 
 	/* related to missing macro arguments */
 	"skipping empty macro",
+	"argument count wrong",
 	"missing display type",
 	"list type must come first",
 	"tag lists require a width argument",

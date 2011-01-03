@@ -75,6 +75,7 @@ enum	mandocerr {
 
 	/* related to missing macro arguments */
 	MANDOCERR_MACROEMPTY, /* skipping empty macro */
+	MANDOCERR_ARGCWARN, /* argument count wrong */
 	MANDOCERR_DISPTYPE, /* missing display type */
 	MANDOCERR_LISTFIRST, /* list type must come first */
 	MANDOCERR_NOWIDTHARG, /* tag lists require a width argument */
