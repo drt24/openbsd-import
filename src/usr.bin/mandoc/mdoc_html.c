@@ -239,8 +239,6 @@ static	const struct htmlmdoc mdocs[MDOC_MAX] = {
 	{mdoc_sp_pre, NULL}, /* sp */ 
 	{mdoc__x_pre, mdoc__x_post}, /* %U */ 
 	{NULL, NULL}, /* Ta */ 
-	{NULL, NULL}, /* TS */ 
-	{NULL, NULL}, /* TE */ 
 };
 
 static	const char * const lists[LIST_MAX] = {
@@ -420,6 +418,9 @@ print_mdoc_node(MDOC_ARGS)
 	case (MDOC_TEXT):
 		print_text(h, n->string);
 		return;
+	case (MDOC_TBL):
+		print_tbl(h, n->span);
+		break;
 	default:
 		if (mdocs[n->tok].pre && ENDBODY_NOT == n->end)
 			child = (*mdocs[n->tok].pre)(m, n, h);
@@ -447,6 +448,8 @@ print_mdoc_node(MDOC_ARGS)
 	switch (n->type) {
 	case (MDOC_ROOT):
 		mdoc_root_post(m, n, h);
+		break;
+	case (MDOC_TBL):
 		break;
 	default:
 		if (mdocs[n->tok].post && ENDBODY_NOT == n->end)
