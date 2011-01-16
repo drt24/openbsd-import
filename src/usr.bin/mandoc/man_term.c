@@ -855,10 +855,13 @@ print_man_node(DECL_ARGS)
 
 	switch (n->type) {
 	case(MAN_TEXT):
-		if (0 == *n->string) {
+		if ('\0' == *n->string) {
 			term_vspace(p);
 			break;
-		}
+		} 
+
+		if (' ' == *n->string && MAN_LINE & n->flags)
+			term_newln(p);
 
 		term_word(p, n->string);
 
@@ -874,6 +877,7 @@ print_man_node(DECL_ARGS)
 			p->rmargin = rm;
 			p->maxrmargin = rmax;
 		}
+
 		break;
 	case (MAN_TBL):
 		if (TBL_SPAN_FIRST & n->span->flags) 
