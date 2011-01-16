@@ -77,12 +77,12 @@ static	const struct man_valid man_valids[MAN_MAX] = {
 	{ pres_bline, posts_th }, /* TH */
 	{ pres_bline, posts_sec }, /* SH */
 	{ pres_bline, posts_sec }, /* SS */
-	{ pres_bline, posts_par }, /* TP */
+	{ pres_bline, NULL }, /* TP */
 	{ pres_bline, posts_par }, /* LP */
 	{ pres_bline, posts_par }, /* PP */
 	{ pres_bline, posts_par }, /* P */
-	{ pres_bline, posts_par }, /* IP */
-	{ pres_bline, posts_par }, /* HP */
+	{ pres_bline, NULL }, /* IP */
+	{ pres_bline, NULL }, /* HP */
 	{ NULL, NULL }, /* SM */
 	{ NULL, NULL }, /* SB */
 	{ NULL, NULL }, /* BI */
@@ -356,33 +356,22 @@ static int
 check_par(CHKARGS)
 {
 
-	if (MAN_BODY == n->type) 
-		switch (n->tok) {
-		case (MAN_IP):
-			/* FALLTHROUGH */
-		case (MAN_HP):
-			/* FALLTHROUGH */
-		case (MAN_TP):
-			/* Body-less lists are ok. */
-			break;
-		default:
-			if (0 == n->nchild)
-				man_nmsg(m, n, MANDOCERR_NOBODY);
-			break;
-		}
-	if (MAN_HEAD == n->type)
-		switch (n->tok) {
-		case (MAN_PP):
-			/* FALLTHROUGH */
-		case (MAN_P):
-			/* FALLTHROUGH */
-		case (MAN_LP):
-			if (n->nchild)
-				man_nmsg(m, n, MANDOCERR_ARGSLOST);
-			break;
-		default:
-			break;
-		}
+	switch (n->type) {
+	case (MAN_BLOCK):
+		if (0 == n->body->nchild)
+			man_node_delete(m, n);
+		break;
+	case (MAN_BODY):
+		if (0 == n->nchild)
+			man_nmsg(m, n, MANDOCERR_IGNPAR);
+		break;
+	case (MAN_HEAD):
+		if (n->nchild)
+			man_nmsg(m, n, MANDOCERR_ARGSLOST);
+		break;
+	default:
+		break;
+	}
 
 	return(1);
 }
@@ -486,7 +475,7 @@ post_fi(CHKARGS)
 {
 
 	if ( ! (MAN_LITERAL & m->flags))
-		man_nmsg(m, n, MANDOCERR_NOSCOPE);
+		man_nmsg(m, n, MANDOCERR_WNOSCOPE);
 
 	m->flags &= ~MAN_LITERAL;
 	return(1);
