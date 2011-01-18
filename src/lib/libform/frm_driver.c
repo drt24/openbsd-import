@@ -4347,7 +4347,9 @@ set_field_buffer(FIELD *field, int buffer, const char *value)
 						     * field->cols))))
 	    RETURN(E_SYSTEM_ERROR);
 
+#if !USE_WIDEC_SUPPORT
 	  len = vlen;
+#endif
 	}
     }
 
@@ -4366,6 +4368,7 @@ set_field_buffer(FIELD *field, int buffer, const char *value)
       delwin(field->working);
       field->working = newpad(field->drows, field->dcols);
     }
+  len = Buffer_Length(field);
   wclear(field->working);
   mvwaddstr(field->working, 0, 0, value);
 
