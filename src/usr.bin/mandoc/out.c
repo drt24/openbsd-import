@@ -481,7 +481,7 @@ tblcalc_literal(struct rofftbl *tbl, struct roffcol *col,
 	case (TBL_CELL_LONG):
 		/* FALLTHROUGH */
 	case (TBL_CELL_CENTRE):
-		bufsz = (*tbl->len)(2, tbl->arg);
+		bufsz = (*tbl->len)(1, tbl->arg);
 		break;
 	default:
 		bufsz = (*tbl->len)(1, tbl->arg);
