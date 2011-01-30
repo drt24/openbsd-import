@@ -52,6 +52,7 @@ enum	roffscale {
 
 enum	roffdeco {
 	DECO_NONE,
+	DECO_NUMBERED, /* numbered character */
 	DECO_SPECIAL, /* special character */
 	DECO_SSPECIAL, /* single-char special */
 	DECO_RESERVED, /* reserved word */
