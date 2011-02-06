@@ -1705,6 +1705,7 @@ static int
 termp_xx_pre(DECL_ARGS)
 {
 	const char	*pp;
+	int		 flags;
 
 	pp = NULL;
 	switch (n->tok) {
@@ -1730,9 +1731,14 @@ termp_xx_pre(DECL_ARGS)
 		break;
 	}
 
-	assert(pp);
 	term_word(p, pp);
-	return(1);
+	if (n->child) {
+		flags = p->flags;
+		p->flags |= TERMP_KEEP;
+		term_word(p, n->child->string);
+		p->flags = flags;
+	}
+	return(0);
 }
 
 

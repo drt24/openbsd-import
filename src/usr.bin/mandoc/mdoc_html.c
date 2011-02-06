@@ -800,6 +800,7 @@ mdoc_xx_pre(MDOC_ARGS)
 {
 	const char	*pp;
 	struct htmlpair	 tag;
+	int		 flags;
 
 	switch (n->tok) {
 	case (MDOC_Bsx):
@@ -826,8 +827,15 @@ mdoc_xx_pre(MDOC_ARGS)
 
 	PAIR_CLASS_INIT(&tag, "unix");
 	print_otag(h, TAG_SPAN, 1, &tag);
+
 	print_text(h, pp);
-	return(1);
+	if (n->child) {
+		flags = h->flags;
+		h->flags |= HTML_KEEP;
+		print_text(h, n->child->string);
+		h->flags = flags;
+	}
+	return(0);
 }
 
 
