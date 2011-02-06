@@ -308,22 +308,6 @@ print_mdoc_node(DECL_ARGS)
 
 	memset(&npair, 0, sizeof(struct termpair));
 	npair.ppair = pair;
-	
-	switch (n->type) {
-	case (MDOC_TEXT):
-		if (' ' == *n->string && MDOC_LINE & n->flags)
-			term_newln(p);
-		term_word(p, n->string);
-		break;
-	case (MDOC_TBL):
-		term_tbl(p, n->span);
-		break;
-	default:
-		if (termacts[n->tok].pre && ENDBODY_NOT == n->end)
-			chld = (*termacts[n->tok].pre)
-				(p, &npair, m, n);
-		break;
-	}
 
 	/*
 	 * Keeps only work until the end of a line.  If a keep was
@@ -354,6 +338,27 @@ print_mdoc_node(DECL_ARGS)
 	    ((n->prev   && MDOC_SYNPRETTY & n->prev->flags) ||
 	     (n->parent && MDOC_SYNPRETTY & n->parent->flags)))
 		p->flags &= ~(TERMP_KEEP | TERMP_PREKEEP);
+
+	/*
+	 * After the keep flags have been set up, we may now
+	 * produce output.  Note that some pre-handlers do so.
+	 */
+
+	switch (n->type) {
+	case (MDOC_TEXT):
+		if (' ' == *n->string && MDOC_LINE & n->flags)
+			term_newln(p);
+		term_word(p, n->string);
+		break;
+	case (MDOC_TBL):
+		term_tbl(p, n->span);
+		break;
+	default:
+		if (termacts[n->tok].pre && ENDBODY_NOT == n->end)
+			chld = (*termacts[n->tok].pre)
+				(p, &npair, m, n);
+		break;
+	}
 
 	if (chld && n->child)
 		print_mdoc_nodelist(p, &npair, m, n->child);
