@@ -231,7 +231,7 @@ struct	mdoc_meta {
 	char		 *msec; /* `Dt' section (1, 3p, etc.) */
 	char		 *vol; /* `Dt' volume (implied) */
 	char		 *arch; /* `Dt' arch (i386, etc.) */
-	time_t		  date; /* `Dd' normalised date */
+	char		 *date; /* `Dd' normalised date */
 	char		 *title; /* `Dt' title (FOO, etc.) */
 	char		 *os; /* `Os' system (OpenBSD, etc.) */
 	char		 *name; /* leading `Nm' name */

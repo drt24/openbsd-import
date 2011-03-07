@@ -314,8 +314,9 @@ mdoc_macro(MACRO_PROT_ARGS)
 			m->meta.vol = mandoc_strdup("LOCAL");
 		if (NULL == m->meta.os)
 			m->meta.os = mandoc_strdup("LOCAL");
-		if (0 == m->meta.date)
-			m->meta.date = time(NULL);
+		if (NULL == m->meta.date)
+			m->meta.date = mandoc_normdate(NULL,
+			    m->msg, m->data, line, ppos);
 		m->flags |= MDOC_PBODY;
 	}
 
