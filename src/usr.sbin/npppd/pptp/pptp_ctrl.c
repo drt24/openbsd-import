@@ -1,4 +1,4 @@
-/* $OpenBSD: pptp_ctrl.c,v 1.2 2010/07/01 03:38:17 yasuoka Exp $	*/
+/* $OpenBSD: pptp_ctrl.c,v 1.3 2010/07/02 21:20:57 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -274,8 +274,8 @@ pptp_ctrl_reset_timeout(pptp_ctrl *_this)
 
 	switch (_this->state) {
 	case PPTP_CTRL_STATE_DISPOSING:
-		tv.tv_sec = 0;	/* call back immidiatly */
-		tv.tv_usec = 0;
+		/* call back immediately */
+		timerclear(&tv);
 		break;
 	default:
 		tv.tv_sec = PPTP_CTRL_TIMEOUT_IVAL_SEC;
