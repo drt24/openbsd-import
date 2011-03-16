@@ -1,4 +1,4 @@
-/* $OpenBSD: l2tpd.c,v 1.4 2010/07/02 21:20:57 yasuoka Exp $ */
+/* $OpenBSD: l2tpd.c,v 1.5 2010/09/24 14:50:30 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -590,7 +590,7 @@ l2tpd_stop(l2tpd *_this)
 	if (l2tpd_is_stopped(_this))
 		return;
 	if (l2tpd_is_shutting_down(_this)) {
-		/* terminate immidiatly, when 2nd call */
+		/* terminate immediately, when 2nd call */
 		l2tpd_stop_immediatly(_this);
 		return;
 	}
