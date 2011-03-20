@@ -350,6 +350,9 @@ print_mdoc_node(DECL_ARGS)
 			term_newln(p);
 		term_word(p, n->string);
 		break;
+	case (MDOC_EQN):
+		term_word(p, n->eqn->data);
+		break;
 	case (MDOC_TBL):
 		term_tbl(p, n->span);
 		break;
@@ -369,6 +372,8 @@ print_mdoc_node(DECL_ARGS)
 	case (MDOC_TEXT):
 		break;
 	case (MDOC_TBL):
+		break;
+	case (MDOC_EQN):
 		break;
 	default:
 		if ( ! termacts[n->tok].post || MDOC_ENDED & n->flags)

@@ -334,6 +334,8 @@ mdoc_valid_pre(struct mdoc *mdoc, struct mdoc_node *n)
 		/* FALLTHROUGH */
 	case (MDOC_TBL):
 		/* FALLTHROUGH */
+	case (MDOC_EQN):
+		/* FALLTHROUGH */
 	case (MDOC_ROOT):
 		return(1);
 	default:
@@ -362,6 +364,8 @@ mdoc_valid_post(struct mdoc *mdoc)
 
 	switch (mdoc->last->type) {
 	case (MDOC_TEXT):
+		/* FALLTHROUGH */
+	case (MDOC_EQN):
 		/* FALLTHROUGH */
 	case (MDOC_TBL):
 		return(1);

@@ -892,6 +892,9 @@ print_man_node(DECL_ARGS)
 		if (MAN_EOS & n->flags)
 			p->flags |= TERMP_SENTENCE;
 		return;
+	case (MAN_EQN):
+		term_word(p, n->eqn->data);
+		return;
 	case (MAN_TBL):
 		/*
 		 * Tables are preceded by a newline.  Then process a

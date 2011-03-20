@@ -200,6 +200,9 @@ print_man_node(MAN_ARGS)
 				 n->next->line > n->line))
 			print_otag(h, TAG_BR, 0, NULL);
 		return;
+	case (MAN_EQN):
+		print_text(h, n->eqn->data);
+		return;
 	case (MAN_TBL):
 		/*
 		 * This will take care of initialising all of the table
