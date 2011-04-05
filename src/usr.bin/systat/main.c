@@ -327,6 +327,10 @@ keyboard_callback(int ch)
 	case 's':
 		command_set(&cm_delay, NULL);
 		break;
+	case ',':
+		separate_thousands = !separate_thousands;
+		gotsig_alarm = 1;
+		break;
 	case ':':
 		command_set(&cm_compat, NULL);
 		break;
