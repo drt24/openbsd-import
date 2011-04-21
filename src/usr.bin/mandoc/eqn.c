@@ -63,6 +63,7 @@ eqn_alloc(int pos, int line)
 	return(p);
 }
 
+/* ARGSUSED */
 void
 eqn_end(struct eqn_node *e)
 {
