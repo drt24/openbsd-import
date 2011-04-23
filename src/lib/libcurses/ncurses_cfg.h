@@ -1,4 +1,4 @@
-/* $OpenBSD: ncurses_cfg.h,v 1.24 2010/01/12 23:21:59 nicm Exp $ */
+/* $OpenBSD: ncurses_cfg.h,v 1.25 2010/09/06 17:26:17 nicm Exp $ */
 
 /* include/ncurses_cfg.h.  Generated automatically by configure.  */
 /****************************************************************************
@@ -171,12 +171,12 @@
 #define USE_LINKS 1
 #define USE_OPENPTY_HEADER <util.h>
 #define USE_ROOT_ENVIRON 1
+#define USE_SIGWINCH 1
 #define USE_WIDEC_SUPPORT 1
 #define USE_XTERM_PTY 1
 /* #define HAVE_LIBFORM 1 */
 /* #define HAVE_LIBMENU 1 */
 /* #define HAVE_LIBPANEL 1 */
-/* #define USE_SIGWINCH 1 */
 
 #include <ncurses_def.h>
 
