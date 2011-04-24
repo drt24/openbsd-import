@@ -21,7 +21,7 @@
 #include <string.h>
 
 #include "mandoc.h"
-#include "chars.h"
+#include "out.h"
 
 #define	PRINT_HI	 126
 #define	PRINT_LO	 32
@@ -37,7 +37,7 @@ struct	ln {
 #define CHARS_BOTH	 (CHARS_CHAR | CHARS_STRING)
 };
 
-#define	LINES_MAX	  351
+#define	LINES_MAX	  353
 
 #define CHAR(in, ch, code) \
 	{ NULL, (in), (ch), (code), CHARS_CHAR },

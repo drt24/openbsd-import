@@ -25,7 +25,6 @@
 #include <string.h>
 
 #include "mandoc.h"
-#include "chars.h"
 #include "out.h"
 #include "term.h"
 #include "main.h"
@@ -453,15 +452,9 @@ term_fontpop(struct termp *p)
 void
 term_word(struct termp *p, const char *word)
 {
-	const char	*sv, *seq;
+	const char	*seq;
 	size_t		 ssz;
 	enum roffdeco	 deco;
-
-	sv = word;
-
-	if (DELIM_CLOSE == mandoc_isdelim(word))
-		if ( ! (TERMP_IGNDELIM & p->flags))
-			p->flags |= TERMP_NOSPACE;
 
 	if ( ! (TERMP_NOSPACE & p->flags)) {
 		if ( ! (TERMP_KEEP & p->flags)) {
@@ -523,9 +516,6 @@ term_word(struct termp *p, const char *word)
 		if (DECO_NOSPACE == deco && '\0' == *word)
 			p->flags |= TERMP_NOSPACE;
 	}
-
-	if (DELIM_OPEN == mandoc_isdelim(sv))
-		p->flags |= TERMP_NOSPACE;
 }
 
 
