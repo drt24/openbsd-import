@@ -596,7 +596,8 @@ dword(struct mdoc *m, int line,
 
 	if (DELIM_OPEN == d)
 		m->last->flags |= MDOC_DELIMO;
-	else if (DELIM_CLOSE == d)
+	else if (DELIM_CLOSE == d && m->last->prev &&
+			m->last->prev->tok != MDOC_No)
 		m->last->flags |= MDOC_DELIMC;
 
 	return(1);
