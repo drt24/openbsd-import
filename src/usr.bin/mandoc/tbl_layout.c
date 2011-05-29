@@ -68,6 +68,23 @@ mods(struct tbl_node *tbl, struct tbl_cell *cp,
 	char		 buf[5];
 	int		 i;
 
+	/* Not all types accept modifiers. */
+
+	switch (cp->pos) {
+	case (TBL_CELL_DOWN):
+		/* FALLTHROUGH */
+	case (TBL_CELL_HORIZ):
+		/* FALLTHROUGH */
+	case (TBL_CELL_DHORIZ):
+		/* FALLTHROUGH */
+	case (TBL_CELL_VERT):
+		/* FALLTHROUGH */
+	case (TBL_CELL_DVERT):
+		return(1);
+	default:
+		break;
+	}
+
 mod:
 	/* 
 	 * XXX: since, at least for now, modifiers are non-conflicting
@@ -423,19 +440,19 @@ cell_alloc(struct tbl_node *tbl, struct tbl_row *rp, enum tbl_cellt pos)
 }
 
 static void
-head_adjust(const struct tbl_cell *cell, struct tbl_head *head)
+head_adjust(const struct tbl_cell *cellp, struct tbl_head *head)
 {
-	if (TBL_CELL_VERT != cell->pos &&
-			TBL_CELL_DVERT != cell->pos) {
+	if (TBL_CELL_VERT != cellp->pos &&
+			TBL_CELL_DVERT != cellp->pos) {
 		head->pos = TBL_HEAD_DATA;
 		return;
 	}
 
-	if (TBL_CELL_VERT == cell->pos)
+	if (TBL_CELL_VERT == cellp->pos)
 		if (TBL_HEAD_DVERT != head->pos)
 			head->pos = TBL_HEAD_VERT;
 
-	if (TBL_CELL_DVERT == cell->pos)
+	if (TBL_CELL_DVERT == cellp->pos)
 		head->pos = TBL_HEAD_DVERT;
 }
 

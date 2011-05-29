@@ -152,14 +152,7 @@ terminal_man(void *arg, const struct man *man)
 	p->tabwidth = term_len(p, 5);
 
 	if (NULL == p->symtab)
-		switch (p->enc) {
-		case (TERMENC_ASCII):
-			p->symtab = chars_init(CHARS_ASCII);
-			break;
-		default:
-			abort();
-			/* NOTREACHED */
-		}
+		p->symtab = mchars_alloc();
 
 	n = man_node(man);
 	m = man_meta(man);

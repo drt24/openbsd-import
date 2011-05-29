@@ -260,14 +260,7 @@ terminal_mdoc(void *arg, const struct mdoc *mdoc)
 	p->tabwidth = term_len(p, 5);
 
 	if (NULL == p->symtab)
-		switch (p->enc) {
-		case (TERMENC_ASCII):
-			p->symtab = chars_init(CHARS_ASCII);
-			break;
-		default:
-			abort();
-			/* NOTREACHED */
-		}
+		p->symtab = mchars_alloc();
 
 	n = mdoc_node(mdoc);
 	m = mdoc_meta(mdoc);

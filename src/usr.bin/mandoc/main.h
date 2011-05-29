@@ -1,6 +1,6 @@
 /*	$Id$ */
 /*
- * Copyright (c) 2009, 2010 Kristaps Dzonsons <kristaps@bsd.lv>
+ * Copyright (c) 2009, 2010, 2011 Kristaps Dzonsons <kristaps@bsd.lv>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -41,6 +41,8 @@ void		  html_free(void *);
 void		  tree_mdoc(void *, const struct mdoc *);
 void		  tree_man(void *, const struct man *);
 
+void		 *locale_alloc(char *);
+void		 *utf8_alloc(char *);
 void		 *ascii_alloc(char *);
 void		  ascii_free(void *);
 

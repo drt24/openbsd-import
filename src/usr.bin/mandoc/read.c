@@ -134,7 +134,7 @@ static	const char * const	mandocerrs[MANDOCERR_MAX] = {
 	"tab in non-literal context",
 	"end of line whitespace",
 	"bad comment style",
-	"unknown escape sequence",
+	"bad escape sequence",
 	"unterminated quoted string",
 	
 	"generic error",
@@ -437,7 +437,7 @@ rerun:
 
 		/*
 		 * If input parsers have not been allocated, do so now.
-		 * We keep these instanced betwen parsers, but set them
+		 * We keep these instanced between parsers, but set them
 		 * locally per parse routine since we can use different
 		 * parsers with each one.
 		 */
