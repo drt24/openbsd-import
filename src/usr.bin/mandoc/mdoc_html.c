@@ -606,6 +606,7 @@ mdoc_sh_pre(MDOC_ARGS)
 		return(1);
 
 	bufinit(h);
+	bufcat(h, "x");
 	for (n = n->child; n; n = n->next) {
 		bufcat_id(h, n->string);
 		if (n->next)
@@ -632,6 +633,7 @@ mdoc_ss_pre(MDOC_ARGS)
 		return(1);
 
 	bufinit(h);
+	bufcat(h, "x");
 	for (n = n->child; n; n = n->next) {
 		bufcat_id(h, n->string);
 		if (n->next)
@@ -1629,8 +1631,9 @@ mdoc_sp_pre(MDOC_ARGS)
 	SCALE_VS_INIT(&su, 1);
 
 	if (MDOC_sp == n->tok) {
-		if (n->child)
-			a2roffsu(n->child->string, &su, SCALE_VS);
+		if (NULL != (n = n->child))
+			if ( ! a2roffsu(n->string, &su, SCALE_VS))
+				SCALE_VS_INIT(&su, atoi(n->string));
 	} else
 		su.scale = 0;
 
