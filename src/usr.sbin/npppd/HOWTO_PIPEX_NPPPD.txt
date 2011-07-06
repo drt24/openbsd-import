@@ -97,10 +97,18 @@ interface.tun0.ip4addr:                 10.0.0.1
 pool.dyna_pool:                         10.0.0.0/25
 pool.pool:                              10.0.0.128/25
 
-# Authentication
+# Local file authentication
 auth.local.realm_list:                  local
 auth.local.realm.acctlist:              /etc/npppd/npppd-users.csv
 realm.local.concentrate:                tun0
+
+# RADIUS authentication / accounting
+#auth.radius.realm_list:                radius
+#auth.radius.realm.server.address:	127.0.0.1:1812
+#auth.radius.realm.server.secret:	hogehoge
+#auth.radius.realm.acct_server.address:	127.0.0.1:1813
+#auth.radius.realm.acct_server.secret:	hogehoge
+#realm.radius.concentrate:		tun0
 
 lcp.mru:                                1400
 auth.method:                            mschapv2 chap
