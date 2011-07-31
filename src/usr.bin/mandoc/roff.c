@@ -1344,6 +1344,12 @@ roff_setstr(struct roff *r, const char *name, const char *string,
 	char		 *c;
 	size_t		  oldch, newch;
 
+	/* XXX workaround for the Perl preamble until we get .tr */
+	if ( ! strcmp(name, "--")) {
+		string = "--";
+		multiline = 0;
+	}
+
 	/* Search for an existing string with the same name. */
 	n = r->first_string;
 	while (n && strcmp(name, n->name))
