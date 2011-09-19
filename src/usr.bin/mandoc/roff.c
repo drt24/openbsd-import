@@ -552,7 +552,6 @@ again:
 static enum rofferr
 roff_parsetext(char *p)
 {
-	char		 l, r;
 	size_t		 sz;
 	const char	*start;
 	enum mandoc_esc	 esc;
@@ -579,14 +578,8 @@ roff_parsetext(char *p)
 			continue;
 		}
 
-		l = *(p - 1);
-		r = *(p + 1);
-		if ('\\' != l &&
-				'\t' != r && '\t' != l &&
-				' ' != r && ' ' != l &&
-				'-' != r && '-' != l &&
-				! isdigit((unsigned char)l) &&
-				! isdigit((unsigned char)r))
+		if (isalpha((unsigned char)p[-1]) &&
+		    isalpha((unsigned char)p[1]))
 			*p = ASCII_HYPH;
 		p++;
 	}
