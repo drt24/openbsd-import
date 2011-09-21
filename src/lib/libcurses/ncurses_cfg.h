@@ -1,4 +1,4 @@
-/* $OpenBSD: ncurses_cfg.h,v 1.25 2010/09/06 17:26:17 nicm Exp $ */
+/* $OpenBSD: ncurses_cfg.h,v 1.26 2011/04/23 22:08:15 nicm Exp $ */
 
 /* include/ncurses_cfg.h.  Generated automatically by configure.  */
 /****************************************************************************
@@ -160,7 +160,7 @@
 #define STDC_HEADERS 1
 #define SYSTEM_NAME "openbsd"
 #define TERMINFO "/usr/share/terminfo"
-#define TERMINFO_DIRS "/usr/share/terminfo"
+#define TERMINFO_DIRS "/usr/share/terminfo:/usr/local/share/terminfo"
 #define TIME_WITH_SYS_TIME 1
 #define TYPEOF_CHTYPE long
 #define USE_ASSUMED_COLOR 1
