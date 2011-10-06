@@ -252,7 +252,7 @@ static	const pmdoc_nf	  mdocs[MDOC_MAX] = {
 static	const char	 *progname;
 
 int
-main(int argc, char *argv[])
+mandocdb(int argc, char *argv[])
 {
 	struct mparse	*mp; /* parse sequence */
 	enum op		 op; /* current operation */
