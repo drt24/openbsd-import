@@ -25,19 +25,23 @@ on server
 	% sudo cp npppd.conf /etc/npppd/
 	% sudo cp npppd-users.csv /etc/npppd/
 
-  5. create user '_npppd'
-
-	% sudo groupadd _npppd
-	% sudo useradd -d /var/empty -s /sbin/nologin -g _npppd _npppd
-
-  6. enable PIPEX and GRE by sysctl
+  5. enable PIPEX and GRE by sysctl
 
 	% sudo sysctl net.inet.gre.allow=1  (for PPTP)
 	% sudo sysctl net.pipex.enable=1    (for PIPEX)
 
-  7. run npppd
+  6. run npppd
 
 	% sudo /usr/sbin/npppd -d
+
+  NOTE:
+
+  * Previous version required to create `_npppd' user and group, but
+    now it uses '_ppp' instead.  Delete `_npppd' if you created.
+
+	% sudo userdel _npppd
+	% sudo groupdel _npppd
+
 
 on client
 
