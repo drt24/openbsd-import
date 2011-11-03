@@ -185,7 +185,7 @@ static	const struct htmlmdoc mdocs[MDOC_MAX] = {
 	{NULL, NULL}, /* Ec */ /* FIXME: no space */
 	{NULL, NULL}, /* Ef */
 	{mdoc_em_pre, NULL}, /* Em */ 
-	{NULL, NULL}, /* Eo */
+	{mdoc_quote_pre, mdoc_quote_post}, /* Eo */
 	{mdoc_xx_pre, NULL}, /* Fx */
 	{mdoc_ms_pre, NULL}, /* Ms */
 	{mdoc_igndelim_pre, NULL}, /* No */
@@ -2181,6 +2181,8 @@ mdoc_quote_pre(MDOC_ARGS)
 		PAIR_CLASS_INIT(&tag, "opt");
 		print_otag(h, TAG_SPAN, 1, &tag);
 		break;
+	case (MDOC_Eo):
+		break;
 	case (MDOC_Do):
 		/* FALLTHROUGH */
 	case (MDOC_Dq):
@@ -2245,6 +2247,8 @@ mdoc_quote_post(MDOC_ARGS)
 		/* FALLTHROUGH */
 	case (MDOC_Bq):
 		print_text(h, "\\(rB");
+		break;
+	case (MDOC_Eo):
 		break;
 	case (MDOC_Qo):
 		/* FALLTHROUGH */
