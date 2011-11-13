@@ -1159,10 +1159,9 @@ pman_node(MAN_ARGS)
 		}
 	}
 
-	if (pman_node(hash, buf, dbuf, n->child))
-		return(1);
-	if (pman_node(hash, buf, dbuf, n->next))
-		return(1);
+	for (n = n->child; n; n = n->next)
+		if (pman_node(hash, buf, dbuf, n))
+			return(1);
 
 	return(0);
 }
@@ -1267,6 +1266,7 @@ ofile_dirbuild(const char *dir, int verb, struct of **of)
 		}
 	}
 
+	closedir(d);
 	return(1);
 }
 
