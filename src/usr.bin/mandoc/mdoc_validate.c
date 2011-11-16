@@ -1814,6 +1814,7 @@ static int
 post_sh_head(POST_ARGS)
 {
 	char		 buf[BUFSIZ];
+	struct mdoc_node *n;
 	enum mdoc_sec	 sec;
 	int		 c;
 
@@ -1847,6 +1848,10 @@ post_sh_head(POST_ARGS)
 	/* Mark our last section. */
 
 	mdoc->lastsec = sec;
+	mdoc->last->parent->sec = sec;
+	mdoc->last->sec = sec;
+	for (n = mdoc->last->child; n; n = n->next)
+		n->sec = sec;
 
 	/* We don't care about custom sections after this. */
 
