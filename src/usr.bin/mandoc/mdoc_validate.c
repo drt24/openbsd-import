@@ -1690,6 +1690,14 @@ post_rs(POST_ARGS)
 	}
 
 	/*
+	 * Nothing to sort if only invalid nodes were found
+	 * inside the `Rs' body.
+	 */
+
+	if (NULL == mdoc->last->child)
+		return(1);
+
+	/*
 	 * The full `Rs' block needs special handling to order the
 	 * sub-elements according to `rsord'.  Pick through each element
 	 * and correctly order it.  This is a insertion sort.
