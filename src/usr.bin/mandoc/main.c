@@ -86,7 +86,8 @@ main(int argc, char *argv[])
 	else
 		++progname;
 
-	if (0 == strncmp(progname, "apropos", 7))
+	if (0 == strncmp(progname, "apropos", 7) ||
+	    0 == strncmp(progname, "whatis", 6))
 		return(apropos(argc, argv));
 	if (0 == strncmp(progname, "mandocdb", 8))
 		return(mandocdb(argc, argv));
