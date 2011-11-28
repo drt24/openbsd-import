@@ -27,6 +27,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #include <db.h>
 
 #include "man.h"
@@ -374,10 +375,12 @@ mandocdb(int argc, char *argv[])
 		index_prune(of, db, fbuf, idx, ibuf,
 				&maxrec, &recs, &recsz);
 
-		if (OP_UPDATE == op)
+		if (OP_UPDATE == op) {
+			chdir(dir);
 			index_merge(of, mp, &dbuf, &buf, hash,
 					db, fbuf, idx, ibuf,
 					maxrec, recs, reccur);
+		}
 
 		goto out;
 	}
@@ -446,6 +449,7 @@ mandocdb(int argc, char *argv[])
 
 		of = of->first;
 
+		chdir(dirs.paths[i]);
 		index_merge(of, mp, &dbuf, &buf, hash, db, fbuf,
 				idx, ibuf, maxrec, recs, reccur);
 	}
