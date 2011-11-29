@@ -2,9 +2,9 @@
 
 .include <bsd.obj.mk>
 
-PROG=prog1
+PROG=prog2
 
-SRCS=prog1.C
+SRCS=prog2.C
 
 AA_DIR=${.CURDIR}/../libaa
 AA_OBJDIR!=    if [ -d $(AA_DIR)/${__objdir} ]; then \
@@ -52,6 +52,6 @@ NOMAN=
 CC=c++
 
 run-regress-${PROG}: ${PROG}
-	[ "`./${PROG}`" = "DBECAPpacebd" ]
+	[ "`./${PROG}`" = "DBECAacebd" ]
 
 .include <bsd.regress.mk>
