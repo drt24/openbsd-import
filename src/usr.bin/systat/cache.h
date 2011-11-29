@@ -25,7 +25,8 @@
 struct sc_ent {
         RB_ENTRY(sc_ent)    tlink;
 	TAILQ_ENTRY(sc_ent) qlink;
-	u_int32_t	    id[2];
+	u_int64_t	    id;
+	u_int32_t	    creatorid;
 	double		    peak;
 	double		    rate;
 	time_t		    t;
