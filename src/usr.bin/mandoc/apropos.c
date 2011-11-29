@@ -138,8 +138,8 @@ usage(void)
 {
 
 	fprintf(stderr, "usage: %s "
-			"[-M path] "
-			"[-m path] "
+			"[-M manpath] "
+			"[-m manpath] "
 			"[-S arch] "
 			"[-s section] "
 			"expression...\n",

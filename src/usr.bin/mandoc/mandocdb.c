@@ -375,6 +375,12 @@ mandocdb(int argc, char *argv[])
 		index_prune(of, db, fbuf, idx, ibuf,
 				&maxrec, &recs, &recsz);
 
+		/*
+		 * Go to the root of the respective manual tree
+		 * such that .so links work.  In case of failure,
+		 * just prod on, even though .so links won't work.
+		 */
+
 		if (OP_UPDATE == op) {
 			chdir(dir);
 			index_merge(of, mp, &dbuf, &buf, hash,
@@ -448,6 +454,12 @@ mandocdb(int argc, char *argv[])
 			continue;
 
 		of = of->first;
+
+		/*
+		 * Go to the root of the respective manual tree
+		 * such that .so links work.  In case of failure,
+		 * just prod on, even though .so links won't work.
+		 */
 
 		chdir(dirs.paths[i]);
 		index_merge(of, mp, &dbuf, &buf, hash, db, fbuf,
