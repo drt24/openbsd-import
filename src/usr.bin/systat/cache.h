@@ -23,7 +23,7 @@
 #include <net/pfvar.h>
 
 struct sc_ent {
-        RB_ENTRY(sc_ent)    tlink;
+	RB_ENTRY(sc_ent)    tlink;
 	TAILQ_ENTRY(sc_ent) qlink;
 	u_int64_t	    id;
 	u_int32_t	    creatorid;
@@ -39,6 +39,5 @@ struct sc_ent *cache_state(struct pfsync_state *);
 extern int cache_max, cache_size;
 
 #define COUNTER(c) ((((u_int64_t) ntohl(c[0]))<<32) + ntohl(c[1]))
-
 
 #endif
