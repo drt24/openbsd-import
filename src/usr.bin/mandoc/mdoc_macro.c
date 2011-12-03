@@ -1565,19 +1565,6 @@ in_line_argn(MACRO_PROT_ARGS)
 			flushed = 1;
 		}
 
-		/* 
-		 * XXX: this is a hack to work around groff's ugliness
-		 * as regards `Xr' and extraneous arguments.  It should
-		 * ideally be deprecated behaviour, but because this is
-		 * code is no here, it's unlikely to be removed.
-		 */
-		if (MDOC_Xr == tok && j == maxargs) {
-			if ( ! mdoc_elem_alloc(m, line, la, MDOC_Ns, NULL))
-				return(0);
-			if ( ! rew_elem(m, MDOC_Ns))
-				return(0);
-		}
-
 		if ( ! dword(m, line, la, p, DELIM_MAX))
 			return(0);
 		j++;
