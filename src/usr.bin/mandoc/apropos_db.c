@@ -24,12 +24,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-
-#ifdef __linux__
-# include <db_185.h>
-#else
-# include <db.h>
-#endif
+#include <db.h>
 
 #include "mandocdb.h"
 #include "apropos_db.h"
