@@ -116,7 +116,6 @@ man_unscope(struct man *m, const struct man_node *to,
 
 	assert(to);
 
-	assert(MAN_ROOT != m->last->type);
 	m->next = MAN_NEXT_SIBLING;
 
 	/* LINTED */
