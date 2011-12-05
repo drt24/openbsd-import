@@ -95,6 +95,10 @@ ascii_init(enum termenc enc, char *outopts)
 			p->defrmargin = (size_t)atoi(v);
 			break;
 		case (2):
+			/*
+			 * Temporary, undocumented mode
+			 * to imitate mdoc(7) output style.
+			 */
 			p->mdocstyle = 1;
 			p->defindent = 5;
 			break;
