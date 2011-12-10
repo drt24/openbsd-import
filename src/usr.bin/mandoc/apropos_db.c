@@ -530,13 +530,16 @@ single_search(struct rectree *tree, const struct opts *opts,
 
 		if (opts->cat && strcasecmp(opts->cat, r.res.cat))
 			continue;
-		if (opts->arch && strcasecmp(opts->arch, r.res.arch))
-			continue;
+
+		if (opts->arch && *r.res.arch)
+			if (strcasecmp(opts->arch, r.res.arch))
+				continue;
 
 		tree->node = rs = mandoc_realloc
 			(rs, (tree->len + 1) * sizeof(struct rec));
 
 		memcpy(&rs[tree->len], &r, sizeof(struct rec));
+		memset(&r, 0, sizeof(struct rec));
 		rs[tree->len].matches =
 			mandoc_calloc(terms, sizeof(int));
 
@@ -552,7 +555,6 @@ single_search(struct rectree *tree, const struct opts *opts,
 		} else
 			root = tree->len;
 
-		memset(&r, 0, sizeof(struct rec));
 		tree->len++;
 	}
 
@@ -560,6 +562,7 @@ single_search(struct rectree *tree, const struct opts *opts,
 	(*idx->close)(idx);
 
 	free(buf);
+	recfree(&r);
 	return(1 == ch);
 }
 
