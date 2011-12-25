@@ -89,7 +89,8 @@ main(int argc, char *argv[])
 	if (0 == strncmp(progname, "apropos", 7) ||
 	    0 == strncmp(progname, "whatis", 6))
 		return(apropos(argc, argv));
-	if (0 == strncmp(progname, "mandocdb", 8))
+	if (0 == strncmp(progname, "mandocdb", 8) ||
+	    0 == strncmp(progname, "makewhatis", 10))
 		return(mandocdb(argc, argv));
 
 	memset(&curp, 0, sizeof(struct curparse));
