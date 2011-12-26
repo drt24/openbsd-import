@@ -144,8 +144,8 @@ usage(void)
 
 	fprintf(stderr, "usage: %s "
 			"[-C file] "
-			"[-M manpath] "
-			"[-m manpath] "
+			"[-M path] "
+			"[-m path] "
 			"[-S arch] "
 			"[-s section] "
 			"expression ...\n",
