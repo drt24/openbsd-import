@@ -1,4 +1,4 @@
-/* $OpenBSD: ppp.c,v 1.9 2011/10/15 03:24:11 yasuoka Exp $ */
+/* $OpenBSD: ppp.c,v 1.10 2012/01/18 02:53:56 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -77,7 +77,7 @@
 
 #include "debugutil.h"
 
-static u_int32_t ppp_seq = 0;
+static u_int ppp_seq = 0;
 
 static void  ppp_stop0 __P((npppd_ppp *));
 static int   ppp_recv_packet (npppd_ppp *, unsigned char *, int, int);

@@ -1,4 +1,4 @@
-/* $OpenBSD: pptp_call.c,v 1.3 2010/07/02 21:20:57 yasuoka Exp $	*/
+/* $OpenBSD: pptp_call.c,v 1.4 2011/10/15 03:24:11 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -750,8 +750,9 @@ pptp_call_bind_ppp(pptp_call *_this)
 
 	strlcpy(ppp->phy_label, _this->ctrl->phy_label, sizeof(ppp->phy_label));
 
-	memcpy(&ppp->phy_info.peer_in, &_this->ctrl->peer,
-	    _this->ctrl->peer.ss_len);
+	PPTP_CALL_ASSERT(sizeof(ppp->phy_info) >= _this->ctrl->peer.ss_len);
+	memcpy(&ppp->phy_info, &_this->ctrl->peer,
+	    MIN(sizeof(ppp->phy_info), _this->ctrl->peer.ss_len));
 
 	if (ppp_init(npppd_get_npppd(), ppp) != 0)
 		goto fail;
