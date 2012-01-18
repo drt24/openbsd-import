@@ -1,4 +1,4 @@
-/* $OpenBSD: l2tp_ctrl.c,v 1.6 2011/01/20 23:12:33 jasper Exp $	*/
+/* $OpenBSD: l2tp_ctrl.c,v 1.7 2011/10/15 03:24:11 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -93,7 +93,7 @@ static inline const char  *l2tp_ctrl_state_string (l2tp_ctrl *);
 #endif
 
 /* Sequence # of l2tp_ctrl ID */
-static unsigned l2tp_ctrl_id_seq = 0;
+static u_int l2tp_ctrl_id_seq = 0;
 
 #define SEQ_LT(a,b)	((int16_t)((a) - (b)) <  0)
 #define SEQ_GT(a,b)	((int16_t)((a) - (b)) >  0)
