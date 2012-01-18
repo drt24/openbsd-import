@@ -42,6 +42,13 @@ on server
 	% sudo userdel _npppd
 	% sudo groupdel _npppd
 
+  * Previous version has `npppdctl', but it was replaced by `npppctl'.
+    So please remove `npppdctl' related files.
+
+	% sudo rm /usr/sbin/npppdctl
+	% sudo rm /usr/share/man/cat8/npppdctl.0
+	% sudo rm /usr/share/man/man8/npppdctl.8
+
 
 on client
 
