@@ -1,4 +1,4 @@
-/* $OpenBSD: ppp.c,v 1.10 2012/01/18 02:53:56 yasuoka Exp $ */
+/* $OpenBSD: ppp.c,v 1.11 2012/01/18 03:13:04 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -162,7 +162,8 @@ ppp_init(npppd *pppd, npppd_ppp *_this)
 	    ppp_config_str_equal(_this, "log.in.pktdump",  "true", 0);
 	_this->log_dump_out =
 	    ppp_config_str_equal(_this, "log.out.pktdump",  "true", 0);
-
+	_this->ingress_filter = ppp_config_str_equal(_this, "ingress_filter",
+	    "true", 0);
 
 #ifdef	USE_NPPPD_MPPE
 	mppe_init(&_this->mppe, _this);
