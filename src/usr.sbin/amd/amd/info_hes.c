@@ -308,8 +308,8 @@ hs_res_send(char *buf, int buflen, char *answer, int anslen)
 				}
 			}
 			if (status == -2) {
-				/* There was a permanent error transfering this
-				   zone.  Give up. */
+				/* There was a permanent error transferring
+				 * this zone.  Give up. */
 				if (s != -1) {
 					(void) close(s);
 					s = -1;
