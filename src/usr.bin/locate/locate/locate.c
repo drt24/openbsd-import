@@ -1,5 +1,5 @@
 /*
- *	$OpenBSD: locate.c,v 1.23 2009/06/04 07:19:45 espie Exp $
+ *	$OpenBSD: locate.c,v 1.24 2009/10/27 23:59:39 deraadt Exp $
  *
  * Copyright (c) 1995 Wolfram Schneider <wosch@FreeBSD.org>. Berlin.
  * Copyright (c) 1989, 1993
@@ -281,6 +281,8 @@ search_mmap(char *db, char **s)
 	    fstat(fd, &sb) == -1)
 		err(1, "`%s'", path_fcodes);
 	len = sb.st_size;
+	if (len < (2*NBG))
+		errx(1, "database too small: %s", db);
 
 	if ((p = mmap((caddr_t)0, (size_t)len, PROT_READ, MAP_SHARED,
 	    fd, (off_t)0)) == MAP_FAILED)
