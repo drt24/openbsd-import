@@ -9,6 +9,17 @@ CFLAGS=		-O0 $(PIPE) $(DEBUG)
 .endif
 
 CFLAGS+=	-I${.CURDIR} -I${.CURDIR}/../../sbin/iked
+CDIAGFLAGS=	-Wall
+CDIAGFLAGS+=	-Werror
+CDIAGFLAGS+=	-Wpointer-arith
+CDIAGFLAGS+=	-Wuninitialized
+CDIAGFLAGS+=	-Wstrict-prototypes
+CDIAGFLAGS+=	-Wmissing-prototypes
+CDIAGFLAGS+=	-Wunused
+CDIAGFLAGS+=	-Wsign-compare
+CDIAGFLAGS+=	-Wbounded
+CDIAGFLAGS+=	-Wshadow
+
 CLEANFILES=	y.tab.h
 
 # ElectricFence
