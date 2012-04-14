@@ -25,10 +25,6 @@ CLEANFILES=	y.tab.h
 # ElectricFence
 #LDADD+=	-L/usr/local/lib -lefence
 
-# Boehms GC
-#LDADD+=	-L/usr/local/lib -lgc
-#CFLAGS+=	-DGC_DEBUG
-
 CFLAGS+=	-Wall -Wstrict-prototypes -Wmissing-prototypes \
 		-Wmissing-declarations
 LDADD+=		-lcrypto -lutil
