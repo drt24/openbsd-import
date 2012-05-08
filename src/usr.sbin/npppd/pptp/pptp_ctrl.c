@@ -1,4 +1,4 @@
-/* $OpenBSD: pptp_ctrl.c,v 1.3 2010/07/02 21:20:57 yasuoka Exp $	*/
+/*	$OpenBSD: pptp_ctrl.c,v 1.4 2011/03/16 09:48:45 okan Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -1148,7 +1148,7 @@ pptp_ctrl_log(pptp_ctrl *_this, int prio, const char *fmt, ...)
 	va_list ap;
 
 	va_start(ap, fmt);
-#ifdef	PPTPD_MULITPLE
+#ifdef	PPTPD_MULTIPLE
 	snprintf(logbuf, sizeof(logbuf), "pptpd id=%u ctrl=%u %s",
 	    _this->pptpd->id, _this->id, fmt);
 #else

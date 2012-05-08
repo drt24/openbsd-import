@@ -1,4 +1,4 @@
-/* $OpenBSD: l2tp_local.h,v 1.3 2010/07/02 21:20:57 yasuoka Exp $	*/
+/*	$OpenBSD: l2tp_local.h,v 1.4 2010/09/24 14:50:30 yasuoka Exp $	*/
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
  * All rights reserved.

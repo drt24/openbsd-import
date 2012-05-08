@@ -1,4 +1,4 @@
-/* $OpenBSD: pppoed.c,v 1.7 2011/02/28 02:31:55 dlg Exp $	*/
+/*	$OpenBSD: pppoed.c,v 1.8 2012/01/18 02:53:56 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -1131,7 +1131,7 @@ pppoed_log(pppoed *_this, int prio, const char *fmt, ...)
 
 	PPPOED_ASSERT(_this != NULL);
 	va_start(ap, fmt);
-#ifdef	PPPOED_MULITPLE
+#ifdef	PPPOED_MULTIPLE
 	snprintf(logbuf, sizeof(logbuf), "pppoed id=%u %s", _this->id, fmt);
 #else
 	snprintf(logbuf, sizeof(logbuf), "pppoed %s", fmt);

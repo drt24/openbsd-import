@@ -1,4 +1,4 @@
-/* $OpenBSD: ppp.c,v 1.11 2012/01/18 03:13:04 yasuoka Exp $ */
+/*	$OpenBSD: ppp.c,v 1.12 2012/01/23 03:36:22 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.

@@ -1,4 +1,4 @@
-/* $OpenBSD: npppd_ctl.c,v 1.7 2010/09/24 14:50:30 yasuoka Exp $ */
+/*	$OpenBSD: npppd_ctl.c,v 1.8 2012/01/18 03:13:04 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -420,7 +420,7 @@ cmd_disconnect_fail:
 		npppd_ctl_log(_this, LOG_ERR,
 		    "Received unknown command %04x", command);
 	}
-fail:
+
 	return;
 }
 

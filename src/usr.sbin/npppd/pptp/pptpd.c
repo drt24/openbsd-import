@@ -1,4 +1,4 @@
-/* $OpenBSD: pptpd.c,v 1.8 2011/01/20 23:12:33 jasper Exp $	*/
+/*	$OpenBSD: pptpd.c,v 1.9 2012/01/18 02:53:56 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -1083,7 +1083,7 @@ pptpd_log(pptpd *_this, int prio, const char *fmt, ...)
 
 	PPTPD_ASSERT(_this != NULL);
 	va_start(ap, fmt);
-#ifdef	PPTPD_MULITPLE
+#ifdef	PPTPD_MULTIPLE
 	snprintf(logbuf, sizeof(logbuf), "pptpd id=%u %s", _this->id, fmt);
 #else
 	snprintf(logbuf, sizeof(logbuf), "pptpd %s", fmt);

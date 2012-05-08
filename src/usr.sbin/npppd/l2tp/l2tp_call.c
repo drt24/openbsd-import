@@ -1,4 +1,4 @@
-/* $OpenBSD: l2tp_call.c,v 1.9 2012/01/18 03:13:04 yasuoka Exp $	*/
+/*	$OpenBSD: l2tp_call.c,v 1.10 2012/01/23 03:41:21 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -838,7 +838,7 @@ l2tp_call_log(l2tp_call *_this, int prio, const char *fmt, ...)
 	va_list ap;
 
 	va_start(ap, fmt);
-#ifdef	L2TPD_MULITPLE
+#ifdef	L2TPD_MULTIPLE
 	snprintf(logbuf, sizeof(logbuf), "l2tpd id=%u ctrl=%u call=%u %s",
 	    _this->ctrl->l2tpd->id, _this->ctrl->id, _this->id, fmt);
 #else

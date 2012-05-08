@@ -1,4 +1,4 @@
-/* $OpenBSD: npppd_config.c,v 1.6 2011/04/02 12:04:44 dlg Exp $ */
+/*	$OpenBSD: npppd_config.c,v 1.7 2012/01/18 03:13:04 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.

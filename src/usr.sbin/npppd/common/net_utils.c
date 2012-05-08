@@ -87,8 +87,9 @@ get_ifname_by_sockaddr(struct sockaddr *sa, char *ifname)
 
 	return ifname0;
 }
+
 /**
- * Cconvert argument like "192.168.160.1:1723/tcp" or "[::1]:1723/tcp" to
+ * Convert argument like "192.168.160.1:1723/tcp" or "[::1]:1723/tcp" to
  * match getaddrinfo(3)'s specification and pass them to getaddrinfo(3).
  */
 int
