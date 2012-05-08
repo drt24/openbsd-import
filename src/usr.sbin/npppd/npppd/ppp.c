@@ -1,4 +1,4 @@
-/*	$OpenBSD: ppp.c,v 1.12 2012/01/23 03:36:22 yasuoka Exp $ */
+/*	$OpenBSD: ppp.c,v 1.13 2012/05/08 13:15:12 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -261,7 +261,7 @@ ppp_dialin_proxy_prepare(npppd_ppp *_this, dialin_proxy_info *dpi)
 
 	if (lcp_dialin_proxy(&_this->lcp, dpi, renego, renego_force) != 0) {
 		ppp_log(_this, LOG_ERR,
-		    "Failed to proxy-dialin, proxied lcp is broken.");
+		    "Failed to dialin-proxy, proxied lcp is broken.");
 		return 1;
 	}
 

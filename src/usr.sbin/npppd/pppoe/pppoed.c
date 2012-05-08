@@ -1,4 +1,4 @@
-/*	$OpenBSD: pppoed.c,v 1.8 2012/01/18 02:53:56 yasuoka Exp $	*/
+/*	$OpenBSD: pppoed.c,v 1.9 2012/05/08 13:15:12 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -66,7 +66,6 @@
 #include "hash.h"
 #include "properties.h"
 #include "config_helper.h"
-#include "rtev.h"
 #include "privsep.h"
 
 #include "pppoe.h"

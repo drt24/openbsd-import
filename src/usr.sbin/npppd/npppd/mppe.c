@@ -1,4 +1,4 @@
-/*	$OpenBSD: mppe.c,v 1.5 2011/10/15 03:24:11 yasuoka Exp $ */
+/*	$OpenBSD: mppe.c,v 1.6 2012/05/08 13:15:11 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -379,7 +379,7 @@ mppe_input(mppe *_this, u_char *pktp, int len)
 
 	if (encrypt == 0) {
 		mppe_log(_this, LOG_WARNING,
-		    "Received unexpected MPPE packet.  (no ecrypt)");
+		    "Received unexpected MPPE packet.  (no encrypt)");
 		return;
 	}
 
