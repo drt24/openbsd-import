@@ -147,7 +147,7 @@ umount_fs(char *fs_name)
 #endif /* DEBUG */
 		/*
 		 * This unmount may hang leaving this
-		 * process with an exlusive lock on
+		 * process with an exclusive lock on
 		 * /etc/mtab. Therefore it is necessary
 		 * to unlock mtab, do the unmount, then
 		 * lock mtab (again) and reread it and
