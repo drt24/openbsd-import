@@ -15,7 +15,7 @@ NOPROG=yes
 .endif
 
 MAN=	pdisk.8
-MANSUBDIR=macppc mac68k
+MANSUBDIR=macppc
 
 .include <bsd.prog.mk>
 
