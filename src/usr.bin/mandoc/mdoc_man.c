@@ -850,6 +850,14 @@ pre_vt(DECL_ARGS)
 {
 
 	if (MDOC_SYNPRETTY & n->flags) {
+		switch (n->type) {
+		case (MDOC_BLOCK):
+			return(1);
+		case (MDOC_BODY):
+			break;
+		default:
+			return(0);
+		}
 		mm->need_nl = 1;
 		print_word(mm, ".br");
 		mm->need_nl = 1;
@@ -862,6 +870,9 @@ pre_vt(DECL_ARGS)
 static void
 post_vt(DECL_ARGS)
 {
+
+	if (MDOC_BODY != n->type)
+		return;
 
 	mm->need_space = 0;
 	print_word(mm, "\\fP");
