@@ -1,4 +1,4 @@
-/*	$OpenBSD: npppd.c,v 1.17 2012/05/08 13:18:37 yasuoka Exp $ */
+/*	$OpenBSD: npppd.c,v 1.18 2012/05/08 13:30:16 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -81,6 +81,8 @@ __COPYRIGHT(
 #include "radish.h"
 #include "net_utils.h"
 #include "time_utils.h"
+
+#include "l2tp_local.h"	/* XXX sa_cookie */
 
 #ifdef USE_NPPPD_ARP
 #include "npppd_arp.h"
