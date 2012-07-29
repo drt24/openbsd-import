@@ -971,7 +971,7 @@ pre_fl(DECL_ARGS)
 {
 
 	font_push('B');
-	print_word("-");
+	print_word("\\-");
 	outflags &= ~MMAN_spc;
 	return(1);
 }
