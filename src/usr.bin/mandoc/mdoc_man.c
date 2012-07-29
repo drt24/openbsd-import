@@ -317,11 +317,9 @@ print_word(const char *s)
 		 */
 		if (MMAN_spc_force & outflags || '\0' == s[0] ||
 		    NULL == strchr(".,:;)]?!", s[0]) || '\0' != s[1]) {
-			if (MMAN_Bk & outflags) {
+			if (MMAN_Bk & outflags)
 				putchar('\\');
-				putchar('~');
-			} else 
-				putchar(' ');
+			putchar(' ');
 			if (TPremain)
 				TPremain--;
 		}
@@ -341,7 +339,7 @@ print_word(const char *s)
 	for ( ; *s; s++) {
 		switch (*s) {
 		case (ASCII_NBRSP):
-			printf("\\~");
+			printf("\\ ");
 			break;
 		case (ASCII_HYPH):
 			putchar('-');
@@ -1415,7 +1413,7 @@ pre_ux(DECL_ARGS)
 	if (NULL == n->child)
 		return(0);
 	outflags &= ~MMAN_spc;
-	print_word("\\~");
+	print_word("\\ ");
 	outflags &= ~MMAN_spc;
 	return(1);
 }
