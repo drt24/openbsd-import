@@ -1,4 +1,4 @@
-/*	$OpenBSD: npppd.c,v 1.21 2012/09/18 13:14:08 yasuoka Exp $ */
+/*	$OpenBSD: npppd.c,v 1.22 2012/09/19 17:50:17 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -238,7 +238,7 @@ main(int argc, char *argv[])
 static void
 usage()
 {
-	fprintf(stderr, "usage: npppd [-hdn] [-f config_file]\n");
+	fprintf(stderr, "usage: npppd [-dhn] [-f config_file]\n");
 }
 
 /** Returns the singleton npppd instance */
