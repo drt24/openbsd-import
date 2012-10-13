@@ -1,4 +1,0 @@
-#	$Id$
-
-# copy the kernel
-COPY	${CURDIR}/../../../../sys/arch/i386/compile/INSTALL/netbsd	netbsd

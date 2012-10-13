@@ -1,7 +1,0 @@
-#	from: @(#)Makefile	5.2 (Berkeley) 5/24/91
-#	$Id$
-
-PROG=	find
-SRCS=	find.c function.c ls.c main.c misc.c operator.c option.c
-
-.include <bsd.prog.mk>
