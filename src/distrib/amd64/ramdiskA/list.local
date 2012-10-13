@@ -1,5 +1,0 @@
-# $OpenBSD: list.local,v 1.2 2012/10/12 14:07:46 jsing Exp $
-
-#TZ		# this does not fit on the floppy
-
-COPY	${DESTDIR}/usr/mdec/fdboot		usr/mdec/boot
