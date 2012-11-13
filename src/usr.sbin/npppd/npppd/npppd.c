@@ -1,4 +1,4 @@
-/*	$OpenBSD: npppd.c,v 1.23 2012/09/20 20:28:09 jmc Exp $ */
+/*	$OpenBSD: npppd.c,v 1.24 2012/09/28 23:46:00 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -103,6 +103,9 @@ __COPYRIGHT(
 #include <net/if_types.h>
 #include <net/pipex.h>
 #endif /* USE_NPPPD_PIPEX */
+
+#include "accept.h"
+#include "log.h"
 
 static npppd s_npppd;	/* singleton */
 
@@ -316,6 +319,8 @@ npppd_init(npppd *_this, const char *config_file)
 
 	/* initialize event(3) */
 	event_init();
+
+	accept_init();
 
 	/* ignore signals */
 	signal(SIGPIPE, SIG_IGN);
