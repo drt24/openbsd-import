@@ -608,7 +608,8 @@ dword(struct mdoc *mdoc, int line,
 	 */
 
 	else if (DELIM_CLOSE == d && mdoc->last->prev &&
-			mdoc->last->prev->tok != MDOC_No)
+			mdoc->last->prev->tok != MDOC_No &&
+			mdoc->last->parent->tok != MDOC_Fd)
 		mdoc->last->flags |= MDOC_DELIMC;
 
 	return(1);
