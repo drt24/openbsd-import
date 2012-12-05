@@ -1,4 +1,4 @@
-/* $OpenBSD: aicasm.c,v 1.13 2004/09/18 19:51:53 mickey Exp $ */
+/* $OpenBSD: aicasm.c,v 1.14 2005/10/04 23:46:14 krw Exp $ */
 /*
  * Aic7xxx SCSI host adapter firmware asssembler
  *
@@ -42,7 +42,6 @@
  *
  * $FreeBSD: src/sys/dev/aic7xxx/aicasm/aicasm.c,v 1.37 2004/03/12 21:45:25 trhodes Exp $
  */
-#include <sys/cdefs.h>
 #include <sys/types.h>
 #include <sys/mman.h>
 

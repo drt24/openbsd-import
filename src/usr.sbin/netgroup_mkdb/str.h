@@ -32,7 +32,6 @@
  */
 
 #include <sys/types.h>
-#include <sys/cdefs.h>
 
 struct string {
 	char  *s_str;
