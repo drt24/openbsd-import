@@ -1,4 +1,4 @@
-/*	$OpenBSD: ppp.c,v 1.15 2012/09/07 10:47:42 yasuoka Exp $ */
+/*	$OpenBSD: ppp.c,v 1.16 2012/09/18 13:14:08 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -964,7 +964,7 @@ handled:
 }
 
 /** This function is called to output PPP packets */
-inline void
+void
 ppp_output(npppd_ppp *_this, uint16_t proto, u_char code, u_char id,
     u_char *datap, int ldata)
 {
