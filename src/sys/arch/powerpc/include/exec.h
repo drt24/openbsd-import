@@ -1,4 +1,4 @@
-/*	$OpenBSD: exec.h,v 1.10 2003/06/09 16:34:22 deraadt Exp $ */
+/*	$OpenBSD: exec.h,v 1.11 2012/09/11 15:44:18 deraadt Exp $ */
 
 /*
  * Copyright (c) 1997 Per Fogelstrom, Opsycon AB.
@@ -31,11 +31,6 @@
 #define _POWERPC_EXEC_H_
 
 #define __LDPGSZ	4096	/* linker page size */
-
-/*
- *  Define what exec "formats" we should handle.
- */
-#define	EXEC_SCRIPT
 
 #define ARCH_ELFSIZE		32
 
