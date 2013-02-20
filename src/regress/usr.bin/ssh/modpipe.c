@@ -14,7 +14,7 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/* $Id$ */
+/* $OpenBSD$ */
 
 #include <sys/types.h>
 #include <unistd.h>
