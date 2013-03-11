@@ -1,4 +1,4 @@
-/*	$OpenBSD: pptpd.c,v 1.12 2012/11/13 17:10:40 yasuoka Exp $	*/
+/*	$OpenBSD: pptpd.c,v 1.13 2013/03/11 09:28:02 giovanni Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -646,7 +646,8 @@ pptpd_io_event(int fd, short evmask, void *ctx)
 			    (struct sockaddr *)&peer, &peerlen)) < 0) {
 				if (errno == EMFILE || errno == ENFILE)
 					accept_pause();
-				else if (errno != EAGAIN && errno != EINTR) {
+				else if (errno != EAGAIN && errno != EINTR &&
+				    errno != ECONNABORTED) {
 					pptpd_log(_this, LOG_ERR,
 					    "accept() failed at %s(): %m",
 						__func__);
