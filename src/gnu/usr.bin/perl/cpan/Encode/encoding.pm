@@ -6,7 +6,7 @@ use Encode;
 use strict;
 use warnings;
 
-sub DEBUG () { 0 }
+use constant DEBUG => !!$ENV{PERL_ENCODE_DEBUG};
 
 BEGIN {
     if ( ord("A") == 193 ) {

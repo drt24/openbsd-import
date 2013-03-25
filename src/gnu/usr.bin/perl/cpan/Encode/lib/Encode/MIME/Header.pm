@@ -95,7 +95,7 @@ sub decode_q {
 
 my $especials =
   join( '|' => map { quotemeta( chr($_) ) }
-      unpack( "C*", qq{()<>@,;:"'/[]?.=} ) );
+      unpack( "C*", qq{()<>,;:"'/[]?=} ) );
 
 my $re_encoded_word = qr{
     =\?                # begin encoded word
@@ -127,11 +127,12 @@ sub encode($$;$) {
         for my $word (@word) {
             use bytes ();
             if ( bytes::length($subline) + bytes::length($word) >
-                $obj->{bpl} )
+                $obj->{bpl} - 1 )
             {
                 push @subline, $subline;
                 $subline = '';
             }
+            $subline .= ' ' if ($subline =~ /\?=$/ and $word =~ /^=\?/);
             $subline .= $word;
         }
         $subline and push @subline, $subline;

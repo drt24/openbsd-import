@@ -6,7 +6,7 @@
 #
 ################################################################################
 #
-#  Version 2.x, Copyright (C) 2007, Marcus Holland-Moritz <mhx@cpan.org>.
+#  Version 2.x, Copyright (C) 2007-2010, Marcus Holland-Moritz <mhx@cpan.org>.
 #  Version 1.x, Copyright (C) 1999, Graham Barr <gbarr@pobox.com>.
 #
 #  This program is free software; you can redistribute it and/or
@@ -52,9 +52,8 @@ sub configure
   }
 
   if ($ENV{'PERL_CORE'}) {
-    # Pods will be built by installman.
-    push @moreopts, MAN3PODS  => {},
-                    realclean => { FILES => "const-c.inc const-xs.inc" };
+    # clean out const-* files in the core
+    push @moreopts, realclean => { FILES => "const-c.inc const-xs.inc" };
   }
   else {
     # IPC::SysV is in the core since 5.005

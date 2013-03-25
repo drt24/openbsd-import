@@ -10,7 +10,7 @@
 #
 ################################################################################
 #
-#  Version 3.x, Copyright (C) 2004-2009, Marcus Holland-Moritz.
+#  Version 3.x, Copyright (C) 2004-2010, Marcus Holland-Moritz.
 #  Version 2.x, Copyright (C) 2001, Paul Marquess.
 #  Version 1.x, Copyright (C) 1999, Kenneth Albanowski.
 #
@@ -77,6 +77,8 @@ __DATA__
 
 BEGIN {
   if ($ENV{'PERL_CORE'}) {
+    chdir 't' if -d 't';
+    @INC = ('../lib', '../ext/Devel-PPPort/t') if -d '../lib' && -d '../ext';
     require Config; import Config;
     use vars '%Config';
     if (" $Config{'extensions'} " !~ m[ Devel/PPPort ]) {
