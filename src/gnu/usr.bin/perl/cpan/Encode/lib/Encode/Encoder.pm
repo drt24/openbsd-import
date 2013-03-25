@@ -11,7 +11,7 @@ our @ISA       = qw(Exporter);
 our @EXPORT_OK = qw ( encoder );
 
 our $AUTOLOAD;
-sub DEBUG () { 0 }
+use constant DEBUG => !!$ENV{PERL_ENCODE_DEBUG};
 use Encode qw(encode decode find_encoding from_to);
 use Carp;
 

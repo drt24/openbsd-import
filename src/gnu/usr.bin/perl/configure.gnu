@@ -1,7 +1,5 @@
 #! /bin/sh
 #
-# $Id$
-#
 # GNU configure-like front end to metaconfig's Configure.
 #
 # Written by Andy Dougherty <doughera@lafayette.edu>

@@ -1,5 +1,4 @@
 # BeOS hints file
-# $Id$
 
 if [ ! -f beos/nm ]; then mwcc -w all -o beos/nm beos/nm.c 2>/dev/null; fi
 # If this fails, that's all right - it's only for PPC.

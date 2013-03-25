@@ -35,7 +35,9 @@ sub encode($$;$) {
     my $bytes = '';
     while ( pos($str) < $len ) {
         if ( $str =~ /\G($re_asis+)/ogc ) {
-            $bytes .= $1;
+	    my $octets = $1;
+	    utf8::downgrade($octets);
+	    $bytes .= $octets;
         }
         elsif ( $str =~ /\G($re_encoded+)/ogsc ) {
             if ( $1 eq "+" ) {
