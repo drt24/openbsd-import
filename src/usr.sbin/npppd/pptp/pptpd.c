@@ -1,4 +1,4 @@
-/*	$OpenBSD: pptpd.c,v 1.14 2013/03/11 17:40:11 deraadt Exp $	*/
+/*	$OpenBSD: pptpd.c,v 1.15 2013/03/14 10:21:07 mpi Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -108,8 +108,7 @@ pptpd_init(pptpd *_this)
 
 	if (sysctl(mib, sizeof(mib)/sizeof(mib[0]), &value, &size, NULL, 0) == 0) {
 		if(value == 0) {
-			pptpd_log(_this, LOG_ERR, "GRE protocol not allowed");
-			return 1;
+			pptpd_log(_this, LOG_WARNING, "GRE protocol not allowed");
 		}
 	}
 
