@@ -127,7 +127,7 @@ char *hn;
 static void make_banner(fp)
 FILE *fp;
 {
-	time_t t = time((time_t*) 0);
+	time_t t = time(NULL);
 	char *ctime(), *cp = ctime(&t);
 
 	fprintf(fp,

@@ -264,7 +264,7 @@ run_rpc(void)
 
 #ifdef DEBUG
 		if (tvv.tv_sec)
-			dlog("Select waits for %ds", tvv.tv_sec);
+			dlog("Select waits for %llds", (long long)tvv.tv_sec);
 		else
 			dlog("Select waits for Godot");
 #endif /* DEBUG */

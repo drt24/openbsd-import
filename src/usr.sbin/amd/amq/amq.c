@@ -92,7 +92,9 @@ show_mti(amq_mount_tree *mt, enum show_opt e, int *mwid, int *dwid,
 	    }
 
 	case Full: {
-		struct tm *tp = localtime((time_t *) &mt->mt_mounttime);
+		time_t t = *mt->mt_mounttime;
+
+		struct tm *tp = localtime(&t);
 
 		printf("%-*.*s %-*.*s %-*.*s %s\n\t%-5d %-7d %-6d"
 		    " %-7d %-7d %-6d %02d/%02d/%02d %02d:%02d:%02d\n",
@@ -108,7 +110,9 @@ show_mti(amq_mount_tree *mt, enum show_opt e, int *mwid, int *dwid,
 	    }
 
 	case Stats: {
-		struct tm *tp = localtime((time_t *) &mt->mt_mounttime);
+		time_t t = *mt->mt_mounttime;
+
+		struct tm *tp = localtime(&t);
 
 		printf("%-*.*s %-5d %-7d %-6d %-7d %-7d %-6d"
 		    " %02d/%02d/%02d %02d:%02d:%02d\n",
