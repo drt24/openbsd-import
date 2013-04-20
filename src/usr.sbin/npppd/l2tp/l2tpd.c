@@ -1,4 +1,4 @@
-/*	$OpenBSD: l2tpd.c,v 1.11 2012/09/18 13:14:08 yasuoka Exp $ */
+/*	$OpenBSD: l2tpd.c,v 1.12 2013/04/20 07:00:19 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -113,7 +113,7 @@ l2tpd_init(l2tpd *_this)
 		    __func__);
 		return 1;
 	}
-	off = random() % L2TP_SESSION_ID_MASK;
+	off = arc4random() % L2TP_SESSION_ID_MASK;
 	for (i = 0; i < L2TP_NCALL; i++) {
 		id = (i + off) % L2TP_SESSION_ID_MASK;
 		if (id == 0)

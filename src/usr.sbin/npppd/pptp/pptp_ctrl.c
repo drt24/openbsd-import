@@ -1,4 +1,4 @@
-/*	$OpenBSD: pptp_ctrl.c,v 1.6 2012/05/08 13:18:37 yasuoka Exp $	*/
+/*	$OpenBSD: pptp_ctrl.c,v 1.7 2012/09/18 13:14:08 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -130,7 +130,7 @@ pptp_ctrl_init(pptp_ctrl *_this)
 	}
 	_this->last_rcv_ctrl = curr_time;
 	_this->last_snd_ctrl = curr_time;
-	_this->echo_seq = (random() << 16 )| (random() & 0xffff);
+	_this->echo_seq = arc4random();
 	_this->echo_interval = PPTP_CTRL_DEFAULT_ECHO_INTERVAL;
 	_this->echo_timeout = PPTP_CTRL_DEFAULT_ECHO_TIMEOUT;
 	slist_init(&_this->call_list);

@@ -1,4 +1,4 @@
-/*	$OpenBSD: pptpd.c,v 1.16 2013/04/06 17:03:51 giovanni Exp $	*/
+/*	$OpenBSD: pptpd.c,v 1.17 2013/04/20 07:00:19 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -122,7 +122,7 @@ pptpd_init(pptpd *_this)
 	for (i = 0; i < countof(call) ; i++)
 		call[i] = i + 1;
 	for (i = countof(call); i > 1; i--) {
-		m = random() % i;
+		m = arc4random() % i;
 		call0 = call[m];
 		call[m] = call[i - 1];
 		call[i - 1] = call0;
