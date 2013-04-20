@@ -1,4 +1,4 @@
-/*	$OpenBSD: pptpd.c,v 1.15 2013/03/14 10:21:07 mpi Exp $	*/
+/*	$OpenBSD: pptpd.c,v 1.16 2013/04/06 17:03:51 giovanni Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -589,8 +589,6 @@ pptpd_reload(pptpd *_this, struct pptp_confs *pptp_conf)
 		return 0;
 	}
 
-	if (pptpd_init(_this) != 0)
-		return -1;
 	i = 0;
 	TAILQ_FOREACH(conf, pptp_conf, entry)
 		pptpd_add_listener(_this, i++, conf);

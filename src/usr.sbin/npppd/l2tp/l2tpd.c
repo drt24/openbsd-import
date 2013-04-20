@@ -1,4 +1,4 @@
-/*	$OpenBSD: l2tpd.c,v 1.10 2012/07/16 18:05:36 markus Exp $ */
+/*	$OpenBSD: l2tpd.c,v 1.11 2012/09/18 13:14:08 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -573,8 +573,6 @@ l2tpd_reload(l2tpd *_this, struct l2tp_confs *l2tp_conf)
 		return 0;
 	}
 
-	if (l2tpd_init(_this) != 0)
-		return -1;
 	i = 0;
 	TAILQ_FOREACH(conf, l2tp_conf, entry)
 		l2tpd_add_listener(_this, i++, conf);
