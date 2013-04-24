@@ -103,6 +103,9 @@ dnl
 CLIENT_OPTIONS(`Family=inet, Address=0.0.0.0')dnl
 CLIENT_OPTIONS(`Family=inet6, Address=::')dnl
 dnl
+dnl Disable ident queries
+define(`confTO_IDENT', `0')dnl
+dnl
 dnl Some broken nameservers will return SERVFAIL (a temporary failure)
 dnl on T_AAAA (IPv6) lookups.
 dnl
