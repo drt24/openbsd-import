@@ -286,7 +286,7 @@ mandocdb(int argc, char *argv[])
 	int		 ch, i, flags;
 	DB		*hash; /* temporary keyword hashtable */
 	BTREEINFO	 info; /* btree configuration */
-	size_t		 sz1, sz2;
+	size_t		 sz1, sz2, ipath;
 	struct buf	 buf, /* keyword buffer */
 			 dbuf; /* description buffer */
 	struct of	*of; /* list of files for processing */
@@ -469,7 +469,7 @@ mandocdb(int argc, char *argv[])
 	} else
 		manpath_parse(&dirs, dir, NULL, NULL);
 
-	for (i = 0; i < dirs.sz; i++) {
+	for (ipath = 0; ipath < dirs.sz; ipath++) {
 
 		/*
 		 * Go to the root of the respective manual tree.
@@ -477,8 +477,8 @@ mandocdb(int argc, char *argv[])
 		 * They are indexed relative to the root.
 		 */
 
-		if (-1 == chdir(dirs.paths[i])) {
-			perror(dirs.paths[i]);
+		if (-1 == chdir(dirs.paths[ipath])) {
+			perror(dirs.paths[ipath]);
 			exit((int)MANDOCLEVEL_SYSERR);
 		}
 
