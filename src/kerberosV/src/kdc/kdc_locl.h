@@ -43,7 +43,6 @@
 typedef struct pk_client_params pk_client_params;
 struct DigestREQ;
 struct Kx509Request;
-#include <kdc-private.h>
 
 extern sig_atomic_t exit_flag;
 extern size_t max_request_udp;
