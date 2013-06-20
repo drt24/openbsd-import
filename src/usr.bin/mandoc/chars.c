@@ -33,7 +33,7 @@ struct	ln {
 	int		  unicode;
 };
 
-#define	LINES_MAX	  328
+#define	LINES_MAX	  329
 
 #define CHAR(in, ch, code) \
 	{ NULL, (in), (ch), (code) },
