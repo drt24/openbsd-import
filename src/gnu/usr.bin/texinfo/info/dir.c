@@ -44,8 +44,8 @@ static char *dirs_to_add[] = {
 
 typedef struct
 {
-  unsigned long device;
-  unsigned long inode;
+  dev_t device;
+  ino_t inode;
 } dir_file_list_entry_type;
 
 static int
