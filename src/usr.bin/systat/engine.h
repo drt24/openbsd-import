@@ -148,6 +148,7 @@ extern int sortdir;
 extern useconds_t udelay;
 extern int dispstart;
 extern int interactive;
+extern int averageonly;
 extern int maxprint;
 extern int paused;
 extern int rawmode;
