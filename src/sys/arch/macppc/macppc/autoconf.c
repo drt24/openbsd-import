@@ -1,4 +1,4 @@
-/*	$OpenBSD: autoconf.c,v 1.39 2010/11/11 17:58:21 miod Exp $	*/
+/*	$OpenBSD: autoconf.c,v 1.40 2013/06/03 19:16:43 mpi Exp $	*/
 /*
  * Copyright (c) 1996, 1997 Per Fogelstrom
  * Copyright (c) 1995 Theo de Raadt
@@ -93,7 +93,6 @@ void
 cpu_configure()
 {
 	(void)splhigh();	/* To be really sure.. */
-	calc_delayconst();
 
 	softintr_init();
 
