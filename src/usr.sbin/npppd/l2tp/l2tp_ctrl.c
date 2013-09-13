@@ -1,4 +1,4 @@
-/*	$OpenBSD: l2tp_ctrl.c,v 1.14 2012/11/13 06:34:13 yasuoka Exp $	*/
+/*	$OpenBSD: l2tp_ctrl.c,v 1.15 2013/04/16 07:45:19 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -46,6 +46,7 @@
 #include <string.h>
 #include <syslog.h>
 #include <time.h>
+#include <unistd.h>
 
 #ifdef USE_LIBSOCKUTIL
 #include <seil/sockfromto.h>
