@@ -1960,7 +1960,8 @@ post_sh_head(POST_ARGS)
 			break;
 		if (*mdoc->meta.msec == '9')
 			break;
-		mdoc_nmsg(mdoc, mdoc->last, MANDOCERR_SECMSEC);
+		mandoc_msg(MANDOCERR_SECMSEC, mdoc->parse,
+				mdoc->last->line, mdoc->last->pos, buf);
 		break;
 	default:
 		break;
