@@ -602,6 +602,8 @@ index_merge(const struct of *of, struct mparse *mp,
 	uint64_t	 vbuf[2];
 	char		 type;
 
+	static char	 emptystring[] = "";
+
 	if (warnings) {
 		files = NULL;
 		hash_reset(&files);
@@ -720,7 +722,7 @@ index_merge(const struct of *of, struct mparse *mp,
 			val.data = NULL;
 			val.size = 0;
 			if (0 == skip)
-				val.data = "";
+				val.data = emptystring;
 			else {
 				ch = (*files->get)(files, &key, &val, 0);
 				if (ch < 0) {

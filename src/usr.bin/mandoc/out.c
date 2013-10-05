@@ -138,7 +138,6 @@ void
 tblcalc(struct rofftbl *tbl, const struct tbl_span *sp)
 {
 	const struct tbl_dat	*dp;
-	const struct tbl_head	*hp;
 	struct roffcol		*col;
 	int			 spans;
 
@@ -151,8 +150,6 @@ tblcalc(struct rofftbl *tbl, const struct tbl_span *sp)
 	assert(NULL == tbl->cols);
 	tbl->cols = mandoc_calloc
 		((size_t)sp->opts->cols, sizeof(struct roffcol));
-
-	hp = sp->head;
 
 	for ( ; sp; sp = sp->next) {
 		if (TBL_SPAN_DATA != sp->pos)
