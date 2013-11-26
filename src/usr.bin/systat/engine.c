@@ -168,7 +168,7 @@ tbprintft(char *format, ...)
 
 		/* count until we hit a non digit. (e.g. the prefix) */
 		for (digits = 0; digits < len; digits++)
-			if (!isdigit(buf[digits]))
+			if (!isdigit((unsigned char)buf[digits]))
 				break;
 
 		curdigit = digits;
