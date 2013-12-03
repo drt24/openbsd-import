@@ -202,7 +202,9 @@ struct svc_req *rqstp;
 	/*
 	 * Find end of key
 	 */
-	for (cp = (char *) s; *cp&&(!isascii(*cp)||!isspace(*cp)); cp++)
+	for (cp = (char *) s;
+	    *cp&&(!isascii((unsigned char)*cp) || !isspace((unsigned char)*cp));
+	    cp++)
 		;
 
 	if (!*cp) {
@@ -215,7 +217,7 @@ struct svc_req *rqstp;
 	/*
 	 * Find start of value
 	 */
-	while (isascii(*cp) && isspace(*cp))
+	while (isascii((unsigned char)*cp) && isspace((unsigned char)*cp))
 		cp++;
 
 	root_newmap(s, cp, (char *) 0);
