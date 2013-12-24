@@ -557,6 +557,9 @@ rew_sub(enum mdoc_type t, struct mdoc *mdoc,
 		case (REWIND_NONE):
 			return(1);
 		case (REWIND_THIS):
+			n->lastline = line -
+			    (MDOC_NEWLINE & mdoc->flags &&
+			     ! (MDOC_EXPLICIT & mdoc_macros[tok].flags));
 			break;
 		case (REWIND_FORCE):
 			mandoc_vmsg(MANDOCERR_SCOPEBROKEN, mdoc->parse, 
@@ -565,6 +568,8 @@ rew_sub(enum mdoc_type t, struct mdoc *mdoc,
 					mdoc_macronames[n->tok]);
 			/* FALLTHROUGH */
 		case (REWIND_MORE):
+			n->lastline = line -
+			    (MDOC_NEWLINE & mdoc->flags ? 1 : 0);
 			n = n->parent;
 			continue;
 		case (REWIND_LATER):
