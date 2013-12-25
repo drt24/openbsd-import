@@ -1525,7 +1525,7 @@ termp_ft_pre(DECL_ARGS)
 static int
 termp_fn_pre(DECL_ARGS)
 {
-	size_t		 width, rmargin = 0;
+	size_t		 rmargin = 0;
 	int		 pretty;
 
 	pretty = MDOC_SYNPRETTY & n->flags;
@@ -1536,9 +1536,8 @@ termp_fn_pre(DECL_ARGS)
 		return(0);
 
 	if (pretty) {
-		width = term_len(p, 4);
 		rmargin = p->rmargin;
-		p->rmargin = p->offset + width;
+		p->rmargin = p->offset + term_len(p, 4);
 		p->flags |= TERMP_NOBREAK | TERMP_HANG;
 	}
 
@@ -2030,7 +2029,7 @@ termp_quote_post(DECL_ARGS)
 static int
 termp_fo_pre(DECL_ARGS)
 {
-	size_t		 width, rmargin = 0;
+	size_t		 rmargin = 0;
 	int		 pretty;
 
 	pretty = MDOC_SYNPRETTY & n->flags;
@@ -2040,9 +2039,8 @@ termp_fo_pre(DECL_ARGS)
 		return(1);
 	} else if (MDOC_BODY == n->type) {
 		if (pretty) {
-			width = term_len(p, 4);
 			rmargin = p->rmargin;
-			p->rmargin = p->offset + width;
+			p->rmargin = p->offset + term_len(p, 4);
 			p->flags |= TERMP_NOBREAK | TERMP_HANG;
 		}
 		p->flags |= TERMP_NOSPACE;
