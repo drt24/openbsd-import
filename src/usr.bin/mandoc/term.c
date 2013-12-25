@@ -403,6 +403,7 @@ term_fontpop(struct termp *p)
 void
 term_word(struct termp *p, const char *word)
 {
+	const char	 nbrsp[2] = { ASCII_NBRSP, 0 };
 	const char	*seq, *cp;
 	char		 c;
 	int		 sz, uc;
@@ -434,7 +435,15 @@ term_word(struct termp *p, const char *word)
 				word++;
 				continue;
 			}
-			ssz = strcspn(word, "\\");
+			if (TERMP_NBRWORD & p->flags) {
+				if (' ' == *word) {
+					encode(p, nbrsp, 1);
+					word++;
+					continue;
+				}
+				ssz = strcspn(word, "\\ ");
+			} else
+				ssz = strcspn(word, "\\");
 			encode(p, word, ssz);
 			word += (int)ssz;
 			continue;
@@ -509,6 +518,7 @@ term_word(struct termp *p, const char *word)
 			break;
 		}
 	}
+	p->flags &= ~TERMP_NBRWORD;
 }
 
 static void
