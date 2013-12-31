@@ -1726,7 +1726,6 @@ utf8key(struct mchars *mc, struct str *key)
 		/* Read past the slash. */
 
 		val++;
-		u = 0;
 
 		/*
 		 * Parse the escape sequence and see if it's a
