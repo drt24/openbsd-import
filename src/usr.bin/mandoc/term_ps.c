@@ -824,7 +824,7 @@ ps_begin(struct termp *p)
 			ps_printf(p, "<<\n");
 			ps_printf(p, "/Type /Font\n");
 			ps_printf(p, "/Subtype /Type1\n");
-			ps_printf(p, "/Name /F%zu\n", i);
+			ps_printf(p, "/Name /F%d\n", i);
 			ps_printf(p, "/BaseFont /%s\n", fonts[i].name);
 			ps_printf(p, ">>\n");
 		}
