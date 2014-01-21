@@ -44,6 +44,7 @@
 #include <syslog.h>
 #endif /* HAS_SYSLOG */
 #include <sys/stat.h>
+#include <unistd.h>
 
 extern int optind;
 extern char *optarg;
