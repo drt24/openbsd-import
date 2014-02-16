@@ -2038,9 +2038,11 @@ post_sh_head(POST_ARGS)
 	assert(mdoc->meta.msec);
 
 	switch (sec) {
-	case (SEC_RETURN_VALUES):
-		/* FALLTHROUGH */
 	case (SEC_ERRORS):
+		if (*mdoc->meta.msec == '4')
+			break;
+		/* FALLTHROUGH */
+	case (SEC_RETURN_VALUES):
 		/* FALLTHROUGH */
 	case (SEC_LIBRARY):
 		if (*mdoc->meta.msec == '2')
