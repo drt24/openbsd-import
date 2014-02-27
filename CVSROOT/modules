@@ -1,5 +1,5 @@
 #
-# $OpenBSD: modules,v 1.17 1998/07/12 04:44:24 todd Exp $
+# $OpenBSD: modules,v 1.19 2002/05/19 21:54:27 millert Exp $
 # The CVS Modules File
 #
 # $CVSid: @(#)modules 1.5 92/03/31 $
@@ -38,7 +38,7 @@ loginfo		CVSROOT loginfo
 commitinfo	CVSROOT commitinfo
 rcsinfo		CVSROOT rcsinfo
 
-www		-i /var/www/conf/cvswww www
+#www		-i /var/www/conf/cvswww www
 
 # Add more modules here 
 #
