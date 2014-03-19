@@ -425,7 +425,7 @@ void		  mparse_keep(struct mparse *);
 enum mandoclevel  mparse_readfd(struct mparse *, int, const char *);
 void		  mparse_reset(struct mparse *);
 void		  mparse_result(struct mparse *, 
-			struct mdoc **, struct man **);
+			struct mdoc **, struct man **, char **);
 const char	 *mparse_getkeep(const struct mparse *);
 const char	 *mparse_strerror(enum mandocerr);
 const char	 *mparse_strlevel(enum mandoclevel);
