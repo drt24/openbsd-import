@@ -16,7 +16,6 @@
  */
 #include <sys/types.h>
 
-#include <assert.h>
 #include <locale.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -25,6 +24,7 @@
 #include <wchar.h>
 
 #include "mandoc.h"
+#include "mandoc_aux.h"
 #include "out.h"
 #include "term.h"
 #include "main.h"

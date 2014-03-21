@@ -22,6 +22,7 @@
 #include <string.h>
 
 #include "mandoc.h"
+#include "mandoc_aux.h"
 #include "libroff.h"
 #include "libmandoc.h"
 

@@ -19,6 +19,7 @@
 #include <string.h>
 
 #include "mandoc.h"
+#include "mandoc_aux.h"
 #include "out.h"
 #include "man.h"
 #include "mdoc.h"
@@ -457,7 +458,7 @@ print_offs(const char *v)
 /*
  * Set up the indentation for a list item; used from pre_it().
  */
-void
+static void
 print_width(const char *v, const struct mdoc_node *child, size_t defsz)
 {
 	char		  buf[24];
@@ -509,7 +510,7 @@ print_width(const char *v, const struct mdoc_node *child, size_t defsz)
 	TPremain = remain;
 }
 
-void
+static void
 print_count(int *count)
 {
 	char		  buf[12];
