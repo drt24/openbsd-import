@@ -1528,10 +1528,7 @@ parse_mdoc_Xr(struct mpage *mpage, const struct mdoc_node *n)
 		return(0);
 	}
 
-	if (-1 == asprintf(&cp, "%s(%s)", n->string, n->next->string)) {
-		perror(NULL);
-		exit((int)MANDOCLEVEL_SYSERR);
-	}
+	mandoc_asprintf(&cp, "%s(%s)", n->string, n->next->string);
 	putkey(mpage, cp, TYPE_Xr);
 	free(cp);
 	return(0);
