@@ -1,4 +1,4 @@
-/*	$OpenBSD: pptpd.c,v 1.18 2013/04/20 23:32:32 yasuoka Exp $	*/
+/*	$OpenBSD: pptpd.c,v 1.19 2014/03/22 04:18:18 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -629,8 +629,6 @@ pptpd_io_event(int fd, short evmask, void *ctx)
 					pptpd_log(_this, LOG_ERR,
 					    "accept() failed at %s(): %m",
 						__func__);
-					pptpd_listener_close_1723(listener);
-					pptpd_stop(_this);
 				}
 				break;
 			}
