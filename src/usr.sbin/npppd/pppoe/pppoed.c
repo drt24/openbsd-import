@@ -1,4 +1,4 @@
-/*	$OpenBSD: pppoed.c,v 1.12 2013/04/16 07:27:36 yasuoka Exp $	*/
+/*	$OpenBSD: pppoed.c,v 1.13 2013/04/20 23:32:32 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -420,7 +420,7 @@ pppoed_stop(pppoed *_this)
 		free(plistener);
 		slist_itr_remove(&_this->listener);
 	}
-	pppoed_log(_this, LOG_NOTICE, "Stopped");
+	PPPOED_DBG((_this, LOG_DEBUG, "Stopped"));
 }
 
 /* uninitialize (free) PPPoE daemon */

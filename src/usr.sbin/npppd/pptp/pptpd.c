@@ -1,4 +1,4 @@
-/*	$OpenBSD: pptpd.c,v 1.17 2013/04/20 07:00:19 yasuoka Exp $	*/
+/*	$OpenBSD: pptpd.c,v 1.18 2013/04/20 23:32:32 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -507,7 +507,7 @@ pptpd_stop_immediatly(pptpd *_this)
 		pptpd_close_gre(_this);
 		slist_fini(&_this->ctrl_list);
 		slist_fini(&_this->call_free_list);
-		pptpd_log(_this, LOG_NOTICE, "Stopped");
+		PPTPD_DBG((_this, LOG_DEBUG, "Stopped"));
 	} else {
 		PPTPD_DBG((_this, LOG_DEBUG, "(Already) Stopped"));
 	}
