@@ -1,4 +1,4 @@
-/*	$OpenBSD: ppp.c,v 1.18 2013/02/13 22:10:38 yasuoka Exp $ */
+/*	$OpenBSD: ppp.c,v 1.19 2014/03/22 04:30:31 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -1192,10 +1192,8 @@ struct tunnconf tunnconf_default_l2tp = {
 		.l2tp = {
 			.hostname = NULL,
 			.vendor_name = NULL,
-			.address = {
-				.ss_family = AF_INET,
-				.ss_len = sizeof(struct sockaddr_in)
-			},
+			.listen = TAILQ_HEAD_INITIALIZER(
+			    tunnconf_default_l2tp.proto.l2tp.listen),
 			/* .hello_interval, */
 			/* .hello_timeout, */
 			.data_use_seq = true,
@@ -1229,10 +1227,8 @@ struct tunnconf tunnconf_default_pptp = {
 		.pptp = {
 			.hostname = NULL,
 			.vendor_name = NULL,
-			.address = {
-				.ss_family = AF_INET,
-				.ss_len = sizeof(struct sockaddr_in)
-			},
+			.listen = TAILQ_HEAD_INITIALIZER(
+			    tunnconf_default_l2tp.proto.l2tp.listen),
 			/* .echo_interval, */
 			/* .echo_timeout, */
 		}
