@@ -62,6 +62,7 @@ sub decode($$;$) {
     my ( $obj, $bytes, $chk ) = @_;
     my $len = length($bytes);
     my $str = "";
+    pos($bytes) = 0;
     no warnings 'uninitialized';
     while ( pos($bytes) < $len ) {
         if ( $bytes =~ /\G([^+]+)/ogc ) {

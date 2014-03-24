@@ -1,6 +1,7 @@
 # $Id$
 # This file is in euc-jp
 package Mod_EUCJP;
+no warnings "deprecated";
 use encoding "euc-jp";
 sub new {
   my $class = shift;

@@ -43,8 +43,9 @@ WriteMakefile(
         DIST_DEFAULT => 'all tardist',
     },
     INC         => '-I' . File::Spec->catfile( '.', 'Encode' ),
+    LICENSE     => 'perl',
     PMLIBDIRS   => \@pmlibdirs,
-    INSTALLDIRS => 'perl',
+    INSTALLDIRS => ($] < 5.011 ? 'perl' : 'site'),
 );
 
 package MY;
