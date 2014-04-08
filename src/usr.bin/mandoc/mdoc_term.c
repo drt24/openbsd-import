@@ -1025,6 +1025,8 @@ termp_nm_pre(DECL_ARGS)
 		     MDOC_TEXT == n->prev->child->type ?
 		     term_strlen(p, n->prev->child->string) :
 		     term_len(p, 5));
+		if (p->rmargin < p->offset)
+			p->rmargin = p->offset;
 		return(1);
 	}
 
