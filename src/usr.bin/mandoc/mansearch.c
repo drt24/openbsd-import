@@ -202,7 +202,7 @@ mansearch(const struct mansearch *search,
 	 */
 
 	if (NULL == getcwd(buf, PATH_MAX)) {
-		perror(NULL);
+		perror("getcwd");
 		goto out;
 	} else if (-1 == (fd = open(buf, O_RDONLY, 0))) {
 		perror(buf);
@@ -339,9 +339,12 @@ mansearch(const struct mansearch *search,
 	}
 	rc = 1;
 out:
-	exprfree(e);
-	if (-1 != fd)
+	if (-1 != fd) {
+		if (-1 == fchdir(fd))
+			perror(buf);
 		close(fd);
+	}
+	exprfree(e);
 	free(sql);
 	*sz = cur;
 	return(rc);
