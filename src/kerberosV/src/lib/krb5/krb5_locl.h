@@ -47,6 +47,10 @@
 #include <stdlib.h>
 #include <limits.h>
 
+#ifdef HAVE_POLL_H
+#include <sys/poll.h>
+#endif
+
 #include <krb5-types.h>
 
 #ifdef HAVE_SYS_TYPES_H
