@@ -616,7 +616,7 @@ static int
 termp_it_pre(DECL_ARGS)
 {
 	const struct mdoc_node *bl, *nn;
-	char			buf[7];
+	char			buf[24];
 	int			i;
 	size_t			width, offset, ncols, dcol;
 	enum mdoc_list		type;
@@ -912,7 +912,7 @@ termp_it_pre(DECL_ARGS)
 			break;
 		case LIST_enum:
 			(pair->ppair->ppair->count)++;
-			snprintf(buf, sizeof(buf), "%d.",
+			(void)snprintf(buf, sizeof(buf), "%d.",
 			    pair->ppair->ppair->count);
 			term_word(p, buf);
 			break;
