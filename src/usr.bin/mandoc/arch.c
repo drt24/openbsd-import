@@ -22,11 +22,12 @@
 #define LINE(x, y) \
 	if (0 == strcmp(p, x)) return(y);
 
+
 const char *
 mdoc_a2arch(const char *p)
 {
 
-#include "arch.in" 
+#include "arch.in"
 
 	return(NULL);
 }

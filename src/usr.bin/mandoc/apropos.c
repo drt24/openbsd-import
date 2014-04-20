@@ -28,6 +28,7 @@
 #include "manpath.h"
 #include "mansearch.h"
 
+
 int
 apropos(int argc, char *argv[])
 {
@@ -60,22 +61,22 @@ apropos(int argc, char *argv[])
 
 	while (-1 != (ch = getopt(argc, argv, "C:M:m:O:S:s:")))
 		switch (ch) {
-		case ('C'):
+		case 'C':
 			conf_file = optarg;
 			break;
-		case ('M'):
+		case 'M':
 			defpaths = optarg;
 			break;
-		case ('m'):
+		case 'm':
 			auxpaths = optarg;
 			break;
-		case ('O'):
+		case 'O':
 			outkey = optarg;
 			break;
-		case ('S'):
+		case 'S':
 			search.arch = optarg;
 			break;
-		case ('s'):
+		case 's':
 			search.sec = optarg;
 			break;
 		default:
