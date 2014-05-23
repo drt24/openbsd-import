@@ -82,6 +82,8 @@
 #if 0
 #define xxx		0x3		/* 0x3 reserved */
 #endif
+#define NS_NOTIFY_OP	0x4		/* notify secondary of SOA change */
+
 	/* non standard - supports ALLOW_UPDATES stuff from Mike Schwartz */
 #define UPDATEA		0x9		/* add resource record */
 #define UPDATED		0xa		/* delete a specific resource record */
