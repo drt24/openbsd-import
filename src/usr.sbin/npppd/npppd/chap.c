@@ -1,4 +1,4 @@
-/*	$OpenBSD: chap.c,v 1.9 2013/04/20 23:32:32 yasuoka Exp $ */
+/*	$OpenBSD: chap.c,v 1.10 2013/09/20 07:29:19 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -344,7 +344,7 @@ chap_input(chap *_this, u_char *pktp, int len)
 	_this->state = CHAP_STATE_AUTHENTICATING;
 	strlcpy(_this->name, name, sizeof(_this->name));
 
-	return chap_authenticate(_this, val, lval);
+	chap_authenticate(_this, val, lval);
 }
 
 static void
