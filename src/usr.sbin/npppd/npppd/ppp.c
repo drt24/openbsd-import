@@ -1,4 +1,4 @@
-/*	$OpenBSD: ppp.c,v 1.19 2014/03/22 04:30:31 yasuoka Exp $ */
+/*	$OpenBSD: ppp.c,v 1.20 2014/03/22 04:32:39 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -109,11 +109,10 @@ ppp_create()
 {
 	npppd_ppp *_this;
 
-	if ((_this = malloc(sizeof(npppd_ppp))) == NULL) {
-		log_printf(LOG_ERR, "malloc() failed in %s(): %m", __func__ );
+	if ((_this = calloc(1, sizeof(npppd_ppp))) == NULL) {
+		log_printf(LOG_ERR, "calloc() failed in %s(): %m", __func__ );
 		return NULL;
 	}
-	memset(_this, 0, sizeof(npppd_ppp));
 
 	_this->snp.snp_family = AF_INET;
 	_this->snp.snp_len = sizeof(_this->snp);
