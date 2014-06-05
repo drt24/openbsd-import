@@ -792,7 +792,7 @@ filescan(const char *file)
 		return;
 	}
 
-	if (strstr(buf, basedir) == buf)
+	if (strstr(buf, basedir) == buf && strcmp(basedir, "/") != 0)
 		start = buf + strlen(basedir) + 1;
 	else if (OP_TEST == op)
 		start = buf;
@@ -821,7 +821,8 @@ filescan(const char *file)
 			say(file, "Filename too long");
 			return;
 		}
-		start = strstr(buf, basedir) == buf ?
+		start = strstr(buf, basedir) == buf && 
+		    strcmp(basedir, "/") != 0 ?
 		    buf + strlen(basedir) + 1 : buf;
 	}
 
