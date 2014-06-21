@@ -347,7 +347,8 @@ mandocdb(int argc, char *argv[])
 	 */
 #define	CHECKOP(_op, _ch) do \
 	if (OP_DEFAULT != (_op)) { \
-		fprintf(stderr, "-%c: Conflicting option\n", (_ch)); \
+		fprintf(stderr, "%s: -%c: Conflicting option\n", \
+		    progname, (_ch)); \
 		goto usage; \
 	} while (/*CONSTCOND*/0)
 
@@ -383,8 +384,9 @@ mandocdb(int argc, char *argv[])
 			break;
 		case 'T':
 			if (strcmp(optarg, "utf8")) {
-				fprintf(stderr, "-T%s: Unsupported "
-				    "output format\n", optarg);
+				fprintf(stderr, "%s: -T%s: "
+				    "Unsupported output format\n",
+				    progname, optarg);
 				goto usage;
 			}
 			write_utf8 = 1;
@@ -411,7 +413,8 @@ mandocdb(int argc, char *argv[])
 	argv += optind;
 
 	if (OP_CONFFILE == op && argc > 0) {
-		fprintf(stderr, "-C: Too many arguments\n");
+		fprintf(stderr, "%s: -C: Too many arguments\n",
+		    progname);
 		goto usage;
 	}
 
