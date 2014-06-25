@@ -1934,7 +1934,8 @@ roff_so(ROFF_ARGS)
 {
 	char *name;
 
-	mandoc_msg(MANDOCERR_SO, r->parse, ln, ppos, NULL);
+	name = *bufp + pos;
+	mandoc_vmsg(MANDOCERR_SO, r->parse, ln, ppos, ".so %s", name);
 
 	/*
 	 * Handle `so'.  Be EXTREMELY careful, as we shouldn't be
@@ -1943,9 +1944,9 @@ roff_so(ROFF_ARGS)
 	 * or using absolute paths.
 	 */
 
-	name = *bufp + pos;
 	if ('/' == *name || strstr(name, "../") || strstr(name, "/..")) {
-		mandoc_msg(MANDOCERR_SOPATH, r->parse, ln, pos, NULL);
+		mandoc_vmsg(MANDOCERR_SO_PATH, r->parse, ln, ppos,
+		    ".so %s", name);
 		return(ROFF_ERR);
 	}
 
