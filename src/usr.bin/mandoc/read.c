@@ -145,9 +145,6 @@ static	const char * const	mandocerrs[MANDOCERR_MAX] = {
 	"bad escape sequence",
 	"unterminated quoted string",
 
-	/* related to equations */
-	"unexpected literal in equation",
-
 	"generic error",
 
 	/* related to equations */
@@ -186,7 +183,6 @@ static	const char * const	mandocerrs[MANDOCERR_MAX] = {
 	"request requires a numeric argument",
 	"missing list type",
 	"line argument(s) will be lost",
-	"body argument(s) will be lost",
 
 	"generic fatal error",
 
