@@ -915,8 +915,9 @@ in_line(MACRO_PROT_ARGS)
 					return(0);
 			} else if ( ! nc && 0 == cnt) {
 				mdoc_argv_free(arg);
-				mdoc_pmsg(mdoc, line, ppos,
-				    MANDOCERR_MACROEMPTY);
+				mandoc_msg(MANDOCERR_MACRO_EMPTY,
+				    mdoc->parse, line, ppos,
+				    mdoc_macronames[tok]);
 			}
 
 			if ( ! mdoc_macro(mdoc, ntok, line, la, pos, buf))
@@ -1001,7 +1002,8 @@ in_line(MACRO_PROT_ARGS)
 			return(0);
 	} else if ( ! nc && 0 == cnt) {
 		mdoc_argv_free(arg);
-		mdoc_pmsg(mdoc, line, ppos, MANDOCERR_MACROEMPTY);
+		mandoc_msg(MANDOCERR_MACRO_EMPTY, mdoc->parse,
+		    line, ppos, mdoc_macronames[tok]);
 	}
 
 	if ( ! nl)
