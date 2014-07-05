@@ -137,13 +137,11 @@ static	const char * const	mandocerrs[MANDOCERR_MAX] = {
 	/* related to bad macro arguments */
 	"skipping argument",
 	"duplicate argument",
-	"duplicate display type",
-	"duplicate list type",
+	"skipping duplicate display type",
+	"skipping duplicate list type",
 	"unknown AT&T UNIX version",
-	"bad Boolean value",
-	"unknown font",
-	"unknown standard specifier",
-	"bad width argument",
+	"invalid Boolean argument",
+	"unknown font, skipping request",
 
 	/* related to plain text */
 	"blank line in non-literal context",
@@ -181,6 +179,7 @@ static	const char * const	mandocerrs[MANDOCERR_MAX] = {
 	"NOT IMPLEMENTED, please use groff: skipping request",
 	"argument count wrong",
 	"skipping invalid content in .Rs block",
+	"unknown standard specifier",
 	"skipping column outside column list",
 	"skipping end of block that is not open",
 	"missing end of block",
