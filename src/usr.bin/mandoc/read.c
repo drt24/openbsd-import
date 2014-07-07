@@ -141,6 +141,7 @@ static	const char * const	mandocerrs[MANDOCERR_MAX] = {
 	"skipping duplicate display type",
 	"skipping duplicate list type",
 	"unknown AT&T UNIX version",
+	"invalid content in Rs block",
 	"invalid Boolean argument",
 	"unknown font, skipping request",
 
@@ -177,7 +178,6 @@ static	const char * const	mandocerrs[MANDOCERR_MAX] = {
 	"manual name not yet set",
 	"skipping unknown macro",
 	"argument count wrong",
-	"skipping invalid content in .Rs block",
 	"unknown standard specifier",
 	"skipping column outside column list",
 	"skipping end of block that is not open",
