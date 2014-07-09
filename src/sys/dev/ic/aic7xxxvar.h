@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic7xxxvar.h,v 1.24 2007/08/04 14:37:34 krw Exp $	*/
+/*	$OpenBSD: aic7xxxvar.h,v 1.25 2012/02/24 06:19:00 guenther Exp $	*/
 /*
  * Core definitions and data structures shareable across OS platforms.
  *
@@ -1142,8 +1142,6 @@ struct ahc_softc {
 	uint16_t		  user_tagenable;/* Tagged Queuing allowed */
 
 	struct ahc_pci_busdata 	  *bd;
-
-	void			  *shutdown_hook;
 };
 
 TAILQ_HEAD(ahc_softc_tailq, ahc_softc);
