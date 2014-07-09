@@ -57,7 +57,7 @@ struct	mparse {
 	mandocmsg	  mmsg; /* warning/error message handler */
 	const char	 *file;
 	struct buf	 *secondary;
-	char		 *defos; /* default operating system */
+	const char	 *defos; /* default operating system */
 };
 
 static	void	  resize_buf(struct buf *, size_t);
@@ -756,7 +756,7 @@ out:
 
 struct mparse *
 mparse_alloc(int options, enum mandoclevel wlevel,
-		mandocmsg mmsg, char *defos)
+		mandocmsg mmsg, const char *defos)
 {
 	struct mparse	*curp;
 
