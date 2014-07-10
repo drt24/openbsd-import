@@ -1,4 +1,4 @@
-/*	$OpenBSD: pptpd.c,v 1.21 2014/03/22 04:32:39 yasuoka Exp $	*/
+/*	$OpenBSD: pptpd.c,v 1.22 2014/05/30 05:06:00 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -401,7 +401,11 @@ pptpd_listener_start(pptpd_listener *_this)
 	_this->sock = sock;
 	_this->sock_gre = sock_gre;
 
-	accept_add(_this->sock, pptpd_io_event, _this);
+	if (accept_add(_this->sock, pptpd_io_event, _this) != 0) {
+		pptpd_log(_this->self, LOG_ERR,
+		    "accept_add() failed in %s(): %m", __func__);
+		goto fail;
+	}
 
 	event_set(&_this->ev_sock_gre, _this->sock_gre, EV_READ | EV_PERSIST,
 	    pptpd_gre_io_event, _this);
@@ -625,10 +629,10 @@ pptpd_io_event(int fd, short evmask, void *ctx)
 			peerlen = sizeof(peer);
 			if ((newsock = accept(listener->sock,
 			    (struct sockaddr *)&peer, &peerlen)) < 0) {
-				if (errno == EMFILE || errno == ENFILE)
-					accept_pause();
-				else if (errno != EAGAIN && errno != EINTR &&
+				if (errno != EAGAIN && errno == EINTR &&
 				    errno != ECONNABORTED) {
+					if (errno == EMFILE || errno == ENFILE)
+						accept_pause();
 					pptpd_log(_this, LOG_ERR,
 					    "accept() failed at %s(): %m",
 						__func__);
