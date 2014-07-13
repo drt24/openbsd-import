@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic7xxx.c,v 1.86 2013/04/20 20:23:09 miod Exp $	*/
+/*	$OpenBSD: aic7xxx.c,v 1.87 2014/07/12 18:48:17 tedu Exp $	*/
 /*	$NetBSD: aic7xxx.c,v 1.108 2003/11/02 11:07:44 wiz Exp $	*/
 
 /*
@@ -4235,7 +4235,7 @@ ahc_init_scbdata(struct ahc_softc *ahc)
 	SLIST_INIT(&scb_data->sg_maps);
 
 	/* Allocate SCB resources */
-	scb_data->scbarray = malloc(sizeof(struct scb) * AHC_SCB_MAX_ALLOC,
+	scb_data->scbarray = mallocarray(AHC_SCB_MAX_ALLOC, sizeof(struct scb),
 	    M_DEVBUF, M_NOWAIT | M_ZERO);
 	if (scb_data->scbarray == NULL)
 		return (ENOMEM);
