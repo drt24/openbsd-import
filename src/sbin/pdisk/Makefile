@@ -18,4 +18,3 @@ MAN=	pdisk.8
 MANSUBDIR=macppc
 
 .include <bsd.prog.mk>
-
