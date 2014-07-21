@@ -1,4 +1,4 @@
-/*	$OpenBSD: pppoed.c,v 1.13 2013/04/20 23:32:32 yasuoka Exp $	*/
+/*	$OpenBSD: pppoed.c,v 1.14 2014/03/22 04:18:18 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -32,7 +32,6 @@
  */
 #include <sys/types.h>
 #include <sys/param.h>
-#include <sys/endian.h>
 #include <sys/socket.h>
 #include <sys/ioctl.h>
 #include <sys/uio.h>
@@ -47,6 +46,7 @@
 #include <net/if_dl.h>
 #include <net/ethertypes.h>
 #include <net/bpf.h>
+#include <endian.h>
 #include <string.h>
 #include <syslog.h>
 #include <stdio.h>

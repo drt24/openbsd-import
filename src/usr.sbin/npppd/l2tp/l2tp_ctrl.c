@@ -1,4 +1,4 @@
-/*	$OpenBSD: l2tp_ctrl.c,v 1.16 2013/09/13 03:25:27 yasuoka Exp $	*/
+/*	$OpenBSD: l2tp_ctrl.c,v 1.17 2014/05/07 01:20:53 tedu Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -31,10 +31,10 @@
 #include <sys/param.h>
 #include <sys/time.h>
 #include <sys/socket.h>
-#include <sys/endian.h>
 #include <netinet/in.h>
 #include <net/if.h>
 #include <arpa/inet.h>
+#include <endian.h>
 #include <errno.h>
 #include <event.h>
 #include <ifaddrs.h>

@@ -1,4 +1,4 @@
-/*	$OpenBSD: mppe.c,v 1.9 2012/12/19 09:23:54 sthen Exp $ */
+/*	$OpenBSD: mppe.c,v 1.10 2013/02/13 22:10:38 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -37,11 +37,11 @@
 #define	WORKAROUND_OUT_OF_SEQUENCE_PPP_FRAMING	1
 
 #include <sys/types.h>
-#include <sys/endian.h>
 #include <sys/socket.h>
 #include <sys/time.h>
 #include <net/if_dl.h>
 #include <netinet/in.h>
+#include <endian.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
