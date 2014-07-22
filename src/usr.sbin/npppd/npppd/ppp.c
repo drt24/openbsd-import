@@ -1,4 +1,4 @@
-/*	$OpenBSD: ppp.c,v 1.20 2014/03/22 04:32:39 yasuoka Exp $ */
+/*	$OpenBSD: ppp.c,v 1.21 2014/05/30 05:06:00 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -1227,7 +1227,7 @@ struct tunnconf tunnconf_default_pptp = {
 			.hostname = NULL,
 			.vendor_name = NULL,
 			.listen = TAILQ_HEAD_INITIALIZER(
-			    tunnconf_default_l2tp.proto.l2tp.listen),
+			    tunnconf_default_pptp.proto.pptp.listen),
 			/* .echo_interval, */
 			/* .echo_timeout, */
 		}
