@@ -789,7 +789,7 @@ term_vspan(const struct termp *p, const struct roffsu *su)
 
 	if (r < 0.0)
 		r = 0.0;
-	return((size_t)r);
+	return((size_t)(r + 0.0005));
 }
 
 size_t
@@ -800,5 +800,5 @@ term_hspan(const struct termp *p, const struct roffsu *su)
 	v = (*p->hspan)(p, su);
 	if (v < 0.0)
 		v = 0.0;
-	return((size_t)v);
+	return((size_t)(v + 0.0005));
 }
