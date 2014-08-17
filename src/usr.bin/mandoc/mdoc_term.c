@@ -804,7 +804,8 @@ termp_it_pre(DECL_ARGS)
 		 * the "overstep" effect in term_flushln() and treat
 		 * this as a `-ohang' list instead.
 		 */
-		if (n->next->child &&
+		if (NULL != n->next &&
+		    NULL != n->next->child &&
 		    (MDOC_Bl == n->next->child->tok ||
 		     MDOC_Bd == n->next->child->tok))
 			break;
@@ -860,7 +861,9 @@ termp_it_pre(DECL_ARGS)
 		 * don't want to recalculate rmargin and offsets when
 		 * using `Bd' or `Bl' within `-hang' overstep lists.
 		 */
-		if (MDOC_HEAD == n->type && n->next->child &&
+		if (MDOC_HEAD == n->type &&
+		    NULL != n->next &&
+		    NULL != n->next->child &&
 		    (MDOC_Bl == n->next->child->tok ||
 		     MDOC_Bd == n->next->child->tok))
 			break;
@@ -1025,7 +1028,8 @@ termp_nm_pre(DECL_ARGS)
 	if (MDOC_HEAD == n->type)
 		synopsis_pre(p, n->parent);
 
-	if (MDOC_HEAD == n->type && n->next->child) {
+	if (MDOC_HEAD == n->type &&
+	    NULL != n->next && NULL != n->next->child) {
 		p->flags |= TERMP_NOSPACE | TERMP_NOBREAK | TERMP_BRIND;
 		p->trailspace = 1;
 		p->rmargin = p->offset + term_len(p, 1);
@@ -1053,7 +1057,8 @@ termp_nm_post(DECL_ARGS)
 
 	if (MDOC_BLOCK == n->type) {
 		p->flags &= ~(TERMP_KEEP | TERMP_PREKEEP);
-	} else if (MDOC_HEAD == n->type && n->next->child) {
+	} else if (MDOC_HEAD == n->type &&
+	    NULL != n->next && NULL != n->next->child) {
 		term_flushln(p);
 		p->flags &= ~(TERMP_NOBREAK | TERMP_BRIND | TERMP_HANG);
 		p->trailspace = 0;
