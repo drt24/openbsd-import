@@ -243,7 +243,7 @@ ascii_hspan(const struct termp *p, const struct roffsu *su)
 	case SCALE_EM:
 		r = su->scale;
 		break;
-	case default:
+	default:
 		abort();
 		/* NOTREACHED */
 	}
