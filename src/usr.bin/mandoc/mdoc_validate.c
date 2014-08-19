@@ -16,11 +16,11 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
+
+#include <sys/types.h>
 #ifndef OSNAME
 #include <sys/utsname.h>
 #endif
-
-#include <sys/types.h>
 
 #include <assert.h>
 #include <ctype.h>
@@ -528,7 +528,7 @@ pre_bl(PRE_ARGS)
 	 * ones.  If we find no list type, we default to LIST_item.
 	 */
 
-	wa = n->args->argv;
+	wa = (n->args == NULL) ? NULL : n->args->argv;
 	mdoclt = MDOC_ARG_MAX;
 	for (i = 0; n->args && i < (int)n->args->argc; i++) {
 		argv = n->args->argv + i;
