@@ -769,6 +769,7 @@ exprterm(const struct mansearch *search, char *buf, int cs)
 	if (MANSEARCH_WHATIS & search->flags) {
 		e->substr = NULL;
 		mandoc_asprintf(&val, "[[:<:]]%s[[:>:]]", buf);
+		cs = 0;
 	}
 
 	if (NULL == e->substr) {
