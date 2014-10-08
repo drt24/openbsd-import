@@ -1,4 +1,4 @@
-/*	$OpenBSD: util.c,v 1.9 2003/11/08 19:17:29 jmc Exp $
+/*	$OpenBSD: util.c,v 1.10 2007/09/02 15:19:33 deraadt Exp $
  *
  * Copyright (c) 1995 Wolfram Schneider <wosch@FreeBSD.org>. Berlin.
  * Copyright (c) 1989, 1993
@@ -122,8 +122,8 @@ colon(dbv, path, dot)
 				*(p + slen) = '\0';
 			}
 			/* increase dbv with element p */
-			if ((newdbv = realloc(dbv, sizeof(char **) * (vlen + 2)))
-			    == NULL)
+			if ((newdbv = reallocarray(dbv, vlen + 2,
+			    sizeof(char **))) == NULL)
 				err(1, "realloc");
 			dbv = newdbv;
 			*(dbv + vlen) = p;

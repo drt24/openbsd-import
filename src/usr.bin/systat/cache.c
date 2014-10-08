@@ -68,7 +68,7 @@ cache_init(int max)
 	if (max == 0) {
 		sc_store = NULL;
 	} else {
-		sc_store = malloc(max * sizeof(struct sc_ent));
+		sc_store = reallocarray(NULL, max, sizeof(struct sc_ent));
 		if (sc_store == NULL)
 			return (1);
 	}
