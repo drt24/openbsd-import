@@ -33,4 +33,3 @@
 #include <paths.h>
 
 #define	_PATH_INETDCONF	"/etc/inetd.conf"
-#define _PATH_INETDPID	"/var/run/inetd.pid"
