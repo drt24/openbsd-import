@@ -9,9 +9,6 @@ MAN  = amq.8
 CFLAGS+=-I${.CURDIR}/../include
 CFLAGS+=-I${.CURDIR}/../rpcx
 CFLAGS+=-I${.CURDIR}/../config
-CFLAGS+=-DARCH_REP=\"${MACHINE}\"
-CFLAGS+=-DOS_REP=\"${OS}\"
-CFLAGS+=-DOS_HDR=\"os-${OS}.h\"
 .PATH: ${.CURDIR}/../rpcx ${.CURDIR}/../amd
 
 .include "../../Makefile.inc"

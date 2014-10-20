@@ -184,17 +184,7 @@ show_mi(amq_mount_info_list *ml, enum show_opt e, int *mwid,
 			    mi->mi_up > 0 ? "up" :
 			    mi->mi_up < 0 ? "starting" : "down");
 			if (mi->mi_error > 0) {
-#ifdef HAS_STRERROR
 				printf(" (%s)", strerror(mi->mi_error));
-#else
-				extern char *sys_errlist[];
-				extern int sys_nerr;
-
-				if (mi->mi_error < sys_nerr)
-					printf(" (%s)", sys_errlist[mi->mi_error]);
-				else
-					printf(" (Error %d)", mi->mi_error);
-#endif
 			} else if (mi->mi_error < 0) {
 				fputs(" (in progress)", stdout);
 			}

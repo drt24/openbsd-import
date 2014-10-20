@@ -40,9 +40,7 @@
  */
 
 #include "am.h"
-#ifdef HAS_SYSLOG
 #include <syslog.h>
-#endif /* HAS_SYSLOG */
 #include <sys/stat.h>
 #include <unistd.h>
 
@@ -246,15 +244,6 @@ get_args(int c, char *v[])
 	}
 
 	if (optind == c) {
-#ifdef hpux
-		/*
-		 * HP-UX can't handle ./mtab
-		 * That system is sick - really.
-		 */
-#ifdef	DEBUG
-		debug_option("nomtab");
-#endif	/* DEBUG */
-#endif	/* hpux */
 
 		/*
 		 * Append domain name to hostname.

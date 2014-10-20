@@ -46,13 +46,6 @@ typedef nfs_fh fhandle_t;
 /*
  * Standard mount flags
  */
-#ifdef hpux
-/*
- * HP-UX has an annoying feature of printing
- * error msgs on /dev/console
- */
-#undef M_NOSUID
-#endif /* hpux */
 
 struct opt_tab mnt_flags[] = {
 	{ "ro", M_RDONLY },

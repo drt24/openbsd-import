@@ -35,17 +35,11 @@
  *	$Id$
  */
 
-#ifdef __GNUC__
-#define INLINE /* __inline */
-#else
-#define	INLINE
-#endif /* __GNUC__ */
-
 /*
  * Pick up target dependent definitions
  */
 #include "os-defaults.h"
-#include OS_HDR
+#include "os-bsd44.h"
 
 #include <errno.h>
 #include <stdio.h>
@@ -59,9 +53,7 @@ extern char *__progname;
 extern char hostname[];		/* "kiska" */
 extern pid_t mypid;		/* Current process id */
 
-#ifdef HAS_SYSLOG
 extern int syslogging;		/* Really using syslog */
-#endif /* HAS_SYSLOG */
 extern FILE *logfp;		/* Log file */
 extern int xlog_level;		/* Logging level */
 extern int xlog_level_init;
