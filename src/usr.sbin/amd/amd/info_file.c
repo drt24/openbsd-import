@@ -41,7 +41,6 @@
 
 #include "am.h"
 
-#ifdef HAS_FILE_MAPS
 #include <ctype.h>
 #include <sys/stat.h>
 
@@ -260,4 +259,3 @@ file_mtime(char *map, time_t *tp)
 
 	return errno;
 }
-#endif /* HAS_FILE_MAPS */

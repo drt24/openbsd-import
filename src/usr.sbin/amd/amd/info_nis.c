@@ -43,7 +43,6 @@
 
 #include <unistd.h>
 
-#ifdef HAS_NIS_MAPS
 #include <rpcsvc/yp_prot.h>
 #include <rpcsvc/ypclnt.h>
 #include <time.h>
@@ -84,7 +83,6 @@ determine_nis_domain(void)
 }
 
 
-#ifdef HAS_NIS_RELOAD
 struct nis_callback_data {
 	mnt_map *ncd_m;
 	char *ncd_map;
@@ -160,7 +158,6 @@ nis_reload(mnt_map *m, char *map, void (*fn)())
 
 	return error;
 }
-#endif /* HAS_NIS_RELOAD */
 
 /*
  * Try to locate a key using NIS.
@@ -282,4 +279,3 @@ nis_init(char *map, time_t *tp)
 	}
 	return 0;
 }
-#endif /* HAS_NIS_MAPS */

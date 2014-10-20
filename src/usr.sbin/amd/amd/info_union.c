@@ -44,7 +44,6 @@
 
 #include "am.h"
 
-#ifdef HAS_UNION_MAPS
 
 #include <dirent.h>
 #define	DIRENT struct dirent
@@ -136,4 +135,3 @@ union_reload(mnt_map *m, char *map, void (*fn)())
 	return 0;
 }
 
-#endif /* HAS_UNION_MAPS */

@@ -298,7 +298,6 @@ main(int argc, char *argv[])
 		going_down(1);
 	}
 
-#ifdef HAS_NIS_MAPS
 	/*
 	 * If the domain was specified then bind it here
 	 * to circumvent any default bindings that may
@@ -308,7 +307,6 @@ main(int argc, char *argv[])
 		plog(XLOG_FATAL, "Can't bind to domain \"%s\"", domain);
 		going_down(1);
 	}
-#endif /* HAS_NIS_MAPS */
 
 #ifdef DEBUG
 	Debug(D_DAEMON)

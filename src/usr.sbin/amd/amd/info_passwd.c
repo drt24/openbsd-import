@@ -44,7 +44,6 @@
 
 #include "am.h"
 
-#ifdef HAS_PASSWD_MAPS
 #include <pwd.h>
 
 #define	PASSWD_MAP	"/etc/passwd"
@@ -149,4 +148,3 @@ enoent:
 
 	return ENOENT;
 }
-#endif /* HAS_PASSWD_MAPS */

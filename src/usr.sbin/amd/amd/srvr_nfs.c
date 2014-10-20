@@ -591,7 +591,6 @@ find_nfs_srvr(mntfs *mf)
 	{ struct mntent mnt;
 	  mnt.mnt_opts = mf->mf_mopts;
 	  pingval = hasmntval(&mnt, "ping");
-#ifdef HAS_TCP_NFS
 	  /*
 	   * Over TCP mount, don't bother to do pings.
 	   * This is experimental - maybe you want to
@@ -599,7 +598,6 @@ find_nfs_srvr(mntfs *mf)
 	   */
 	  if (pingval == 0 && hasmntopt(&mnt, "tcp"))
 		pingval = -1;
-#endif /* HAS_TCP_NFS */
 	}
 
 

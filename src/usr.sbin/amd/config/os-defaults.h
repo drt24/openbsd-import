@@ -44,16 +44,6 @@
 #define	AMD_COMPAT	5000000		/* 5.0 */
 
 /*
- * Is the mount table mirrored in software
- */
-#define	UPDATE_MTAB
-
-/*
- * Where to get mount entry info
- */
-#define	MNTENT_HDR	<mntent.h>
-
-/*
  * Name of filesystem types
  */
 #define	MTAB_TYPE_NFS	"nfs"
@@ -85,11 +75,3 @@
  * Type of filesystem type
  */
 #define MTYPE_TYPE	char *
-
-/*
- * Make Amd automount points appear
- * to be zero sized.  undef this
- * if the O/S has a divide by zero
- * problem in df et al.
- */
-#define	HAS_EMPTY_AUTOMOUNTS
