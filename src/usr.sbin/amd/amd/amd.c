@@ -70,7 +70,7 @@ char *auto_dir = "/tmp_mnt";
 char *hostdomain = "unknown.domain";
 char hostname[MAXHOSTNAMELEN] = "localhost"; /* Hostname */
 char hostd[2*MAXHOSTNAMELEN];		/* Host+domain */
-char *op_sys = OS_REP;			/* Name of current op_sys */
+char *op_sys = "bsd44";			/* Name of current op_sys */
 char *arch = ARCH_REP;			/* Name of current architecture */
 char *endian = ARCH_ENDIAN;		/* Big or Little endian */
 char *wire;
