@@ -1,4 +1,4 @@
-/*	$OpenBSD: npppd_config.c,v 1.11 2013/08/24 23:48:25 mlarkin Exp $ */
+/*	$OpenBSD: npppd_config.c,v 1.12 2014/03/22 04:30:31 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -33,7 +33,6 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <net/if_dl.h>
-#include <netinet/in_systm.h>
 #include <netinet/ip.h>
 #include <net/route.h>
 #include <arpa/inet.h>

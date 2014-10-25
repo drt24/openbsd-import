@@ -1,4 +1,4 @@
-/*	$OpenBSD: npppd_iface.c,v 1.7 2012/09/18 13:14:08 yasuoka Exp $ */
+/*	$OpenBSD: npppd_iface.c,v 1.8 2013/02/13 22:10:38 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -37,7 +37,6 @@
 #include <sys/uio.h>
 #include <sys/sockio.h>
 #include <netinet/in.h>
-#include <netinet/in_systm.h>
 #include <netinet/ip.h>
 #include <arpa/inet.h>
 #include <net/if_dl.h>

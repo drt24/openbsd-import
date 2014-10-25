@@ -1,4 +1,4 @@
-/*	$OpenBSD: pptpd.c,v 1.22 2014/05/30 05:06:00 yasuoka Exp $	*/
+/*	$OpenBSD: pptpd.c,v 1.23 2014/07/10 13:48:03 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -38,7 +38,6 @@
 #include <sys/sysctl.h>
 #include <net/if.h>
 #include <netinet/in.h>
-#include <netinet/in_systm.h>
 #include <netinet/ip.h>
 #include <netinet/ip_gre.h>
 #include <arpa/inet.h>
