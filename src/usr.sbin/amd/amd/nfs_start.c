@@ -53,9 +53,6 @@ extern int select_intr_valid;
 extern SVCXPRT *svcudp2_create(int);
 #endif /* HAS_TFS */
 
-extern void nfs_program_2();
-extern void amq_program_1();
-
 unsigned short nfs_port;
 SVCXPRT *nfsxprt, *lnfsxprt;
 SVCXPRT *amqp, *lamqp;
@@ -154,7 +151,7 @@ do_select(sigset_t *mask, sigset_t *omask, int fds, fd_set *fdp,
  * the RPC input queue.
  */
 static int
-rpc_pending_now()
+rpc_pending_now(void)
 {
 	struct timeval tvv;
 	int nsel;

@@ -78,7 +78,7 @@ union_search(mnt_map *m, char *map, char *key, char **pval, time_t *tp)
 }
 
 int
-union_reload(mnt_map *m, char *map, void (*fn)())
+union_reload(mnt_map *m, char *map, void (*fn)(mnt_map *, char *, char *))
 {
 	char *mapd = strdup(map + UNION_PREFLEN);
 	char **v = strsplit(mapd, ':', '\"');

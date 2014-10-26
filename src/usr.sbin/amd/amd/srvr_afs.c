@@ -95,8 +95,10 @@ wakeup_srvr(fserver *fs)
  * Called when final ttl of server has expired
  */
 static void
-timeout_srvr(fserver *fs)
+timeout_srvr(void *arg)
 {
+	fserver *fs = arg;
+
 	/*
 	 * If the reference count is still zero then
 	 * we are free to remove this node

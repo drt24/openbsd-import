@@ -86,7 +86,7 @@ determine_nis_domain(void)
 struct nis_callback_data {
 	mnt_map *ncd_m;
 	char *ncd_map;
-	void (*ncd_fn)();
+	void (*ncd_fn)(mnt_map *, char *, char *);
 };
 
 /*
@@ -132,7 +132,7 @@ callback(int status, char *key, int kl, char *val,
 }
 
 int
-nis_reload(mnt_map *m, char *map, void (*fn)())
+nis_reload(mnt_map *m, char *map, void (*fn)(mnt_map *, char *, char *))
 {
 	struct ypall_callback cbinfo;
 	int error;

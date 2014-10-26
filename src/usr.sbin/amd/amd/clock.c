@@ -51,7 +51,7 @@
 typedef struct callout callout;
 struct callout {
 	callout	*c_next;		/* List of callouts */
-	void	(*c_fn)();		/* Function to call */
+	void	(*c_fn)(void *);	/* Function to call */
 	void	*c_closure;		/* Closure to pass to call */
 	time_t	c_time;			/* Time of call */
 	int	c_id;			/* Unique identifier */
@@ -104,7 +104,7 @@ free_callout(callout *cp)
  * (*fn)(closure) will be called at clocktime() + secs
  */
 int
-timeout(unsigned int secs, void (*fn)(), void *closure)
+timeout(unsigned int secs, void (*fn)(void *), void *closure)
 {
 	callout *cp, *cp2;
 	time_t t = clocktime() + secs;
@@ -205,7 +205,7 @@ softclock(void)
 			 * function will call timeout()
 			 * and try to allocate a callout
 			 */
-			void (*fn)() = cp->c_fn;
+			void (*fn)(void *) = cp->c_fn;
 			void *closure = cp->c_closure;
 
 			callouts.c_next = cp->c_next;

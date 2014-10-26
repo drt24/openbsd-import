@@ -56,7 +56,7 @@ amqproc_null_1(void *argp, CLIENT *clnt)
 
 
 amq_mount_tree_p *
-amqproc_mnttree_1(amq_string *argp, CLIENT *clnt)
+amqproc_mnttree_1(void *argp, CLIENT *clnt)
 {
 	static amq_mount_tree_p res;
 
@@ -70,7 +70,7 @@ amqproc_mnttree_1(amq_string *argp, CLIENT *clnt)
 
 
 void *
-amqproc_umnt_1(amq_string *argp, CLIENT *clnt)
+amqproc_umnt_1(void *argp, CLIENT *clnt)
 {
 	static char res;
 
@@ -111,7 +111,7 @@ amqproc_export_1(void *argp, CLIENT *clnt)
 }
 
 int *
-amqproc_setopt_1(amq_setopt *argp, CLIENT *clnt)
+amqproc_setopt_1(void *argp, CLIENT *clnt)
 {
 	static int res;
 

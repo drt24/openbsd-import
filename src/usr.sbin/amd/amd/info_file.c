@@ -213,7 +213,7 @@ file_init(char *map, time_t *tp)
 }
 
 int
-file_reload(mnt_map *m, char *map, void (*fn)())
+file_reload(mnt_map *m, char *map, void (*fn)(mnt_map *, char *, char *))
 {
 	FILE *mapf = file_open(map, (time_t *) 0);
 
