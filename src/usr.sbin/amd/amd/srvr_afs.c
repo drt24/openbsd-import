@@ -88,7 +88,7 @@ void
 wakeup_srvr(fserver *fs)
 {
 	fs->fs_flags &= ~FSF_WANT;
-	wakeup((void *)fs);
+	wakeup(fs);
 }
 
 /*
@@ -165,7 +165,7 @@ free_srvr(fserver *fs)
 		/*
 		 * Keep structure lying around for a while
 		 */
-		fs->fs_cid = timeout(ttl, timeout_srvr, (void *)fs);
+		fs->fs_cid = timeout(ttl, timeout_srvr, fs);
 		/*
 		 * Mark the fileserver down and invalid again
 		 */

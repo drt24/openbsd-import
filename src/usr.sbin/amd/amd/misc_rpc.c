@@ -53,7 +53,7 @@ rpc_msg_init(struct rpc_msg *mp, unsigned long prog,
 	/*
 	 * Initialise the message
 	 */
-	bzero((void *)mp, sizeof(*mp));
+	bzero(mp, sizeof(*mp));
 	mp->rm_xid = 0;
 	mp->rm_direction = CALL;
 	mp->rm_call.cb_rpcvers = RPC_MSG_VERSION;
@@ -74,8 +74,8 @@ pickup_rpc_reply(void *pkt, int len, void *where, xdrproc_t where_xdr)
 	struct rpc_msg reply_msg;
 	int error = 0;
 
-	/*bzero((void *)&err, sizeof(err));*/
-	bzero((void *)&reply_msg, sizeof(reply_msg));
+	/*bzero(&err, sizeof(err));*/
+	bzero(&reply_msg, sizeof(reply_msg));
 
 	reply_msg.acpted_rply.ar_results.where = (caddr_t) where;
 	reply_msg.acpted_rply.ar_results.proc = where_xdr;

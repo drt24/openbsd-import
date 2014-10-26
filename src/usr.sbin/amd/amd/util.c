@@ -286,7 +286,7 @@ bind_resv_port(int so, u_short *pp)
 	struct sockaddr_in sin;
 	int rc;
 
-	bzero((void *)&sin, sizeof(sin));
+	bzero(&sin, sizeof(sin));
 	sin.sin_family = AF_INET;
 
 	rc = bindresvport(so, &sin);

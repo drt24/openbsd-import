@@ -68,8 +68,8 @@ pfs_init(mntfs *mf)
 	 * Save unmount command
 	 */
 	if (mf->mf_refc == 1) {
-		mf->mf_private = (void *)strdup(mf->mf_fo->opt_unmount);
-		mf->mf_prfree = (void (*) ()) free;
+		mf->mf_private = strdup(mf->mf_fo->opt_unmount);
+		mf->mf_prfree = free;
 	}
 	return 0;
 }
