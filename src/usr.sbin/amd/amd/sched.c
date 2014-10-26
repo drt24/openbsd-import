@@ -1,4 +1,4 @@
-/*	$OpenBSD: sched.c,v 1.14 2011/11/06 01:43:50 guenther Exp $	*/
+/*	$OpenBSD: sched.c,v 1.15 2014/10/20 00:20:04 guenther Exp $	*/
 
 /*
  * Copyright (c) 1990 Jan-Simon Pendry
@@ -188,7 +188,6 @@ wakeup_task(int rc, int term, void *cl)
 	wakeup(cl);
 }
 
-/*ARGSUSED*/
 
 void
 sigchld(int sig)

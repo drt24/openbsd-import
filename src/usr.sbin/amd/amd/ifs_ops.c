@@ -51,7 +51,6 @@ static char not_a_filesystem[] = "Attempting to inherit not-a-filesystem";
 /*
  * This should never be called.
  */
-/*ARGSUSED*/
 static char *
 ifs_match(am_opts *fo)
 {
@@ -150,7 +149,6 @@ ifs_fmount(mntfs *mf)
 	return ifs_inherit(mf) ? 0 : EINVAL;
 }
 
-/*ARGSUSED*/
 static int
 ifs_fumount(mntfs *mf)
 {

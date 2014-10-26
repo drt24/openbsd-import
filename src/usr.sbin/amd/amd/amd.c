@@ -115,7 +115,6 @@ sigterm(int sig)
  * Hook for cache reload.
  * When a SIGHUP arrives it schedules a call to mapc_reload
  */
-/*ARGSUSED*/
 static void
 sighup(int sig)
 {
@@ -131,7 +130,6 @@ sighup(int sig)
 		do_mapc_reload = 0;
 }
 
-/*ARGSUSED*/
 static void
 parent_exit(int sig)
 {

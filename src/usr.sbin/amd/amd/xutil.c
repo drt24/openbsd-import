@@ -223,7 +223,6 @@ extern char **gargv;
 		sev);
 }
 
-/*VARARGS1*/
 void
 plog(int lvl, const char *fmt, ...)
 {

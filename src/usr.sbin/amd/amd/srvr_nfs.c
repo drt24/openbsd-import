@@ -140,7 +140,6 @@ start_ping(void)
 /*
  * Called when a portmap reply arrives
  */
-/*ARGSUSED*/
 static void
 got_portmap(void *pkt, int len, struct sockaddr_in *sa,
     struct sockaddr_in *ia, void *idv, int done)
@@ -253,7 +252,6 @@ recompute_portmap(fserver *fs)
  * The value of id was taken from the nfs_private
  * structure when the ping was transmitted.
  */
-/*ARGSUSED*/
 static void
 nfs_pinged(void *pkt, int len, struct sockaddr_in *sp,
     struct sockaddr_in *tsp, void *idv, int done)

@@ -100,7 +100,6 @@ sfs_match(am_opts *fo)
 #endif
 
 #ifdef HAS_SFSX
-/*ARGUSED*/
 static int
 sfsx_mount(am_node *mp)
 {
@@ -128,7 +127,6 @@ sfsx_mount(am_node *mp)
 #endif
 
 #ifdef HAS_SFS
-/*ARGUSED*/
 static int
 sfs_fmount(mntfs *mf)
 {
@@ -141,7 +139,6 @@ sfs_fmount(mntfs *mf)
 #endif
 
 #ifdef NEED_SFS_UMOUNT
-/*ARGUSED*/
 static int
 sfs_fumount(mntfs *mf)
 {

@@ -56,14 +56,12 @@ efs_match(am_opts *fo)
 	return strdup("(error-hook)");
 }
 
-/*ARGSUSED*/
 static int
 efs_fmount(mntfs *mf)
 {
 	return ENOENT;
 }
 
-/*ARGSUSED*/
 static int
 efs_fumount(mntfs *mf)
 {
@@ -79,7 +77,6 @@ efs_fumount(mntfs *mf)
  * Should never get here in the automounter.
  * If we do then just give an error.
  */
-/*ARGSUSED*/
 am_node *
 efs_lookuppn(am_node *mp, char *fname, int *error_return, int op)
 {
@@ -92,7 +89,6 @@ efs_lookuppn(am_node *mp, char *fname, int *error_return, int op)
  * Should never get here in the automounter.
  * If we do then just give an error.
  */
-/*ARGSUSED*/
 int
 efs_readdir(am_node *mp, nfscookie cookie, dirlist *dp, entry *ep,
     int count)
