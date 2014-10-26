@@ -95,7 +95,8 @@ extern void going_down(int);
 #ifdef DEBUG
 #define dplog(fmt, args...) plog(XLOG_DEBUG, fmt, ## args)
 #endif /* DEBUG */
-extern void plog(int, char *, ...) __attribute__((__format__ (syslog, 2, 3)));
+extern void plog(int, const char *, ...)
+    __attribute__((__format__ (syslog, 2, 3)));
 extern void show_opts(int ch, struct opt_tab *);
 __dead void xmallocfailure(void);
 extern void *xmalloc(size_t);
