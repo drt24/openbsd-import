@@ -35,14 +35,15 @@
  *	$Id$
  */
 
-#include "config.h"
-#include <syslog.h>
-#include <string.h>
+#include "am.h"
 
-#include <unistd.h>
+#include <sys/stat.h>
 #include <stdarg.h>
 #include <stdlib.h>
-#include <sys/stat.h>
+#include <string.h>
+#include <syslog.h>
+#include <time.h>
+#include <unistd.h>
 
 FILE *logfp = stderr;		/* Log errors to stderr initially */
 int syslogging;
@@ -190,7 +191,6 @@ show_time_host_and_name(int lvl)
 	static char *last_ctime = 0;
 	time_t t = clocktime();
 	char *sev;
-	extern char *ctime();
 
 #if defined(DEBUG) && defined(PARANOID)
 extern char **gargv;
