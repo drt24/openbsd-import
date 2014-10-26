@@ -156,7 +156,7 @@ fwd_free(rpc_forward *p)
 #ifdef DEBUG
 	/*dlog("fwd_free: rpc_head = %#x", rpc_head.q_forw);*/
 #endif /* DEBUG */
-	free((void *)p);
+	free(p);
 }
 
 /*
@@ -420,6 +420,6 @@ out:;
 	/*
 	 * Free the packet
 	 */
-	free((void *)pkt);
+	free(pkt);
 #endif /* DYNAMIC_BUFFERS */
 }

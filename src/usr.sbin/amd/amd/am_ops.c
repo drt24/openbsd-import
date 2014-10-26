@@ -154,7 +154,7 @@ ops_match(am_opts *fo, char *key, char *g_key, char *path, char *keym,
 	 * Check the filesystem is happy
 	 */
 	if (fo->fs_mtab)
-		free((void *)fo->fs_mtab);
+		free(fo->fs_mtab);
 
 	if ((fo->fs_mtab = (*rop->fs_match)(fo)))
 		return rop;

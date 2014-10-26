@@ -124,17 +124,17 @@ timeout_srvr(void *arg)
 		 * Free the net address
 		 */
 		if (fs->fs_ip)
-			free((void *)fs->fs_ip);
+			free(fs->fs_ip);
 
 		/*
 		 * Free the host name.
 		 */
-		free((void *)fs->fs_host);
+		free(fs->fs_host);
 
 		/*
 		 * Discard the fserver object.
 		 */
-		free((void *)fs);
+		free(fs);
 	}
 }
 

@@ -90,7 +90,7 @@ static void
 free_callout(callout *cp)
 {
 	if (nfree_callouts > CALLOUT_FREE_SLOP) {
-		free((void *)cp);
+		free(cp);
 	} else {
 		cp->c_next = free_callouts;
 		free_callouts = cp;

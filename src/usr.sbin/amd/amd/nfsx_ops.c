@@ -82,7 +82,7 @@ nfsx_match(am_opts *fo)
 	/* fiddle sublink, must be last... */
 	if (fo->opt_sublink) {
 		plog(XLOG_WARNING, "nfsx: sublink %s ignored", fo->opt_sublink);
-		free((void *)fo->opt_sublink);
+		free(fo->opt_sublink);
 		fo->opt_sublink = 0;
 	}
 #endif
@@ -140,8 +140,8 @@ nfsx_prfree(void *vp)
 			free_mntfs(m);
 	}
 
-	free((void *)nx->nx_v);
-	free((void *)nx);
+	free(nx->nx_v);
+	free(nx);
 }
 
 static int
@@ -225,7 +225,7 @@ nfsx_init(mntfs *mf)
 		  if (xinfo) free(xinfo);
 		}
 
-		free((void *)ivec);
+		free(ivec);
 errexit:
 		if (info)
 			free(info);

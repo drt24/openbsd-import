@@ -123,8 +123,8 @@ pfs_exec(char *info)
 	/*
 	 * Free allocate memory
 	 */
-	free((void *)info);
-	free((void *)xivec);
+	free(info);
+	free(xivec);
 	/*
 	 * Return error
 	 */
