@@ -5,7 +5,7 @@ our $VERSION = do { my @r = ( q$Revision$ =~ /\d+/g ); sprintf "%d." . "%02d" x 
 
 use Encode qw(:fallbacks);
 
-use base qw(Encode::Encoding);
+use parent qw(Encode::Encoding);
 __PACKAGE__->Define('iso-2022-kr');
 
 sub needs_lines { 1 }

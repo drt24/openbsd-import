@@ -44,8 +44,17 @@ WriteMakefile(
     },
     INC         => '-I' . File::Spec->catfile( '.', 'Encode' ),
     LICENSE     => 'perl',
+    PREREQ_PM   => {
+        Exporter   => '5.57',   # use Exporter 'import';
+	parent     => '0.221',  # version bundled with 5.10.1
+    },
     PMLIBDIRS   => \@pmlibdirs,
     INSTALLDIRS => ($] < 5.011 ? 'perl' : 'site'),
+    META_MERGE        => {
+        resources => {
+            repository  =>  'https://github.com/dankogai/p5-encode',
+        },
+    },
 );
 
 package MY;
