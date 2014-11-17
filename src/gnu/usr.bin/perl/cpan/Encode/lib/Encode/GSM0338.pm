@@ -12,7 +12,7 @@ $VERSION = do { my @r = ( q$Revision$ =~ /\d+/g ); sprintf "%d." . "%02d" x $#r,
 
 use Encode qw(:fallbacks);
 
-use base qw(Encode::Encoding);
+use parent qw(Encode::Encoding);
 __PACKAGE__->Define('gsm0338');
 
 sub needs_lines { 1 }
@@ -171,7 +171,7 @@ our $NBSP   = "\x{00A0}";
 
 sub decode ($$;$) {
     my ( $obj, $bytes, $chk ) = @_;
-    my $str;
+    my $str = substr($bytes, 0, 0); # to propagate taintedness;
     while ( length $bytes ) {
         my $c = substr( $bytes, 0, 1, '' );
         my $u;
@@ -216,7 +216,7 @@ sub decode ($$;$) {
 
 sub encode($$;$) {
     my ( $obj, $str, $chk ) = @_;
-    my $bytes;
+    my $bytes = substr($str, 0, 0); # to propagate taintedness
     while ( length $str ) {
         my $u = substr( $str, 0, 1, '' );
         my $c;
@@ -259,7 +259,7 @@ this module.
 
 =head1 NOTES
 
-Unlike most other encodings,  the following aways croaks on error
+Unlike most other encodings,  the following always croaks on error
 for any $chk that evaluates to true.
 
   $gsm0338 = encode("gsm0338", $utf8      $chk);

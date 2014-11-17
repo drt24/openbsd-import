@@ -6,7 +6,6 @@
 #include "EXTERN.h"
 #include "perl.h"
 #include "XSUB.h"
-#define U8 U8
 #include "../Encode/encode.h"
 
 #define FBCHAR			0xFFFd
@@ -80,7 +79,7 @@ enc_unpack(pTHX_ U8 **sp, U8 *e, STRLEN size, U8 endian)
 	if (endian == 'v')
 	    break;
 	v |= (*s++ << 16);
-	v |= (*s++ << 24);
+	v |= ((UV)*s++ << 24);
 	break;
     default:
 	croak("Unknown endian %c",(char) endian);
@@ -299,9 +298,8 @@ CODE:
 	*SvEND(str) = '\0';
     }
 
-    if (!temp_result)
-	shrink_buffer(result);
-
+    if (!temp_result) shrink_buffer(result);
+    if (SvTAINTED(str)) SvTAINTED_on(result); /* propagate taintedness */
     XSRETURN(1);
 }
 
@@ -400,8 +398,8 @@ CODE:
 	*SvEND(utf8) = '\0';
     }
 
-    if (!temp_result)
-	shrink_buffer(result);
+    if (!temp_result) shrink_buffer(result);
+    if (SvTAINTED(utf8)) SvTAINTED_on(result); /* propagate taintedness */
 
     SvSETMAGIC(utf8);
 

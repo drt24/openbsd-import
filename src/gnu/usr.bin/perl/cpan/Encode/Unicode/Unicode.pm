@@ -42,7 +42,7 @@ for my $name (
     } => __PACKAGE__;
 }
 
-use base qw(Encode::Encoding);
+use parent qw(Encode::Encoding);
 
 sub renew {
     my $self = shift;
@@ -52,7 +52,7 @@ sub renew {
     return $clone;
 }
 
-# There used to be a perl implemntation of (en|de)code but with
+# There used to be a perl implementation of (en|de)code but with
 # XS version is ripe, perl version is zapped for optimal speed
 
 *decode = \&decode_xs;
