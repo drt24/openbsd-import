@@ -31,7 +31,6 @@
 
 #include <sys/param.h>
 #include <sys/socket.h>
-#include <sys/socket.h>
 #include <sys/errno.h>
 #include <net/pfkeyv2.h>
 #include <netinet/in.h>
