@@ -1,4 +1,4 @@
-/*	$OpenBSD: ppp.c,v 1.21 2014/05/30 05:06:00 yasuoka Exp $ */
+/*	$OpenBSD: ppp.c,v 1.22 2014/07/22 02:58:32 guenther Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -74,8 +74,6 @@
 #define	PPP_ASSERT(cond)
 #define	PPP_DBG(x)
 #endif
-
-#include "debugutil.h"
 
 static u_int ppp_seq = 0;
 
