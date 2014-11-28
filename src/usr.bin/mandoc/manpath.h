@@ -1,4 +1,4 @@
-/*	$Id$ */
+/*	$OpenBSD$ */
 /*
  * Copyright (c) 2011 Ingo Schwarze <schwarze@openbsd.org>
  * Copyright (c) 2011 Kristaps Dzonsons <kristaps@bsd.lv>
