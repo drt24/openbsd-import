@@ -1,4 +1,4 @@
-/* $OpenBSD: aicasm.c,v 1.14 2005/10/04 23:46:14 krw Exp $ */
+/* $OpenBSD: aicasm.c,v 1.15 2012/12/05 23:20:19 deraadt Exp $ */
 /*
  * Aic7xxx SCSI host adapter firmware asssembler
  *
@@ -53,12 +53,7 @@
 #include <string.h>
 #include <sysexits.h>
 #include <unistd.h>
-
-#if linux
 #include <endian.h>
-#else
-#include <machine/endian.h>
-#endif
 
 #include "aicasm.h"
 #include "aicasm_symbol.h"
