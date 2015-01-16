@@ -31,7 +31,6 @@
  */
 
 #include <sys/types.h>
-#include <sys/param.h>
 #include <sys/sysctl.h>
 
 
@@ -65,7 +64,7 @@ double	naptime = 5.0;
 int	verbose = 1;		/* to report kvm read errs */
 int	nflag = 1;
 int	ut, hz, stathz;
-char    hostname[MAXHOSTNAMELEN];
+char    hostname[HOST_NAME_MAX+1];
 WINDOW  *wnd;
 int	CMDLINE;
 char	timebuf[26];
