@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-pflog.c,v 1.24 2011/10/13 18:32:30 claudio Exp $	*/
+/*	$OpenBSD: print-pflog.c,v 1.25 2014/08/14 12:44:44 mpi Exp $	*/
 
 /*
  * Copyright (c) 1990, 1991, 1993, 1994, 1995, 1996
@@ -21,8 +21,7 @@
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-#include <sys/types.h>
-#include <sys/param.h>
+#include <sys/param.h>	/* MSIZE MAXCOMLEN */
 #include <sys/time.h>
 #include <sys/socket.h>
 #include <sys/file.h>

@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-bootp.c,v 1.17 2009/10/27 23:59:55 deraadt Exp $	*/
+/*	$OpenBSD: print-bootp.c,v 1.18 2013/10/27 18:49:25 guenther Exp $	*/
 
 /*
  * Copyright (c) 1990, 1991, 1993, 1994, 1995, 1996, 1997
@@ -22,7 +22,6 @@
  *
  * Format and print bootp packets.
  */
-#include <sys/param.h>
 #include <sys/time.h>
 #include <sys/socket.h>
 

@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-ipx.c,v 1.12 2009/10/27 23:59:55 deraadt Exp $	*/
+/*	$OpenBSD: print-ipx.c,v 1.13 2014/08/14 12:44:44 mpi Exp $	*/
 
 /*
  * Copyright (c) 1994, 1995, 1996
@@ -24,7 +24,6 @@
  * Contributed by Brad Parker (brad@fcr.com).
  */
 
-#include <sys/param.h>
 #include <sys/time.h>
 #include <sys/socket.h>
 

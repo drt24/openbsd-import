@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-pim.c,v 1.5 2009/10/27 23:59:55 deraadt Exp $	*/
+/*	$OpenBSD: print-pim.c,v 1.6 2014/08/14 12:44:44 mpi Exp $	*/
 
 /*
  * Copyright (c) 1995, 1996
@@ -21,7 +21,6 @@
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-#include <sys/param.h>
 #include <sys/time.h>
 #include <sys/socket.h>
 

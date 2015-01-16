@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-802_11.c,v 1.14 2014/07/20 17:52:34 stsp Exp $	*/
+/*	$OpenBSD: print-802_11.c,v 1.15 2014/08/14 12:44:44 mpi Exp $	*/
 
 /*
  * Copyright (c) 2005 Reyk Floeter <reyk@openbsd.org>
@@ -16,7 +16,6 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <sys/param.h>
 #include <sys/time.h>
 #include <sys/socket.h>
 #include <sys/file.h>

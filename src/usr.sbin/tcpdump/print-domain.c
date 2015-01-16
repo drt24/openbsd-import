@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-domain.c,v 1.19 2014/05/23 20:36:04 sthen Exp $	*/
+/*	$OpenBSD: print-domain.c,v 1.20 2014/08/14 12:44:44 mpi Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -21,7 +21,6 @@
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-#include <sys/param.h>
 #include <sys/time.h>
 #include <sys/socket.h>
 

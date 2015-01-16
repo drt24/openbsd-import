@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-frag6.c,v 1.5 2011/09/22 21:27:06 bluhm Exp $	*/
+/*	$OpenBSD: print-frag6.c,v 1.6 2014/08/14 12:44:44 mpi Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1993, 1994
@@ -23,7 +23,6 @@
 
 #ifdef INET6
 
-#include <sys/param.h>
 #include <sys/time.h>
 #include <sys/types.h>
 #include <sys/socket.h>

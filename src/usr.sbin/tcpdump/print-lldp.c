@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-lldp.c,v 1.6 2009/11/12 00:02:16 deraadt Exp $	*/
+/*	$OpenBSD: print-lldp.c,v 1.7 2014/08/14 12:44:44 mpi Exp $	*/
 
 /*
  * Copyright (c) 2006 Reyk Floeter <reyk@openbsd.org>
@@ -16,7 +16,6 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include <sys/param.h>
 #include <sys/time.h>
 #include <sys/socket.h>
 

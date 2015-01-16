@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-atm.c,v 1.10 2014/08/14 12:44:44 mpi Exp $	*/
+/*	$OpenBSD: print-atm.c,v 1.11 2014/11/20 04:11:33 jsg Exp $	*/
 
 /*
  * Copyright (c) 1994, 1995, 1996, 1997
@@ -21,7 +21,6 @@
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-#include <sys/param.h>
 #include <sys/time.h>
 #include <sys/socket.h>
 

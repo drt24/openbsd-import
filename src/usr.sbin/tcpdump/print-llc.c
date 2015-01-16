@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-llc.c,v 1.17 2007/10/07 16:41:05 deraadt Exp $	*/
+/*	$OpenBSD: print-llc.c,v 1.18 2009/10/27 23:59:55 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1992, 1993, 1994, 1995, 1996, 1997
@@ -24,7 +24,6 @@
  *	with an awful lot of hacking by Jeffrey Mogul, DECWRL
  */
 
-#include <sys/param.h>
 #include <sys/time.h>
 
 #include <netinet/in.h>

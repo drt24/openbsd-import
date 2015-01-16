@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-krb.c,v 1.8 2009/10/27 23:59:55 deraadt Exp $	*/
+/*	$OpenBSD: print-krb.c,v 1.9 2014/08/14 12:44:44 mpi Exp $	*/
 
 /*
  * Copyright (c) 1995, 1996, 1997
@@ -23,7 +23,6 @@
  * Initial contribution from John Hawkinson (jhawk@mit.edu).
  */
 
-#include <sys/param.h>
 #include <sys/time.h>
 #include <sys/socket.h>
 
