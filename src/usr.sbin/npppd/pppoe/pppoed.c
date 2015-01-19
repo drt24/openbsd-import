@@ -1,4 +1,4 @@
-/*	$OpenBSD: pppoed.c,v 1.15 2014/07/21 01:51:11 guenther Exp $	*/
+/*	$OpenBSD: pppoed.c,v 1.16 2014/11/27 10:22:38 tobias Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -30,8 +30,8 @@
  * implementaion.
  * $Id$
  */
+#include <sys/param.h>	/* ALIGN */
 #include <sys/types.h>
-#include <sys/param.h>
 #include <sys/socket.h>
 #include <sys/ioctl.h>
 #include <sys/uio.h>
@@ -68,6 +68,8 @@
 
 #include "pppoe.h"
 #include "pppoe_local.h"
+
+#define MINIMUM(a, b)	(((a) < (b)) ? (a) : (b))
 
 static int pppoed_seqno = 0;
 

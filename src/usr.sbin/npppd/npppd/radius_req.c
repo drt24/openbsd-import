@@ -1,4 +1,4 @@
-/*	$OpenBSD: radius_req.c,v 1.7 2014/03/22 04:25:00 yasuoka Exp $ */
+/*	$OpenBSD: radius_req.c,v 1.8 2014/05/30 05:06:00 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -31,7 +31,6 @@
  * $Id$
  */
 #include <sys/types.h>
-#include <sys/param.h>
 #include <sys/time.h>
 #include <sys/socket.h>
 #include <netinet/in.h>

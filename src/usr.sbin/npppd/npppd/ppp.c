@@ -1,4 +1,4 @@
-/*	$OpenBSD: ppp.c,v 1.22 2014/07/22 02:58:32 guenther Exp $ */
+/*	$OpenBSD: ppp.c,v 1.23 2014/11/20 14:51:42 krw Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -32,7 +32,6 @@
  */
 #include <sys/types.h>
 #include <sys/socket.h>
-#include <sys/param.h>
 #include <netinet/in.h>
 #include <net/if_dl.h>
 #include <arpa/inet.h>
@@ -953,7 +952,7 @@ ppp_recv_packet(npppd_ppp *_this, unsigned char *pkt, int lpkt, int flags)
 		 * comply with the peer's established MRU.
 		 */
 		lcp_send_protrej(&_this->lcp, inp_proto,
-		    MIN(lpkt - (inp_proto - pkt), NPPPD_MIN_MRU - 32));
+		    MINIMUM(lpkt - (inp_proto - pkt), NPPPD_MIN_MRU - 32));
 	}
 
 	return 1;
