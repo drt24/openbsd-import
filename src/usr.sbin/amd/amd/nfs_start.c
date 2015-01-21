@@ -442,7 +442,7 @@ mount_automounter(pid_t ppid)
 	 */
 	unregister_amq();
 
-	if (!svc_register(amqp, AMQ_PROGRAM, AMQ_VERSION, amq_program_1, IPPROTO_UDP)) {
+	if (!svc_register(amqp, AMQ_PROGRAM, AMQ_VERSION, amq_program_57, IPPROTO_UDP)) {
 		plog(XLOG_FATAL, "unable to register (AMQ_PROGRAM, AMQ_VERSION, udp)");
 		return 3;
 	}
