@@ -2,11 +2,11 @@
 #	$Id$
 
 PROG = amq
-SRCS = amq.c amq_clnt.c amq_xdr.c misc_rpc.c
+SRCS = amq.c amq_clnt.c amq_xdr.c
 MAN  = amq.8
 CFLAGS+=-I${.CURDIR}/../include
 CFLAGS+=-I${.CURDIR}/../rpcx
-.PATH: ${.CURDIR}/../rpcx ${.CURDIR}/../amd
+.PATH: ${.CURDIR}/../rpcx
 
 .include "../../Makefile.inc"
 .include <bsd.prog.mk>
