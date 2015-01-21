@@ -92,7 +92,7 @@ show_mti(amq_mount_tree *mt, enum show_opt e, int *mwid, int *dwid,
 	    }
 
 	case Full: {
-		time_t t = *mt->mt_mounttime;
+		time_t t = mt->mt_mounttime;
 
 		struct tm *tp = localtime(&t);
 
@@ -110,7 +110,7 @@ show_mti(amq_mount_tree *mt, enum show_opt e, int *mwid, int *dwid,
 	    }
 
 	case Stats: {
-		time_t t = *mt->mt_mounttime;
+		time_t t = mt->mt_mounttime;
 
 		struct tm *tp = localtime(&t);
 
