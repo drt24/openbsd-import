@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*	$NetBSD: dwc2_core.c,v 1.6 2014/04/03 06:34:58 skrll Exp $	*/
 
 /*
@@ -42,8 +43,10 @@
  * Driver and the Peripheral Controller Driver.
  */
 
+#if 0
 #include <sys/cdefs.h>
 __KERNEL_RCSID(0, "$NetBSD: dwc2_core.c,v 1.6 2014/04/03 06:34:58 skrll Exp $");
+#endif
 
 #include <sys/types.h>
 #include <sys/bus.h>

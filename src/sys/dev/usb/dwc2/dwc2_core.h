@@ -1,3 +1,4 @@
+/*	$OpenBSD$	*/
 /*	$NetBSD: dwc2_core.h,v 1.5 2014/04/03 06:34:58 skrll Exp $	*/
 
 /*
