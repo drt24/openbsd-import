@@ -838,7 +838,7 @@ parseline(void)
 			if (ferror(input))
 				err(2, "can't read %s", filename);
 			/* append the missing newline at eof */
-			strcpy(tline + len, newline);
+			strlcpy(tline + len, newline, sizeof(tline) - len);
 			cp += strlen(newline);
 			linestate = LS_START;
 		} else {
