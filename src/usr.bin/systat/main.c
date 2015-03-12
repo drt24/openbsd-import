@@ -397,7 +397,7 @@ main(int argc, char *argv[])
 		warn("No utmp");
 	}
 
-	kd = kvm_openfiles(NULL, NULL, NULL, O_RDONLY, errbuf);
+	kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, errbuf);
 
 	gid = getgid();
 	if (setresgid(gid, gid, gid) == -1)
