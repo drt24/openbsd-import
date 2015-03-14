@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic7xxx_seeprom.c,v 1.4 2008/05/13 02:24:08 brad Exp $	*/
+/*	$OpenBSD: aic7xxx_seeprom.c,v 1.5 2014/07/12 18:48:17 tedu Exp $	*/
 /*	$NetBSD: aic7xxx_seeprom.c,v 1.8 2003/05/02 19:12:19 dyoung Exp $	*/
 
 /*       
@@ -60,7 +60,6 @@
 #include <sys/device.h>
 #include <sys/reboot.h>		/* for AB_* needed by bootverbose */
 
-#include <machine/bus.h>
 #include <machine/intr.h>
 
 #include <scsi/scsi_all.h>
