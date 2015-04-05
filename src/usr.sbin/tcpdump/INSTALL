@@ -71,7 +71,6 @@ extract.h	- alignment definitions
 fddi.h		- Fiber Distributed Data Interface definitions
 gmt2local.c	- time conversion routines
 gmt2local.h	- time conversion prototypes
-gnuc.h		- XXX
 igrp.h		- Interior Gateway Routing Protocol definitions
 interface.h	- globals, prototypes and definitions
 ipx.h		- IPX definitions

@@ -1,4 +1,4 @@
-/*	$OpenBSD: interface.h,v 1.63 2014/06/20 04:01:42 lteo Exp $	*/
+/*	$OpenBSD: interface.h,v 1.64 2014/11/20 03:56:33 jsg Exp $	*/
 
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997
@@ -26,7 +26,6 @@
 #ifndef tcpdump_interface_h
 #define tcpdump_interface_h
 
-#include "gnuc.h"
 #ifdef HAVE_OS_PROTO_H
 #include "os-proto.h"
 #endif
