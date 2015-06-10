@@ -64,7 +64,7 @@ static int radius_acct_request(npppd *, npppd_ppp *, int );
 static void npppd_ppp_radius_acct_reqcb(void *, RADIUS_PACKET *, int, RADIUS_REQUEST_CTX);
 
 /***********************************************************************
- * RADIUS common fucntions
+ * RADIUS common functions
  ***********************************************************************/
 /**
  * Retribute Framed-IP-Address and Framed-IP-Netmask attribute of from 
