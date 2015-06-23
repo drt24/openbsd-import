@@ -1,4 +1,4 @@
-/*	$OpenBSD: pptpd.c,v 1.25 2015/01/19 01:48:59 deraadt Exp $	*/
+/*	$OpenBSD: pptpd.c,v 1.26 2015/06/23 06:59:54 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -741,7 +741,7 @@ pptpd_gre_input(pptpd_listener *listener, struct sockaddr *peer, u_char *pkt,
 	hlen = iphdr->ip_hl * 4;
 
 	if (iphdr->ip_len > lpkt ||
-	    iphdr->ip_len < sizeof(struct pptp_gre_header)) {
+	    iphdr->ip_len < hlen + sizeof(struct pptp_gre_header)) {
 		pptpd_log(_this, LOG_ERR,
 		    "Received a broken packet: ip_hl=%d iplen=%d lpkt=%d", hlen,
 			iphdr->ip_len, lpkt);
