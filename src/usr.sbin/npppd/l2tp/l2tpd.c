@@ -1,4 +1,4 @@
-/*	$OpenBSD: l2tpd.c,v 1.14 2014/03/22 04:32:39 yasuoka Exp $ */
+/*	$OpenBSD: l2tpd.c,v 1.15 2014/05/07 01:16:15 tedu Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -632,7 +632,7 @@ l2tpd_io_event(int fd, short evtype, void *ctx)
 			if ((sz = recvfromto(_this->sock, buf,
 			    sizeof(buf), 0,
 			    (struct sockaddr *)&peer, &peerlen,
-			    (struct sockaddr *)&sock, &socklen)) <= 0) {
+			    (struct sockaddr *)&sock, &socklen)) == -1) {
 #endif
 				if (errno == EAGAIN || errno == EINTR)
 					break;

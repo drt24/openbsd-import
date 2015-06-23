@@ -1,4 +1,4 @@
-/*	$OpenBSD: pptpd.c,v 1.24 2014/10/25 03:23:49 lteo Exp $	*/
+/*	$OpenBSD: pptpd.c,v 1.25 2015/01/19 01:48:59 deraadt Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -674,9 +674,8 @@ pptpd_gre_io_event(int fd, short evmask, void *ctx)
 			/* read till bloked */
 			peerlen = sizeof(peer);
 			if ((sz = recvfrom(listener->sock_gre, pkt, sizeof(pkt),
-			    0, (struct sockaddr *)&peer, &peerlen)) <= 0) {
-				if (sz < 0 &&
-				    (errno == EAGAIN || errno == EINTR))
+			    0, (struct sockaddr *)&peer, &peerlen)) == -1) {
+				if (errno == EAGAIN || errno == EINTR)
 					break;
 				pptpd_log(_this, LOG_INFO,
 				    "read(GRE) failed: %m");
