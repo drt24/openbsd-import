@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: patterns.c,v 1.1 2015/06/23 15:23:14 reyk Exp $	*/
 
 /*
  * Copyright (c) 2015 Reyk Floeter <reyk@openbsd.org>
@@ -156,9 +156,6 @@ match_class(int c, int cl)
 	case 'x':
 		res = isxdigit(c);
 		break;
-	case 'z':
-		res = (c == 0);
-		break;		/* deprecated option */
 	default:
 		return (cl == c);
 	}
