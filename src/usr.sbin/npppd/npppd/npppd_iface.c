@@ -1,4 +1,4 @@
-/*	$OpenBSD: npppd_iface.c,v 1.9 2014/10/25 03:23:49 lteo Exp $ */
+/*	$OpenBSD: npppd_iface.c,v 1.10 2015/01/19 01:48:59 deraadt Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -192,6 +192,12 @@ npppd_iface_setup_ip(npppd_iface *_this)
 			    "Cannot assign tun device ip address: %m");
 			goto fail;
 		}
+		/* erase old route */
+		if (assigned.s_addr != 0) {
+			gw.s_addr = htonl(INADDR_LOOPBACK);
+			in_host_route_delete(&assigned, &gw);
+		}
+
 		assigned.s_addr = _this->ip4addr.s_addr;
 
 	}
