@@ -1,4 +1,4 @@
-/*	$OpenBSD: ppp.c,v 1.23 2014/11/20 14:51:42 krw Exp $ */
+/*	$OpenBSD: ppp.c,v 1.24 2015/01/19 01:48:59 deraadt Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -54,7 +54,7 @@
 #include "ppp.h"
 #include "psm-opt.h"
 #ifdef USE_NPPPD_RADIUS
-#include <radius+.h>
+#include <radius.h>
 #include "npppd_radius.h"
 #endif
 

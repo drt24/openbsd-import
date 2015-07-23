@@ -1,4 +1,4 @@
-/*	$OpenBSD: pap.c,v 1.7 2012/09/18 13:14:08 yasuoka Exp $ */
+/*	$OpenBSD: pap.c,v 1.8 2015/01/19 01:48:59 deraadt Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -50,7 +50,7 @@
 #include "ppp.h"
 
 #ifdef USE_NPPPD_RADIUS
-#include <radius+.h>
+#include <radius.h>
 #include "radius_chap_const.h"
 #include "npppd_radius.h"
 #endif
