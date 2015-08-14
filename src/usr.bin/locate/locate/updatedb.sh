@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$OpenBSD: updatedb.sh,v 1.11 2003/09/29 16:03:16 deraadt Exp $
+#	$OpenBSD: updatedb.sh,v 1.12 2007/03/15 22:24:18 jmc Exp $
 #
 # Copyright (c) September 1995 Wolfram Schneider <wosch@FreeBSD.org>. Berlin.
 # All rights reserved.
@@ -46,7 +46,7 @@ USAGE="usage: $0 [--fcodes=dbfile] [--filesystems='type ...'] [--prunepaths='dir
 : ${mklocatedb=locate.mklocatedb}	 # make locate database program
 : ${FCODES=/var/db/locate.database}	 # the database
 : ${SEARCHPATHS="/"}			 # directories to be put in the database
-: ${PRUNEPATHS="/tmp /usr/tmp /var/tmp"} # unwanted directories
+: ${PRUNEPATHS="/tmp /var/tmp"}		 # unwanted directories
 : ${FILESYSTEMS="ffs ufs"}		 # allowed filesystems 
 : ${find=find}
 
