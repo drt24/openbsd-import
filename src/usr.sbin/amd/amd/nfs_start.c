@@ -159,7 +159,7 @@ rpc_pending_now(void)
 	int fdsn;
 
 	fdsn = howmany(max_fds+1, NFDBITS) * sizeof(fd_mask);
-	if ((fdsp = (fd_set *)malloc(fdsn)) == NULL)
+	if ((fdsp = malloc(fdsn)) == NULL)
 		return(0);
 	memset(fdsp, 0, fdsn);
 	FD_SET(fwd_sock, fdsp);
