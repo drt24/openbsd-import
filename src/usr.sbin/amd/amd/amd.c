@@ -76,7 +76,7 @@ char *endian = ARCH_ENDIAN;		/* Big or Little endian */
 char *wire;
 int foreground = 1;			/* This is the top-level server */
 pid_t mypid;				/* Current process id */
-int immediate_abort;			/* Should close-down unmounts be retried */
+volatile sig_atomic_t immediate_abort;	/* Should close-down unmounts be retried */
 struct in_addr myipaddr;		/* (An) IP address of this host */
 serv_state amd_state;
 struct amd_stats amd_stats;		/* Server statistics */
