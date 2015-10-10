@@ -1,4 +1,4 @@
-/*	$OpenBSD: main.c,v 1.13 2013/10/27 18:31:24 guenther Exp $	*/
+/*	$OpenBSD: main.c,v 1.14 2014/03/16 18:38:30 guenther Exp $	*/
 
 /* flex - tool to generate fast lexical analyzers */
 
@@ -135,6 +135,13 @@ int argc;
 char **argv;
 	{
 	int i;
+
+	if (pledge("stdio rpath wpath cpath", NULL) == -1)
+		{
+		fprintf( stderr, _( "%s: pledge\n" ),
+			program_name);
+		exit(1);
+		}
 
 #ifdef THINK_C
 	argc = ccommand( &argv );
