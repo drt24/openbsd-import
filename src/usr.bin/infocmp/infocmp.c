@@ -1,4 +1,4 @@
-/*	$OpenBSD: infocmp.c,v 1.16 2003/04/06 18:41:03 deraadt Exp $	*/
+/*	$OpenBSD: infocmp.c,v 1.20 2010/01/12 23:22:13 nicm Exp $	*/
 
 /****************************************************************************
  * Copyright (c) 1998-2007,2008 Free Software Foundation, Inc.              *
@@ -1281,6 +1281,9 @@ main(int argc, char *argv[])
     int initdump = 0;
     bool init_analyze = FALSE;
     bool suppress_untranslatable = FALSE;
+
+    if (pledge("stdio rpath", NULL) == -1)
+	perror("pledge");
 
     /* where is the terminfo database location going to default to? */
     restdir = firstdir = 0;
