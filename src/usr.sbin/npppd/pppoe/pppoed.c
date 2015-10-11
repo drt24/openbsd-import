@@ -1,4 +1,4 @@
-/*	$OpenBSD: pppoed.c,v 1.16 2014/11/27 10:22:38 tobias Exp $	*/
+/*	$OpenBSD: pppoed.c,v 1.17 2015/01/19 01:48:59 deraadt Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -279,7 +279,7 @@ pppoed_listener_start(pppoed_listener *_this, int restart)
 	/* FIXME: /dev/bpf of NetBSD3.0 can simultaneity open */
 	for (i = 0; i < 256; i++) {
 		snprintf(buf, sizeof(buf), "/dev/bpf%d", i);
-		if ((_this->bpf = priv_open(buf, O_RDWR, 0600)) >= 0) {
+		if ((_this->bpf = priv_open(buf, O_RDWR)) >= 0) {
 			break;
 		} else if (errno == ENXIO || errno == ENOENT)
 			break;	/* no more entries */
