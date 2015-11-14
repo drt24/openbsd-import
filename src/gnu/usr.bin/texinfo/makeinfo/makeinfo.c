@@ -550,6 +550,11 @@ main (int argc, char **argv)
   setlocale (LC_COLLATE, "");
 #endif
 
+  if (pledge ("stdio rpath wpath cpath getpw", NULL) == -1) {
+    perror ("pledge");
+    exit (1);
+  }
+
 #ifdef ENABLE_NLS
   /* Set the text message domain.  */
   bindtextdomain (PACKAGE, LOCALEDIR);

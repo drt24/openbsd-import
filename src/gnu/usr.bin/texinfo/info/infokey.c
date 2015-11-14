@@ -97,6 +97,11 @@ main (int argc, char **argv)
   setlocale (LC_ALL, "");
 #endif
 
+  if (pledge ("stdio rpath wpath cpath tty", NULL) == -1) {
+      perror("pledge");
+      exit(1);
+  }    
+
 #ifdef ENABLE_NLS
   /* Set the text message domain.  */
   bindtextdomain (PACKAGE, LOCALEDIR);

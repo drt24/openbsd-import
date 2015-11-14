@@ -156,6 +156,11 @@ main (int argc, char **argv)
   setlocale (LC_ALL, "");
 #endif
 
+  if (pledge ("stdio rpath wpath getpw cpath tty proc exec", NULL) == -1) {
+    fprintf (stderr, _("%s: pledge\n"), program_name);
+    exit (1);
+  }
+
 #ifdef ENABLE_NLS
   /* Set the text message domain.  */
   bindtextdomain (PACKAGE, LOCALEDIR);

@@ -162,6 +162,9 @@ main (int argc, char **argv)
   setlocale (LC_ALL, "");
 #endif
 
+  if (pledge ("stdio rpath wpath cpath tmppath", NULL) == -1)
+    pfatal_with_name ("pledge");
+
   /* Set the text message domain.  */
   bindtextdomain (PACKAGE, LOCALEDIR);
   textdomain (PACKAGE);
