@@ -249,13 +249,13 @@ struct rrec {
  * portable or it can be elegant but never both.
  */
 #define GETSHORT(s, cp) { \
-	register u_char *t_cp = (u_char *)(cp); \
+	u_char *t_cp = (u_char *)(cp); \
 	(s) = ((u_int16_t)t_cp[0] << 8) | (u_int16_t)t_cp[1]; \
 	(cp) += 2; \
 }
 
 #define GETLONG(l, cp) { \
-	register u_char *t_cp = (u_char *)(cp); \
+	u_char *t_cp = (u_char *)(cp); \
 	(l) = (((u_int32_t)t_cp[0]) << 24) \
 	    | (((u_int32_t)t_cp[1]) << 16) \
 	    | (((u_int32_t)t_cp[2]) << 8) \
@@ -264,8 +264,8 @@ struct rrec {
 }
 
 #define PUTSHORT(s, cp) { \
-	register u_int16_t t_s = (u_int16_t)(s); \
-	register u_char *t_cp = (u_char *)(cp); \
+	u_int16_t t_s = (u_int16_t)(s); \
+	u_char *t_cp = (u_char *)(cp); \
 	*t_cp++ = t_s >> 8; \
 	*t_cp   = t_s; \
 	(cp) += 2; \
@@ -276,8 +276,8 @@ struct rrec {
  * were depending on this "feature", you will lose.
  */
 #define PUTLONG(l, cp) { \
-	register u_int32_t t_l = (u_int32_t)(l); \
-	register u_char *t_cp = (u_char *)(cp); \
+	u_int32_t t_l = (u_int32_t)(l); \
+	u_char *t_cp = (u_char *)(cp); \
 	*t_cp++ = t_l >> 24; \
 	*t_cp++ = t_l >> 16; \
 	*t_cp++ = t_l >> 8; \
