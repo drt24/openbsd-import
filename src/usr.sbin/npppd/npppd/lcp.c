@@ -1,4 +1,4 @@
-/*	$OpenBSD: lcp.c,v 1.12 2015/06/25 02:25:33 yasuoka Exp $ */
+/*	$OpenBSD: lcp.c,v 1.13 2015/06/25 02:32:48 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -271,7 +271,7 @@ lcp_finished(fsm *f)
 }
 
 /**
- * reseting ConfReq.
+ * resetting ConfReq.
  */
 static void
 lcp_resetci(fsm *f)
