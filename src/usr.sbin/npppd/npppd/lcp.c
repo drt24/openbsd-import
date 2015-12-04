@@ -1,4 +1,4 @@
-/*	$OpenBSD: lcp.c,v 1.13 2015/06/25 02:32:48 yasuoka Exp $ */
+/*	$OpenBSD: lcp.c,v 1.14 2015/12/02 05:07:09 mmcc Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -41,7 +41,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <syslog.h>
-#include <strings.h>
+#include <string.h>
 #include <event.h>
 #include <ctype.h>
 
