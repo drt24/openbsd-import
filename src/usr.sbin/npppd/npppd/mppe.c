@@ -1,4 +1,4 @@
-/*	$OpenBSD: mppe.c,v 1.11 2014/07/21 01:51:11 guenther Exp $ */
+/*	$OpenBSD: mppe.c,v 1.12 2014/10/18 04:12:57 deraadt Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -662,9 +662,7 @@ mppe_rc4_encrypt(mppe *_mppe, mppe_rc4_t *_this, int len, u_char *indata, u_char
 static void
 mppe_rc4_destroy(mppe *_mppe, mppe_rc4_t *_this)
 {
-	if (_this->rc4ctx != NULL)
-		free(_this->rc4ctx);
-	if (_this->old_session_keys != NULL)
-		free(_this->old_session_keys);
+	free(_this->rc4ctx);
+	free(_this->old_session_keys);
 	_this->rc4ctx = NULL;
 }

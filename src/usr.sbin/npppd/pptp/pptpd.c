@@ -1,4 +1,4 @@
-/*	$OpenBSD: pptpd.c,v 1.26 2015/06/23 06:59:54 yasuoka Exp $	*/
+/*	$OpenBSD: pptpd.c,v 1.27 2015/06/23 07:07:33 yasuoka Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -213,8 +213,7 @@ pptpd_add_listener(pptpd *_this, int idx, struct pptp_conf *conf,
 	}
 	return 0;
 fail:
-	if (plistener != NULL)
-		free(plistener);
+	free(plistener);
 	return 1;
 }
 

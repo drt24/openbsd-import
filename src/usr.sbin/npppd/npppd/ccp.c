@@ -1,4 +1,4 @@
-/*	$OpenBSD: ccp.c,v 1.5 2012/05/08 13:15:11 yasuoka Exp $ */
+/*	$OpenBSD: ccp.c,v 1.6 2012/09/18 13:14:08 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -192,10 +192,8 @@ fail:
 		*lpktp = len;
 		break;
 	}
-	if (rejbuf != NULL)
-		free(rejbuf);
-	if (nakbuf0 != NULL)
-		free(nakbuf0);
+	free(rejbuf);
+	free(nakbuf0);
 
 	return rcode;
 #undef	remlen

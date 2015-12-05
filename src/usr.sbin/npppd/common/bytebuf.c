@@ -1,4 +1,4 @@
-/*	$OpenBSD: bytebuf.c,v 1.6 2014/05/30 05:06:00 yasuoka Exp $ */
+/*	$OpenBSD: bytebuf.c,v 1.7 2015/01/19 01:48:59 deraadt Exp $ */
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
  * All rights reserved.
@@ -106,8 +106,7 @@ bytebuffer_create(size_t capacity)
 	_this->mark = -1;
 	return _this;
 fail:
-	if (_this != NULL)
-		free(_this);
+	free(_this);
 	return NULL;
 }
 
@@ -407,8 +406,7 @@ bytebuffer_destroy(bytebuffer *_this)
 	BYTEBUF_ASSERT(_this != NULL);
 
 	if (_this != NULL) {
-		if (_this->data != NULL)
-			free(_this->data);
+		free(_this->data);
 		free(_this);
 	}
 }
