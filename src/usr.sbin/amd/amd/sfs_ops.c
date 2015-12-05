@@ -89,8 +89,7 @@ sfs_match(am_opts *fo)
 			fullpath = strdup(fo->opt_fs);
 		}
 
-		if (fo->opt_sublink)
-			free(fo->opt_sublink);
+		free(fo->opt_sublink);
 		fo->opt_sublink = fullpath;
 		fo->opt_fs = str3cat(fo->opt_fs, ".", fullpath, "");
 	}

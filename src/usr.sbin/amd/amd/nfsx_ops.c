@@ -220,15 +220,14 @@ nfsx_init(mntfs *mf)
 			nx->nx_v[i].n_error = -1;
 			nx->nx_v[i].n_mnt = find_mntfs(&nfs_ops, mf->mf_fo, mp, xinfo, "", mf->mf_mopts, mf->mf_remopts);
 		  }
-		  if (rfs) free(rfs);
-		  if (mp) free(mp);
-		  if (xinfo) free(xinfo);
+		  free(rfs);
+		  free(mp);
+		  free(xinfo);
 		}
 
 		free(ivec);
 errexit:
-		if (info)
-			free(info);
+		free(info);
 		if (error)
 			return error;
 	}

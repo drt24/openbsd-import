@@ -143,8 +143,7 @@ passwd_search(mnt_map *m, char *map, char *key, char **pval, time_t *tp)
 	}
 
 enoent:
-	if (dir)
-		free(dir);
+	free(dir);
 
 	return ENOENT;
 }
