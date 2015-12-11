@@ -72,10 +72,6 @@ extern int orig_umask;		/* umask() on startup */
 #ifdef DEBUG
 #define	D_ALL	(~0)
 
-#ifdef DEBUG_MEM
-#define free(x) xfree(__FILE__,__LINE__,x)
-#endif /* DEBUG_MEM */
-
 #define Debug(x) if (!(debug_flags & (x))) ; else
 #define dlog Debug(D_FULL) dplog
 #endif /* DEBUG */

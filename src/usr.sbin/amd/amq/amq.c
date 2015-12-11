@@ -565,11 +565,3 @@ privsock(int ty)
 	}
 	return sock;
 }
-
-#ifdef DEBUG
-void
-xfree(char *f, char *l, void *p)
-{
-	free(p);
-}
-#endif /* DEBUG */
