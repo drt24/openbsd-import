@@ -87,9 +87,6 @@ strealloc(char *p, char *s)
 	p = xreallocarray(p, len, 1);
 
 	strlcpy(p, s, len);
-#ifdef DEBUG_MEM
-	malloc_verify();
-#endif /* DEBUG_MEM */
 	return p;
 }
 
