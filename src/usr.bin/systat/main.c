@@ -297,7 +297,6 @@ void
 cmd_count(const char *buf)
 {
 	const char *errstr;
-	int ms;
 
 	maxprint = strtonum(buf, 1, lines - HEADER_LINES, &errstr);
 	if (errstr)
