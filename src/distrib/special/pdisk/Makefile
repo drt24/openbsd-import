@@ -6,7 +6,7 @@ LDADD=  -lutil
 DPADD=  ${LIBUTIL}
 CFLAGS+=-Wall
 
-SRCS=	bitfield.c convert.c deblock_media.c dump.c \
+SRCS=	convert.c deblock_media.c dump.c \
 	file_media.c io.c media.c partition_map.c \
 	pdisk.c validate.c
 
