@@ -123,7 +123,7 @@ add_state(struct pfsync_state *st)
 	ent->bytes = COUNTER(st->bytes[0]) + COUNTER(st->bytes[1]);
 	ent->peak = 0;
 	ent->rate = 0;
-	ent->t = time(NULL);
+	ent->t = 0;
 
 	RB_INSERT(sc_tree, &sctree, ent);
 	TAILQ_INSERT_HEAD(scq_act, ent, qlink);

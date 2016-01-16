@@ -30,7 +30,7 @@ struct sc_ent {
 	double		    peak;
 	double		    rate;
 	time_t		    t;
-	u_int32_t	    bytes;
+	u_int64_t	    bytes;
 };
 
 int cache_init(int);
