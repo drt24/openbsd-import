@@ -1,6 +1,6 @@
 #	$Id$
 
-.if ${MACHINE} == "macppc"
+.if ${MACHINE} == "amd64"
 PROG=	pdisk
 LDADD=  -lutil
 DPADD=  ${LIBUTIL}
