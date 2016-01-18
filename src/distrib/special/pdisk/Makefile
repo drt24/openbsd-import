@@ -7,7 +7,7 @@ DPADD=  ${LIBUTIL}
 CFLAGS+=-Wall
 
 SRCS=	convert.c dump.c \
-	io.c partition_map.c \
+	file_media.c io.c partition_map.c \
 	pdisk.c validate.c
 
 .else
