@@ -6,9 +6,7 @@ LDADD=  -lutil
 DPADD=  ${LIBUTIL}
 CFLAGS+=-Wall
 
-SRCS=	dump.c \
-	file_media.c io.c partition_map.c \
-	pdisk.c validate.c
+SRCS=	dump.c file_media.c io.c partition_map.c pdisk.c
 
 .else
 NOPROG=yes
