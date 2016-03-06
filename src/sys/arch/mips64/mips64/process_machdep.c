@@ -1,4 +1,4 @@
-/*	$OpenBSD: process_machdep.c,v 1.15 2010/09/21 20:29:17 miod Exp $	*/
+/*	$OpenBSD: process_machdep.c,v 1.16 2010/11/24 21:01:03 miod Exp $	*/
 
 /*
  * Copyright (c) 1994 Adam Glass
@@ -76,7 +76,7 @@
 #include <machine/frame.h>
 #include <machine/reg.h>
 
-#define	REGSIZE (sizeof(struct trap_frame) - sizeof(register_t))
+#define	REGSIZE (sizeof(struct trapframe) - sizeof(register_t))
 
 int
 process_read_regs(p, regs)
