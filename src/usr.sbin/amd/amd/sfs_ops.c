@@ -84,7 +84,7 @@ sfs_match(am_opts *fo)
 			if (*link == '/')
 				fullpath = strdup(link);
 			else
-				fullpath = str3cat((char *)0, fo->opt_fs, "/", link);
+				fullpath = str3cat(NULL, fo->opt_fs, "/", link);
 		} else {
 			fullpath = strdup(fo->opt_fs);
 		}
