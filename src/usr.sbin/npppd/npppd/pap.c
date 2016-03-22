@@ -1,4 +1,4 @@
-/*	$OpenBSD: pap.c,v 1.8 2015/01/19 01:48:59 deraadt Exp $ */
+/*	$OpenBSD: pap.c,v 1.9 2015/07/23 09:04:06 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -44,6 +44,7 @@
 #include <string.h>
 #include <syslog.h>
 #include <errno.h>
+#include <vis.h>
 
 #include "slist.h"
 #include "npppd.h"
@@ -510,6 +511,20 @@ auth_failed:
 	/* Autentication failure */
 	pap_log(_this, LOG_WARNING, "Radius authentication request failed: %s",
 	    reason);
+	/* log reply messages from radius server */
+	if (pkt != NULL) {
+		char radmsg[255], vissed[1024];
+		size_t rmlen = 0;
+		if ((radius_get_raw_attr(pkt, RADIUS_TYPE_REPLY_MESSAGE,
+		    radmsg, &rmlen)) == 0) {
+			if (rmlen != 0) {
+				strvisx(vissed, radmsg, rmlen, VIS_WHITE);
+				pap_log(_this, LOG_WARNING,
+				    "Radius reply message: %s", vissed);
+			}
+		}
+	}
+
 	pap_response(_this, 0, DEFAULT_FAILURE_MESSAGE);
 }
 #endif
