@@ -48,7 +48,7 @@ require Exporter;
               GetNumericSymbol 
               GetConstants);
 
-use Cwd;
+#use Cwd;
 use Config;
 
 my ($C_usrinc, $C_libpth, $C_cppstdin, $C_cppflags, $C_cppminus,
