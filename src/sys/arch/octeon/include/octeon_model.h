@@ -1,4 +1,4 @@
-/*	$Id$	*/
+/*	$OpenBSD: octeon_model.h,v 1.3 2014/10/26 15:10:15 jasper Exp $	*/
 
 /*
  * Copyright (c) 2007
