@@ -3,6 +3,7 @@
 # $Id$
 #
 
+BEGIN { pop @INC if $INC[-1] eq '.' }
 use strict;
 our  $VERSION = do { my @r = (q$Revision$ =~ /\d+/g); sprintf "%d."."%02d" x $#r, @r };
 

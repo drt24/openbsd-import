@@ -1,6 +1,7 @@
 #!./perl
 # $Id$
 #
+BEGIN { pop @INC if $INC[-1] eq '.' }
 use 5.8.0;
 use strict;
 use Encode ;
