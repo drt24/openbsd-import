@@ -280,6 +280,7 @@ Anyway, here it is.  Should run on perl v4 or greater.  Maybe less.
 
 $RCSID = '$Id$';
 
+BEGIN { pop @INC if $INC[-1] eq '.' }
 use File::Temp;
 
 ######################################################################
