@@ -1,4 +1,4 @@
-/*	$OpenBSD: aic7xxxvar.h,v 1.28 2015/11/14 14:47:56 miod Exp $	*/
+/*	$OpenBSD: aic7xxxvar.h,v 1.29 2015/12/17 19:35:24 tedu Exp $	*/
 /*
  * Core definitions and data structures shareable across OS platforms.
  *
@@ -946,6 +946,9 @@ struct ahc_softc {
 
 	bus_space_tag_t           tag;
 	bus_space_handle_t        bsh;
+
+	struct mutex		  sc_scb_mtx;
+	struct scsi_iopool	  sc_iopool;
 
 	bus_dma_tag_t		  buffer_dmat;   /* dmat for buffer I/O */
 	struct scb_data		 *scb_data;
