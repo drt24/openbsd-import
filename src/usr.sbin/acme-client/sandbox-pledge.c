@@ -63,7 +63,7 @@ sandbox_after(void)
 		}
 		break;
 	case (COMP_FILE):
-		/* 
+		/*
 		 * Rpath and cpath for rename, wpath and cpath for
 		 * writing to the temporary.
 		 */
