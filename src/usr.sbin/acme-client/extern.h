@@ -17,10 +17,6 @@
 #ifndef EXTERN_H
 #define EXTERN_H
 
-#ifndef PATH_VAR_EMPTY
-#define	PATH_VAR_EMPTY "/var/empty"
-#endif
-
 #define MAX_SERVERS_DNS 8
 
 #define	CERT_PEM "cert.pem"
