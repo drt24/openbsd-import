@@ -93,10 +93,9 @@ dotlsread(char *buf, size_t sz, const struct http *http)
 {
 	ssize_t	 rc;
 
-	do
+	do {
 		rc = tls_read(http->ctx, buf, sz);
-	while (TLS_WANT_POLLIN == rc ||
-	       TLS_WANT_POLLOUT == rc);
+	} while (TLS_WANT_POLLIN == rc || TLS_WANT_POLLOUT == rc);
 
 	if (rc < 0)
 		warnx("%s: tls_read: %s",
@@ -110,10 +109,9 @@ dotlswrite(const void *buf, size_t sz, const struct http *http)
 {
 	ssize_t	 rc;
 
-	do
+	do {
 		rc = tls_write(http->ctx, buf, sz);
-	while (TLS_WANT_POLLIN == rc ||
-	       TLS_WANT_POLLOUT == rc);
+	} while (TLS_WANT_POLLIN == rc || TLS_WANT_POLLOUT == rc);
 
 	if (rc < 0)
 		warnx("%s: tls_write: %s",
