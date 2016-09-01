@@ -26,6 +26,9 @@
 #define	FCHAIN_PEM "fullchain.pem"
 #define	FCHAIN_BAK "fullchain.pem~"
 
+#ifndef nitems
+#define nitems(_a) (sizeof((_a)) / sizeof((_a)[0]))
+#endif
 
 /*
  * Requests to and from acctproc.
@@ -141,6 +144,14 @@ enum	comm {
 	COMM_REVOKE_RESP,
 	COMM__MAX
 };
+
+struct authority {
+	char	*name;
+	char	*agreement;
+	char	*caurl;
+};
+
+extern struct authority authorities[];
 
 /*
  * This contains the URI and token of an ACME-issued challenge.
