@@ -245,13 +245,6 @@ char		*json_fmt_thumb_rsa(const char *, const char *);
 char		*json_fmt_signed(const char *,
 			const char *, const char *, const char *);
 
-int		 dropprivs(void);
-int		 dropfs(const char *);
-int		 checkprivs(void);
-
-int		 sandbox_after(void);
-int		 sandbox_before(void);
-
 /*
  * Should we print debugging messages?
  */

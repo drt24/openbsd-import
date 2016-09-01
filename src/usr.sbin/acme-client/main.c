@@ -172,7 +172,7 @@ main(int argc, char *argv[])
 	argc--;
 	argv++;
 
-	if ( ! checkprivs())
+	if ( getuid() != 0)
 		errx(EXIT_FAILURE, "must be run as root");
 
 	/*
@@ -437,14 +437,10 @@ main(int argc, char *argv[])
 
 	/* Jail: sandbox, file-system, user. */
 
-	if ( ! sandbox_before())
+	if (pledge("stdio", NULL) == -1) {
+		warn("pledge");
 		exit(EXIT_FAILURE);
-	else if ( ! dropfs(PATH_VAR_EMPTY))
-		exit(EXIT_FAILURE);
-	else if ( ! dropprivs())
-		exit(EXIT_FAILURE);
-	else if ( ! sandbox_after())
-		exit(EXIT_FAILURE);
+	}
 
 	/*
 	 * Collect our subprocesses.
