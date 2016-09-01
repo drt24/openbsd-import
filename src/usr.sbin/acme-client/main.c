@@ -464,15 +464,10 @@ main(int argc, char *argv[])
 	return (COMP__MAX != rc ? EXIT_FAILURE :
 	    (2 == c ? EXIT_SUCCESS : 2));
 usage:
-	fprintf(stderr, "usage: %s "
-		"[-bFmnNrsv] "
-		"[-a agreement] "
-		"[-C challengedir] "
-		"[-c certdir] "
-		"[-f accountkey] "
-		"[-k domainkey] "
-		"domain [altnames...]\n",
-		getprogname());
+	fprintf(stderr,
+	    "usage: acme-client [-bFmnNrsv] [-a agreement] [-C challengedir]\n"
+	    "                   [-c certdir] [-f accountkey] [-k domainkey]\n"
+	    "                   domain [altnames...]\n");
 	free(certdir);
 	free(keyfile);
 	free(acctkey);
