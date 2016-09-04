@@ -45,8 +45,8 @@ ${PROG} -d ${DESTADDR} -f ${FIRSTADDR} -b ${BASEADDR} -m ${FIRSTADDR} -e 48
 ${PROG} -d ${DESTADDR} -f ${FIRSTADDR} -b :: -e 0
 ${PROG} -d ${DESTADDR} -f ${FIRSTADDR} -b :: -o ${ADDR_3} -e 0
 ${PROG} -d ${DESTADDR} -f ${FIRSTADDR} -b :: -m ${ADDR_3} -e 0
-${PROG} -d ${DESTADDR} -f ${FIRSTADDR} -b :: -o ${FIRSTADDR} -e 48
-${PROG} -d ${DESTADDR} -f ${FIRSTADDR} -b :: -m ${FIRSTADDR} -e 48
+${PROG} -d ${DESTADDR} -f ${FIRSTADDR} -b :: -o ${FIRSTADDR} -e 0
+${PROG} -d ${DESTADDR} -f ${FIRSTADDR} -b :: -m ${FIRSTADDR} -e 0
 ${PROG} -d ${DESTADDR} -f ${FIRSTADDR} -b ${BASEADDR} -o :: -e 0
 ${PROG} -d ${DESTADDR} -f ${FIRSTADDR} -b ${BASEADDR} -m :: -e 0
 ${PROG} -d ${DESTADDR} -f ${FIRSTADDR} -b ${BASEADDR} -o ${ADDR_3} -m ${ADDR_4} -e 0
