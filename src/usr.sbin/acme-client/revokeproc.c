@@ -99,28 +99,19 @@ int
 revokeproc(int fd, const char *certdir, int force, int revocate,
 	const char *const *alts, size_t altsz)
 {
-	int		 rc, cc, i, extsz, ssz;
+	char		*path = NULL, *der = NULL, *dercp, *der64 = NULL;
+	char		*san = NULL, *str, *tok;
+	int		 rc = 0, cc, i, extsz, ssz, len;
+	size_t		*found = NULL;
+	BIO		*bio = NULL;
+	FILE		*f = NULL;
+	X509		*x = NULL;
 	long		 lval;
-	FILE		*f;
-	size_t		*found;
-	char		*path, *der, *dercp, *der64, *san, *str, *tok;
-	X509		*x;
 	enum revokeop	 op, rop;
 	time_t		 t;
-	int		 len;
 	X509_EXTENSION	*ex;
 	ASN1_OBJECT	*obj;
-	BIO		*bio;
 	size_t		 j;
-
-	found = NULL;
-	bio = NULL;
-	der = der64 = NULL;
-	rc = 0;
-	f = NULL;
-	path = NULL;
-	san = NULL;
-	x = NULL;
 
 	/*
 	 * First try to open the certificate before we drop privileges
