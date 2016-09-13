@@ -255,11 +255,11 @@ checkexit(pid_t pid, enum comp comp)
 	if (-1 == waitpid(pid, &c, 0)) {
 		warn("waitpid");
 		return (0);
-	} else if ( ! WIFEXITED(c) && WIFSIGNALED(c)) {
+	} else if (!WIFEXITED(c) && WIFSIGNALED(c)) {
 		cp = strsignal(WTERMSIG(c));
 		warnx("signal: %s(%u): %s", comps[comp], pid, cp);
 		return (0);
-	} else if ( ! WIFEXITED(c)) {
+	} else if (!WIFEXITED(c)) {
 		warnx("did not exit: %s(%u)", comps[comp], pid);
 		return (0);
 	} else if (EXIT_SUCCESS != WEXITSTATUS(c)) {
@@ -290,11 +290,11 @@ checkexit_ext(int *rc, pid_t pid, enum comp comp)
 		return (0);
 	}
 
-	if ( ! WIFEXITED(c) && WIFSIGNALED(c)) {
+	if (!WIFEXITED(c) && WIFSIGNALED(c)) {
 		cp = strsignal(WTERMSIG(c));
 		warnx("signal: %s(%u): %s", comps[comp], pid, cp);
 		return (0);
-	} else if ( ! WIFEXITED(c)) {
+	} else if (!WIFEXITED(c)) {
 		warnx("did not exit: %s(%u)", comps[comp], pid);
 		return (0);
 	}

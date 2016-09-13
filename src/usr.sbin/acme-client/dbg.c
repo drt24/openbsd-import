@@ -39,7 +39,7 @@ dodbg(const char *fmt, ...)
 {
 	va_list		 ap;
 
-	if ( ! verbose)
+	if (!verbose)
 		return;
 
 	va_start(ap, fmt);
