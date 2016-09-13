@@ -90,7 +90,7 @@ chngproc(int netsock, const char *root, int remote)
 
 		/* Vector appending... */
 
-		pp = realloc(fs, (fsz + 1) * sizeof(char *));
+		pp = reallocarray(fs, (fsz + 1), sizeof(char *));
 		if (NULL == pp) {
 			warn("realloc");
 			goto out;
