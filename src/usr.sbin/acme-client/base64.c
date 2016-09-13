@@ -51,12 +51,17 @@ base64buf_url(const char *data, size_t len)
 	b64_ntop(data, len, buf, sz);
 
 	for (i = 0; i < sz; i++)
-		if ('+' == buf[i])
+		switch (buf[i]) {
+		case '+':
 			buf[i] = '-';
-		else if ('/' == buf[i])
+			break;
+		case '/':
 			buf[i] = '_';
-		else if ('=' == buf[i])
+			break;
+		case '=':
 			buf[i] = '\0';
+			break;
+		}
 
 	return (buf);
 }

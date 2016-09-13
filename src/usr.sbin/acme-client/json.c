@@ -152,15 +152,25 @@ jsmnparse_free(struct parse *p)
 
 	if (NULL == p)
 		return;
-	for (i = 0; i < p->max; i++)
-		if (JSMN_ARRAY == p->nodes[i].type)
-			free(p->nodes[i].d.array);
-		else if (JSMN_OBJECT == p->nodes[i].type)
-			free(p->nodes[i].d.obj);
-		else if (JSMN_PRIMITIVE == p->nodes[i].type)
-			free(p->nodes[i].d.str);
-		else if (JSMN_STRING == p->nodes[i].type)
-			free(p->nodes[i].d.str);
+	for (i = 0; i < p->max; i++) {
+		struct jsmnn	*n = &p->nodes[i];
+		switch (n->type) {
+		case JSMN_ARRAY:
+			free(n->d.array);
+			break;
+		case JSMN_OBJECT:
+			free(n->d.obj);
+			break;
+		case JSMN_PRIMITIVE:
+			free(n->d.str);
+			break;
+		case JSMN_STRING:
+			free(n->d.str);
+			break;
+		case JSMN_UNDEFINED:
+			break;
+		}
+	}
 	free(p->nodes);
 	free(p);
 }
