@@ -84,7 +84,6 @@ keyproc(int netsock, const char *keyfile,
 	EVP_PKEY	*pkey;
 	X509_REQ	*x;
 	X509_NAME	*name;
-	unsigned char	 rbuf[64];
 	int		 len, rc, cc, nid;
 	mode_t		 prev;
 	STACK_OF(X509_EXTENSION) *exts;
@@ -118,18 +117,6 @@ keyproc(int netsock, const char *keyfile,
 	if (pledge("stdio", NULL) == -1) {
 		warn("pledge");
 		goto out;
-	}
-
-	/*
-	 * Seed our PRNG with data from arc4random().
-	 * Do this until we're told it's ok and use increments of 64
-	 * bytes (arbitrarily).
-	 * TODO: is this sufficient as a RAND source?
-	 */
-
-	while (0 == RAND_status()) {
-		arc4random_buf(rbuf, sizeof(rbuf));
-		RAND_seed(rbuf, sizeof(rbuf));
 	}
 
 	if (newkey) {
