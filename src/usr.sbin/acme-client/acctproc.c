@@ -391,12 +391,12 @@ acctproc(int netsock, const char *acctkey, int newacct)
 			break;
 
 		switch (op) {
-		case (ACCT_SIGN):
+		case ACCT_SIGN:
 			if (op_sign(netsock, pkey))
 				break;
 			warnx("op_sign");
 			goto out;
-		case (ACCT_THUMBPRINT):
+		case ACCT_THUMBPRINT:
 			if (op_thumbprint(netsock, pkey))
 				break;
 			warnx("op_thumbprint");
