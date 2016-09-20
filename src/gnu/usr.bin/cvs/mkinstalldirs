@@ -24,7 +24,7 @@ do
      if test ! -d "$pathcomp"; then
         echo "mkdir $pathcomp"
 
-        mkdir "$pathcomp" || lasterr=$?
+        install -d -o root -g wheel "$pathcomp" || lasterr=$?
 
         if test ! -d "$pathcomp"; then
   	  errstatus=$lasterr
