@@ -159,10 +159,8 @@ http_disconnect(struct http *http)
 			warnx("%s: tls_close: %s", http->src.ip,
 			    tls_error(http->ctx));
 		tls_free(http->ctx);
-		if (-1 == close(http->fd))
-			warn("%s: close", http->src.ip);
-	} else if (-1 != http->fd) {
-		/* Non-TLS connection. */
+	}
+	if (-1 != http->fd) {
 		if (-1 == close(http->fd))
 			warn("%s: close", http->src.ip);
 	}
