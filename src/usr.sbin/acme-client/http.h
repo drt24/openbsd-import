@@ -63,6 +63,8 @@ struct	httpget {
 
 __BEGIN_DECLS
 
+int		 http_init(void);
+
 /* Convenience functions. */
 struct httpget	*http_get(const struct source *, size_t,
 			const char *, short, const char *,
