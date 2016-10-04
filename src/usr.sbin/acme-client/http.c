@@ -152,12 +152,18 @@ http_write(const char *buf, size_t sz, const struct http *http)
 void
 http_disconnect(struct http *http)
 {
+	int rc;
 
 	if (NULL != http->ctx) {
 		/* TLS connection. */
-		if (-1 == tls_close(http->ctx))
+		do {
+			rc = tls_close(http->ctx);
+		} while (TLS_WANT_POLLIN == rc || TLS_WANT_POLLOUT == rc);
+
+		if (rc < 0)
 			warnx("%s: tls_close: %s", http->src.ip,
 			    tls_error(http->ctx));
+
 		tls_free(http->ctx);
 	}
 	if (-1 != http->fd) {
