@@ -67,6 +67,7 @@ int	ut, hz, stathz;
 char    hostname[HOST_NAME_MAX+1];
 WINDOW  *wnd;
 int	CMDLINE;
+char	hostbuf[26];
 char	timebuf[26];
 char	uloadbuf[TIMEPOS];
 
@@ -101,14 +102,20 @@ print_header(void)
 	tb_start();
 
 	if (!paused) {
+		char *ctim;
+
 		getloadavg(avenrun, sizeof(avenrun) / sizeof(avenrun[0]));
 
 		snprintf(uloadbuf, sizeof(uloadbuf),
 		    "%5d users    Load %.2f %.2f %.2f", 
 		    ucount(), avenrun[0], avenrun[1], avenrun[2]);
 
+		gethostname(hostbuf, sizeof hostbuf);
+
 		time(&now);
-		strlcpy(timebuf, ctime(&now), sizeof(timebuf));
+		ctim = ctime(&now);
+		ctim[11+8] = '\0';
+		strlcpy(timebuf, ctim + 11, sizeof(timebuf));
 	}
 
 	if (num_disp && (start > 1 || end != num_disp))
@@ -120,7 +127,7 @@ print_header(void)
 		    "%s %s", uloadbuf,
 		    paused ? "PAUSED" : "");
 		
-	snprintf(header, sizeof(header), "%-55s%s", tmpbuf, timebuf);
+	snprintf(header, sizeof(header), "%-45s%25.25s %s", tmpbuf, hostbuf, timebuf);
 
 	if (rawmode)
 		printf("\n\n%s\n", header);
