@@ -135,14 +135,8 @@ http_init()
 		goto err;
 	}
 
-	tls_config_set_protocols(tlscfg, TLS_PROTOCOLS_ALL);
-
 	if (-1 == tls_config_set_ca_file(tlscfg, DEFAULT_CA_FILE)) {
 		warn("tls_config_set_ca_file: %s", tls_config_error(tlscfg));
-		goto err;
-	}
-	if (-1 == tls_config_set_ciphers(tlscfg, "compat")) {
-		warn("tls_config_set_ciphers: %s", tls_config_error(tlscfg));
 		goto err;
 	}
 
