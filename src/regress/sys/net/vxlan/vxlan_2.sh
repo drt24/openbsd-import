@@ -110,7 +110,7 @@ for rdom in $RDOMAINS; do
 done
 
 rdomain_is_used $VNETID || abort_test "rdomain $rdom already in use"
-iface_exists "bridge$VNETID" && abort_test "interface pair${id}1 already exists"
+iface_exists "bridge$VNETID" && abort_test "interface bridge${VNETID} already exists"
 $SUDO ifconfig "bridge$VNETID" rdomain "$VNETID" $IFCONFIG_OPTS up
 
 case $AF in
