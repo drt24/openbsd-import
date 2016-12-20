@@ -131,6 +131,9 @@ show_mti(amq_mount_tree *mt, enum show_opt e, int *mwid, int *dwid,
 		    mt->mt_mountinfo, mt->mt_mountpoint);
 		break;
 	    }
+
+	default:
+		break;
 	}
 }
 
@@ -191,6 +194,8 @@ show_mi(amq_mount_info_list *ml, enum show_opt e, int *mwid,
 		}
 		break;
 	    }
+	default:
+		break;
 	}
 }
 
