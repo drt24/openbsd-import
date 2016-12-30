@@ -1,6 +1,6 @@
 ######## TERMINAL TYPE DESCRIPTIONS SOURCE FILE
 #
-# $OpenBSD: termtypes.master,v 1.56 2015/12/05 20:32:16 nicm Exp $
+# $OpenBSD: termtypes.master,v 1.57 2016/12/30 13:26:53 nicm Exp $
 #
 # OpenBSD local changes:
 #   - add rxvt-unicode and rxvt-unicode-256color
@@ -6497,7 +6497,7 @@ screen3|older VT 100/ANSI X3.64 virtual terminal,
 # xterm cursor bits.
 tmux|tmux terminal multiplexer,
 	ritm=\E[23m, rmso=\E[27m, sitm=\E[3m, smso=\E[7m, Ms@,
-	use=xterm+sl, use=xterm+tmux, use=screen,
+	use=xterm+pcfkeys, use=xterm+sl, use=xterm+tmux, use=screen,
 
 tmux-256color|tmux with 256 colors,
 	use=xterm+256setaf, use=tmux,
