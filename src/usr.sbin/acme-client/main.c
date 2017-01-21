@@ -222,7 +222,7 @@ main(int argc, char *argv[])
 	alts[0] = domain->domain;
 	i = 1;
 	/* XXX get rid of alts[] later */
-	LIST_FOREACH(ac, &domain->altname_list, entry)
+	TAILQ_FOREACH(ac, &domain->altname_list, entry)
 		alts[i++] = ac->domain;
 
 	/*
