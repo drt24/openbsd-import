@@ -66,10 +66,10 @@ main(int argc, char *argv[])
 		case 'F':
 			force = 1;
 			break;
-		case 'n':
+		case 'A':
 			popts |= ACME_OPT_NEWACCT;
 			break;
-		case 'N':
+		case 'D':
 			popts |= ACME_OPT_NEWDKEY;
 			break;
 		case 'r':
@@ -399,6 +399,6 @@ main(int argc, char *argv[])
 	    (2 == c ? EXIT_SUCCESS : 2));
 usage:
 	fprintf(stderr,
-	    "usage: acme-client [-bFnNrv] [-f file] domain\n");
+	    "usage: acme-client [-bFADrv] [-f file] domain\n");
 	return (EXIT_FAILURE);
 }
