@@ -27,7 +27,7 @@
 #include "extern.h"
 
 int
-chngproc(int netsock, const char *root, int remote)
+chngproc(int netsock, const char *root)
 {
 	char		 *tok = NULL, *th = NULL, *fmt = NULL, **fs = NULL;
 	size_t		  i, fsz = 0;
@@ -35,6 +35,7 @@ chngproc(int netsock, const char *root, int remote)
 	long		  lval;
 	enum chngop	  op;
 	void		 *pp;
+	int		  remote = 0; /* XXX maybe remove */
 
 	if (chroot(root) == -1) {
 		warn("chroot");

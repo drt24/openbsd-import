@@ -25,6 +25,7 @@
 
 #include "http.h"
 #include "extern.h"
+#include "parse.h"
 
 #define	RETRY_DELAY 5
 #define RETRY_MAX 10
@@ -565,8 +566,8 @@ dofullchain(struct conn *c, const char *addr)
  */
 int
 netproc(int kfd, int afd, int Cfd, int cfd, int dfd, int rfd,
-    int newacct, int revocate, int authority, const char *const *alts,
-    size_t altsz, const char *agreement)
+    int newacct, int revocate, struct authority_c *authority,
+    const char *const *alts,size_t altsz, const char *agreement)
 {
 	int		 rc = 0;
 	size_t		 i;
@@ -643,7 +644,7 @@ netproc(int kfd, int afd, int Cfd, int cfd, int dfd, int rfd,
 
 	c.dfd = dfd;
 	c.fd = afd;
-	c.na = authorities[authority].caurl;
+	c.na = authority->api;
 
 	/*
 	 * Look up the domain of the ACME server.
