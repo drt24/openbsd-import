@@ -103,22 +103,29 @@ main(int argc, char *argv[])
 	if (getuid() != 0)
 		errx(EXIT_FAILURE, "must be run as root");
 
-	/*
-	 * Now we allocate our directories and file paths IFF we haven't
-	 * specified them on the command-line.
-	 */
+	if (domain->cert != NULL) {
+		if ((certdir = dirname(domain->cert)) != NULL) {
+			if ((certdir = strdup(certdir)) == NULL)
+				err(EXIT_FAILURE, "strdup");
+		} else
+			err(EXIT_FAILURE, "dirname");
+	} else {
+		/* the parser enforces that at least cert or fullchain is set */
+		if ((certdir = dirname(domain->fullchain)) != NULL) {
+			if ((certdir = strdup(certdir)) == NULL)
+				err(EXIT_FAILURE, "strdup");
+		} else
+			err(EXIT_FAILURE, "dirname");
 
-	if ((certdir = dirname(domain->cert)) != NULL) {
-		if ((certdir = strdup(certdir)) == NULL)
-			err(EXIT_FAILURE, "strdup");
-	} else
-		err(EXIT_FAILURE, "dirname");
+	}
 
-	if ((certfile = basename(domain->cert)) != NULL) {
-		if ((certfile = strdup(certfile)) == NULL)
-			err(EXIT_FAILURE, "strdup");
-	} else
-		err(EXIT_FAILURE, "basename");
+	if (domain->cert != NULL) {
+		if ((certfile = basename(domain->cert)) != NULL) {
+			if ((certfile = strdup(certfile)) == NULL)
+				err(EXIT_FAILURE, "strdup");
+		} else
+			err(EXIT_FAILURE, "basename");
+	}
 
 	if(domain->chain != NULL) {
 		if ((chainfile = strstr(domain->chain, certdir)) != NULL)
@@ -391,7 +398,9 @@ main(int argc, char *argv[])
 
 	if (0 == pids[COMP_REVOKE]) {
 		proccomp = COMP_REVOKE;
-		c = revokeproc(rvk_fds[0], certdir, certfile, force, revocate,
+		c = revokeproc(rvk_fds[0], certdir,
+		    certfile != NULL ? certfile : fullchainfile,
+		    force, revocate,
 		    (const char *const *)alts, altsz);
 		free(alts);
 		exit(c ? EXIT_SUCCESS : EXIT_FAILURE);

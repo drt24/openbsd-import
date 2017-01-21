@@ -151,10 +151,11 @@ fileproc(int certsock, const char *certdir, const char *certfile, const char
 	 * Once downloaded, dump it into CHAIN_BAK.
 	 */
 
-	if (asprintf(&certfile_bak, "%s~", certfile) == -1) {
-		warn("asprintf");
-		goto out;
-	}
+	if (certfile)
+		if (asprintf(&certfile_bak, "%s~", certfile) == -1) {
+			warn("asprintf");
+			goto out;
+		}
 
 	if (chainfile)
 		if (asprintf(&chainfile_bak, "%s~", chainfile) == -1) {
@@ -187,10 +188,13 @@ fileproc(int certsock, const char *certdir, const char *certfile, const char
 
 	if (NULL == (csr = readbuf(certsock, COMM_CSR, &csz)))
 		goto out;
-	if (!serialise(certfile_bak, certfile, csr, csz, NULL, 0))
-		goto out;
 
-	dodbg("%s/%s: created", certdir, certfile);
+	if (certfile) {
+		if (!serialise(certfile_bak, certfile, csr, csz, NULL, 0))
+			goto out;
+
+		dodbg("%s/%s: created", certdir, certfile);
+	}
 
 	/*
 	 * Finally, create the full-chain file.
