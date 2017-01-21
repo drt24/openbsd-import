@@ -175,7 +175,7 @@ main(int argc, char *argv[])
 	}
 
 	if (!(popts & ACME_OPT_NEWACCT) && -1 == access(acctkey, R_OK)) {
-		warnx("%s: -f file must exist", acctkey);
+		warnx("%s: account key file must exist", acctkey);
 		ne++;
 	} else if ((popts & ACME_OPT_NEWACCT) && -1 != access(acctkey, R_OK)) {
 		dodbg("%s: account key exists (not creating)", acctkey);
