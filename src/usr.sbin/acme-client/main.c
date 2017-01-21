@@ -54,7 +54,7 @@ main(int argc, char *argv[])
 	struct domain_c		*domain = NULL;
 	struct altname_c	*ac;
 
-	while (-1 != (c = getopt(argc, argv, "bFnNrvf:")))
+	while (-1 != (c = getopt(argc, argv, "bFADrvf:")))
 		switch (c) {
 		case 'b':
 			backup = 1;
