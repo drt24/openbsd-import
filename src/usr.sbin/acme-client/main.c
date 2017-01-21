@@ -434,6 +434,6 @@ main(int argc, char *argv[])
 	    (2 == c ? EXIT_SUCCESS : 2));
 usage:
 	fprintf(stderr,
-	    "usage: acme-client [-FADrvn] [-f file] domain\n");
+	    "usage: acme-client [-ADFnrv] [-f configfile] domain\n");
 	return (EXIT_FAILURE);
 }
