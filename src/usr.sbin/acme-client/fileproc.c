@@ -146,7 +146,7 @@ fileproc(int certsock, const char *certdir, const char *certfile, const char
 
 	/*
 	 * Start by downloading the chain PEM as a buffer.
-	 * This is not nil-terminated, but we're just going to guess
+	 * This is not NUL-terminated, but we're just going to guess
 	 * that it's well-formed and not actually touch the data.
 	 * Once downloaded, dump it into CHAIN_BAK.
 	 */

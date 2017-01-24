@@ -115,7 +115,7 @@ readstr(int fd, enum comm comm)
  * Read a buffer from the sender.
  * This consists of two parts: the lenght of the buffer, and the buffer
  * itself.
- * We allow the buffer to be binary, but nil-terminate it anyway.
+ * We allow the buffer to be binary, but NUL-terminate it anyway.
  */
 char *
 readbuf(int fd, enum comm comm, size_t *sz)

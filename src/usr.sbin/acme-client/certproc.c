@@ -32,7 +32,7 @@
 
 /*
  * Convert an X509 certificate to a buffer of "sz".
- * We don't guarantee that it's nil-terminated.
+ * We don't guarantee that it's NUL-terminated.
  * Returns NULL on failure.
  */
 static char *
@@ -55,7 +55,7 @@ x509buf(X509 *x, size_t *sz)
 
 	/*
 	 * Now convert bio to string.
-	 * Make into nil-terminated, just in case.
+	 * Make into NUL-terminated, just in case.
 	 */
 
 	if (NULL == (p = calloc(1, bio->num_write + 1))) {

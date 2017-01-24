@@ -525,7 +525,7 @@ http_head_parse(const struct http *http, struct httpxfer *trans, size_t *sz)
 	/*
 	 * Allocate headers, then step through the data buffer, parsing
 	 * out headers as we have them.
-	 * We know at this point that the buffer is nil-terminated in
+	 * We know at this point that the buffer is NUL-terminated in
 	 * the usual way.
 	 */
 
@@ -636,7 +636,7 @@ http_head_read(const struct http *http, struct httpxfer *trans, size_t *sz)
 	 * The header data is invalid if it has any binary characters in
 	 * it: check that now.
 	 * This is important because we want to guarantee that all
-	 * header keys and pairs are properly nil-terminated.
+	 * header keys and pairs are properly NUL-terminated.
 	 */
 
 	if (strlen(trans->hbuf) != (uintptr_t)(ep - trans->hbuf)) {
