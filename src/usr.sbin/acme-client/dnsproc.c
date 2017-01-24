@@ -75,7 +75,7 @@ host_dns(const char *s, struct addr *vec)
 
 	if (error) {
 		warnx("%s: parse error: %s",
-			s, gai_strerror(error));
+		    s, gai_strerror(error));
 		return(-1);
 	}
 
@@ -138,10 +138,10 @@ dnsproc(int nfd)
 		else if (lval == DNS_LOOKUP)
 			op = lval;
 
-		if (DNS__MAX == op) {
+		if (op == DNS__MAX) {
 			warnx("unknown operation from netproc");
 			goto out;
-		} else if (DNS_STOP == op)
+		} else if (op == DNS_STOP)
 			break;
 
 		if ((look = readstr(nfd, COMM_DNSQ)) == NULL)

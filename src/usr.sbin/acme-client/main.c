@@ -431,7 +431,7 @@ main(int argc, char *argv[])
 
 	free(alts);
 	return (rc != COMP__MAX ? EXIT_FAILURE :
-		(c == 2 ? EXIT_SUCCESS : 2));
+	    (c == 2 ? EXIT_SUCCESS : 2));
 usage:
 	fprintf(stderr,
 	    "usage: acme-client [-ADFnrv] [-f configfile] domain\n");

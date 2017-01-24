@@ -383,7 +383,7 @@ json_parse_capaths(struct jsmnn *n, struct capaths *p)
 	p->revokecert = json_getstr(n, "revoke-cert");
 
 	return (p->newauthz != NULL && p->newcert != NULL &&
-		p->newreg != NULL && p->revokecert != NULL);
+	    p->newreg != NULL && p->revokecert != NULL);
 }
 
 /*

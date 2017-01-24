@@ -359,7 +359,7 @@ http_open(const struct http *http, const void *p, size_t psz)
 	} else if (!http_write(req, c, http)) {
 		free(req);
 		return (NULL);
-	} else if (p != NULL && ! http_write(p, psz, http)) {
+	} else if (p != NULL && !http_write(p, psz, http)) {
 		free(req);
 		return (NULL);
 	}
@@ -765,7 +765,7 @@ main(void)
 	    NULL, 0);
 #endif
 
-	if (NULL == g)
+	if (g == NULL)
 		errx(EXIT_FAILURE, "http_get");
 
 	httph = http_head_parse(g->http, g->xfer, &httphsz);
