@@ -68,7 +68,7 @@ err:
 out:
 	if (ctx != NULL)
 		EVP_PKEY_CTX_free(ctx);
-	return (pkey);
+	return pkey;
 }
 
 
@@ -80,11 +80,11 @@ rsa_key_load(FILE *f, const char *fname)
 	pkey = PEM_read_PrivateKey(f, NULL, NULL, NULL);
 	if (pkey == NULL) {
 		warnx("%s: PEM_read_PrivateKey", fname);
-		return (NULL);
+		return NULL;
 	} else if (EVP_PKEY_type(pkey->type) == EVP_PKEY_RSA)
-		return (pkey);
+		return pkey;
 
 	warnx("%s: unsupported key type", fname);
 	EVP_PKEY_free(pkey);
-	return (NULL);
+	return NULL;
 }

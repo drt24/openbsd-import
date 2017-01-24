@@ -71,12 +71,12 @@ host_dns(const char *s, struct addr *vec)
 	    error == EAI_NODATA ||
 #endif
 	    error == EAI_NONAME)
-		return(0);
+		return 0;
 
 	if (error) {
 		warnx("%s: parse error: %s",
 		    s, gai_strerror(error));
-		return(-1);
+		return -1;
 	}
 
 	for (vecsz = 0, res = res0;
@@ -106,7 +106,7 @@ host_dns(const char *s, struct addr *vec)
 	}
 
 	freeaddrinfo(res0);
-	return(vecsz);
+	return vecsz;
 }
 
 int
@@ -182,5 +182,5 @@ out:
 	close(nfd);
 	free(look);
 	free(last);
-	return(rc);
+	return rc;
 }

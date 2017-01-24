@@ -147,5 +147,5 @@ out:
 	free(fmt);
 	free(th);
 	free(tok);
-	return(rc);
+	return rc;
 }

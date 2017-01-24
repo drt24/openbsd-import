@@ -430,10 +430,9 @@ main(int argc, char *argv[])
 	    checkexit(pids[COMP_REVOKE], COMP_REVOKE);
 
 	free(alts);
-	return (rc != COMP__MAX ? EXIT_FAILURE :
-	    (c == 2 ? EXIT_SUCCESS : 2));
+	return rc != COMP__MAX ? EXIT_FAILURE : (c == 2 ? EXIT_SUCCESS : 2);
 usage:
 	fprintf(stderr,
 	    "usage: acme-client [-ADFnrv] [-f configfile] domain\n");
-	return (EXIT_FAILURE);
+	return EXIT_FAILURE;
 }
