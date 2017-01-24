@@ -30,7 +30,7 @@ size_t
 base64len(size_t len)
 {
 
-	return (((len + 2) / 3 * 4) + 1);
+	return (len + 2) / 3 * 4 + 1;
 }
 
 /*
@@ -63,5 +63,5 @@ base64buf_url(const char *data, size_t len)
 			break;
 		}
 
-	return (buf);
+	return buf;
 }
