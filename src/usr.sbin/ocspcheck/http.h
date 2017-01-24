@@ -36,7 +36,7 @@ typedef	ssize_t (*readfp)(char *, size_t, const struct http *);
 /*
  * HTTP/S header pair.
  * There's also a cooked-up pair, "Status", with the status code.
- * Both strings are nil-terminated.
+ * Both strings are NUL-terminated.
  */
 struct	httphead {
 	const char	*key;
