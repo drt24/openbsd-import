@@ -45,7 +45,7 @@ base64buf_url(const char *data, size_t len)
 	char	*buf;
 
 	sz = base64len(len);
-	if (NULL == (buf = malloc(sz)))
+	if ((buf = malloc(sz)) == NULL)
 		return (NULL);
 
 	b64_ntop(data, len, buf, sz);
