@@ -61,8 +61,6 @@ struct	httpget {
 	size_t		 bodypartsz; /* size of bodypart */
 };
 
-__BEGIN_DECLS
-
 int		 http_init(void);
 
 /* Convenience functions. */
@@ -90,7 +88,5 @@ int		 http_head_status(const struct http *,
 			struct httphead *, size_t);
 struct httphead	*http_head_get(const char *,
 			struct httphead *, size_t);
-
-__END_DECLS
 
 #endif /* HTTP_H */
