@@ -15,9 +15,10 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+#include <arpa/inet.h>
+#include <netinet/in.h>
 #include <sys/socket.h>
 #include <sys/param.h>
-#include <arpa/inet.h>
 
 #include <ctype.h>
 #include <err.h>
