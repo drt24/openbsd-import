@@ -85,6 +85,9 @@ main(int argc, char *argv[])
 			goto usage;
 		}
 
+	if (getuid() != 0)
+		errx(EXIT_FAILURE, "must be run as root");
+
 	/* parse config file */
 	if ((conf = parse_config(conffile, popts)) == NULL)
 		exit(EXIT_FAILURE);
@@ -99,9 +102,6 @@ main(int argc, char *argv[])
 
 	argc--;
 	argv++;
-
-	if (getuid() != 0)
-		errx(EXIT_FAILURE, "must be run as root");
 
 	if (domain->cert != NULL) {
 		if ((certdir = dirname(domain->cert)) != NULL) {
