@@ -187,9 +187,9 @@ keyproc(int netsock, const char *keyfile,
 				warn("asprintf");
 				goto out;
 			}
-			pp = realloc(sans, sansz + strlen(san));
+			pp = recallocarray(sans, sansz, sansz + strlen(san), 1);
 			if (pp == NULL) {
-				warn("realloc");
+				warn("recallocarray");
 				goto out;
 			}
 			sans = pp;

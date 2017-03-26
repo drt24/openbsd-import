@@ -422,9 +422,10 @@ http_body_read(const struct http *http, struct httpxfer *trans, size_t *sz)
 			return NULL;
 		else if (ssz == 0)
 			break;
-		pp = realloc(trans->bbuf, trans->bbufsz + ssz);
+		pp = recallocarray(trans->bbuf,
+		    trans->bbufsz, trans->bbufsz + ssz, 1);
 		if (pp == NULL) {
-			warn("realloc");
+			warn("recallocarray");
 			return NULL;
 		}
 		trans->bbuf = pp;
@@ -616,9 +617,10 @@ http_head_read(const struct http *http, struct httpxfer *trans, size_t *sz)
 			return NULL;
 		else if (ssz == 0)
 			break;
-		pp = realloc(trans->hbuf, trans->hbufsz + ssz);
+		pp = recallocarray(trans->hbuf,
+		    trans->hbufsz, trans->hbufsz + ssz, 1);
 		if (pp == NULL) {
-			warn("realloc");
+			warn("recallocarray");
 			return NULL;
 		}
 		trans->hbuf = pp;
