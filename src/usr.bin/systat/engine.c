@@ -125,7 +125,7 @@ tbprintf(char *format, ...)
 		return 0;
 
 	va_start(arg, format);
-	len=vsnprintf(tb_ptr, tb_len, format, arg);
+	len = vsnprintf(tb_ptr, tb_len, format, arg);
 	va_end(arg);
 	
 	if (len > tb_len)
