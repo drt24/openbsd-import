@@ -347,6 +347,8 @@ print_bar_title(field_def *fld)
 		}
 
 		len = snprintf(buf, sizeof(buf), "%d\\", val);
+		if (len >= sizeof(buf))
+			len = strlen(buf);
 		while (cur < pos - len) {
 			tbprintf(" ");
 			cur++;
