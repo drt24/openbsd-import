@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: subr_witness.c,v 1.1 2017/04/20 12:59:36 visa Exp $	*/
 
 /*-
  * Copyright (c) 2008 Isilon Systems, Inc.
@@ -2521,5 +2521,5 @@ witness_debugger(int cond, const char *msg)
 	if (!cond)
 		return;
 
-	Debugger();
+	db_enter();
 }
