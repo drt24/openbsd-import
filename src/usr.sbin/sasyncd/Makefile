@@ -10,7 +10,7 @@ CFLAGS=		-O0 $(PIPE) $(DEBUG)
 
 CFLAGS+=	-I${.CURDIR} -I${.CURDIR}/../../sbin/iked
 
-CLEANFILES=	y.tab.h
+YFLAGS=
 
 # ElectricFence
 #LDADD+=	-L/usr/local/lib -lefence
