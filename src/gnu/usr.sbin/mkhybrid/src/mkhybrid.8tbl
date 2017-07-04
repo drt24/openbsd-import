@@ -1021,10 +1021,10 @@ l l l l l .
 # Example filename mapping file
 #
 # EXTN/XLate/CREATOR/TYPE/Comment
-\.tif/Raw/'8BIM'/'TIFF'/"Photoshop TIFF image"
-\.hqx/Ascii/'BnHq'/'TEXT'/"BinHex file"
-\.doc/Raw/'MSWD'/'WDBN'/"Word file"
-\.mov/Raw/'TVOD'/'MooV'/"QuickTime Movie"
+\&.tif/Raw/'8BIM'/'TIFF'/"Photoshop TIFF image"
+\&.hqx/Ascii/'BnHq'/'TEXT'/"BinHex file"
+\&.doc/Raw/'MSWD'/'WDBN'/"Word file"
+\&.mov/Raw/'TVOD'/'MooV'/"QuickTime Movie"
 */Ascii/'ttxt'/'TEXT'/"Text file"
 .TE
 .LP
