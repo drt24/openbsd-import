@@ -164,7 +164,7 @@ revokeproc(int fd, const char *certdir, const char *certfile, int force,
 	/*
 	 * Next, the long process to make sure that the SAN entries
 	 * listed with the certificate fully cover those passed on the
-	 * comamnd line.
+	 * command line.
 	 */
 
 	extsz = x->cert_info->extensions != NULL ?
