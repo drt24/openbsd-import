@@ -63,7 +63,7 @@ ifs_init(mntfs *mf)
 {
 	mntfs *mf_link = (mntfs *) mf->mf_private;
 	if (mf_link == 0) {
-		plog(XLOG_FATAL, not_a_filesystem);
+		plog(XLOG_FATAL, "%s", not_a_filesystem);
 		return EINVAL;
 	}
 #ifdef notdef
@@ -89,7 +89,7 @@ ifs_inherit(mntfs *mf)
 	 */
 	mntfs *mf_link = (mntfs *) mf->mf_private;
 	if (mf_link == 0) {
-		plog(XLOG_FATAL, not_a_filesystem);
+		plog(XLOG_FATAL, "%s", not_a_filesystem);
 		return 0;	/*XXX*/
 	}
 
