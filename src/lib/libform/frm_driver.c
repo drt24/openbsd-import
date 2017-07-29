@@ -1,4 +1,4 @@
-/*	$OpenBSD$	*/
+/*	$OpenBSD: frm_driver.c,v 1.11 2015/01/23 22:48:51 krw Exp $	*/
 /****************************************************************************
  * Copyright (c) 1998-2007,2008 Free Software Foundation, Inc.              *
  *                                                                          *
@@ -1285,7 +1285,7 @@ _nc_Synchronize_Options(FIELD *field, Field_Options newopts)
 
       if (form->status & _POSTED)
 	{
-	  if ((form->curpage == field->page))
+	  if (form->curpage == field->page)
 	    {
 	      if (changed_opts & O_VISIBLE)
 		{
