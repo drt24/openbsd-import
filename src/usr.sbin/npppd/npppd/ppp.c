@@ -1,4 +1,4 @@
-/*	$OpenBSD: ppp.c,v 1.25 2015/07/23 09:04:06 yasuoka Exp $ */
+/*	$OpenBSD: ppp.c,v 1.26 2015/12/05 18:43:36 mmcc Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -583,9 +583,6 @@ ppp_auth_ok(npppd_ppp *_this)
 	if (_this->peer_auth != 0) {
 		/* Limit the number of connections per the user */
 		if (!npppd_check_user_max_session(_this->pppd, _this)) {
-			ppp_log(_this, LOG_WARNING,
-			    "user %s exceeds user-max-session limit",
-			    _this->username);
 			ppp_stop(_this, NULL);
 
 			return;
