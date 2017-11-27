@@ -162,6 +162,7 @@ struct	capaths {
 	char		*newcert;  /* sign certificate */
 	char		*newreg; /* new acme account */
 	char		*revokecert; /* revoke certificate */
+	char		*agreement; /* terms of service */
 };
 
 struct	jsmnn;
@@ -184,7 +185,7 @@ int		 keyproc(int, const char *,
 			const char **, size_t, int);
 int		 netproc(int, int, int, int, int, int, int, int,
 			struct authority_c *, const char *const *,
-			size_t, const char *);
+			size_t);
 
 /*
  * Debugging functions.
