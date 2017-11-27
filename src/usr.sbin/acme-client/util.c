@@ -113,7 +113,7 @@ readstr(int fd, enum comm comm)
 
 /*
  * Read a buffer from the sender.
- * This consists of two parts: the lenght of the buffer, and the buffer
+ * This consists of two parts: the length of the buffer, and the buffer
  * itself.
  * We allow the buffer to be binary, but NUL-terminate it anyway.
  */
