@@ -1,4 +1,4 @@
-/*	$OpenBSD: autoconf.c,v 1.43 2014/04/04 01:50:25 dlg Exp $	*/
+/*	$OpenBSD: autoconf.c,v 1.44 2016/06/08 17:24:44 tedu Exp $	*/
 /*
  * Copyright (c) 1996, 1997 Per Fogelstrom
  * Copyright (c) 1995 Theo de Raadt
@@ -283,7 +283,8 @@ diskconf(void)
 struct nam2blk nam2blk[] = {
 	{ "wd",		0 },
 	{ "sd",		2 },
-	{ "rd",		17 },
+	{ "cd",		3 },
 	{ "vnd",	14 },
+	{ "rd",		17 },
 	{ NULL,		-1 }
 };
