@@ -130,6 +130,7 @@ int set_view(const char *opt);
 void next_view(void);
 void prev_view(void);
 
+int foreach_order(void (*callback)(order_type *));
 void set_order(const char *opt);
 void next_order(void);
 

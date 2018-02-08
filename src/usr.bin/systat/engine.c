@@ -890,6 +890,21 @@ print_fld_float(field_def *fld, double f, int prec)
 
 /* ordering */
 
+int
+foreach_order(void (*callback)(order_type *))
+{
+	order_type *o;
+
+	if (curr_view == NULL || curr_view->mgr == NULL ||
+	    curr_view->mgr->order_list == NULL)
+		return -1;
+	o = curr_view->mgr->order_list;
+	do {
+		callback(o++);
+	} while (o->name != NULL);
+	return 0;
+}
+
 void
 set_order(const char *opt)
 {
