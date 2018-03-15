@@ -223,9 +223,12 @@ writebuf(int fd, enum comm comm, const void *v, size_t sz)
 
 	if ((size_t)ssz != sizeof(size_t))
 		warnx("short write: %s length", comms[comm]);
-	else if ((ssz = write(fd, v, sz)) < 0)
-		warn("write: %s", comms[comm]);
-	else if (sz != (size_t)ssz)
+	else if ((ssz = write(fd, v, sz)) < 0) {
+		if (errno == EPIPE)
+			rc = 0;
+		else
+			warn("write: %s", comms[comm]);
+	} else if (sz != (size_t)ssz)
 		warnx("short write: %s", comms[comm]);
 	else
 		rc = 1;
