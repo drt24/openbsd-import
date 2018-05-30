@@ -392,6 +392,7 @@ initialize(void)
 	initmalloc();
 	initnfs();
 	initcpu();
+	inituvm();
 }
 
 void
