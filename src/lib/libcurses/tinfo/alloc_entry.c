@@ -1,4 +1,4 @@
-/* $OpenBSD$ */
+/* $OpenBSD: alloc_entry.c,v 1.6 2010/01/12 23:22:06 nicm Exp $ */
 
 /****************************************************************************
  * Copyright (c) 1998-2006,2008 Free Software Foundation, Inc.              *
@@ -255,7 +255,7 @@ _nc_merge_entry(TERMTYPE *const to, TERMTYPE *const from)
     _nc_align_termtype(to, from);
 #endif
     for_each_boolean(i, from) {
-	if (to->Booleans[i] != (char) CANCELLED_BOOLEAN) {
+	if (to->Booleans[i] != CANCELLED_BOOLEAN) {
 	    int mergebool = from->Booleans[i];
 
 	    if (mergebool == CANCELLED_BOOLEAN)
