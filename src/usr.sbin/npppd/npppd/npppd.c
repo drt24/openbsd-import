@@ -1,4 +1,4 @@
-/*	$OpenBSD: npppd.c,v 1.46 2017/08/11 16:41:47 goda Exp $ */
+/*	$OpenBSD: npppd.c,v 1.47 2017/08/12 11:20:34 goda Exp $ */
 
 /*-
  * Copyright (c) 2005-2008,2009 Internet Initiative Japan Inc.
@@ -1661,7 +1661,7 @@ npppd_assign_ip_addr(npppd *_this, npppd_ppp *ppp, uint32_t req_ip4)
 			ppp_log(ppp, LOG_NOTICE,
 			    "Requested IP address (%d.%d.%d.%d)/%d "
 			    "is %s", IP_4OCT(req_ip4),
-			    netmask2prefixlen(htonl(ip4mask)), reason);
+			    netmask2prefixlen(ip4mask), reason);
 			if (fallback_dyna)
 				goto dyna_assign;
 			return 1;
