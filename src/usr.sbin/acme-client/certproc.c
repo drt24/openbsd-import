@@ -231,10 +231,8 @@ certproc(int netsock, int filesock)
 out:
 	close(netsock);
 	close(filesock);
-	if (x != NULL)
-		X509_free(x);
-	if (chainx != NULL)
-		X509_free(chainx);
+	X509_free(x);
+	X509_free(chainx);
 	free(csr);
 	free(url);
 	free(chain);

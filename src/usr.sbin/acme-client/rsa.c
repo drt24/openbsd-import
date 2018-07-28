@@ -62,12 +62,10 @@ rsa_key_create(FILE *f, const char *fname)
 
 	warnx("%s: PEM_write_PrivateKey", fname);
 err:
-	if (pkey != NULL)
-		EVP_PKEY_free(pkey);
+	EVP_PKEY_free(pkey);
 	pkey = NULL;
 out:
-	if (ctx != NULL)
-		EVP_PKEY_CTX_free(ctx);
+	EVP_PKEY_CTX_free(ctx);
 	return pkey;
 }
 

@@ -256,8 +256,7 @@ out:
 		X509_REQ_free(x);
 	if (name != NULL)
 		X509_NAME_free(name);
-	if (pkey != NULL)
-		EVP_PKEY_free(pkey);
+	EVP_PKEY_free(pkey);
 	ERR_print_errors_fp(stderr);
 	ERR_free_strings();
 	return (rc);

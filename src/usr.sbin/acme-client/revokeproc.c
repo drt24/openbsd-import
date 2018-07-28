@@ -335,10 +335,8 @@ out:
 	close(fd);
 	if (f != NULL)
 		fclose(f);
-	if (x != NULL)
-		X509_free(x);
-	if (bio != NULL)
-		BIO_free(bio);
+	X509_free(x);
+	BIO_free(bio);
 	free(san);
 	free(path);
 	free(der);
