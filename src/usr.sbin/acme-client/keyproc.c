@@ -252,12 +252,10 @@ out:
 	free(der64);
 	free(sans);
 	free(san);
-	if (x != NULL)
-		X509_REQ_free(x);
-	if (name != NULL)
-		X509_NAME_free(name);
+	X509_REQ_free(x);
+	X509_NAME_free(name);
 	EVP_PKEY_free(pkey);
 	ERR_print_errors_fp(stderr);
 	ERR_free_strings();
-	return (rc);
+	return rc;
 }
