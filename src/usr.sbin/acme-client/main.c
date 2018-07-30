@@ -405,10 +405,8 @@ main(int argc, char *argv[])
 
 	/* Jail: sandbox, file-system, user. */
 
-	if (pledge("stdio", NULL) == -1) {
-		warn("pledge");
-		exit(EXIT_FAILURE);
-	}
+	if (pledge("stdio", NULL) == -1)
+		err(EXIT_FAILURE, "pledge");
 
 	/*
 	 * Collect our subprocesses.
