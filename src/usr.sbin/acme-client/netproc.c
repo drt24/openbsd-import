@@ -612,6 +612,11 @@ netproc(int kfd, int afd, int Cfd, int cfd, int dfd, int rfd,
 	memset(&paths, 0, sizeof(struct capaths));
 	memset(&c, 0, sizeof(struct conn));
 
+	if (unveil(DEFAULT_CA_FILE, "r") == -1) {
+		warn("unveil");
+		goto out;
+	}
+
 	if (pledge("stdio inet rpath", NULL) == -1) {
 		warn("pledge");
 		goto out;

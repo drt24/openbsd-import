@@ -35,8 +35,6 @@
 #include "http.h"
 #include "extern.h"
 
-#define DEFAULT_CA_FILE "/etc/ssl/cert.pem"
-
 /*
  * A buffer for transferring HTTP/S data.
  */
