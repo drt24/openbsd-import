@@ -1,4 +1,4 @@
-/*	$OpenBSD: print-atm.c,v 1.11 2014/11/20 04:11:33 jsg Exp $	*/
+/*	$OpenBSD: print-atm.c,v 1.12 2015/01/16 06:40:21 deraadt Exp $	*/
 
 /*
  * Copyright (c) 1994, 1995, 1996, 1997
@@ -104,11 +104,9 @@ atm_if_print(u_char *user, const struct pcap_pkthdr *h, const u_char *p)
 		ip_print(p, length);
 		break;
 
-#ifdef INET6
 	case ETHERTYPE_IPV6:
 		ip6_print(p, length);
 		break;
-#endif /*INET6*/
 
 		/*XXX this probably isn't right */
 	case ETHERTYPE_ARP:
