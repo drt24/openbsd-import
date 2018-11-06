@@ -61,7 +61,6 @@ struct	httpget {
 	size_t		 bodypartsz; /* size of bodypart */
 };
 
-#define DEFAULT_CA_FILE "/etc/ssl/cert.pem"
 int		 http_init(void);
 
 /* Convenience functions. */
