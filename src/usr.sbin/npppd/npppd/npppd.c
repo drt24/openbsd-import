@@ -1,4 +1,4 @@
-/*	$OpenBSD: npppd.c,v 1.47 2017/08/12 11:20:34 goda Exp $ */
+/*	$OpenBSD: npppd.c,v 1.48 2018/07/25 02:18:36 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2005-2008,2009 Internet Initiative Japan Inc.
@@ -50,7 +50,6 @@
 #include <stdio.h>
 #include <signal.h>
 #include <netdb.h>
-#include <libgen.h>
 #include <fcntl.h>
 #include <event.h>
 #include <errno.h>
