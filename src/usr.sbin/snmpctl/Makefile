@@ -1,4 +1,4 @@
-#	$Id$
+#	$OpenBSD: Makefile,v 1.7 2014/04/14 12:56:21 blambert Exp $
 
 .PATH:		${.CURDIR}/../snmpd
 
