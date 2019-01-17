@@ -1,4 +1,4 @@
-/* $Id$	 */
+/* $OpenBSD: main.c,v 1.68 2018/05/30 13:43:51 krw Exp $	 */
 /*
  * Copyright (c) 2001, 2007 Can Erkin Acar
  * Copyright (c) 2001 Daniel Hartmeier
