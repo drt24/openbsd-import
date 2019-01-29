@@ -156,11 +156,6 @@ main(int argc, char *argv[])
 
 	acctkey = authority->account;
 
-	if (acctkey == NULL) {
-		/* XXX replace with existance check in parse.y */
-		err(EXIT_FAILURE, "no account key in config?");
-	}
-
 	if ((chngdir = domain->challengedir) == NULL)
 		if ((chngdir = strdup(WWW_DIR)) == NULL)
 			err(EXIT_FAILURE, "strdup");
