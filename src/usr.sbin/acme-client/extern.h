@@ -146,11 +146,17 @@ enum	comm {
  * (presumably!) local machine to an ACME connection; and a URI, to
  * which we must connect to verify the token.
  */
+enum	chngstatus {
+	CHNG_INVALID = -1,
+	CHNG_PENDING = 0,
+	CHNG_VALID = 1
+};
+
 struct	chng {
 	char		*uri; /* uri on ACME server */
 	char		*token; /* token we must offer */
 	size_t		 retry; /* how many times have we tried */
-	int		 status; /* challenge accepted? */
+	enum chngstatus	 status; /* challenge accepted? */
 };
 
 /*
