@@ -285,7 +285,7 @@ main(int argc, char *argv[])
 {
 	struct opts	 opts;
 	pid_t		 child;
-	int		 fds[2], flags, c, st;
+	int		 fds[2], c, st;
 	struct fargs	*fargs;
 	struct option	 lopts[] = {
 		{ "delete",	no_argument,	&opts.del,	1 },
@@ -397,9 +397,7 @@ main(int argc, char *argv[])
 
 	/* Create a bidirectional socket and start our child. */
 
-	flags = SOCK_STREAM | SOCK_NONBLOCK;
-
-	if (-1 == socketpair(AF_UNIX, flags, 0, fds))
+	if (-1 == socketpair(AF_UNIX, SOCK_STREAM | SOCK_NONBLOCK, 0, fds))
 		err(EXIT_FAILURE, "socketpair");
 
 	if (-1 == (child = fork())) {
