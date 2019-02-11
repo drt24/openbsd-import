@@ -55,7 +55,7 @@ fargs_cmdline(struct sess *sess, const struct fargs *f)
 	if (f->host != NULL) {
 		assert(f->host != NULL);
 		
-		args[i++] = sess->opts->ssh ? sess->opts->ssh : "ssh";
+		args[i++] = "ssh";
 		args[i++] = f->host;
 		args[i++] = (char *)rsync_path;
 		args[i++] = "--server";

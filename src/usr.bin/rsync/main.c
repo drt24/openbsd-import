@@ -303,7 +303,6 @@ main(int argc, char *argv[])
 	while ((c = getopt_long(argc, argv, "e:lnprtv", lopts, NULL)) != -1) {
 		switch (c) {
 		case 'e':
-			opts.ssh = optarg;
 			/* Ignore. */
 			break;
 		case 'l':
