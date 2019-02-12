@@ -104,6 +104,7 @@ struct	opts {
 	int		 preserve_times;	/* -t */
 	int		 preserve_perms;	/* -p */
 	int		 preserve_links;	/* -l */
+	int		 preserve_gids;		/* -g */
 	int		 del;			/* --delete */
 	char		*rsync_path;		/* --rsync-path */
 	char		*ssh_prog;		/* --rsh or -e */
