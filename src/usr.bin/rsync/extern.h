@@ -106,6 +106,7 @@ struct	opts {
 	int		 preserve_links;	/* -l */
 	int		 del;			/* --delete */
 	char		*rsync_path;		/* --rsync-path */
+	char		*ssh_prog;		/* --rsh or -e */
 };
 
 /*
