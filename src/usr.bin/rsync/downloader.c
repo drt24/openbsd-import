@@ -29,8 +29,9 @@
 #include <time.h>
 #include <unistd.h>
 
+#include <openssl/md4.h>
+
 #include "extern.h"
-#include "md4.h"
 
 /*
  * A small optimisation: have a 1 MB pre-write buffer.

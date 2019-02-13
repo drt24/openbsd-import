@@ -21,8 +21,9 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+#include <openssl/md4.h>
+
 #include "extern.h"
-#include "md4.h"
 
 /*
  * A fast 32-bit hash.
