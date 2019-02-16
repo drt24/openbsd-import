@@ -121,12 +121,15 @@ inet_resolve(struct sess *sess, const char *host, size_t *sz)
 	LOG2(sess, "resolving: %s", host);
 
 	if (error == EAI_AGAIN || error == EAI_NONAME) {
-		ERRX(sess, "DNS resolve error: %s: %s",
+		ERRX(sess, "Could not resolve hostname %s: %s",
 		    host, gai_strerror(error));
 		return NULL;
+	} else if (error == EAI_SERVICE) {
+		ERRX(sess, "Could not resolve service rsync: %s",
+		    gai_strerror(error));
+		return NULL;
 	} else if (error) {
-		ERRX(sess, "DNS parse error: %s: %s",
-		    host, gai_strerror(error));
+		ERRX(sess, "getaddrinfo: %s: %s", host, gai_strerror(error));
 		return NULL;
 	}
 
@@ -177,7 +180,7 @@ inet_resolve(struct sess *sess, const char *host, size_t *sz)
 			    src[i].ip, INET6_ADDRSTRLEN);
 		}
 
-		LOG2(sess, "DNS resolved: %s: %s", host, src[i].ip);
+		LOG2(sess, "hostname resolved: %s: %s", host, src[i].ip);
 		i++;
 	}
 
