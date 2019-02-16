@@ -293,7 +293,7 @@ main(int argc, char *argv[])
 		{ "server",	no_argument,	&opts.server,		1 },
 		{ "dry-run",	no_argument,	&opts.dry_run,		1 },
 		{ "version",	no_argument,	NULL,			2 },
-		{ "archive",	no_argument, 	NULL,			'a' },
+		{ "archive",	no_argument,	NULL,			'a' },
 		{ "help",	no_argument,	NULL,			'h' },
 		{ "delete",	no_argument,	&opts.del,		1 },
 		{ "no-delete",	no_argument,	&opts.del,		0 },
