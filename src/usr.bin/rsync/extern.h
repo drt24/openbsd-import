@@ -298,6 +298,10 @@ void		  hash_file(const void *, size_t,
 
 int		  mkpath(struct sess *, char *);
 
+int		  mkstempat(int, char *);
+char		 *mkstemplinkat(char*, int, char *);
+int		  mktemplate(char **, const char *, int);
+
 char		 *symlink_read(struct sess *, const char *);
 char		 *symlinkat_read(struct sess *, int, const char *);
 
