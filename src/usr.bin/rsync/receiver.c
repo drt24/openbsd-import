@@ -92,8 +92,8 @@ rsync_set_metadata(struct sess *sess, int newfile,
 }
 
 /*
- * Pledges: unveil, rpath, cpath, wpath, stdio, fattr.
- * Pledges (dry-run): -cpath, -wpath, -fattr.
+ * Pledges: unveil, rpath, cpath, wpath, stdio, fattr, chown.
+ * Pledges (dry-run): -cpath, -wpath, -fattr, -chown.
  */
 int
 rsync_receiver(struct sess *sess, int fdin, int fdout, const char *root)
@@ -108,7 +108,7 @@ rsync_receiver(struct sess *sess, int fdin, int fdout, const char *root)
 	struct upload	*ul = NULL;
 	mode_t		 oumask;
 
-	if (pledge("stdio rpath wpath cpath fattr getpw unveil", NULL) == -1) {
+	if (pledge("stdio rpath wpath cpath fattr chown getpw unveil", NULL) == -1) {
 		ERR(sess, "pledge");
 		goto out;
 	}

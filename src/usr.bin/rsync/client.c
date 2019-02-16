@@ -30,9 +30,9 @@
  * In the former, it synchronises local files from a remote sink.
  * In the latter, the remote sink synchronses to the local files.
  *
- * Pledges: stdio, rpath, wpath, cpath, unveil, fattr.
+ * Pledges: stdio, rpath, wpath, cpath, unveil, fattr, chown.
  *
- * Pledges (dry-run): -cpath, -wpath, -fattr.
+ * Pledges (dry-run): -cpath, -wpath, -fattr, chown.
  * Pledges (!preserve_times): -fattr.
  */
 int
