@@ -199,9 +199,7 @@ struct	ident {
 struct	download;
 struct	upload;
 
-#ifndef MIN
-# define MIN(_x1, _x2) ((_x1) < (_x2) ? (_x1) : (_x2))
-#endif
+#define MINIMUM(a, b) (((a) < (b)) ? (a) : (b))
 
 #define LOG0(_sess, _fmt, ...) \
 	rsync_log((_sess), __FILE__, __LINE__, -1, (_fmt), ##__VA_ARGS__)

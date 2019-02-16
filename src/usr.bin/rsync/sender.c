@@ -407,8 +407,8 @@ rsync_sender(struct sess *sess, int fdin,
 				 * put is in the token phase.
 				 */
 
-				sz = MIN(MAX_CHUNK,
-					up.stat.curlen - up.stat.curpos);
+				sz = MINIMUM(MAX_CHUNK,
+				    up.stat.curlen - up.stat.curpos);
 				if (!io_lowbuffer_alloc(sess, &wbuf,
 				    &wbufsz, &wbufmax, sizeof(int32_t))) {
 					ERRX1(sess, "io_lowbuffer_alloc");
