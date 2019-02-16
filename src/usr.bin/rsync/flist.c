@@ -1146,8 +1146,7 @@ flist_gen_dels(struct sess *sess, const char *root, struct flist **fl,
 				cargv[j] = NULL;
 				goto out;
 			}
-			LOG4(sess, "%s: will scan "
-				"for deletions", cargv[j]);
+			LOG4(sess, "%s: will scan for deletions", cargv[j]);
 			j++;
 		}
 		assert(j == cargvs);

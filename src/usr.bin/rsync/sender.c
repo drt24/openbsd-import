@@ -62,7 +62,7 @@ rsync_sender(struct sess *sess, int fdin,
 	/* Client sends zero-length exclusions if deleting. */
 
 	if (!sess->opts->server && sess->opts->del &&
-	     !io_write_int(sess, fdout, 0)) {
+	    !io_write_int(sess, fdout, 0)) {
 		ERRX1(sess, "io_write_int");
 		goto out;
 	}

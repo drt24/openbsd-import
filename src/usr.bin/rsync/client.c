@@ -80,8 +80,8 @@ rsync_client(const struct opts *opts, int fd, const struct fargs *f)
 	if (FARGS_RECEIVER != f->mode) {
 		LOG2(&sess, "client starting sender: %s",
 		    f->host == NULL ? "(local)" : f->host);
-		if (!rsync_sender(&sess, fd, fd,
-				f->sourcesz, f->sources)) {
+		if (!rsync_sender(&sess, fd, fd, f->sourcesz,
+		    f->sources)) {
 			ERRX1(&sess, "rsync_sender");
 			goto out;
 		}
