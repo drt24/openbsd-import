@@ -242,8 +242,10 @@ pre_link(struct upload *p, struct sess *sess)
 	 */
 
 	if (sess->opts->preserve_times) {
-		tv[0].tv_sec = time(NULL);
-		tv[0].tv_nsec = 0;
+		struct timeval now;
+
+		gettimeofday(&now, NULL);
+		TIMEVAL_TO_TIMESPEC(&now, &tv[0]);
 		tv[1].tv_sec = f->st.mtime;
 		tv[1].tv_nsec = 0;
 		rc = utimensat(p->rootfd, f->path, tv, AT_SYMLINK_NOFOLLOW);

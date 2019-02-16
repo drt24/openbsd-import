@@ -75,8 +75,10 @@ rsync_set_metadata(struct sess *sess, int newfile,
 	/* Conditionally adjust file modification time. */
 
 	if (sess->opts->preserve_times) {
-		tv[0].tv_sec = time(NULL);
-		tv[0].tv_nsec = 0;
+		struct timeval now;
+
+		gettimeofday(&now, NULL);
+		TIMEVAL_TO_TIMESPEC(&now, &tv[0]);
 		tv[1].tv_sec = f->st.mtime;
 		tv[1].tv_nsec = 0;
 		if (futimens(fd, tv) == -1) {
