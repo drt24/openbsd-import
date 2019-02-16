@@ -310,7 +310,7 @@ int		  rsync_client(const struct opts *, int, const struct fargs *);
 int		  rsync_socket(const struct opts *, const struct fargs *);
 int		  rsync_server(const struct opts *, size_t, char *[]);
 int		  rsync_downloader(struct download *, struct sess *, int *);
-int		  rsync_set_metadata(struct sess *, int, int, 
+int		  rsync_set_metadata(struct sess *, int, int,
 			const struct flist *, const char *);
 int		  rsync_set_metadata_at(struct sess *, int, int, 
 			const struct flist *, const char *);
