@@ -88,6 +88,16 @@ rsync_set_metadata(struct sess *sess, int newfile,
 		LOG4(sess, "%s: updated date", f->path);
 	}
 
+	/* Conditionally adjust file permissions. */
+
+	if (newfile || sess->opts->preserve_perms) {
+		if (fchmod(fd, f->st.mode) == -1) {
+			ERR(sess, "%s: fchmod", path);
+			return 0;
+		}
+		LOG4(sess, "%s: updated permissions", f->path);
+	}
+
 	return 1;
 }
 
