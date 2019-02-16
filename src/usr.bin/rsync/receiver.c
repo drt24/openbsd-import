@@ -195,9 +195,6 @@ rsync_receiver(struct sess *sess, int fdin, int fdout, const char *root)
 	/*
 	 * Begin by conditionally getting all files we have currently
 	 * available in our destination.
-	 * XXX: THIS IS A BUG IN OPENBSD 6.4.
-	 * For newer version of OpenBSD, this is safe to put after the
-	 * unveil.
 	 */
 
 	if (sess->opts->del &&
