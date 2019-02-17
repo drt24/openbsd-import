@@ -116,7 +116,7 @@ inet_resolve(struct sess *sess, const char *host, size_t *sz)
 	hints.ai_family = PF_UNSPEC;
 	hints.ai_socktype = SOCK_STREAM;
 
-	error = getaddrinfo(host, "rsync", &hints, &res0);
+	error = getaddrinfo(host, sess->opts->port, &hints, &res0);
 
 	LOG2(sess, "resolving: %s", host);
 
@@ -125,8 +125,8 @@ inet_resolve(struct sess *sess, const char *host, size_t *sz)
 		    host, gai_strerror(error));
 		return NULL;
 	} else if (error == EAI_SERVICE) {
-		ERRX(sess, "Could not resolve service rsync: %s",
-		    gai_strerror(error));
+		ERRX(sess, "Could not resolve service '%s': %s",
+		    sess->opts->port, gai_strerror(error));
 		return NULL;
 	} else if (error) {
 		ERRX(sess, "getaddrinfo: %s: %s", host, gai_strerror(error));

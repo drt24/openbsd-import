@@ -118,6 +118,7 @@ struct	opts {
 	int		 specials;		/* --specials */
 	char		*rsync_path;		/* --rsync-path */
 	char		*ssh_prog;		/* --rsh or -e */
+	char		*port;			/* --port */
 };
 
 /*
