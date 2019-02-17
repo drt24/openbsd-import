@@ -351,7 +351,6 @@ main(int argc, char *argv[])
 			break;
 		case 'e':
 			opts.ssh_prog = optarg;
-			/* Ignore. */
 			break;
 		case 'g':
 			opts.preserve_gids = 1;
