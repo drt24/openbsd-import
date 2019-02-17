@@ -114,7 +114,7 @@ inet_resolve(struct sess *sess, const char *host, size_t *sz)
 
 	memset(&hints, 0, sizeof(hints));
 	hints.ai_family = PF_UNSPEC;
-	hints.ai_socktype = SOCK_DGRAM; /* DUMMY */
+	hints.ai_socktype = SOCK_STREAM;
 
 	error = getaddrinfo(host, "rsync", &hints, &res0);
 
