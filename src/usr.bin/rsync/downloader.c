@@ -85,7 +85,7 @@ log_file(struct sess *sess,
 	if (sess->opts->server)
 		return;
 
-	frac = 0 == dl->total ? 100.0 :
+	frac = (dl->total == 0) ? 100.0 :
 		100.0 * dl->downloaded / dl->total;
 
 	if (dl->total > 1024 * 1024 * 1024) {
