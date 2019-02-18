@@ -135,11 +135,12 @@ struct	blk {
 
 enum	blkstatst {
 	BLKSTAT_NONE = 0,
-	BLKSTAT_DATASZ,
+	BLKSTAT_NEXT,
 	BLKSTAT_DATA,
 	BLKSTAT_TOK,
 	BLKSTAT_HASH,
-	BLKSTAT_DONE
+	BLKSTAT_DONE,
+	BLKSTAT_PHASE,
 };
 
 /*
@@ -325,8 +326,8 @@ struct upload	 *upload_alloc(struct sess *, const char *, int, int, size_t,
 void		  upload_free(struct upload *);
 
 struct blkset	 *blk_recv(struct sess *, int, const char *);
-int		  blk_recv_ack(struct sess *,
-			int, const struct blkset *, int32_t);
+void		  blk_recv_ack(struct sess *,
+			char [20], const struct blkset *, int32_t);
 void		  blk_match(struct sess *, const struct blkset *,
 			const char *, struct blkstat *);
 int		  blk_send(struct sess *, int, size_t,
@@ -346,7 +347,7 @@ char		 *mkstemplinkat(char*, int, char *);
 char		 *mkstempfifoat(int, char *);
 char		 *mkstempnodat(int, char *, mode_t, dev_t);
 char		 *mkstempsock(const char *, char *);
-int		  mktemplate(char **, const char *, int);
+int		  mktemplate(struct sess *, char **, const char *, int);
 
 char		 *symlink_read(struct sess *, const char *);
 char		 *symlinkat_read(struct sess *, int, const char *);

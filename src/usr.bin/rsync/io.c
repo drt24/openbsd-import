@@ -304,8 +304,7 @@ io_read_flush(struct sess *sess, int fd)
 	} else if (sess->mplex_read_remain == 0)
 		return 1;
 
-	if (!io_read_blocking(sess, fd,
-	    mpbuf, sess->mplex_read_remain)) {
+	if (!io_read_blocking(sess, fd, mpbuf, sess->mplex_read_remain)) {
 		ERRX1(sess, "io_read_blocking");
 		return 0;
 	}
