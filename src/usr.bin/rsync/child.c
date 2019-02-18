@@ -46,7 +46,7 @@ rsync_child(const struct opts *opts, int fd, const struct fargs *f)
 
 	if ((args = fargs_cmdline(&sess, f)) == NULL) {
 		ERRX1(&sess, "fargs_cmdline");
-		exit(EXIT_FAILURE);
+		exit(1);
 	}
 
 	for (i = 0; args[i] != NULL; i++)
@@ -56,10 +56,10 @@ rsync_child(const struct opts *opts, int fd, const struct fargs *f)
 
 	if (dup2(fd, STDIN_FILENO) == -1) {
 		ERR(&sess, "dup2");
-		exit(EXIT_FAILURE);
+		exit(1);
 	} if (dup2(fd, STDOUT_FILENO) == -1) {
 		ERR(&sess, "dup2");
-		exit(EXIT_FAILURE);
+		exit(1);
 	}
 
 	/* Here we go... */
@@ -67,6 +67,6 @@ rsync_child(const struct opts *opts, int fd, const struct fargs *f)
 	execvp(args[0], args);
 
 	ERR(&sess, "%s: execvp", args[0]);
-	exit(EXIT_FAILURE);
+	exit(1);
 	/* NOTREACHED */
 }

@@ -121,12 +121,12 @@ inet_resolve(struct sess *sess, const char *host, size_t *sz)
 	LOG2(sess, "resolving: %s", host);
 
 	if (error == EAI_AGAIN || error == EAI_NONAME) {
-		ERRX(sess, "could not resolve hostname %s: %s",
+		ERRX(sess, "Could not resolve hostname %s: %s",
 		    host, gai_strerror(error));
 		return NULL;
 	} else if (error == EAI_SERVICE) {
-		ERRX(sess, "could not resolve service rsync: %s",
-		    gai_strerror(error));
+		ERRX(sess, "Could not resolve service '%s': %s",
+		    sess->opts->port, gai_strerror(error));
 		return NULL;
 	} else if (error) {
 		ERRX(sess, "getaddrinfo: %s: %s", host, gai_strerror(error));
@@ -396,10 +396,10 @@ rsync_socket(const struct opts *opts, const struct fargs *f)
 	/* Now we've completed the handshake. */
 
 	if (sess.rver < sess.lver) {
-		ERRX(&sess, "remote protocol is older "
-			"than our own (%" PRId32 " < %" PRId32 "): "
-			"this is not supported",
-			sess.rver, sess.lver);
+		ERRX(&sess,
+		    "remote protocol %d is older than own %d: unsupported\n",
+		    sess.rver, sess.lver);
+		rc = 2;	/* Protocol incompatibility*/		
 		goto out;
 	}
 
