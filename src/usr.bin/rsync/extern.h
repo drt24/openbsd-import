@@ -229,8 +229,6 @@ struct	upload;
 #define ERRX(_sess, _fmt, ...) \
 	rsync_errx((_sess), __FILE__, __LINE__, (_fmt), ##__VA_ARGS__)
 
-__BEGIN_DECLS
-
 void		  rsync_log(struct sess *,
 			const char *, size_t, int, const char *, ...)
 			__attribute__((format(printf, 5, 6)));
@@ -366,7 +364,5 @@ void		  idents_free(struct ident *, size_t);
 int		  idents_recv(struct sess *, int, struct ident **, size_t *);
 void		  idents_remap(struct sess *, int, struct ident *, size_t);
 int		  idents_send(struct sess *, int, const struct ident *, size_t);
-
-__END_DECLS
 
 #endif /*!EXTERN_H*/
