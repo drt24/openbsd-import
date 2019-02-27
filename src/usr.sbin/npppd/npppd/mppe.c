@@ -1,4 +1,4 @@
-/*	$OpenBSD: mppe.c,v 1.13 2015/12/05 18:43:36 mmcc Exp $ */
+/*	$OpenBSD: mppe.c,v 1.14 2017/05/30 17:22:00 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -53,7 +53,6 @@
 #include <openssl/rc4.h>
 #endif
 
-#include "slist.h"
 #include "npppd.h"
 #include "debugutil.h"
 

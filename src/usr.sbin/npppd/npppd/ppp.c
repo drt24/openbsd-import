@@ -1,4 +1,4 @@
-/*	$OpenBSD: ppp.c,v 1.26 2015/12/05 18:43:36 mmcc Exp $ */
+/*	$OpenBSD: ppp.c,v 1.27 2017/08/11 16:41:47 goda Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -46,8 +46,6 @@
 #include <sys/time.h>
 #include <time.h>
 #include <event.h>
-
-#include "slist.h"
 
 #include "npppd.h"
 #include "time_utils.h"

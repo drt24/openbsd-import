@@ -1,4 +1,4 @@
-/*	$OpenBSD: npppd_auth.c,v 1.19 2017/02/22 07:48:26 yasuoka Exp $ */
+/*	$OpenBSD: npppd_auth.c,v 1.20 2017/08/11 16:41:47 goda Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -44,7 +44,6 @@
 #include <errno.h>
 
 #include "debugutil.h"
-#include "slist.h"
 #include "npppd_local.h"
 #include "npppd_auth.h"
 #include "net_utils.h"

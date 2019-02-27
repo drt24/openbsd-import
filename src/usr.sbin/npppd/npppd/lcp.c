@@ -1,4 +1,4 @@
-/*	$OpenBSD: lcp.c,v 1.16 2015/12/05 18:43:36 mmcc Exp $ */
+/*	$OpenBSD: lcp.c,v 1.17 2017/05/30 17:22:00 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -45,7 +45,6 @@
 #include <event.h>
 #include <ctype.h>
 
-#include "slist.h"
 #include "npppd.h"
 #include "ppp.h"
 #include "psm-opt.h"

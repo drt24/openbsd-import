@@ -1,4 +1,4 @@
-/*	$OpenBSD: ipcp.c,v 1.4 2012/05/08 13:15:11 yasuoka Exp $ */
+/*	$OpenBSD: ipcp.c,v 1.5 2012/09/18 13:14:08 yasuoka Exp $ */
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -46,7 +46,6 @@
 #include <event.h>
 
 #include "debugutil.h"
-#include "slist.h"
 #include "npppd.h"
 
 #ifdef	IPCP_DEBUG
