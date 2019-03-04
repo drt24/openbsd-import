@@ -442,9 +442,8 @@ http_head_get(const char *v, struct httphead *h, size_t hsz)
 	size_t	 i;
 
 	for (i = 0; i < hsz; i++) {
-		if (strcmp(h[i].key, v))
-			continue;
-		return &h[i];
+		if (strcasecmp(h[i].key, v) == 0)
+			return &h[i];
 	}
 	return NULL;
 }
