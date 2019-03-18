@@ -487,8 +487,11 @@ main(int argc, char *argv[])
 		rc = 0;
 	exit(rc);
 usage:
-	fprintf(stderr, "usage: %s [-Daglnoprtv] "
-	    "[-e ssh-prog] [--delete] [--rsync-path=prog] src ... dst\n",
+	fprintf(stderr, "usage: %s [-aDglnoprtv] [-e program] [--archive] [--delete] [--devices]\n"
+	    "\t[--group] [--links] [--dry-run] [--owner] [--perms]\n"
+	    "\t[--port=portnumber] [--recursive] [--rsh=program]\n"
+	    "\t[--rsync-path=program] [--specials] [--times] [--verbose]\n"
+	    "\t[--version] source ... directory\n",
 	    getprogname());
 	exit(1);
 }
