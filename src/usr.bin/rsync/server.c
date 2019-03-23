@@ -96,9 +96,8 @@ rsync_server(const struct opts *opts, size_t argc, char *argv[])
 		goto out;
 	}
 
-	LOG2(&sess, "server detected client version %" PRId32
-		", server version %" PRId32 ", seed %" PRId32,
-		sess.rver, sess.lver, sess.seed);
+	LOG2(&sess, "server detected client version %d, server version %d, seed %d",
+	    sess.rver, sess.lver, sess.seed);
 
 	if (sess.opts->sender) {
 		LOG2(&sess, "server starting sender");
@@ -112,8 +111,7 @@ rsync_server(const struct opts *opts, size_t argc, char *argv[])
 		 */
 
 		if (strcmp(argv[0], ".")) {
-			ERRX(&sess, "first argument must "
-				"be a standalone period");
+			ERRX(&sess, "first argument must be a standalone period");
 			goto out;
 		}
 		argv++;
@@ -137,12 +135,10 @@ rsync_server(const struct opts *opts, size_t argc, char *argv[])
 		 */
 
 		if (argc != 2) {
-			ERRX(&sess, "server receiver mode "
-				"requires two argument");
+			ERRX(&sess, "server receiver mode requires two argument");
 			goto out;
 		} else if (strcmp(argv[0], ".")) {
-			ERRX(&sess, "first argument must "
-				"be a standalone period");
+			ERRX(&sess, "first argument must be a standalone period");
 			goto out;
 		}
 

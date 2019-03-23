@@ -68,7 +68,7 @@ rsync_set_metadata(struct sess *sess, int newfile,
 				return 0;
 			}
 			WARNX(sess, "%s: identity unknown or not available "
-				"to user.group: %u.%u", f->path, uid, gid);
+			    "to user.group: %u.%u", f->path, uid, gid);
 		} else
 			LOG4(sess, "%s: updated uid and/or gid", f->path);
 	}
@@ -127,7 +127,7 @@ rsync_set_metadata_at(struct sess *sess, int newfile, int rootfd,
 				return 0;
 			}
 			WARNX(sess, "%s: identity unknown or not available "
-				"to user.group: %u.%u", f->path, uid, gid);
+			    "to user.group: %u.%u", f->path, uid, gid);
 		} else
 			LOG4(sess, "%s: updated uid and/or gid", f->path);
 	}
@@ -396,8 +396,9 @@ rsync_receiver(struct sess *sess, int fdin, int fdout, const char *root)
 			} else if (c == 0) {
 				assert(phase == 0);
 				phase++;
-				LOG2(sess, "%s: receiver ready "
-					"for phase 2 data", root);
+				LOG2(sess,
+				    "%s: receiver ready for phase 2 data",
+				    root);
 				break;
 			}
 

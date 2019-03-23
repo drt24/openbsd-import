@@ -86,12 +86,10 @@ stats_log(struct sess *sess,
 		ts = tsize;
 
 	LOG1(sess, "Transfer complete: "
-		"%.*lf %s sent, "
-		"%.*lf %s read, "
-		"%.*lf %s file size",
-		trsz, tr, tru,
-		twsz, tw, twu,
-		tssz, ts, tsu);
+	    "%.*lf %s sent, %.*lf %s read, %.*lf %s file size",
+	    trsz, tr, tru,
+	    twsz, tw, twu,
+	    tssz, ts, tsu);
 }
 
 /*
