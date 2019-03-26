@@ -407,7 +407,7 @@ io_write_long(struct sess *sess, int fd, int64_t val)
 
 	nv = htole64(val);
 
-	if (!io_write_int(sess, fd, INT32_MAX))
+	if (!io_write_int(sess, fd, -1))
 		ERRX1(sess, "io_write_int");
 	else if (!io_write_buf(sess, fd, &nv, sizeof(int64_t)))
 		ERRX1(sess, "io_write_buf");
