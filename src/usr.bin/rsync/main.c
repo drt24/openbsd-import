@@ -499,7 +499,7 @@ main(int argc, char *argv[])
 usage:
 	fprintf(stderr,
 	    "usage: %s [-aDglnoprtvz] [-e program] [--archive] [--compress]\n"
-	    "\t[--delete] [--devices] [--group] [--links] [--dry-run]\n"
+	    "\t[--del] [--delete] [--devices] [--group] [--links] [--dry-run]\n"
 	    "\t[--owner] [--perms] [--port=portnumber] [--recursive]\n"
 	    "\t[--rsh=program][--rsync-path=program] [--specials] [--times]\n"
 	    "\t[--verbose] [--version] source ... directory\n",
