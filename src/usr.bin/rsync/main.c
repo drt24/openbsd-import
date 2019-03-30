@@ -459,7 +459,8 @@ main(int argc, char *argv[])
 		if (dup2(fds[1], STDIN_FILENO) == -1) {
 			ERR(&sess, "dup2");
 			_exit(1);
-		} if (dup2(fds[1], STDOUT_FILENO) == -1) {
+		}
+		if (dup2(fds[1], STDOUT_FILENO) == -1) {
 			ERR(&sess, "dup2");
 			_exit(1);
 		}
