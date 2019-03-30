@@ -236,7 +236,7 @@ idents_send(struct sess *sess,
 			ERRX1(sess, "io_write_byte");
 			return 0;
 		} else if (!io_write_buf(sess, fd, ids[i].name, sz)) {
-			ERRX1(sess, "io_write_byte");
+			ERRX1(sess, "io_write_buf");
 			return 0;
 		}
 	}
