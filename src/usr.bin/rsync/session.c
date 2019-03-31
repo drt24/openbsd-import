@@ -111,14 +111,14 @@ sess_stats_send(struct sess *sess, int fd)
 	ts = sess->total_size;
 
 	if (sess->opts->server) {
-		if (!io_write_long(sess, fd, tr)) {
-			ERRX1(sess, "io_write_long");
+		if (!io_write_ulong(sess, fd, tr)) {
+			ERRX1(sess, "io_write_ulong");
 			return 0;
-		} else if (!io_write_long(sess, fd, tw)) {
-			ERRX1(sess, "io_write_long");
+		} else if (!io_write_ulong(sess, fd, tw)) {
+			ERRX1(sess, "io_write_ulong");
 			return 0;
-		} else if (!io_write_long(sess, fd, ts)) {
-			ERRX1(sess, "io_write_long");
+		} else if (!io_write_ulong(sess, fd, ts)) {
+			ERRX1(sess, "io_write_ulong");
 			return 0;
 		}
 	}

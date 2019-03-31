@@ -273,14 +273,17 @@ int		  io_read_byte(struct sess *, int, uint8_t *);
 int		  io_read_check(struct sess *, int);
 int		  io_read_flush(struct sess *, int);
 int		  io_read_int(struct sess *, int, int32_t *);
+int		  io_read_uint(struct sess *, int, uint32_t *);
 int		  io_read_long(struct sess *, int, int64_t *);
 int		  io_read_size(struct sess *, int, size_t *);
 int		  io_read_ulong(struct sess *, int, uint64_t *);
 int		  io_write_buf(struct sess *, int, const void *, size_t);
 int		  io_write_byte(struct sess *, int, uint8_t);
 int		  io_write_int(struct sess *, int, int32_t);
+int		  io_write_uint(struct sess *, int, uint32_t);
 int		  io_write_line(struct sess *, int, const char *);
 int		  io_write_long(struct sess *, int, int64_t);
+int		  io_write_ulong(struct sess *, int, uint64_t);
 
 int		  io_lowbuffer_alloc(struct sess *, void **,
 			size_t *, size_t *, size_t);
