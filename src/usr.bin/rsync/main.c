@@ -504,10 +504,9 @@ main(int argc, char *argv[])
 
 	exit(rc);
 usage:
-	fprintf(stderr,
-	    "usage: %s [-aDglnoprtv] [-e program] [--del] [--devices]\n"
-	    "\t[--port=portnumber] [--rsync-path=program] [--specials]\n"
-	    "\t[--version] source ... directory\n",
+	fprintf(stderr, "usage: %s"
+	    " [-aDglnoprtv] [-e program] [--del] [--port=portnumber]\n"
+	    "\t[--rsync-path=program] [--version] source ... directory\n",
 	    getprogname());
 	exit(1);
 }
