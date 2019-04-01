@@ -106,10 +106,12 @@ chngproc(int netsock, const char *root)
 		if (fd == -1) {
 			warn("%s", fs[fsz - 1]);
 			goto out;
-		} if (write(fd, fmt, strlen(fmt)) == -1) {
+		}
+		if (write(fd, fmt, strlen(fmt)) == -1) {
 			warn("%s", fs[fsz - 1]);
 			goto out;
-		} else if (close(fd) == -1) {
+		}
+		if (close(fd) == -1) {
 			warn("%s", fs[fsz - 1]);
 			goto out;
 		}
