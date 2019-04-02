@@ -34,9 +34,9 @@
  * A request from the receiver to download updated file data.
  */
 struct	send_dl {
-	int32_t		     idx; /* index in our file list */
-	struct blkset	    *blks; /* the sender's block information */
-	TAILQ_ENTRY(send_dl) entries;
+	int32_t			 idx; /* index in our file list */
+	struct blkset		*blks; /* the sender's block information */
+	TAILQ_ENTRY(send_dl)	 entries;
 };
 
 /*

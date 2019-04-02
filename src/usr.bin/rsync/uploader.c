@@ -624,8 +624,7 @@ post_dir(struct sess *sess, const struct upload *u, size_t idx)
 	 */
 
 	if (u->newdir[idx] ||
-	    (sess->opts->preserve_perms &&
-	     st.st_mode != f->st.mode)) {
+	    (sess->opts->preserve_perms && st.st_mode != f->st.mode)) {
 		rc = fchmodat(u->rootfd, f->path, f->st.mode, 0);
 		if (rc == -1) {
 			ERR(sess, "%s: fchmodat", f->path);
@@ -1017,7 +1016,7 @@ rsync_uploader_tail(struct upload *u, struct sess *sess)
 
 
 	if (!sess->opts->preserve_times &&
-	     !sess->opts->preserve_perms)
+	    !sess->opts->preserve_perms)
 		return 1;
 
 	LOG2(sess, "fixing up directory times and permissions");
