@@ -199,6 +199,16 @@ struct	ident {
 	char	*name; /* resolved name */
 };
 
+typedef struct arglist arglist;
+struct arglist {
+	char	**list;
+	u_int	num;
+	u_int	nalloc;
+};
+void	addargs(arglist *, char *, ...)
+	    __attribute__((format(printf, 2, 3)));
+void	freeargs(arglist *);
+
 struct	download;
 struct	upload;
 
