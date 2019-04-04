@@ -117,6 +117,7 @@ struct	opts {
 	int		 devices;		/* --devices */
 	int		 specials;		/* --specials */
 	int		 numeric_ids;		/* --numeric-ids */
+	int		 one_file_system;	/* -x */
 	char		*rsync_path;		/* --rsync-path */
 	char		*ssh_prog;		/* --rsh or -e */
 	char		*port;			/* --port */

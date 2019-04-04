@@ -106,6 +106,10 @@ fargs_cmdline(struct sess *sess, const struct fargs *f, size_t *skip)
 		addargs(&args, "-v");
 	if (sess->opts->verbose > 0)
 		addargs(&args, "-v");
+	if (sess->opts->one_file_system > 1)
+		addargs(&args, "-x");
+	if (sess->opts->one_file_system > 0)
+		addargs(&args, "-x");
 	if (sess->opts->specials && !sess->opts->devices)
 		addargs(&args, "--specials");
 	if (!sess->opts->specials && sess->opts->devices)
