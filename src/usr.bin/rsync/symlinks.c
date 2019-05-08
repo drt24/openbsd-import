@@ -38,18 +38,18 @@ symlink_read(struct sess *sess, const char *path)
 
 	for (sz = MAXPATHLEN; ; sz *= 2) {
 		if ((pp = realloc(buf, sz + 1)) == NULL) {
-			ERR(sess, "realloc");
+			ERR("realloc");
 			free(buf);
 			return NULL;
 		}
 		buf = pp;
 
 		if ((nsz = readlink(path, buf, sz)) == -1) {
-			ERR(sess, "%s: readlink", path);
+			ERR("%s: readlink", path);
 			free(buf);
 			return NULL;
 		} else if (nsz == 0) {
-			ERRX(sess, "%s: empty link", path);
+			ERRX("%s: empty link", path);
 			free(buf);
 			return NULL;
 		} else if ((size_t)nsz < sz)
@@ -77,18 +77,18 @@ symlinkat_read(struct sess *sess, int fd, const char *path)
 
 	for (sz = MAXPATHLEN; ; sz *= 2) {
 		if ((pp = realloc(buf, sz + 1)) == NULL) {
-			ERR(sess, "realloc");
+			ERR("realloc");
 			free(buf);
 			return NULL;
 		}
 		buf = pp;
 
 		if ((nsz = readlinkat(fd, path, buf, sz)) == -1) {
-			ERR(sess, "%s: readlinkat", path);
+			ERR("%s: readlinkat", path);
 			free(buf);
 			return NULL;
 		} else if (nsz == 0) {
-			ERRX(sess, "%s: empty link", path);
+			ERRX("%s: empty link", path);
 			free(buf);
 			return NULL;
 		} else if ((size_t)nsz < sz)
