@@ -29,7 +29,7 @@
  * The buffer must be passed to free() by the caller.
  */
 char *
-symlink_read(struct sess *sess, const char *path)
+symlink_read(const char *path)
 {
 	char	*buf = NULL;
 	size_t	 sz;
@@ -68,7 +68,7 @@ symlink_read(struct sess *sess, const char *path)
  * The buffer must be passed to free() by the caller.
  */
 char *
-symlinkat_read(struct sess *sess, int fd, const char *path)
+symlinkat_read(int fd, const char *path)
 {
 	char	*buf = NULL;
 	size_t	 sz;

@@ -155,8 +155,7 @@ idents_remap(struct sess *sess, int isgid, struct ident *ids, size_t idsz)
  * Return zero on failure, non-zero on success.
  */
 int
-idents_add(struct sess *sess, int isgid,
-	struct ident **ids, size_t *idsz, int32_t id)
+idents_add(int isgid, struct ident **ids, size_t *idsz, int32_t id)
 {
 	struct group	*grp;
 	struct passwd	*usr;

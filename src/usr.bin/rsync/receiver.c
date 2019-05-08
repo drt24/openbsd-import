@@ -243,7 +243,7 @@ rsync_receiver(struct sess *sess, int fdin, int fdout, const char *root)
 		if ((tofree = strdup(root)) == NULL) {
 			ERR("strdup");
 			goto out;
-		} else if (mkpath(sess, tofree) < 0) {
+		} else if (mkpath(tofree) < 0) {
 			ERRX1("%s: mkpath", root);
 			free(tofree);
 			goto out;
@@ -312,8 +312,9 @@ rsync_receiver(struct sess *sess, int fdin, int fdout, const char *root)
 	pfd[PFD_DOWNLOADER_IN].events = POLLIN;
 	pfd[PFD_SENDER_OUT].events = POLLOUT;
 
-	ul = upload_alloc(sess, root, dfd, fdout,
-		CSUM_LENGTH_PHASE1, fl, flsz, oumask);
+	ul = upload_alloc(root, dfd, fdout, CSUM_LENGTH_PHASE1, fl, flsz,
+	    oumask);
+
 	if (ul == NULL) {
 		ERRX1("upload_alloc");
 		goto out;
