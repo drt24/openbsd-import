@@ -1,4 +1,4 @@
-/*	$OpenBSD: pptpd.c,v 1.30 2016/03/21 00:49:36 guenther Exp $	*/
+/*	$OpenBSD: pptpd.c,v 1.31 2016/04/16 18:32:29 krw Exp $	*/
 
 /*-
  * Copyright (c) 2009 Internet Initiative Japan Inc.
@@ -51,7 +51,6 @@
 #include <errno.h>
 #include <string.h>
 #include <event.h>
-#include <ifaddrs.h>
 
 #ifdef USE_LIBSOCKUTIL
 #include <seil/sockfromto.h>

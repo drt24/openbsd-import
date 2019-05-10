@@ -1,4 +1,4 @@
-/*	$OpenBSD: npppd.c,v 1.48 2018/07/25 02:18:36 yasuoka Exp $ */
+/*	$OpenBSD: npppd.c,v 1.49 2018/12/30 23:09:58 guenther Exp $ */
 
 /*-
  * Copyright (c) 2005-2008,2009 Internet Initiative Japan Inc.
@@ -53,7 +53,6 @@
 #include <fcntl.h>
 #include <event.h>
 #include <errno.h>
-#include <ifaddrs.h>
 #include <err.h>
 #include <pwd.h>
 
