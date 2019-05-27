@@ -1845,7 +1845,8 @@ xml_begin_index (void)
       if (xml_index_titles)
         {
           /* Remove the final > */
-          output_paragraph_offset--;
+          if (output_paragraph_offset)
+	    output_paragraph_offset--;
           /* and put  ID="node-name"><TITLE>Title</TITLE> */
           insert_string (xml_index_titles->title);
           free (xml_index_titles->title);

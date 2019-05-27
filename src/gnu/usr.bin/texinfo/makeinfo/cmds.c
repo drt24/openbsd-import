@@ -624,6 +624,7 @@ cm_comment (void)
           /* Use insert for HTML, and XML when indentation is enabled.
              For Docbook, use add_char.  */
           if (xml && xml_indentation_increment > 0
+              && output_paragraph_offset > 0
               && output_paragraph[output_paragraph_offset-1] != '\n')
             insert ('\n');
 
