@@ -271,7 +271,7 @@ main(int argc, char *argv[])
 {
 	struct opts	 opts;
 	pid_t		 child;
-	int		 fds[2], sd, rc, c, st, i;
+	int		 fds[2], sd = -1, rc, c, st, i;
 	struct sess	  sess;
 	struct fargs	*fargs;
 	char		**args;
