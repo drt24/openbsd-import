@@ -55,7 +55,6 @@ blk_find(struct sess *sess, const void *buf, off_t size, off_t offs,
 	assert(remain);
 	osz = remain < (off_t)blks->len ? remain : (off_t)blks->len;
 	fhash = hash_fast(buf + offs, (size_t)osz);
-	have_md = 0;
 
 	/*
 	 * Start with our match hint.
