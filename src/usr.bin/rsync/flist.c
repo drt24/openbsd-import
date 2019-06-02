@@ -53,7 +53,7 @@
 #define FLIST_TIME_SAME  0x0080 /* time is repeat */
 
 /*
- * Requied way to sort a filename list.
+ * Required way to sort a filename list.
  */
 static int
 flist_cmp(const void *p1, const void *p2)
