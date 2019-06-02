@@ -379,6 +379,7 @@ rsync_sender(struct sess *sess, int fdin,
 	TAILQ_INIT(&sdlq);
 	up.stat.fd = -1;
 	up.stat.map = MAP_FAILED;
+	up.stat.blktab = blkhash_alloc();
 
 	/*
 	 * Generate the list of files we want to send from our
@@ -622,8 +623,11 @@ rsync_sender(struct sess *sess, int fdin,
 
 			if ((up.cur = TAILQ_FIRST(&sdlq)) == NULL)
 				continue;
-
 			TAILQ_REMOVE(&sdlq, up.cur, entries);
+
+			/* Hash our blocks. */
+
+			blkhash_set(up.stat.blktab, up.cur->blks);
 
 			/*
 			 * End of phase: enable channel to receiver.
@@ -683,5 +687,6 @@ out:
 	}
 	flist_free(fl, flsz);
 	free(wbuf);
+	blkhash_free(up.stat.blktab);
 	return rc;
 }
