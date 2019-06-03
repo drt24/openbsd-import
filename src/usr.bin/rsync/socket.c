@@ -455,6 +455,5 @@ rsync_socket(const struct opts *opts, int sd, const struct fargs *f)
 	rc = 0;
 out:
 	free(args);
-	close(sd);
 	return rc;
 }

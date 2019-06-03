@@ -428,8 +428,10 @@ main(int argc, char *argv[])
 
 	if (fargs->remote && opts.ssh_prog == NULL) {
 		assert(fargs->mode == FARGS_RECEIVER);
-		if ((rc = rsync_connect(&opts, &sd, fargs)) == 0)
+		if ((rc = rsync_connect(&opts, &sd, fargs)) == 0) {
 			rc = rsync_socket(&opts, sd, fargs);
+			close(sd);
+		}
 		exit(rc);
 	}
 
@@ -484,14 +486,7 @@ main(int argc, char *argv[])
 		break;
 	}
 
-	/*
-	 * If the client has an error and exits, the server may be
-	 * sitting around waiting to get data while we waitpid().
-	 * So close the connection here so that they don't hang.
-	 */
-
-	if (rc)
-		close(fds[0]);
+	close(fds[0]);
 
 	if (waitpid(child, &st, 0) == -1)
 		err(1, "waitpid");
