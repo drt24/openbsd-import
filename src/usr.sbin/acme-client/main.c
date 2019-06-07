@@ -249,7 +249,7 @@ main(int argc, char *argv[])
 		c = netproc(key_fds[1], acct_fds[1],
 		    chng_fds[1], cert_fds[1],
 		    dns_fds[1], rvk_fds[1],
-		    (popts & ACME_OPT_NEWACCT), revocate, authority,
+		    revocate, authority,
 		    (const char *const *)alts, altsz);
 		exit(c ? EXIT_SUCCESS : EXIT_FAILURE);
 	}
