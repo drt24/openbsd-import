@@ -30,7 +30,7 @@
 #include <openssl/x509v3.h>
 
 #include "extern.h"
-#include "rsa.h"
+#include "key.h"
 
 /*
  * This was lifted more or less directly from demos/x509/mkreq.c of the
@@ -117,13 +117,19 @@ keyproc(int netsock, const char *keyfile,
 	}
 
 	if (newkey) {
-		if ((pkey = rsa_key_create(f, keyfile)) == NULL)
-			goto out;
-		dodbg("%s: generated RSA domain key", keyfile);
+		if (ecdsa) {
+			if ((pkey = ec_key_create(f, keyfile)) == NULL)
+				goto out;
+			dodbg("%s: generated ECDSA domain key", keyfile);
+		} else {
+			if ((pkey = rsa_key_create(f, keyfile)) == NULL)
+				goto out;
+			dodbg("%s: generated RSA domain key", keyfile);
+		}
 	} else {
-		if ((pkey = rsa_key_load(f, keyfile)) == NULL)
+		if ((pkey = key_load(f, keyfile)) == NULL)
 			goto out;
-		doddbg("%s: loaded RSA domain key", keyfile);
+		doddbg("%s: loaded domain key", keyfile);
 	}
 
 	fclose(f);

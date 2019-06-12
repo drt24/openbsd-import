@@ -276,6 +276,11 @@ char		*json_fmt_signed(const char *, const char *, const char *);
 int		 verbose;
 
 /*
+ * Should we switch to ecdsa?
+ */
+int		ecdsa;
+
+/*
  * What component is the process within (COMP__MAX for none)?
  */
 enum comp	 proccomp;

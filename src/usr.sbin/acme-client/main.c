@@ -49,6 +49,7 @@ main(int argc, char *argv[])
 	int		  popts = 0;
 	pid_t		  pids[COMP__MAX];
 	extern int	  verbose;
+	extern int	  ecdsa;
 	extern enum comp  proccomp;
 	size_t		  i, altsz, ne;
 
@@ -145,6 +146,10 @@ main(int argc, char *argv[])
 		authority = authority_find(conf, auth);
 		if (authority == NULL)
 			errx(EXIT_FAILURE, "authority %s not found", auth);
+	}
+
+	if (domain->keytype == 1) {
+		ecdsa = 1;
 	}
 
 	acctkey = authority->account;
