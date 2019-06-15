@@ -132,6 +132,7 @@ keyproc(int netsock, const char *keyfile, const char **alts, size_t altsz,
 	} else {
 		if ((pkey = key_load(f, keyfile)) == NULL)
 			goto out;
+		/* XXX check if domain key type equals configured key type */
 		doddbg("%s: loaded domain key", keyfile);
 	}
 
