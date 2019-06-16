@@ -203,8 +203,8 @@ int		 acctproc(int, const char *);
 int		 certproc(int, int);
 int		 chngproc(int, const char *);
 int		 dnsproc(int);
-int		 revokeproc(int, const char *, const char *,
-			int, int, const char *const *, size_t);
+int		 revokeproc(int, const char *, int, int, const char *const *,
+			size_t);
 int		 fileproc(int, const char *, const char *, const char *,
 			const char *);
 int		 keyproc(int, const char *, const char **, size_t,
