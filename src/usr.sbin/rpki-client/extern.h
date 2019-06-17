@@ -17,13 +17,6 @@
 #ifndef EXTERN_H
 #define EXTERN_H
 
-#if !HAVE_PLEDGE
-# define pledge(x, y) (1)
-#endif
-#if !HAVE_UNVEIL
-# define unveil(x, y) (1)
-#endif
-
 enum	cert_as_type {
 	CERT_AS_ID, /* single identifier */
 	CERT_AS_INHERIT, /* inherit from parent */
