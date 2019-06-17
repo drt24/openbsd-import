@@ -81,11 +81,8 @@ ec_key_create(FILE *f, const char *fname)
 	EC_KEY		*eckey = NULL;
 	EVP_PKEY	*pkey = NULL;
 
-	if ((eckey = EC_KEY_new()) == NULL ) {
-		warnx("EC_KEY_new");
-		goto err;
-	} else if ((eckey = EC_KEY_new_by_curve_name(ECCTYPE)) == NULL ) {
-		warnx("EC_GROUP_new_by_curve_name");
+	if ((eckey = EC_KEY_new_by_curve_name(ECCTYPE)) == NULL ) {
+		warnx("EC_KEY_new_by_curve_name");
 		goto err;
 	}
 
