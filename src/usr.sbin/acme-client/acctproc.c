@@ -184,9 +184,7 @@ op_thumbprint(int fd, EVP_PKEY *pkey)
 
 	rc = 1;
 out:
-	if (ctx != NULL)
-		EVP_MD_CTX_free(ctx);
-
+	EVP_MD_CTX_free(ctx);
 	free(thumb);
 	free(dig);
 	free(dig64);
