@@ -262,7 +262,8 @@ main(int argc, char *argv[])
 		close(chng_fds[0]);
 		close(file_fds[0]);
 		close(file_fds[1]);
-		c = acctproc(acct_fds[0], authority->account);
+		c = acctproc(acct_fds[0], authority->account,
+		    authority->keytype);
 		exit(c ? EXIT_SUCCESS : EXIT_FAILURE);
 	}
 
