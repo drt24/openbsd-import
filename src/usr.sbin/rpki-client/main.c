@@ -681,10 +681,10 @@ proc_rsync(const char *prog, int fd, int noop)
 				err(EXIT_FAILURE, "pledge");
 			i = 0;
 			args[i++] = (char *)prog;
-			args[i++] = strdup("-r");
-			args[i++] = strdup("-l");
-			args[i++] = strdup("-t");
-			args[i++] = strdup("--delete");
+			args[i++] = "-r";
+			args[i++] = "-l";
+			args[i++] = "-t";
+			args[i++] = "--delete";
 			args[i++] = uri;
 			args[i++] = dst;
 			args[i] = NULL;
