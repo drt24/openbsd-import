@@ -49,8 +49,8 @@ struct	cert_as {
  * In rpki-client, we only accept the IPV4 and IPV6 AFI values.
  */
 enum	afi {
-	AFI_IPV4,
-	AFI_IPV6
+	AFI_IPV4 = 1,
+	AFI_IPV6 = 2
 };
 
 /*
@@ -59,9 +59,8 @@ enum	afi {
  * It may either be IPv4 or IPv6.
  */
 struct	ip_addr {
-	size_t		 sz; /* length of valid bytes */
 	unsigned char	 addr[16]; /* binary address prefix */
-	size_t		 unused; /* unused bits in last byte or zero */
+	unsigned char	 prefixlen; /* number of valid bits in address */
 };
 
 /*
