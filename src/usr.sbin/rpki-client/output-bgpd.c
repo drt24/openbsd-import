@@ -53,7 +53,7 @@ output_bgpd(const struct roa **roas, size_t roasz,
 	for (i = k = 0; i < roasz; i++)
 		for (j = 0; j < roas[i]->ipsz; j++) {
 			ip_addr_print(&roas[i]->ips[j].addr,
-				roas[i]->ips[j].afi, buf1, sizeof(buf1));
+			    roas[i]->ips[j].afi, buf1, sizeof(buf1));
 			if (roas[i]->ips[j].maxlength >
 			    roas[i]->ips[j].addr.prefixlen)
 				snprintf(buf2, sizeof(buf2), "maxlen %zu ",
