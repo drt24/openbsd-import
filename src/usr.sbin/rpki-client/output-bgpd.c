@@ -37,7 +37,7 @@ void
 output_bgpd(const struct roa **roas, size_t roasz,
     int quiet, size_t *vrps, size_t *unique)
 {
-	char		 buf1[64], buf2[32], linebuf[128];
+	char		 buf1[64], buf2[32];
 	char		**lines = NULL;
 	size_t		 i, j, k;
 
@@ -60,9 +60,8 @@ output_bgpd(const struct roa **roas, size_t roasz,
 				    roas[i]->ips[j].maxlength);
 			else
 				buf2[0] = '\0';
-			snprintf(linebuf, sizeof(linebuf),
-			    "%s %ssource-as %u", buf1, buf2, roas[i]->asid);
-			if ((lines[k++] = strdup(linebuf)) == NULL)
+			if (asprintf(&lines[k++], "%s %ssource-as %u",
+			    buf1, buf2, roas[i]->asid) == -1)
 				err(EXIT_FAILURE, NULL);
 		}
 
