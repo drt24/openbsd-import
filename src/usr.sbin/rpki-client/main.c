@@ -1,4 +1,4 @@
-/*	$Id$ */
+/*	$OpenBSD: main.c,v 1.7 2019/06/19 16:29:19 deraadt Exp $ */
 /*
  * Copyright (c) 2019 Kristaps Dzonsons <kristaps@bsd.lv>
  *

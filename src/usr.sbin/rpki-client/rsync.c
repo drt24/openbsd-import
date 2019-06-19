@@ -1,4 +1,4 @@
-/*	$Id$ */
+/*	$OpenBSD: rsync.c,v 1.5 2019/06/19 04:21:43 deraadt Exp $ */
 /*
  * Copyright (c) 2019 Kristaps Dzonsons <kristaps@bsd.lv>
  *
