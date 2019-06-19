@@ -328,7 +328,7 @@ entityq_add(int fd, struct entityq *q, char *file, enum rtype type,
 	p->id = (*eid)++;
 	p->type = type;
 	p->uri = file;
-	p->repo = (NULL != rp) ? (ssize_t)rp->id : -1;
+	p->repo = (rp != NULL) ? (ssize_t)rp->id : -1;
 	p->has_dgst = dgst != NULL;
 	p->has_pkey = pkey != NULL;
 	if (p->has_dgst)
@@ -346,7 +346,7 @@ entityq_add(int fd, struct entityq *q, char *file, enum rtype type,
 	 * been loaded.
 	 */
 
-	if (NULL == rp || rp->loaded)
+	if (rp == NULL || rp->loaded)
 		entity_write_req(fd, p);
 }
 
