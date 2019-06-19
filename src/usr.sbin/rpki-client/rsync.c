@@ -36,9 +36,9 @@
  */
 int
 rsync_uri_parse(const char **hostp, size_t *hostsz,
-	const char **modulep, size_t *modulesz,
-	const char **pathp, size_t *pathsz,
-	enum rtype *rtypep, const char *uri)
+    const char **modulep, size_t *modulesz,
+    const char **pathp, size_t *pathsz,
+    enum rtype *rtypep, const char *uri)
 {
 	const char	*host, *module, *path;
 	size_t		 sz;
