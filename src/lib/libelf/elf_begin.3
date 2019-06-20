@@ -227,7 +227,7 @@ To create a new ELF file, use:
 int fd;
 Elf *e;
 \&...
-if ((fd = open("filename", O_RDWR|O_TRUNC|O_CREAT, 0666)) < 0) {
+if ((fd = open("filename", O_RDWR|O_TRUNC|O_CREAT, 0666)) == -1) {
 	\&... handle the error from open(2) ...
 }
 if ((e = elf_begin(fd, ELF_C_WRITE, (Elf *) 0)) == 0) {

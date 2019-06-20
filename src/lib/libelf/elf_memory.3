@@ -70,8 +70,8 @@ void *p;
 struct stat sb;
 Elf *e;
 \&...
-if ((fd = open("./elf-file", O_RDONLY)) < 0 ||
-    fstat(fd, &sb) < 0 ||
+if ((fd = open("./elf-file", O_RDONLY)) == -1 ||
+    fstat(fd, &sb) == -1 ||
     (p = mmap(NULL, sb.st_size, PROT_READ, MAP_PRIVATE, fd, (off_t) 0)) ==
     MAP_FAILED) {
 	... handle system error ...
