@@ -344,12 +344,14 @@ http_open(const struct http *http, int headreq, const void *p, size_t psz)
 			c = asprintf(&req,
 			    "HEAD %s HTTP/1.0\r\n"
 			    "Host: %s\r\n"
+			    "User-Agent: OpenBSD-acme-client\r\n"
 			    "\r\n",
 			    http->path, http->host);
 		else
 			c = asprintf(&req,
 			    "GET %s HTTP/1.0\r\n"
 			    "Host: %s\r\n"
+			    "User-Agent: OpenBSD-acme-client\r\n"
 			    "\r\n",
 			    http->path, http->host);
 	} else {
@@ -358,6 +360,7 @@ http_open(const struct http *http, int headreq, const void *p, size_t psz)
 		    "Host: %s\r\n"
 		    "Content-Length: %zu\r\n"
 		    "Content-Type: application/jose+json\r\n"
+		    "User-Agent: OpenBSD-acme-client\r\n"
 		    "\r\n",
 		    http->path, http->host, psz);
 	}
