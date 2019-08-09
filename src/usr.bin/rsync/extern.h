@@ -120,6 +120,7 @@ struct	opts {
 	char		*rsync_path;		/* --rsync-path */
 	char		*ssh_prog;		/* --rsh or -e */
 	char		*port;			/* --port */
+	char		*address;		/* --address */
 };
 
 /*
