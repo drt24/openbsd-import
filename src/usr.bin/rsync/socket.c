@@ -234,7 +234,7 @@ protocol_line(struct sess *sess, __attribute__((unused)) const char *host,
 	int	major, minor;
 
 	if (strncmp(cp, "@RSYNCD: ", 9)) {
-		LOG0("%s", cp);
+		LOG1("%s", cp);
 		return 0;
 	}
 
