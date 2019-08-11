@@ -886,7 +886,7 @@ out:
 	free(c.kid);
 	free(c.buf.buf);
 	if (chngs != NULL)
-		for (i = 0; i < altsz; i++)
+		for (i = 0; i < order.authsz; i++)
 			json_free_challenge(&chngs[i]);
 	free(chngs);
 	json_free_capaths(&paths);
