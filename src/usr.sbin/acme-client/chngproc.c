@@ -104,7 +104,7 @@ chngproc(int netsock, const char *root)
 		 * Note: we use file descriptors instead of FILE
 		 * because we want to minimise our pledges.
 		 */
-		fd = open(fs[fsz - 1], O_WRONLY|O_EXCL|O_CREAT, 0444);
+		fd = open(fs[fsz - 1], O_WRONLY|O_CREAT|O_TRUNC, 0444);
 		if (fd == -1) {
 			warn("%s", fs[fsz - 1]);
 			goto out;
