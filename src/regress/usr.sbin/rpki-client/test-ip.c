@@ -31,6 +31,8 @@
 
 #include "extern.h"
 
+int verbose;
+
 static void
 test(const char *res, uint16_t afiv, size_t sz, size_t unused, ...)
 {

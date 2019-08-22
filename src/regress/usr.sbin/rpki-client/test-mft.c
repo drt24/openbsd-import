@@ -29,6 +29,8 @@
 
 #include "extern.h"
 
+int verbose;
+
 static void
 mft_print(const struct mft *p)
 {

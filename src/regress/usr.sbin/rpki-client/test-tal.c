@@ -29,6 +29,8 @@
 
 #include "extern.h"
 
+int verbose;
+
 static void
 tal_print(const struct tal *p)
 {
