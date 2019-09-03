@@ -1,4 +1,4 @@
-/*	$OpenBSD: autoconf.c,v 1.44 2016/06/08 17:24:44 tedu Exp $	*/
+/*	$OpenBSD: autoconf.c,v 1.45 2018/01/27 22:55:23 naddy Exp $	*/
 /*
  * Copyright (c) 1996, 1997 Per Fogelstrom
  * Copyright (c) 1995 Theo de Raadt
@@ -93,7 +93,7 @@ int	bootdev_unit = 0;
  *  This is done at boot time.
  */
 void
-cpu_configure()
+cpu_configure(void)
 {
 	(void)splhigh();	/* To be really sure.. */
 
