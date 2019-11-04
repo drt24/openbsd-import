@@ -46,6 +46,7 @@ int
 main(int argc, char *argv[])
 {
 	int		 c, i, verb = 0;
+	char		*buf;
 	struct tal	*tal;
 
 	ERR_load_crypto_strings();
@@ -68,8 +69,10 @@ main(int argc, char *argv[])
 		errx(1, "argument missing");
 
 	for (i = 0; i < argc; i++) {
-		if ((tal = tal_parse(argv[i])) == NULL)
+		buf = tal_read_file(argv[i]);
+		if ((tal = tal_parse(argv[i], buf)) == NULL)
 			break;
+		free(buf);
 		if (verb)
 			tal_print(tal);
 		tal_free(tal);
