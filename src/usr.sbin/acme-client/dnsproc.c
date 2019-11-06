@@ -61,7 +61,7 @@ host_dns(const char *s, struct addr *vec)
 	memset(&hints, 0, sizeof(hints));
 	hints.ai_family = PF_UNSPEC;
 	hints.ai_socktype = SOCK_DGRAM; /* DUMMY */
-	/* ntpd MUST NOT use AI_ADDRCONFIG here */
+	hints.ai_flags = AI_ADDRCONFIG;
 
 	error = getaddrinfo(s, NULL, &hints, &res0);
 
