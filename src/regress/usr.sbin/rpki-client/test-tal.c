@@ -53,7 +53,7 @@ main(int argc, char *argv[])
 	OpenSSL_add_all_ciphers();
 	OpenSSL_add_all_digests();
 
-	while (-1 != (c = getopt(argc, argv, "v")))
+	while ((c = getopt(argc, argv, "v")) != -1)
 		switch (c) {
 		case 'v':
 			verb++;
@@ -70,9 +70,10 @@ main(int argc, char *argv[])
 
 	for (i = 0; i < argc; i++) {
 		buf = tal_read_file(argv[i]);
-		if ((tal = tal_parse(argv[i], buf)) == NULL)
-			break;
+		tal = tal_parse(argv[i], buf);
 		free(buf);
+		if (tal == NULL)
+			break;
 		if (verb)
 			tal_print(tal);
 		tal_free(tal);
