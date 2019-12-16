@@ -2091,7 +2091,7 @@ main(int argc, char **argv) {
 	ISC_LIST_INIT(server_list);
 	ISC_LIST_INIT(search_list);
 
-	if (pledge("stdio rpath dns", NULL) == -1) {
+	if (pledge("stdio rpath inet dns", NULL) == -1) {
 		perror("pledge");
 		exit(1);
 	}
@@ -2104,7 +2104,7 @@ main(int argc, char **argv) {
 	setup_libs();
 	parse_args(ISC_FALSE, ISC_FALSE, argc, argv);
 
-	if (pledge("stdio dns", NULL) == -1) {
+	if (pledge("stdio inet dns", NULL) == -1) {
 		perror("pledge");
 		exit(1);
 	}
