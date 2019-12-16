@@ -15,7 +15,7 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-/* $ISC: syslog.c,v 1.3.18.4 2007/09/13 23:46:26 tbox Exp $ */
+/* $Id$ */
 
 /*! \file */
 
