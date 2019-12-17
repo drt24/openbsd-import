@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2004-2007  Internet Systems Consortium, Inc. ("ISC")
- * Copyright (C) 2002  Internet Software Consortium.
+ * Copyright (C) Internet Systems Consortium, Inc. ("ISC")
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -53,8 +52,8 @@ dns_order_add(dns_order_t *order, dns_name_t *name,
  * Requires:
  * \li	'order' to be valid.
  *\li	'name' to be valid.
- *\li	'mode' to be one of #DNS_RDATASERATTR_RANDOMIZE,
- *		#DNS_RDATASERATTR_RANDOMIZE or zero (#DNS_RDATASERATTR_CYCLIC).
+ *\li	'mode' to be one of #DNS_RDATASETATTR_RANDOMIZE,
+ *		#DNS_RDATASETATTR_FIXEDORDER or zero (#DNS_RDATASETATTR_CYCLIC).
  *
  * Returns:
  *\li	#ISC_R_SUCCESS

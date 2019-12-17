@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2004-2007, 2009, 2016  Internet Systems Consortium, Inc. ("ISC")
- * Copyright (C) 1998-2001  Internet Software Consortium.
+ * Copyright (C) Internet Systems Consortium, Inc. ("ISC")
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -26,6 +25,7 @@
 
 #include <isc/formatcheck.h>
 #include <isc/lang.h>
+#include <isc/likely.h>
 #include <isc/platform.h>
 
 ISC_LANG_BEGINDECLS
@@ -51,8 +51,8 @@ isc_error_fatal(const char *, int, const char *, ...)
 ISC_FORMAT_PRINTF(3, 4) ISC_PLATFORM_NORETURN_POST;
 
 /*% runtimecheck error */
-void
-isc_error_runtimecheck(const char *, int, const char *);
+ISC_PLATFORM_NORETURN_PRE void
+isc_error_runtimecheck(const char *, int, const char *) ISC_PLATFORM_NORETURN_POST;
 
 #define ISC_ERROR_RUNTIMECHECK(cond) \
 	((void) (ISC_LIKELY(cond) || \

@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2004-2007  Internet Systems Consortium, Inc. ("ISC")
- * Copyright (C) 2003  Internet Software Consortium.
+ * Copyright (C) Internet Systems Consortium, Inc. ("ISC")
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -25,13 +24,16 @@
 
 #include <dns/types.h>
 
+#ifndef DNS_PORTLIST_H
+#define DNS_PORTLIST_H 1
+
 ISC_LANG_BEGINDECLS
 
 isc_result_t
 dns_portlist_create(isc_mem_t *mctx, dns_portlist_t **portlistp);
 /*%<
  * Create a port list.
- * 
+ *
  * Requires:
  *\li	'mctx' to be valid.
  *\li	'portlistp' to be non NULL and '*portlistp' to be NULL;
@@ -99,3 +101,5 @@ dns_portlist_detach(dns_portlist_t **portlistp);
  */
 
 ISC_LANG_ENDDECLS
+
+#endif /* DNS_PORTLIST_H */

@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2004-2007, 2009, 2014, 2016  Internet Systems Consortium, Inc. ("ISC")
- * Copyright (C) 2000, 2001  Internet Software Consortium.
+ * Copyright (C) Internet Systems Consortium, Inc. ("ISC")
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -41,7 +40,7 @@
 
 typedef struct {
 	EVP_MD_CTX *ctx;
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
 	EVP_MD_CTX _ctx;
 #endif
 } isc_sha1_t;
@@ -73,6 +72,9 @@ isc_sha1_update(isc_sha1_t *ctx, const unsigned char *data, unsigned int len);
 
 void
 isc_sha1_final(isc_sha1_t *ctx, unsigned char *digest);
+
+isc_boolean_t
+isc_sha1_check(isc_boolean_t testing);
 
 ISC_LANG_ENDDECLS
 

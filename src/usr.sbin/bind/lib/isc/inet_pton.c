@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2004, 2005, 2007, 2013, 2014  Internet Systems Consortium, Inc. ("ISC")
- * Copyright (C) 1996-2003  Internet Software Consortium.
+ * Copyright (C) Internet Systems Consortium, Inc. ("ISC")
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -91,14 +90,14 @@ inet_pton4(const char *src, unsigned char *dst) {
 		const char *pch;
 
 		if ((pch = strchr(digits, ch)) != NULL) {
-			unsigned int new = *tp * 10;
+			unsigned int byte = *tp * 10;
 
-			new += (int)(pch - digits);
+			byte += (int)(pch - digits);
 			if (saw_digit && *tp == 0)
 				return (0);
-			if (new > 255)
+			if (byte > 255)
 				return (0);
-			*tp = new;
+			*tp = byte;
 			if (!saw_digit) {
 				if (++octets > 4)
 					return (0);

@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2004, 2005, 2007, 2009, 2015  Internet Systems Consortium, Inc. ("ISC")
- * Copyright (C) 1999-2003  Internet Software Consortium.
+ * Copyright (C) Internet Systems Consortium, Inc. ("ISC")
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -118,7 +117,8 @@ totext_nxt(ARGS_TOTEXT) {
 								      target));
 					} else {
 						char buf[sizeof("65535")];
-						sprintf(buf, "%u", t);
+						snprintf(buf, sizeof(buf),
+							 "%u", t);
 						RETERR(str_totext(buf,
 								  target));
 					}

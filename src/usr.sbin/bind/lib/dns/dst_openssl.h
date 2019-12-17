@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2004, 2005, 2007-2009, 2011, 2012, 2015, 2016  Internet Systems Consortium, Inc. ("ISC")
- * Copyright (C) 2002  Internet Software Consortium.
+ * Copyright (C) Internet Systems Consortium, Inc. ("ISC")
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -47,7 +46,7 @@
  *     	 _cb;
  * #endif
  */
-#define BN_GENCB_free(x) (x = NULL);
+#define BN_GENCB_free(x) ((void)0)
 #define BN_GENCB_new() (&_cb)
 #define BN_GENCB_get_arg(x) ((x)->arg)
 #endif

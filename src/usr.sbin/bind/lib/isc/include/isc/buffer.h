@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2004-2008, 2010, 2012, 2014  Internet Systems Consortium, Inc. ("ISC")
- * Copyright (C) 1998-2002  Internet Software Consortium.
+ * Copyright (C) Internet Systems Consortium, Inc. ("ISC")
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -107,6 +106,7 @@
  *** Imports
  ***/
 
+#include <isc/formatcheck.h>
 #include <isc/lang.h>
 #include <isc/magic.h>
 #include <isc/types.h>
@@ -795,7 +795,7 @@ ISC_LANG_ENDDECLS
 	do { \
 		unsigned int _length; \
 		unsigned char *_cp; \
-		_length = strlen(_source); \
+		_length = (unsigned int)strlen(_source); \
 		_cp = isc_buffer_used(_b); \
 		memmove(_cp, (_source), _length); \
 		(_b)->used += (_length); \

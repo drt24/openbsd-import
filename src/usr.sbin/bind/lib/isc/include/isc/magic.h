@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2004-2007, 2016  Internet Systems Consortium, Inc. ("ISC")
- * Copyright (C) 1999-2001  Internet Software Consortium.
+ * Copyright (C) Internet Systems Consortium, Inc. ("ISC")
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -20,7 +19,7 @@
 #ifndef ISC_MAGIC_H
 #define ISC_MAGIC_H 1
 
-#include <isc/util.h>
+#include <isc/likely.h>
 
 /*! \file isc/magic.h */
 

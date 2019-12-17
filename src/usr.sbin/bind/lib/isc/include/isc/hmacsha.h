@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2005-2007, 2009, 2014, 2016  Internet Systems Consortium, Inc. ("ISC")
+ * Copyright (C) Internet Systems Consortium, Inc. ("ISC")
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -42,7 +42,7 @@
 
 typedef struct {
 	HMAC_CTX *ctx;
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
 	HMAC_CTX _ctx;
 #endif
 } isc_hmacsha_t;
@@ -108,6 +108,9 @@ isc_hmacsha1_sign(isc_hmacsha1_t *ctx, unsigned char *digest, size_t len);
 
 isc_boolean_t
 isc_hmacsha1_verify(isc_hmacsha1_t *ctx, unsigned char *digest, size_t len);
+
+isc_boolean_t
+isc_hmacsha1_check(int testing);
 
 
 void

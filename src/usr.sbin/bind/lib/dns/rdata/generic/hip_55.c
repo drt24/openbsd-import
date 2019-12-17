@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2009, 2011, 2013-2015  Internet Systems Consortium, Inc. ("ISC")
+ * Copyright (C) Internet Systems Consortium, Inc. ("ISC")
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -148,7 +148,7 @@ totext_hip(ARGS_TOTEXT) {
 	/*
 	 * Algorithm
 	 */
-	sprintf(buf, "%u ", algorithm);
+	snprintf(buf, sizeof(buf), "%u ", algorithm);
 	RETERR(str_totext(buf, target));
 
 	/*
