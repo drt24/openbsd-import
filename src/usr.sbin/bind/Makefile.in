@@ -46,8 +46,7 @@ installdirs:
 	$(SHELL) ${top_srcdir}/mkinstalldirs ${DESTDIR}${bindir} \
 	${DESTDIR}${localstatedir}/run ${DESTDIR}${sysconfdir}
 
-install:: isc-config.sh installdirs
-	${INSTALL_SCRIPT} isc-config.sh ${DESTDIR}${bindir}
+install:: installdirs
 
 tags:
 	rm -f TAGS
