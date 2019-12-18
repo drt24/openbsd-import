@@ -161,8 +161,6 @@ usage(void) ISC_PLATFORM_NORETURN_POST;
 static void
 usage(void) {
 	print_usage(stderr);
-	fputs("\nUse \"dig -h\" (or \"dig -h | more\") "
-	      "for complete list of options\n", stderr);
 	exit(1);
 }
 
