@@ -65,9 +65,7 @@ SRCS =		dig.c dighost.c host.c nslookup.c
 
 MANPAGES =	dig.1 host.1 nslookup.1
 
-HTMLPAGES =	dig.html host.html nslookup.html
-
-MANOBJS =	${MANPAGES} ${HTMLPAGES}
+MANOBJS =	${MANPAGES}
 
 @BIND9_MAKE_RULES@
 
