@@ -150,9 +150,9 @@ rcode_totext(dns_rcode_t rcode)
 static void
 print_usage(FILE *fp) {
 	fputs(
-"Usage:  dig [@global-server] [domain] [q-type] [q-class] {q-opt}\n"
-"            {global-d-opt} host [@local-server] {local-d-opt}\n"
-"            [ host [@local-server] {local-d-opt} [...]]\n", fp);
+"usage:  dig [@server] [-46himuv] [-b address[#port]] [-c class] [-f file]\n"
+"            [-k keyfile] [-p port] [-q name] [-t type] [-x addr]\n"
+"            [-y [hmac:]name:key] [name] [type] [class] [+queryopt ...]\n", fp);
 }
 
 ISC_PLATFORM_NORETURN_PRE static void
