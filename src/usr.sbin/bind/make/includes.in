@@ -37,9 +37,3 @@ DNS_INCLUDES = @BIND9_DNS_BUILDINCLUDE@ \
 LWRES_INCLUDES = @BIND9_LWRES_BUILDINCLUDE@ \
 	-I${top_srcdir}/lib/lwres/unix/include \
 	-I${top_srcdir}/lib/lwres/include
-
-BIND9_INCLUDES = @BIND9_BIND9_BUILDINCLUDE@ \
-	-I${top_srcdir}/lib/bind9/include
-
-TEST_INCLUDES = \
-	-I${top_srcdir}/lib/tests/include
