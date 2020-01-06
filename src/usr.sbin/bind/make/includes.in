@@ -28,9 +28,6 @@ ISC_INCLUDES = @BIND9_ISC_BUILDINCLUDE@ \
 	-I${top_srcdir}/lib/isc/@ISC_THREAD_DIR@/include \
 	-I${top_srcdir}/lib/isc/@ISC_ARCH_DIR@/include
 
-ISCCC_INCLUDES = @BIND9_ISCCC_BUILDINCLUDE@ \
-       -I${top_srcdir}/lib/isccc/include
-
 ISCCFG_INCLUDES = @BIND9_ISCCFG_BUILDINCLUDE@ \
        -I${top_srcdir}/lib/isccfg/include
 
