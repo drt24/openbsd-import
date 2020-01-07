@@ -28,10 +28,10 @@ CDEFINES =
 CWARNINGS =
 
 THREADOPTOBJS = condition.@O@ mutex.@O@
-OBJS =		@THREADOPTOBJS@ thread.@O@
+OBJS =		thread.@O@
 
 THREADOPTSRCS = condition.c mutex.c
-SRCS =		@THREADOPTSRCS@ thread.c
+SRCS =		thread.c
 
 SUBDIRS =	include
 TARGETS =	${OBJS}
