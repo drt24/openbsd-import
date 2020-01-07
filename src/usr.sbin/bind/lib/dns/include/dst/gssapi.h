@@ -28,17 +28,9 @@
 #include <dns/types.h>
 
 #ifdef GSSAPI
-#ifdef WIN32
-/*
- * MSVC does not like macros in #include lines.
- */
-#include <gssapi/gssapi.h>
-#include <gssapi/gssapi_krb5.h>
-#else
 #include ISC_PLATFORM_GSSAPIHEADER
 #ifdef ISC_PLATFORM_GSSAPI_KRB5_HEADER
 #include ISC_PLATFORM_GSSAPI_KRB5_HEADER
-#endif
 #endif
 #ifndef GSS_SPNEGO_MECHANISM
 #define GSS_SPNEGO_MECHANISM ((void*)0)

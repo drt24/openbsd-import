@@ -68,11 +68,7 @@
  * we include SPNEGO's OID.
  */
 #ifdef GSSAPI
-#ifdef WIN32
-#include <krb5/krb5.h>
-#else
 #include ISC_PLATFORM_KRB5HEADER
-#endif
 
 static unsigned char krb5_mech_oid_bytes[] = {
 	0x2a, 0x86, 0x48, 0x86, 0xf7, 0x12, 0x01, 0x02, 0x02
