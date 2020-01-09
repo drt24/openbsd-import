@@ -31,7 +31,7 @@
 #include <isc/string.h>
 #include <isc/util.h>
 
-#include <pk11/site.h>
+
 
 #include <dns/db.h>
 #include <dns/diff.h>
@@ -1387,9 +1387,6 @@ dns_dnssec_findmatchingkeys(dns_name_t *origin, const char *directory,
 					       mctx, &dstkey);
 
 		switch (alg) {
-#ifndef PK11_MD5_DISABLE
-		case DST_ALG_HMACMD5:
-#endif
 		case DST_ALG_HMACSHA1:
 		case DST_ALG_HMACSHA224:
 		case DST_ALG_HMACSHA256:

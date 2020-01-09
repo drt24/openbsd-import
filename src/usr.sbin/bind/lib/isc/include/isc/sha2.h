@@ -96,12 +96,6 @@ typedef struct {
 typedef isc_sha2_t isc_sha256_t;
 typedef isc_sha2_t isc_sha512_t;
 
-#elif PKCS11CRYPTO
-#include <pk11/pk11.h>
-
-typedef pk11_context_t isc_sha256_t;
-typedef pk11_context_t isc_sha512_t;
-
 #else
 
 /*

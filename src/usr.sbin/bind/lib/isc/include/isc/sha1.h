@@ -45,11 +45,6 @@ typedef struct {
 #endif
 } isc_sha1_t;
 
-#elif PKCS11CRYPTO
-#include <pk11/pk11.h>
-
-typedef pk11_context_t isc_sha1_t;
-
 #else
 
 typedef struct {

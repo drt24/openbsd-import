@@ -53,15 +53,6 @@ typedef isc_hmacsha_t isc_hmacsha256_t;
 typedef isc_hmacsha_t isc_hmacsha384_t;
 typedef isc_hmacsha_t isc_hmacsha512_t;
 
-#elif PKCS11CRYPTO
-#include <pk11/pk11.h>
-
-typedef pk11_context_t isc_hmacsha1_t;
-typedef pk11_context_t isc_hmacsha224_t;
-typedef pk11_context_t isc_hmacsha256_t;
-typedef pk11_context_t isc_hmacsha384_t;
-typedef pk11_context_t isc_hmacsha512_t;
-
 #else
 
 typedef struct {
