@@ -17,7 +17,7 @@
 /* $Id$ */
 
 /*! \file */
-
+#include <sys/cdefs.h>
 #include <config.h>
 #include <stdlib.h>
 #include <time.h>
@@ -163,8 +163,8 @@ print_usage(FILE *fp) {
 "           +[no]tcp +timeout=# +[no]trace +tries=# +[no]ttlid +[no]vc\n", fp);
 }
 
-ISC_PLATFORM_NORETURN_PRE static void
-usage(void) ISC_PLATFORM_NORETURN_POST;
+static __dead void
+usage(void);
 
 static void
 usage(void) {
