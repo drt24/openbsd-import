@@ -23,7 +23,7 @@
 
 #include <isc/lang.h>
 #include <isc/stdtime.h>
-#include <isc/stats.h>
+
 
 #include <dns/diff.h>
 #include <dns/types.h>

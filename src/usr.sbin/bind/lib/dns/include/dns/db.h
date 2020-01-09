@@ -56,7 +56,7 @@
 #include <isc/lang.h>
 #include <isc/magic.h>
 #include <isc/ondestroy.h>
-#include <isc/stats.h>
+
 #include <isc/stdtime.h>
 
 #include <dns/clientinfo.h>

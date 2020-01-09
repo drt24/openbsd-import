@@ -25,7 +25,7 @@
 #include <isc/platform.h>
 
 #include <isc/serial.h>
-#include <isc/stats.h>
+
 #include <isc/stdtime.h>
 #include <isc/string.h>
 #include <isc/taskpool.h>

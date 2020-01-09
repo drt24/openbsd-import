@@ -22,7 +22,7 @@
 
 #include <stddef.h>
 
-#include <isc/atomic.h>
+
 #include <isc/magic.h>
 #include <isc/msgs.h>
 #include <isc/platform.h>

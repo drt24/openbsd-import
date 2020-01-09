@@ -26,11 +26,6 @@
 #include <isc/platform.h>
 #include <isc/types.h>
 
-#if defined(ISC_PLATFORM_HAVESTDATOMIC)
-#include <stdint.h>
-#include <stdatomic.h>
-#endif
-
 ISC_LANG_BEGINDECLS
 
 typedef enum {

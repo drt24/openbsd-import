@@ -50,7 +50,7 @@
 
 #include <isc/json.h>
 #include <isc/lang.h>
-#include <isc/stats.h>
+
 #include <isc/stdtime.h>
 
 #include <dns/types.h>
