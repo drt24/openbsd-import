@@ -39,12 +39,10 @@ struct dns_tkeyctx {
 	dst_key_t *dhkey;
 	dns_name_t *domain;
 	isc_mem_t *mctx;
-	isc_entropy_t *ectx;
 };
 
 isc_result_t
-dns_tkeyctx_create(isc_mem_t *mctx, isc_entropy_t *ectx,
-		   dns_tkeyctx_t **tctxp);
+dns_tkeyctx_create(isc_mem_t *mctx, dns_tkeyctx_t **tctxp);
 /*%<
  *	Create an empty TKEY context.
  *

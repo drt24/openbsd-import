@@ -28,7 +28,7 @@
 #include <isc/mem.h>
 #include <isc/once.h>
 
-#include <isc/random.h>
+
 #include <isc/string.h>
 #include <isc/thread.h>
 #include <isc/util.h>

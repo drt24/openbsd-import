@@ -132,17 +132,15 @@ typedef struct dst_context 	dst_context_t;
  ***/
 
 isc_result_t
-dst_lib_init(isc_mem_t *mctx, isc_entropy_t *ectx, unsigned int eflags);
+dst_lib_init(isc_mem_t *mctx);
 
 isc_result_t
-dst_lib_init2(isc_mem_t *mctx, isc_entropy_t *ectx,
-	      const char *engine, unsigned int eflags);
+dst_lib_init2(isc_mem_t *mctx, const char *engine);
 /*%<
  * Initializes the DST subsystem.
  *
  * Requires:
  * \li 	"mctx" is a valid memory context
- * \li	"ectx" is a valid entropy context
  *
  * Returns:
  * \li	ISC_R_SUCCESS
