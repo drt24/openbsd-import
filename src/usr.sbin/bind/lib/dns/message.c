@@ -27,7 +27,7 @@
 
 #include <isc/buffer.h>
 #include <isc/mem.h>
-#include <isc/print.h>
+
 #include <isc/string.h>		/* Required for HP/UX (and others?) */
 #include <isc/util.h>
 

@@ -64,7 +64,7 @@
 
 #include <isc/commandline.h>
 #include <isc/msgs.h>
-#include <isc/print.h>
+
 #include <isc/string.h>
 #include <isc/util.h>
 

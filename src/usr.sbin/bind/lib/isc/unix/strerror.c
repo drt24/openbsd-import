@@ -25,7 +25,7 @@
 
 #include <isc/mutex.h>
 #include <isc/once.h>
-#include <isc/print.h>
+
 #include <isc/strerror.h>
 #include <isc/util.h>
 

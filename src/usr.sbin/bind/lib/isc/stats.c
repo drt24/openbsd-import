@@ -27,7 +27,7 @@
 #include <isc/magic.h>
 #include <isc/mem.h>
 #include <isc/platform.h>
-#include <isc/print.h>
+
 #include <isc/rwlock.h>
 #include <isc/stats.h>
 #include <isc/util.h>

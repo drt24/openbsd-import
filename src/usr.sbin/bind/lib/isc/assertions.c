@@ -25,7 +25,7 @@
 
 #include <isc/assertions.h>
 #include <isc/msgs.h>
-#include <isc/print.h>
+
 #include <isc/result.h>
 
 /*%

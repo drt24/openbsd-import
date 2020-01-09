@@ -24,7 +24,7 @@
 #include <isc/lex.h>
 #include <isc/magic.h>
 #include <isc/mem.h>
-#include <isc/print.h>
+
 #include <isc/serial.h>
 #include <isc/stdio.h>
 #include <isc/stdtime.h>

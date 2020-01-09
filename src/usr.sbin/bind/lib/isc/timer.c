@@ -29,7 +29,7 @@
 #include <isc/msgs.h>
 #include <isc/once.h>
 #include <isc/platform.h>
-#include <isc/print.h>
+
 #include <isc/task.h>
 #include <isc/thread.h>
 #include <isc/time.h>

@@ -28,7 +28,7 @@
 #include <isc/magic.h>
 #include <isc/mem.h>
 #include <isc/once.h>
-#include <isc/print.h>
+
 #include <isc/region.h>
 #include <isc/util.h>
 

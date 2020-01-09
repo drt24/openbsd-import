@@ -23,7 +23,7 @@
 
 #include <isc/buffer.h>
 #include <isc/mem.h>
-#include <isc/print.h>
+
 #include <isc/refcount.h>
 #include <isc/serial.h>
 #include <isc/string.h>		/* Required for HP/UX (and others?) */

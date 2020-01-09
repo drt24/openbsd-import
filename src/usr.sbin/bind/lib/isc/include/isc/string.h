@@ -198,40 +198,6 @@ isc_string_regiondup(isc_mem_t *mctx, const isc_region_t *source);
  *
  */
 
-char *
-isc_string_separate(char **stringp, const char *delim);
-
-#ifdef ISC_PLATFORM_NEEDSTRSEP
-#define strsep isc_string_separate
-#endif
-
-#ifdef ISC_PLATFORM_NEEDMEMMOVE
-#define memmove(a,b,c) bcopy(b,a,c)
-#endif
-
-size_t
-isc_string_strlcpy(char *dst, const char *src, size_t size);
-
-
-#ifdef ISC_PLATFORM_NEEDSTRLCPY
-#define strlcpy isc_string_strlcpy
-#endif
-
-
-size_t
-isc_string_strlcat(char *dst, const char *src, size_t size);
-
-#ifdef ISC_PLATFORM_NEEDSTRLCAT
-#define strlcat isc_string_strlcat
-#endif
-
-char *
-isc_string_strcasestr(const char *big, const char *little);
-
-#ifdef ISC_PLATFORM_NEEDSTRCASESTR
-#define strcasestr isc_string_strcasestr
-#endif
-
 ISC_LANG_ENDDECLS
 
 #endif /* ISC_STRING_H */

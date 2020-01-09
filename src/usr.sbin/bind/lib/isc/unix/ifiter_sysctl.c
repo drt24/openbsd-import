@@ -29,7 +29,7 @@
 #include <net/route.h>
 #include <net/if_dl.h>
 
-#include <isc/print.h>
+
 
 /* XXX what about Alpha? */
 #ifdef sgi

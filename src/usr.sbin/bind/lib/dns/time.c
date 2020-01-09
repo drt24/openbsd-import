@@ -25,7 +25,7 @@
 #include <time.h>
 #include <ctype.h>
 
-#include <isc/print.h>
+
 #include <isc/region.h>
 #include <isc/serial.h>
 #include <isc/stdtime.h>
