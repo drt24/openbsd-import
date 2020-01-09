@@ -23,12 +23,12 @@
 
 #include <isc/platform.h>
 
-LIBDNS_EXTERNAL_DATA extern const char dns_version[];
-LIBDNS_EXTERNAL_DATA extern const char dns_major[];
-LIBDNS_EXTERNAL_DATA extern const char dns_mapapi[];
+extern const char dns_version[];
+extern const char dns_major[];
+extern const char dns_mapapi[];
 
-LIBDNS_EXTERNAL_DATA extern const unsigned int dns_libinterface;
-LIBDNS_EXTERNAL_DATA extern const unsigned int dns_librevision;
-LIBDNS_EXTERNAL_DATA extern const unsigned int dns_libage;
+extern const unsigned int dns_libinterface;
+extern const unsigned int dns_librevision;
+extern const unsigned int dns_libage;
 
 #endif /* DNS_VERSION_H */

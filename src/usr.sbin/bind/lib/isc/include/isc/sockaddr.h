@@ -24,9 +24,7 @@
 #include <isc/lang.h>
 #include <isc/net.h>
 #include <isc/types.h>
-#ifdef ISC_PLATFORM_HAVESYSUNH
 #include <sys/un.h>
-#endif
 
 struct isc_sockaddr {
 	union {
@@ -34,9 +32,7 @@ struct isc_sockaddr {
 		struct sockaddr_in	sin;
 		struct sockaddr_in6	sin6;
 		struct sockaddr_storage ss;
-#ifdef ISC_PLATFORM_HAVESYSUNH
 		struct sockaddr_un	sunix;
-#endif
 	}				type;
 	unsigned int			length;		/* XXXRTH beginning? */
 	ISC_LINK(struct isc_sockaddr)	link;

@@ -28,6 +28,6 @@
  * tools) it must be set to ISC_TRUE at runtime.  Export library clients
  * will call isc_lib_register(), which will set it to ISC_FALSE.
  */
-LIBISC_EXTERNAL_DATA extern isc_boolean_t isc_bind9;
+extern isc_boolean_t isc_bind9;
 
 #endif /* ISC_BIND9_H */

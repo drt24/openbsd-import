@@ -63,7 +63,7 @@ dnsconf_clausesets[] = {
 	NULL
 };
 
-LIBISCCFG_EXTERNAL_DATA cfg_type_t cfg_type_dnsconf = {
+cfg_type_t cfg_type_dnsconf = {
 	"dnsconf", cfg_parse_mapbody, cfg_print_mapbody, cfg_doc_mapbody,
 	&cfg_rep_map, dnsconf_clausesets
 };

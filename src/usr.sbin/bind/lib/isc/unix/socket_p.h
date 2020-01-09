@@ -21,9 +21,7 @@
 
 /*! \file */
 
-#ifdef ISC_PLATFORM_NEEDSYSSELECTH
 #include <sys/select.h>
-#endif
 
 typedef struct isc_socketwait isc_socketwait_t;
 int isc__socketmgr_waitevents(isc_socketmgr_t *, struct timeval *,

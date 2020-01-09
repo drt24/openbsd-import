@@ -26,7 +26,7 @@
 
 ISC_LANG_BEGINDECLS
 
-LIBDNS_EXTERNAL_DATA extern isc_msgcat_t *dst_msgcat;
+extern isc_msgcat_t *dst_msgcat;
 
 void
 dst_lib_initmsgcat(void);

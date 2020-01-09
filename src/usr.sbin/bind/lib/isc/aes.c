@@ -27,7 +27,6 @@
 #include <isc/types.h>
 #include <isc/util.h>
 
-#ifdef ISC_PLATFORM_WANTAES
 #if HAVE_OPENSSL_EVP_AES
 
 #include <openssl/opensslv.h>
@@ -133,4 +132,3 @@ isc_aes256_crypt(const unsigned char *key, const unsigned char *in,
 }
 
 #endif
-#endif /* ISC_PLATFORM_WANTAES */

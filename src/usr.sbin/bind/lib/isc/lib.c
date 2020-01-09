@@ -38,7 +38,7 @@
  *** Globals
  ***/
 
-LIBISC_EXTERNAL_DATA isc_msgcat_t *		isc_msgcat = NULL;
+isc_msgcat_t *		isc_msgcat = NULL;
 
 
 /***

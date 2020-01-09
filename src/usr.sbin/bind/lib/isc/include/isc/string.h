@@ -29,9 +29,7 @@
 
 #include <string.h>
 
-#ifdef ISC_PLATFORM_HAVESTRINGSH
 #include <strings.h>
-#endif
 
 #define ISC_STRING_MAGIC 0x5e
 

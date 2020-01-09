@@ -35,7 +35,7 @@
  *** Globals
  ***/
 
-LIBDNS_EXTERNAL_DATA isc_msgcat_t *		dst_msgcat = NULL;
+isc_msgcat_t *		dst_msgcat = NULL;
 
 
 /***

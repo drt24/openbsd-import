@@ -29,7 +29,7 @@
 /*
  * Configuration object types.
  */
-LIBISCCFG_EXTERNAL_DATA extern cfg_type_t cfg_type_dnsconf;
+extern cfg_type_t cfg_type_dnsconf;
 /*%< A complete dns.conf file. */
 
 #endif /* ISCCFG_DNSCONF_H */

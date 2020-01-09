@@ -41,8 +41,8 @@
  *** Globals
  ***/
 
-LIBDNS_EXTERNAL_DATA unsigned int			dns_pps = 0U;
-LIBDNS_EXTERNAL_DATA isc_msgcat_t *			dns_msgcat = NULL;
+unsigned int			dns_pps = 0U;
+isc_msgcat_t *			dns_msgcat = NULL;
 
 
 /***

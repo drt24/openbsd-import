@@ -25,10 +25,8 @@
 #include <isc/net.h>
 #include <isc/types.h>
 
-#ifdef ISC_PLATFORM_HAVESYSUNH
 #include <sys/types.h>
 #include <sys/un.h>
-#endif
 
 ISC_LANG_BEGINDECLS
 
@@ -37,9 +35,7 @@ struct isc_netaddr {
 	union {
 		struct in_addr in;
 		struct in6_addr in6;
-#ifdef ISC_PLATFORM_HAVESYSUNH
 		char un[sizeof(((struct sockaddr_un *)0)->sun_path)];
-#endif
 	} type;
 	isc_uint32_t zone;
 };

@@ -148,8 +148,8 @@ struct dns_name {
 #define DNS_NAME_CHECKMX		0x0010		/*%< Used by rdata. */
 #define DNS_NAME_CHECKMXFAIL		0x0020		/*%< Used by rdata. */
 
-LIBDNS_EXTERNAL_DATA extern dns_name_t *dns_rootname;
-LIBDNS_EXTERNAL_DATA extern dns_name_t *dns_wildcardname;
+extern dns_name_t *dns_rootname;
+extern dns_name_t *dns_wildcardname;
 
 /*%
  * Standard size of a wire format name
