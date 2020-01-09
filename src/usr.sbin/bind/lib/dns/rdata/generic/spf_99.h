@@ -20,7 +20,7 @@
 /* $Id$ */
 
 typedef struct dns_rdata_spf_string {
-		isc_uint8_t    length;
+		uint8_t    length;
 		unsigned char   *data;
 } dns_rdata_spf_string_t;
 
@@ -28,9 +28,9 @@ typedef struct dns_rdata_spf {
 	dns_rdatacommon_t       common;
 	isc_mem_t               *mctx;
 	unsigned char           *txt;
-	isc_uint16_t            txt_len;
+	uint16_t            txt_len;
 	/* private */
-	isc_uint16_t            offset;
+	uint16_t            offset;
 } dns_rdata_spf_t;
 
 /*

@@ -86,12 +86,12 @@ static char rcsid[] = "$Id$";
  */
 int
 isc_net_aton(const char *cp, struct in_addr *addr) {
-	isc_uint32_t val;
+	uint32_t val;
 	int base;
 	ptrdiff_t n;
 	unsigned char c;
-	isc_uint32_t parts[4];
-	isc_uint32_t *pp = parts;
+	uint32_t parts[4];
+	uint32_t *pp = parts;
 	int digit;
 
 	c = *cp;

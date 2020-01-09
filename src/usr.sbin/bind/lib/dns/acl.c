@@ -193,7 +193,7 @@ dns_acl_match(const isc_netaddr_t *reqaddr,
 	      int *match,
 	      const dns_aclelement_t **matchelt)
 {
-	isc_uint16_t bitlen, family;
+	uint16_t bitlen, family;
 	isc_prefix_t pfx;
 	isc_radix_node_t *node = NULL;
 	const isc_netaddr_t *addr;

@@ -48,8 +48,8 @@ typedef struct {
 #else
 
 typedef struct {
-	isc_uint32_t state[5];
-	isc_uint32_t count[2];
+	uint32_t state[5];
+	uint32_t count[2];
 	unsigned char buffer[ISC_SHA1_BLOCK_LENGTH];
 } isc_sha1_t;
 #endif

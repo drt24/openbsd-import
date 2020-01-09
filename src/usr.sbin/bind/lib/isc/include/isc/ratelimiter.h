@@ -50,7 +50,7 @@ isc_ratelimiter_create(isc_mem_t *mctx, isc_timermgr_t *timermgr,
  */
 
 isc_result_t
-isc_ratelimiter_setinterval(isc_ratelimiter_t *rl, isc_interval_t *interval);
+isc_ratelimiter_setinterval(isc_ratelimiter_t *rl, interval_t *interval);
 /*!<
  * Set the minimum interval between event executions.
  * The interval value is copied, so the caller need not preserve it.
@@ -60,7 +60,7 @@ isc_ratelimiter_setinterval(isc_ratelimiter_t *rl, isc_interval_t *interval);
  */
 
 void
-isc_ratelimiter_setpertic(isc_ratelimiter_t *rl, isc_uint32_t perint);
+isc_ratelimiter_setpertic(isc_ratelimiter_t *rl, uint32_t perint);
 /*%<
  * Set the number of events processed per interval timer tick.
  * If 'perint' is zero it is treated as 1.
