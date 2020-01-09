@@ -36,10 +36,6 @@
 #include <isc/timer.h>
 #include <isc/util.h>
 
-#ifdef OPENSSL_LEAKS
-#include <openssl/err.h>
-#endif
-
 /* See task.c about the following definition: */
 #define USE_SHARED_MANAGER
 
@@ -812,10 +808,6 @@ run(void *uap) {
 				      ISC_MSG_WAKEUP, "wakeup"));
 	}
 	UNLOCK(&manager->lock);
-
-#ifdef OPENSSL_LEAKS
-	ERR_remove_state(0);
-#endif
 
 	return ((isc_threadresult_t)0);
 }

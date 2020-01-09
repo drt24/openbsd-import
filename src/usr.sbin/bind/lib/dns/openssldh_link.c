@@ -36,17 +36,8 @@
  * $Id$
  */
 
-#ifdef OPENSSL
-
 #include <config.h>
 
 
 
-#else /* OPENSSL */
-
-#include <isc/util.h>
-
-EMPTY_TRANSLATION_UNIT
-
-#endif /* OPENSSL */
 /*! \file */

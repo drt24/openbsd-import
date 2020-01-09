@@ -72,12 +72,7 @@ isc_result_t
 dst__openssl_toresult3(isc_logcategory_t *category,
 		       const char *funcname, isc_result_t fallback);
 
-#ifdef USE_ENGINE
-ENGINE *
-dst__openssl_getengine(const char *engine);
-#else
 #define dst__openssl_getengine(x) NULL
-#endif
 
 ISC_LANG_ENDDECLS
 
