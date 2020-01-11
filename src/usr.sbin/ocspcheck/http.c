@@ -349,6 +349,7 @@ http_open(const struct http *http, const void *p, size_t psz)
 		c = asprintf(&req,
 		    "POST %s HTTP/1.0\r\n"
 		    "Host: %s\r\n"
+		    "Content-Type: application/ocsp-request\r\n"
 		    "Content-Length: %zu\r\n"
 		    "\r\n",
 		    http->path, http->host, psz);
