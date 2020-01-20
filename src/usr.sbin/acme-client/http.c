@@ -194,10 +194,6 @@ http_disconnect(struct http *http)
 			rc = tls_close(http->ctx);
 		} while (rc == TLS_WANT_POLLIN || rc == TLS_WANT_POLLOUT);
 
-		if (rc < 0)
-			warnx("%s: tls_close: %s", http->src.ip,
-			    tls_error(http->ctx));
-
 		tls_free(http->ctx);
 	}
 	if (http->fd != -1) {
