@@ -90,7 +90,7 @@ cfg_parser_attach(cfg_parser_t *src, cfg_parser_t **dest);
  */
 
 isc_result_t
-cfg_parser_create(isc_mem_t *mctx, isc_log_t *lctx, cfg_parser_t **ret);
+cfg_parser_create(isc_log_t *lctx, cfg_parser_t **ret);
 /*%<
  * Create a configuration file parser.  Any warning and error
  * messages will be logged to 'lctx'.

@@ -57,7 +57,6 @@ struct dns_compress {
 	/*% Preallocated nodes for the table. */
 	dns_compressnode_t	initialnodes[DNS_COMPRESS_INITIALNODES];
 	uint16_t		count;		/*%< Number of nodes. */
-	isc_mem_t		*mctx;		/*%< Memory context. */
 };
 
 typedef enum {
@@ -74,7 +73,7 @@ struct dns_decompress {
 };
 
 isc_result_t
-dns_compress_init(dns_compress_t *cctx, int edns, isc_mem_t *mctx);
+dns_compress_init(dns_compress_t *cctx, int edns);
 /*%<
  *	Initialise the compression context structure pointed to by 'cctx'.
  *

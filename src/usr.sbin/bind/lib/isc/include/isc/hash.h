@@ -83,9 +83,9 @@
 ISC_LANG_BEGINDECLS
 
 isc_result_t
-isc_hash_ctxcreate(isc_mem_t *mctx, size_t limit, isc_hash_t **hctx);
+isc_hash_ctxcreate(size_t limit, isc_hash_t **hctx);
 isc_result_t
-isc_hash_create(isc_mem_t *mctx, size_t limit);
+isc_hash_create(size_t limit);
 /*!<
  * \brief Create a new hash object.
  *

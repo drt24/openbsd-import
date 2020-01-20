@@ -21,7 +21,6 @@
 
 typedef struct dns_rdata_ipseckey {
 	dns_rdatacommon_t	common;
-	isc_mem_t		*mctx;
 	uint8_t		precedence;
 	uint8_t		gateway_type;
 	uint8_t		algorithm;

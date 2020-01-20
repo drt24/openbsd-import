@@ -655,11 +655,11 @@ isc_task_privilege(isc_task_t *task);
  *****/
 
 isc_result_t
-isc_taskmgr_createinctx(isc_mem_t *mctx, isc_appctx_t *actx,
+isc_taskmgr_createinctx(isc_appctx_t *actx,
 			unsigned int workers, unsigned int default_quantum,
 			isc_taskmgr_t **managerp);
 isc_result_t
-isc_taskmgr_create(isc_mem_t *mctx, unsigned int workers,
+isc_taskmgr_create(unsigned int workers,
 		   unsigned int default_quantum, isc_taskmgr_t **managerp);
 /*%<
  * Create a new task manager.  isc_taskmgr_createinctx() also associates
@@ -790,7 +790,7 @@ isc_taskmgr_excltask(isc_taskmgr_t *mgr, isc_task_t **taskp);
  * See isc_taskmgr_create() above.
  */
 typedef isc_result_t
-(*isc_taskmgrcreatefunc_t)(isc_mem_t *mctx, unsigned int workers,
+(*isc_taskmgrcreatefunc_t)(unsigned int workers,
 			   unsigned int default_quantum,
 			   isc_taskmgr_t **managerp);
 

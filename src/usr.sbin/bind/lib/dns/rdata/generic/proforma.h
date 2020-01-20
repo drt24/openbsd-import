@@ -22,7 +22,6 @@
 
 typedef struct dns_rdata_# {
 	dns_rdatacommon_t	common;
-	isc_mem_t		*mctx;	/* if required */
 	/* type & class specific elements */
 } dns_rdata_#_t;
 

@@ -172,7 +172,7 @@ extern isc_logmodule_t isc_modules[];
 ISC_LANG_BEGINDECLS
 
 isc_result_t
-isc_log_create(isc_mem_t *mctx, isc_log_t **lctxp, isc_logconfig_t **lcfgp);
+isc_log_create(isc_log_t **lctxp, isc_logconfig_t **lcfgp);
 /*%<
  * Establish a new logging context, with default channels.
  *

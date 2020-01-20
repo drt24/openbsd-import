@@ -157,8 +157,6 @@ tostruct_hs_a(ARGS_TOSTRUCT) {
 	REQUIRE(rdata->rdclass == dns_rdataclass_hs);
 	REQUIRE(rdata->length == 4);
 
-	UNUSED(mctx);
-
 	a->common.rdclass = rdata->rdclass;
 	a->common.rdtype = rdata->type;
 	ISC_LINK_INIT(&a->common, link);

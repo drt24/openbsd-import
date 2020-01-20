@@ -103,7 +103,7 @@ tostruct_dlv(ARGS_TOSTRUCT) {
 	dlv->common.rdtype = rdata->type;
 	ISC_LINK_INIT(&dlv->common, link);
 
-	return (generic_tostruct_ds(rdata, target, mctx));
+	return (generic_tostruct_ds(rdata, target));
 }
 
 static inline void
@@ -113,12 +113,7 @@ freestruct_dlv(ARGS_FREESTRUCT) {
 	REQUIRE(dlv != NULL);
 	REQUIRE(dlv->common.rdtype == dns_rdatatype_dlv);
 
-	if (dlv->mctx == NULL)
-		return;
-
-	if (dlv->digest != NULL)
-		isc_mem_free(dlv->mctx, dlv->digest);
-	dlv->mctx = NULL;
+	free(dlv->digest);
 }
 
 static inline isc_result_t

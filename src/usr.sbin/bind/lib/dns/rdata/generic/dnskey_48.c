@@ -108,7 +108,7 @@ tostruct_dnskey(ARGS_TOSTRUCT) {
 	dnskey->common.rdtype = rdata->type;
 	ISC_LINK_INIT(&dnskey->common, link);
 
-	return (generic_tostruct_key(rdata, target, mctx));
+	return (generic_tostruct_key(rdata, target));
 }
 
 static inline void

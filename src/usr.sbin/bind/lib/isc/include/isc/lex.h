@@ -142,7 +142,7 @@ typedef struct isc_token {
  ***/
 
 isc_result_t
-isc_lex_create(isc_mem_t *mctx, size_t max_token, isc_lex_t **lexp);
+isc_lex_create(size_t max_token, isc_lex_t **lexp);
 /*%<
  * Create a lexer.
  *

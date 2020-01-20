@@ -156,8 +156,6 @@ tostruct_in_aaaa(ARGS_TOSTRUCT) {
 	REQUIRE(target != NULL);
 	REQUIRE(rdata->length == 16);
 
-	UNUSED(mctx);
-
 	aaaa->common.rdclass = rdata->rdclass;
 	aaaa->common.rdtype = rdata->type;
 	ISC_LINK_INIT(&aaaa->common, link);

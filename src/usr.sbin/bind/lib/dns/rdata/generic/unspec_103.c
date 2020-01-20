@@ -115,11 +115,10 @@ tostruct_unspec(ARGS_TOSTRUCT) {
 
 	dns_rdata_toregion(rdata, &r);
 	unspec->datalen = r.length;
-	unspec->data = mem_maybedup(mctx, r.base, r.length);
+	unspec->data = mem_maybedup(r.base, r.length);
 	if (unspec->data == NULL)
 		return (ISC_R_NOMEMORY);
 
-	unspec->mctx = mctx;
 	return (ISC_R_SUCCESS);
 }
 
@@ -130,12 +129,8 @@ freestruct_unspec(ARGS_FREESTRUCT) {
 	REQUIRE(source != NULL);
 	REQUIRE(unspec->common.rdtype == dns_rdatatype_unspec);
 
-	if (unspec->mctx == NULL)
-		return;
-
 	if (unspec->data != NULL)
-		isc_mem_free(unspec->mctx, unspec->data);
-	unspec->mctx = NULL;
+		free(unspec->data);
 }
 
 static inline isc_result_t

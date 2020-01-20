@@ -21,7 +21,6 @@
 
 typedef struct dns_rdata_caa {
 	dns_rdatacommon_t	common;
-	isc_mem_t *		mctx;
 	uint8_t		flags;
 	unsigned char *		tag;
 	uint8_t		tag_len;

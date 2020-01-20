@@ -105,7 +105,7 @@ tostruct_spf(ARGS_TOSTRUCT) {
 	spf->common.rdtype = rdata->type;
 	ISC_LINK_INIT(&spf->common, link);
 
-	return (generic_tostruct_txt(rdata, target, mctx));
+	return (generic_tostruct_txt(rdata, target));
 }
 
 static inline void

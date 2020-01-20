@@ -168,8 +168,7 @@ tostruct_in_nsap_ptr(ARGS_TOSTRUCT) {
 	dns_rdata_toregion(rdata, &region);
 	dns_name_fromregion(&name, &region);
 	dns_name_init(&nsap_ptr->owner, NULL);
-	RETERR(name_duporclone(&name, mctx, &nsap_ptr->owner));
-	nsap_ptr->mctx = mctx;
+	RETERR(name_duporclone(&name, &nsap_ptr->owner));
 	return (ISC_R_SUCCESS);
 }
 
@@ -181,11 +180,7 @@ freestruct_in_nsap_ptr(ARGS_FREESTRUCT) {
 	REQUIRE(nsap_ptr->common.rdclass == dns_rdataclass_in);
 	REQUIRE(nsap_ptr->common.rdtype == dns_rdatatype_nsap_ptr);
 
-	if (nsap_ptr->mctx == NULL)
-		return;
-
-	dns_name_free(&nsap_ptr->owner, nsap_ptr->mctx);
-	nsap_ptr->mctx = NULL;
+	dns_name_free(&nsap_ptr->owner);
 }
 
 static inline isc_result_t

@@ -21,7 +21,7 @@
 #include <config.h>
 
 #include <isc/buffer.h>
-#include <isc/mem.h>
+
 #include <isc/netaddr.h>
 
 #include <string.h>		/* Required for HP/UX (and others?) */

@@ -279,8 +279,7 @@ tostruct_in_srv(ARGS_TOSTRUCT) {
 	isc_region_consume(&region, 2);
 	dns_name_fromregion(&name, &region);
 	dns_name_init(&srv->target, NULL);
-	RETERR(name_duporclone(&name, mctx, &srv->target));
-	srv->mctx = mctx;
+	RETERR(name_duporclone(&name, &srv->target));
 	return (ISC_R_SUCCESS);
 }
 
@@ -292,11 +291,7 @@ freestruct_in_srv(ARGS_FREESTRUCT) {
 	REQUIRE(srv->common.rdclass == dns_rdataclass_in);
 	REQUIRE(srv->common.rdtype == dns_rdatatype_srv);
 
-	if (srv->mctx == NULL)
-		return;
-
-	dns_name_free(&srv->target, srv->mctx);
-	srv->mctx = NULL;
+	dns_name_free(&srv->target);
 }
 
 static inline isc_result_t

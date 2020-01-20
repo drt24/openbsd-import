@@ -105,7 +105,7 @@ dns_nsec3_activex(dns_db_t *db, dns_dbversion_t *version,
 
 isc_result_t
 dns_nsec3_maxiterations(dns_db_t *db, dns_dbversion_t *version,
-			isc_mem_t *mctx, unsigned int *iterationsp);
+			unsigned int *iterationsp);
 /*%<
  * Find the maximum permissible number of iterations allowed based on
  * the key strength.

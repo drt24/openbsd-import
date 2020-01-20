@@ -125,7 +125,6 @@ dns_ds_buildrdata(dns_name_t *owner, dns_rdata_t *key,
 		break;
 	}
 
-	ds.mctx = NULL;
 	ds.common.rdclass = key->rdclass;
 	ds.common.rdtype = dns_rdatatype_ds;
 	ds.algorithm = r.base[3];

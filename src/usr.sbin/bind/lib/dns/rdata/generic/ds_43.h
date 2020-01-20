@@ -23,7 +23,6 @@
  *  \brief per draft-ietf-dnsext-delegation-signer-05.txt */
 typedef struct dns_rdata_ds {
 	dns_rdatacommon_t	common;
-	isc_mem_t		*mctx;
 	uint16_t		key_tag;
 	uint8_t		algorithm;
 	uint8_t		digest_type;

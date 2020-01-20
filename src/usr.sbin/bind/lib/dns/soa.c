@@ -80,7 +80,6 @@ dns_soa_buildrdata(dns_name_t *origin, dns_name_t *contact,
 
 	soa.common.rdtype = dns_rdatatype_soa;
 	soa.common.rdclass = rdclass;
-	soa.mctx = NULL;
 	soa.serial = serial;
 	soa.refresh = refresh;
 	soa.retry = retry;
