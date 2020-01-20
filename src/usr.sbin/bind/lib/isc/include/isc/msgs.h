@@ -21,8 +21,7 @@
 
 /*! \file isc/msgs.h */
 
-#include <isc/lib.h>		/* Provide isc_msgcat global variable. */
-#include <isc/msgcat.h>		/* Provide isc_msgcat_*() functions. */
+#include <isc/lib.h>
 
 /*@{*/
 /*!

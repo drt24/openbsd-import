@@ -148,11 +148,7 @@ try_proto(int domain) {
 		default:
 			isc__strerror(errno, strbuf, sizeof(strbuf));
 			UNEXPECTED_ERROR(__FILE__, __LINE__,
-					 "socket() %s: %s",
-					 isc_msgcat_get(isc_msgcat,
-							ISC_MSGSET_GENERAL,
-							ISC_MSG_FAILED,
-							"failed"),
+					 "socket() %s: %s", "failed",
 					 strbuf);
 			return (ISC_R_UNEXPECTED);
 		}
@@ -258,12 +254,7 @@ try_ipv6only(void) {
 	if (s == -1) {
 		isc__strerror(errno, strbuf, sizeof(strbuf));
 		UNEXPECTED_ERROR(__FILE__, __LINE__,
-				 "socket() %s: %s",
-				 isc_msgcat_get(isc_msgcat,
-						ISC_MSGSET_GENERAL,
-						ISC_MSG_FAILED,
-						"failed"),
-				 strbuf);
+				 "socket() %s: %s", "failed", strbuf);
 		ipv6only_result = ISC_R_UNEXPECTED;
 		return;
 	}
@@ -281,12 +272,7 @@ try_ipv6only(void) {
 	if (s == -1) {
 		isc__strerror(errno, strbuf, sizeof(strbuf));
 		UNEXPECTED_ERROR(__FILE__, __LINE__,
-				 "socket() %s: %s",
-				 isc_msgcat_get(isc_msgcat,
-						ISC_MSGSET_GENERAL,
-						ISC_MSG_FAILED,
-						"failed"),
-				 strbuf);
+				 "socket() %s: %s", "failed", strbuf);
 		ipv6only_result = ISC_R_UNEXPECTED;
 		return;
 	}
@@ -331,12 +317,7 @@ try_ipv6pktinfo(void) {
 	if (s == -1) {
 		isc__strerror(errno, strbuf, sizeof(strbuf));
 		UNEXPECTED_ERROR(__FILE__, __LINE__,
-				 "socket() %s: %s",
-				 isc_msgcat_get(isc_msgcat,
-						ISC_MSGSET_GENERAL,
-						ISC_MSG_FAILED,
-						"failed"),
-				 strbuf);
+				 "socket() %s: %s", "failed", strbuf);
 		ipv6pktinfo_result = ISC_R_UNEXPECTED;
 		return;
 	}

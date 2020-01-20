@@ -30,14 +30,6 @@ ISC_LANG_BEGINDECLS
  * Tuning: external query load in packets per seconds.
  */
 extern unsigned int dns_pps;
-extern isc_msgcat_t *dns_msgcat;
-
-void
-dns_lib_initmsgcat(void);
-/*%<
- * Initialize the DNS library's message catalog, dns_msgcat, if it
- * has not already been initialized.
- */
 
 isc_result_t
 dns_lib_init(void);

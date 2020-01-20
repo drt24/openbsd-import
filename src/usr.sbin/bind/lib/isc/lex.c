@@ -779,10 +779,7 @@ isc_lex_gettoken(isc_lex_t *lex, unsigned int options, isc_token_t *tokenp) {
 			}
 			break;
 		default:
-			FATAL_ERROR(__FILE__, __LINE__,
-				    isc_msgcat_get(isc_msgcat, ISC_MSGSET_LEX,
-						   ISC_MSG_UNEXPECTEDSTATE,
-						   "Unexpected state %d"),
+			FATAL_ERROR(__FILE__, __LINE__, "Unexpected state %d",
 				    state);
 			/* Does not return. */
 		}

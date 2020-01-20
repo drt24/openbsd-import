@@ -145,11 +145,7 @@ isc_commandline_parse(int argc, char * const *argv, const char *options) {
 
 		if (isc_commandline_errprint && *options != ':')
 			fprintf(stderr, "%s: %s -- %c\n",
-				isc_commandline_progname,
-				isc_msgcat_get(isc_msgcat,
-					       ISC_MSGSET_COMMANDLINE,
-					       ISC_MSG_ILLEGALOPT,
-					       "illegal option"),
+				isc_commandline_progname, "illegal option",
 				isc_commandline_option);
 
 		return (BADOPT);
@@ -199,11 +195,7 @@ isc_commandline_parse(int argc, char * const *argv, const char *options) {
 			if (isc_commandline_errprint)
 				fprintf(stderr, "%s: %s -- %c\n",
 					isc_commandline_progname,
-					isc_msgcat_get(isc_msgcat,
-						       ISC_MSGSET_COMMANDLINE,
-						       ISC_MSG_OPTNEEDARG,
-						       "option requires "
-						       "an argument"),
+					"option requires an argument",
 					isc_commandline_option);
 
 			return (BADOPT);
