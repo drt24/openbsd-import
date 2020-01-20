@@ -28,7 +28,7 @@
 
 #include <dns/compress.h>
 #include <dns/fixedname.h>
-#include <dns/rbt.h>
+
 #include <dns/result.h>
 
 #define CCTX_MAGIC	ISC_MAGIC('C', 'C', 'T', 'X')
