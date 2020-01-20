@@ -84,6 +84,8 @@
  */
 
 #define LWRES_ADDR_MAXLEN	16	/*%< changing this breaks ABI */
+#define LWRES_USEIPV4		0x0001
+#define LWRES_USEIPV6		0x0002
 
 /*% lwres_addr_t */
 typedef struct lwres_addr lwres_addr_t;
@@ -133,6 +135,7 @@ typedef struct {
 	uint8_t	resdebug;      /*%< non-zero if 'options debug' set */
 	uint8_t	ndots;	       /*%< set to n in 'options ndots:n' */
 	uint8_t	no_tld_query;  /*%< non-zero if 'options no_tld_query' */
+	int	flags;
 } lwres_conf_t;
 
 #define LWRES_ADDRTYPE_V4		0x00000001U	/*%< ipv4 */
@@ -169,7 +172,7 @@ lwres_conf_print(lwres_conf_t *confdata, FILE *fp);
  */
 
 void
-lwres_conf_init(lwres_conf_t *confdata);
+lwres_conf_init(lwres_conf_t *confdata, int lwresflags);
 /**<
  * sets all internal fields to a default state. Used to initialize a new
  * lwres_conf_t structure (not reset a used on).

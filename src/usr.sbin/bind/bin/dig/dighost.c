@@ -1423,6 +1423,7 @@ void
 setup_system(isc_boolean_t ipv4only, isc_boolean_t ipv6only) {
 	dig_searchlist_t *domain = NULL;
 	lwres_result_t lwresult;
+	int lwresflags = 0;
 
 	debug("setup_system()");
 
@@ -1444,7 +1445,12 @@ setup_system(isc_boolean_t ipv4only, isc_boolean_t ipv6only) {
 		}
 	}
 
-	lwres_conf_init(lwconf);
+	if (have_ipv4)
+		lwresflags |= LWRES_USEIPV4;
+	if (have_ipv6)
+		lwresflags |= LWRES_USEIPV6;
+	lwres_conf_init(lwconf, lwresflags);
+
 	lwresult = lwres_conf_parse(lwconf, RESOLV_CONF);
 	if (lwresult != LWRES_R_SUCCESS && lwresult != LWRES_R_NOTFOUND)
 		fatal("parse of %s failed", RESOLV_CONF);
