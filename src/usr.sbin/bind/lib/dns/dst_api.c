@@ -56,7 +56,7 @@
 #include <isc/refcount.h>
 
 #include <isc/safe.h>
-#include <isc/string.h>
+#include <string.h>
 #include <isc/time.h>
 #include <isc/util.h>
 #include <isc/file.h>

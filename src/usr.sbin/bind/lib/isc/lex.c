@@ -32,7 +32,7 @@
 #include <isc/parseint.h>
 
 #include <isc/stdio.h>
-#include <isc/string.h>
+#include <string.h>
 #include <isc/util.h>
 
 typedef struct inputsource {

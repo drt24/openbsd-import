@@ -65,7 +65,7 @@
 #include <isc/commandline.h>
 #include <isc/msgs.h>
 
-#include <isc/string.h>
+#include <string.h>
 #include <isc/util.h>
 
 /*% Index into parent argv vector. */

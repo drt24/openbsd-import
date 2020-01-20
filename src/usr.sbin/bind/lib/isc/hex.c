@@ -25,7 +25,7 @@
 #include <isc/buffer.h>
 #include <isc/hex.h>
 #include <isc/lex.h>
-#include <isc/string.h>
+#include <string.h>
 #include <isc/util.h>
 
 #define RETERR(x) do { \

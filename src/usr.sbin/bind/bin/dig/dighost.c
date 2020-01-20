@@ -79,7 +79,7 @@
 #include <isc/safe.h>
 #include <isc/serial.h>
 #include <isc/sockaddr.h>
-#include <isc/string.h>
+#include <string.h>
 #include <isc/task.h>
 #include <isc/timer.h>
 #include <isc/types.h>

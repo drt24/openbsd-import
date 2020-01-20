@@ -22,8 +22,8 @@ static char rcsid[] =
 #endif /* LIBC_SCCS and not lint */
 
 #include <config.h>
-
-#include <isc/string.h>
+#include <stdlib.h>
+#include <string.h>
 #include <isc/net.h>
 #include <isc/netscope.h>
 #include <isc/result.h>
@@ -53,7 +53,7 @@ isc_netscope_pton(int af, char *scopename, void *addr, uint32_t *zoneid) {
 	    (ifid = if_nametoindex((const char *)scopename)) != 0)
 		zone = (uint32_t)ifid;
 	else {
-		llz = isc_string_touint64(scopename, &ep, 10);
+		llz = strtoull(scopename, &ep, 10);
 		if (ep == scopename)
 			return (ISC_R_FAILURE);
 

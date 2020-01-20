@@ -21,7 +21,7 @@
 #include <config.h>
 
 #include <stdio.h>
-#include <isc/string.h>		/* Required for HP/UX (and others?) */
+#include <string.h>		/* Required for HP/UX (and others?) */
 #include <time.h>
 #include <ctype.h>
 

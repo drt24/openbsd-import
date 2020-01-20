@@ -69,7 +69,7 @@
 #include <isc/log.h>
 #include <isc/mem.h>
 
-#include <isc/string.h>
+#include <string.h>
 #include <isc/time.h>
 #include <isc/util.h>
 

@@ -28,7 +28,7 @@
 #include <isc/dir.h>
 #include <isc/mem.h>
 #include <isc/serial.h>
-#include <isc/string.h>
+#include <string.h>
 #include <isc/util.h>
 
 

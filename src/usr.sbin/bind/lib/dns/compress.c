@@ -23,7 +23,7 @@
 #include <config.h>
 
 #include <isc/mem.h>
-#include <isc/string.h>
+#include <string.h>
 #include <isc/util.h>
 
 #include <dns/compress.h>

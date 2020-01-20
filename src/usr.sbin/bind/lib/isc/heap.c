@@ -31,7 +31,7 @@
 #include <isc/heap.h>
 #include <isc/magic.h>
 #include <isc/mem.h>
-#include <isc/string.h>		/* Required for memmove. */
+#include <string.h>		/* Required for memmove. */
 #include <isc/util.h>
 
 /*@{*/

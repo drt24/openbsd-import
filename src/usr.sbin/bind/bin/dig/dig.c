@@ -29,7 +29,7 @@
 #include <isc/parseint.h>
 #include <isc/platform.h>
 
-#include <isc/string.h>
+#include <string.h>
 #include <isc/task.h>
 #include <isc/util.h>
 

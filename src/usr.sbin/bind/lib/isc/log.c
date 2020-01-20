@@ -37,7 +37,7 @@
 
 #include <isc/stat.h>
 #include <isc/stdio.h>
-#include <isc/string.h>
+#include <string.h>
 #include <isc/time.h>
 #include <isc/util.h>
 

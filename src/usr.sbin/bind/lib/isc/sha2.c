@@ -61,7 +61,7 @@
 #include <isc/platform.h>
 #include <isc/safe.h>
 #include <isc/sha2.h>
-#include <isc/string.h>
+#include <string.h>
 #include <isc/util.h>
 
 #if defined(ISC_PLATFORM_OPENSSLHASH) && !defined(LIBRESSL_VERSION_NUMBER)

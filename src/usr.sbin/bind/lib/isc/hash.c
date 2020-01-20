@@ -65,7 +65,7 @@ if advised of the possibility of such damage.
 #include <isc/once.h>
 
 #include <isc/refcount.h>
-#include <isc/string.h>
+#include <string.h>
 #include <isc/util.h>
 
 #define HASH_MAGIC		ISC_MAGIC('H', 'a', 's', 'h')

@@ -21,7 +21,7 @@
 #include <config.h>
 
 #include <isc/log.h>
-#include <isc/string.h>
+#include <string.h>
 #include <isc/util.h>
 
 

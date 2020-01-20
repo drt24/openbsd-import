@@ -28,7 +28,7 @@
 #include <isc/netaddr.h>
 
 #include <isc/sockaddr.h>
-#include <isc/string.h>
+#include <string.h>
 #include <isc/util.h>
 
 isc_boolean_t

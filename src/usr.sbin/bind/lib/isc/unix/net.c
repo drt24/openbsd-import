@@ -38,7 +38,7 @@
 #include <isc/netdb.h>
 #include <isc/once.h>
 #include <isc/strerror.h>
-#include <isc/string.h>
+#include <string.h>
 #include <isc/util.h>
 
 #ifndef ISC_SOCKADDR_LEN_T

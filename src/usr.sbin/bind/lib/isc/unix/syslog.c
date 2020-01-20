@@ -24,7 +24,7 @@
 #include <syslog.h>
 
 #include <isc/result.h>
-#include <isc/string.h>
+#include <string.h>
 #include <isc/syslog.h>
 #include <isc/util.h>
 

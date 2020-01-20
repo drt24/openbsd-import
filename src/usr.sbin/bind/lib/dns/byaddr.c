@@ -24,7 +24,7 @@
 #include <isc/mem.h>
 #include <isc/netaddr.h>
 
-#include <isc/string.h>		/* Required for HP/UX (and others?) */
+#include <string.h>		/* Required for HP/UX (and others?) */
 #include <isc/task.h>
 #include <isc/util.h>
 
