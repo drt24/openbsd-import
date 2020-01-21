@@ -20,7 +20,7 @@ top_srcdir =	@top_srcdir@
 
 VERSION=@BIND9_VERSION@
 
-HEADERS =	condition.h mutex.h once.h thread.h
+HEADERS =	condition.h once.h thread.h
 
 SUBDIRS =
 TARGETS =

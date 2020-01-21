@@ -20,7 +20,6 @@
 
 #include <stddef.h>
 
-#include <isc/mutex.h>
 #include <isc/refcount.h>
 #include <isc/result.h>
 #include <isc/util.h>
