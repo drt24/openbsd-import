@@ -37,7 +37,7 @@
 #define USE_ENGINE 1
 #endif
 
-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
 /*
  * These are new in OpenSSL 1.1.0.  BN_GENCB _cb needs to be declared in
  * the function like this before the BN_GENCB_new call:

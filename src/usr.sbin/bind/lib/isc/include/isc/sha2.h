@@ -83,12 +83,12 @@
 #include <openssl/evp.h>
 #endif
 
-#if defined(ISC_PLATFORM_OPENSSLHASH) && !defined(LIBRESSL_VERSION_NUMBER)
+#if defined(ISC_PLATFORM_OPENSSLHASH)
 
 
 typedef struct {
 	EVP_MD_CTX *ctx;
-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
 	EVP_MD_CTX _ctx;
 #endif
 } isc_sha2_t;
