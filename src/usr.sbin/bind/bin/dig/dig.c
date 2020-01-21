@@ -148,7 +148,7 @@ rcode_totext(dns_rcode_t rcode)
 static void
 print_usage(FILE *fp) {
 	fputs(
-"usage: dig [@server] [-46himuv] [-b address[#port]] [-c class] [-f file]\n"
+"usage: dig [@server] [-46hiuv] [-b address[#port]] [-c class] [-f file]\n"
 "           [-k keyfile] [-p port] [-q name] [-t type] [-x addr]\n"
 "           [-y [hmac:]name:key] [name] [type] [class]\n"
 "           +[no]aaonly +[no]additional +[no]adflag +[no]all +[no]answer\n"
