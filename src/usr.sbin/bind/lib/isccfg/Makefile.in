@@ -41,11 +41,11 @@ LIBS =		@LIBS@
 SUBDIRS =	include
 
 # Alphabetically
-OBJS =		dnsconf.@O@ log.@O@ namedconf.@O@ \
+OBJS =		dnsconf.@O@ namedconf.@O@ \
 		parser.@O@ version.@O@
 
 # Alphabetically
-SRCS =		dnsconf.c log.c namedconf.c \
+SRCS =		dnsconf.c namedconf.c \
 		parser.c version.c
 
 TARGETS = 	timestamp
