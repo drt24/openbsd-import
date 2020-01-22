@@ -460,7 +460,7 @@ json_parse_order(struct jsmnn *n, struct order *order)
 		goto err;
 
 	if (array->fields > 0) {
-		order->auths = calloc(sizeof(*order->auths), order->authsz);
+		order->auths = calloc(sizeof(*order->auths), array->fields);
 		if (order->auths == NULL) {
 			warn("malloc");
 			goto err;
