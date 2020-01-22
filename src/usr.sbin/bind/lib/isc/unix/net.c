@@ -41,10 +41,6 @@
 #include <string.h>
 #include <isc/util.h>
 
-#ifndef ISC_SOCKADDR_LEN_T
-#define ISC_SOCKADDR_LEN_T unsigned int
-#endif
-
 /*%
  * Definitions about UDP port range specification.  This is a total mess of
  * portability variants: some use sysctl (but the sysctl names vary), some use
