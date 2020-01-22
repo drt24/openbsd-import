@@ -18,8 +18,6 @@ srcdir =	@srcdir@
 VPATH =		@srcdir@
 top_srcdir =	@top_srcdir@
 
-VERSION=@BIND9_VERSION@
-
 @LIBISCCFG_API@
 
 @BIND9_MAKE_INCLUDES@
@@ -42,23 +40,15 @@ SUBDIRS =	include
 
 # Alphabetically
 OBJS =		dnsconf.@O@ namedconf.@O@ \
-		parser.@O@ version.@O@
+		parser.@O@
 
 # Alphabetically
 SRCS =		dnsconf.c namedconf.c \
-		parser.c version.c
+		parser.c
 
 TARGETS = 	timestamp
 
 @BIND9_MAKE_RULES@
-
-version.@O@: version.c
-	${LIBTOOL_MODE_COMPILE} ${CC} ${ALL_CFLAGS} \
-		-DVERSION=\"${VERSION}\" \
-		-DLIBINTERFACE=${LIBINTERFACE} \
-		-DLIBREVISION=${LIBREVISION} \
-		-DLIBAGE=${LIBAGE} \
-		-c ${srcdir}/version.c
 
 libisccfg.@SA@: ${OBJS}
 	${AR} ${ARFLAGS} $@ ${OBJS}
