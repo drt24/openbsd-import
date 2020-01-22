@@ -106,9 +106,6 @@ struct dst_key {
 	char		*label;		/*%< engine label (HSM) */
 	union {
 		void *generic;
-#if !defined(USE_EVP) || !USE_EVP
-		RSA *rsa;
-#endif
 		EVP_PKEY *pkey;
 		dst_hmacsha1_key_t *hmacsha1;
 		dst_hmacsha224_key_t *hmacsha224;
@@ -210,15 +207,7 @@ isc_result_t dst__hmacsha384_init(struct dst_func **funcp);
 isc_result_t dst__hmacsha512_init(struct dst_func **funcp);
 isc_result_t dst__opensslrsa_init(struct dst_func **funcp,
 				  unsigned char algorithm);
-#ifdef HAVE_OPENSSL_ECDSA
 isc_result_t dst__opensslecdsa_init(struct dst_func **funcp);
-#endif
-#if defined(HAVE_OPENSSL_ED25519) || defined(HAVE_OPENSSL_ED448)
-isc_result_t dst__openssleddsa_init(struct dst_func **funcp);
-#endif
-#ifdef HAVE_OPENSSL_GOST
-isc_result_t dst__opensslgost_init(struct dst_func **funcp);
-#endif
 
 /*%
  * Destructors

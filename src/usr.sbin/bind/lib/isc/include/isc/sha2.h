@@ -78,44 +78,16 @@
 
 /*** SHA-256/384/512 Context Structures *******************************/
 
-#if defined(ISC_PLATFORM_OPENSSLHASH)
 #include <openssl/opensslv.h>
 #include <openssl/evp.h>
-#endif
-
-#if defined(ISC_PLATFORM_OPENSSLHASH)
 
 
 typedef struct {
 	EVP_MD_CTX *ctx;
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
-	EVP_MD_CTX _ctx;
-#endif
 } isc_sha2_t;
 
 typedef isc_sha2_t isc_sha256_t;
 typedef isc_sha2_t isc_sha512_t;
-
-#else
-
-/*
- * Keep buffer immediately after bitcount to preserve alignment.
- */
-typedef struct {
-	uint32_t	state[8];
-	uint64_t	bitcount;
-	uint8_t	buffer[ISC_SHA256_BLOCK_LENGTH];
-} isc_sha256_t;
-
-/*
- * Keep buffer immediately after bitcount to preserve alignment.
- */
-typedef struct {
-	uint64_t	state[8];
-	uint64_t	bitcount[2];
-	uint8_t	buffer[ISC_SHA512_BLOCK_LENGTH];
-} isc_sha512_t;
-#endif
 
 typedef isc_sha256_t isc_sha224_t;
 typedef isc_sha512_t isc_sha384_t;
