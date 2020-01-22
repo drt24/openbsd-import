@@ -40,10 +40,6 @@
 #include <isc/boolean.h>
 #include <isc/lang.h>
 
-#ifdef NEED_OPTARG
-extern char *optarg;
-#endif
-
 #define isc_commandline_parse		getopt
 #define isc_commandline_argument 	optarg
 

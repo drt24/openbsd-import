@@ -32,9 +32,7 @@
 #include <string.h>
 #include <limits.h>
 
-#ifdef HAVE_LOCALE_H
 #include <locale.h>
-#endif
 
 #include <dns/byaddr.h>
 #ifdef DIG_SIGCHASE
