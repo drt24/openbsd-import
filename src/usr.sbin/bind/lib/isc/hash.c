@@ -55,7 +55,7 @@ or otherwise) arising in any way out of the use of this software, even
 if advised of the possibility of such damage.
 */
 
-#include <config.h>
+
 #include <stdlib.h>
 
 #include <isc/hash.h>

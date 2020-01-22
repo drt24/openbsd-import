@@ -18,7 +18,7 @@
 
 /*! \file */
 
-#include <config.h>
+
 
 #include <isc/log.h>
 #include <string.h>

@@ -69,7 +69,7 @@ static char sccsid[] = "@(#)inet_addr.c	8.1 (Berkeley) 6/17/93";
 static char rcsid[] = "$Id$";
 #endif /* LIBC_SCCS and not lint */
 
-#include <config.h>
+
 
 #include <ctype.h>
 #include <stddef.h>		/* Required for NULL. */

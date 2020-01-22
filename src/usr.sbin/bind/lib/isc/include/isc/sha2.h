@@ -58,7 +58,7 @@
 #define ISC_SHA2_H
 
 #include <isc/lang.h>
-#include <isc/platform.h>
+
 #include <isc/types.h>
 
 /*** SHA-224/256/384/512 Various Length Definitions ***********************/

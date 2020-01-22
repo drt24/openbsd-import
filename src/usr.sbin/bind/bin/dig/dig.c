@@ -18,7 +18,7 @@
 
 /*! \file */
 #include <sys/cdefs.h>
-#include <config.h>
+
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
@@ -27,7 +27,7 @@
 #include <isc/app.h>
 #include <isc/netaddr.h>
 #include <isc/parseint.h>
-#include <isc/platform.h>
+
 
 #include <string.h>
 #include <isc/task.h>

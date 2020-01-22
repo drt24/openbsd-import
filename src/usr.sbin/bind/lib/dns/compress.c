@@ -20,7 +20,7 @@
 
 #define DNS_NAME_USEINLINE 1
 
-#include <config.h>
+
 #include <stdlib.h>
 
 #include <string.h>

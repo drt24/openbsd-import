@@ -18,7 +18,7 @@
  * $Id$
  */
 /*! \file */
-#include <config.h>
+
 #include <stdlib.h>
 
 #include <isc/buffer.h>

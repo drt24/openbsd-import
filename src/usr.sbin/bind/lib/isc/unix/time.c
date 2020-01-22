@@ -18,7 +18,7 @@
 
 /*! \file */
 
-#include <config.h>
+
 
 #include <errno.h>
 #include <limits.h>
@@ -29,7 +29,7 @@
 #include <sys/time.h>	/* Required for struct timeval on some platforms. */
 
 #include <isc/log.h>
-#include <isc/platform.h>
+
 
 #include <isc/strerror.h>
 #include <string.h>

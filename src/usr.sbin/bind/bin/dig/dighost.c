@@ -26,7 +26,7 @@
  * functions in most applications.
  */
 
-#include <config.h>
+
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>

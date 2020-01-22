@@ -18,7 +18,7 @@
 
 /*! \file */
 
-#include <config.h>
+
 
 #include <stddef.h>	/* NULL */
 #include <stdlib.h>	/* NULL */

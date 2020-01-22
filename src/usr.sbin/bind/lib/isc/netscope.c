@@ -21,7 +21,7 @@ static char rcsid[] =
 	"$Id$";
 #endif /* LIBC_SCCS and not lint */
 
-#include <config.h>
+
 #include <stdlib.h>
 #include <string.h>
 #include <isc/net.h>

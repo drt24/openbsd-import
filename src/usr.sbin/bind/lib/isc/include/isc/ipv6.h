@@ -53,7 +53,7 @@
  ***/
 
 
-#include <isc/platform.h>
+
 
 /***
  *** Types.

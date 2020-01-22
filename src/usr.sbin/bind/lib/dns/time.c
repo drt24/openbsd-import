@@ -18,7 +18,7 @@
 
 /*! \file */
 
-#include <config.h>
+
 
 #include <stdio.h>
 #include <string.h>		/* Required for HP/UX (and others?) */

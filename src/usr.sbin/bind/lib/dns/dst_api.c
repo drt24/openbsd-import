@@ -38,7 +38,7 @@
 
 /*! \file */
 
-#include <config.h>
+
 
 #include <stdlib.h>
 #include <time.h>
@@ -51,7 +51,7 @@
 #include <isc/lex.h>
 
 #include <isc/once.h>
-#include <isc/platform.h>
+
 
 #include <isc/refcount.h>
 

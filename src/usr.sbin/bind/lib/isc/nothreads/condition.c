@@ -16,7 +16,7 @@
 
 /* $Id$ */
 
-#include <config.h>
+
 
 #include <isc/util.h>
 

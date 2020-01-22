@@ -18,7 +18,7 @@
 
 /*! \file */
 
-#include <config.h>
+
 
 #include <isc/result.h>
 #include <isc/strerror.h>

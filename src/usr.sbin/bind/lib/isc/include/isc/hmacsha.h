@@ -25,7 +25,7 @@
 #define ISC_HMACSHA_H 1
 
 #include <isc/lang.h>
-#include <isc/platform.h>
+
 #include <isc/sha1.h>
 #include <isc/sha2.h>
 #include <isc/types.h>

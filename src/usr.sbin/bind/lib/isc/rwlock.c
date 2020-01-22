@@ -18,14 +18,14 @@
 
 /*! \file */
 
-#include <config.h>
+
 
 #include <stddef.h>
 
 
 #include <isc/magic.h>
 #include <isc/msgs.h>
-#include <isc/platform.h>
+
 
 #include <isc/rwlock.h>
 #include <isc/util.h>

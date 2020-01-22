@@ -58,7 +58,7 @@
  * \author Principal ISC caretaker: DCL
  */
 
-#include <config.h>
+
 
 #include <stdio.h>
 

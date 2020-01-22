@@ -20,7 +20,7 @@
 #define ISC_BIND9_H 1
 
 #include <isc/boolean.h>
-#include <isc/platform.h>
+
 
 /*
  * This determines whether we are using the libisc/libdns libraries

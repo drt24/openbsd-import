@@ -22,11 +22,11 @@
  * draft-ietf-dnsext-tsig-sha-01.txt.
  */
 
-#include "config.h"
+
 
 #include <isc/assertions.h>
 #include <isc/hmacsha.h>
-#include <isc/platform.h>
+
 #include <isc/safe.h>
 #include <isc/sha1.h>
 #include <isc/sha2.h>

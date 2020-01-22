@@ -21,7 +21,7 @@
  * \author Principal Author: Bob Halley
  */
 
-#include <config.h>
+
 #include <stdlib.h>
 #include <isc/event.h>
 

@@ -23,7 +23,7 @@
 
 #include <isc/error.h>
 #include <isc/lang.h>
-#include <isc/platform.h>
+
 #include <isc/types.h>
 
 /*! \file isc/refcount.h

@@ -16,7 +16,7 @@
 
 /* $Id$ */
 
-#include <config.h>
+
 #include <ctype.h>
 #include <limits.h>
 #include <stdlib.h>

@@ -18,7 +18,7 @@
 
 /*! \file */
 
-#include <config.h>
+
 
 #include <isc/once.h>
 #include <isc/util.h>

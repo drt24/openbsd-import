@@ -23,7 +23,7 @@
 
 #include <isc/boolean.h>
 #include <isc/lang.h>
-#include <isc/platform.h>
+
 
 /*% Index into parent argv vector. */
 extern int isc_commandline_index;
