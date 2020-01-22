@@ -140,7 +140,7 @@
 /*%
  * Performance
  */
-#include <isc/likely.h>
+
 
 /*
  * Assertions
