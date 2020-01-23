@@ -31,7 +31,7 @@ HEADERS =	bit.h byaddr.h callbacks.h cert.h \
 		rdataset.h rdatatype.h \
 		result.h \
 		secalg.h secproto.h soa.h \
-		time.h tsec.h tsig.h ttl.h types.h \
+		time.h tsig.h ttl.h types.h \
 		version.h
 
 GENHEADERS =	enumclass.h enumtype.h rdatastruct.h
