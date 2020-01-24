@@ -58,7 +58,7 @@ libisccfg.la: ${OBJS}
 	 ${LIBTOOL_MODE_LINK} \
 		${CC} ${ALL_CFLAGS} ${LDFLAGS} -o libisccfg.la -rpath ${libdir} \
 		-version-info ${LIBINTERFACE}:${LIBREVISION}:${LIBAGE} \
-		${OBJS} ${DNSLIBS} ${ISCLIBS} @DNS_CRYPTO_LIBS@ \
+		${OBJS} ${DNSLIBS} ${ISCLIBS} -lcrypto \
 		${LIBS}
 
 timestamp: libisccfg.@A@
