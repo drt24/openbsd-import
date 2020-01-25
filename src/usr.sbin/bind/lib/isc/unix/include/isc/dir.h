@@ -77,9 +77,6 @@ isc_result_t
 isc_dir_chdir(const char *dirname);
 
 isc_result_t
-isc_dir_chroot(const char *dirname);
-
-isc_result_t
 isc_dir_createunique(char *templet);
 /*!<
  * Use a templet (such as from isc_file_mktemplate()) to create a uniquely
