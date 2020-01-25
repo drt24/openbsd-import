@@ -23,7 +23,7 @@
 
 #include <isc/lang.h>
 #include <isc/refcount.h>
-#include <isc/rwlock.h>
+
 #include <isc/stdio.h>
 #include <isc/stdtime.h>
 

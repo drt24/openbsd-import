@@ -107,13 +107,6 @@
 #define WAITUNTIL(cvp, lp, tp) \
 	isc_condition_waituntil((cvp), (lp), (tp))
 
-#define RWLOCK(lp, t) do { \
-	RUNTIME_CHECK(isc_rwlock_lock((lp), (t)) == ISC_R_SUCCESS); \
-	} while (0)
-#define RWUNLOCK(lp, t) do { \
-	RUNTIME_CHECK(isc_rwlock_unlock((lp), (t)) == ISC_R_SUCCESS); \
-	} while (0)
-
 /*
  * List Macros.
  */
