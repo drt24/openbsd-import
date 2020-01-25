@@ -1260,9 +1260,6 @@ read_confkey(void) {
 	const char *algorithm;
 	isc_result_t result;
 
-	if (! isc_file_exists(keyfile))
-		return (ISC_R_FILENOTFOUND);
-
 	result = cfg_parser_create(NULL, &pctx);
 	if (result != ISC_R_SUCCESS)
 		goto cleanup;
