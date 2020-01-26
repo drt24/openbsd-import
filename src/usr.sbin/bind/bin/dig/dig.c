@@ -1943,7 +1943,7 @@ void dig_setup(int argc, char **argv)
 	ISC_LIST_INIT(server_list);
 	ISC_LIST_INIT(search_list);
 
-	if (pledge("stdio rpath dns", NULL) == -1) {
+	if (pledge("stdio rpath inet dns", NULL) == -1) {
 		perror("pledge");
 		exit(1);
 	}
@@ -1977,7 +1977,7 @@ void dig_query_setup(isc_boolean_t is_batchfile, isc_boolean_t config_only,
 	else if (keysecret[0] != 0)
 		setup_text_key();
 
-	if (pledge("stdio dns", NULL) == -1) {
+	if (pledge("stdio inet dns", NULL) == -1) {
 		perror("pledge");
 		exit(1);
 	}
