@@ -54,8 +54,7 @@
  */
 #define ISC_LOG_TONULL		1
 #define ISC_LOG_TOSYSLOG	2
-#define ISC_LOG_TOFILE		3
-#define ISC_LOG_TOFILEDESC	4
+#define ISC_LOG_TOFILEDESC	3
 /*@}*/
 
 /*@{*/
