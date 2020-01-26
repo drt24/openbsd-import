@@ -17,20 +17,12 @@
 /* $Id$ */
 
 /*! \file */
-
-
-
 #include <ctype.h>
 #include <stdlib.h>
-
 #include <isc/buffer.h>
 #include <isc/hash.h>
 
-#include <isc/once.h>
-
-
 #include <string.h>
-#include <isc/thread.h>
 #include <isc/util.h>
 
 #include <dns/compress.h>

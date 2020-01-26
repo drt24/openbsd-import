@@ -37,31 +37,18 @@
  */
 
 /*! \file */
-
-
-
 #include <stdlib.h>
 #include <time.h>
 
 #include <isc/buffer.h>
 #include <isc/dir.h>
-
-
 #include <isc/hmacsha.h>
 #include <isc/lex.h>
-
-#include <isc/once.h>
-
-
 #include <isc/refcount.h>
-
 #include <isc/safe.h>
 #include <string.h>
 #include <isc/time.h>
 #include <isc/util.h>
-
-
-
 
 #define DST_KEY_INTERNAL
 
