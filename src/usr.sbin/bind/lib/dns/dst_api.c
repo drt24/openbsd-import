@@ -46,7 +46,7 @@
 #include <isc/buffer.h>
 #include <isc/dir.h>
 
-#include <isc/fsaccess.h>
+
 #include <isc/hmacsha.h>
 #include <isc/lex.h>
 
@@ -59,7 +59,7 @@
 #include <string.h>
 #include <isc/time.h>
 #include <isc/util.h>
-#include <isc/file.h>
+
 
 
 

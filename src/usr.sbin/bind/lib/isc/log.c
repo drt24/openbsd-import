@@ -29,7 +29,7 @@
 #include <sys/types.h>	/* dev_t FreeBSD 2.1 */
 
 #include <isc/dir.h>
-#include <isc/file.h>
+
 #include <isc/log.h>
 #include <isc/magic.h>
 #include <isc/msgs.h>

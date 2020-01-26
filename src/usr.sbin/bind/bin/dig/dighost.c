@@ -55,7 +55,7 @@
 #include <isc/app.h>
 #include <isc/base64.h>
 
-#include <isc/file.h>
+
 #include <isc/hex.h>
 #include <isc/lang.h>
 #include <isc/log.h>

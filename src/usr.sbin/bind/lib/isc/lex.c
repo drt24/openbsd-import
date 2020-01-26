@@ -25,7 +25,7 @@
 #include <stdlib.h>
 
 #include <isc/buffer.h>
-#include <isc/file.h>
+
 #include <isc/lex.h>
 
 #include <isc/msgs.h>
