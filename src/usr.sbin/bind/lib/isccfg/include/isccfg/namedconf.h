@@ -29,28 +29,8 @@
 /*
  * Configuration object types.
  */
-extern cfg_type_t cfg_type_namedconf;
-/*%< A complete named.conf file. */
-
-extern cfg_type_t cfg_type_bindkeys;
-/*%< A bind.keys file. */
-
-extern cfg_type_t cfg_type_newzones;
-/*%< A new-zones file (for zones added by 'rndc addzone'). */
-
-extern cfg_type_t cfg_type_addzoneconf;
-/*%< A single zone passed via the addzone rndc command. */
-
-extern cfg_type_t cfg_type_rndcconf;
-/*%< A complete rndc.conf file. */
-
-extern cfg_type_t cfg_type_rndckey;
-/*%< A complete rndc.key file. */
 
 extern cfg_type_t cfg_type_sessionkey;
 /*%< A complete session.key file. */
-
-extern cfg_type_t cfg_type_keyref;
-/*%< A key reference, used as an ACL element */
 
 #endif /* ISCCFG_NAMEDCONF_H */
