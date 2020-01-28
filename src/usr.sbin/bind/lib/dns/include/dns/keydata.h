@@ -36,7 +36,7 @@
 #include <isc/types.h>
 
 #include <dns/types.h>
-#include <dns/rdatastruct.h>
+#include "rdatastruct.h"
 
 ISC_LANG_BEGINDECLS
 

@@ -25,7 +25,7 @@
 #include <isc/util.h>
 
 #include <dns/rdata.h>
-#include <dns/rdatastruct.h>
+#include "rdatastruct.h"
 #include <dns/soa.h>
 
 static inline uint32_t

@@ -30,7 +30,7 @@
 #include <dns/rdatalist.h>
 #include <dns/rdataset.h>
 
-#include <dns/rdatastruct.h>
+#include "rdatastruct.h"
 #include <dns/result.h>
 
 #include <dst/dst.h>

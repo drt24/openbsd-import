@@ -43,7 +43,7 @@
 #include <dns/rdata.h>
 #include <dns/rdatalist.h>
 #include <dns/rdataset.h>
-#include <dns/rdatastruct.h>
+#include "rdatastruct.h"
 #include <dns/result.h>
 
 #include <dns/tsig.h>		/* for DNS_TSIG_FUDGE */

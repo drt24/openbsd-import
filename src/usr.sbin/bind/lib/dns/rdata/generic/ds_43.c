@@ -29,8 +29,6 @@
 
 #include <dns/ds.h>
 
-#include "dst_gost.h"
-
 static inline isc_result_t
 generic_fromtext_ds(ARGS_FROMTEXT) {
 	isc_token_t token;

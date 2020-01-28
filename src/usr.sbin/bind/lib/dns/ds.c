@@ -32,7 +32,7 @@
 #include <dns/fixedname.h>
 #include <dns/name.h>
 #include <dns/rdata.h>
-#include <dns/rdatastruct.h>
+#include "rdatastruct.h"
 #include <dns/result.h>
 
 #include <dst/dst.h>

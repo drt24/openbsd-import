@@ -26,7 +26,7 @@
 #include <isc/util.h>
 
 #include <dns/rdata.h>
-#include <dns/rdatastruct.h>
+#include "rdatastruct.h"
 #include <dns/keydata.h>
 
 isc_result_t

@@ -25,7 +25,7 @@
 
 
 #include <dns/name.h>
-#include <dns/rdatastruct.h>
+#include "rdatastruct.h"
 #include <dns/types.h>
 
 #define DNS_NSEC3_SALTSIZE 255
