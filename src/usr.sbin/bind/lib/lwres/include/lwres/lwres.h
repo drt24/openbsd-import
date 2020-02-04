@@ -28,7 +28,6 @@
 
 #include <stdio.h>
 
-#include <lwres/list.h>
 #include <lwres/result.h>
 
 /*! \file lwres/lwres.h */
@@ -90,16 +89,12 @@
 /*% lwres_addr_t */
 typedef struct lwres_addr lwres_addr_t;
 
-/*% LWRES_LIST */
-typedef LWRES_LIST(lwres_addr_t) lwres_addrlist_t;
-
 /*% lwres_addr */
 struct lwres_addr {
 	uint32_t			family;
 	uint16_t			length;
 	unsigned char			address[LWRES_ADDR_MAXLEN];
 	uint32_t			zone;
-	LWRES_LINK(lwres_addr_t)	link;
 };
 
 /*!
