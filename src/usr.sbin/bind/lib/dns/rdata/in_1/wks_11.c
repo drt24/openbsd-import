@@ -21,11 +21,11 @@
 #ifndef RDATA_IN_1_WKS_11_C
 #define RDATA_IN_1_WKS_11_C
 
+#include <netdb.h>
 #include <limits.h>
 #include <stdlib.h>
 
 #include <isc/net.h>
-#include <isc/netdb.h>
 
 /*
  * Redefine CHECK here so cppcheck "sees" the define.
