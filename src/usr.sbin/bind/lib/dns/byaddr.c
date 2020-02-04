@@ -18,26 +18,18 @@
 
 /*! \file */
 
-
+#include <string.h>
 
 #include <isc/buffer.h>
-
 #include <isc/netaddr.h>
-
-#include <string.h>		/* Required for HP/UX (and others?) */
 #include <isc/task.h>
 #include <isc/util.h>
 
 #include <dns/byaddr.h>
-
-#include <dns/events.h>
-
 #include <dns/rdata.h>
 #include <dns/rdataset.h>
 #include "rdatastruct.h"
-
 #include <dns/result.h>
-
 
 /*
  * XXXRTH  We could use a static event...
