@@ -23,8 +23,6 @@
 /*!
  * \brief Per RFC 5155 */
 
-#include <isc/iterated_hash.h>
-
 typedef struct dns_rdata_nsec3 {
 	dns_rdatacommon_t	common;
 	dns_hash_t		hash;

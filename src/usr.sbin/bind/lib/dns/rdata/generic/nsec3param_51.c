@@ -37,7 +37,6 @@
 #ifndef RDATA_GENERIC_NSEC3PARAM_51_C
 #define RDATA_GENERIC_NSEC3PARAM_51_C
 
-#include <isc/iterated_hash.h>
 #include <isc/base32.h>
 
 #define RRTYPE_NSEC3PARAM_ATTRIBUTES (DNS_RDATATYPEATTR_DNSSEC)
