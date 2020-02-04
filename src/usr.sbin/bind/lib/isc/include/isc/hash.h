@@ -19,6 +19,8 @@
 #ifndef ISC_HASH_H
 #define ISC_HASH_H 1
 
+#include <inttypes.h>
+
 #include <isc/types.h>
 
 /*****

@@ -106,6 +106,8 @@
  *** Imports
  ***/
 
+#include <inttypes.h>
+
 #include <isc/formatcheck.h>
 #include <isc/lang.h>
 #include <isc/magic.h>

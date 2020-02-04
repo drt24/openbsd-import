@@ -126,7 +126,7 @@ typedef struct isc_logfile {
 	 * anyone would want).  st_size returned by fstat should be typedef'd
 	 * to a size large enough for the largest possible file on a system.
 	 */
-	isc_offset_t maximum_size;
+	off_t maximum_size;
 	isc_boolean_t maximum_reached; /*%< Private. */
 } isc_logfile_t;
 

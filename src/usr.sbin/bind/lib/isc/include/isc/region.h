@@ -70,15 +70,6 @@ struct isc_consttextregion {
 		_r->base += _l; \
 		_r->length -= _l; \
 	} while (0)
-
-#define isc_constregion_consume(r,l) \
-	do { \
-		isc_constregion_t *_r = (r); \
-		unsigned int _l = (l); \
-		INSIST(_r->length >= _l); \
-		_r->base += _l; \
-		_r->length -= _l; \
-	} while (0)
 /*@}*/
 
 ISC_LANG_BEGINDECLS
