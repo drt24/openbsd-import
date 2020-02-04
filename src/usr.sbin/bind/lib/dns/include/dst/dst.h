@@ -50,28 +50,11 @@ typedef struct dst_context 	dst_context_t;
 #define DST_ALG_UNKNOWN		0
 #define DST_ALG_RSAMD5		1
 #define DST_ALG_RSA		DST_ALG_RSAMD5	/*%< backwards compatibility */
-#define DST_ALG_DH		2
-#define DST_ALG_DSA		3
-#define DST_ALG_ECC		4
-#define DST_ALG_RSASHA1		5
-#define DST_ALG_NSEC3DSA	6
-#define DST_ALG_NSEC3RSASHA1	7
-#define DST_ALG_RSASHA256	8
-#define DST_ALG_RSASHA512	10
-#define DST_ALG_ECCGOST		12
-#define DST_ALG_ECDSA256	13
-#define DST_ALG_ECDSA384	14
-#define DST_ALG_ED25519		15
-#define DST_ALG_ED448		16
-#define DST_ALG_HMACMD5		157
 #define DST_ALG_HMACSHA1	161	/* XXXMPA */
 #define DST_ALG_HMACSHA224	162	/* XXXMPA */
 #define DST_ALG_HMACSHA256	163	/* XXXMPA */
 #define DST_ALG_HMACSHA384	164	/* XXXMPA */
 #define DST_ALG_HMACSHA512	165	/* XXXMPA */
-#define DST_ALG_INDIRECT	252
-#define DST_ALG_PRIVATE		254
-#define DST_ALG_EXPAND		255
 #define DST_MAX_ALGS		255
 
 /*% A buffer of this size is large enough to hold any key */
