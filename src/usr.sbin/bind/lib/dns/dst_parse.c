@@ -39,18 +39,10 @@
 
 
 #include <isc/base64.h>
-#include <isc/dir.h>
-
-
 #include <isc/lex.h>
-
-
 #include <isc/stdtime.h>
 #include <string.h>
 #include <isc/util.h>
-
-
-
 #include <dns/time.h>
 #include <dns/log.h>
 
