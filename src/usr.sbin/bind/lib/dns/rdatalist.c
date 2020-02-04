@@ -18,14 +18,11 @@
 
 /*! \file */
 
-
-
 #include <stddef.h>
 
 #include <isc/util.h>
 
 #include <dns/name.h>
-#include <dns/nsec3.h>
 #include <dns/rdata.h>
 #include <dns/rdatalist.h>
 #include <dns/rdataset.h>
