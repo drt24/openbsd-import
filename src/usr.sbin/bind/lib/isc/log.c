@@ -31,7 +31,6 @@
 #include <isc/log.h>
 #include <isc/magic.h>
 #include <isc/msgs.h>
-#include <isc/stat.h>
 #include <isc/stdio.h>
 #include <string.h>
 #include <isc/time.h>

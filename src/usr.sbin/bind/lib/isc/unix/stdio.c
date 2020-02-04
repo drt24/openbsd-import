@@ -22,7 +22,6 @@
 #include <unistd.h>
 
 #include <isc/stdio.h>
-#include <isc/stat.h>
 #include <isc/util.h>
 
 #include "errno2result.h"
