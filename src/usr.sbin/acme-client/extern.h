@@ -277,12 +277,12 @@ char		*json_fmt_signed(const char *, const char *, const char *);
 /*
  * Should we print debugging messages?
  */
-int		 verbose;
+extern int	 verbose;
 
 /*
  * What component is the process within (COMP__MAX for none)?
  */
-enum comp	 proccomp;
+extern enum comp proccomp;
 
 __END_DECLS
 
