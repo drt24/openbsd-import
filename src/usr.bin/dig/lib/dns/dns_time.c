@@ -29,7 +29,6 @@
 #include <isc/region.h>
 #include <isc/serial.h>
 #include <isc/stdtime.h>
-#include <isc/util.h>
 
 #include <dns/result.h>
 #include <dns/time.h>

@@ -18,7 +18,6 @@
 
 
 #include <ctype.h>
-#include <limits.h>
 #include <stdlib.h>
 
 #include <isc/buffer.h>
@@ -26,7 +25,6 @@
 
 #include <isc/region.h>
 #include <isc/result.h>
-#include <isc/stdio.h>
 
 #include <string.h>
 #include <isc/types.h>

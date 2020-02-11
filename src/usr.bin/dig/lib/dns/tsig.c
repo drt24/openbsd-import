@@ -25,17 +25,14 @@
 
 
 #include <isc/refcount.h>
-#include <isc/serial.h>
 #include <string.h>		/* Required for HP/UX (and others?) */
 #include <isc/util.h>
-#include <isc/time.h>
 
 
 
 #include <dns/keyvalues.h>
 #include <dns/log.h>
 #include <dns/message.h>
-#include <dns/fixedname.h>
 
 #include <dns/rdata.h>
 #include <dns/rdatalist.h>

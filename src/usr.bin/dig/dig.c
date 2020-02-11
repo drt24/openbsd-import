@@ -22,17 +22,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
-#include <ctype.h>
 
 #include <isc/app.h>
-#include <isc/netaddr.h>
-#include <isc/parseint.h>
 
 #include <string.h>
-#include <isc/task.h>
 #include <isc/util.h>
 
-#include <dns/byaddr.h>
 #include <dns/fixedname.h>
 #include <dns/masterdump.h>
 #include <dns/message.h>

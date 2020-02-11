@@ -20,7 +20,6 @@
 #include <isc/util.h>
 
 #include <dns/result.h>
-#include <dns/lib.h>
 
 static const char *text[DNS_R_NRESULTS] = {
 	"label too long",		       /*%< 0 DNS_R_LABELTOOLONG */

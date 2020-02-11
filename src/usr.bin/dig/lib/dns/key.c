@@ -19,7 +19,7 @@
 
 
 #include <stddef.h>
-#include <stdlib.h>
+#include <stdint.h>
 
 #include <isc/region.h>
 #include <isc/util.h>

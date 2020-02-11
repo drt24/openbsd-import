@@ -22,14 +22,10 @@
 
 #include <isc/buffer.h>
 #include <isc/netaddr.h>
-#include <isc/task.h>
 #include <isc/util.h>
 
 #include <dns/byaddr.h>
-#include <dns/rdata.h>
-#include <dns/rdataset.h>
-#include "rdatastruct.h"
-#include <dns/result.h>
+#include <dns/name.h>
 
 /*
  * XXXRTH  We could use a static event...

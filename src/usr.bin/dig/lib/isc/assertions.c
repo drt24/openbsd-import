@@ -24,9 +24,6 @@
 #include <stdlib.h>
 
 #include <isc/assertions.h>
-#include <isc/msgs.h>
-
-#include <isc/result.h>
 
 /*%
  * Forward.

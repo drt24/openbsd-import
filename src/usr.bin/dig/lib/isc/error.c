@@ -24,8 +24,6 @@
 #include <stdlib.h>
 
 #include <isc/error.h>
-#include <isc/msgs.h>
-
 
 /*% Default unexpected callback. */
 static void

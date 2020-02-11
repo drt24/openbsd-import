@@ -32,7 +32,6 @@
 #include <string.h>		/* Required for HP/UX (and others?) */
 #include <isc/util.h>
 
-#include <dns/keyvalues.h>
 #include <dns/log.h>
 #include <dns/masterdump.h>
 #include <dns/message.h>

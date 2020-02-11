@@ -24,7 +24,6 @@
 
 #include <isc/buffer.h>
 #include <isc/hash.h>
-#include <isc/msgs.h>
 #include <isc/netaddr.h>
 
 #include <isc/region.h>

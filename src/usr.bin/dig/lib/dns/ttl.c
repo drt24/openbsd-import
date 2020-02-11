@@ -21,9 +21,7 @@
 
 
 #include <ctype.h>
-#include <errno.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 #include <isc/buffer.h>
 #include <isc/parseint.h>

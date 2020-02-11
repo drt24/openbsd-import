@@ -24,14 +24,12 @@
 
 
 
-#include <isc/assertions.h>
 #include <isc/hmacsha.h>
 
 #include <isc/safe.h>
 #include <isc/sha1.h>
 #include <isc/sha2.h>
 #include <string.h>
-#include <isc/types.h>
 #include <isc/util.h>
 
 void

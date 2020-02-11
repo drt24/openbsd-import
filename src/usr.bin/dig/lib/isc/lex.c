@@ -21,14 +21,12 @@
 
 
 #include <ctype.h>
-#include <errno.h>
 #include <stdlib.h>
 
 #include <isc/buffer.h>
 
 #include <isc/lex.h>
 
-#include <isc/msgs.h>
 #include <isc/parseint.h>
 
 #include <isc/stdio.h>

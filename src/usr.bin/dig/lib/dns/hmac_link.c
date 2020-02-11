@@ -39,9 +39,7 @@
 
 
 #include <isc/buffer.h>
-#include <isc/hmacmd5.h>
 #include <isc/hmacsha.h>
-#include <isc/md5.h>
 #include <isc/sha1.h>
 
 #include <isc/safe.h>

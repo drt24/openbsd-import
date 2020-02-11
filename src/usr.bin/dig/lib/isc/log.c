@@ -20,18 +20,11 @@
  * \author  Principal Authors: DCL */
 
 
-#include <errno.h>
 #include <stdlib.h>
 #include <limits.h>
-#include <stdlib.h>
-#include <time.h>
-
-#include <sys/types.h>	/* dev_t FreeBSD 2.1 */
 
 #include <isc/log.h>
 #include <isc/magic.h>
-#include <isc/msgs.h>
-#include <isc/stdio.h>
 #include <string.h>
 #include <isc/time.h>
 #include <isc/util.h>

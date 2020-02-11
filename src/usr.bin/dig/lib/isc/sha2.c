@@ -57,8 +57,6 @@
 
 
 
-#include <isc/assertions.h>
-
 #include <isc/safe.h>
 #include <isc/sha2.h>
 #include <string.h>

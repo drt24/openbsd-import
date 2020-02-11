@@ -44,7 +44,6 @@
 #include <string.h>
 #include <isc/util.h>
 #include <dns/time.h>
-#include <dns/log.h>
 
 #include "dst_internal.h"
 #include "dst_parse.h"

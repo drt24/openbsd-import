@@ -19,10 +19,8 @@
 
 
 #include <errno.h>
-#include <unistd.h>
 
 #include <isc/stdio.h>
-#include <isc/util.h>
 
 #include "errno2result.h"
 

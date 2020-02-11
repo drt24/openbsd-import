@@ -38,15 +38,12 @@
 
 /*! \file */
 #include <stdlib.h>
-#include <time.h>
 
 #include <isc/buffer.h>
-#include <isc/hmacsha.h>
 #include <isc/lex.h>
 #include <isc/refcount.h>
 #include <isc/safe.h>
 #include <string.h>
-#include <isc/time.h>
 #include <isc/util.h>
 
 #include <dns/fixedname.h>

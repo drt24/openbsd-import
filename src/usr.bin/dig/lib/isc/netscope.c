@@ -23,8 +23,12 @@ static char rcsid[] =
 
 
 #include <stdlib.h>
-#include <string.h>
-#include <isc/net.h>
+
+#include <sys/socket.h>
+#include <net/if.h>
+#include <netinet/in.h>
+
+#include <isc/types.h>
 #include <isc/netscope.h>
 #include <isc/result.h>
 

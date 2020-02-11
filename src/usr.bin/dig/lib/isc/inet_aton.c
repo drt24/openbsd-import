@@ -74,7 +74,6 @@ static char rcsid[] = "$Id$";
 #include <ctype.h>
 #include <stddef.h>		/* Required for NULL. */
 
-#include <isc/types.h>
 #include <isc/net.h>
 
 /*%

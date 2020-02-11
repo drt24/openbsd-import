@@ -23,8 +23,6 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-#include <isc/lib.h>
-#include <isc/msgs.h>
 #include <isc/resultclass.h>
 #include <isc/util.h>
 

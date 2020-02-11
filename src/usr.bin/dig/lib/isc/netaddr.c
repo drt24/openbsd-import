@@ -23,7 +23,6 @@
 #include <stdio.h>
 
 #include <isc/buffer.h>
-#include <isc/msgs.h>
 #include <isc/net.h>
 #include <isc/netaddr.h>
 
