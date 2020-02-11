@@ -47,10 +47,6 @@
  */
 #define LOG_BUFFER_SIZE	(8 * 1024)
 
-#ifndef PATH_MAX
-#define PATH_MAX 1024	/* AIX and others don't define this. */
-#endif
-
 /*!
  * This is the structure that holds each named channel.  A simple linked
  * list chains all of the channels together, so an individual channel is

@@ -84,19 +84,6 @@
 #include <isc/lang.h>
 #include <isc/types.h>
 
-#ifndef IN6_IS_ADDR_SITELOCAL
-/*% is IPv6 address sitelocal? */
-#define IN6_IS_ADDR_SITELOCAL(a) \
-	(((a)->s6_addr[0] == 0xfe) && (((a)->s6_addr[1] & 0xc0) == 0xc0))
-#endif
-
-
-#ifndef IN6_IS_ADDR_LOOPBACK
-/*% is IPv6 address loopback? */
-#define IN6_IS_ADDR_LOOPBACK(x) \
-	(memcmp((x)->s6_addr, in6addr_loopback.s6_addr, 16) == 0)
-#endif
-
 /*% IP address. */
 #define ISC__IPADDR(x)	((uint32_t)htonl((uint32_t)(x)))
 
