@@ -312,12 +312,6 @@ static dst_func_t hmacsha1_functions = {
 
 isc_result_t
 dst__hmacsha1_init(dst_func_t **funcp) {
-	/*
-	 * Prevent use of incorrect crypto
-	 */
-	RUNTIME_CHECK(isc_sha1_check(ISC_FALSE));
-	RUNTIME_CHECK(isc_hmacsha1_check(0));
-
 	REQUIRE(funcp != NULL);
 	if (*funcp == NULL)
 		*funcp = &hmacsha1_functions;
