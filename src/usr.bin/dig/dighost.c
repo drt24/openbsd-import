@@ -75,14 +75,6 @@
 
 #include "dig.h"
 
-#if ! defined(NS_INADDRSZ)
-#define NS_INADDRSZ	 4
-#endif
-
-#if ! defined(NS_IN6ADDRSZ)
-#define NS_IN6ADDRSZ	16
-#endif
-
 static lwres_conf_t  lwconfdata;
 static lwres_conf_t *lwconf = &lwconfdata;
 
@@ -569,11 +561,11 @@ add_nameserver(lwres_conf_t *confdata, const char *addr, int af) {
 	switch (af) {
 	case AF_INET:
 		confdata->nameservers[i].family = LWRES_ADDRTYPE_V4;
-		confdata->nameservers[i].length = NS_INADDRSZ;
+		confdata->nameservers[i].length = sizeof(struct in_addr);
 		break;
 	case AF_INET6:
 		confdata->nameservers[i].family = LWRES_ADDRTYPE_V6;
-		confdata->nameservers[i].length = NS_IN6ADDRSZ;
+		confdata->nameservers[i].length = sizeof(struct in6_addr);
 		break;
 	default:
 		return (ISC_R_FAILURE);

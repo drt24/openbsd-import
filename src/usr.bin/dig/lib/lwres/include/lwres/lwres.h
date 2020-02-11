@@ -82,7 +82,6 @@
  *	response_free().
  */
 
-#define LWRES_ADDR_MAXLEN	16	/*%< changing this breaks ABI */
 #define LWRES_USEIPV4		0x0001
 #define LWRES_USEIPV6		0x0002
 
@@ -93,7 +92,7 @@ typedef struct lwres_addr lwres_addr_t;
 struct lwres_addr {
 	uint32_t			family;
 	uint16_t			length;
-	unsigned char			address[LWRES_ADDR_MAXLEN];
+	unsigned char			address[sizeof(struct in6_addr)];
 	uint32_t			zone;
 };
 
