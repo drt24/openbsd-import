@@ -198,7 +198,7 @@ struct dst_func {
 /*%
  * Initializers
  */
-isc_result_t dst__openssl_init(const char *engine);
+isc_result_t dst__openssl_init(void);
 
 isc_result_t dst__hmacsha1_init(struct dst_func **funcp);
 isc_result_t dst__hmacsha224_init(struct dst_func **funcp);
