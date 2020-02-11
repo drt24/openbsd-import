@@ -2923,9 +2923,6 @@ launch_next_query(dig_query_t *query, isc_boolean_t include_question) {
 		debug("sendcount=%d", sendcount);
 	}
 	query->waiting_connect = ISC_FALSE;
-#if 0
-	check_next_lookup(query->lookup);
-#endif
 	return;
 }
 
