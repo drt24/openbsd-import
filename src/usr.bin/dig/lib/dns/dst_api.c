@@ -369,6 +369,7 @@ dst_key_fromnamedfile(const char *filename, const char *dirname,
 	RETERR(isc_lex_create(1500, &lex));
 	RETERR(isc_lex_openfile(lex, newfilename));
 	free(newfilename);
+	newfilename = NULL;
 
 	RETERR(key->func->parse(key, lex, pubkey));
 	isc_lex_destroy(&lex);
