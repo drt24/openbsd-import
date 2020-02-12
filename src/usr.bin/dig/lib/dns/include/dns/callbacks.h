@@ -77,32 +77,6 @@ struct dns_rdatacallbacks {
 	void	*warn_private;
 };
 
-/***
- ***	Initialization
- ***/
-
-void
-dns_rdatacallbacks_init(dns_rdatacallbacks_t *callbacks);
-/*%<
- * Initialize 'callbacks'.
- *
- * \li	'magic' is set to DNS_CALLBACK_MAGIC
- *
- * \li	'error' and 'warn' are set to default callbacks that print the
- *	error message through the DNS library log context.
- *
- *\li	All other elements are initialized to NULL.
- *
- * Requires:
- *  \li    'callbacks' is a valid dns_rdatacallbacks_t,
- */
-
-void
-dns_rdatacallbacks_init_stdio(dns_rdatacallbacks_t *callbacks);
-/*%<
- * Like dns_rdatacallbacks_init, but logs to stdio.
- */
-
 ISC_LANG_ENDDECLS
 
 #endif /* DNS_CALLBACKS_H */

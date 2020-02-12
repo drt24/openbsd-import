@@ -156,15 +156,6 @@ lwres_conf_parse(lwres_conf_t *confdata, const char *filename);
  *	in.
  */
 
-lwres_result_t
-lwres_conf_print(lwres_conf_t *confdata, FILE *fp);
-/**<
- * Prints a resolv.conf-format of confdata output to fp.
- *
- * Requires:
- *	confdata != NULL
- */
-
 void
 lwres_conf_init(lwres_conf_t *confdata, int lwresflags);
 /**<

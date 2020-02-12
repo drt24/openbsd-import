@@ -264,14 +264,3 @@ isc_heap_element(isc_heap_t *heap, unsigned int idx) {
 		return (heap->array[idx]);
 	return (NULL);
 }
-
-void
-isc_heap_foreach(isc_heap_t *heap, isc_heapaction_t action, void *uap) {
-	unsigned int i;
-
-	REQUIRE(VALID_HEAP(heap));
-	REQUIRE(action != NULL);
-
-	for (i = 1 ; i <= heap->last ; i++)
-		(action)(heap->array[i], uap);
-}

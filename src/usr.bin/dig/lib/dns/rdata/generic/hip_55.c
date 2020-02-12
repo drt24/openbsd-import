@@ -431,19 +431,6 @@ dns_rdata_hip_next(dns_rdata_hip_t *hip) {
 	return (ISC_R_SUCCESS);
 }
 
-void
-dns_rdata_hip_current(dns_rdata_hip_t *hip, dns_name_t *name) {
-	isc_region_t region;
-
-	REQUIRE(hip->offset < hip->servers_len);
-
-	region.base = hip->servers + hip->offset;
-	region.length = hip->servers_len - hip->offset;
-	dns_name_fromregion(name, &region);
-
-	INSIST(name->length + hip->offset <= hip->servers_len);
-}
-
 static inline int
 casecompare_hip(ARGS_COMPARE) {
 	isc_region_t r1;

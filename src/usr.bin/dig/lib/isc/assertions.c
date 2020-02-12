@@ -48,15 +48,6 @@ isc_assertion_failed(const char *file, int line, isc_assertiontype_t type,
 	/* NOTREACHED */
 }
 
-/*% Set callback. */
-void
-isc_assertion_setcallback(isc_assertioncallback_t cb) {
-	if (cb == NULL)
-		isc_assertion_failed_cb = default_callback;
-	else
-		isc_assertion_failed_cb = cb;
-}
-
 /*% Type to Text */
 const char *
 isc_assertion_typetotext(isc_assertiontype_t type) {

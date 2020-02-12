@@ -42,13 +42,4 @@ typedef struct dns_rdata_in_apl {
  * via rdatastructpre.h and rdatastructsuf.h.
  */
 
-isc_result_t
-dns_rdata_apl_first(dns_rdata_in_apl_t *);
-
-isc_result_t
-dns_rdata_apl_next(dns_rdata_in_apl_t *);
-
-isc_result_t
-dns_rdata_apl_current(dns_rdata_in_apl_t *, dns_rdata_apl_ent_t *);
-
 #endif /* IN_1_APL_42_H */

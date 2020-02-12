@@ -33,14 +33,6 @@ ISC_LANG_BEGINDECLS
 
 typedef void (*isc_errorcallback_t)(const char *, int, const char *, va_list);
 
-/*% set unexpected error */
-void
-isc_error_setunexpected(isc_errorcallback_t);
-
-/*% set fatal error */
-void
-isc_error_setfatal(isc_errorcallback_t);
-
 /*% unexpected error */
 void
 isc_error_unexpected(const char *, int, const char *, ...)

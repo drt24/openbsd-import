@@ -149,12 +149,6 @@ cfg_map_getname(const cfg_obj_t *mapobj);
  *	or NULL if the map object does not have a name.
  */
 
-isc_boolean_t
-cfg_obj_isstring(const cfg_obj_t *obj);
-/*%<
- * Return true iff 'obj' is of string type.
- */
-
 const char *
 cfg_obj_asstring(const cfg_obj_t *obj);
 /*%<

@@ -70,7 +70,6 @@ isc_base64_decodestring(const char *cstr, isc_buffer_t *target);
  *
  * 	Other error returns are any possible error code from:
  *\li		isc_lex_create(),
- *\li		isc_lex_openbuffer(),
  *\li		isc_base64_tobuffer().
  */
 

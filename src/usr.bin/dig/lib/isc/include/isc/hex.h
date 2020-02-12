@@ -70,7 +70,6 @@ isc_hex_decodestring(const char *cstr, isc_buffer_t *target);
  *
  * 	Other error returns are any possible error code from:
  *		isc_lex_create(),
- *		isc_lex_openbuffer(),
  *		isc_hex_tobuffer().
  */
 

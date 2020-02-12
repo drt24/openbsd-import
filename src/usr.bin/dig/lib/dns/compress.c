@@ -88,29 +88,6 @@ dns_compress_getmethods(dns_compress_t *cctx) {
 	return (cctx->allowed & DNS_COMPRESS_ALL);
 }
 
-void
-dns_compress_setsensitive(dns_compress_t *cctx, isc_boolean_t sensitive) {
-	REQUIRE(VALID_CCTX(cctx));
-
-	if (sensitive)
-		cctx->allowed |= DNS_COMPRESS_CASESENSITIVE;
-	else
-		cctx->allowed &= ~DNS_COMPRESS_CASESENSITIVE;
-}
-
-isc_boolean_t
-dns_compress_getsensitive(dns_compress_t *cctx) {
-	REQUIRE(VALID_CCTX(cctx));
-
-	return (ISC_TF((cctx->allowed & DNS_COMPRESS_CASESENSITIVE) != 0));
-}
-
-int
-dns_compress_getedns(dns_compress_t *cctx) {
-	REQUIRE(VALID_CCTX(cctx));
-	return (cctx->edns);
-}
-
 #define NODENAME(node, name) \
 do { \
 	(name)->length = (node)->r.length; \
@@ -307,28 +284,4 @@ dns_decompress_setmethods(dns_decompress_t *dctx, unsigned int allowed) {
 		dctx->allowed = allowed;
 		break;
 	}
-}
-
-unsigned int
-dns_decompress_getmethods(dns_decompress_t *dctx) {
-
-	REQUIRE(VALID_DCTX(dctx));
-
-	return (dctx->allowed);
-}
-
-int
-dns_decompress_edns(dns_decompress_t *dctx) {
-
-	REQUIRE(VALID_DCTX(dctx));
-
-	return (dctx->edns);
-}
-
-dns_decompresstype_t
-dns_decompress_type(dns_decompress_t *dctx) {
-
-	REQUIRE(VALID_DCTX(dctx));
-
-	return (dctx->type);
 }

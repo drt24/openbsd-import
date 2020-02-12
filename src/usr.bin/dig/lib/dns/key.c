@@ -100,12 +100,6 @@ dst_key_alg(const dst_key_t *key) {
 	return (key->key_alg);
 }
 
-dns_keytag_t
-dst_key_id(const dst_key_t *key) {
-	REQUIRE(VALID_KEY(key));
-	return (key->key_id);
-}
-
 void
 dst_key_setbits(dst_key_t *key, uint16_t bits) {
 	unsigned int maxbits;

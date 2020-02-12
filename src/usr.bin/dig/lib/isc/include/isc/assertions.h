@@ -46,9 +46,6 @@ typedef void (*isc_assertioncallback_t)(const char *, int, isc_assertiontype_t,
 __dead void isc_assertion_failed(const char *, int, isc_assertiontype_t,
 			  const char *);
 
-void
-isc_assertion_setcallback(isc_assertioncallback_t);
-
 const char *
 isc_assertion_typetotext(isc_assertiontype_t type);
 

@@ -71,13 +71,6 @@ initialize(void) {
 	}
 }
 
-const char *
-dst_result_totext(isc_result_t result) {
-	initialize();
-
-	return (isc_result_totext(result));
-}
-
 void
 dst_result_register(void) {
 	initialize();

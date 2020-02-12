@@ -62,9 +62,6 @@
 
 ISC_LANG_BEGINDECLS
 
-const char *
-dst_result_totext(isc_result_t);
-
 void
 dst_result_register(void);
 

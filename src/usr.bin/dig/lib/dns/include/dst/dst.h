@@ -394,9 +394,6 @@ dst_key_size(const dst_key_t *key);
 unsigned int
 dst_key_alg(const dst_key_t *key);
 
-dns_keytag_t
-dst_key_id(const dst_key_t *key);
-
 isc_result_t
 dst_key_sigsize(const dst_key_t *key, unsigned int *n);
 /*%<

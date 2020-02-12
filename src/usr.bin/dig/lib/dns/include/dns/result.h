@@ -195,9 +195,6 @@ dns_result_totext(isc_result_t);
 void
 dns_result_register(void);
 
-dns_rcode_t
-dns_result_torcode(isc_result_t result);
-
 ISC_LANG_ENDDECLS
 
 #endif /* DNS_RESULT_H */

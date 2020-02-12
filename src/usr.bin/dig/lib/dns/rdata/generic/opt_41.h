@@ -41,13 +41,4 @@ typedef struct dns_rdata_opt {
  * via rdatastructpre.h and rdatastructsuf.h.
  */
 
-isc_result_t
-dns_rdata_opt_first(dns_rdata_opt_t *);
-
-isc_result_t
-dns_rdata_opt_next(dns_rdata_opt_t *);
-
-isc_result_t
-dns_rdata_opt_current(dns_rdata_opt_t *, dns_rdata_opt_opcode_t *);
-
 #endif /* GENERIC_OPT_41_H */

@@ -242,20 +242,6 @@ isc__buffer_initnull(isc_buffer_t *b);
  */
 
 void
-isc_buffer_reinit(isc_buffer_t *b, void *base, unsigned int length);
-/*!<
- * \brief Make 'b' refer to the 'length'-byte region starting at base.
- * Any existing data will be copied.
- *
- * Requires:
- *
- *\li	'length' > 0 AND length >= previous length
- *
- *\li	'base' is a pointer to a sequence of 'length' bytes.
- *
- */
-
-void
 isc__buffer_invalidate(isc_buffer_t *b);
 /*!<
  * \brief Make 'b' an invalid buffer.
@@ -558,27 +544,6 @@ isc__buffer_putuint32(isc_buffer_t *b, uint32_t val);
  *
  * Ensures:
  *\li	The used pointer in 'b' is advanced by 4.
- */
-
-uint64_t
-isc_buffer_getuint48(isc_buffer_t *b);
-/*!<
- * \brief Read an unsigned 48-bit integer in network byte order from 'b',
- * convert it to host byte order, and return it.
- *
- * Requires:
- *
- *\li	'b' is a valid buffer.
- *
- *\li	The length of the available region of 'b' is at least 6.
- *
- * Ensures:
- *
- *\li	The current pointer in 'b' is advanced by 6.
- *
- * Returns:
- *
- *\li	A 48-bit unsigned integer (stored in a 64-bit integer).
  */
 
 void

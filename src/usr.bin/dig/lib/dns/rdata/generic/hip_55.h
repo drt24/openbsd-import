@@ -40,7 +40,4 @@ dns_rdata_hip_first(dns_rdata_hip_t *);
 isc_result_t
 dns_rdata_hip_next(dns_rdata_hip_t *);
 
-void
-dns_rdata_hip_current(dns_rdata_hip_t *, dns_name_t *);
-
 #endif /* GENERIC_HIP_5_H */
