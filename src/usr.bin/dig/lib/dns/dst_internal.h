@@ -42,12 +42,10 @@
 #include <isc/magic.h>
 #include <isc/region.h>
 #include <isc/types.h>
-#include <isc/md5.h>
 #include <isc/refcount.h>
 #include <isc/sha1.h>
 #include <isc/sha2.h>
 #include <isc/stdtime.h>
-#include <isc/hmacmd5.h>
 #include <isc/hmacsha.h>
 
 
