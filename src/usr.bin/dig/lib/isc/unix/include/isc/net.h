@@ -122,11 +122,6 @@ isc_net_probedscp(void);
  * Probe the level of DSCP support.
  */
 
-int
-isc_net_aton(const char *cp, struct in_addr *addr);
-#undef inet_aton
-#define inet_aton isc_net_aton
-
 ISC_LANG_ENDDECLS
 
 #endif /* ISC_NET_H */
