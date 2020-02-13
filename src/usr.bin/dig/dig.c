@@ -48,8 +48,6 @@
 		isc_buffer_putstr(b, s); 		\
 }
 
-#define DIG_MAX_ADDRESSES 20
-
 #ifndef DNS_NAME_INITABSOLUTE
 #define DNS_NAME_INITABSOLUTE(A,B) { \
 	DNS_NAME_MAGIC, \

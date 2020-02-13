@@ -50,9 +50,6 @@
 #define DNS_MESSAGE_RCODE_MASK		0x000fU
 #define DNS_MESSAGE_FLAG_MASK		0x8ff0U
 #define DNS_MESSAGE_EDNSRCODE_MASK	0xff000000U
-#define DNS_MESSAGE_EDNSRCODE_SHIFT	24
-#define DNS_MESSAGE_EDNSVERSION_MASK	0x00ff0000U
-#define DNS_MESSAGE_EDNSVERSION_SHIFT	16
 
 #define VALID_NAMED_SECTION(s)  (((s) > DNS_SECTION_ANY) \
 				 && ((s) < DNS_SECTION_MAX))
@@ -73,11 +70,9 @@
  * XXXMLG These should come from a config setting.
  */
 #define SCRATCHPAD_SIZE		512
-#define NAME_COUNT		  8
 #define OFFSET_COUNT		  4
 #define RDATA_COUNT		  8
 #define RDATALIST_COUNT		  8
-#define RDATASET_COUNT		 RDATALIST_COUNT
 
 /*%
  * Text representation of the different items, for message_totext

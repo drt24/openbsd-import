@@ -585,9 +585,6 @@ static const char decdigits[] = "0123456789";
 
 #include "code.h"
 
-#define META 0x0001
-#define RESERVED 0x0002
-
 /***
  *** Initialization
  ***/

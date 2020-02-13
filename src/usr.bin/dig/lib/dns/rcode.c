@@ -73,12 +73,6 @@
 	{ 14, "RESERVED14", TOTEXTONLY}, \
 	{ 15, "RESERVED15", TOTEXTONLY},
 
-#define ERCODENAMES \
-	/* extended rcodes */ \
-	{ dns_rcode_badvers, "BADVERS", 0}, \
-	{ dns_rcode_badcookie, "BADCOOKIE", 0}, \
-	{ 0, NULL, 0 }
-
 #define TSIGRCODENAMES \
 	/* extended rcodes */ \
 	{ dns_tsigerror_badsig, "BADSIG", 0}, \
