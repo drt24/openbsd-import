@@ -1878,6 +1878,7 @@ void dig_setup(int argc, char **argv)
 
 	ISC_LIST_INIT(lookup_list);
 	ISC_LIST_INIT(server_list);
+	ISC_LIST_INIT(root_hints_server_list);
 	ISC_LIST_INIT(search_list);
 
 	if (pledge("stdio rpath inet dns", NULL) == -1) {
