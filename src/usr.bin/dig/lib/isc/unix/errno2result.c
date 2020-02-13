@@ -18,7 +18,7 @@
 
 /*! \file */
 
-
+#include <errno.h>
 
 #include <isc/result.h>
 #include <isc/strerror.h>

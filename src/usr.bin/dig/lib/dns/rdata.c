@@ -38,7 +38,6 @@
 #include "enumtype.h"
 #include <dns/keyflags.h>
 #include <dns/keyvalues.h>
-#include <dns/message.h>
 #include <dns/rcode.h>
 #include <dns/rdata.h>
 #include "rdatastruct.h"

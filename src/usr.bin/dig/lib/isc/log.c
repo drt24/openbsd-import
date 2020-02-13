@@ -22,6 +22,7 @@
 
 #include <stdlib.h>
 #include <limits.h>
+#include <syslog.h>
 
 #include <isc/log.h>
 #include <isc/magic.h>

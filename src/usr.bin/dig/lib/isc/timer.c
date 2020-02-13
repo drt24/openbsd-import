@@ -20,7 +20,6 @@
 
 
 #include <stdlib.h>
-#include <isc/app.h>
 #include <isc/heap.h>
 #include <isc/magic.h>
 #include <isc/task.h>

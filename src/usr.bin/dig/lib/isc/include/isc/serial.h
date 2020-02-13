@@ -22,7 +22,7 @@
 #include <inttypes.h>
 
 #include <isc/lang.h>
-#include <isc/types.h>
+#include <isc/boolean.h>
 
 /*! \file isc/serial.h
  *	\brief Implement 32 bit serial space arithmetic comparison functions.

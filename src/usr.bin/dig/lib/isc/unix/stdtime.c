@@ -21,7 +21,6 @@
 
 
 #include <stddef.h>	/* NULL */
-#include <syslog.h>
 
 #include <sys/time.h>
 

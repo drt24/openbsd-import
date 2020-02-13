@@ -22,7 +22,6 @@
 
 #include <isc/base32.h>
 #include <isc/buffer.h>
-#include <isc/lex.h>
 #include <isc/region.h>
 #include <string.h>
 #include <isc/util.h>

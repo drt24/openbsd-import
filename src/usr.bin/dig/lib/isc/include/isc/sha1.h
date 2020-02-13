@@ -29,12 +29,9 @@
 
 #include <isc/lang.h>
 
-#include <isc/types.h>
-
 #define ISC_SHA1_DIGESTLENGTH 20U
 #define ISC_SHA1_BLOCK_LENGTH 64U
 
-#include <openssl/opensslv.h>
 #include <openssl/evp.h>
 
 typedef struct {

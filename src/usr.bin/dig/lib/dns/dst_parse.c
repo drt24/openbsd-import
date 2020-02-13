@@ -40,10 +40,8 @@
 
 #include <isc/base64.h>
 #include <isc/lex.h>
-#include <isc/stdtime.h>
 #include <string.h>
 #include <isc/util.h>
-#include <dns/time.h>
 
 #include "dst_internal.h"
 #include "dst_parse.h"

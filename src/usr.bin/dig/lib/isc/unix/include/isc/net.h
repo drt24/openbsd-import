@@ -73,16 +73,12 @@
  ***/
 
 
-#include <sys/types.h>
 #include <sys/socket.h>		/* Contractual promise. */
-
-#include <net/if.h>
 
 #include <netinet/in.h>		/* Contractual promise. */
 #include <arpa/inet.h>		/* Contractual promise. */
 
 #include <isc/lang.h>
-#include <isc/types.h>
 
 /*% IP address. */
 #define ISC__IPADDR(x)	((uint32_t)htonl((uint32_t)(x)))

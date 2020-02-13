@@ -23,7 +23,6 @@
 
 #include <stdio.h>
 #include <stdarg.h>
-#include <syslog.h> /* XXXDCL NT */
 
 #include <isc/formatcheck.h>
 #include <isc/lang.h>
