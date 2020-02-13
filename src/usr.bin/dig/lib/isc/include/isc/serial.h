@@ -21,7 +21,6 @@
 
 #include <inttypes.h>
 
-#include <isc/lang.h>
 #include <isc/boolean.h>
 
 /*! \file isc/serial.h
@@ -32,8 +31,6 @@
 /***
  ***	Functions
  ***/
-
-ISC_LANG_BEGINDECLS
 
 isc_boolean_t
 isc_serial_lt(uint32_t a, uint32_t b);
@@ -70,7 +67,5 @@ isc_serial_ne(uint32_t a, uint32_t b);
 /*%<
  *	Return true if 'a' != 'b' otherwise false.
  */
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_SERIAL_H */

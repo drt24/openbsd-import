@@ -21,14 +21,11 @@
 
 /*! \file isc/netaddr.h */
 
-#include <isc/lang.h>
 #include <isc/net.h>
 #include <isc/types.h>
 
 #include <sys/types.h>
 #include <sys/un.h>
-
-ISC_LANG_BEGINDECLS
 
 struct isc_netaddr {
 	unsigned int family;
@@ -115,7 +112,5 @@ isc_netaddr_isnetzero(isc_netaddr_t *na);
 /*%<
  * Returns #ISC_TRUE if the address is in net zero.
  */
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_NETADDR_H */

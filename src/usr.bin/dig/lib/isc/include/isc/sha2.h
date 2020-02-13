@@ -57,8 +57,6 @@
 #ifndef ISC_SHA2_H
 #define ISC_SHA2_H
 
-#include <isc/lang.h>
-
 #include <isc/types.h>
 
 /*** SHA-224/256/384/512 Various Length Definitions ***********************/
@@ -92,8 +90,6 @@ typedef isc_sha2_t isc_sha512_t;
 typedef isc_sha256_t isc_sha224_t;
 typedef isc_sha512_t isc_sha384_t;
 
-ISC_LANG_BEGINDECLS
-
 /*** SHA-224/256/384/512 Function Prototypes ******************************/
 
 void isc_sha224_init (isc_sha224_t *);
@@ -123,7 +119,5 @@ void isc_sha512_update (isc_sha512_t *, const uint8_t *, size_t);
 void isc_sha512_final (uint8_t[ISC_SHA512_DIGESTLENGTH], isc_sha512_t *);
 char *isc_sha512_end (isc_sha512_t *, char[ISC_SHA512_DIGESTSTRINGLENGTH]);
 char *isc_sha512_data (const uint8_t *, size_t, char[ISC_SHA512_DIGESTSTRINGLENGTH]);
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_SHA2_H */

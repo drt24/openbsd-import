@@ -21,11 +21,7 @@
 
 /*! \file dns/rdataclass.h */
 
-#include <isc/lang.h>
-
 #include <dns/types.h>
-
-ISC_LANG_BEGINDECLS
 
 isc_result_t
 dns_rdataclass_fromtext(dns_rdataclass_t *classp, isc_textregion_t *source);
@@ -74,7 +70,5 @@ dns_rdataclass_format(dns_rdataclass_t rdclass,
 /*%<
  * Minimum size of array to pass to dns_rdataclass_format().
  */
-
-ISC_LANG_ENDDECLS
 
 #endif /* DNS_RDATACLASS_H */

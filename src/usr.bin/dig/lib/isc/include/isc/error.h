@@ -25,11 +25,6 @@
 #include <stdarg.h>
 
 #include <isc/formatcheck.h>
-#include <isc/lang.h>
-
-
-
-ISC_LANG_BEGINDECLS
 
 typedef void (*isc_errorcallback_t)(const char *, int, const char *, va_list);
 
@@ -50,7 +45,5 @@ isc_error_runtimecheck(const char *, int, const char *);
 #define ISC_ERROR_RUNTIMECHECK(cond) \
 	((void) ((cond) || \
 		 ((isc_error_runtimecheck)(__FILE__, __LINE__, #cond), 0)))
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_ERROR_H */

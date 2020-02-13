@@ -21,11 +21,7 @@
 
 /*! \file dns/secalg.h */
 
-#include <isc/lang.h>
-
 #include <dns/types.h>
-
-ISC_LANG_BEGINDECLS
 
 isc_result_t
 dns_secalg_fromtext(dns_secalg_t *secalgp, isc_textregion_t *source);
@@ -71,7 +67,5 @@ dns_secalg_format(dns_secalg_t alg, char *cp, unsigned int size);
 /*%<
  * Wrapper for dns_secalg_totext(), writing text into 'cp'
  */
-
-ISC_LANG_ENDDECLS
 
 #endif /* DNS_SECALG_H */

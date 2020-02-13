@@ -81,7 +81,6 @@
 
 #include <isc/eventclass.h>
 
-#include <isc/lang.h>
 #include <isc/stdtime.h>
 #include <isc/types.h>
 
@@ -94,8 +93,6 @@
 /*****
  ***** Tasks.
  *****/
-
-ISC_LANG_BEGINDECLS
 
 /***
  *** Types
@@ -592,7 +589,5 @@ typedef isc_result_t
 (*isc_taskmgrcreatefunc_t)(unsigned int workers,
 			   unsigned int default_quantum,
 			   isc_taskmgr_t **managerp);
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_TASK_H */

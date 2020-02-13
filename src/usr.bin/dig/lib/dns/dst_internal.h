@@ -36,7 +36,6 @@
 #ifndef DST_DST_INTERNAL_H
 #define DST_DST_INTERNAL_H 1
 
-#include <isc/lang.h>
 #include <isc/buffer.h>
 
 #include <isc/magic.h>
@@ -58,8 +57,6 @@
 #include <openssl/evp.h>
 #include <openssl/objects.h>
 #include <openssl/rsa.h>
-
-ISC_LANG_BEGINDECLS
 
 #define KEY_MAGIC	ISC_MAGIC('D','S','T','K')
 #define CTX_MAGIC	ISC_MAGIC('D','S','T','C')
@@ -218,8 +215,6 @@ void dst__openssl_destroy(void);
 void * dst__mem_alloc(size_t size);
 void   dst__mem_free(void *ptr);
 void * dst__mem_realloc(void *ptr, size_t size);
-
-ISC_LANG_ENDDECLS
 
 #endif /* DST_DST_INTERNAL_H */
 /*! \file */

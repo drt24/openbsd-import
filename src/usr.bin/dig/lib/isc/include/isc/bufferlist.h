@@ -43,10 +43,7 @@
  *** Imports
  ***/
 
-#include <isc/lang.h>
 #include <isc/types.h>
-
-ISC_LANG_BEGINDECLS
 
 /***
  *** Functions
@@ -79,7 +76,5 @@ isc_bufferlist_availablecount(isc_bufferlist_t *bl);
  * Returns:
  *\li	sum of all available regions' lengths.
  */
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_BUFFERLIST_H */

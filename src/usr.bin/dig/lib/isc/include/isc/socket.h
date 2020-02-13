@@ -58,15 +58,11 @@
 
 #include <isc/event.h>
 #include <isc/eventclass.h>
-#include <isc/lang.h>
 
 #include <isc/region.h>
 #include <isc/sockaddr.h>
 #include <isc/time.h>
 #include <isc/types.h>
-
-
-ISC_LANG_BEGINDECLS
 
 /***
  *** Constants
@@ -635,7 +631,5 @@ isc_socketmgr_destroy(isc_socketmgr_t **managerp);
  *
  *\li	All resources used by the manager have been freed.
  */
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_SOCKET_H */

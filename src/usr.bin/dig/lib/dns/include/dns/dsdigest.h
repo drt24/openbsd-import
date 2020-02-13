@@ -21,11 +21,7 @@
 
 /*! \file dns/dsdigest.h */
 
-#include <isc/lang.h>
-
 #include <dns/types.h>
-
-ISC_LANG_BEGINDECLS
 
 isc_result_t
 dns_dsdigest_fromtext(dns_dsdigest_t *dsdigestp, isc_textregion_t *source);
@@ -46,7 +42,5 @@ dns_dsdigest_fromtext(dns_dsdigest_t *dsdigestp, isc_textregion_t *source);
  */
 
 #define DNS_DSDIGEST_FORMATSIZE 20
-
-ISC_LANG_ENDDECLS
 
 #endif /* DNS_DSDIGEST_H */

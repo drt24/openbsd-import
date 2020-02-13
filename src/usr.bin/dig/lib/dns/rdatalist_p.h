@@ -24,8 +24,6 @@
 #include <isc/result.h>
 #include <dns/types.h>
 
-ISC_LANG_BEGINDECLS
-
 void
 isc__rdatalist_disassociate(dns_rdataset_t *rdatasetp);
 
@@ -57,7 +55,5 @@ isc__rdatalist_addclosest(dns_rdataset_t *rdataset, dns_name_t *name);
 isc_result_t
 isc__rdatalist_getclosest(dns_rdataset_t *rdataset, dns_name_t *name,
 			  dns_rdataset_t *neg, dns_rdataset_t *negsig);
-
-ISC_LANG_ENDDECLS
 
 #endif /* DNS_RDATALIST_P_H */

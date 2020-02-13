@@ -32,15 +32,10 @@
 
 #include <stdio.h>
 
-#include <isc/lang.h>
 #include <isc/result.h>
-
-ISC_LANG_BEGINDECLS
 
 /*% Open */
 isc_result_t
 isc_stdio_open(const char *filename, const char *mode, FILE **fp);
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_STDIO_H */

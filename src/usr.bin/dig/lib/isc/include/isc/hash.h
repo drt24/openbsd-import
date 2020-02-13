@@ -82,7 +82,6 @@
 /***
  *** Functions
  ***/
-ISC_LANG_BEGINDECLS
 
 isc_result_t
 isc_hash_ctxcreate(size_t limit, isc_hash_t **hctx);
@@ -232,7 +231,5 @@ isc_hash_function_reverse(const void *data, size_t length,
  * this function. It can be used to perform incremental hashing. NULL
  * must be passed during first calls.
  */
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_HASH_H */

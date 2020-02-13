@@ -74,10 +74,7 @@
 #include <isc/types.h>
 #include <isc/event.h>
 #include <isc/eventclass.h>
-#include <isc/lang.h>
 #include <isc/time.h>
-
-ISC_LANG_BEGINDECLS
 
 /***
  *** Types
@@ -387,7 +384,5 @@ void isc_timermgr_poke(isc_timermgr_t *m);
  */
 typedef isc_result_t
 (*isc_timermgrcreatefunc_t)(isc_timermgr_t **managerp);
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_TIMER_H */

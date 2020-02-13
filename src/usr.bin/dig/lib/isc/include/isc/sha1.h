@@ -27,8 +27,6 @@
  * \note 100% Public Domain
  */
 
-#include <isc/lang.h>
-
 #define ISC_SHA1_DIGESTLENGTH 20U
 #define ISC_SHA1_BLOCK_LENGTH 64U
 
@@ -38,7 +36,6 @@ typedef struct {
 	EVP_MD_CTX *ctx;
 } isc_sha1_t;
 
-ISC_LANG_BEGINDECLS
 
 void
 isc_sha1_init(isc_sha1_t *ctx);
@@ -51,7 +48,5 @@ isc_sha1_update(isc_sha1_t *ctx, const unsigned char *data, unsigned int len);
 
 void
 isc_sha1_final(isc_sha1_t *ctx, unsigned char *digest);
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_SHA1_H */

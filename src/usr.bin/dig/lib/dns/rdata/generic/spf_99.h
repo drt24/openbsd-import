@@ -32,8 +32,4 @@ typedef struct dns_rdata_spf {
 	uint16_t            offset;
 } dns_rdata_spf_t;
 
-/*
- * ISC_LANG_BEGINDECLS and ISC_LANG_ENDDECLS are already done
- * via rdatastructpre.h and rdatastructsuf.h.
- */
 #endif /* GENERIC_SPF_99_H */

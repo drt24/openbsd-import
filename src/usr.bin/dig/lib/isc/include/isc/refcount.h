@@ -20,10 +20,7 @@
 #define ISC_REFCOUNT_H 1
 
 #include <isc/assertions.h>
-
 #include <isc/error.h>
-#include <isc/lang.h>
-
 #include <isc/types.h>
 
 /*! \file isc/refcount.h
@@ -34,8 +31,6 @@
  * The isc_refcount_t type should not be accessed directly, as its contents
  * depend on the implementation.
  */
-
-ISC_LANG_BEGINDECLS
 
 /*
  * Function prototypes
@@ -131,7 +126,5 @@ typedef struct isc_refcount {
 
 isc_result_t
 isc_refcount_init(isc_refcount_t *ref, unsigned int n);
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_REFCOUNT_H */

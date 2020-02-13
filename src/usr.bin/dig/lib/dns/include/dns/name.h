@@ -73,13 +73,10 @@
 #include <stdio.h>
 
 #include <isc/boolean.h>
-#include <isc/lang.h>
 #include <isc/magic.h>
 #include <isc/region.h>		/* Required for storage size of dns_label_t. */
 
 #include <dns/types.h>
-
-ISC_LANG_BEGINDECLS
 
 /*****
  ***** Labels
@@ -1104,7 +1101,5 @@ dns_name_isdnssd(const dns_name_t *owner);
 /*%<
  * Determine if the 'owner' is a DNS-SD prefix.
  */
-
-ISC_LANG_ENDDECLS
 
 #endif /* DNS_NAME_H */

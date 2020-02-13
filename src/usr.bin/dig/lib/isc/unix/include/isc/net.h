@@ -72,13 +72,10 @@
  *** Imports.
  ***/
 
-
 #include <sys/socket.h>		/* Contractual promise. */
 
 #include <netinet/in.h>		/* Contractual promise. */
 #include <arpa/inet.h>		/* Contractual promise. */
-
-#include <isc/lang.h>
 
 /*% IP address. */
 #define ISC__IPADDR(x)	((uint32_t)htonl((uint32_t)(x)))
@@ -95,8 +92,6 @@
 /***
  *** Functions.
  ***/
-
-ISC_LANG_BEGINDECLS
 
 void
 isc_net_disableipv4(void);
@@ -117,7 +112,5 @@ isc_net_probedscp(void);
 /*%<
  * Probe the level of DSCP support.
  */
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_NET_H */

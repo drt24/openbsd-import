@@ -21,11 +21,7 @@
 
 /*! \file dns/rdatatype.h */
 
-#include <isc/lang.h>
-
 #include <dns/types.h>
-
-ISC_LANG_BEGINDECLS
 
 isc_result_t
 dns_rdatatype_fromtext(dns_rdatatype_t *typep, isc_textregion_t *source);
@@ -77,7 +73,5 @@ dns_rdatatype_format(dns_rdatatype_t rdtype,
  * May need to be adjusted if a new RR type with a very long
  * name is defined.
  */
-
-ISC_LANG_ENDDECLS
 
 #endif /* DNS_RDATATYPE_H */

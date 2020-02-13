@@ -21,13 +21,9 @@
 
 /*! \file dns/tsig.h */
 
-#include <isc/lang.h>
 #include <isc/refcount.h>
-
 #include <isc/stdio.h>
 #include <isc/stdtime.h>
-
-
 
 #include <dns/types.h>
 #include <dns/name.h>
@@ -71,8 +67,6 @@ struct dns_tsigkey {
 	((tsigkey) == NULL ? NULL : \
 	 (tsigkey)->generated ? ((tsigkey)->creator) : \
 	 (&((tsigkey)->name)))
-
-ISC_LANG_BEGINDECLS
 
 isc_result_t
 dns_tsigkey_create(dns_name_t *name, dns_name_t *algorithm,
@@ -185,7 +179,5 @@ dns_tsig_verify(isc_buffer_t *source, dns_message_t *msg);
  *					 should have been a response,
  *					 but was not.
  */
-
-ISC_LANG_ENDDECLS
 
 #endif /* DNS_TSIG_H */

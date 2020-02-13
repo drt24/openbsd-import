@@ -25,12 +25,9 @@
  ***	Imports
  ***/
 
-#include <isc/lang.h>
 #include <isc/magic.h>
 
 #include <dns/types.h>
-
-ISC_LANG_BEGINDECLS
 
 /***
  ***	Types
@@ -76,7 +73,5 @@ struct dns_rdatacallbacks {
 	void	*error_private;
 	void	*warn_private;
 };
-
-ISC_LANG_ENDDECLS
 
 #endif /* DNS_CALLBACKS_H */

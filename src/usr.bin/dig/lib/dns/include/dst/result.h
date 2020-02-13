@@ -21,7 +21,6 @@
 
 /*! \file dst/result.h */
 
-#include <isc/lang.h>
 #include <isc/resultclass.h>
 
 /*
@@ -60,11 +59,7 @@
 
 #define DST_R_NRESULTS			23	/* Number of results */
 
-ISC_LANG_BEGINDECLS
-
 void
 dst_result_register(void);
-
-ISC_LANG_ENDDECLS
 
 #endif /* DST_RESULT_H */

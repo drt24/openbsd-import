@@ -21,7 +21,6 @@
 
 /*! \file isc/result.h */
 
-#include <isc/lang.h>
 #include <isc/types.h>
 
 #define ISC_R_SUCCESS			0	/*%< success */
@@ -93,8 +92,6 @@
 /*% Not a result code: the number of results. */
 #define ISC_R_NRESULTS 			64
 
-ISC_LANG_BEGINDECLS
-
 const char *
 isc_result_totext(isc_result_t);
 /*%<
@@ -104,7 +101,5 @@ isc_result_totext(isc_result_t);
 isc_result_t
 isc_result_register(unsigned int base, unsigned int nresults,
 		    const char **text, int set);
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_RESULT_H */

@@ -23,10 +23,6 @@
 
 #include <sys/types.h>
 
-#include <isc/lang.h>
-
-ISC_LANG_BEGINDECLS
-
 /*% String Error Size */
 #define ISC_STRERRORSIZE 128
 
@@ -38,7 +34,5 @@ ISC_LANG_BEGINDECLS
  */
 void
 isc__strerror(int num, char *buf, size_t bufsize);
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_STRERROR_H */

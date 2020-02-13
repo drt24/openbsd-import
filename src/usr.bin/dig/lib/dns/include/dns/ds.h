@@ -19,8 +19,6 @@
 #ifndef DNS_DS_H
 #define DNS_DS_H 1
 
-#include <isc/lang.h>
-
 #include <dns/types.h>
 
 #define DNS_DSDIGEST_SHA1 (1)

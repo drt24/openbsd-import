@@ -37,8 +37,6 @@
 #ifndef DST_DST_PARSE_H
 #define DST_DST_PARSE_H 1
 
-#include <isc/lang.h>
-
 #include <dst/dst.h>
 
 #define MAXFIELDSIZE		512
@@ -133,15 +131,11 @@ struct dst_private {
 
 typedef struct dst_private dst_private_t;
 
-ISC_LANG_BEGINDECLS
-
 void
 dst__privstruct_free(dst_private_t *priv);
 
 isc_result_t
 dst__privstruct_parse(dst_key_t *key, unsigned int alg, isc_lex_t *lex,
 		      dst_private_t *priv);
-
-ISC_LANG_ENDDECLS
 
 #endif /* DST_DST_PARSE_H */

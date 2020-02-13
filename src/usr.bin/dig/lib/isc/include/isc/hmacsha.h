@@ -24,8 +24,6 @@
 #ifndef ISC_HMACSHA_H
 #define ISC_HMACSHA_H 1
 
-#include <isc/lang.h>
-
 #include <isc/sha1.h>
 #include <isc/sha2.h>
 
@@ -47,7 +45,6 @@ typedef isc_hmacsha_t isc_hmacsha256_t;
 typedef isc_hmacsha_t isc_hmacsha384_t;
 typedef isc_hmacsha_t isc_hmacsha512_t;
 
-ISC_LANG_BEGINDECLS
 
 void
 isc_hmacsha1_init(isc_hmacsha1_t *ctx, const unsigned char *key,
@@ -136,7 +133,5 @@ isc_hmacsha512_sign(isc_hmacsha512_t *ctx, unsigned char *digest, size_t len);
 
 isc_boolean_t
 isc_hmacsha512_verify(isc_hmacsha512_t *ctx, unsigned char *digest, size_t len);
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_HMACSHA_H */

@@ -21,10 +21,7 @@
 
 /*! \file isc/heap.h */
 
-#include <isc/lang.h>
 #include <isc/types.h>
-
-ISC_LANG_BEGINDECLS
 
 /*%
  * The comparison function returns ISC_TRUE if the first argument has
@@ -147,7 +144,5 @@ isc_heap_element(isc_heap_t *heap, unsigned int index);
  * Returns:
  *\li	A pointer to the element for the element index.
  */
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_HEAP_H */

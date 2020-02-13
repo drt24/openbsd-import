@@ -21,9 +21,6 @@
 
 /*! \file */
 
-#include <isc/lang.h>
-
-
 /*%
  * It's public information that 'isc_stdtime_t' is an unsigned integral type.
  * Applications that want maximum portability should not assume anything
@@ -41,7 +38,6 @@ typedef uint32_t isc_stdtime_t;
  */
 typedef uint32_t isc_stdtime32_t;
 
-ISC_LANG_BEGINDECLS
 /* */
 void
 isc_stdtime_get(isc_stdtime_t *t);
@@ -57,7 +53,5 @@ isc_stdtime_get(isc_stdtime_t *t);
 /*
  * Convert the standard time to its 32-bit version.
  */
-
-ISC_LANG_ENDDECLS
 
 #endif /* ISC_STDTIME_H */
