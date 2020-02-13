@@ -1947,11 +1947,6 @@ void dig_startup() {
 	isc_app_run();
 }
 
-void dig_query_start()
-{
-	start_lookup();
-}
-
 void
 dig_shutdown() {
 	destroy_lookup(default_lookup);
