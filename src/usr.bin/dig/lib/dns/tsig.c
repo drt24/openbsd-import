@@ -46,10 +46,6 @@
 #define TSIG_MAGIC		ISC_MAGIC('T', 'S', 'I', 'G')
 #define VALID_TSIG_KEY(x)	ISC_MAGIC_VALID(x, TSIG_MAGIC)
 
-#ifndef DNS_TSIG_MAXGENERATEDKEYS
-#define DNS_TSIG_MAXGENERATEDKEYS 4096
-#endif
-
 #define is_response(msg) (msg->flags & DNS_MESSAGEFLAG_QR)
 #define algname_is_allocated(algname) \
 	((algname) != dns_tsig_hmacsha1_name && \
