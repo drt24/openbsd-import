@@ -54,16 +54,6 @@
 	 (algname) != dns_tsig_hmacsha384_name && \
 	 (algname) != dns_tsig_hmacsha512_name)
 
-#ifndef DNS_NAME_INITABSOLUTE
-#define DNS_NAME_INITABSOLUTE(A,B) { \
-	DNS_NAME_MAGIC, \
-	A, sizeof(A), sizeof(B), \
-	DNS_NAMEATTR_READONLY | DNS_NAMEATTR_ABSOLUTE, \
-	B, NULL, { (void *)-1, (void *)-1}, \
-	{NULL, NULL} \
-}
-#endif
-
 #define BADTIMELEN 6
 
 static unsigned char hmacsha1_ndata[] = "\011hmac-sha1";

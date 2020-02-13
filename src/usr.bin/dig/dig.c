@@ -48,16 +48,6 @@
 		isc_buffer_putstr(b, s); 		\
 }
 
-#ifndef DNS_NAME_INITABSOLUTE
-#define DNS_NAME_INITABSOLUTE(A,B) { \
-	DNS_NAME_MAGIC, \
-	A, sizeof(A), sizeof(B), \
-	DNS_NAMEATTR_READONLY | DNS_NAMEATTR_ABSOLUTE, \
-	B, NULL, { (void *)-1, (void *)-1}, \
-	{NULL, NULL} \
-}
-#endif
-
 dig_lookup_t *default_lookup = NULL;
 
 static char *batchname = NULL;

@@ -32,25 +32,6 @@
 
 #define VALID_NAME(n)	ISC_MAGIC_VALID(n, DNS_NAME_MAGIC)
 
-#ifndef DNS_NAME_INITABSOLUTE
-#define DNS_NAME_INITABSOLUTE(A,B) { \
-	DNS_NAME_MAGIC, \
-	A, sizeof(A), sizeof(B), \
-	DNS_NAMEATTR_READONLY | DNS_NAMEATTR_ABSOLUTE, \
-	B, NULL, { (void *)-1, (void *)-1}, \
-	{NULL, NULL} \
-}
-#endif
-#ifndef DNS_NAME_INITNONABSOLUTE
-#define DNS_NAME_INITNONABSOLUTE(A,B) { \
-	DNS_NAME_MAGIC, \
-	A, (sizeof(A) - 1), sizeof(B), \
-	DNS_NAMEATTR_READONLY, \
-	B, NULL, { (void *)-1, (void *)-1}, \
-	{NULL, NULL} \
-}
-#endif
-
 typedef enum {
 	ft_init = 0,
 	ft_start,

@@ -112,25 +112,6 @@
 
 #define ARGS_CHECKNAMES dns_rdata_t *rdata, dns_name_t *owner, dns_name_t *bad
 
-#ifndef DNS_NAME_INITABSOLUTE
-#define DNS_NAME_INITABSOLUTE(A,B) { \
-	DNS_NAME_MAGIC, \
-	A, sizeof(A), sizeof(B), \
-	DNS_NAMEATTR_READONLY | DNS_NAMEATTR_ABSOLUTE, \
-	B, NULL, { (void *)-1, (void *)-1}, \
-	{NULL, NULL} \
-}
-#endif
-#ifndef DNS_NAME_INITNONABSOLUTE
-#define DNS_NAME_INITNONABSOLUTE(A,B) { \
-	DNS_NAME_MAGIC, \
-	A, (sizeof(A) - 1), sizeof(B), \
-	DNS_NAMEATTR_READONLY, \
-	B, NULL, { (void *)-1, (void *)-1}, \
-	{NULL, NULL} \
-}
-#endif
-
 /*%
  * Context structure for the totext_ functions.
  * Contains formatting options for rdata-to-text
