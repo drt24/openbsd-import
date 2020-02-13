@@ -24,19 +24,19 @@
 #include <sys/cdefs.h>
 #include <stdarg.h>
 
-#include <isc/formatcheck.h>
+
 
 typedef void (*isc_errorcallback_t)(const char *, int, const char *, va_list);
 
 /*% unexpected error */
 void
 isc_error_unexpected(const char *, int, const char *, ...)
-     ISC_FORMAT_PRINTF(3, 4);
+     __attribute__((__format__(__printf__, 3, 4)));
 
 /*% fatal error */
 __dead void
 isc_error_fatal(const char *, int, const char *, ...)
-ISC_FORMAT_PRINTF(3, 4);
+__attribute__((__format__(__printf__, 3, 4)));
 
 /*% runtimecheck error */
 __dead void

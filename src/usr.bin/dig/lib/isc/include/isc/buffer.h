@@ -108,7 +108,7 @@
 
 #include <inttypes.h>
 
-#include <isc/formatcheck.h>
+
 #include <isc/magic.h>
 #include <isc/types.h>
 

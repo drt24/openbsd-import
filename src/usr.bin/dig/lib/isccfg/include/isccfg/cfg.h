@@ -32,7 +32,7 @@
  *** Imports
  ***/
 
-#include <isc/formatcheck.h>
+
 #include <isc/refcount.h>
 #include <isc/types.h>
 #include <isc/list.h>

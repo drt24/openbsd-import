@@ -91,7 +91,7 @@ tsig_verify_tcp(isc_buffer_t *source, dns_message_t *msg);
 
 static void
 tsig_log(dns_tsigkey_t *key, int level, const char *fmt, ...)
-     ISC_FORMAT_PRINTF(3, 4);
+     __attribute__((__format__(__printf__, 3, 4)));
 
 static void
 tsigkey_free(dns_tsigkey_t *key);
