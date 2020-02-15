@@ -352,12 +352,4 @@ isc_timermgr_destroy(isc_timermgr_t **managerp);
  *\li	All resources used by the manager have been freed.
  */
 
-void isc_timermgr_poke(isc_timermgr_t *m);
-
-/*%<
- * See isc_timermgr_create() above.
- */
-typedef isc_result_t
-(*isc_timermgrcreatefunc_t)(isc_timermgr_t **managerp);
-
 #endif /* ISC_TIMER_H */

@@ -95,8 +95,6 @@ isc__timer_detach(isc_timer_t **timerp);
 isc_result_t
 isc__timermgr_create(isc_timermgr_t **managerp);
 void
-isc_timermgr_poke(isc_timermgr_t *manager0);
-void
 isc__timermgr_destroy(isc_timermgr_t **managerp);
 
 /*!
@@ -634,11 +632,6 @@ isc__timermgr_create(isc_timermgr_t **managerp) {
 	*managerp = (isc_timermgr_t *)manager;
 
 	return (ISC_R_SUCCESS);
-}
-
-void
-isc_timermgr_poke(isc_timermgr_t *manager0) {
-	UNUSED(manager0);
 }
 
 void
