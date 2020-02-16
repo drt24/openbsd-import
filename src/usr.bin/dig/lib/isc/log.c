@@ -979,9 +979,8 @@ isc_log_doit(isc_log_t *lctx, isc_logcategory_t *category,
 				struct timespec oldest;
 				struct timespec interval;
 				size_t size;
-
-				interval_set(&interval,
-						 lcfg->duplicate_interval, 0);
+				interval.tv_sec = lcfg->duplicate_interval;
+				interval.tv_nsec = 0;
 
 				/*
 				 * 'oldest' is the age of the oldest messages

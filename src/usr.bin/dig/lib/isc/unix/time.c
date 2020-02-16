@@ -43,32 +43,6 @@
  * need an initialized type.
  */
 
-/*%
- *** Intervals
- ***/
-
-void
-interval_set(struct timespec *i, time_t seconds, long nanoseconds)
-{
-	REQUIRE(i != NULL);
-	REQUIRE(nanoseconds < NS_PER_S);
-
-	i->tv_sec = seconds;
-	i->tv_nsec = nanoseconds;
-}
-
-isc_boolean_t
-interval_iszero(const struct timespec *i) {
-	REQUIRE(i != NULL);
-	INSIST(i->tv_nsec < NS_PER_S);
-
-	if (!timespecisset(i))
-		return (ISC_TRUE);
-
-	return (ISC_FALSE);
-}
-
-
 /***
  *** Absolute Times
  ***/
