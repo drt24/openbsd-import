@@ -93,7 +93,7 @@ struct isc_socketevent {
 	isc_region_t		region;		/*%< for single-buffer i/o */
 	isc_bufferlist_t	bufferlist;	/*%< list of buffers */
 	isc_sockaddr_t		address;	/*%< source address */
-	isc_time_t		timestamp;	/*%< timestamp of packet recv */
+	struct timespec		timestamp;	/*%< timestamp of packet recv */
 	struct in6_pktinfo	pktinfo;	/*%< ipv6 pktinfo */
 	uint32_t		attributes;	/*%< see below */
 	isc_eventdestructor_t   destroy;	/*%< original destructor */

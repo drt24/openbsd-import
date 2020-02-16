@@ -22,7 +22,7 @@
 /*! \file */
 
 isc_result_t
-isc__timermgr_nextevent(isc_timermgr_t *timermgr, isc_time_t *when);
+isc__timermgr_nextevent(isc_timermgr_t *timermgr, struct timespec *when);
 
 void
 isc__timermgr_dispatch(isc_timermgr_t *timermgr);
