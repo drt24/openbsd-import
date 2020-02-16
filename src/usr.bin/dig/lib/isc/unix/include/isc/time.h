@@ -22,13 +22,9 @@
 /*! \file */
 
 #include <sys/time.h>
+
+#include <inttypes.h>
 #include <time.h>
-#include <isc/types.h>
-
-
-/***
- *** Absolute Times
- ***/
 
 uint64_t
 isc_time_microdiff(const struct timespec *t1, const struct timespec *t2);
