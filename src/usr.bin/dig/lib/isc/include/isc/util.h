@@ -140,9 +140,4 @@
 /*% Runtime Check */
 #define RUNTIME_CHECK(cond)		ISC_ERROR_RUNTIMECHECK(cond)
 
-/*%
- * Time
- */
-#define TIME_NOW(tp) 	RUNTIME_CHECK(isc_time_now((tp)) == ISC_R_SUCCESS)
-
 #endif /* ISC_UTIL_H */
