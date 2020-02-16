@@ -66,21 +66,3 @@ isc_time_microdiff(const struct timespec *t1, const struct timespec *t2) {
 
 	return ((res.tv_sec * NS_PER_S + res.tv_nsec) / NS_PER_US);
 }
-
-void
-isc_time_formathttptimestamp(const struct timespec *t, char *buf, unsigned int len) {
-	unsigned int flen;
-
-	REQUIRE(t != NULL);
-	INSIST(t->tv_nsec < NS_PER_S);
-	REQUIRE(buf != NULL);
-	REQUIRE(len > 0);
-
-	/*
-	 * 5 spaces, 1 comma, 3 GMT, 2 %d, 4 %Y, 8 %H:%M:%S, 3+ %a, 3+ %b (29+)
-	 */
-
-	flen = strftime(buf, len, "%a, %d %b %Y %H:%M:%S GMT",
-	    gmtime(&t->tv_sec));
-	INSIST(flen < len);
-}
