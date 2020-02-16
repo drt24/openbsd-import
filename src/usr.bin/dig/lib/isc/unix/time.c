@@ -58,27 +58,6 @@ isc_time_now(struct timespec *t) {
 	return (ISC_R_SUCCESS);
 }
 
-isc_result_t
-isc_time_add(const struct timespec *t, const struct timespec *i, struct timespec *result)
-{
-	REQUIRE(t != NULL && i != NULL && result != NULL);
-	INSIST(t->tv_nsec < NS_PER_S && i->tv_nsec < NS_PER_S);
-
-	timespecadd(t, i, result);
-	return (ISC_R_SUCCESS);
-}
-
-isc_result_t
-isc_time_subtract(const struct timespec *t, const struct timespec *i,
-		  struct timespec *result)
-{
-	REQUIRE(t != NULL && i != NULL && result != NULL);
-	INSIST(t->tv_nsec < NS_PER_S && i->tv_nsec < NS_PER_S);
-
-	timespecsub(t, i, result);
-	return (ISC_R_SUCCESS);
-}
-
 uint64_t
 isc_time_microdiff(const struct timespec *t1, const struct timespec *t2) {
 	struct timespec res;

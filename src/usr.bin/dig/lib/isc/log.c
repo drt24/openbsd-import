@@ -988,16 +988,8 @@ isc_log_doit(isc_log_t *lctx, isc_logcategory_t *category,
 				 * range.
 				 */
 				TIME_NOW(&oldest);
-				if (isc_time_subtract(&oldest, &interval,
-						      &oldest)
-				    != ISC_R_SUCCESS)
-					/*
-					 * Can't effectively do the checking
-					 * without having a valid time.
-					 */
-					message = NULL;
-				else
-					message = ISC_LIST_HEAD(lctx->messages);
+				timespecsub(&oldest, &interval, &oldest);
+				message = ISC_LIST_HEAD(lctx->messages);
 
 				while (message != NULL) {
 					if (timespeccmp(&message->time,
