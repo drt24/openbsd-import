@@ -47,9 +47,6 @@
  *** Intervals
  ***/
 
-static const struct timespec zero_interval = { 0, 0 };
-const struct timespec * const interval_zero = &zero_interval;
-
 void
 interval_set(struct timespec *i, time_t seconds, long nanoseconds)
 {

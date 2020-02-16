@@ -24,12 +24,6 @@
 #include <time.h>
 #include <isc/types.h>
 
-/***
- *** Intervals
- ***/
-
-extern const struct timespec * const interval_zero;
-
 /*
  * ISC_FORMATHTTPTIMESTAMP_SIZE needs to be 30 in C locale and potentially
  * more for other locales to handle longer national abbreviations when

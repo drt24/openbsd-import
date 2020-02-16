@@ -220,8 +220,7 @@ isc__timer_create(isc_timermgr_t *manager0, const struct timespec *interval,
 	REQUIRE(VALID_MANAGER(manager));
 	REQUIRE(task != NULL);
 	REQUIRE(action != NULL);
-	if (interval == NULL)
-		interval = interval_zero;
+	REQUIRE(interval != NULL);
 	REQUIRE(!(interval_iszero(interval)));
 	REQUIRE(timerp != NULL && *timerp == NULL);
 
@@ -300,10 +299,7 @@ isc__timer_reset(isc_timer_t *timer0, const struct timespec *interval,
 	REQUIRE(VALID_TIMER(timer));
 	manager = timer->manager;
 	REQUIRE(VALID_MANAGER(manager));
-
-	if (interval == NULL)
-		interval = interval_zero;
-
+	REQUIRE(interval != NULL);
 	REQUIRE(!(interval_iszero(interval)));
 
 	/*
