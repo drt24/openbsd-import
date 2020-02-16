@@ -943,11 +943,11 @@ isc_log_doit(isc_log_t *lctx, isc_logcategory_t *category,
 
 		if ((channel->flags & ISC_LOG_PRINTTIME) != 0 &&
 		    time_string[0] == '\0') {
-			struct timespec isctime;
+			struct timespec now;
 
-			TIME_NOW(&isctime);
-			isc_time_formattimestamp(&isctime, time_string,
-						 sizeof(time_string));
+			TIME_NOW(&now);
+			strftime(time_string, sizeof(time_string),
+			    "%d-%b-%Y %X", localtime(&now.tv_sec));
 		}
 
 		if ((channel->flags & ISC_LOG_PRINTLEVEL) != 0 &&
