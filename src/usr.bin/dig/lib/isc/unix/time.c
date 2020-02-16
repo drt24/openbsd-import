@@ -58,22 +58,6 @@ isc_time_now(struct timespec *t) {
 	return (ISC_R_SUCCESS);
 }
 
-int
-isc_time_compare(const struct timespec *t1, const struct timespec *t2) {
-	REQUIRE(t1 != NULL && t2 != NULL);
-	INSIST(t1->tv_nsec < NS_PER_S && t2->tv_nsec < NS_PER_S);
-
-	if (t1->tv_sec < t2->tv_sec)
-		return (-1);
-	if (t1->tv_sec > t2->tv_sec)
-		return (1);
-	if (t1->tv_nsec < t2->tv_nsec)
-		return (-1);
-	if (t1->tv_nsec > t2->tv_nsec)
-		return (1);
-	return (0);
-}
-
 isc_result_t
 isc_time_add(const struct timespec *t, const struct timespec *i, struct timespec *result)
 {

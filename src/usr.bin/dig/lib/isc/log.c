@@ -1000,8 +1000,8 @@ isc_log_doit(isc_log_t *lctx, isc_logcategory_t *category,
 					message = ISC_LIST_HEAD(lctx->messages);
 
 				while (message != NULL) {
-					if (isc_time_compare(&message->time,
-							     &oldest) < 0) {
+					if (timespeccmp(&message->time,
+					    &oldest, <)) {
 						/*
 						 * This message is older
 						 * than the duplicate_interval,
