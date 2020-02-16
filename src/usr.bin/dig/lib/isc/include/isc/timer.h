@@ -82,11 +82,7 @@
 
 /*% Timer Type */
 typedef enum {
-	isc_timertype_undefined = -1,	/*%< Undefined */
-	isc_timertype_ticker = 0, 	/*%< Ticker */
-	isc_timertype_once = 1, 	/*%< Once */
-	isc_timertype_limited = 2, 	/*%< Limited */
-	isc_timertype_inactive = 3 	/*%< Inactive */
+	isc_timertype_once = 1	 	/*%< Once */
 } isc_timertype_t;
 
 typedef struct isc_timerevent {
