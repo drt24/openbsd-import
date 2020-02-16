@@ -36,38 +36,6 @@
  *** Absolute Times
  ***/
 
-void
-isc_time_set(struct timespec *t, time_t seconds, long nanoseconds);
-/*%<
- * Set 't' to a value which represents the given number of seconds and
- * nanoseconds since 00:00:00 January 1, 1970, UTC.
- *
- * Notes:
- *\li	The Unix version of this call is equivalent to:
- *\code
- *	isc_time_settoepoch(t);
- *	interval_set(i, seconds, nanoseconds);
- *	isc_time_add(t, i, t);
- *\endcode
- *
- * Requires:
- *\li	't' is a valid pointer.
- *\li	nanoseconds < 1000000000.
- */
-
-void
-isc_time_settoepoch(struct timespec *t);
-/*%<
- * Set 't' to the time of the epoch.
- *
- * Notes:
- *\li	The date of the epoch is platform-dependent.
- *
- * Requires:
- *
- *\li	't' is a valid pointer.
- */
-
 isc_boolean_t
 isc_time_isepoch(const struct timespec *t);
 /*%<

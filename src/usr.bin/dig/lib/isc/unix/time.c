@@ -47,22 +47,6 @@
  *** Absolute Times
  ***/
 
-void
-isc_time_set(struct timespec *t, time_t seconds, long nanoseconds) {
-	REQUIRE(t != NULL);
-	REQUIRE(nanoseconds < NS_PER_S);
-
-	t->tv_sec = seconds;
-	t->tv_nsec = nanoseconds;
-}
-
-void
-isc_time_settoepoch(struct timespec *t) {
-	REQUIRE(t != NULL);
-
-	timespecclear(t);
-}
-
 isc_boolean_t
 isc_time_isepoch(const struct timespec *t) {
 	REQUIRE(t != NULL);
