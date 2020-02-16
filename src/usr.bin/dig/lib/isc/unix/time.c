@@ -77,9 +77,6 @@ interval_iszero(const interval_t *i) {
  *** Absolute Times
  ***/
 
-static const isc_time_t epoch = { 0, 0 };
-const isc_time_t * const isc_time_epoch = &epoch;
-
 void
 isc_time_set(isc_time_t *t, unsigned int seconds, unsigned int nanoseconds) {
 	REQUIRE(t != NULL);

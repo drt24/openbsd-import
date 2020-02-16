@@ -88,8 +88,6 @@ struct isc_time {
 	unsigned int	nanoseconds;
 };
 
-extern const isc_time_t * const isc_time_epoch;
-
 void
 isc_time_set(isc_time_t *t, unsigned int seconds, unsigned int nanoseconds);
 /*%<

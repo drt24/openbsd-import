@@ -2546,7 +2546,7 @@ bringup_timer(dig_query_t *query, unsigned int default_timeout) {
 	interval_set(&l->interval, local_timeout, 0);
 	if (query->timer != NULL)
 		isc_timer_detach(&query->timer);
-	result = isc_timer_create(timermgr, isc_timertype_once, NULL,
+	result = isc_timer_create(timermgr,
 				  &l->interval, global_task, connect_timeout,
 				  query, &query->timer);
 	check_result(result, "isc_timer_create");
@@ -3664,8 +3664,6 @@ recv_done(isc_task_t *task, isc_event_t *event) {
 			debug("have local timeout of %d", local_timeout);
 			interval_set(&l->interval, local_timeout, 0);
 			result = isc_timer_reset(query->timer,
-						 isc_timertype_once,
-						 NULL,
 						 &l->interval,
 						 ISC_FALSE);
 			check_result(result, "isc_timer_reset");
