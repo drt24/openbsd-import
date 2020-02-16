@@ -44,10 +44,7 @@
 #include <isc/refcount.h>
 #include <isc/sha1.h>
 #include <isc/sha2.h>
-#include <isc/stdtime.h>
 #include <isc/hmacsha.h>
-
-
 
 #include <dns/time.h>
 
@@ -110,9 +107,9 @@ struct dst_key {
 
 	} keydata;			/*%< pointer to key in crypto pkg fmt */
 
-	isc_stdtime_t	times[DST_MAX_TIMES + 1];    /*%< timing metadata */
+	time_t	times[DST_MAX_TIMES + 1];    /*%< timing metadata */
 	isc_boolean_t	timeset[DST_MAX_TIMES + 1];  /*%< data set? */
-	isc_stdtime_t	nums[DST_MAX_NUMERIC + 1];   /*%< numeric metadata */
+	time_t	nums[DST_MAX_NUMERIC + 1];   /*%< numeric metadata */
 	isc_boolean_t	numset[DST_MAX_NUMERIC + 1]; /*%< data set? */
 	isc_boolean_t 	inactive;      /*%< private key not present as it is
 					    inactive */

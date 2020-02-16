@@ -21,8 +21,6 @@
 
 /*! \file dst/dst.h */
 
-#include <isc/stdtime.h>
-
 #include <dns/types.h>
 #include <dns/log.h>
 #include <dns/name.h>
