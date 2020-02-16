@@ -405,7 +405,7 @@ dispatch(isc__timermgr_t *manager, struct timespec *now) {
 		if (isc_time_compare(now, &timer->due) >= 0) {
 			idle = ISC_FALSE;
 
-			if (!isc_time_isepoch(&timer->idle) &&
+			if (timespecisset(&timer->idle) &&
 			    isc_time_compare(now,
 			    &timer->idle) >= 0) {
 				idle = ISC_TRUE;

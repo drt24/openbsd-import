@@ -47,18 +47,6 @@
  *** Absolute Times
  ***/
 
-isc_boolean_t
-isc_time_isepoch(const struct timespec *t) {
-	REQUIRE(t != NULL);
-	INSIST(t->tv_nsec < NS_PER_S);
-
-	if (!timespecisset(t))
-		return (ISC_TRUE);
-
-	return (ISC_FALSE);
-}
-
-
 isc_result_t
 isc_time_now(struct timespec *t) {
 	REQUIRE(t != NULL);

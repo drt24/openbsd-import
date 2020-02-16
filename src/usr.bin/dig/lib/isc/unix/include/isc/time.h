@@ -36,16 +36,6 @@
  *** Absolute Times
  ***/
 
-isc_boolean_t
-isc_time_isepoch(const struct timespec *t);
-/*%<
- * Returns ISC_TRUE iff. 't' is the epoch ("time zero").
- *
- * Requires:
- *
- *\li	't' is a valid pointer.
- */
-
 isc_result_t
 isc_time_now(struct timespec *t);
 /*%<
