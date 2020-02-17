@@ -22,7 +22,6 @@
 /*! \file dns/tsig.h */
 
 #include <isc/refcount.h>
-#include <isc/stdio.h>
 
 #include <dns/types.h>
 #include <dns/name.h>
