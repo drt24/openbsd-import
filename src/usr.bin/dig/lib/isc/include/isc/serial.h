@@ -33,39 +33,15 @@
  ***/
 
 isc_boolean_t
-isc_serial_lt(uint32_t a, uint32_t b);
-/*%<
- *	Return true if 'a' < 'b' otherwise false.
- */
-
-isc_boolean_t
 isc_serial_gt(uint32_t a, uint32_t b);
 /*%<
  *	Return true if 'a' > 'b' otherwise false.
  */
 
 isc_boolean_t
-isc_serial_le(uint32_t a, uint32_t b);
-/*%<
- *	Return true if 'a' <= 'b' otherwise false.
- */
-
-isc_boolean_t
 isc_serial_ge(uint32_t a, uint32_t b);
 /*%<
  *	Return true if 'a' >= 'b' otherwise false.
- */
-
-isc_boolean_t
-isc_serial_eq(uint32_t a, uint32_t b);
-/*%<
- *	Return true if 'a' == 'b' otherwise false.
- */
-
-isc_boolean_t
-isc_serial_ne(uint32_t a, uint32_t b);
-/*%<
- *	Return true if 'a' != 'b' otherwise false.
  */
 
 #endif /* ISC_SERIAL_H */

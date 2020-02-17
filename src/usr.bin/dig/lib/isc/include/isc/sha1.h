@@ -41,9 +41,6 @@ void
 isc_sha1_init(isc_sha1_t *ctx);
 
 void
-isc_sha1_invalidate(isc_sha1_t *ctx);
-
-void
 isc_sha1_update(isc_sha1_t *ctx, const unsigned char *data, unsigned int len);
 
 void
