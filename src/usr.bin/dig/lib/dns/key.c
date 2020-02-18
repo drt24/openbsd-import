@@ -84,26 +84,22 @@ dst_region_computerid(const isc_region_t *source, unsigned int alg) {
 
 dns_name_t *
 dst_key_name(const dst_key_t *key) {
-	REQUIRE(VALID_KEY(key));
 	return (key->key_name);
 }
 
 unsigned int
 dst_key_size(const dst_key_t *key) {
-	REQUIRE(VALID_KEY(key));
 	return (key->key_size);
 }
 
 unsigned int
 dst_key_alg(const dst_key_t *key) {
-	REQUIRE(VALID_KEY(key));
 	return (key->key_alg);
 }
 
 void
 dst_key_setbits(dst_key_t *key, uint16_t bits) {
 	unsigned int maxbits;
-	REQUIRE(VALID_KEY(key));
 	if (bits != 0) {
 		RUNTIME_CHECK(dst_key_sigsize(key, &maxbits) == ISC_R_SUCCESS);
 		maxbits *= 8;
@@ -114,7 +110,6 @@ dst_key_setbits(dst_key_t *key, uint16_t bits) {
 
 uint16_t
 dst_key_getbits(const dst_key_t *key) {
-	REQUIRE(VALID_KEY(key));
 	return (key->key_bits);
 }
 

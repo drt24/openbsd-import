@@ -22,9 +22,9 @@
 /*! \file */
 
 isc_boolean_t
-isc__taskmgr_ready(isc_taskmgr_t *taskmgr);
+isc_taskmgr_ready(isc_taskmgr_t *taskmgr);
 
 isc_result_t
-isc__taskmgr_dispatch(isc_taskmgr_t *taskmgr);
+isc_taskmgr_dispatch(isc_taskmgr_t *taskmgr);
 
 #endif /* ISC_TASK_P_H */

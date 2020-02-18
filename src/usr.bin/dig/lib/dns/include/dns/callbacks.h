@@ -25,20 +25,13 @@
  ***	Imports
  ***/
 
-#include <isc/magic.h>
-
 #include <dns/types.h>
 
 /***
  ***	Types
  ***/
 
-#define DNS_CALLBACK_MAGIC	ISC_MAGIC('C','L','L','B')
-#define DNS_CALLBACK_VALID(cb)	ISC_MAGIC_VALID(cb, DNS_CALLBACK_MAGIC)
-
 struct dns_rdatacallbacks {
-	unsigned int magic;
-
 	/*%
 	 * dns_load_master calls this when it has rdatasets to commit.
 	 */

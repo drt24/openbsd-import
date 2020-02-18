@@ -1940,7 +1940,6 @@ dig_shutdown() {
 
 	cancel_all();
 	destroy_libs();
-	isc_app_finish();
 }
 
 /*% Main processing routine for dig */

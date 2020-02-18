@@ -815,8 +815,6 @@ rdata_validate(isc_buffer_t *src, isc_buffer_t *dest, dns_rdataclass_t rdclass,
 	dns_decompress_init(&dctx, -1, DNS_DECOMPRESS_NONE);
 	isc_buffer_setactive(src, isc_buffer_usedlength(src));
 	result = dns_rdata_fromwire(NULL, rdclass, type, src, &dctx, 0, dest);
-	dns_decompress_invalidate(&dctx);
-
 	return (result);
 }
 

@@ -46,7 +46,6 @@ struct dns_compressnode {
 };
 
 struct dns_compress {
-	unsigned int		magic;		/*%< Magic number. */
 	unsigned int		allowed;	/*%< Allowed methods. */
 	int			edns;		/*%< Edns version or -1. */
 	/*% Global compression table. */
@@ -63,7 +62,6 @@ typedef enum {
 } dns_decompresstype_t;
 
 struct dns_decompress {
-	unsigned int		magic;		/*%< Magic number. */
 	unsigned int		allowed;	/*%< Allowed methods. */
 	int			edns;		/*%< Edns version or -1. */
 	dns_decompresstype_t	type;		/*%< Strict checking */

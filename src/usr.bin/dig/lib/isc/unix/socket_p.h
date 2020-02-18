@@ -24,7 +24,7 @@
 #include <sys/select.h>
 
 typedef struct isc_socketwait isc_socketwait_t;
-int isc__socketmgr_waitevents(isc_socketmgr_t *, struct timeval *,
+int isc_socketmgr_waitevents(isc_socketmgr_t *, struct timeval *,
 			      isc_socketwait_t **);
-isc_result_t isc__socketmgr_dispatch(isc_socketmgr_t *, isc_socketwait_t *);
+isc_result_t isc_socketmgr_dispatch(isc_socketmgr_t *, isc_socketwait_t *);
 #endif /* ISC_SOCKET_P_H */

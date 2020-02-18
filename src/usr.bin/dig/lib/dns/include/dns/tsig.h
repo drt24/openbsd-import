@@ -49,7 +49,6 @@ extern dns_name_t *dns_tsig_hmacsha512_name;
 
 struct dns_tsigkey {
 	/* Unlocked */
-	unsigned int		magic;		/*%< Magic number. */
 	dst_key_t		*key;		/*%< Key */
 	dns_name_t		name;		/*%< Key name */
 	dns_name_t		*algorithm;	/*%< Algorithm name */
