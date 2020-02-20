@@ -30,15 +30,6 @@
 #define RRTYPE_DNSKEY_ATTRIBUTES (DNS_RDATATYPEATTR_DNSSEC)
 
 static inline isc_result_t
-fromtext_dnskey(ARGS_FROMTEXT) {
-
-	REQUIRE(type == dns_rdatatype_dnskey);
-
-	return (generic_fromtext_key(rdclass, type, lexer, origin,
-				     options, target, callbacks));
-}
-
-static inline isc_result_t
 totext_dnskey(ARGS_TOTEXT) {
 
 	REQUIRE(rdata != NULL);

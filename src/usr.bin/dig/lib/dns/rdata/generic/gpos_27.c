@@ -26,28 +26,6 @@
 #define RRTYPE_GPOS_ATTRIBUTES (0)
 
 static inline isc_result_t
-fromtext_gpos(ARGS_FROMTEXT) {
-	isc_token_t token;
-	int i;
-
-	REQUIRE(type == dns_rdatatype_gpos);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(origin);
-	UNUSED(options);
-	UNUSED(callbacks);
-
-	for (i = 0; i < 3; i++) {
-		RETERR(isc_lex_getmastertoken(lexer, &token,
-					      isc_tokentype_qstring,
-					      ISC_FALSE));
-		RETTOK(txt_fromtext(&token.value.as_textregion, target));
-	}
-	return (ISC_R_SUCCESS);
-}
-
-static inline isc_result_t
 totext_gpos(ARGS_TOTEXT) {
 	isc_region_t region;
 	int i;

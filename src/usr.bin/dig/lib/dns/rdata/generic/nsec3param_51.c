@@ -42,56 +42,6 @@
 #define RRTYPE_NSEC3PARAM_ATTRIBUTES (DNS_RDATATYPEATTR_DNSSEC)
 
 static inline isc_result_t
-fromtext_nsec3param(ARGS_FROMTEXT) {
-	isc_token_t token;
-	unsigned int flags = 0;
-	unsigned char hashalg;
-
-	REQUIRE(type == dns_rdatatype_nsec3param);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(callbacks);
-	UNUSED(origin);
-	UNUSED(options);
-
-	/* Hash. */
-	RETERR(isc_lex_getmastertoken(lexer, &token, isc_tokentype_string,
-				      ISC_FALSE));
-	RETTOK(dns_hashalg_fromtext(&hashalg, &token.value.as_textregion));
-	RETERR(uint8_tobuffer(hashalg, target));
-
-	/* Flags. */
-	RETERR(isc_lex_getmastertoken(lexer, &token, isc_tokentype_number,
-				      ISC_FALSE));
-	flags = token.value.as_ulong;
-	if (flags > 255U)
-		RETTOK(ISC_R_RANGE);
-	RETERR(uint8_tobuffer(flags, target));
-
-	/* Iterations. */
-	RETERR(isc_lex_getmastertoken(lexer, &token, isc_tokentype_number,
-				      ISC_FALSE));
-	if (token.value.as_ulong > 0xffffU)
-		RETTOK(ISC_R_RANGE);
-	RETERR(uint16_tobuffer(token.value.as_ulong, target));
-
-	/* Salt. */
-	RETERR(isc_lex_getmastertoken(lexer, &token, isc_tokentype_string,
-				      ISC_FALSE));
-	if (token.value.as_textregion.length > (255*2))
-		RETTOK(DNS_R_TEXTTOOLONG);
-	if (strcmp(DNS_AS_STR(token), "-") == 0) {
-		RETERR(uint8_tobuffer(0, target));
-	} else {
-		RETERR(uint8_tobuffer(strlen(DNS_AS_STR(token)) / 2, target));
-		RETERR(isc_hex_decodestring(DNS_AS_STR(token), target));
-	}
-
-	return (ISC_R_SUCCESS);
-}
-
-static inline isc_result_t
 totext_nsec3param(ARGS_TOTEXT) {
 	isc_region_t sr;
 	unsigned int i, j;

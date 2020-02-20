@@ -22,19 +22,6 @@
 #define RRTYPE_#_ATTRIBUTES (0)
 
 static inline isc_result_t
-fromtext_#(ARGS_FROMTEXT) {
-	isc_token_t token;
-
-	REQUIRE(type == dns_rdatatype_proforma.c#);
-	REQUIRE(rdclass == #);
-
-	RETERR(isc_lex_getmastertoken(lexer, &token, isc_tokentype_string,
-				      ISC_FALSE));
-
-	return (ISC_R_NOTIMPLEMENTED);
-}
-
-static inline isc_result_t
 totext_#(ARGS_TOTEXT) {
 
 	REQUIRE(rdata->type == dns_rdatatype_proforma.c#);

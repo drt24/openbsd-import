@@ -28,34 +28,6 @@
 #define RRTYPE_AAAA_ATTRIBUTES (0)
 
 static inline isc_result_t
-fromtext_in_aaaa(ARGS_FROMTEXT) {
-	isc_token_t token;
-	unsigned char addr[16];
-	isc_region_t region;
-
-	REQUIRE(type == dns_rdatatype_aaaa);
-	REQUIRE(rdclass == dns_rdataclass_in);
-
-	UNUSED(type);
-	UNUSED(origin);
-	UNUSED(options);
-	UNUSED(rdclass);
-	UNUSED(callbacks);
-
-	RETERR(isc_lex_getmastertoken(lexer, &token, isc_tokentype_string,
-				      ISC_FALSE));
-
-	if (inet_pton(AF_INET6, DNS_AS_STR(token), addr) != 1)
-		RETTOK(DNS_R_BADAAAA);
-	isc_buffer_availableregion(target, &region);
-	if (region.length < 16)
-		return (ISC_R_NOSPACE);
-	memmove(region.base, addr, 16);
-	isc_buffer_add(target, 16);
-	return (ISC_R_SUCCESS);
-}
-
-static inline isc_result_t
 totext_in_aaaa(ARGS_TOTEXT) {
 	isc_region_t region;
 

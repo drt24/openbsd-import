@@ -24,21 +24,6 @@
 #define RRTYPE_NULL_ATTRIBUTES (0)
 
 static inline isc_result_t
-fromtext_null(ARGS_FROMTEXT) {
-	REQUIRE(type == dns_rdatatype_null);
-
-	UNUSED(rdclass);
-	UNUSED(type);
-	UNUSED(lexer);
-	UNUSED(origin);
-	UNUSED(options);
-	UNUSED(target);
-	UNUSED(callbacks);
-
-	return (DNS_R_SYNTAX);
-}
-
-static inline isc_result_t
 totext_null(ARGS_TOTEXT) {
 	REQUIRE(rdata->type == dns_rdatatype_null);
 

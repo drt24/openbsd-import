@@ -26,28 +26,6 @@
 #define RRTYPE_HINFO_ATTRIBUTES (0)
 
 static inline isc_result_t
-fromtext_hinfo(ARGS_FROMTEXT) {
-	isc_token_t token;
-	int i;
-
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(origin);
-	UNUSED(options);
-	UNUSED(callbacks);
-
-	REQUIRE(type == dns_rdatatype_hinfo);
-
-	for (i = 0; i < 2; i++) {
-		RETERR(isc_lex_getmastertoken(lexer, &token,
-					      isc_tokentype_qstring,
-					      ISC_FALSE));
-		RETTOK(txt_fromtext(&token.value.as_textregion, target));
-	}
-	return (ISC_R_SUCCESS);
-}
-
-static inline isc_result_t
 totext_hinfo(ARGS_TOTEXT) {
 	isc_region_t region;
 

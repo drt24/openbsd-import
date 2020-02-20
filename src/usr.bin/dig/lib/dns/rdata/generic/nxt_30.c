@@ -30,64 +30,6 @@
 #define RRTYPE_NXT_ATTRIBUTES (0)
 
 static inline isc_result_t
-fromtext_nxt(ARGS_FROMTEXT) {
-	isc_token_t token;
-	dns_name_t name;
-	isc_buffer_t buffer;
-	char *e;
-	unsigned char bm[8*1024]; /* 64k bits */
-	dns_rdatatype_t covered;
-	dns_rdatatype_t maxcovered = 0;
-	isc_boolean_t first = ISC_TRUE;
-	long n;
-
-	REQUIRE(type == dns_rdatatype_nxt);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(callbacks);
-
-	/*
-	 * Next domain.
-	 */
-	RETERR(isc_lex_getmastertoken(lexer, &token, isc_tokentype_string,
-				      ISC_FALSE));
-	dns_name_init(&name, NULL);
-	buffer_fromregion(&buffer, &token.value.as_region);
-	if (origin == NULL)
-		origin = dns_rootname;
-	RETTOK(dns_name_fromtext(&name, &buffer, origin, options, target));
-
-	memset(bm, 0, sizeof(bm));
-	do {
-		RETERR(isc_lex_getmastertoken(lexer, &token,
-					      isc_tokentype_string, ISC_TRUE));
-		if (token.type != isc_tokentype_string)
-			break;
-		n = strtol(DNS_AS_STR(token), &e, 10);
-		if (e != DNS_AS_STR(token) && *e == '\0') {
-			covered = (dns_rdatatype_t)n;
-		} else if (dns_rdatatype_fromtext(&covered,
-				&token.value.as_textregion) == DNS_R_UNKNOWN)
-			RETTOK(DNS_R_UNKNOWN);
-		/*
-		 * NXT is only specified for types 1..127.
-		 */
-		if (covered < 1 || covered > 127)
-			return (ISC_R_RANGE);
-		if (first || covered > maxcovered)
-			maxcovered = covered;
-		first = ISC_FALSE;
-		bm[covered/8] |= (0x80>>(covered%8));
-	} while (1);
-	isc_lex_ungettoken(lexer, &token);
-	if (first)
-		return (ISC_R_SUCCESS);
-	n = (maxcovered + 8) / 8;
-	return (mem_tobuffer(target, bm, n));
-}
-
-static inline isc_result_t
 totext_nxt(ARGS_TOTEXT) {
 	isc_region_t sr;
 	unsigned int i, j;

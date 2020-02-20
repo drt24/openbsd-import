@@ -24,21 +24,6 @@
 #define RRTYPE_DHCID_ATTRIBUTES 0
 
 static inline isc_result_t
-fromtext_in_dhcid(ARGS_FROMTEXT) {
-
-	REQUIRE(type == dns_rdatatype_dhcid);
-	REQUIRE(rdclass == dns_rdataclass_in);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(origin);
-	UNUSED(options);
-	UNUSED(callbacks);
-
-	return (isc_base64_tobuffer(lexer, target, -1));
-}
-
-static inline isc_result_t
 totext_in_dhcid(ARGS_TOTEXT) {
 	isc_region_t sr, sr2;
 	char buf[sizeof(" ; 64000 255 64000")];

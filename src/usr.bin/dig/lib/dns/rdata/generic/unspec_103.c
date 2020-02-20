@@ -22,20 +22,6 @@
 #define RRTYPE_UNSPEC_ATTRIBUTES (0)
 
 static inline isc_result_t
-fromtext_unspec(ARGS_FROMTEXT) {
-
-	REQUIRE(type == dns_rdatatype_unspec);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(origin);
-	UNUSED(options);
-	UNUSED(callbacks);
-
-	return (atob_tobuffer(lexer, target));
-}
-
-static inline isc_result_t
 totext_unspec(ARGS_TOTEXT) {
 
 	REQUIRE(rdata->type == dns_rdatatype_unspec);
