@@ -1930,7 +1930,7 @@ compute_cookie(unsigned char *clientcookie, size_t len) {
 
 #define nitems(_a) (sizeof((_a)) / sizeof((_a)[0]))
 static void
-populate_root_hints()
+populate_root_hints(void)
 {
 	dig_server_t *newsrv;
 	size_t i;
