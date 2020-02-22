@@ -353,7 +353,6 @@ dns_rdataset_towire(dns_rdataset_t *rdataset,
 		    dns_name_t *owner_name,
 		    dns_compress_t *cctx,
 		    isc_buffer_t *target,
-		    unsigned int options,
 		    unsigned int *countp);
 /*%<
  * Convert 'rdataset' to wire format, compressing names as specified
@@ -394,7 +393,6 @@ dns_rdataset_towiresorted(dns_rdataset_t *rdataset,
 			  isc_buffer_t *target,
 			  dns_rdatasetorderfunc_t order,
 			  const void *order_arg,
-			  unsigned int options,
 			  unsigned int *countp);
 /*%<
  * Like dns_rdataset_towire(), but sorting the rdatasets according to
@@ -413,7 +411,6 @@ dns_rdataset_towirepartial(dns_rdataset_t *rdataset,
 			   isc_buffer_t *target,
 			   dns_rdatasetorderfunc_t order,
 			   const void *order_arg,
-			   unsigned int options,
 			   unsigned int *countp,
 			   void **state);
 /*%<

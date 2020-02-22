@@ -147,10 +147,8 @@ check_hmac_sha(const dst_private_t *priv, unsigned int ntags,
 }
 
 static int
-check_data(const dst_private_t *priv, const unsigned int alg,
-	   isc_boolean_t old, isc_boolean_t external)
+check_data(const dst_private_t *priv, const unsigned int alg)
 {
-	UNUSED(old);
 	/* XXXVIX this switch statement is too sparse to gen a jump table. */
 	switch (alg) {
 	case DST_ALG_HMACSHA1:
@@ -355,7 +353,7 @@ dst__privstruct_parse(dst_key_t *key, unsigned int alg, isc_lex_t *lex,
 		goto fail;
 	}
 
-	check = check_data(priv, alg, ISC_TRUE, external);
+	check = check_data(priv, alg);
 	if (check < 0) {
 		ret = DST_R_INVALIDPRIVATEKEY;
 		goto fail;
