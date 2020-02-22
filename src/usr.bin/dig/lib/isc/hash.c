@@ -63,11 +63,6 @@ if advised of the possibility of such damage.
 #include <string.h>
 #include <isc/util.h>
 
-/*%
- * A large 32-bit prime number that specifies the range of the hash output.
- */
-#define PRIME32 0xFFFFFFFB              /* 2^32 -  5 */
-
 /*@{*/
 /*%
  * Types of random seed and hash accumulator.  Perhaps they can be system

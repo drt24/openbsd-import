@@ -156,7 +156,3 @@ isc_netaddr_issitelocal(isc_netaddr_t *na) {
 		return (ISC_FALSE);
 	}
 }
-
-#define ISC_IPADDR_ISNETZERO(i) \
-	       (((uint32_t)(i) & ISC__IPADDR(0xff000000)) \
-		== ISC__IPADDR(0x00000000))
