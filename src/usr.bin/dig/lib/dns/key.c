@@ -82,11 +82,6 @@ dst_region_computerid(const isc_region_t *source, unsigned int alg) {
 	return ((uint16_t)(ac & 0xffff));
 }
 
-dns_name_t *
-dst_key_name(const dst_key_t *key) {
-	return (key->key_name);
-}
-
 unsigned int
 dst_key_size(const dst_key_t *key) {
 	return (key->key_size);

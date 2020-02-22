@@ -264,30 +264,6 @@ base32_decode_finish(base32_decode_ctx_t *ctx) {
 }
 
 static isc_result_t
-base32_decodestring(const char *cstr, const char base[], isc_boolean_t pad,
-		    isc_buffer_t *target)
-{
-	base32_decode_ctx_t ctx;
-
-	base32_decode_init(&ctx, -1, base, pad, target);
-	for (;;) {
-		int c = *cstr++;
-		if (c == '\0')
-			break;
-		if (c == ' ' || c == '\t' || c == '\n' || c== '\r')
-			continue;
-		RETERR(base32_decode_char(&ctx, c));
-	}
-	RETERR(base32_decode_finish(&ctx));
-	return (ISC_R_SUCCESS);
-}
-
-isc_result_t
-isc_base32hexnp_decodestring(const char *cstr, isc_buffer_t *target) {
-	return (base32_decodestring(cstr, base32hex, ISC_FALSE, target));
-}
-
-static isc_result_t
 base32_decoderegion(isc_region_t *source, const char base[],
 		    isc_boolean_t pad, isc_buffer_t *target)
 {

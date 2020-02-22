@@ -34,7 +34,6 @@
 
 #include <dns/cert.h>
 #include <dns/ds.h>
-#include <dns/dsdigest.h>
 #include <dns/keyflags.h>
 #include <dns/keyvalues.h>
 #include <dns/rcode.h>
@@ -159,7 +158,6 @@ static struct tbl certs[] = { CERTNAMES };
 static struct tbl secalgs[] = { SECALGNAMES };
 static struct tbl secprotos[] = { SECPROTONAMES };
 static struct tbl hashalgs[] = { HASHALGNAMES };
-static struct tbl dsdigests[] = { DSDIGESTNAMES };
 
 static struct keyflag {
 	const char *name;
@@ -400,14 +398,6 @@ dns_keyflags_fromtext(dns_keyflags_t *flagsp, isc_textregion_t *source)
 			text++; /* Skip "|" */
 	}
 	*flagsp = value;
-	return (ISC_R_SUCCESS);
-}
-
-isc_result_t
-dns_dsdigest_fromtext(dns_dsdigest_t *dsdigestp, isc_textregion_t *source) {
-	unsigned int value;
-	RETERR(dns_mnemonic_fromtext(&value, source, dsdigests, 0xff));
-	*dsdigestp = value;
 	return (ISC_R_SUCCESS);
 }
 
