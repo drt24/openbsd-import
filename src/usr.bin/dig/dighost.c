@@ -2330,10 +2330,10 @@ setup_lookup(dig_lookup_t *lookup) {
 	}
 
 	result = dns_message_rendersection(lookup->sendmsg,
-					   DNS_SECTION_QUESTION, 0);
+					   DNS_SECTION_QUESTION);
 	check_result(result, "dns_message_rendersection");
 	result = dns_message_rendersection(lookup->sendmsg,
-					   DNS_SECTION_AUTHORITY, 0);
+					   DNS_SECTION_AUTHORITY);
 	check_result(result, "dns_message_rendersection");
 	result = dns_message_renderend(lookup->sendmsg);
 	check_result(result, "dns_message_renderend");
