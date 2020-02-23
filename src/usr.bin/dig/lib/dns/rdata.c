@@ -32,7 +32,6 @@
 
 #include <isc/util.h>
 
-#include <dns/callbacks.h>
 #include <dns/cert.h>
 #include <dns/compress.h>
 #include "enumtype.h"
