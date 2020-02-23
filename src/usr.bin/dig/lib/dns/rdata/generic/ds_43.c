@@ -259,28 +259,6 @@ freestruct_ds(ARGS_FREESTRUCT) {
 	free(ds->digest);
 }
 
-static inline isc_result_t
-additionaldata_ds(ARGS_ADDLDATA) {
-	REQUIRE(rdata->type == dns_rdatatype_ds);
-
-	UNUSED(rdata);
-	UNUSED(add);
-	UNUSED(arg);
-
-	return (ISC_R_SUCCESS);
-}
-
-static inline isc_result_t
-digest_ds(ARGS_DIGEST) {
-	isc_region_t r;
-
-	REQUIRE(rdata->type == dns_rdatatype_ds);
-
-	dns_rdata_toregion(rdata, &r);
-
-	return ((digest)(arg, &r));
-}
-
 static inline isc_boolean_t
 checkowner_ds(ARGS_CHECKOWNER) {
 
@@ -290,18 +268,6 @@ checkowner_ds(ARGS_CHECKOWNER) {
 	UNUSED(type);
 	UNUSED(rdclass);
 	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
-
-static inline isc_boolean_t
-checknames_ds(ARGS_CHECKNAMES) {
-
-	REQUIRE(rdata->type == dns_rdatatype_ds);
-
-	UNUSED(rdata);
-	UNUSED(owner);
-	UNUSED(bad);
 
 	return (ISC_TRUE);
 }

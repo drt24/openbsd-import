@@ -170,28 +170,6 @@ freestruct_gpos(ARGS_FREESTRUCT) {
 	free(gpos->altitude);
 }
 
-static inline isc_result_t
-additionaldata_gpos(ARGS_ADDLDATA) {
-	REQUIRE(rdata->type == dns_rdatatype_gpos);
-
-	UNUSED(rdata);
-	UNUSED(add);
-	UNUSED(arg);
-
-	return (ISC_R_SUCCESS);
-}
-
-static inline isc_result_t
-digest_gpos(ARGS_DIGEST) {
-	isc_region_t r;
-
-	REQUIRE(rdata->type == dns_rdatatype_gpos);
-
-	dns_rdata_toregion(rdata, &r);
-
-	return ((digest)(arg, &r));
-}
-
 static inline isc_boolean_t
 checkowner_gpos(ARGS_CHECKOWNER) {
 
@@ -201,18 +179,6 @@ checkowner_gpos(ARGS_CHECKOWNER) {
 	UNUSED(type);
 	UNUSED(rdclass);
 	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
-
-static inline isc_boolean_t
-checknames_gpos(ARGS_CHECKNAMES) {
-
-	REQUIRE(rdata->type == dns_rdatatype_gpos);
-
-	UNUSED(rdata);
-	UNUSED(owner);
-	UNUSED(bad);
 
 	return (ISC_TRUE);
 }

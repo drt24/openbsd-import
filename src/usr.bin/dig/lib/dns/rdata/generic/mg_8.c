@@ -151,31 +151,6 @@ freestruct_mg(ARGS_FREESTRUCT) {
 	dns_name_free(&mg->mg);
 }
 
-static inline isc_result_t
-additionaldata_mg(ARGS_ADDLDATA) {
-	REQUIRE(rdata->type == dns_rdatatype_mg);
-
-	UNUSED(add);
-	UNUSED(arg);
-	UNUSED(rdata);
-
-	return (ISC_R_SUCCESS);
-}
-
-static inline isc_result_t
-digest_mg(ARGS_DIGEST) {
-	isc_region_t r;
-	dns_name_t name;
-
-	REQUIRE(rdata->type == dns_rdatatype_mg);
-
-	dns_rdata_toregion(rdata, &r);
-	dns_name_init(&name, NULL);
-	dns_name_fromregion(&name, &r);
-
-	return (dns_name_digest(&name, digest, arg));
-}
-
 static inline isc_boolean_t
 checkowner_mg(ARGS_CHECKOWNER) {
 
@@ -186,18 +161,6 @@ checkowner_mg(ARGS_CHECKOWNER) {
 	UNUSED(wildcard);
 
 	return (dns_name_ismailbox(name));
-}
-
-static inline isc_boolean_t
-checknames_mg(ARGS_CHECKNAMES) {
-
-	REQUIRE(rdata->type == dns_rdatatype_mg);
-
-	UNUSED(rdata);
-	UNUSED(owner);
-	UNUSED(bad);
-
-	return (ISC_TRUE);
 }
 
 static inline int

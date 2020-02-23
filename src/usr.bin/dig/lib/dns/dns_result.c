@@ -221,13 +221,6 @@ initialize(void) {
 	}
 }
 
-const char *
-dns_result_totext(isc_result_t result) {
-	initialize();
-
-	return (isc_result_totext(result));
-}
-
 void
 dns_result_register(void) {
 	initialize();

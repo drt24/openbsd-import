@@ -150,35 +150,6 @@ freestruct_ns(ARGS_FREESTRUCT) {
 	dns_name_free(&ns->name);
 }
 
-static inline isc_result_t
-additionaldata_ns(ARGS_ADDLDATA) {
-	dns_name_t name;
-	dns_offsets_t offsets;
-	isc_region_t region;
-
-	REQUIRE(rdata->type == dns_rdatatype_ns);
-
-	dns_name_init(&name, offsets);
-	dns_rdata_toregion(rdata, &region);
-	dns_name_fromregion(&name, &region);
-
-	return ((add)(arg, &name, dns_rdatatype_a));
-}
-
-static inline isc_result_t
-digest_ns(ARGS_DIGEST) {
-	isc_region_t r;
-	dns_name_t name;
-
-	REQUIRE(rdata->type == dns_rdatatype_ns);
-
-	dns_rdata_toregion(rdata, &r);
-	dns_name_init(&name, NULL);
-	dns_name_fromregion(&name, &r);
-
-	return (dns_name_digest(&name, digest, arg));
-}
-
 static inline isc_boolean_t
 checkowner_ns(ARGS_CHECKOWNER) {
 
@@ -189,26 +160,6 @@ checkowner_ns(ARGS_CHECKOWNER) {
 	UNUSED(rdclass);
 	UNUSED(wildcard);
 
-	return (ISC_TRUE);
-}
-
-static inline isc_boolean_t
-checknames_ns(ARGS_CHECKNAMES) {
-	isc_region_t region;
-	dns_name_t name;
-
-	REQUIRE(rdata->type == dns_rdatatype_ns);
-
-	UNUSED(owner);
-
-	dns_rdata_toregion(rdata, &region);
-	dns_name_init(&name, NULL);
-	dns_name_fromregion(&name, &region);
-	if (!dns_name_ishostname(&name, ISC_FALSE)) {
-		if (bad != NULL)
-			dns_name_clone(&name, bad);
-		return (ISC_FALSE);
-	}
 	return (ISC_TRUE);
 }
 

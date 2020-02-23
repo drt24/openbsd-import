@@ -326,31 +326,6 @@ freestruct_key(ARGS_FREESTRUCT) {
 	generic_freestruct_key(source);
 }
 
-static inline isc_result_t
-additionaldata_key(ARGS_ADDLDATA) {
-
-	REQUIRE(rdata != NULL);
-	REQUIRE(rdata->type == dns_rdatatype_key);
-
-	UNUSED(rdata);
-	UNUSED(add);
-	UNUSED(arg);
-
-	return (ISC_R_SUCCESS);
-}
-
-static inline isc_result_t
-digest_key(ARGS_DIGEST) {
-	isc_region_t r;
-
-	REQUIRE(rdata != NULL);
-	REQUIRE(rdata->type == dns_rdatatype_key);
-
-	dns_rdata_toregion(rdata, &r);
-
-	return ((digest)(arg, &r));
-}
-
 static inline isc_boolean_t
 checkowner_key(ARGS_CHECKOWNER) {
 
@@ -360,19 +335,6 @@ checkowner_key(ARGS_CHECKOWNER) {
 	UNUSED(type);
 	UNUSED(rdclass);
 	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
-
-static inline isc_boolean_t
-checknames_key(ARGS_CHECKNAMES) {
-
-	REQUIRE(rdata != NULL);
-	REQUIRE(rdata->type == dns_rdatatype_key);
-
-	UNUSED(rdata);
-	UNUSED(owner);
-	UNUSED(bad);
 
 	return (ISC_TRUE);
 }

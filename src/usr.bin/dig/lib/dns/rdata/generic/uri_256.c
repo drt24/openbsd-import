@@ -213,28 +213,6 @@ freestruct_uri(ARGS_FREESTRUCT) {
 		free(uri->target);
 }
 
-static inline isc_result_t
-additionaldata_uri(ARGS_ADDLDATA) {
-	REQUIRE(rdata->type == dns_rdatatype_uri);
-
-	UNUSED(rdata);
-	UNUSED(add);
-	UNUSED(arg);
-
-	return (ISC_R_SUCCESS);
-}
-
-static inline isc_result_t
-digest_uri(ARGS_DIGEST) {
-	isc_region_t r;
-
-	REQUIRE(rdata->type == dns_rdatatype_uri);
-
-	dns_rdata_toregion(rdata, &r);
-
-	return ((digest)(arg, &r));
-}
-
 static inline isc_boolean_t
 checkowner_uri(ARGS_CHECKOWNER) {
 
@@ -244,18 +222,6 @@ checkowner_uri(ARGS_CHECKOWNER) {
 	UNUSED(type);
 	UNUSED(rdclass);
 	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
-
-static inline isc_boolean_t
-checknames_uri(ARGS_CHECKNAMES) {
-
-	REQUIRE(rdata->type == dns_rdatatype_uri);
-
-	UNUSED(rdata);
-	UNUSED(owner);
-	UNUSED(bad);
 
 	return (ISC_TRUE);
 }

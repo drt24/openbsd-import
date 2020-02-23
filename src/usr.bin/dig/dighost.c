@@ -169,7 +169,6 @@ dns_tsigkey_t *tsigkey = NULL;
 isc_boolean_t validated = ISC_TRUE;
 isc_boolean_t debugging = ISC_FALSE;
 isc_boolean_t debugtiming = ISC_FALSE;
-isc_boolean_t memdebugging = ISC_FALSE;
 char *progname = NULL;
 dig_lookup_t *current_lookup = NULL;
 
@@ -3907,8 +3906,6 @@ destroy_libs(void) {
 	flush_server_list();
 
 	clear_searchlist();
-
-	dns_name_destroy();
 
 	if (socketmgr != NULL) {
 		debug("freeing socketmgr");

@@ -32,22 +32,6 @@
  ***/
 
 isc_result_t
-dns_time64_fromtext(const char *source, int64_t *target);
-/*%<
- * Convert a date and time in YYYYMMDDHHMMSS text format at 'source'
- * into to a 64-bit count of seconds since Jan 1 1970 0:00 GMT.
- * Store the count at 'target'.
- */
-
-isc_result_t
-dns_time32_fromtext(const char *source, uint32_t *target);
-/*%<
- * Like dns_time64_fromtext, but returns the second count modulo 2^32
- * as per RFC2535.
- */
-
-
-isc_result_t
 dns_time64_totext(int64_t value, isc_buffer_t *target);
 /*%<
  * Convert a 64-bit count of seconds since Jan 1 1970 0:00 GMT into

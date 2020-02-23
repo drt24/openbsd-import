@@ -186,9 +186,6 @@
 #define DNS_RESULT_ISRCODE(result) \
 	(ISC_RESULTCLASS_INCLASS(ISC_RESULTCLASS_DNSRCODE, (result)))
 
-const char *
-dns_result_totext(isc_result_t);
-
 void
 dns_result_register(void);
 

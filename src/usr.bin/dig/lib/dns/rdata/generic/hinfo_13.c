@@ -143,28 +143,6 @@ freestruct_hinfo(ARGS_FREESTRUCT) {
 	free(hinfo->os);
 }
 
-static inline isc_result_t
-additionaldata_hinfo(ARGS_ADDLDATA) {
-	REQUIRE(rdata->type == dns_rdatatype_hinfo);
-
-	UNUSED(add);
-	UNUSED(arg);
-	UNUSED(rdata);
-
-	return (ISC_R_SUCCESS);
-}
-
-static inline isc_result_t
-digest_hinfo(ARGS_DIGEST) {
-	isc_region_t r;
-
-	REQUIRE(rdata->type == dns_rdatatype_hinfo);
-
-	dns_rdata_toregion(rdata, &r);
-
-	return ((digest)(arg, &r));
-}
-
 static inline isc_boolean_t
 checkowner_hinfo(ARGS_CHECKOWNER) {
 
@@ -174,18 +152,6 @@ checkowner_hinfo(ARGS_CHECKOWNER) {
 	UNUSED(type);
 	UNUSED(rdclass);
 	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
-
-static inline isc_boolean_t
-checknames_hinfo(ARGS_CHECKNAMES) {
-
-	REQUIRE(rdata->type == dns_rdatatype_hinfo);
-
-	UNUSED(rdata);
-	UNUSED(owner);
-	UNUSED(bad);
 
 	return (ISC_TRUE);
 }
