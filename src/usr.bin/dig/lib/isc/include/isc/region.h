@@ -33,19 +33,6 @@ struct isc_textregion {
 	unsigned int	length;
 };
 
-/* XXXDCL questionable ... bears discussion.  we have been putting off
- * discussing the region api.
- */
-struct isc_constregion {
-	const void *	base;
-	unsigned int	length;
-};
-
-struct isc_consttextregion {
-	const char *	base;
-	unsigned int	length;
-};
-
 /*@{*/
 /*!
  * The region structure is not opaque, and is usually directly manipulated.
