@@ -227,9 +227,7 @@ dst_key_todns(const dst_key_t *key, isc_buffer_t *target);
  */
 
 isc_result_t
-dst_key_frombuffer(dns_name_t *name, unsigned int alg,
-		   unsigned int flags, unsigned int protocol,
-		   dns_rdataclass_t rdclass,
+dst_key_frombuffer(unsigned int alg, unsigned int flags, unsigned int protocol,
 		   isc_buffer_t *source, dst_key_t **keyp);
 /*%<
  * Converts a buffer containing DNS KEY RDATA into a DST key.
