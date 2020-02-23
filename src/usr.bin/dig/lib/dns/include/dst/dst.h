@@ -303,8 +303,6 @@ dst_key_sigsize(const dst_key_t *key, unsigned int *n);
 
 uint16_t
 dst_region_computeid(const isc_region_t *source, unsigned int alg);
-uint16_t
-dst_region_computerid(const isc_region_t *source, unsigned int alg);
 /*%<
  * Computes the (revoked) key id of the key stored in the provided
  * region with the given algorithm.

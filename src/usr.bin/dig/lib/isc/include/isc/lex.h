@@ -248,25 +248,6 @@ isc_lex_gettoken(isc_lex_t *lex, unsigned int options, isc_token_t *tokenp);
  *\li	#ISC_R_NOMORE			No more input sources
  */
 
-isc_result_t
-isc_lex_getmastertoken(isc_lex_t *lex, isc_token_t *token,
-		       isc_tokentype_t expect, isc_boolean_t eol);
-/*%<
- * Get the next token from a DNS master file type stream.  This is a
- * convenience function that sets appropriate options and handles quoted
- * strings and end of line correctly for master files.  It also ungets
- * unexpected tokens.
- *
- * Requires:
- *\li	'lex' is a valid lexer.
- *
- *\li	'token' is a valid pointer
- *
- * Returns:
- *
- * \li	any return code from isc_lex_gettoken().
- */
-
 void
 isc_lex_ungettoken(isc_lex_t *lex, isc_token_t *tokenp);
 /*%<
