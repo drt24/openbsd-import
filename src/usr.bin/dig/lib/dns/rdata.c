@@ -21,20 +21,16 @@
 
 #include <ctype.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include <isc/base64.h>
 #include <isc/hex.h>
 #include <isc/lex.h>
-
 #include <isc/parseint.h>
-
-#include <string.h>
-
 #include <isc/util.h>
 
 #include <dns/cert.h>
 #include <dns/compress.h>
-#include "enumtype.h"
 #include <dns/keyvalues.h>
 #include <dns/rcode.h>
 #include <dns/rdata.h>
