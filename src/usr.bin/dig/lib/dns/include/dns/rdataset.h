@@ -51,7 +51,6 @@
  */
 
 #include <dns/types.h>
-#include "rdatastruct.h"
 
 typedef enum {
 	dns_rdatasetadditional_fromauth,

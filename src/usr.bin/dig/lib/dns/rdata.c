@@ -33,7 +33,6 @@
 #include <dns/keyvalues.h>
 #include <dns/rcode.h>
 #include <dns/rdata.h>
-#include "rdatastruct.h"
 #include <dns/rdatatype.h>
 #include <dns/result.h>
 #include <dns/time.h>

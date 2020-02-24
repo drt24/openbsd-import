@@ -22,14 +22,14 @@
  *** Imports
  ***/
 
+#include <sys/socket.h>
+#include <arpa/inet.h>
 
 #include <ctype.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include <isc/buffer.h>
-
-
-#include <string.h>		/* Required for HP/UX (and others?) */
 #include <isc/util.h>
 
 #include <dns/log.h>
