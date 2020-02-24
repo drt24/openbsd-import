@@ -69,46 +69,6 @@ towire_isdn(ARGS_TOWIRE) {
 
 
 
-static inline isc_result_t
-tostruct_isdn(ARGS_TOSTRUCT) {
-	dns_rdata_isdn_t *isdn = target;
-	isc_region_t r;
-
-	REQUIRE(rdata->type == dns_rdatatype_isdn);
-	REQUIRE(target != NULL);
-	REQUIRE(rdata->length != 0);
-
-	isdn->common.rdclass = rdata->rdclass;
-	isdn->common.rdtype = rdata->type;
-	ISC_LINK_INIT(&isdn->common, link);
-
-	dns_rdata_toregion(rdata, &r);
-
-	isdn->isdn_len = uint8_fromregion(&r);
-	isc_region_consume(&r, 1);
-	isdn->isdn = mem_maybedup(r.base, isdn->isdn_len);
-	if (isdn->isdn == NULL)
-		return (ISC_R_NOMEMORY);
-	isc_region_consume(&r, isdn->isdn_len);
-
-	if (r.length == 0) {
-		isdn->subaddress_len = 0;
-		isdn->subaddress = NULL;
-	} else {
-		isdn->subaddress_len = uint8_fromregion(&r);
-		isc_region_consume(&r, 1);
-		isdn->subaddress = mem_maybedup(r.base,
-						isdn->subaddress_len);
-		if (isdn->subaddress == NULL)
-			goto cleanup;
-	}
-
-	return (ISC_R_SUCCESS);
-
- cleanup:
-	free(isdn->isdn);
-	return (ISC_R_NOMEMORY);
-}
 
 
 

@@ -134,34 +134,6 @@ towire_in_srv(ARGS_TOWIRE) {
 
 
 
-static inline isc_result_t
-tostruct_in_srv(ARGS_TOSTRUCT) {
-	isc_region_t region;
-	dns_rdata_in_srv_t *srv = target;
-	dns_name_t name;
-
-	REQUIRE(rdata->rdclass == dns_rdataclass_in);
-	REQUIRE(rdata->type == dns_rdatatype_srv);
-	REQUIRE(target != NULL);
-	REQUIRE(rdata->length != 0);
-
-	srv->common.rdclass = rdata->rdclass;
-	srv->common.rdtype = rdata->type;
-	ISC_LINK_INIT(&srv->common, link);
-
-	dns_name_init(&name, NULL);
-	dns_rdata_toregion(rdata, &region);
-	srv->priority = uint16_fromregion(&region);
-	isc_region_consume(&region, 2);
-	srv->weight = uint16_fromregion(&region);
-	isc_region_consume(&region, 2);
-	srv->port = uint16_fromregion(&region);
-	isc_region_consume(&region, 2);
-	dns_name_fromregion(&name, &region);
-	dns_name_init(&srv->target, NULL);
-	RETERR(name_duporclone(&name, &srv->target));
-	return (ISC_R_SUCCESS);
-}
 
 
 

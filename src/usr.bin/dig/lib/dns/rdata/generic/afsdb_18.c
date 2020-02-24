@@ -104,33 +104,6 @@ towire_afsdb(ARGS_TOWIRE) {
 
 
 
-static inline isc_result_t
-tostruct_afsdb(ARGS_TOSTRUCT) {
-	isc_region_t region;
-	dns_rdata_afsdb_t *afsdb = target;
-	dns_name_t name;
-
-	REQUIRE(rdata->type == dns_rdatatype_afsdb);
-	REQUIRE(target != NULL);
-	REQUIRE(rdata->length != 0);
-
-	afsdb->common.rdclass = rdata->rdclass;
-	afsdb->common.rdtype = rdata->type;
-	ISC_LINK_INIT(&afsdb->common, link);
-
-	dns_name_init(&afsdb->server, NULL);
-
-	dns_rdata_toregion(rdata, &region);
-
-	afsdb->subtype = uint16_fromregion(&region);
-	isc_region_consume(&region, 2);
-
-	dns_name_init(&name, NULL);
-	dns_name_fromregion(&name, &region);
-
-	RETERR(name_duporclone(&name, &afsdb->server));
-	return (ISC_R_SUCCESS);
-}
 
 
 

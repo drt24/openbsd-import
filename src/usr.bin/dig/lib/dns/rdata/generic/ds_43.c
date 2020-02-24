@@ -213,19 +213,6 @@ generic_tostruct_ds(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline isc_result_t
-tostruct_ds(ARGS_TOSTRUCT) {
-	dns_rdata_ds_t *ds = target;
-
-	REQUIRE(rdata->type == dns_rdatatype_ds);
-	REQUIRE(target != NULL);
-
-	ds->common.rdclass = rdata->rdclass;
-	ds->common.rdtype = rdata->type;
-	ISC_LINK_INIT(&ds->common, link);
-
-	return (generic_tostruct_ds(rdata, target));
-}
 
 
 

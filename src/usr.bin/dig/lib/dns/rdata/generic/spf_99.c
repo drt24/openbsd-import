@@ -59,19 +59,6 @@ towire_spf(ARGS_TOWIRE) {
 
 
 
-static inline isc_result_t
-tostruct_spf(ARGS_TOSTRUCT) {
-	dns_rdata_spf_t *spf = target;
-
-	REQUIRE(rdata->type == dns_rdatatype_spf);
-	REQUIRE(target != NULL);
-
-	spf->common.rdclass = rdata->rdclass;
-	spf->common.rdtype = rdata->type;
-	ISC_LINK_INIT(&spf->common, link);
-
-	return (generic_tostruct_txt(rdata, target));
-}
 
 
 

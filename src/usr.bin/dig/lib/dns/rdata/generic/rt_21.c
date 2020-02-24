@@ -105,30 +105,6 @@ towire_rt(ARGS_TOWIRE) {
 
 
 
-static inline isc_result_t
-tostruct_rt(ARGS_TOSTRUCT) {
-	isc_region_t region;
-	dns_rdata_rt_t *rt = target;
-	dns_name_t name;
-
-	REQUIRE(rdata->type == dns_rdatatype_rt);
-	REQUIRE(target != NULL);
-	REQUIRE(rdata->length != 0);
-
-	rt->common.rdclass = rdata->rdclass;
-	rt->common.rdtype = rdata->type;
-	ISC_LINK_INIT(&rt->common, link);
-
-	dns_name_init(&name, NULL);
-	dns_rdata_toregion(rdata, &region);
-	rt->preference = uint16_fromregion(&region);
-	isc_region_consume(&region, 2);
-	dns_name_fromregion(&name, &region);
-	dns_name_init(&rt->host, NULL);
-	RETERR(name_duporclone(&name, &rt->host));
-
-	return (ISC_R_SUCCESS);
-}
 
 
 

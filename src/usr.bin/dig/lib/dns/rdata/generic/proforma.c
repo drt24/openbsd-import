@@ -58,15 +58,6 @@ towire_#(ARGS_TOWIRE) {
 
 
 
-static inline isc_result_t
-tostruct_#(ARGS_TOSTRUCT) {
-
-	REQUIRE(rdata->type == dns_rdatatype_proforma.c#);
-	REQUIRE(rdata->rdclass == #);
-	REQUIRE(rdata->length != 0);	/* XXX */
-
-	return (ISC_R_NOTIMPLEMENTED);
-}
 
 
 

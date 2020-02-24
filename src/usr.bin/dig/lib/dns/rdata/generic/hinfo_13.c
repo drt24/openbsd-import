@@ -67,39 +67,6 @@ towire_hinfo(ARGS_TOWIRE) {
 
 
 
-static inline isc_result_t
-tostruct_hinfo(ARGS_TOSTRUCT) {
-	dns_rdata_hinfo_t *hinfo = target;
-	isc_region_t region;
-
-	REQUIRE(rdata->type == dns_rdatatype_hinfo);
-	REQUIRE(target != NULL);
-	REQUIRE(rdata->length != 0);
-
-	hinfo->common.rdclass = rdata->rdclass;
-	hinfo->common.rdtype = rdata->type;
-	ISC_LINK_INIT(&hinfo->common, link);
-
-	dns_rdata_toregion(rdata, &region);
-	hinfo->cpu_len = uint8_fromregion(&region);
-	isc_region_consume(&region, 1);
-	hinfo->cpu = mem_maybedup(region.base, hinfo->cpu_len);
-	if (hinfo->cpu == NULL)
-		return (ISC_R_NOMEMORY);
-	isc_region_consume(&region, hinfo->cpu_len);
-
-	hinfo->os_len = uint8_fromregion(&region);
-	isc_region_consume(&region, 1);
-	hinfo->os = mem_maybedup(region.base, hinfo->os_len);
-	if (hinfo->os == NULL)
-		goto cleanup;
-
-	return (ISC_R_SUCCESS);
-
- cleanup:
-	free(hinfo->cpu);
-	return (ISC_R_NOMEMORY);
-}
 
 
 

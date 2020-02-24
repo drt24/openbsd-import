@@ -79,27 +79,6 @@ towire_ptr(ARGS_TOWIRE) {
 
 
 
-static inline isc_result_t
-tostruct_ptr(ARGS_TOSTRUCT) {
-	isc_region_t region;
-	dns_rdata_ptr_t *ptr = target;
-	dns_name_t name;
-
-	REQUIRE(rdata->type == dns_rdatatype_ptr);
-	REQUIRE(target != NULL);
-	REQUIRE(rdata->length != 0);
-
-	ptr->common.rdclass = rdata->rdclass;
-	ptr->common.rdtype = rdata->type;
-	ISC_LINK_INIT(&ptr->common, link);
-
-	dns_name_init(&name, NULL);
-	dns_rdata_toregion(rdata, &region);
-	dns_name_fromregion(&name, &region);
-	dns_name_init(&ptr->ptr, NULL);
-	RETERR(name_duporclone(&name, &ptr->ptr));
-	return (ISC_R_SUCCESS);
-}
 
 
 

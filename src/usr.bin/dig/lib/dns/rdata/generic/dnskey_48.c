@@ -63,20 +63,6 @@ towire_dnskey(ARGS_TOWIRE) {
 
 
 
-static inline isc_result_t
-tostruct_dnskey(ARGS_TOSTRUCT) {
-	dns_rdata_dnskey_t *dnskey = target;
-
-	REQUIRE(dnskey != NULL);
-	REQUIRE(rdata != NULL);
-	REQUIRE(rdata->type == dns_rdatatype_dnskey);
-
-	dnskey->common.rdclass = rdata->rdclass;
-	dnskey->common.rdtype = rdata->type;
-	ISC_LINK_INIT(&dnskey->common, link);
-
-	return (generic_tostruct_key(rdata, target));
-}
 
 
 

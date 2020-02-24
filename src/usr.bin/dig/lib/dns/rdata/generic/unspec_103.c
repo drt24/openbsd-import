@@ -59,26 +59,6 @@ towire_unspec(ARGS_TOWIRE) {
 
 
 
-static inline isc_result_t
-tostruct_unspec(ARGS_TOSTRUCT) {
-	dns_rdata_unspec_t *unspec = target;
-	isc_region_t r;
-
-	REQUIRE(rdata->type == dns_rdatatype_unspec);
-	REQUIRE(target != NULL);
-
-	unspec->common.rdclass = rdata->rdclass;
-	unspec->common.rdtype = rdata->type;
-	ISC_LINK_INIT(&unspec->common, link);
-
-	dns_rdata_toregion(rdata, &r);
-	unspec->datalen = r.length;
-	unspec->data = mem_maybedup(r.base, r.length);
-	if (unspec->data == NULL)
-		return (ISC_R_NOMEMORY);
-
-	return (ISC_R_SUCCESS);
-}
 
 
 

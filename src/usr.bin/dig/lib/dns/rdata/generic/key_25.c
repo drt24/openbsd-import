@@ -277,20 +277,6 @@ generic_freestruct_key(ARGS_FREESTRUCT) {
 }
 
 
-static inline isc_result_t
-tostruct_key(ARGS_TOSTRUCT) {
-	dns_rdata_key_t *key = target;
-
-	REQUIRE(key != NULL);
-	REQUIRE(rdata != NULL);
-	REQUIRE(rdata->type == dns_rdatatype_key);
-
-	key->common.rdclass = rdata->rdclass;
-	key->common.rdtype = rdata->type;
-	ISC_LINK_INIT(&key->common, link);
-
-	return (generic_tostruct_key(rdata, target));
-}
 
 
 

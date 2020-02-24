@@ -60,18 +60,6 @@ towire_dlv(ARGS_TOWIRE) {
 
 
 
-static inline isc_result_t
-tostruct_dlv(ARGS_TOSTRUCT) {
-	dns_rdata_dlv_t *dlv = target;
-
-	REQUIRE(rdata->type == dns_rdatatype_dlv);
-
-	dlv->common.rdclass = rdata->rdclass;
-	dlv->common.rdtype = rdata->type;
-	ISC_LINK_INIT(&dlv->common, link);
-
-	return (generic_tostruct_ds(rdata, target));
-}
 
 
 

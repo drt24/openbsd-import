@@ -85,26 +85,6 @@ towire_hs_a(ARGS_TOWIRE) {
 
 
 
-static inline isc_result_t
-tostruct_hs_a(ARGS_TOSTRUCT) {
-	dns_rdata_hs_a_t *a = target;
-	uint32_t n;
-	isc_region_t region;
-
-	REQUIRE(rdata->type == dns_rdatatype_a);
-	REQUIRE(rdata->rdclass == dns_rdataclass_hs);
-	REQUIRE(rdata->length == 4);
-
-	a->common.rdclass = rdata->rdclass;
-	a->common.rdtype = rdata->type;
-	ISC_LINK_INIT(&a->common, link);
-
-	dns_rdata_toregion(rdata, &region);
-	n = uint32_fromregion(&region);
-	a->in_addr.s_addr = htonl(n);
-
-	return (ISC_R_SUCCESS);
-}
 
 
 

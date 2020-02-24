@@ -151,27 +151,6 @@ towire_in_apl(ARGS_TOWIRE) {
 
 
 
-static inline isc_result_t
-tostruct_in_apl(ARGS_TOSTRUCT) {
-	dns_rdata_in_apl_t *apl = target;
-	isc_region_t r;
-
-	REQUIRE(rdata->type == dns_rdatatype_apl);
-	REQUIRE(rdata->rdclass == dns_rdataclass_in);
-
-	apl->common.rdclass = rdata->rdclass;
-	apl->common.rdtype = rdata->type;
-	ISC_LINK_INIT(&apl->common, link);
-
-	dns_rdata_toregion(rdata, &r);
-	apl->apl_len = r.length;
-	apl->apl = mem_maybedup(r.base, r.length);
-	if (apl->apl == NULL)
-		return (ISC_R_NOMEMORY);
-
-	apl->offset = 0;
-	return (ISC_R_SUCCESS);
-}
 
 
 

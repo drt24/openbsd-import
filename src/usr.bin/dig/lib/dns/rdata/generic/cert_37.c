@@ -110,35 +110,6 @@ towire_cert(ARGS_TOWIRE) {
 
 
 
-static inline isc_result_t
-tostruct_cert(ARGS_TOSTRUCT) {
-	dns_rdata_cert_t *cert = target;
-	isc_region_t region;
-
-	REQUIRE(rdata->type == dns_rdatatype_cert);
-	REQUIRE(target != NULL);
-	REQUIRE(rdata->length != 0);
-
-	cert->common.rdclass = rdata->rdclass;
-	cert->common.rdtype = rdata->type;
-	ISC_LINK_INIT(&cert->common, link);
-
-	dns_rdata_toregion(rdata, &region);
-
-	cert->type = uint16_fromregion(&region);
-	isc_region_consume(&region, 2);
-	cert->key_tag = uint16_fromregion(&region);
-	isc_region_consume(&region, 2);
-	cert->algorithm = uint8_fromregion(&region);
-	isc_region_consume(&region, 1);
-	cert->length = region.length;
-
-	cert->certificate = mem_maybedup(region.base, region.length);
-	if (cert->certificate == NULL)
-		return (ISC_R_NOMEMORY);
-
-	return (ISC_R_SUCCESS);
-}
 
 
 

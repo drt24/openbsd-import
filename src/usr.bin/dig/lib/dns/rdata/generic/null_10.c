@@ -57,26 +57,6 @@ towire_null(ARGS_TOWIRE) {
 
 
 
-static inline isc_result_t
-tostruct_null(ARGS_TOSTRUCT) {
-	dns_rdata_null_t *null = target;
-	isc_region_t r;
-
-	REQUIRE(rdata->type == dns_rdatatype_null);
-	REQUIRE(target != NULL);
-
-	null->common.rdclass = rdata->rdclass;
-	null->common.rdtype = rdata->type;
-	ISC_LINK_INIT(&null->common, link);
-
-	dns_rdata_toregion(rdata, &r);
-	null->length = r.length;
-	null->data = mem_maybedup(r.base, r.length);
-	if (null->data == NULL)
-		return (ISC_R_NOMEMORY);
-
-	return (ISC_R_SUCCESS);
-}
 
 
 
