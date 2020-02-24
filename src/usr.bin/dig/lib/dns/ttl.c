@@ -22,15 +22,12 @@
 
 #include <ctype.h>
 #include <stdio.h>
+#include <string.h>
 
 #include <isc/buffer.h>
-#include <isc/parseint.h>
-
 #include <isc/region.h>
-#include <string.h>
 #include <isc/util.h>
 
-#include <dns/result.h>
 #include <dns/ttl.h>
 
 #define RETERR(x) do { \
@@ -38,7 +35,6 @@
 	if (_r != ISC_R_SUCCESS) \
 		return (_r); \
 	} while (0)
-
 
 /*
  * Helper for dns_ttl_totext().

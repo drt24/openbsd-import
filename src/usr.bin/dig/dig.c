@@ -27,6 +27,7 @@
 
 #include <string.h>
 #include <isc/util.h>
+#include <isc/time.h>
 
 #include <dns/fixedname.h>
 #include <dns/masterdump.h>

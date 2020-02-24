@@ -33,6 +33,8 @@
 #include <resolv.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+#include <stdint.h>
 
 #include <dns/byaddr.h>
 #include <dns/fixedname.h>
@@ -51,7 +53,6 @@
 #include <dst/dst.h>
 #include <dst/result.h>
 
-#include <isc/app.h>
 #include <isc/base64.h>
 #include <isc/hex.h>
 #include <isc/log.h>

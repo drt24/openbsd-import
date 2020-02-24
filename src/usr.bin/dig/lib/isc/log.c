@@ -19,13 +19,14 @@
 /*! \file
  * \author  Principal Authors: DCL */
 
+#include <sys/time.h>
 #include <limits.h>
 #include <stdlib.h>
 #include <string.h>
 #include <syslog.h>
+#include <time.h>
 
 #include <isc/log.h>
-#include <isc/time.h>
 #include <isc/util.h>
 
 /*

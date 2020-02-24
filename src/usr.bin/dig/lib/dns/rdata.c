@@ -25,9 +25,8 @@
 
 #include <isc/base64.h>
 #include <isc/hex.h>
-#include <isc/lex.h>
-#include <isc/parseint.h>
 #include <isc/util.h>
+#include <isc/buffer.h>
 
 #include <dns/cert.h>
 #include <dns/compress.h>

@@ -18,11 +18,11 @@
 
 /*! \file */
 
-
+#include <sys/time.h>
 #include <stdlib.h>
+#include <time.h>
 #include <isc/heap.h>
 #include <isc/task.h>
-#include <isc/time.h>
 #include <isc/timer.h>
 #include <isc/util.h>
 

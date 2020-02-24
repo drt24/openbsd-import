@@ -76,9 +76,7 @@
 
 /*** SHA-256/384/512 Context Structures *******************************/
 
-#include <openssl/opensslv.h>
 #include <openssl/evp.h>
-
 
 typedef struct {
 	EVP_MD_CTX *ctx;

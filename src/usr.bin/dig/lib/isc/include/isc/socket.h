@@ -56,12 +56,13 @@
  *** Imports
  ***/
 
+#include <time.h>
+
 #include <isc/event.h>
 #include <isc/eventclass.h>
 
 #include <isc/region.h>
 #include <isc/sockaddr.h>
-#include <isc/time.h>
 #include <isc/types.h>
 
 /***

@@ -16,22 +16,17 @@
 
 /* $Id$ */
 
-
 #include <ctype.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include <isc/buffer.h>
-#include <isc/parseint.h>
-
 #include <isc/region.h>
 #include <isc/result.h>
-
-#include <string.h>
 #include <isc/types.h>
 #include <isc/util.h>
 
 #include <dns/cert.h>
-#include <dns/ds.h>
 #include <dns/keyvalues.h>
 #include <dns/rcode.h>
 #include <dns/rdataclass.h>

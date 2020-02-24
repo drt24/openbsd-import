@@ -18,12 +18,11 @@
 
 /*! \file */
 
-
+#include <string.h>
 
 #include <isc/base64.h>
 #include <isc/buffer.h>
-#include <isc/lex.h>
-#include <string.h>
+#include <isc/region.h>
 #include <isc/util.h>
 
 #define RETERR(x) do { \

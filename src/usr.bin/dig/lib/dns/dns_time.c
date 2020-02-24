@@ -21,12 +21,11 @@
 #include <stdio.h>
 #include <string.h>		/* Required for HP/UX (and others?) */
 #include <time.h>
-#include <ctype.h>
 
 #include <isc/region.h>
 #include <isc/serial.h>
+#include <isc/result.h>
 
-#include <dns/result.h>
 #include <dns/time.h>
 
 static const int days[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };

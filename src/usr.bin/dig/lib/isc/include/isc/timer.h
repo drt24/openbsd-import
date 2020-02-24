@@ -71,10 +71,11 @@
  *** Imports
  ***/
 
+#include <time.h>
+
 #include <isc/types.h>
 #include <isc/event.h>
 #include <isc/eventclass.h>
-#include <isc/time.h>
 
 /***
  *** Types
