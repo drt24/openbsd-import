@@ -57,18 +57,6 @@ towire_#(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_#(ARGS_FROMSTRUCT) {
-	dns_rdata_#_t *# = source;
-
-	REQUIRE(type == dns_rdatatype_proforma.c#);
-	REQUIRE(rdclass == #);
-	REQUIRE(source != NULL);
-	REQUIRE(#->common.rdtype == dns_rdatatype_proforma.ctype);
-	REQUIRE(#->common.rdclass == rdclass);
-
-	return (ISC_R_NOTIMPLEMENTED);
-}
 
 static inline isc_result_t
 tostruct_#(ARGS_TOSTRUCT) {

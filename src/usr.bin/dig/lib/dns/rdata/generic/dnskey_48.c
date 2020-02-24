@@ -62,13 +62,6 @@ towire_dnskey(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_dnskey(ARGS_FROMSTRUCT) {
-
-	REQUIRE(type == dns_rdatatype_dnskey);
-
-	return (generic_fromstruct_key(rdclass, type, source, target));
-}
 
 static inline isc_result_t
 tostruct_dnskey(ARGS_TOSTRUCT) {

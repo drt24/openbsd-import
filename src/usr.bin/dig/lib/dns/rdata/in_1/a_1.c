@@ -86,24 +86,6 @@ towire_in_a(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_in_a(ARGS_FROMSTRUCT) {
-	dns_rdata_in_a_t *a = source;
-	uint32_t n;
-
-	REQUIRE(type == dns_rdatatype_a);
-	REQUIRE(rdclass == dns_rdataclass_in);
-	REQUIRE(source != NULL);
-	REQUIRE(a->common.rdtype == type);
-	REQUIRE(a->common.rdclass == rdclass);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-
-	n = ntohl(a->in_addr.s_addr);
-
-	return (uint32_tobuffer(n, target));
-}
 
 
 static inline isc_result_t

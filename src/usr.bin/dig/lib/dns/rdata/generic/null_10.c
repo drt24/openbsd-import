@@ -56,21 +56,6 @@ towire_null(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_null(ARGS_FROMSTRUCT) {
-	dns_rdata_null_t *null = source;
-
-	REQUIRE(type == dns_rdatatype_null);
-	REQUIRE(source != NULL);
-	REQUIRE(null->common.rdtype == type);
-	REQUIRE(null->common.rdclass == rdclass);
-	REQUIRE(null->data != NULL || null->length == 0);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-
-	return (mem_tobuffer(target, null->data, null->length));
-}
 
 static inline isc_result_t
 tostruct_null(ARGS_TOSTRUCT) {

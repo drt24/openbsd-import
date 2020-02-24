@@ -118,24 +118,6 @@ towire_ch_a(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_ch_a(ARGS_FROMSTRUCT) {
-	dns_rdata_ch_a_t *a = source;
-	isc_region_t region;
-
-	REQUIRE(type == dns_rdatatype_a);
-	REQUIRE(source != NULL);
-	REQUIRE(a->common.rdtype == type);
-	REQUIRE(a->common.rdclass == rdclass);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-
-	dns_name_toregion(&a->ch_addr_dom, &region);
-	RETERR(isc_buffer_copyregion(target, &region));
-
-	return (uint16_tobuffer(ntohs(a->ch_addr), target));
-}
 
 static inline isc_result_t
 tostruct_ch_a(ARGS_TOSTRUCT) {

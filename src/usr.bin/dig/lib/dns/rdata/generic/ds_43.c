@@ -184,13 +184,6 @@ generic_fromstruct_ds(ARGS_FROMSTRUCT) {
 	return (mem_tobuffer(target, ds->digest, ds->length));
 }
 
-static inline isc_result_t
-fromstruct_ds(ARGS_FROMSTRUCT) {
-
-	REQUIRE(type == dns_rdatatype_ds);
-
-	return (generic_fromstruct_ds(rdclass, type, source, target));
-}
 
 static inline isc_result_t
 generic_tostruct_ds(ARGS_TOSTRUCT) {

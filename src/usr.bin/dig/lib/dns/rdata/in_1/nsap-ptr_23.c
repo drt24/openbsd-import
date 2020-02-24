@@ -82,23 +82,6 @@ towire_in_nsap_ptr(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_in_nsap_ptr(ARGS_FROMSTRUCT) {
-	dns_rdata_in_nsap_ptr_t *nsap_ptr = source;
-	isc_region_t region;
-
-	REQUIRE(type == dns_rdatatype_nsap_ptr);
-	REQUIRE(rdclass == dns_rdataclass_in);
-	REQUIRE(source != NULL);
-	REQUIRE(nsap_ptr->common.rdtype == type);
-	REQUIRE(nsap_ptr->common.rdclass == rdclass);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-
-	dns_name_toregion(&nsap_ptr->owner, &region);
-	return (isc_buffer_copyregion(target, &region));
-}
 
 static inline isc_result_t
 tostruct_in_nsap_ptr(ARGS_TOSTRUCT) {

@@ -78,22 +78,6 @@ towire_md(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_md(ARGS_FROMSTRUCT) {
-	dns_rdata_md_t *md = source;
-	isc_region_t region;
-
-	REQUIRE(type == dns_rdatatype_md);
-	REQUIRE(source != NULL);
-	REQUIRE(md->common.rdtype == type);
-	REQUIRE(md->common.rdclass == rdclass);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-
-	dns_name_toregion(&md->md, &region);
-	return (isc_buffer_copyregion(target, &region));
-}
 
 static inline isc_result_t
 tostruct_md(ARGS_TOSTRUCT) {

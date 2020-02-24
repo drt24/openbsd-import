@@ -58,13 +58,6 @@ towire_spf(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_spf(ARGS_FROMSTRUCT) {
-
-	REQUIRE(type == dns_rdatatype_spf);
-
-	return (generic_fromstruct_txt(rdclass, type, source, target));
-}
 
 static inline isc_result_t
 tostruct_spf(ARGS_TOSTRUCT) {

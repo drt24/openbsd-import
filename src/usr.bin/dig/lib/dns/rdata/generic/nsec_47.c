@@ -95,28 +95,6 @@ towire_nsec(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_nsec(ARGS_FROMSTRUCT) {
-	dns_rdata_nsec_t *nsec = source;
-	isc_region_t region;
-
-	REQUIRE(type == dns_rdatatype_nsec);
-	REQUIRE(source != NULL);
-	REQUIRE(nsec->common.rdtype == type);
-	REQUIRE(nsec->common.rdclass == rdclass);
-	REQUIRE(nsec->typebits != NULL || nsec->len == 0);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-
-	dns_name_toregion(&nsec->next, &region);
-	RETERR(isc_buffer_copyregion(target, &region));
-
-	region.base = nsec->typebits;
-	region.length = nsec->len;
-	RETERR(typemap_test(&region, ISC_FALSE));
-	return (mem_tobuffer(target, nsec->typebits, nsec->len));
-}
 
 static inline isc_result_t
 tostruct_nsec(ARGS_TOSTRUCT) {

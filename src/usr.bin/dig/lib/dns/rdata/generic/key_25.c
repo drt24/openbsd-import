@@ -276,13 +276,6 @@ generic_freestruct_key(ARGS_FREESTRUCT) {
 	free(key->data);
 }
 
-static inline isc_result_t
-fromstruct_key(ARGS_FROMSTRUCT) {
-
-	REQUIRE(type == dns_rdatatype_key);
-
-	return (generic_fromstruct_key(rdclass, type, source, target));
-}
 
 static inline isc_result_t
 tostruct_key(ARGS_TOSTRUCT) {

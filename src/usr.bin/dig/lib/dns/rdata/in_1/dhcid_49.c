@@ -91,22 +91,6 @@ towire_in_dhcid(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_in_dhcid(ARGS_FROMSTRUCT) {
-	dns_rdata_in_dhcid_t *dhcid = source;
-
-	REQUIRE(type == dns_rdatatype_dhcid);
-	REQUIRE(rdclass == dns_rdataclass_in);
-	REQUIRE(source != NULL);
-	REQUIRE(dhcid->common.rdtype == type);
-	REQUIRE(dhcid->common.rdclass == rdclass);
-	REQUIRE(dhcid->length != 0);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-
-	return (mem_tobuffer(target, dhcid->dhcid, dhcid->length));
-}
 
 static inline isc_result_t
 tostruct_in_dhcid(ARGS_TOSTRUCT) {

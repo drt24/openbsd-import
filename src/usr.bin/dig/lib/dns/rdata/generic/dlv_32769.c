@@ -59,13 +59,6 @@ towire_dlv(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_dlv(ARGS_FROMSTRUCT) {
-
-	REQUIRE(type == dns_rdatatype_dlv);
-
-	return (generic_fromstruct_ds(rdclass, type, source, target));
-}
 
 static inline isc_result_t
 tostruct_dlv(ARGS_TOSTRUCT) {

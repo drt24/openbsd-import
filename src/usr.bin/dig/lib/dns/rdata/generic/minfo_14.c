@@ -105,24 +105,6 @@ towire_minfo(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_minfo(ARGS_FROMSTRUCT) {
-	dns_rdata_minfo_t *minfo = source;
-	isc_region_t region;
-
-	REQUIRE(type == dns_rdatatype_minfo);
-	REQUIRE(source != NULL);
-	REQUIRE(minfo->common.rdtype == type);
-	REQUIRE(minfo->common.rdclass == rdclass);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-
-	dns_name_toregion(&minfo->rmailbox, &region);
-	RETERR(isc_buffer_copyregion(target, &region));
-	dns_name_toregion(&minfo->emailbox, &region);
-	return (isc_buffer_copyregion(target, &region));
-}
 
 static inline isc_result_t
 tostruct_minfo(ARGS_TOSTRUCT) {

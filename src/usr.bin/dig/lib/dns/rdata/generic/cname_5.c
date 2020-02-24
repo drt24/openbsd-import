@@ -79,22 +79,6 @@ towire_cname(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_cname(ARGS_FROMSTRUCT) {
-	dns_rdata_cname_t *cname = source;
-	isc_region_t region;
-
-	REQUIRE(type == dns_rdatatype_cname);
-	REQUIRE(source != NULL);
-	REQUIRE(cname->common.rdtype == type);
-	REQUIRE(cname->common.rdclass == rdclass);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-
-	dns_name_toregion(&cname->cname, &region);
-	return (isc_buffer_copyregion(target, &region));
-}
 
 static inline isc_result_t
 tostruct_cname(ARGS_TOSTRUCT) {

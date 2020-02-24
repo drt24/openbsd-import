@@ -58,21 +58,6 @@ towire_unspec(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_unspec(ARGS_FROMSTRUCT) {
-	dns_rdata_unspec_t *unspec = source;
-
-	REQUIRE(type == dns_rdatatype_unspec);
-	REQUIRE(source != NULL);
-	REQUIRE(unspec->common.rdtype == type);
-	REQUIRE(unspec->common.rdclass == rdclass);
-	REQUIRE(unspec->data != NULL || unspec->datalen == 0);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-
-	return (mem_tobuffer(target, unspec->data, unspec->datalen));
-}
 
 static inline isc_result_t
 tostruct_unspec(ARGS_TOSTRUCT) {

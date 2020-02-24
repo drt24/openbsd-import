@@ -78,22 +78,6 @@ towire_ptr(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_ptr(ARGS_FROMSTRUCT) {
-	dns_rdata_ptr_t *ptr = source;
-	isc_region_t region;
-
-	REQUIRE(type == dns_rdatatype_ptr);
-	REQUIRE(source != NULL);
-	REQUIRE(ptr->common.rdtype == type);
-	REQUIRE(ptr->common.rdclass == rdclass);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-
-	dns_name_toregion(&ptr->ptr, &region);
-	return (isc_buffer_copyregion(target, &region));
-}
 
 static inline isc_result_t
 tostruct_ptr(ARGS_TOSTRUCT) {

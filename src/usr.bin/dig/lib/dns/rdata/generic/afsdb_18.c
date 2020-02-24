@@ -103,23 +103,6 @@ towire_afsdb(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_afsdb(ARGS_FROMSTRUCT) {
-	dns_rdata_afsdb_t *afsdb = source;
-	isc_region_t region;
-
-	REQUIRE(type == dns_rdatatype_afsdb);
-	REQUIRE(source != NULL);
-	REQUIRE(afsdb->common.rdclass == rdclass);
-	REQUIRE(afsdb->common.rdtype == type);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-
-	RETERR(uint16_tobuffer(afsdb->subtype, target));
-	dns_name_toregion(&afsdb->server, &region);
-	return (isc_buffer_copyregion(target, &region));
-}
 
 static inline isc_result_t
 tostruct_afsdb(ARGS_TOSTRUCT) {

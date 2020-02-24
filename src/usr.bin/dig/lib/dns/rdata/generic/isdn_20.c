@@ -68,25 +68,6 @@ towire_isdn(ARGS_TOWIRE) {
 }
 
 
-static inline isc_result_t
-fromstruct_isdn(ARGS_FROMSTRUCT) {
-	dns_rdata_isdn_t *isdn = source;
-
-	REQUIRE(type == dns_rdatatype_isdn);
-	REQUIRE(source != NULL);
-	REQUIRE(isdn->common.rdtype == type);
-	REQUIRE(isdn->common.rdclass == rdclass);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-
-	RETERR(uint8_tobuffer(isdn->isdn_len, target));
-	RETERR(mem_tobuffer(target, isdn->isdn, isdn->isdn_len));
-	if (isdn->subaddress == NULL)
-		return (ISC_R_SUCCESS);
-	RETERR(uint8_tobuffer(isdn->subaddress_len, target));
-	return (mem_tobuffer(target, isdn->subaddress, isdn->subaddress_len));
-}
 
 static inline isc_result_t
 tostruct_isdn(ARGS_TOSTRUCT) {
