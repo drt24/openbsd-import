@@ -127,18 +127,6 @@ freestruct_ptr(ARGS_FREESTRUCT) {
 	dns_name_free(&ptr->ptr);
 }
 
-static inline isc_boolean_t
-checkowner_ptr(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_ptr);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 static unsigned char ip6_arpa_data[]  = "\003IP6\004ARPA";
 static unsigned char ip6_arpa_offsets[] = { 0, 4, 9 };

@@ -244,18 +244,6 @@ freestruct_ds(ARGS_FREESTRUCT) {
 	free(ds->digest);
 }
 
-static inline isc_boolean_t
-checkowner_ds(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_ds);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 
 #endif	/* RDATA_GENERIC_DS_43_C */

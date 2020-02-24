@@ -128,17 +128,5 @@ freestruct_dname(ARGS_FREESTRUCT) {
 	dns_name_free(&dname->dname);
 }
 
-static inline isc_boolean_t
-checkowner_dname(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_dname);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 #endif	/* RDATA_GENERIC_DNAME_39_C */

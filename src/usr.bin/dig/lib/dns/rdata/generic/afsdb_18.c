@@ -159,17 +159,5 @@ freestruct_afsdb(ARGS_FREESTRUCT) {
 	dns_name_free(&afsdb->server);
 }
 
-static inline isc_boolean_t
-checkowner_afsdb(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_afsdb);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 #endif	/* RDATA_GENERIC_AFSDB_18_C */

@@ -202,19 +202,6 @@ freestruct_in_apl(ARGS_FREESTRUCT) {
 		free(apl->apl);
 }
 
-static inline isc_boolean_t
-checkowner_in_apl(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_apl);
-	REQUIRE(rdclass == dns_rdataclass_in);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 
 #endif	/* RDATA_IN_1_APL_42_C */

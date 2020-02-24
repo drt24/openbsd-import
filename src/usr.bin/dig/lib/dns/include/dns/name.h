@@ -1042,11 +1042,4 @@ dns_name_ismailbox(const dns_name_t *name);
 	{NULL, NULL} \
 }
 
-#define DNS_NAME_INITNONABSOLUTE(A,B) { \
-	A, (sizeof(A) - 1), sizeof(B), \
-	DNS_NAMEATTR_READONLY, \
-	B, NULL, { (void *)-1, (void *)-1}, \
-	{NULL, NULL} \
-}
-
 #endif /* DNS_NAME_H */

@@ -309,18 +309,6 @@ freestruct_key(ARGS_FREESTRUCT) {
 	generic_freestruct_key(source);
 }
 
-static inline isc_boolean_t
-checkowner_key(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_key);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 
 #endif	/* RDATA_GENERIC_KEY_25_C */

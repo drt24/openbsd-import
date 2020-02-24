@@ -151,16 +151,6 @@ freestruct_mx(ARGS_FREESTRUCT) {
 	dns_name_free(&mx->mx);
 }
 
-static inline isc_boolean_t
-checkowner_mx(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_mx);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-
-	return (dns_name_ishostname(name, wildcard));
-}
 
 
 #endif	/* RDATA_GENERIC_MX_15_C */

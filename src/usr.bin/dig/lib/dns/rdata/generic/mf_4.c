@@ -127,18 +127,6 @@ freestruct_mf(ARGS_FREESTRUCT) {
 	dns_name_free(&mf->mf);
 }
 
-static inline isc_boolean_t
-checkowner_mf(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_mf);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 
 #endif	/* RDATA_GENERIC_MF_4_C */

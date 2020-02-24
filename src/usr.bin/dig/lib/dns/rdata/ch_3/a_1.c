@@ -173,15 +173,5 @@ freestruct_ch_a(ARGS_FREESTRUCT) {
 	dns_name_free(&a->ch_addr_dom);
 }
 
-static inline isc_boolean_t
-checkowner_ch_a(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_a);
-	REQUIRE(rdclass == dns_rdataclass_ch);
-
-	UNUSED(type);
-
-	return (dns_name_ishostname(name, wildcard));
-}
 
 #endif	/* RDATA_CH_3_A_1_C */

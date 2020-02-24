@@ -382,17 +382,5 @@ freestruct_tkey(ARGS_FREESTRUCT) {
 		free(tkey->other);
 }
 
-static inline isc_boolean_t
-checkowner_tkey(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_tkey);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 #endif	/* RDATA_GENERIC_TKEY_249_C */

@@ -104,18 +104,6 @@ freestruct_null(ARGS_FREESTRUCT) {
 		free(null->data);
 }
 
-static inline isc_boolean_t
-checkowner_null(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_null);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 
 #endif	/* RDATA_GENERIC_NULL_10_C */

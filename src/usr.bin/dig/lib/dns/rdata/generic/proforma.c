@@ -90,19 +90,6 @@ freestruct_#(ARGS_FREESTRUCT) {
 
 }
 
-static inline isc_boolean_t
-checkowner_#(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_proforma.c#);
-	REQUIRE(rdclass == #);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 
 #endif	/* RDATA_GENERIC_#_#_C */

@@ -168,17 +168,5 @@ freestruct_cert(ARGS_FREESTRUCT) {
 	free(cert->certificate);
 }
 
-static inline isc_boolean_t
-checkowner_cert(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_cert);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 #endif	/* RDATA_GENERIC_CERT_37_C */

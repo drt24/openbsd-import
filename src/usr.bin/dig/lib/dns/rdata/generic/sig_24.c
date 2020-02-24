@@ -382,17 +382,5 @@ covers_sig(dns_rdata_t *rdata) {
 	return (type);
 }
 
-static inline isc_boolean_t
-checkowner_sig(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_sig);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 #endif	/* RDATA_GENERIC_SIG_24_C */

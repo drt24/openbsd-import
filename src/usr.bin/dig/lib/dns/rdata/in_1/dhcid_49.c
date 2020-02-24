@@ -143,19 +143,6 @@ freestruct_in_dhcid(ARGS_FREESTRUCT) {
 		free(dhcid->dhcid);
 }
 
-static inline isc_boolean_t
-checkowner_in_dhcid(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_dhcid);
-	REQUIRE(rdclass == dns_rdataclass_in);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 
 #endif	/* RDATA_IN_1_DHCID_49_C */

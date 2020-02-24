@@ -127,17 +127,6 @@ freestruct_mg(ARGS_FREESTRUCT) {
 	dns_name_free(&mg->mg);
 }
 
-static inline isc_boolean_t
-checkowner_mg(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_mg);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (dns_name_ismailbox(name));
-}
 
 
 #endif	/* RDATA_GENERIC_MG_8_C */

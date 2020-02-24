@@ -131,19 +131,6 @@ freestruct_in_nsap(ARGS_FREESTRUCT) {
 		free(nsap->nsap);
 }
 
-static inline isc_boolean_t
-checkowner_in_nsap(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_nsap);
-	REQUIRE(rdclass == dns_rdataclass_in);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 
 #endif	/* RDATA_IN_1_NSAP_22_C */

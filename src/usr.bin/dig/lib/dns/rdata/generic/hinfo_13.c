@@ -128,17 +128,5 @@ freestruct_hinfo(ARGS_FREESTRUCT) {
 	free(hinfo->os);
 }
 
-static inline isc_boolean_t
-checkowner_hinfo(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_hinfo);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 #endif	/* RDATA_GENERIC_HINFO_13_C */

@@ -155,18 +155,6 @@ freestruct_gpos(ARGS_FREESTRUCT) {
 	free(gpos->altitude);
 }
 
-static inline isc_boolean_t
-checkowner_gpos(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_gpos);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 
 #endif	/* RDATA_GENERIC_GPOS_27_C */

@@ -194,19 +194,6 @@ freestruct_in_srv(ARGS_FREESTRUCT) {
 	dns_name_free(&srv->target);
 }
 
-static inline isc_boolean_t
-checkowner_in_srv(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_srv);
-	REQUIRE(rdclass == dns_rdataclass_in);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 
 #endif	/* RDATA_IN_1_SRV_33_C */

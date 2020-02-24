@@ -173,17 +173,6 @@ freestruct_in_wks(ARGS_FREESTRUCT) {
 		free(wks->map);
 }
 
-static inline isc_boolean_t
-checkowner_in_wks(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_wks);
-	REQUIRE(rdclass == dns_rdataclass_in);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-
-	return (dns_name_ishostname(name, wildcard));
-}
 
 
 #endif	/* RDATA_IN_1_WKS_11_C */

@@ -90,18 +90,6 @@ freestruct_dlv(ARGS_FREESTRUCT) {
 	free(dlv->digest);
 }
 
-static inline isc_boolean_t
-checkowner_dlv(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_dlv);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 
 #endif	/* RDATA_GENERIC_DLV_32769_C */

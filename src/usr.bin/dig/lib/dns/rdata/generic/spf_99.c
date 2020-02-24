@@ -90,17 +90,5 @@ freestruct_spf(ARGS_FREESTRUCT) {
 	generic_freestruct_txt(source);
 }
 
-static inline isc_boolean_t
-checkowner_spf(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_spf);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 #endif	/* RDATA_GENERIC_SPF_99_C */

@@ -163,17 +163,5 @@ freestruct_nsec(ARGS_FREESTRUCT) {
 		free(nsec->typebits);
 }
 
-static inline isc_boolean_t
-checkowner_nsec(ARGS_CHECKOWNER) {
-
-       REQUIRE(type == dns_rdatatype_nsec);
-
-       UNUSED(name);
-       UNUSED(type);
-       UNUSED(rdclass);
-       UNUSED(wildcard);
-
-       return (ISC_TRUE);
-}
 
 #endif	/* RDATA_GENERIC_NSEC_47_C */

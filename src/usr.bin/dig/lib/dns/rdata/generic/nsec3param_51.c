@@ -194,18 +194,6 @@ freestruct_nsec3param(ARGS_FREESTRUCT) {
 		free(nsec3param->salt);
 }
 
-static inline isc_boolean_t
-checkowner_nsec3param(ARGS_CHECKOWNER) {
-
-       REQUIRE(type == dns_rdatatype_nsec3param);
-
-       UNUSED(name);
-       UNUSED(type);
-       UNUSED(rdclass);
-       UNUSED(wildcard);
-
-       return (ISC_TRUE);
-}
 
 
 #endif	/* RDATA_GENERIC_NSEC3PARAM_51_C */

@@ -134,19 +134,6 @@ freestruct_in_nsap_ptr(ARGS_FREESTRUCT) {
 	dns_name_free(&nsap_ptr->owner);
 }
 
-static inline isc_boolean_t
-checkowner_in_nsap_ptr(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_nsap_ptr);
-	REQUIRE(rdclass == dns_rdataclass_in);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 
 #endif	/* RDATA_IN_1_NSAP_PTR_23_C */

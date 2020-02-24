@@ -134,30 +134,5 @@ freestruct_in_aaaa(ARGS_FREESTRUCT) {
 	UNUSED(aaaa);
 }
 
-static inline isc_boolean_t
-checkowner_in_aaaa(ARGS_CHECKOWNER) {
-	dns_name_t prefix, suffix;
-
-	REQUIRE(type == dns_rdatatype_aaaa);
-	REQUIRE(rdclass == dns_rdataclass_in);
-
-	UNUSED(type);
-	UNUSED(rdclass);
-
-	/*
-	 * Handle Active Diretory gc._msdcs.<forest> name.
-	 */
-	if (dns_name_countlabels(name) > 2U) {
-		dns_name_init(&prefix, NULL);
-		dns_name_init(&suffix, NULL);
-		dns_name_split(name, dns_name_countlabels(name) - 2,
-			       &prefix, &suffix);
-		if (dns_name_equal(&gc_msdcs, &prefix) &&
-		    dns_name_ishostname(&suffix, ISC_FALSE))
-			return (ISC_TRUE);
-	}
-
-	return (dns_name_ishostname(name, wildcard));
-}
 
 #endif	/* RDATA_IN_1_AAAA_28_C */

@@ -131,19 +131,6 @@ freestruct_hs_a(ARGS_FREESTRUCT) {
 	REQUIRE(source != NULL);
 }
 
-static inline isc_boolean_t
-checkowner_hs_a(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_a);
-	REQUIRE(rdclass == dns_rdataclass_hs);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 
 #endif	/* RDATA_HS_4_A_1_C */

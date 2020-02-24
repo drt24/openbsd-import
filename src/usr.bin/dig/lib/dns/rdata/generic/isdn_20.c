@@ -139,18 +139,6 @@ freestruct_isdn(ARGS_FREESTRUCT) {
 	free(isdn->subaddress);
 }
 
-static inline isc_boolean_t
-checkowner_isdn(ARGS_CHECKOWNER) {
-
-	REQUIRE(type == dns_rdatatype_isdn);
-
-	UNUSED(name);
-	UNUSED(type);
-	UNUSED(rdclass);
-	UNUSED(wildcard);
-
-	return (ISC_TRUE);
-}
 
 
 #endif	/* RDATA_GENERIC_ISDN_20_C */
