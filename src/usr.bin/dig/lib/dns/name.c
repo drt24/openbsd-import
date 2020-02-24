@@ -150,11 +150,6 @@ static dns_name_t root = DNS_NAME_INITABSOLUTE(root_ndata, root_offsets);
 /* XXXDCL make const? */
 dns_name_t *dns_rootname = &root;
 
-/*
- * dns_name_t to text post-conversion procedure.
- */
-static dns_name_totextfilter_t totext_filter_proc = NULL;
-
 static void
 set_offsets(const dns_name_t *name, unsigned char *offsets,
 	    dns_name_t *set_name);
@@ -948,7 +943,6 @@ dns_name_totext2(dns_name_t *name, unsigned int options, isc_buffer_t *target)
 	unsigned int trem, count;
 	unsigned int labels;
 	isc_boolean_t saw_root = ISC_FALSE;
-	unsigned int oused = target->used;
 	isc_boolean_t omit_final_dot =
 		ISC_TF(options & DNS_NAME_OMITFINALDOT);
 
@@ -1091,9 +1085,6 @@ dns_name_totext2(dns_name_t *name, unsigned int options, isc_buffer_t *target)
 		trem++;
 
 	isc_buffer_add(target, tlen - trem);
-
-	if (totext_filter_proc != NULL)
-		return ((*totext_filter_proc)(target, oused, saw_root));
 
 	return (ISC_R_SUCCESS);
 }
