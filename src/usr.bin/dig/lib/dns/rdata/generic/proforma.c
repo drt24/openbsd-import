@@ -80,15 +80,6 @@ tostruct_#(ARGS_TOSTRUCT) {
 	return (ISC_R_NOTIMPLEMENTED);
 }
 
-static inline void
-freestruct_#(ARGS_FREESTRUCT) {
-	dns_rdata_#_t *# = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(#->common.rdtype == dns_rdatatype_proforma.c#);
-	REQUIRE(#->common.rdclass == #);
-
-}
 
 
 

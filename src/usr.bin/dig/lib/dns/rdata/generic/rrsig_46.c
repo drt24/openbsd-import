@@ -356,17 +356,6 @@ tostruct_rrsig(ARGS_TOSTRUCT) {
 	return (ISC_R_NOMEMORY);
 }
 
-static inline void
-freestruct_rrsig(ARGS_FREESTRUCT) {
-	dns_rdata_rrsig_t *sig = (dns_rdata_rrsig_t *) source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(sig->common.rdtype == dns_rdatatype_rrsig);
-
-	dns_name_free(&sig->signer);
-	if (sig->signature != NULL)
-		free(sig->signature);
-}
 
 static inline dns_rdatatype_t
 covers_rrsig(dns_rdata_t *rdata) {

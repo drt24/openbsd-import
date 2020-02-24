@@ -93,16 +93,6 @@ tostruct_null(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_null(ARGS_FREESTRUCT) {
-	dns_rdata_null_t *null = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(null->common.rdtype == dns_rdatatype_null);
-
-	if (null->data != NULL)
-		free(null->data);
-}
 
 
 

@@ -114,15 +114,6 @@ tostruct_x25(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_x25(ARGS_FREESTRUCT) {
-	dns_rdata_x25_t *x25 = source;
-	REQUIRE(source != NULL);
-	REQUIRE(x25->common.rdtype == dns_rdatatype_x25);
-
-	if (x25->x25 != NULL)
-		free(x25->x25);
-}
 
 
 

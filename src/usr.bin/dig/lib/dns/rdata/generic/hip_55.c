@@ -238,17 +238,6 @@ tostruct_hip(ARGS_TOSTRUCT) {
 
 }
 
-static inline void
-freestruct_hip(ARGS_FREESTRUCT) {
-	dns_rdata_hip_t *hip = source;
-
-	REQUIRE(source != NULL);
-
-
-	free(hip->hit);
-	free(hip->key);
-	free(hip->servers);
-}
 
 
 isc_result_t

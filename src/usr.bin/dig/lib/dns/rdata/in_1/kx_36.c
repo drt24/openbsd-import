@@ -145,16 +145,6 @@ tostruct_in_kx(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_in_kx(ARGS_FREESTRUCT) {
-	dns_rdata_in_kx_t *kx = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(kx->common.rdclass == dns_rdataclass_in);
-	REQUIRE(kx->common.rdtype == dns_rdatatype_kx);
-
-	dns_name_free(&kx->exchange);
-}
 
 
 

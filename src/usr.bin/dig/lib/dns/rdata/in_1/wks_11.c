@@ -161,17 +161,6 @@ tostruct_in_wks(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_in_wks(ARGS_FREESTRUCT) {
-	dns_rdata_in_wks_t *wks = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(wks->common.rdtype == dns_rdatatype_wks);
-	REQUIRE(wks->common.rdclass == dns_rdataclass_in);
-
-	if (wks->map != NULL)
-		free(wks->map);
-}
 
 
 

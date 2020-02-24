@@ -123,16 +123,6 @@ tostruct_in_nsap_ptr(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_in_nsap_ptr(ARGS_FREESTRUCT) {
-	dns_rdata_in_nsap_ptr_t *nsap_ptr = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(nsap_ptr->common.rdclass == dns_rdataclass_in);
-	REQUIRE(nsap_ptr->common.rdtype == dns_rdatatype_nsap_ptr);
-
-	dns_name_free(&nsap_ptr->owner);
-}
 
 
 

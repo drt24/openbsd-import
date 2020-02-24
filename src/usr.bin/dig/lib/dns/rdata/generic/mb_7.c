@@ -117,14 +117,6 @@ tostruct_mb(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_mb(ARGS_FREESTRUCT) {
-	dns_rdata_mb_t *mb = source;
-
-	REQUIRE(source != NULL);
-
-	dns_name_free(&mb->mb);
-}
 
 
 

@@ -117,15 +117,6 @@ tostruct_ptr(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_ptr(ARGS_FREESTRUCT) {
-	dns_rdata_ptr_t *ptr = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(ptr->common.rdtype == dns_rdatatype_ptr);
-
-	dns_name_free(&ptr->ptr);
-}
 
 
 static unsigned char ip6_arpa_data[]  = "\003IP6\004ARPA";

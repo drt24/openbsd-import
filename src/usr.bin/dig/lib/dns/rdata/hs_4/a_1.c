@@ -124,12 +124,6 @@ tostruct_hs_a(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_hs_a(ARGS_FREESTRUCT) {
-	UNUSED(source);
-
-	REQUIRE(source != NULL);
-}
 
 
 

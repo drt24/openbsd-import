@@ -299,15 +299,6 @@ tostruct_key(ARGS_TOSTRUCT) {
 	return (generic_tostruct_key(rdata, target));
 }
 
-static inline void
-freestruct_key(ARGS_FREESTRUCT) {
-	dns_rdata_key_t *key = (dns_rdata_key_t *) source;
-
-	REQUIRE(key != NULL);
-	REQUIRE(key->common.rdtype == dns_rdatatype_key);
-
-	generic_freestruct_key(source);
-}
 
 
 

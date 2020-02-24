@@ -151,17 +151,6 @@ tostruct_nsec(ARGS_TOSTRUCT) {
 	return (ISC_R_NOMEMORY);
 }
 
-static inline void
-freestruct_nsec(ARGS_FREESTRUCT) {
-	dns_rdata_nsec_t *nsec = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(nsec->common.rdtype == dns_rdatatype_nsec);
-
-	dns_name_free(&nsec->next);
-	if (nsec->typebits != NULL)
-		free(nsec->typebits);
-}
 
 
 #endif	/* RDATA_GENERIC_NSEC_47_C */

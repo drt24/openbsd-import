@@ -142,18 +142,6 @@ tostruct_gpos(ARGS_TOSTRUCT) {
 	return (ISC_R_NOMEMORY);
 }
 
-static inline void
-freestruct_gpos(ARGS_FREESTRUCT) {
-	dns_rdata_gpos_t *gpos = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(gpos->common.rdtype == dns_rdatatype_gpos);
-
-
-	free(gpos->longitude);
-	free(gpos->latitude);
-	free(gpos->altitude);
-}
 
 
 

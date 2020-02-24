@@ -80,15 +80,6 @@ tostruct_dlv(ARGS_TOSTRUCT) {
 	return (generic_tostruct_ds(rdata, target));
 }
 
-static inline void
-freestruct_dlv(ARGS_FREESTRUCT) {
-	dns_rdata_dlv_t *dlv = source;
-
-	REQUIRE(dlv != NULL);
-	REQUIRE(dlv->common.rdtype == dns_rdatatype_dlv);
-
-	free(dlv->digest);
-}
 
 
 

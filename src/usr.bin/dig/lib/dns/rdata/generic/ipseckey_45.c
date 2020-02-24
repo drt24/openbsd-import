@@ -284,20 +284,6 @@ tostruct_ipseckey(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_ipseckey(ARGS_FREESTRUCT) {
-	dns_rdata_ipseckey_t *ipseckey = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(ipseckey->common.rdtype == dns_rdatatype_ipseckey);
-
-	if (ipseckey->gateway_type == 3)
-		dns_name_free(&ipseckey->gateway);
-
-	if (ipseckey->key != NULL)
-		free(ipseckey->key);
-
-}
 
 
 

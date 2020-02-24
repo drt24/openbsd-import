@@ -158,17 +158,6 @@ tostruct_minfo(ARGS_TOSTRUCT) {
 	return (ISC_R_NOMEMORY);
 }
 
-static inline void
-freestruct_minfo(ARGS_FREESTRUCT) {
-	dns_rdata_minfo_t *minfo = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(minfo->common.rdtype == dns_rdatatype_minfo);
-
-
-	dns_name_free(&minfo->rmailbox);
-	dns_name_free(&minfo->emailbox);
-}
 
 
 

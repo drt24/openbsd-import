@@ -369,18 +369,6 @@ tostruct_tkey(ARGS_TOSTRUCT) {
 	return (ISC_R_NOMEMORY);
 }
 
-static inline void
-freestruct_tkey(ARGS_FREESTRUCT) {
-	dns_rdata_tkey_t *tkey = (dns_rdata_tkey_t *) source;
-
-	REQUIRE(source != NULL);
-
-	dns_name_free(&tkey->algorithm);
-	if (tkey->key != NULL)
-		free(tkey->key);
-	if (tkey->other != NULL)
-		free(tkey->other);
-}
 
 
 #endif	/* RDATA_GENERIC_TKEY_249_C */

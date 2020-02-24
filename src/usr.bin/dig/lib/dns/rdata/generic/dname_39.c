@@ -118,15 +118,6 @@ tostruct_dname(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_dname(ARGS_FREESTRUCT) {
-	dns_rdata_dname_t *dname = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(dname->common.rdtype == dns_rdatatype_dname);
-
-	dns_name_free(&dname->dname);
-}
 
 
 #endif	/* RDATA_GENERIC_DNAME_39_C */

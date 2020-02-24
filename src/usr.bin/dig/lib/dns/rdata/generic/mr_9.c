@@ -117,15 +117,6 @@ tostruct_mr(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_mr(ARGS_FREESTRUCT) {
-	dns_rdata_mr_t *mr = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(mr->common.rdtype == dns_rdatatype_mr);
-
-	dns_name_free(&mr->mr);
-}
 
 
 

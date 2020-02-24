@@ -240,17 +240,6 @@ tostruct_in_a6(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_in_a6(ARGS_FREESTRUCT) {
-	dns_rdata_in_a6_t *a6 = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(a6->common.rdclass == dns_rdataclass_in);
-	REQUIRE(a6->common.rdtype == dns_rdatatype_a6);
-
-	if (dns_name_dynamic(&a6->prefix))
-		dns_name_free(&a6->prefix);
-}
 
 
 

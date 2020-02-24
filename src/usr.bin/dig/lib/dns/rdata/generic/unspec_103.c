@@ -95,16 +95,6 @@ tostruct_unspec(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_unspec(ARGS_FREESTRUCT) {
-	dns_rdata_unspec_t *unspec = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(unspec->common.rdtype == dns_rdatatype_unspec);
-
-	if (unspec->data != NULL)
-		free(unspec->data);
-}
 
 
 

@@ -170,18 +170,6 @@ tostruct_nxt(ARGS_TOSTRUCT) {
 	return (ISC_R_NOMEMORY);
 }
 
-static inline void
-freestruct_nxt(ARGS_FREESTRUCT) {
-	dns_rdata_nxt_t *nxt = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(nxt->common.rdtype == dns_rdatatype_nxt);
-
-
-	dns_name_free(&nxt->next);
-	if (nxt->typebits != NULL)
-		free(nxt->typebits);
-}
 
 
 #endif	/* RDATA_GENERIC_NXT_30_C */

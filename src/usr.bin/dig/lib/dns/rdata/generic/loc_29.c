@@ -310,16 +310,6 @@ tostruct_loc(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_loc(ARGS_FREESTRUCT) {
-	dns_rdata_loc_t *loc = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(loc->common.rdtype == dns_rdatatype_loc);
-
-	UNUSED(source);
-	UNUSED(loc);
-}
 
 
 

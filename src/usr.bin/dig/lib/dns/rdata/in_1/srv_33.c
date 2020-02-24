@@ -183,16 +183,6 @@ tostruct_in_srv(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_in_srv(ARGS_FREESTRUCT) {
-	dns_rdata_in_srv_t *srv = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(srv->common.rdclass == dns_rdataclass_in);
-	REQUIRE(srv->common.rdtype == dns_rdatatype_srv);
-
-	dns_name_free(&srv->target);
-}
 
 
 

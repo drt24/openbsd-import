@@ -158,15 +158,6 @@ tostruct_cert(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_cert(ARGS_FREESTRUCT) {
-	dns_rdata_cert_t *cert = source;
-
-	REQUIRE(cert != NULL);
-	REQUIRE(cert->common.rdtype == dns_rdatatype_cert);
-
-	free(cert->certificate);
-}
 
 
 #endif	/* RDATA_GENERIC_CERT_37_C */

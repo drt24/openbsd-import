@@ -163,15 +163,6 @@ tostruct_ch_a(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_ch_a(ARGS_FREESTRUCT) {
-	dns_rdata_ch_a_t *a = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(a->common.rdtype == dns_rdatatype_a);
-
-	dns_name_free(&a->ch_addr_dom);
-}
 
 
 #endif	/* RDATA_CH_3_A_1_C */

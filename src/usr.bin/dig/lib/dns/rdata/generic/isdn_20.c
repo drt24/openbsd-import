@@ -129,15 +129,6 @@ tostruct_isdn(ARGS_TOSTRUCT) {
 	return (ISC_R_NOMEMORY);
 }
 
-static inline void
-freestruct_isdn(ARGS_FREESTRUCT) {
-	dns_rdata_isdn_t *isdn = source;
-
-	REQUIRE(source != NULL);
-
-	free(isdn->isdn);
-	free(isdn->subaddress);
-}
 
 
 

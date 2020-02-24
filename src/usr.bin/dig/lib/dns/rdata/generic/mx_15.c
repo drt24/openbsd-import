@@ -141,15 +141,6 @@ tostruct_mx(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_mx(ARGS_FREESTRUCT) {
-	dns_rdata_mx_t *mx = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(mx->common.rdtype == dns_rdatatype_mx);
-
-	dns_name_free(&mx->mx);
-}
 
 
 

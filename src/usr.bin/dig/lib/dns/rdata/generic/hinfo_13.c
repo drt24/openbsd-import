@@ -118,15 +118,6 @@ tostruct_hinfo(ARGS_TOSTRUCT) {
 	return (ISC_R_NOMEMORY);
 }
 
-static inline void
-freestruct_hinfo(ARGS_FREESTRUCT) {
-	dns_rdata_hinfo_t *hinfo = source;
-
-	REQUIRE(source != NULL);
-
-	free(hinfo->cpu);
-	free(hinfo->os);
-}
 
 
 #endif	/* RDATA_GENERIC_HINFO_13_C */

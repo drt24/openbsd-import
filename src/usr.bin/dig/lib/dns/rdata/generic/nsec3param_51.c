@@ -183,16 +183,6 @@ tostruct_nsec3param(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_nsec3param(ARGS_FREESTRUCT) {
-	dns_rdata_nsec3param_t *nsec3param = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(nsec3param->common.rdtype == dns_rdatatype_nsec3param);
-
-	if (nsec3param->salt != NULL)
-		free(nsec3param->salt);
-}
 
 
 

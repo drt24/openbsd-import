@@ -131,17 +131,6 @@ tostruct_in_dhcid(ARGS_TOSTRUCT) {
 	return (ISC_R_SUCCESS);
 }
 
-static inline void
-freestruct_in_dhcid(ARGS_FREESTRUCT) {
-	dns_rdata_in_dhcid_t *dhcid = source;
-
-	REQUIRE(dhcid != NULL);
-	REQUIRE(dhcid->common.rdtype == dns_rdatatype_dhcid);
-	REQUIRE(dhcid->common.rdclass == dns_rdataclass_in);
-
-	if (dhcid->dhcid != NULL)
-		free(dhcid->dhcid);
-}
 
 
 

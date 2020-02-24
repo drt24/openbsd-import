@@ -365,18 +365,6 @@ tostruct_naptr(ARGS_TOSTRUCT) {
 	return (ISC_R_NOMEMORY);
 }
 
-static inline void
-freestruct_naptr(ARGS_FREESTRUCT) {
-	dns_rdata_naptr_t *naptr = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(naptr->common.rdtype == dns_rdatatype_naptr);
-
-	free(naptr->flags);
-	free(naptr->service);
-	free(naptr->regexp);
-	dns_name_free(&naptr->replacement);
-}
 
 
 

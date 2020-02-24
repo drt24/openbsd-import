@@ -199,17 +199,6 @@ tostruct_in_px(ARGS_TOSTRUCT) {
 	return (ISC_R_NOMEMORY);
 }
 
-static inline void
-freestruct_in_px(ARGS_FREESTRUCT) {
-	dns_rdata_in_px_t *px = source;
-
-	REQUIRE(source != NULL);
-	REQUIRE(px->common.rdclass == dns_rdataclass_in);
-	REQUIRE(px->common.rdtype == dns_rdatatype_px);
-
-	dns_name_free(&px->map822);
-	dns_name_free(&px->mapx400);
-}
 
 
 
