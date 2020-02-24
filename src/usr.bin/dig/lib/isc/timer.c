@@ -28,9 +28,6 @@
 
 #include "timer_p.h"
 
-typedef struct isc_timer isc_timer_t;
-typedef struct isc_timermgr isc_timermgr_t;
-
 struct isc_timer {
 	/*! Not locked. */
 	isc_timermgr_t *		manager;
