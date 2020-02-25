@@ -16,8 +16,6 @@
 
 /* $Id$ */
 
-
-
 #include <stddef.h>
 
 #include <isc/refcount.h>

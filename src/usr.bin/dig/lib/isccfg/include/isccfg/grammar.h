@@ -99,7 +99,6 @@ struct cfg_obj {
 	unsigned int    line;
 };
 
-
 /*% A list element. */
 struct cfg_listelt {
 	cfg_obj_t               *obj;

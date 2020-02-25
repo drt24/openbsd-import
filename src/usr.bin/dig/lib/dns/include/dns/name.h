@@ -470,7 +470,6 @@ dns_name_getlabelsequence(const dns_name_t *source, unsigned int first,
  * \li	first + n <= dns_name_countlabels(name)
  */
 
-
 void
 dns_name_clone(const dns_name_t *source, dns_name_t *target);
 /*%<

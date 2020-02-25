@@ -98,10 +98,4 @@ towire_mx(ARGS_TOWIRE) {
 	return (dns_name_towire(&name, cctx, target));
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_GENERIC_MX_15_C */

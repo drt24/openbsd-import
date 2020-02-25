@@ -77,10 +77,4 @@ towire_mg(ARGS_TOWIRE) {
 	return (dns_name_towire(&name, cctx, target));
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_GENERIC_MG_8_C */

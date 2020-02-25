@@ -291,7 +291,6 @@ isc_lex_getsourcename(isc_lex_t *lex);
  *\li	result valid while current input source exists.
  */
 
-
 unsigned long
 isc_lex_getsourceline(isc_lex_t *lex);
 /*%<

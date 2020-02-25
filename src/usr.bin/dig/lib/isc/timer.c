@@ -275,7 +275,6 @@ isc_timer_touch(isc_timer_t *timer) {
 	 * Set the last-touched time of 'timer' to the current time.
 	 */
 
-
 	clock_gettime(CLOCK_MONOTONIC, &now);
 	timespecadd(&now, &timer->interval, &timer->idle);
 }

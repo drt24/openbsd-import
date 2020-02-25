@@ -111,10 +111,4 @@ towire_in_wks(ARGS_TOWIRE) {
 	return (mem_tobuffer(target, sr.base, sr.length));
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_IN_1_WKS_11_C */

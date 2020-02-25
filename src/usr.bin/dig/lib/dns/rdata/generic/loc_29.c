@@ -229,10 +229,4 @@ towire_loc(ARGS_TOWIRE) {
 	return (mem_tobuffer(target, rdata->data, rdata->length));
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_GENERIC_LOC_29_C */

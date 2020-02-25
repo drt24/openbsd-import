@@ -2531,7 +2531,6 @@ force_timeout(dig_query_t *query) {
 		isc_timer_detach(&query->timer);
 }
 
-
 static void
 connect_done(isc_task_t *task, isc_event_t *event);
 

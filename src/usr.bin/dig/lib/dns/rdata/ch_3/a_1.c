@@ -117,9 +117,4 @@ towire_ch_a(ARGS_TOWIRE) {
 	return (ISC_R_SUCCESS);
 }
 
-
-
-
-
-
 #endif	/* RDATA_CH_3_A_1_C */

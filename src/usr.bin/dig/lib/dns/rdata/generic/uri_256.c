@@ -95,10 +95,4 @@ towire_uri(ARGS_TOWIRE) {
 	return (mem_tobuffer(target, region.base, region.length));
 }
 
-
-
-
-
-
-
 #endif /* GENERIC_URI_256_C */

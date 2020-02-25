@@ -77,8 +77,6 @@ towire_ns(ARGS_TOWIRE) {
 	return (dns_name_towire(&name, cctx, target));
 }
 
-
-
 static inline isc_result_t
 tostruct_ns(ARGS_TOSTRUCT) {
 	isc_region_t region;
@@ -109,7 +107,5 @@ freestruct_ns(ARGS_FREESTRUCT) {
 
 	dns_name_free(&ns->name);
 }
-
-
 
 #endif	/* RDATA_GENERIC_NS_2_C */

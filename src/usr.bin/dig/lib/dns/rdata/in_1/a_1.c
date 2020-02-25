@@ -85,11 +85,4 @@ towire_in_a(ARGS_TOWIRE) {
 	return (ISC_R_SUCCESS);
 }
 
-
-
-
-
-
-
-
 #endif	/* RDATA_IN_1_A_1_C */

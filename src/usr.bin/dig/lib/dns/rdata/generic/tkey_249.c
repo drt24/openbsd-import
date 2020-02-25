@@ -223,9 +223,4 @@ towire_tkey(ARGS_TOWIRE) {
 	return (mem_tobuffer(target, sr.base, sr.length));
 }
 
-
-
-
-
-
 #endif	/* RDATA_GENERIC_TKEY_249_C */

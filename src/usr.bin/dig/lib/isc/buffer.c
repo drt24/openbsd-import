@@ -18,7 +18,6 @@
 
 /*! \file */
 
-
 #include <stdlib.h>
 #include <isc/buffer.h>
 

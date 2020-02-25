@@ -217,10 +217,6 @@ towire_sig(ARGS_TOWIRE) {
 	return (mem_tobuffer(target, sr.base, sr.length));
 }
 
-
-
-
-
 static inline dns_rdatatype_t
 covers_sig(dns_rdata_t *rdata) {
 	dns_rdatatype_t type;
@@ -233,6 +229,5 @@ covers_sig(dns_rdata_t *rdata) {
 
 	return (type);
 }
-
 
 #endif	/* RDATA_GENERIC_SIG_24_C */

@@ -18,8 +18,6 @@
 
 /*! \file */
 
-
-
 #include <isc/serial.h>
 
 isc_boolean_t

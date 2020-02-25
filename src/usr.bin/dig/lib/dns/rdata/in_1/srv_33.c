@@ -132,10 +132,4 @@ towire_in_srv(ARGS_TOWIRE) {
 	return (dns_name_towire(&name, cctx, target));
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_IN_1_SRV_33_C */

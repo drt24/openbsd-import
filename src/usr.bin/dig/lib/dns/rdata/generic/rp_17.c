@@ -102,9 +102,4 @@ towire_rp(ARGS_TOWIRE) {
 	return (dns_name_towire(&rmail, cctx, target));
 }
 
-
-
-
-
-
 #endif	/* RDATA_GENERIC_RP_17_C */

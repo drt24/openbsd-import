@@ -149,10 +149,4 @@ towire_in_apl(ARGS_TOWIRE) {
 	return (mem_tobuffer(target, rdata->data, rdata->length));
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_IN_1_APL_42_C */

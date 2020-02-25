@@ -217,10 +217,6 @@ towire_rrsig(ARGS_TOWIRE) {
 	return (mem_tobuffer(target, sr.base, sr.length));
 }
 
-
-
-
-
 static inline dns_rdatatype_t
 covers_rrsig(dns_rdata_t *rdata) {
 	dns_rdatatype_t type;
@@ -233,7 +229,5 @@ covers_rrsig(dns_rdata_t *rdata) {
 
 	return (type);
 }
-
-
 
 #endif	/* RDATA_GENERIC_RRSIG_46_C */

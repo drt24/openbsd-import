@@ -26,7 +26,6 @@
  *	ISBN 0-201-06673-4, chapter 11.
  */
 
-
 #include <stdlib.h>
 #include <isc/heap.h>
 #include <string.h>
@@ -110,7 +109,6 @@ resize(isc_heap_t *heap) {
 	void **new_array;
 	unsigned int new_size;
 
-
 	new_size = heap->size + heap->size_increment;
 	new_array = malloc(new_size * sizeof(void *));
 	if (new_array == NULL)
@@ -171,7 +169,6 @@ sink_down(isc_heap_t *heap, unsigned int i, void *elt) {
 isc_result_t
 isc_heap_insert(isc_heap_t *heap, void *elt) {
 	unsigned int new_last;
-
 
 	new_last = heap->last + 1;
 	RUNTIME_CHECK(new_last > 0); /* overflow check */

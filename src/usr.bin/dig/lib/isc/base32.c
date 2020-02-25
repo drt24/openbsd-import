@@ -18,8 +18,6 @@
 
 /*! \file */
 
-
-
 #include <isc/base32.h>
 #include <isc/buffer.h>
 #include <isc/region.h>
@@ -31,7 +29,6 @@
 	if (_r != ISC_R_SUCCESS) \
 		return (_r); \
 	} while (0)
-
 
 /*@{*/
 /*!

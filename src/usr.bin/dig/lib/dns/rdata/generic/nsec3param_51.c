@@ -132,10 +132,4 @@ towire_nsec3param(ARGS_TOWIRE) {
 	return (mem_tobuffer(target, sr.base, sr.length));
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_GENERIC_NSEC3PARAM_51_C */

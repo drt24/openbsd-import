@@ -74,7 +74,6 @@
  * unsend events which they have sent.
  */
 
-
 /***
  *** Imports.
  ***/
@@ -213,7 +212,6 @@ isc_task_sendanddetach(isc_task_t **taskp, isc_event_t **eventp);
  *	the task has been shutdown,
  *		all resources used by the task will be freed.
  */
-
 
 unsigned int
 isc_task_purgerange(isc_task_t *task, void *sender, isc_eventtype_t first,

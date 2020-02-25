@@ -270,10 +270,4 @@ towire_naptr(ARGS_TOWIRE) {
 	return (dns_name_towire(&name, cctx, target));
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_GENERIC_NAPTR_35_C */

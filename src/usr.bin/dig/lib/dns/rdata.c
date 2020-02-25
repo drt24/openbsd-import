@@ -18,7 +18,6 @@
 
 /*! \file */
 
-
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
@@ -1142,7 +1141,6 @@ static const char atob_digits[86] =
  * Modified to be re-entrant 3/2/99.
  */
 
-
 struct state {
 	int32_t Ceor;
 	int32_t Csum;
@@ -1223,7 +1221,6 @@ byte_btoa(int c, isc_buffer_t *target, struct state *state) {
 	}
 	return (ISC_R_SUCCESS);
 }
-
 
 /*
  * Encode the binary data from inbuf, of length inbuflen, into a

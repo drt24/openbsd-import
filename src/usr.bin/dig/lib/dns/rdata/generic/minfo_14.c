@@ -104,10 +104,4 @@ towire_minfo(ARGS_TOWIRE) {
 	return (dns_name_towire(&rmail, cctx, target));
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_GENERIC_MINFO_14_C */

@@ -77,10 +77,4 @@ towire_mb(ARGS_TOWIRE) {
 	return (dns_name_towire(&name, cctx, target));
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_GENERIC_MB_7_C */

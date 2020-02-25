@@ -83,10 +83,4 @@ towire_hs_a(ARGS_TOWIRE) {
 	return (ISC_R_SUCCESS);
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_HS_4_A_1_C */

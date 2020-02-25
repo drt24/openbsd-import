@@ -19,7 +19,6 @@
 #ifndef ISC_RESULTCLASS_H
 #define ISC_RESULTCLASS_H 1
 
-
 /*! \file isc/resultclass.h
  * \brief Registry of Predefined Result Type Classes
  *
@@ -36,7 +35,6 @@
 #define ISC_RESULTCLASS_SIZE			65536
 #define ISC_RESULTCLASS_INCLASS(rclass, result) \
 	((rclass) == ((result) & 0xFFFF0000))
-
 
 #define	ISC_RESULTCLASS_ISC		ISC_RESULTCLASS_FROMNUM(0)
 #define	ISC_RESULTCLASS_DNS		ISC_RESULTCLASS_FROMNUM(1)

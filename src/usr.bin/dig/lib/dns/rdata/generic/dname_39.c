@@ -78,9 +78,4 @@ towire_dname(ARGS_TOWIRE) {
 	return (dns_name_towire(&name, cctx, target));
 }
 
-
-
-
-
-
 #endif	/* RDATA_GENERIC_DNAME_39_C */

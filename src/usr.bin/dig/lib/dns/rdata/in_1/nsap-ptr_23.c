@@ -81,10 +81,4 @@ towire_in_nsap_ptr(ARGS_TOWIRE) {
 	return (dns_name_towire(&name, cctx, target));
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_IN_1_NSAP_PTR_23_C */

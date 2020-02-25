@@ -84,7 +84,6 @@
  *	ref != NULL.
  */
 
-
 /*
  * Sample implementations
  */

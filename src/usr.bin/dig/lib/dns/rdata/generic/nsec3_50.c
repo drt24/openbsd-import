@@ -168,10 +168,6 @@ towire_nsec3(ARGS_TOWIRE) {
 	return (mem_tobuffer(target, sr.base, sr.length));
 }
 
-
-
-
-
 #define NSEC3_MAX_HASH_LENGTH 155
 static inline isc_boolean_t
 checkowner_nsec3(ARGS_CHECKOWNER) {
@@ -196,6 +192,5 @@ checkowner_nsec3(ARGS_CHECKOWNER) {
 
 	return (ISC_FALSE);
 }
-
 
 #endif	/* RDATA_GENERIC_NSEC3_50_C */

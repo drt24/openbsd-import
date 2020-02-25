@@ -56,10 +56,4 @@ towire_#(ARGS_TOWIRE) {
 	return (ISC_R_NOTIMPLEMENTED);
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_GENERIC_#_#_C */

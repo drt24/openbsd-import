@@ -65,10 +65,4 @@ towire_x25(ARGS_TOWIRE) {
 	return (mem_tobuffer(target, rdata->data, rdata->length));
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_GENERIC_X25_19_C */

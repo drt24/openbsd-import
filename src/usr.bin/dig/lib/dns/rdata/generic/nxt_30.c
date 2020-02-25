@@ -112,9 +112,4 @@ towire_nxt(ARGS_TOWIRE) {
 	return (mem_tobuffer(target, sr.base, sr.length));
 }
 
-
-
-
-
-
 #endif	/* RDATA_GENERIC_NXT_30_C */

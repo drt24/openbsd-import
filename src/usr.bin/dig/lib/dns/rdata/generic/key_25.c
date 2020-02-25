@@ -57,7 +57,6 @@ generic_totext_key(ARGS_TOTEXT) {
 	} else
 		keyinfo = "ZSK";
 
-
 	/* protocol */
 	snprintf(buf, sizeof(buf), "%u", sr.base[0]);
 	isc_region_consume(&sr, 1);

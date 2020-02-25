@@ -222,7 +222,6 @@ towire_any_tsig(ARGS_TOWIRE) {
 	return (mem_tobuffer(target, sr.base, sr.length));
 }
 
-
 static inline isc_result_t
 fromstruct_any_tsig(ARGS_FROMSTRUCT) {
 	dns_rdata_any_tsig_t *tsig = source;
@@ -400,7 +399,5 @@ freestruct_any_tsig(ARGS_FREESTRUCT) {
 	free(tsig->signature);
 	free(tsig->other);
 }
-
-
 
 #endif	/* RDATA_ANY_255_TSIG_250_C */

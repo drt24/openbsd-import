@@ -22,8 +22,6 @@
  * draft-ietf-dnsext-tsig-sha-01.txt.
  */
 
-
-
 #include <isc/hmacsha.h>
 
 #include <isc/safe.h>

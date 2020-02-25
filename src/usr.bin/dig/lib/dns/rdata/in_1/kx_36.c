@@ -98,10 +98,4 @@ towire_in_kx(ARGS_TOWIRE) {
 	return (dns_name_towire(&name, cctx, target));
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_IN_1_KX_36_C */

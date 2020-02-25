@@ -36,7 +36,6 @@ typedef struct {
 	EVP_MD_CTX *ctx;
 } isc_sha1_t;
 
-
 void
 isc_sha1_init(isc_sha1_t *ctx);
 

@@ -78,8 +78,6 @@ towire_cname(ARGS_TOWIRE) {
 	return (dns_name_towire(&name, cctx, target));
 }
 
-
-
 static inline isc_result_t
 tostruct_cname(ARGS_TOSTRUCT) {
 	isc_region_t region;
@@ -110,7 +108,5 @@ freestruct_cname(ARGS_FREESTRUCT) {
 
 	dns_name_free(&cname->cname);
 }
-
-
 
 #endif	/* RDATA_GENERIC_CNAME_5_C */

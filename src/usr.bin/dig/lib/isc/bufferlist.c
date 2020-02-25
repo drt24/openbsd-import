@@ -18,8 +18,6 @@
 
 /*! \file */
 
-
-
 #include <stddef.h>
 
 #include <isc/buffer.h>

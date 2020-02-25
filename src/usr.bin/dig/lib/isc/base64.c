@@ -31,7 +31,6 @@
 		return (_r); \
 	} while (0)
 
-
 /*@{*/
 /*!
  * These static functions are also present in lib/dns/rdata.c.  I'm not

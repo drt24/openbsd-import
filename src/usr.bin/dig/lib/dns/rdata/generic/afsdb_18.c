@@ -102,9 +102,4 @@ towire_afsdb(ARGS_TOWIRE) {
 	return (dns_name_towire(&name, cctx, target));
 }
 
-
-
-
-
-
 #endif	/* RDATA_GENERIC_AFSDB_18_C */

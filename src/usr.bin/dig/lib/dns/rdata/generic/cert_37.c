@@ -108,9 +108,4 @@ towire_cert(ARGS_TOWIRE) {
 	return (mem_tobuffer(target, sr.base, sr.length));
 }
 
-
-
-
-
-
 #endif	/* RDATA_GENERIC_CERT_37_C */

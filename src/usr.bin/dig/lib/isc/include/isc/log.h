@@ -24,8 +24,6 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-
-
 #include <isc/types.h>
 
 /*@{*/

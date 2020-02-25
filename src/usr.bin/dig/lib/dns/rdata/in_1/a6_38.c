@@ -150,10 +150,4 @@ towire_in_a6(ARGS_TOWIRE) {
 	return (dns_name_towire(&name, cctx, target));
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_IN_1_A6_38_C */

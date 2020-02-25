@@ -24,8 +24,6 @@
 #include <sys/cdefs.h>
 #include <stdarg.h>
 
-
-
 typedef void (*isc_errorcallback_t)(const char *, int, const char *, va_list);
 
 /*% unexpected error */

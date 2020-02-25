@@ -137,10 +137,4 @@ towire_in_px(ARGS_TOWIRE) {
 	return (dns_name_towire(&name, cctx, target));
 }
 
-
-
-
-
-
-
 #endif	/* RDATA_IN_1_PX_26_C */

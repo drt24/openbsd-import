@@ -45,7 +45,6 @@ typedef isc_hmacsha_t isc_hmacsha256_t;
 typedef isc_hmacsha_t isc_hmacsha384_t;
 typedef isc_hmacsha_t isc_hmacsha512_t;
 
-
 void
 isc_hmacsha1_init(isc_hmacsha1_t *ctx, const unsigned char *key,
 		  unsigned int len);
@@ -80,7 +79,6 @@ isc_hmacsha224_sign(isc_hmacsha224_t *ctx, unsigned char *digest, size_t len);
 isc_boolean_t
 isc_hmacsha224_verify(isc_hmacsha224_t *ctx, unsigned char *digest, size_t len);
 
-
 void
 isc_hmacsha256_init(isc_hmacsha256_t *ctx, const unsigned char *key,
 		    unsigned int len);
@@ -98,7 +96,6 @@ isc_hmacsha256_sign(isc_hmacsha256_t *ctx, unsigned char *digest, size_t len);
 isc_boolean_t
 isc_hmacsha256_verify(isc_hmacsha256_t *ctx, unsigned char *digest, size_t len);
 
-
 void
 isc_hmacsha384_init(isc_hmacsha384_t *ctx, const unsigned char *key,
 		    unsigned int len);
@@ -115,7 +112,6 @@ isc_hmacsha384_sign(isc_hmacsha384_t *ctx, unsigned char *digest, size_t len);
 
 isc_boolean_t
 isc_hmacsha384_verify(isc_hmacsha384_t *ctx, unsigned char *digest, size_t len);
-
 
 void
 isc_hmacsha512_init(isc_hmacsha512_t *ctx, const unsigned char *key,
