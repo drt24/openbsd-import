@@ -79,12 +79,6 @@
 #include <isc/eventclass.h>
 #include <isc/result.h>
 
-/***
- *** Types
- ***/
-
-typedef isc_event_t isc_appevent_t;
-
 #define ISC_APPEVENT_FIRSTEVENT		(ISC_EVENTCLASS_APP + 0)
 #define ISC_APPEVENT_SHUTDOWN		(ISC_EVENTCLASS_APP + 1)
 #define ISC_APPEVENT_LASTEVENT		(ISC_EVENTCLASS_APP + 65535)

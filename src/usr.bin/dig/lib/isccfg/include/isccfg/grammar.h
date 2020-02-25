@@ -66,12 +66,6 @@ struct cfg_type {
 	const void *	of;	/*%< Additional data for meta-types */
 };
 
-/*% A keyword-type definition, for things like "port <integer>". */
-typedef struct {
-	const char *name;
-	const cfg_type_t *type;
-} keyword_type_t;
-
 struct cfg_map {
 	cfg_obj_t	 *id; /*%< Used for 'named maps' like keys, zones, &c */
 	const cfg_clausedef_t * const *clausesets; /*%< The clauses that
