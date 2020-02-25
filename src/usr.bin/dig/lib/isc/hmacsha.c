@@ -65,7 +65,7 @@ isc_hmacsha1_sign(isc_hmacsha1_t *ctx, unsigned char *digest, size_t len) {
 	HMAC_CTX_free(ctx->ctx);
 	ctx->ctx = NULL;
 	memmove(digest, newdigest, len);
-	isc_safe_memwipe(newdigest, sizeof(newdigest));
+	explicit_bzero(newdigest, sizeof(newdigest));
 }
 
 void
@@ -103,7 +103,7 @@ isc_hmacsha224_sign(isc_hmacsha224_t *ctx, unsigned char *digest, size_t len) {
 	HMAC_CTX_free(ctx->ctx);
 	ctx->ctx = NULL;
 	memmove(digest, newdigest, len);
-	isc_safe_memwipe(newdigest, sizeof(newdigest));
+	explicit_bzero(newdigest, sizeof(newdigest));
 }
 
 void
@@ -141,7 +141,7 @@ isc_hmacsha256_sign(isc_hmacsha256_t *ctx, unsigned char *digest, size_t len) {
 	HMAC_CTX_free(ctx->ctx);
 	ctx->ctx = NULL;
 	memmove(digest, newdigest, len);
-	isc_safe_memwipe(newdigest, sizeof(newdigest));
+	explicit_bzero(newdigest, sizeof(newdigest));
 }
 
 void
@@ -179,7 +179,7 @@ isc_hmacsha384_sign(isc_hmacsha384_t *ctx, unsigned char *digest, size_t len) {
 	HMAC_CTX_free(ctx->ctx);
 	ctx->ctx = NULL;
 	memmove(digest, newdigest, len);
-	isc_safe_memwipe(newdigest, sizeof(newdigest));
+	explicit_bzero(newdigest, sizeof(newdigest));
 }
 
 void
@@ -217,7 +217,7 @@ isc_hmacsha512_sign(isc_hmacsha512_t *ctx, unsigned char *digest, size_t len) {
 	HMAC_CTX_free(ctx->ctx);
 	ctx->ctx = NULL;
 	memmove(digest, newdigest, len);
-	isc_safe_memwipe(newdigest, sizeof(newdigest));
+	explicit_bzero(newdigest, sizeof(newdigest));
 }
 
 /*

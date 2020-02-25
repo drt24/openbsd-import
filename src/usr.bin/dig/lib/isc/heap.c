@@ -110,7 +110,7 @@ resize(isc_heap_t *heap) {
 	unsigned int new_size;
 
 	new_size = heap->size + heap->size_increment;
-	new_array = malloc(new_size * sizeof(void *));
+	new_array = reallocarray(NULL, new_size, sizeof(void *));
 	if (new_array == NULL)
 		return (ISC_FALSE);
 	if (heap->array != NULL) {
