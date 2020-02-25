@@ -151,10 +151,4 @@ isc_app_shutdown(void);
  *\li	ISC_R_UNEXPECTED
  */
 
-/*%<
- * See isc_appctx_create() above.
- */
-typedef isc_result_t
-(*isc_appctxcreatefunc_t)(isc_appctx_t **ctxp);
-
 #endif /* ISC_APP_H */
