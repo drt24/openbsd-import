@@ -38,11 +38,10 @@
 
 /*! \file */
 #include <stdlib.h>
+#include <string.h>
 
 #include <isc/buffer.h>
 #include <isc/refcount.h>
-#include <isc/safe.h>
-#include <string.h>
 #include <isc/util.h>
 
 #include <dns/keyvalues.h>

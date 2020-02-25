@@ -41,7 +41,6 @@
 #include <isc/buffer.h>
 #include <isc/hmacsha.h>
 #include <isc/sha1.h>
-#include <isc/safe.h>
 #include <isc/util.h>
 
 #include <dst/result.h>
