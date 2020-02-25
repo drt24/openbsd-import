@@ -273,8 +273,7 @@ dst_key_free(dst_key_t **keyp) {
 
 	isc_refcount_destroy(&key->refs);
 	key->func->destroy(key);
-	explicit_bzero(key, sizeof(*key));
-	free(key);
+	freezero(key, sizeof(*key));
 	*keyp = NULL;
 }
 
