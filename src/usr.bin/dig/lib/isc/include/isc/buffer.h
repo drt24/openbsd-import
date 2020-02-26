@@ -715,4 +715,6 @@ isc_buffer_copyregion(isc_buffer_t *b, const isc_region_t *r);
 #define isc_buffer_putuint32		isc__buffer_putuint32
 #define isc_buffer_putuint48		isc__buffer_putuint48
 
+isc_result_t
+isc_mem_tobuffer(isc_buffer_t *target, void *base, unsigned int length);
 #endif /* ISC_BUFFER_H */

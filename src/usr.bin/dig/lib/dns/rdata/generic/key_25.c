@@ -141,7 +141,7 @@ generic_fromwire_key(ARGS_FROMWIRE) {
 		return (ISC_R_UNEXPECTEDEND);
 
 	algorithm = sr.base[3];
-	RETERR(mem_tobuffer(target, sr.base, 4));
+	RETERR(isc_mem_tobuffer(target, sr.base, 4));
 	isc_region_consume(&sr, 4);
 	isc_buffer_forward(source, 4);
 
@@ -162,7 +162,7 @@ generic_fromwire_key(ARGS_FROMWIRE) {
 
 	isc_buffer_activeregion(source, &sr);
 	isc_buffer_forward(source, sr.length);
-	return (mem_tobuffer(target, sr.base, sr.length));
+	return (isc_mem_tobuffer(target, sr.base, sr.length));
 }
 
 static inline isc_result_t
@@ -194,7 +194,7 @@ towire_key(ARGS_TOWIRE) {
 	UNUSED(cctx);
 
 	dns_rdata_toregion(rdata, &sr);
-	return (mem_tobuffer(target, sr.base, sr.length));
+	return (isc_mem_tobuffer(target, sr.base, sr.length));
 }
 
 #endif	/* RDATA_GENERIC_KEY_25_C */

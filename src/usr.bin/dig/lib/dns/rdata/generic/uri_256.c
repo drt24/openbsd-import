@@ -77,7 +77,7 @@ fromwire_uri(ARGS_FROMWIRE) {
 	 * Priority, weight and target URI
 	 */
 	isc_buffer_forward(source, region.length);
-	return (mem_tobuffer(target, region.base, region.length));
+	return (isc_mem_tobuffer(target, region.base, region.length));
 }
 
 static inline isc_result_t
@@ -90,7 +90,7 @@ towire_uri(ARGS_TOWIRE) {
 	UNUSED(cctx);
 
 	dns_rdata_toregion(rdata, &region);
-	return (mem_tobuffer(target, region.base, region.length));
+	return (isc_mem_tobuffer(target, region.base, region.length));
 }
 
 #endif /* GENERIC_URI_256_C */

@@ -171,7 +171,7 @@ fromwire_tkey(ARGS_FROMWIRE) {
 	isc_buffer_activeregion(source, &sr);
 	if (sr.length < 12)
 		return (ISC_R_UNEXPECTEDEND);
-	RETERR(mem_tobuffer(target, sr.base, 12));
+	RETERR(isc_mem_tobuffer(target, sr.base, 12));
 	isc_region_consume(&sr, 12);
 	isc_buffer_forward(source, 12);
 
@@ -183,7 +183,7 @@ fromwire_tkey(ARGS_FROMWIRE) {
 	n = uint16_fromregion(&sr);
 	if (sr.length < n + 2)
 		return (ISC_R_UNEXPECTEDEND);
-	RETERR(mem_tobuffer(target, sr.base, n + 2));
+	RETERR(isc_mem_tobuffer(target, sr.base, n + 2));
 	isc_region_consume(&sr, n + 2);
 	isc_buffer_forward(source, n + 2);
 
@@ -196,7 +196,7 @@ fromwire_tkey(ARGS_FROMWIRE) {
 	if (sr.length < n + 2)
 		return (ISC_R_UNEXPECTEDEND);
 	isc_buffer_forward(source, n + 2);
-	return (mem_tobuffer(target, sr.base, n + 2));
+	return (isc_mem_tobuffer(target, sr.base, n + 2));
 }
 
 static inline isc_result_t
@@ -218,7 +218,7 @@ towire_tkey(ARGS_TOWIRE) {
 	RETERR(dns_name_towire(&name, cctx, target));
 	isc_region_consume(&sr, name_length(&name));
 
-	return (mem_tobuffer(target, sr.base, sr.length));
+	return (isc_mem_tobuffer(target, sr.base, sr.length));
 }
 
 #endif	/* RDATA_GENERIC_TKEY_249_C */

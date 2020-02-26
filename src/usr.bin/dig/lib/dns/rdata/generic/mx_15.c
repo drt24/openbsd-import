@@ -70,7 +70,7 @@ fromwire_mx(ARGS_FROMWIRE) {
 	isc_buffer_activeregion(source, &sregion);
 	if (sregion.length < 2)
 		return (ISC_R_UNEXPECTEDEND);
-	RETERR(mem_tobuffer(target, sregion.base, 2));
+	RETERR(isc_mem_tobuffer(target, sregion.base, 2));
 	isc_buffer_forward(source, 2);
 	return (dns_name_fromwire(&name, source, dctx, options, target));
 }
@@ -87,7 +87,7 @@ towire_mx(ARGS_TOWIRE) {
 	dns_compress_setmethods(cctx, DNS_COMPRESS_GLOBAL14);
 
 	dns_rdata_toregion(rdata, &region);
-	RETERR(mem_tobuffer(target, region.base, 2));
+	RETERR(isc_mem_tobuffer(target, region.base, 2));
 	isc_region_consume(&region, 2);
 
 	dns_name_init(&name, offsets);

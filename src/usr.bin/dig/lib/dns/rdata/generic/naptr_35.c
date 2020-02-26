@@ -199,7 +199,7 @@ fromwire_naptr(ARGS_FROMWIRE) {
 	isc_buffer_activeregion(source, &sr);
 	if (sr.length < 4)
 		return (ISC_R_UNEXPECTEDEND);
-	RETERR(mem_tobuffer(target, sr.base, 4));
+	RETERR(isc_mem_tobuffer(target, sr.base, 4));
 	isc_buffer_forward(source, 4);
 
 	/*
@@ -239,25 +239,25 @@ towire_naptr(ARGS_TOWIRE) {
 	 * Order, preference.
 	 */
 	dns_rdata_toregion(rdata, &sr);
-	RETERR(mem_tobuffer(target, sr.base, 4));
+	RETERR(isc_mem_tobuffer(target, sr.base, 4));
 	isc_region_consume(&sr, 4);
 
 	/*
 	 * Flags.
 	 */
-	RETERR(mem_tobuffer(target, sr.base, sr.base[0] + 1));
+	RETERR(isc_mem_tobuffer(target, sr.base, sr.base[0] + 1));
 	isc_region_consume(&sr, sr.base[0] + 1);
 
 	/*
 	 * Service.
 	 */
-	RETERR(mem_tobuffer(target, sr.base, sr.base[0] + 1));
+	RETERR(isc_mem_tobuffer(target, sr.base, sr.base[0] + 1));
 	isc_region_consume(&sr, sr.base[0] + 1);
 
 	/*
 	 * Regexp.
 	 */
-	RETERR(mem_tobuffer(target, sr.base, sr.base[0] + 1));
+	RETERR(isc_mem_tobuffer(target, sr.base, sr.base[0] + 1));
 	isc_region_consume(&sr, sr.base[0] + 1);
 
 	/*

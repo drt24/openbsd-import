@@ -60,7 +60,7 @@ fromwire_in_nsap(ARGS_FROMWIRE) {
 	if (region.length < 1)
 		return (ISC_R_UNEXPECTEDEND);
 
-	RETERR(mem_tobuffer(target, region.base, region.length));
+	RETERR(isc_mem_tobuffer(target, region.base, region.length));
 	isc_buffer_forward(source, region.length);
 	return (ISC_R_SUCCESS);
 }
@@ -73,7 +73,7 @@ towire_in_nsap(ARGS_TOWIRE) {
 
 	UNUSED(cctx);
 
-	return (mem_tobuffer(target, rdata->data, rdata->length));
+	return (isc_mem_tobuffer(target, rdata->data, rdata->length));
 }
 
 #endif	/* RDATA_IN_1_NSAP_22_C */

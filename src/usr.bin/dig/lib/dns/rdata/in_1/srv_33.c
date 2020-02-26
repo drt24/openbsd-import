@@ -96,7 +96,7 @@ fromwire_in_srv(ARGS_FROMWIRE) {
 	isc_buffer_activeregion(source, &sr);
 	if (sr.length < 6)
 		return (ISC_R_UNEXPECTEDEND);
-	RETERR(mem_tobuffer(target, sr.base, 6));
+	RETERR(isc_mem_tobuffer(target, sr.base, 6));
 	isc_buffer_forward(source, 6);
 
 	/*
@@ -119,7 +119,7 @@ towire_in_srv(ARGS_TOWIRE) {
 	 * Priority, weight, port.
 	 */
 	dns_rdata_toregion(rdata, &sr);
-	RETERR(mem_tobuffer(target, sr.base, 6));
+	RETERR(isc_mem_tobuffer(target, sr.base, 6));
 	isc_region_consume(&sr, 6);
 
 	/*

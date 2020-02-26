@@ -148,7 +148,7 @@ fromwire_nsec3(ARGS_FROMWIRE) {
 
 	RETERR(typemap_test(&sr, ISC_TRUE));
 
-	RETERR(mem_tobuffer(target, rr.base, rr.length));
+	RETERR(isc_mem_tobuffer(target, rr.base, rr.length));
 	isc_buffer_forward(source, rr.length);
 	return (ISC_R_SUCCESS);
 }
@@ -163,7 +163,7 @@ towire_nsec3(ARGS_TOWIRE) {
 	UNUSED(cctx);
 
 	dns_rdata_toregion(rdata, &sr);
-	return (mem_tobuffer(target, sr.base, sr.length));
+	return (isc_mem_tobuffer(target, sr.base, sr.length));
 }
 
 #define NSEC3_MAX_HASH_LENGTH 155

@@ -352,3 +352,15 @@ isc_buffer_free(isc_buffer_t **dynbuffer) {
 
 	free(dbuf);
 }
+
+isc_result_t
+isc_mem_tobuffer(isc_buffer_t *target, void *base, unsigned int length) {
+	isc_region_t tr;
+
+	isc_buffer_availableregion(target, &tr);
+	if (length > tr.length)
+		return (ISC_R_NOSPACE);
+	memmove(tr.base, base, length);
+	isc_buffer_add(target, length);
+	return (ISC_R_SUCCESS);
+}

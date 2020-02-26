@@ -69,7 +69,7 @@ fromwire_nsec(ARGS_FROMWIRE) {
 
 	isc_buffer_activeregion(source, &sr);
 	RETERR(typemap_test(&sr, ISC_FALSE));
-	RETERR(mem_tobuffer(target, sr.base, sr.length));
+	RETERR(isc_mem_tobuffer(target, sr.base, sr.length));
 	isc_buffer_forward(source, sr.length);
 	return (ISC_R_SUCCESS);
 }
@@ -90,7 +90,7 @@ towire_nsec(ARGS_TOWIRE) {
 	isc_region_consume(&sr, name_length(&name));
 	RETERR(dns_name_towire(&name, cctx, target));
 
-	return (mem_tobuffer(target, sr.base, sr.length));
+	return (isc_mem_tobuffer(target, sr.base, sr.length));
 }
 
 #endif	/* RDATA_GENERIC_NSEC_47_C */

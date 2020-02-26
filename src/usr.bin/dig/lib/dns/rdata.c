@@ -127,9 +127,6 @@ static uint8_t
 uint8_consume_fromregion(isc_region_t *region);
 
 static isc_result_t
-mem_tobuffer(isc_buffer_t *target, void *base, unsigned int length);
-
-static isc_result_t
 btoa_totext(unsigned char *inbuf, int inbuflen, isc_buffer_t *target);
 
 static isc_result_t
@@ -1379,22 +1376,6 @@ uint8_consume_fromregion(isc_region_t *region) {
 
 	isc_region_consume(region, 1);
 	return r;
-}
-
-static isc_result_t
-mem_tobuffer(isc_buffer_t *target, void *base, unsigned int length) {
-	isc_region_t tr;
-
-	if (length == 0U)
-		return (ISC_R_SUCCESS);
-
-	isc_buffer_availableregion(target, &tr);
-	if (length > tr.length)
-		return (ISC_R_NOSPACE);
-	if (tr.base != base)
-		memmove(tr.base, base, length);
-	isc_buffer_add(target, length);
-	return (ISC_R_SUCCESS);
 }
 
 static const char atob_digits[86] =

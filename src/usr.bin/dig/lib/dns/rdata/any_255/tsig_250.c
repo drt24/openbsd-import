@@ -163,7 +163,7 @@ fromwire_any_tsig(ARGS_FROMWIRE) {
 	 */
 	if (sr.length < 8)
 		return (ISC_R_UNEXPECTEDEND);
-	RETERR(mem_tobuffer(target, sr.base, 8));
+	RETERR(isc_mem_tobuffer(target, sr.base, 8));
 	isc_region_consume(&sr, 8);
 	isc_buffer_forward(source, 8);
 
@@ -175,7 +175,7 @@ fromwire_any_tsig(ARGS_FROMWIRE) {
 	n = uint16_fromregion(&sr);
 	if (sr.length < n + 2)
 		return (ISC_R_UNEXPECTEDEND);
-	RETERR(mem_tobuffer(target, sr.base, n + 2));
+	RETERR(isc_mem_tobuffer(target, sr.base, n + 2));
 	isc_region_consume(&sr, n + 2);
 	isc_buffer_forward(source, n + 2);
 
@@ -184,7 +184,7 @@ fromwire_any_tsig(ARGS_FROMWIRE) {
 	 */
 	if (sr.length < 4)
 		return (ISC_R_UNEXPECTEDEND);
-	RETERR(mem_tobuffer(target, sr.base,  4));
+	RETERR(isc_mem_tobuffer(target, sr.base,  4));
 	isc_region_consume(&sr, 4);
 	isc_buffer_forward(source, 4);
 
@@ -197,7 +197,7 @@ fromwire_any_tsig(ARGS_FROMWIRE) {
 	if (sr.length < n + 2)
 		return (ISC_R_UNEXPECTEDEND);
 	isc_buffer_forward(source, n + 2);
-	return (mem_tobuffer(target, sr.base, n + 2));
+	return (isc_mem_tobuffer(target, sr.base, n + 2));
 }
 
 static inline isc_result_t
@@ -216,7 +216,7 @@ towire_any_tsig(ARGS_TOWIRE) {
 	dns_name_fromregion(&name, &sr);
 	RETERR(dns_name_towire(&name, cctx, target));
 	isc_region_consume(&sr, name_length(&name));
-	return (mem_tobuffer(target, sr.base, sr.length));
+	return (isc_mem_tobuffer(target, sr.base, sr.length));
 }
 
 static inline isc_result_t
@@ -263,7 +263,7 @@ fromstruct_any_tsig(ARGS_FROMSTRUCT) {
 	/*
 	 * Signature.
 	 */
-	RETERR(mem_tobuffer(target, tsig->signature, tsig->siglen));
+	RETERR(isc_mem_tobuffer(target, tsig->signature, tsig->siglen));
 
 	isc_buffer_availableregion(target, &tr);
 	if (tr.length < 2 + 2 + 2)
@@ -287,7 +287,7 @@ fromstruct_any_tsig(ARGS_FROMSTRUCT) {
 	/*
 	 * Other Data.
 	 */
-	return (mem_tobuffer(target, tsig->other, tsig->otherlen));
+	return (isc_mem_tobuffer(target, tsig->other, tsig->otherlen));
 }
 
 static inline isc_result_t

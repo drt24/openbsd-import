@@ -106,7 +106,7 @@ towire_in_wks(ARGS_TOWIRE) {
 	REQUIRE(rdata->length != 0);
 
 	dns_rdata_toregion(rdata, &sr);
-	return (mem_tobuffer(target, sr.base, sr.length));
+	return (isc_mem_tobuffer(target, sr.base, sr.length));
 }
 
 #endif	/* RDATA_IN_1_WKS_11_C */

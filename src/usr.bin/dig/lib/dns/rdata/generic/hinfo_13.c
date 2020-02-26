@@ -60,7 +60,7 @@ towire_hinfo(ARGS_TOWIRE) {
 	REQUIRE(rdata->type == dns_rdatatype_hinfo);
 	REQUIRE(rdata->length != 0);
 
-	return (mem_tobuffer(target, rdata->data, rdata->length));
+	return (isc_mem_tobuffer(target, rdata->data, rdata->length));
 }
 
 #endif	/* RDATA_GENERIC_HINFO_13_C */
