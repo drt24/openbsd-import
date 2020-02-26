@@ -46,8 +46,8 @@ totext_in_wks(ARGS_TOTEXT) {
 
 	proto = uint8_fromregion(&sr);
 	snprintf(buf, sizeof(buf), "%u", proto);
-	RETERR(str_totext(" ", target));
-	RETERR(str_totext(buf, target));
+	RETERR(isc_str_tobuffer(" ", target));
+	RETERR(isc_str_tobuffer(buf, target));
 	isc_region_consume(&sr, 1);
 
 	INSIST(sr.length <= 8*1024);
@@ -57,8 +57,8 @@ totext_in_wks(ARGS_TOTEXT) {
 				if ((sr.base[i] & (0x80 >> j)) != 0) {
 					snprintf(buf, sizeof(buf),
 						 "%u", i * 8 + j);
-					RETERR(str_totext(" ", target));
-					RETERR(str_totext(buf, target));
+					RETERR(isc_str_tobuffer(" ", target));
+					RETERR(isc_str_tobuffer(buf, target));
 				}
 	}
 

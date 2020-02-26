@@ -34,7 +34,7 @@ totext_hinfo(ARGS_TOTEXT) {
 
 	dns_rdata_toregion(rdata, &region);
 	RETERR(txt_totext(&region, ISC_TRUE, target));
-	RETERR(str_totext(" ", target));
+	RETERR(isc_str_tobuffer(" ", target));
 	return (txt_totext(&region, ISC_TRUE, target));
 }
 

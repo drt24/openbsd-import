@@ -65,13 +65,13 @@ totext_nsec3param(ARGS_TOTEXT) {
 	isc_region_consume(&sr, 2);
 
 	snprintf(buf, sizeof(buf), "%u ", hash);
-	RETERR(str_totext(buf, target));
+	RETERR(isc_str_tobuffer(buf, target));
 
 	snprintf(buf, sizeof(buf), "%u ", flags);
-	RETERR(str_totext(buf, target));
+	RETERR(isc_str_tobuffer(buf, target));
 
 	snprintf(buf, sizeof(buf), "%u ", iterations);
-	RETERR(str_totext(buf, target));
+	RETERR(isc_str_tobuffer(buf, target));
 
 	j = uint8_fromregion(&sr);
 	isc_region_consume(&sr, 1);
@@ -83,7 +83,7 @@ totext_nsec3param(ARGS_TOTEXT) {
 		RETERR(isc_hex_totext(&sr, 1, "", target));
 		sr.length = i - j;
 	} else
-		RETERR(str_totext("-", target));
+		RETERR(isc_str_tobuffer("-", target));
 
 	return (ISC_R_SUCCESS);
 }

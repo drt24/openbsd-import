@@ -47,7 +47,7 @@ totext_nsec(ARGS_TOTEXT) {
 	 * Don't leave a trailing space when there's no typemap present.
 	 */
 	if (sr.length > 0) {
-		RETERR(str_totext(" ", target));
+		RETERR(isc_str_tobuffer(" ", target));
 	}
 	return (typemap_totext(&sr, NULL, target));
 }

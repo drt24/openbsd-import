@@ -364,3 +364,20 @@ isc_mem_tobuffer(isc_buffer_t *target, void *base, unsigned int length) {
 	isc_buffer_add(target, length);
 	return (ISC_R_SUCCESS);
 }
+
+/* this used to be str_totext() in rdata.c etc. */
+isc_result_t
+isc_str_tobuffer(const char *source, isc_buffer_t *target) {
+	unsigned int l;
+	isc_region_t region;
+
+	isc_buffer_availableregion(target, &region);
+	l = strlen(source);
+
+	if (l > region.length)
+		return (ISC_R_NOSPACE);
+
+	memmove(region.base, source, l);
+	isc_buffer_add(target, l);
+	return (ISC_R_SUCCESS);
+}

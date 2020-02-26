@@ -35,11 +35,11 @@ totext_in_nsap(ARGS_TOTEXT) {
 	UNUSED(tctx);
 
 	dns_rdata_toregion(rdata, &region);
-	RETERR(str_totext("0x", target));
+	RETERR(isc_str_tobuffer("0x", target));
 	while (region.length != 0) {
 		snprintf(buf, sizeof(buf), "%02x", region.base[0]);
 		isc_region_consume(&region, 1);
-		RETERR(str_totext(buf, target));
+		RETERR(isc_str_tobuffer(buf, target));
 	}
 	return (ISC_R_SUCCESS);
 }

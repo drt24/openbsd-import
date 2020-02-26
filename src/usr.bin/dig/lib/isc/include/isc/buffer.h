@@ -717,4 +717,8 @@ isc_buffer_copyregion(isc_buffer_t *b, const isc_region_t *r);
 
 isc_result_t
 isc_mem_tobuffer(isc_buffer_t *target, void *base, unsigned int length);
+
+/* this used to be str_totext() in rdata.c etc. */
+isc_result_t
+isc_str_tobuffer(const char *source, isc_buffer_t *target);
 #endif /* ISC_BUFFER_H */

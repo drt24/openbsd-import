@@ -137,7 +137,7 @@ totext_loc(ARGS_TOTEXT) {
 		 below ? "-" : "", altitude/100, altitude % 100,
 		 sbuf, hbuf, vbuf);
 
-	return (str_totext(buf, target));
+	return (isc_str_tobuffer(buf, target));
 }
 
 static inline isc_result_t

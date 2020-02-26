@@ -38,7 +38,7 @@ totext_gpos(ARGS_TOTEXT) {
 	for (i = 0; i < 3; i++) {
 		RETERR(txt_totext(&region, ISC_TRUE, target));
 		if (i != 2)
-			RETERR(str_totext(" ", target));
+			RETERR(isc_str_tobuffer(" ", target));
 	}
 
 	return (ISC_R_SUCCESS);

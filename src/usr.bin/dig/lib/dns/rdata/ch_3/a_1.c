@@ -49,8 +49,8 @@ totext_ch_a(ARGS_TOTEXT) {
 	RETERR(dns_name_totext(&prefix, sub, target));
 
 	snprintf(buf, sizeof(buf), "%o", addr); /* note octal */
-	RETERR(str_totext(" ", target));
-	return (str_totext(buf, target));
+	RETERR(isc_str_tobuffer(" ", target));
+	return (isc_str_tobuffer(buf, target));
 }
 
 static inline isc_result_t

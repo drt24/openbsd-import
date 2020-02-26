@@ -47,7 +47,7 @@ totext_rp(ARGS_TOTEXT) {
 	sub = name_prefix(&rmail, tctx->origin, &prefix);
 	RETERR(dns_name_totext(&prefix, sub, target));
 
-	RETERR(str_totext(" ", target));
+	RETERR(isc_str_tobuffer(" ", target));
 
 	sub = name_prefix(&email, tctx->origin, &prefix);
 	return (dns_name_totext(&prefix, sub, target));
