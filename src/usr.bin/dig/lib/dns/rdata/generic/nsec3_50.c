@@ -129,21 +129,21 @@ fromwire_nsec3(ARGS_FROMWIRE) {
 
 	/* hash(1), flags(1), iteration(2), saltlen(1) */
 	if (sr.length < 5U)
-		RETERR(DNS_R_FORMERR);
+		return (DNS_R_FORMERR);
 	saltlen = sr.base[4];
 	isc_region_consume(&sr, 5);
 
 	if (sr.length < saltlen)
-		RETERR(DNS_R_FORMERR);
+		return (DNS_R_FORMERR);
 	isc_region_consume(&sr, saltlen);
 
 	if (sr.length < 1U)
-		RETERR(DNS_R_FORMERR);
+		return (DNS_R_FORMERR);
 	hashlen = sr.base[0];
 	isc_region_consume(&sr, 1);
 
 	if (sr.length < hashlen)
-		RETERR(DNS_R_FORMERR);
+		return (DNS_R_FORMERR);
 	isc_region_consume(&sr, hashlen);
 
 	RETERR(typemap_test(&sr, ISC_TRUE));
