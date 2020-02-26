@@ -23,8 +23,6 @@
 #ifndef RDATA_GENERIC_NAPTR_35_C
 #define RDATA_GENERIC_NAPTR_35_C
 
-#define RRTYPE_NAPTR_ATTRIBUTES (0)
-
 #include <isc/regex.h>
 
 /*

@@ -21,8 +21,6 @@
 #ifndef RDATA_GENERIC_SPF_99_C
 #define RDATA_GENERIC_SPF_99_C
 
-#define RRTYPE_SPF_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_spf(ARGS_TOTEXT) {
 

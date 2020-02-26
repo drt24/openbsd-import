@@ -21,8 +21,6 @@
 #ifndef RDATA_GENERIC_MB_7_C
 #define RDATA_GENERIC_MB_7_C
 
-#define RRTYPE_MB_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_mb(ARGS_TOTEXT) {
 	isc_region_t region;

@@ -21,8 +21,6 @@
 #ifndef RDATA_GENERIC_MG_8_C
 #define RDATA_GENERIC_MG_8_C
 
-#define RRTYPE_MG_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_mg(ARGS_TOTEXT) {
 	isc_region_t region;

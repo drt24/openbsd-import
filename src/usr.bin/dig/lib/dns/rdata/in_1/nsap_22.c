@@ -23,8 +23,6 @@
 #ifndef RDATA_IN_1_NSAP_22_C
 #define RDATA_IN_1_NSAP_22_C
 
-#define RRTYPE_NSAP_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_in_nsap(ARGS_TOTEXT) {
 	isc_region_t region;

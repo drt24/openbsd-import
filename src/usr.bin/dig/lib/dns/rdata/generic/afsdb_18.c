@@ -23,8 +23,6 @@
 #ifndef RDATA_GENERIC_AFSDB_18_C
 #define RDATA_GENERIC_AFSDB_18_C
 
-#define RRTYPE_AFSDB_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_afsdb(ARGS_TOTEXT) {
 	dns_name_t name;

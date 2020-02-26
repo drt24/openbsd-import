@@ -21,8 +21,6 @@
 #ifndef RDATA_GENERIC_RP_17_C
 #define RDATA_GENERIC_RP_17_C
 
-#define RRTYPE_RP_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_rp(ARGS_TOTEXT) {
 	isc_region_t region;

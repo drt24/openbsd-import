@@ -23,8 +23,6 @@
 #ifndef RDATA_GENERIC_GPOS_27_C
 #define RDATA_GENERIC_GPOS_27_C
 
-#define RRTYPE_GPOS_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_gpos(ARGS_TOTEXT) {
 	isc_region_t region;

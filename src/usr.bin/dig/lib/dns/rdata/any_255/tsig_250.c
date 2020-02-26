@@ -21,9 +21,6 @@
 #ifndef RDATA_ANY_255_TSIG_250_C
 #define RDATA_ANY_255_TSIG_250_C
 
-#define RRTYPE_TSIG_ATTRIBUTES \
-	(DNS_RDATATYPEATTR_META | DNS_RDATATYPEATTR_NOTQUESTION)
-
 static inline isc_result_t
 totext_any_tsig(ARGS_TOTEXT) {
 	isc_region_t sr;

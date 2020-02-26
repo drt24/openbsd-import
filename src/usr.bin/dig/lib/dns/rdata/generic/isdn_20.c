@@ -23,8 +23,6 @@
 #ifndef RDATA_GENERIC_ISDN_20_C
 #define RDATA_GENERIC_ISDN_20_C
 
-#define RRTYPE_ISDN_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_isdn(ARGS_TOTEXT) {
 	isc_region_t region;

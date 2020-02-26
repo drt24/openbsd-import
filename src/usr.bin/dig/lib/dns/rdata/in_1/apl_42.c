@@ -21,8 +21,6 @@
 #ifndef RDATA_IN_1_APL_42_C
 #define RDATA_IN_1_APL_42_C
 
-#define RRTYPE_APL_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_in_apl(ARGS_TOTEXT) {
 	isc_region_t sr;

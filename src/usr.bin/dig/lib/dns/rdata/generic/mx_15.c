@@ -25,8 +25,6 @@
 
 #include <isc/net.h>
 
-#define RRTYPE_MX_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_mx(ARGS_TOTEXT) {
 	isc_region_t region;

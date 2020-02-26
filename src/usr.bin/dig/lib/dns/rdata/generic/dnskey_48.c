@@ -27,8 +27,6 @@
 
 #include <dst/dst.h>
 
-#define RRTYPE_DNSKEY_ATTRIBUTES (DNS_RDATATYPEATTR_DNSSEC)
-
 static inline isc_result_t
 totext_dnskey(ARGS_TOTEXT) {
 

@@ -23,8 +23,6 @@
 #ifndef RDATA_GENERIC_RRSIG_46_C
 #define RDATA_GENERIC_RRSIG_46_C
 
-#define RRTYPE_RRSIG_ATTRIBUTES (DNS_RDATATYPEATTR_DNSSEC)
-
 static inline isc_result_t
 totext_rrsig(ARGS_TOTEXT) {
 	isc_region_t sr;
@@ -46,16 +44,8 @@ totext_rrsig(ARGS_TOTEXT) {
 	 */
 	covered = uint16_fromregion(&sr);
 	isc_region_consume(&sr, 2);
-	/*
-	 * XXXAG We should have something like dns_rdatatype_isknown()
-	 * that does the right thing with type 0.
-	 */
-	if (dns_rdatatype_isknown(covered) && covered != 0) {
-		RETERR(dns_rdatatype_totext(covered, target));
-	} else {
-		snprintf(buf, sizeof(buf), "TYPE%u", covered);
-		RETERR(str_totext(buf, target));
-	}
+
+	RETERR(dns_rdatatype_totext(covered, target));
 	RETERR(str_totext(" ", target));
 
 	/*

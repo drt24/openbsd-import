@@ -21,9 +21,6 @@
 #ifndef RDATA_GENERIC_CNAME_5_C
 #define RDATA_GENERIC_CNAME_5_C
 
-#define RRTYPE_CNAME_ATTRIBUTES \
-	(DNS_RDATATYPEATTR_EXCLUSIVE | DNS_RDATATYPEATTR_SINGLETON)
-
 static inline isc_result_t
 totext_cname(ARGS_TOTEXT) {
 	isc_region_t region;

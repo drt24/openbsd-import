@@ -21,8 +21,6 @@
 #ifndef RDATA_GENERIC_NS_2_C
 #define RDATA_GENERIC_NS_2_C
 
-#define RRTYPE_NS_ATTRIBUTES (DNS_RDATATYPEATTR_ZONECUTAUTH)
-
 static inline isc_result_t
 totext_ns(ARGS_TOTEXT) {
 	isc_region_t region;

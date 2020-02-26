@@ -21,8 +21,6 @@
 #ifndef RDATA_GENERIC_DLV_32769_C
 #define RDATA_GENERIC_DLV_32769_C
 
-#define RRTYPE_DLV_ATTRIBUTES 0
-
 #include <isc/sha1.h>
 #include <isc/sha2.h>
 

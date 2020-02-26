@@ -25,8 +25,6 @@
 #ifndef RDATA_GENERIC_TKEY_249_C
 #define RDATA_GENERIC_TKEY_249_C
 
-#define RRTYPE_TKEY_ATTRIBUTES (DNS_RDATATYPEATTR_META)
-
 static inline isc_result_t
 totext_tkey(ARGS_TOTEXT) {
 	isc_region_t sr, dr;

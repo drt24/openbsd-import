@@ -21,8 +21,6 @@
 #ifndef RDATA_GENERIC_NULL_10_C
 #define RDATA_GENERIC_NULL_10_C
 
-#define RRTYPE_NULL_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_null(ARGS_TOTEXT) {
 	REQUIRE(rdata->type == dns_rdatatype_null);

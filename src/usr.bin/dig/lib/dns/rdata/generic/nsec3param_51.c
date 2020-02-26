@@ -39,8 +39,6 @@
 
 #include <isc/base32.h>
 
-#define RRTYPE_NSEC3PARAM_ATTRIBUTES (DNS_RDATATYPEATTR_DNSSEC)
-
 static inline isc_result_t
 totext_nsec3param(ARGS_TOTEXT) {
 	isc_region_t sr;

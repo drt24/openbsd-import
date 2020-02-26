@@ -21,8 +21,6 @@
 #ifndef RDATA_IN_1_DHCID_49_C
 #define RDATA_IN_1_DHCID_49_C 1
 
-#define RRTYPE_DHCID_ATTRIBUTES 0
-
 static inline isc_result_t
 totext_in_dhcid(ARGS_TOTEXT) {
 	isc_region_t sr, sr2;

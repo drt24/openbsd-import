@@ -21,9 +21,6 @@
 #ifndef RDATA_GENERIC_DS_43_C
 #define RDATA_GENERIC_DS_43_C
 
-#define RRTYPE_DS_ATTRIBUTES \
-	(DNS_RDATATYPEATTR_DNSSEC|DNS_RDATATYPEATTR_ATPARENT)
-
 #include <isc/sha1.h>
 #include <isc/sha2.h>
 

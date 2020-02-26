@@ -23,8 +23,6 @@
 #ifndef RDATA_GENERIC_CERT_37_C
 #define RDATA_GENERIC_CERT_37_C
 
-#define RRTYPE_CERT_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_cert(ARGS_TOTEXT) {
 	isc_region_t sr;

@@ -23,8 +23,6 @@
 #ifndef RDATA_GENERIC_HINFO_13_C
 #define RDATA_GENERIC_HINFO_13_C
 
-#define RRTYPE_HINFO_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_hinfo(ARGS_TOTEXT) {
 	isc_region_t region;

@@ -24,8 +24,6 @@
 
 #include <isc/net.h>
 
-#define RRTYPE_A_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_ch_a(ARGS_TOTEXT) {
 	isc_region_t region;

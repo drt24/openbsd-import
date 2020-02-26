@@ -23,8 +23,6 @@
 #ifndef RDATA_GENERIC_LOC_29_C
 #define RDATA_GENERIC_LOC_29_C
 
-#define RRTYPE_LOC_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_loc(ARGS_TOTEXT) {
 	int d1, m1, s1, fs1;

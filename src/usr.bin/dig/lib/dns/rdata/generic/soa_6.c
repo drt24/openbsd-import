@@ -21,8 +21,6 @@
 #ifndef RDATA_GENERIC_SOA_6_C
 #define RDATA_GENERIC_SOA_6_C
 
-#define RRTYPE_SOA_ATTRIBUTES (DNS_RDATATYPEATTR_SINGLETON)
-
 static const char *soa_fieldnames[5] = {
 	"serial", "refresh", "retry", "expire", "minimum"
 };

@@ -23,8 +23,6 @@
 #ifndef RDATA_GENERIC_DNAME_39_C
 #define RDATA_GENERIC_DNAME_39_C
 
-#define RRTYPE_DNAME_ATTRIBUTES (DNS_RDATATYPEATTR_SINGLETON)
-
 static inline isc_result_t
 totext_dname(ARGS_TOTEXT) {
 	isc_region_t region;

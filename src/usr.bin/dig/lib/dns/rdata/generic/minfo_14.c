@@ -21,8 +21,6 @@
 #ifndef RDATA_GENERIC_MINFO_14_C
 #define RDATA_GENERIC_MINFO_14_C
 
-#define RRTYPE_MINFO_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_minfo(ARGS_TOTEXT) {
 	isc_region_t region;

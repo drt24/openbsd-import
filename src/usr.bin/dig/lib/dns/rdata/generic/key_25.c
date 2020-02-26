@@ -27,8 +27,6 @@
 
 #include <dst/dst.h>
 
-#define RRTYPE_KEY_ATTRIBUTES (0)
-
 static inline isc_result_t
 generic_totext_key(ARGS_TOTEXT) {
 	isc_region_t sr;

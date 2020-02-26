@@ -19,8 +19,6 @@
 #ifndef RDATA_GENERIC_UNSPEC_103_C
 #define RDATA_GENERIC_UNSPEC_103_C
 
-#define RRTYPE_UNSPEC_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_unspec(ARGS_TOTEXT) {
 

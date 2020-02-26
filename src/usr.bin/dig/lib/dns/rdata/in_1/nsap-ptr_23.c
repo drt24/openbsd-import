@@ -23,8 +23,6 @@
 #ifndef RDATA_IN_1_NSAP_PTR_23_C
 #define RDATA_IN_1_NSAP_PTR_23_C
 
-#define RRTYPE_NSAP_PTR_ATTRIBUTES (0)
-
 static inline isc_result_t
 totext_in_nsap_ptr(ARGS_TOTEXT) {
 	isc_region_t region;
