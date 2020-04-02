@@ -32,25 +32,13 @@
  ***/
 
 isc_result_t
-dns_time64_totext(int64_t value, isc_buffer_t *target);
-/*%<
- * Convert a 64-bit count of seconds since Jan 1 1970 0:00 GMT into
- * a YYYYMMDDHHMMSS text representation and append it to 'target'.
- */
-
-isc_result_t
 dns_time32_totext(uint32_t value, isc_buffer_t *target);
 /*%<
- * Like dns_time64_totext, but for a 32-bit cyclic time value.
+ * Convert 32-bit cyclic time value into a YYYYMMDDHHMMSS text representation
+ * and append it to 'target'.
  * Of those dates whose counts of seconds since Jan 1 1970 0:00 GMT
  * are congruent with 'value' modulo 2^32, the one closest to the
  * current date is chosen.
- */
-
-int64_t
-dns_time64_from32(uint32_t value);
-/*%<
- * Covert a 32-bit cyclic time value into a 64 bit time stamp.
  */
 
 #endif /* DNS_TIME_H */
