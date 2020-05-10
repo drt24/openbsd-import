@@ -91,7 +91,7 @@ main(int argc, char *argv[])
 	if (argc != 1)
 		goto usage;
 
-	if ((domain = domain_find(conf, argv[0])) == NULL)
+	if ((domain = domain_find_handle(conf, argv[0])) == NULL)
 		errx(EXIT_FAILURE, "domain %s not found", argv[0]);
 
 	argc--;
@@ -376,6 +376,6 @@ main(int argc, char *argv[])
 	return rc != COMP__MAX ? EXIT_FAILURE : (c == 2 ? EXIT_SUCCESS : 2);
 usage:
 	fprintf(stderr,
-	    "usage: acme-client [-Fnrv] [-f configfile] domain\n");
+	    "usage: acme-client [-Fnrv] [-f configfile] handle\n");
 	return EXIT_FAILURE;
 }
