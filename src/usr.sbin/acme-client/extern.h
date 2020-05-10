@@ -159,6 +159,7 @@ enum	chngstatus {
 struct	chng {
 	char		*uri; /* uri on ACME server */
 	char		*token; /* token we must offer */
+	char		*error; /* "detail" field in case of error */
 	size_t		 retry; /* how many times have we tried */
 	enum chngstatus	 status; /* challenge accepted? */
 };
