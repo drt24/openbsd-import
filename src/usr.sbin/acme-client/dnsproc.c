@@ -160,7 +160,6 @@ dnsproc(int nfd)
 			last = look;
 			look = NULL;
 		} else {
-			doddbg("%s: cached", look);
 			free(look);
 			look = NULL;
 		}
