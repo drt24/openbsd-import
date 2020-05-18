@@ -971,6 +971,7 @@ _libelf_cvt_NOTE_tom(unsigned char *dst, size_t dsz, unsigned char *src,
 		if (count < sz || dsz < sz)	/* Buffers are too small. */
 			return (0);
 
+		/* Copy the remainder of the note as-is. */
 		(void) memcpy(dst, src, sz);
 
 		src += sz;
@@ -1025,6 +1026,7 @@ _libelf_cvt_NOTE_tof(unsigned char *dst, size_t dsz, unsigned char *src,
 		if (count < sz)
 			sz = count;
 
+		/* Copy the remainder of the note as-is. */
 		(void) memcpy(dst, src, sz);
 
 		src += sz;
