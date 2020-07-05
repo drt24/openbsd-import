@@ -1,4 +1,4 @@
-/*	$OpenBSD: ahc_pci.c,v 1.57 2015/03/14 03:38:48 jsg Exp $	*/
+/*	$OpenBSD: ahc_pci.c,v 1.58 2020/07/05 20:17:25 krw Exp $	*/
 /*	$NetBSD: ahc_pci.c,v 1.43 2003/08/18 09:16:22 taca Exp $	*/
 
 /*
@@ -739,7 +739,7 @@ ahc_pci_attach(parent, self, aux)
 	 * SCSI_IS_SCSIBUS_B() must returns false until sc_channel_b
 	 * has been properly initialized.
 	 */
-	ahc->sc_channel_b.bus = NULL;
+	ahc->sc_child_b = NULL;
 
 	ahc->dev_softc = pa;
 
